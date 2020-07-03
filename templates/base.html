@@ -16,41 +16,152 @@
     {% endblock extra_meta %}
 
 
-    {% block corecss %}
-    <script src="https://kit.fontawesome.com/81e9d69a66.js" crossorigin="anonymous"></script>
+    {% block core_css %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
-    {% endblock corecss %}
-
-    {% block extra_css %}
-    {% endblock extra_css %}
-
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    {% endblock core_css %}
 
     {% block corejs %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://kit.fontawesome.com/81e9d69a66.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'js/ripple.js' %}" />
     {% endblock corejs %}
-
-
-    {% block extra_js %}
-    {% endblock extra_js %}
-
-
-    <link rel="stylesheet" href="assets/css/style.css">
 
     <title>Focus-Fitness {% block extra_title %}{% endblock extra_title %}</title>
 </head>
 
 <body>
-    {% include "messages.html" %}
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a href="{% url 'home' %}" class="nav-link main-logo-link">
+            <img id="design2" src="{% static 'media/logo.png' %}" alt="" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="justify-content-center collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="aw navbar-nav mx-3">
+                <li class="nav-item dropdown">
+                    <a class="mx-3 text-wht dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        My Bashboard
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Login</a>
+                        <a class="dropdown-item" href="#">register</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="mx-3 text-wht nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Pages
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'about' %}">About</a>
+                        <a class="dropdown-item" href="#">Shop</a>
+                        <a class="dropdown-item" href="#">Blog</a>
+                        <a class="dropdown-item" href="#">Contact Us</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0 pl-2">
+                <input class="ml-3 aw" type="search" placeholder="Search Focus" aria-label="Search" />
+                <button class="aw btn btn-outline-text-light my-2 my-sm-0" type="submit">
+                    <span class="icon">
+                        <i class="text-wht fas fa-search fa-lg"></i>
+                    </span>
+                </button>
+            </form>
+        </div>
+    </nav>
+
 
     {% block content %}
+    {% include "messages.html" %}
     {% endblock content %}
 
-    {% block postload_js %}
-    {% endblock postload_js %}
 
+    <!--footer-->
+    <div class=" container-fluid footer-image">
+        <div class="row align-items-center">
+            <div class="col-3 d-none d-md-block ">
+                <img class="ml-3" src="{% static 'media/logo.png' %}" alt="">
+            </div>
+            <div class="col-md-6 col-sm-9 col-12">
+                <p class="aw text-wht text-center">Be the First to recieve exciting news, Features, and special
+                    offers
+                    from Focus Fitness!
+                </p>
+                <form>
+                    <div class="form-row align-items-center">
+
+                        <div class="col-auto mx-auto">
+                            <label class="sr-only" for="inlineFormInputGroup">Email</label>
+                            <div class="input-group  mb-2">
+                                <input type="text" class="form-control " id="inlineFormInputGroup" placeholder="Email">
+                                <div class="input-group-prepend">
+                                    <button type="submit" class="btn btn-outline-light btn-sm">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="col-12 ">
+                    <div class="social text-center">
+                        <a class="mx-3" href="#">
+                            <i class="fab fa-twitter text-light fa-lg"></i>
+                        </a>
+                        <a class="mx-3" href="#">
+                            <i class="fab fa-facebook text-light  fa-lg"></i>
+                        </a>
+
+                        <a class="mx-3" href="#">
+                            <i class="fab fa-instagram  text-light fa-lg"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-sm-3 col-8 mx-auto">
+                <div class="col-auto ">
+                    <div class="row d-flex justify-content-center">
+                        <a class=" col-12 btn btn-danger btn-sm aw text-wht  border border-white m-2" href="#"
+                            role="button">Join
+                            <!--Go to checkout-->
+                            Up</a>
+                        <a class="col-12 btn btn-primary btn-sm aw text-wht border border-white m-2" href="#"
+                            role="button">Shop
+                        </a>
+                        <a class="col-12 btn btn-warning btn-sm aw text-wht border border-white m-2" href="#"
+                            role="button">Blog</a>
+
+
+                        <a class="col-12 btn btn-success btn-sm aw text-wht border border-white m-2" href="#"
+                            role="button">Login</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="text-center d-block d-md-none">
+            <img src="{% static 'media/logo.png' %}" alt="">
+            <h4 class="aw text-wht text-center mb-2">CopyRight ©
+            </h4>
+        </div>
+        <div class="row">
+            <div class="col-12 feet-bg">
+                <h4 class="aw text-center my-3">Web Design by Clinton Davis</h4>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

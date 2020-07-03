@@ -1,6 +1,192 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block content %}
-<h1 class="display-4 text-success">Its working</h1>
+<section id="section1">
+    <div id="section1-pic">
+        <div class="spaces-1"></div>
+        <!--Hero Block-->
+        <div class="container-hero mx-auto">
+            <h1 id="" class="active-size aw text-wht text-center">
+                Focus Fitness
+            </h1>
+            <p class="lead text-wht text-center">
+                A Community that is Focused on Fitness
+            </p>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-3 col-6 d-flex d-flex justify-content-center no-gutters">
+                    <a class="ripple-surface hero-btn btn btn-danger btn-lg aw text-wht m-1 border border-white"
+                        href="#" role="button">Join Up</a>
+                    <!--Go to checkout-->
+                </div>
+                <div class="col-md-3 col-6 d-flex d-flex justify-content-center no-gutters">
+                    <a class="ripple-surface hero-btn btn btn-primary btn-lg aw text-wht m-1 border border-white"
+                        href="#" role="button">Shop
+                    </a>
+                </div>
+                <div class="col-md-3 col-6 d-flex d-flex justify-content-center no-gutters">
+                    <a class="ripple-surface hero-btn btn btn-warning btn-lg aw text-wht m-1 border border-white"
+                        href="#" role="button">Blog</a>
+                </div>
+                <div class="col-md-3 col-6 d-flex d-flex justify-content-center no-gutters">
+                    <a class="ripple-surface hero-btn btn btn-success btn-lg aw text-wht m-1 border border-white"
+                        href="#" role="button">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Floating Block-->
+
+
+</div>
+
+<section id="section2">
+    <div class="feature-container card-group">
+        <div class="card">
+            <img src="{% static 'media/bidman.jpg' %}" class="card-img-top" alt="..." />
+            <div class="card-body">
+                <h3 class="card-title text-center aw">Work Outs</h3>
+                <a class="card-text d-block text-center mont_b text-bk" href="">Strenth Training</a>
+                <a class="card-text d-block text-center mont_b text-bk" href="">Endurance Training</a>
+                <a class="card-text d-block text-center mont_b text-bk" href="">Size Training</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title text-center aw">Gym Community</h3>
+                <p class="card-text text-center">
+                    A friendly place where you can discuss articles on the blogs and
+                    write you owne blogs to.
+                </p>
+            </div>
+            <img src="{% static 'media/bruce-mars-(friends)800.jpg' %}" class="card-img-top" alt="..." />
+        </div>
+        <div class="card">
+            <img src="{% static 'media/pool-man.jpg' %}" class="card-img-top" alt="..." />
+            <div class="card-body">
+                <h3 class="card-title text-center aw">Diet Plans</h3>
+                <a class="card-text d-block text-center mont_b text-bk" href="">Weight Loss</a>
+                <a class="card-text d-block text-center mont_b text-bk" href="">Weight Maintenance</a>
+                <a class="card-text d-block text-center mont_b text-bk" href="">Bulking</a>
+            </div>
+        </div>
+    </div>
+
+    <!--SubScribe banner-->
+    <div class="card my-5 py-5">
+        <div class="row no-gutters align-items-center">
+            <div class="col-md-4 mx-auto" style="max-width: 300px;">
+                <img src="{% static 'media/womenblog-crop.jpg' %}" class="card-img bs-2" alt="...">
+            </div>
+
+            <div class="col-md-8">
+                <div class="card-body ">
+                    <h2 class="active-size aw text-center">SUBSCRIBE TODAY</h2>
+                    <p class=" mx-auto text-center card-text">Subscribe today and get all the great feature Focus
+                        Fitness has to
+                        offer. You'll get full access to all the gym works and diets
+                        plans, Plus access to the community, Write your own blog post so
+                        share you experainces. <span class="aw">All subscribers get 10% all shope items!</span>
+                        Just click the Button below to Join.</p>
+
+                    <div class="text-center">
+                        <a class="ripple-surface w-50 hero-btn btn btn-success btn-lg aw text-wht border border-secondary bs-2"
+                            href="" role="button">Join Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Special offers-->
+    <div class="container-fluid mt-4">
+        <h2 class="aw active-size text-center">SPECIAL OFFERS</h2>
+        <h4 class="aw text-center mb-5">Look your Best and Feel even Better</h4>
+    </div>
+    <!--Product Cards-->
+    <div class="card-deck">
+        <div class="card bs-5">
+            <img src="{% static 'media\bcaa.jpg' %}" class="card-img-top card-item-size mt-2" alt="...">
+            <div class="card-body">
+                <h5 class="card-title aw text-center">Card title</h5>
+            </div>
+            <div class=" text-center">
+                <a class="ripple-surface w-100 btn btn-success btn-lg aw text-wht border border-secondary bs-2" href="#"
+                    role="button">Select</a>
+            </div>
+        </div>
+        <div class="card bs-5">
+            <img src="{% static 'media\creatine.jpg' %}" class="card-img-top card-item-size mt-2" alt="...">
+            <div class="card-body">
+                <h5 class="card-title aw text-center">Card title</h5>
+
+            </div>
+            <div class=" text-center">
+                <a class="ripple-surface w-100 btn btn-success btn-lg aw text-wht border border-secondary bs-2" href="#"
+                    role="button">Select</a>
+            </div>
+        </div>
+        <div class="card bs-5">
+            <img src="{% static 'media\protien.jpg' %}" class="card-img-top card-item-size mt-2" alt="...">
+            <div class="card-body">
+                <h5 class="card-title aw text-center">Card title</h5>
+            </div>
+            <div class=" text-center">
+                <a class="ripple-surface w-100 btn btn-success btn-lg aw text-wht border border-secondary bs-2" href="#"
+                    role="button">Select
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="section3">
+    <!--BLOG-->
+    <div class="blog-image">
+        <div class="container">
+            <h2 class="aw active-size text-center text-wht overlay mt-5 pt-4 pb-4">Feature Blogs</h2>
+
+            <div class="row">
+                <!--{for loop here}-->
+                <div class="col-md-4 col-12 ">
+                    <div class="card ">
+                        <img src="{% static 'media\big-man.jpg' %}" class="card-img-top mt-3 card-item-size" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title aw text-center">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the
+                                bulk of the card's content.</p>
+                            <a href="#" class="ripple-surface w-100 aw btn btn-primary">Read more..</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12 ">
+                    <div class="card">
+                        <img src="{% static 'media\ladypress.jpg' %}" class="card-img-top mt-3 card-item-size"
+                            alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title aw text-center">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the
+                                bulk of the card's content.</p>
+                            <a href="#" class="ripple-surface w-100 aw btn btn-primary">Read more..</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12">
+                    <div class="card">
+                        <img src="{% static 'media\alora-griffiths-lady-pull.jpg' %}"
+                            class="card-img-top mt-3 card-item-size" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title aw text-center">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the
+                                bulk of the card's content.</p>
+                            <a href="#" class="ripple-surface w-100 aw btn btn-primary">Read more..</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="spaces-2"></div>
+    </div>
+</section>
+
 {% endblock content %}
