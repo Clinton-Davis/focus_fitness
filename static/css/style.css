@@ -185,7 +185,7 @@ nav {
   position: relative;
   top: 0px;
   height: 100vh;
-  background: url(/static/media/hipcravo-index-unsplash.jpg) no-repeat center center scroll;
+  background: url(/static/images/hipcravo-index-unsplash.jpg) no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -287,7 +287,7 @@ nav {
 }
 
 .blog-image {
-  background: url(/static/media/evan-wise-blog-bg.jpg) no-repeat center center fixed;
+  background: url(/static/images/evan-wise-blog-bg.jpg) no-repeat center center fixed;
   /* background-color: #fff; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -304,7 +304,7 @@ nav {
 }
 
 #about-pic {
-  background: url(/static/media/delaney-van-whiets.jpg) no-repeat center center fixed;
+  background: url(/static/images/delaney-van-whiets.jpg) no-repeat center center fixed;
   /* background-color: #fff; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -332,7 +332,7 @@ nav {
 
 #contact-pic {
   height: fit-content;
-  background: url(/static/media/delaney-van-whiets.jpg) no-repeat center center fixed;
+  background: url(/static/images/delaney-van-whiets.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -347,7 +347,7 @@ nav {
 
 #blog-pic {
   height: fit-content;
-  background: url(/static/media/evan-wise-blog-bg.jpg) no-repeat center center fixed;
+  background: url(/static/images/evan-wise-blog-bg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -362,7 +362,7 @@ nav {
 /*SHOP*/
 .product-containter {
   height: fit-content;
-  background: url(/static/media/evan-wise-blog-bg.jpg) no-repeat center center fixed;
+  background: url(/static/images/evan-wise-blog-bg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -382,7 +382,7 @@ nav {
 
 .checkout-container {
   height: 100vh;
-  background: url(/static/media/george-pagan-iii-gym-tag.jpg) no-repeat center center fixed;
+  background: url(/static/images/george-pagan-iii-gym-tag.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -391,7 +391,7 @@ nav {
 
 /* Footer */
 .footer-image {
-  background: url(/static/media/evan-wise-blog-bg.jpg) no-repeat center center fixed;
+  background: url(/static/images/evan-wise-blog-bg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
