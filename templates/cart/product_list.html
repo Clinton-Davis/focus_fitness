@@ -1,9 +1,39 @@
 {% extends "base.html" %}
 
 {% block content %}
-{% for product in object_list %}
 
-<p>{{ product }}</p>
+<div class="container-fluid bg-black">
+    <div class="row">
+        <div class="col-md-12 mb-0">
+            <a class="text-wht aw" href="{% url 'home' %}">Home</a>
+            <span class="mx-2 mb-0 text-wht">/</span>
+            <strong class="text-wht aw">Shop</strong>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="container">
+        <div class="row mb-5">
+            {% for product in object_list %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <figure class="block-4-image">
+                    <a href=""><img class="img-fluid" src="{{ product.image.url }}" alt=""></a>
+                </figure>
+                <div class="block-4-text p-4">
+                    <a href="">
+                        <h3>{{ product.title }}</h3>
+                    </a>
+                    <p class="mb-0 text-bk">{{ product.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
-{% endfor %}
+
+
+
+
+
 {% endblock content %}
