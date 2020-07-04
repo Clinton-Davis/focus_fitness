@@ -119,6 +119,14 @@ p {
   }
 }
 
+/* .message {
+  position: absolute;
+  top: 10rem;
+  left: 0px;
+  z-index: 1999999;
+} */
+
+
 /* TopNav*/
 .navbar {
   padding: 0px;

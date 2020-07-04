@@ -35,7 +35,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <a href="#" class="nav-link main-logo-link">
+        <a href="{% url 'home' %}" class="nav-link main-logo-link">
             <img id="design2" src="{% static 'images/logo.png' %}" alt="" />
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -61,10 +61,10 @@
                         Pages
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">About</a>
+                        <a class="dropdown-item" href="{% url 'about' %}">About</a>
                         <a class="dropdown-item" href="#">Shop</a>
                         <a class="dropdown-item" href="#">Blog</a>
-                        <a class="dropdown-item" href="#">Contact Us</a>
+                        <a class="dropdown-item" href="{% url 'contact' %}">Contact Us</a>
                     </div>
                 </li>
             </ul>
@@ -78,12 +78,23 @@
             </form>
         </div>
     </nav>
+    <div class="message aw text-wht">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show text-center mb-0" role="alert">
+            <i class="fad fa-dumbbell fa-lg"></i> {{ message }} <i class="fad fa-dumbbell fa-lg"></i>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+
 
 
     {% block content %}
-    {% include "messages.html" %}
     {% endblock content %}
-
 
     <!--footer-->
     <div class=" container-fluid footer-image">
@@ -162,6 +173,7 @@
             </div>
         </div>
     </div>
+
 </body>
 
 </html>

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+{% block content %}
+
+
+<div id="contact-pic">
+    <div class="container contact">
+        <!-- <div class="overlay my-5"> -->
+        <div class="col p-4 ">
+            <div class="headings-center">
+                <div class="row ">
+                    <div class="col-md-12 mb-0">
+                        <a class="text-wht aw" href="{% url 'home' %}">Home</a>
+                        <span class="mx-2 mb-0 text-wht">/</span>
+                        <strong class="text-wht aw">Contact</strong>
+                    </div>
+                </div><br>
+                <p class="text-wht aw display-4">Focus Fitness</p>
+                <h3 class="text-wht text-center aw">Get in touch
+                </h3>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-7">
+                    <form method="POST" class="text-wht p4 mb-4 aw">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <input type="submit" class="aw text-wht btn btn-warning" value="Submit message" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="spaces-2"></div>
+
+
+    </div>
+</div>
+
+</div>
+
+{% endblock content %}
