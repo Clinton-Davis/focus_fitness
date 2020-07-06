@@ -105,7 +105,7 @@
         <h4 class="aw text-center mb-5">Look your Best and Feel even Better</h4>
     </div>
     <!--Product Cards-->
-    <div class="card-deck">
+    <!-- <div class="card-deck">
         <div class="card bs-5">
             <img src="{% static 'images\bcaa.jpg' %}" class="card-img-top card-item-size mt-2" alt="...">
             <div class="card-body">
@@ -137,6 +137,49 @@
                     role="button">Select
                 </a>
             </div>
+        </div>
+    </div> -->
+
+    <div class="container">
+        <div class="row mb-5">
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <figure class="block-4-image">
+                    <a href=""><img class="img-fluid" src="{% static 'images\bcaa.jpg' %}" alt=""></a>
+                </figure>
+                <div class="block-4-text p-4">
+                    <a href="">
+                        <h3>Product <title></title>
+                        </h3>
+                    </a>
+                    <p class="mb-0 text-bk">product.description</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <figure class="block-4-image">
+                    <a href=""><img class="img-fluid" src="{% static 'images\creatine.jpg' %}" alt=""></a>
+                </figure>
+                <div class="block-4-text p-4">
+                    <a href="">
+                        <h3>Product <title></title>
+                        </h3>
+                    </a>
+                    <p class="mb-0 text-bk">product.description</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <figure class="block-4-image">
+                    <a href=""><img class="img-fluid" src="{% static 'images\protien.jpg' %}" alt=""></a>
+                </figure>
+                <div class="block-4-text p-4">
+                    <a href="">
+                        <h3>Product <title></title>
+                        </h3>
+                    </a>
+                    <p class="mb-0 text-bk">product.description</p>
+                </div>
+            </div>
+            <!--  {% for product in object_list %}  {% endfor %} -->
         </div>
     </div>
 </section>
