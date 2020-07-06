@@ -81,20 +81,19 @@
     </nav>
     <div class="container-fluid bg-black">
         <div class="row ">
-            <div class="col-md-12 mb-0">
-                {% if request.user.is_authenticated %}
-                <a href="/"><span><i class="fas fa-user  text-wht"></i></span></a>
-                {% else %}
-                <a href="/"><span><i class="fas fa-sign-in-alt  text-wht"></i></span></a>
-                {% endif %}
-                <a href="{% url 'cart:summary' %}" class="site-cart ">
-                    <span><i class="fas fa-shopping-cart  text-wht"></i></span>
-                    <span class="count  text-wht">0</span>
-                </a>
+            <div class="col-md-12 mb-0  text-right">
+
+                <div id="cart" class="mr-md-4">
+                    <a href="{% url 'cart:summary' %}" class="site-cart">
+                        <span><i class="fas fa-shopping-cart  text-wht"></i></span>
+                        <span class="count  text-wht">$1179.00</span>
+                    </a>
+                </div>
 
             </div>
         </div>
     </div>
+
     <div class="message aw text-wht">
         {% if messages %}
         {% for message in messages %}
