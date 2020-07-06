@@ -19,6 +19,12 @@ class ProductDetailView(generic.FormView):
 
     def get_success_url(self):
         return reverse("home")
+    # gets the kwargs product id
+
+    def get_form_kwargs(self):
+        kwargs = super(ProductDetailView, self).get_form_kwargs()
+        kwargs["product_id"] = self.get_object().id
+        return kwargs
 
     def form_valid(self, form):
         order = get_or_set_order_sessions(self.request)
@@ -26,7 +32,10 @@ class ProductDetailView(generic.FormView):
         """
         Check to see if item is in cart. If it is
         increase the quantity, if it is not them add and save"""
-        item_filter = order.items.filter(product=product)
+        item_filter = order.items.filter(
+            product=product,
+            size=form.cleaned_data['size'],
+        )
 
         if item_filter.exists():
             item = item_filter.first()
@@ -41,6 +50,7 @@ class ProductDetailView(generic.FormView):
 
         return super(ProductDetailView, self).form_invalid(form)
 
+    # Gets the image
     def get_context_data(self, **kwargs):
         context = super(ProductDetailView, self).get_context_data(**kwargs)
         context['product'] = self.get_object()
