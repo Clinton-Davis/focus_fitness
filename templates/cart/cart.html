@@ -44,14 +44,16 @@
                                 <td class="px-1">
                                     <div class="input-group mb-3" style="max-width: 120px;">
                                         <div class="input-group-prepend">
-                                            <a href="#" class="btn btn-outline-primary">
+                                            <a href="{% url 'cart:decrease-quantity' item.id %}"
+                                                class="btn btn-outline-primary">
                                                 &minus;
                                             </a>
                                         </div>
                                         <input type="text" class="form-control text-center aw"
                                             value="{{ item.quantity }}">
                                         <div class="input-group-append">
-                                            <a href="#" class="btn btn-outline-primary">
+                                            <a href="{% url 'cart:increase-quantity' item.id %}"
+                                                class="btn btn-outline-primary">
                                                 &plus;
                                             </a>
                                         </div>
@@ -61,10 +63,15 @@
                                     ${{ item.get_tatal_price_item }}
                                 </td>
                                 <td class="px-1">
-                                    <a href="#" class="btn btn-primary btn-sm">X</a>
+                                    <a href="{% url 'cart:remove-from-cart'  item.id %}"
+                                        class="btn btn-primary btn-sm">X</a>
                                 </td>
-
                             </tr>
+                            {% empty %}
+                            <td colspan="6">
+                                There are no items in your cart. <a href="{% url 'cart:product-list' %}">Continue
+                                    Shopping</a>
+                            </td>
 
                             {% endfor %}
                         </tbody>
