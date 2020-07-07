@@ -13,73 +13,99 @@
     </div>
 </div>
 
-<div class="site-section">
-    <div class="container">
-        <div class="row mb-5">
-            <div class="col-md-12">
-                <div class="site-blocks-table">
-                    <table class="mx-auto">
-                        <thead>
-                            <tr>
-                                <th class="aw text-center px-1">Image</th>
-                                <th class="aw text-center px-1">Product</th>
-                                <th class="aw text-center px-1">Price</th>
-                                <th class="aw text-center px-1">Quantity</th>
-                                <th class="aw text-center px-1">Total</th>
-                                <th class="aw text-center px-1">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for item in order.items.all %}
-                            <tr>
-                                <td class="product-thumbnail">
-                                    <img src="{{ item.product.image.url }}" class="img-fluid" style="width: 15rem;">
-                                </td>
-                                <td class="product-name px-1">
-                                    <h4 class=" text-black">{{ item.product.title }}</h4>
-                                    <small>Size: {{ item.size.name }}</small>
-                                    <small>Colour: {{ item.colour.name }}</small>
-                                </td>
-                                <td class="text-right aw">${{ item.product.get_price }}</td>
-                                <td class="px-1">
-                                    <div class="input-group mb-3" style="max-width: 120px;">
-                                        <div class="input-group-prepend">
-                                            <a href="{% url 'cart:decrease-quantity' item.id %}"
-                                                class="btn btn-outline-primary">
-                                                &minus;
-                                            </a>
-                                        </div>
-                                        <input type="text" class="form-control text-center aw"
-                                            value="{{ item.quantity }}">
-                                        <div class="input-group-append">
-                                            <a href="{% url 'cart:increase-quantity' item.id %}"
-                                                class="btn btn-outline-primary">
-                                                &plus;
-                                            </a>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-1 text-right aw">
-                                    ${{ item.get_tatal_price_item }}
-                                </td>
-                                <td class="px-1">
-                                    <a href="{% url 'cart:remove-from-cart'  item.id %}"
-                                        class="btn btn-primary btn-sm">X</a>
-                                </td>
-                            </tr>
-                            {% empty %}
-                            <td colspan="6">
-                                There are no items in your cart. <a href="{% url 'cart:product-list' %}">Continue
-                                    Shopping</a>
-                            </td>
+<div class="container-fluid">
+    <div class="row align-items-center">
+        <div class="col-12 text-center bg-black">
+            <h3 class="text-wht aw">
+                Cart
+            </h3>
+        </div>
+    </div>
+    {% for item in order.items.all %}
+    <div class="container bg-warning">
+        <div class="row justify-content-around text-center">
+            <div class="col-md-2 col-12 align-self-center ">
+                <img src="{{ item.product.image.url }}" style="width: 8rem;" alt="">
+            </div>
+            <div class="col-md-3  col-12 align-items-center">
+                <h4 class="text-center">{{ item.product.title }}</h4>
+                <small>Size: {{ item.size.name }}</small>
+                <p class="text-center">This is some text about the product</p>
+            </div>
+            <div class="col-md-2 col-12 align-self-center">
+                <div class=" input-group" style="max-width: 120px;">
+                    <div class="input-group-prepend">
+                        <a href="{% url 'cart:decrease-quantity' item.id %}" class="btn btn-outline-primary">
+                            &minus;
+                        </a>
+                    </div>
+                    <input type="text" class="aw form-control text-center" value="{{ item.quantity }}">
+                    <div class="input-group-append">
+                        <a href="{% url 'cart:increase-quantity' item.id %} " class="btn btn-outline-primary">
+                            &plus;
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-12 align-self-center">
+                <h5 class="aw">${{ item.get_total_price_item }}</h5>
+            </div>
+            <div class="col-md-1 col-12 align-self-center text-right">
+                <a href="{% url 'cart:remove-from-cart' item.id %}" class="btn btn-primary btn-sm"><i
+                        class="fad fa-trash-alt"></i></a>
+            </div>
 
-                            {% endfor %}
-                        </tbody>
-                    </table>
+        </div>
+    </div>
+    <hr>
+    {% empty %}
+    <div class="container">
+        <div class="row align-items-center">
+            <h5 class="col-12 empty">
+                There are no items in your cart. <a href="{% url 'cart:product-list' %}">Continue
+                    Shopping</a>
+            </h5>
+        </div>
+    </div>
+
+    {% endfor %}
+    <!-- 
+    
+
+    <!--Totals Section-->
+    <div class="row  justify-content-end ">
+        <div class="col-md-7 col-6"></div>
+        <div class="  col-md-4 col-12 ">
+            <div class="row mt-3">
+                <div class="aw d-flex justify-content-start col-6">
+                    <h5>SubTotal</h5>
+                </div>
+                <div class="aw d-flex justify-content-end col-6">
+                    <h5>$0.00</h5>
+                </div>
+                <div class="aw d-flex justify-content-start col-6">
+                    <h5>Total</h5>
+                </div>
+                <div class="aw d-flex justify-content-end col-6">
+                    <h5>$0.00</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-end ">
+        <div class="col-md-7 col-6"></div>
+        <div class="  col-md-4 col-6">
+            <div class="row mt-3">
+                <div class="d-flex justify-content-center col-12">
+                    <button class="w-100">CheckOut</button>
+                </div>
+                <div class="d-flex justify-content-center col-12">
+                    <button class="w-100">Keep Shopping</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 {% endblock content %}

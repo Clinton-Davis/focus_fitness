@@ -398,6 +398,18 @@ nav {
   background-size: cover;
 }
 
+.empty {
+  display: flex;
+  min-height: 50vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-actions {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Footer */
 .footer-image {
   background: url(/static/images/evan-wise-blog-bg.jpg) no-repeat center center fixed;

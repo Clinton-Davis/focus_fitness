@@ -69,7 +69,7 @@ class OrderItem(models.Model):
     def get_total_price_item_raw(self):
         return self.quantity * self.product.price
 
-    def get_tatal_price_item(self):
+    def get_total_price_item(self):
         price = self.get_total_price_item_raw()
         return "{:.2f}".format(price / 100)
 
