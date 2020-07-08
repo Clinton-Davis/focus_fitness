@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     'crispy_forms',
 
     'home',
-    'cart',
+
 ]
 
 DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
@@ -53,7 +53,9 @@ ROOT_URLCONF = 'focus.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "templates")],
+        'DIRS': [os.path.join(BASE_DIR, "templates"),
+                 os.path.join(BASE_DIR, 'templates', 'allauth'),
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

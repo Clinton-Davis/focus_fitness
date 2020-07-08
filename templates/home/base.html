@@ -1,5 +1,5 @@
 {% load static %}
-{% load cart_template_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +23,12 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     {% endblock core_css %}
 
+
+    {% block extra_css %}
+    {% endblock extra_css %}
+
+
+
     {% block corejs %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://kit.fontawesome.com/81e9d69a66.js" crossorigin="anonymous"></script>
@@ -31,12 +37,16 @@
     <link rel="stylesheet" href="{% static 'js/ripple.js' %}" />
     {% endblock corejs %}
 
+
+    {% block extra_js %}
+    {% endblock extra_js %}
+
     <title>Focus-Fitness {% block extra_title %}{% endblock extra_title %}</title>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <a href="{% url 'home' %}" class="nav-link main-logo-link">
+        <a href="" class="nav-link main-logo-link">
             <img id="design2" src="{% static 'images/logo.png' %}" alt="" />
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -62,14 +72,14 @@
                         Pages
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{% url 'about' %}">About</a>
-                        <a class="dropdown-item" href="{% url 'cart:product-list' %}">Shop</a>
+                        <a class="dropdown-item" href="">About</a>
+                        <a class="dropdown-item" href="">Shop</a>
                         <a class="dropdown-item" href="#">Blog</a>
-                        <a class="dropdown-item" href="{% url 'contact' %}">Contact Us</a>
+                        <a class="dropdown-item" href="#">Contact Us</a>
                     </div>
                 </li>
             </ul>
-            <form method="GET" action="{% url 'cart:product-list' %}" class=" form-inline my-2 my-lg-0 pl-2">
+            <form method="GET" action="#}" class=" form-inline my-2 my-lg-0 pl-2">
                 <input class="ml-3 aw" type="text" name="q" placeholder="Search Focus" aria-label="Search" />
                 <button class="aw btn btn-outline-text-light my-2 my-sm-0" type="submit">
                     <span class="icon">
@@ -85,9 +95,9 @@
             <div class="col-md-12 mb-0  text-right">
 
                 <div id="cart" class="mr-md-4">
-                    <a href="{% url 'cart:summary' %}" class="site-cart">
+                    <a href="" class="site-cart">
                         <span><i class="fad fa-shopping-cart text-wht"></i></span>
-                        <span class="count aw text-wht">${{ request|cart_total}}</span>
+                        <span class="count aw text-wht"></span>
                     </a>
                 </div>
 
