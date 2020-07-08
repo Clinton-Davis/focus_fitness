@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
 <div class="container-fluid bg-black">
@@ -12,18 +12,32 @@
     </div>
 </div>
 
-<div class="site-section">
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            {{ products }}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock content %}
+<!-- <div class="site-section">
     <div class="container">
         <div class="row mb-5">
             {% for product in object_list %}
             <div class="col-lg-4 col-md-6 mb-4" data-aos='fade-up'>
 
                 <figure class="block-4-image mx-auto">
-                    <a href="{{ product.get_absolute_url }}"><img src="{{ product.image.url }}" class="img-fluid"></a>
+                    <a href=""><img src="" class="img-fluid"></a>
                 </figure>
 
                 <div class="block-4-text p-4">
-                    <a href="{{ product.get_absolute_url }}">
+                    <a href="">
                         <h5 class="text-center aw">{{ product.title }}</h5>
                     </a>
                     <p class="mb-0">{{ product.description }}</p>
@@ -32,6 +46,4 @@
             {% endfor %}
         </div>
     </div>
-</div>
-
-{% endblock content %}
+</div> -->
