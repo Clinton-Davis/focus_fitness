@@ -62,8 +62,19 @@
                         My Bashboard
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Login</a>
-                        <a class="dropdown-item" href="#">register</a>
+
+                        {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                        <a class="dropdown-item" href="#">Project Management</a>
+                        {% endif %}
+                        <a class="dropdown-item" href="#">My Profile</a>
+                        <a class="dropdown-item" href="">Logout</a>
+                        {% else %}
+                        <a class="dropdown-item" href=""">Login</a>
+                        <a class=" dropdown-item" href="">register</a>
+                        {% endif %}
+
+
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -79,7 +90,7 @@
                     </div>
                 </li>
             </ul>
-            <form method="GET" action="#}" class=" form-inline my-2 my-lg-0 pl-2">
+            <form method="GET" action="#" class=" form-inline my-2 my-lg-0 pl-2">
                 <input class="ml-3 aw" type="text" name="q" placeholder="Search Focus" aria-label="Search" />
                 <button class="aw btn btn-outline-text-light my-2 my-sm-0" type="submit">
                     <span class="icon">
@@ -97,7 +108,13 @@
                 <div id="cart" class="mr-md-4">
                     <a href="" class="site-cart">
                         <span><i class="fad fa-shopping-cart text-wht"></i></span>
-                        <span class="count aw text-wht"></span>
+                        <span class="count aw text-wht">
+                            {% if grand_total %}
+                            ${{ grand_total|floatformat:2 }}
+                            {% else %}
+                            $0.00
+                            {% endif %}
+                        </span>
                     </a>
                 </div>
 
