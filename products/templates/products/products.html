@@ -17,9 +17,73 @@
         <div class="row">
             <div class="col text-center mt-3">
                 <h2 class="aw">Products</h2>
-                <hr class="w-50">
+
             </div>
         </div>
+
+        <div class="row justify-content-center">
+
+            <ul class="nav aw text-bk">
+                <li class="nav-item dropdown ">
+                    <a class="logo-font font-weight-bold nav-link text-grn mr-5" href="#" id="all-products-link"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        All Products
+                    </a>
+                    <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                        <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                        <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+                        <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By
+                            Category</a>
+                        <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="logo-font font-weight-bold nav-link text-red mr-5" href="#" id="activewear-link"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Activewear & EQP
+                    </a>
+                    <div class="dropdown-menu border-0" aria-labelledby="activewear-link">
+                        <a href="{% url 'products' %}?category=pants,vest,tops" class="dropdown-item">Activewear</a>
+                        <a href="{% url 'products' %}?category=equipment" class="dropdown-item">Equipment</a>
+                        <a href="{% url 'products' %}?category=pants" class="dropdown-item">Pants</a>
+                        <a href="{% url 'products' %}?category=vest" class="dropdown-item">Vests</a>
+                        <a href="{% url 'products' %}?category=tops" class="dropdown-item">Tops</a>
+                        <a href="{% url 'products' %}?category=jacket" class="dropdown-item">Jackets</a>
+                        <a href="{% url 'products' %}?category=equipment,pants,vests,tops,jacket"
+                            class="dropdown-item">All</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="logo-font font-weight-bold nav-link text-blue mr-5" href="#" id="supplements-link"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Supplements
+                    </a>
+                    <div class="dropdown-menu border-0" aria-labelledby="supplements-link">
+                        <a href="{% url 'products' %}?category=protein" class="dropdown-item">Proteins</a>
+                        <a href="{% url 'products' %}?category=pre_workout" class="dropdown-item">Pre-Workouts</a>
+                        <a href="{% url 'products' %}?category=bcaa" class="dropdown-item">BCAA</a>
+                        <a href="{% url 'products' %}?category=vitamins" class="dropdown-item">Multi-Vitamins</a>
+                        <a href="{% url 'products' %}?category=protein,pre-workout,bcaa,vitamins"
+                            class="dropdown-item">All
+                            Supplements</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="logo-font font-weight-bold nav-link text-ylw" href="#" id="specials-link"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Special Offers
+                    </a>
+                    <div class="dropdown-menu border-0" aria-labelledby="specials-link">
+                        <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
+                        <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
+                        <a href="{% url 'products' %}?category=clearance" class="dropdown-item">Clearance</a>
+                        <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="dropdown-item">All
+                            Specials</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <hr class="w-50">
         <div class="row d-flex justify-content-around">
             <div class="product-containter col-10 offser-1">
                 <div class="row mt-1 mb-2"></div>
