@@ -30,12 +30,12 @@
                         <div class="card w-100 h-100 border-1">
 
                             {% if product.image %}
-                            <a class="mx-auto" href="">
+                            <a class="mx-auto" href="{% url 'product_detail' product.id %}">
                                 <img class="mx-auto card-img-top shop-card-top-img img-fluid"
                                     src="{{ product.image.url }}" alt="{{ product.name }}">
                             </a>
                             {% else %}
-                            <a href="">
+                            <a href="{% url 'product_detail' product.id %}">
                                 <img class="" card-img-top shop-card-top-img img-fluid" src="{{ MEDIA_URL }}noimage.png"
                                     alt="{{ product.name }}">
                             </a>
@@ -58,7 +58,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <!--To make sure there is a hr ling under each card on all screens-->
                     {% if forloop.counter|divisibleby:1 %}
                     <div class=" col-12 d-sm-none mb-5">
                         <hr>

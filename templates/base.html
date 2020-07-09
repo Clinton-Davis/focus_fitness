@@ -62,7 +62,6 @@
                         My Bashboard
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
                         {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
                         <a class="dropdown-item" href="#">Project Management</a>
@@ -73,8 +72,6 @@
                         <a class="dropdown-item" href=""">Login</a>
                         <a class=" dropdown-item" href="">register</a>
                         {% endif %}
-
-
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -84,7 +81,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="">About</a>
-                        <a class="dropdown-item" href="">Shop</a>
+                        <a class="dropdown-item" href="{% url 'products' %}">Shop</a>
                         <a class="dropdown-item" href="#">Blog</a>
                         <a class="dropdown-item" href="#">Contact Us</a>
                     </div>
@@ -191,8 +188,8 @@
                             role="button">Join
                             <!--Go to checkout-->
                             Up</a>
-                        <a class="col-12 btn btn-primary btn-sm aw text-wht border border-white m-2" href="#"
-                            role="button">Shop
+                        <a class="col-12 btn btn-primary btn-sm aw text-wht border border-white m-2"
+                            href="{% url 'products' %}" role="button">Shop
                         </a>
                         <a class="col-12 btn btn-warning btn-sm aw text-wht border border-white m-2" href="#"
                             role="button">Blog</a>
