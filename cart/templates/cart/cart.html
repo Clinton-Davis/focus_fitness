@@ -28,7 +28,37 @@
                 <div class="col">
 
                     {% if cart_items %}
-                    <div class="table-responsive rounded-10"></div>
+                    <div class="table-responsive rounded-10">
+                        <table class="table table-sm table-borderless">
+                            <thead class="">
+                                <tr>
+                                    <th scope="col">Product</th>
+                                    <th scope="col"></th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Qty</th>
+                                    <th scope="col">SubTotal</th>
+                                </tr>
+                            </thead>
+                            {% for item in cart_items %}
+                            <tr>
+                                <td class="p-3 w-25">
+                                    <img class="img-fluid rounded" src="{{ item.product.image.url }}" alt="">
+                                </td>
+                                <td class="py-3">
+                                    <p>${{ item.products.price }}</p>
+                                </td>
+                                <td class="py-3">
+                                    <p>{{ item.products.quantity }}</p>
+                                </td>
+                                <td class="py-3">
+                                    <p>${{ item.products.price }}</p>
+                                </td>
+
+
+                            </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
                     {% else %}
                     <div class="container">
                         <div class="row align-items-center">

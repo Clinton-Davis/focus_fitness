@@ -104,8 +104,9 @@
 
                 <div id="cart" class="mr-md-4">
                     <a href="{% url 'cart_view' %}" class="site-cart">
-                        <span><i class="fad fa-shopping-cart text-wht"></i></span>
-                        <span class="count aw text-wht">
+                        <span><i
+                                class="fad fa-shopping-cart {% if grand_total %} fa-lg text-grn {% else %} text-wht {% endif %}"></i></span>
+                        <span class="{% if grand_total %} text-grn {% else %} text-wht {% endif %}aw text-wht">
                             {% if grand_total %}
                             ${{ grand_total|floatformat:2 }}
                             {% else %}
