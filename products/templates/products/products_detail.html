@@ -37,6 +37,13 @@
                     <h5 class="aw text-center mb-2">{{ product.name }}</h5>
                     <hr>
                     <p class="aw lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                    {% if product.category %}
+                    <p class="small mt-1 mb-0">
+                        <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
+                            <i class="fad fa-tags"></i>&nbsp;{{ product.category.friendly_name }}
+                        </a>
+                    </p>
+                    {% endif %}
                     {% if product.rating %}
                     <small class="text-muted"><i class="fad fa-star fa-lg mr-1"></i>{{ product.rating }} / 5</small>
                     {% else %}
