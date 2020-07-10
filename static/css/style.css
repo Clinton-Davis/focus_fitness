@@ -451,6 +451,11 @@ nav {
   width: 10rem;
 }
 
+.cart-img-size {
+  max-width: 7rem;
+
+}
+
 .cart-actions {
   display: flex;
   flex-direction: column;
