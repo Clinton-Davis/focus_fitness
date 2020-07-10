@@ -10,7 +10,7 @@ def cart_view(request):
 
 
 def add_to_cart(request, item_id):
-    """ Adds a specified product to bag """
+    """ Adds a specified product to cart """
 
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
@@ -80,7 +80,7 @@ def adjust_cart(request, item_id):
 
 
 def remove_from_cart(request, item_id):
-    """Remove the item from the shopping bag"""
+    """Remove the item from the shopping cart"""
 
     try:
         product = get_object_or_404(Product, pk=item_id)
