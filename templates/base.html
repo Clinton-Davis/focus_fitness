@@ -84,10 +84,10 @@
                         Pages
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="">About</a>
+                        <a class="dropdown-item" href="{% url 'about' %}">About</a>
                         <a class="dropdown-item" href="{% url 'products' %}">Shop</a>
                         <a class="dropdown-item" href="#">Blog</a>
-                        <a class="dropdown-item" href="#">Contact Us</a>
+                        <a class="dropdown-item" href="{% url 'contact' %}">Contact Us</a>
                     </div>
                 </li>
             </ul>
@@ -108,8 +108,7 @@
 
                 <div id="cart" class="mr-md-4">
                     <a href="{% url 'cart_view' %}" class="site-cart">
-                        <span><i
-                                class="fad fa-shopping-cart {% if grand_total %} fa-lg text-grn {% else %} text-wht {% endif %}"></i></span>
+
                         <span class="{% if grand_total %} text-grn {% else %} text-wht {% endif %}aw text-wht">
                             {% if grand_total %}
                             ${{ grand_total|floatformat:2 }}
@@ -117,6 +116,8 @@
                             $0.00
                             {% endif %}
                         </span>
+                        <span><i
+                                class="fad fa-shopping-cart text-wht {% if grand_total %} fa-lg {% else %}  {% endif %}"></i></span>
                     </a>
                 </div>
 
