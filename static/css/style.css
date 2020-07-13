@@ -496,6 +496,11 @@ nav {
   background-size: cover;
 }
 
+/* Check out Page*/
+.order-wrap {
+  justify-content: center;
+}
+
 /* Footer */
 .footer-image {
   background: url(/static/images/evan-wise-blog-bg.jpg) no-repeat center center fixed;
@@ -531,4 +536,23 @@ nav {
   100% {
     background-position: left;
   }
+}
+
+#loading-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(23, 162, 184, .85);
+  z-index: 999999;
+}
+
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100%;
 }
