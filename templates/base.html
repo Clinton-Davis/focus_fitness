@@ -50,7 +50,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
-        <a href="" class="nav-link main-logo-link">
+        <a href="{% url 'home' %}" class="nav-link main-logo-link">
             <img id="design2" src="{% static 'images/logo.png' %}" alt="" />
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -84,7 +84,7 @@
                         Pages
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{% url 'about' %}">About</a>
+                        <a class="dropdown-item " href="{% url 'about' %}">About</a>
                         <a class="dropdown-item" href="{% url 'products' %}">Shop</a>
                         <a class="dropdown-item" href="#">Blog</a>
                         <a class="dropdown-item" href="{% url 'contact' %}">Contact Us</a>
@@ -107,7 +107,7 @@
             <div class="col-md-12 mb-0  text-right">
 
                 <div id="cart" class="mr-md-4">
-                    <a href="{% url 'cart_view' %}" class="site-cart">
+                    <a href="{% url 'cart_view' %}" class="site-cart ">
 
                         <span class="{% if grand_total %} text-grn {% else %} text-wht {% endif %}aw text-wht">
                             {% if grand_total %}
