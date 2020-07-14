@@ -520,9 +520,41 @@ nav {
   z-index: 0;
 }
 
-#Login-pic {
+/* fullscreen background images for allauth*/
+.login-pic {
   background: url(/static/images/damir-spanic-login.jpg) no-repeat center center fixed;
   height: 100vh;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+.reg-pic {
+  background: url(/static/images/sven-mieke-lady-barbel.jpg) no-repeat center center fixed;
+  height: 100vh;
+  /* background-color: #fff; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.empty-pic {
+  background: url(/static/images/sven-mieke-MsCgmHuirDo.jpg) no-repeat center center fixed;
+  height: 100vh;
+  /* background-color: #fff; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.pass-change {
+  background: url(/static/images/scott-webb-womanback.jpg) no-repeat center center fixed;
+  height: fit-content;
   /* background-color: #fff; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
