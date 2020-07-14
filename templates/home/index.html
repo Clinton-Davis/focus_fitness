@@ -246,11 +246,10 @@
         </div>
         <div class="spaces-2"></div>
     </div>
-</section>
 
-{% endblock content %}
+    {% endblock content %}
 
-{% block postload_js %}
-{{ block.super }}
-<script src="{% static 'js/ripple.js' %}"></script>
-{% endblock postload_js %}
+    {% block postload_js %}
+    {{ block.super }}
+
+    {% endblock postload_js %}
