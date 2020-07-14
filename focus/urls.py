@@ -14,6 +14,7 @@ urlpatterns = [
     path('', include('home.urls')),
     path('products/', include('products.urls')),
     path('cart/', include('cart.urls')),
+    path('profile/', include('profiles.urls')),
     path('checkout/', include('checkout.urls')),
 
     path('favicon.ico', RedirectView.as_view(
