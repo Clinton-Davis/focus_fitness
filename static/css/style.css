@@ -501,6 +501,35 @@ nav {
   justify-content: center;
 }
 
+.login-row {
+  color: white;
+
+  justify-content: center;
+}
+
+.login-overlay {
+  position: relative;
+  height: fit-content;
+  width: fit-content;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  z-index: 0;
+}
+
+#Login-pic {
+  background: url(/static/images/damir-spanic-login.jpg) no-repeat center center fixed;
+  height: 100vh;
+  /* background-color: #fff; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 /* Footer */
 .footer-image {
   background: url(/static/images/evan-wise-blog-bg.jpg) no-repeat center center fixed;
