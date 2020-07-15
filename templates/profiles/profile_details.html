@@ -39,6 +39,7 @@
                     <h5 class="aw text-primary text-center">Order History</h5>
                     <!--This the place for for orsers history -->
                     <div class="profile-overlay border border-white">
+                        {% for order in orders %}
                         <div class=" p-2 table-responsive">
                             <table class="table table-sm table-borderless text-wht">
                                 <thead>
@@ -50,7 +51,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {% for order in orders %}
                                     <tr>
                                         <td>
                                             <a href="{% url 'order_history' order.order_number %}"
