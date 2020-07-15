@@ -479,6 +479,10 @@ nav {
   flex-direction: column;
 }
 
+.detail-p {
+  max-width: 650px;
+}
+
 #plus {
   color: rgb(51, 169, 111);
 }
@@ -513,6 +517,7 @@ nav {
   -o-background-size: cover;
   background-size: cover;
 }
+
 
 /* Check out Page*/
 .order-wrap {

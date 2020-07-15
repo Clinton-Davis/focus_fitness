@@ -93,18 +93,18 @@
                                 </div>
                             </div>
 
-                            <div class="col{% if s %}-12 mt-2{% endif %}">
+                            <div class="col{% if s %}-12 mt-1{% endif %}">
+                                <button type="submit"
+                                    class="font-weight-bold aw text-wht py-4 px-4 btn btn-outline-black text-uppercase rounded-10 mt-5 bg-primary border-bk">
+                                    Add To cart <i class="fad fa-cart-plus"></i>
+                                </button>
                                 <a href="{% url 'products' %}"
-                                    class="p-2 btn btn-outline-black rounded-2 mt-5 bg-warning border-bk">
+                                    class="p-2 btn btn-outline-black rounded-10 mt-5 bg-warning border-bk">
                                     <span class="icon">
                                         <i class="fad fa-store"></i>
                                     </span>
                                     <span class="aw bg-warning text-uppercase">Keep Shopping</span>
                                 </a>
-
-                                <input type="submit"
-                                    class="btn btn-black rounded-0 text-uppercase mt-5  bg-warning border-bk"
-                                    value="Add to Cart">
 
 
                             </div>
@@ -114,7 +114,7 @@
                     </form>
                 </div>
             </div>
-            <p class="col-12 mt-3">{{ product.description }}</p>
+            <p class="col-12 mt-3  mx-auto detail-p">{{ product.description }}</p>
         </div>
     </div>
 
