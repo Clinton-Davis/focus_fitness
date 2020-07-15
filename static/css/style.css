@@ -12,6 +12,15 @@ p {
   max-width: 600px;
 }
 
+.message {
+  position: absolute;
+  top: 3 rem;
+  left: 0px;
+  width: 100%;
+  z-index: 999;
+
+}
+
 .container-fluid {
   padding-left: 0px;
   padding-right: 0px;
@@ -166,7 +175,7 @@ p {
   position: absolute;
   top: -0.3rem;
   right: 15px;
-  z-index: 9999999;
+  z-index: 99;
   font-size: 1.35rem;
 }
 

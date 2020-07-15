@@ -13,7 +13,16 @@
 <div class="container-fluid bg-black">
     <div class="row">
         <div class="col-md-12 mb-0">
-            <a class="text-wht aw" href="{% url 'home' %}">Home</a>
+
+            {% if from_profile %}
+            <a class="text-wht aw pl-2" href="{% url 'home' %}">Home</a>
+            <span class="mx-2 mb-0 text-wht">/</span>
+            <a class="text-wht aw pl-2" href="{% url 'profile' %}">Dashboard</a>
+            {% else %}
+            <a class="text-wht aw pl-2" href="{% url 'home' %}">Home</a>
+            {% endif %}
+
+
 
         </div>
     </div>
@@ -25,9 +34,15 @@
     <div class="row p">
         <div class="col">
             <hr>
+            {% if from_profile %}
             <h2 class="aw mb-4 text-center">
-                Thank you
+                Thank's again
             </h2>
+            {% else %}
+            <h2 class="aw mb-4 text-center">
+                Thank You
+            </h2>
+            {% endif %}
 
         </div>
     </div>
@@ -35,7 +50,15 @@
     <div class="row order-wrap">
         <div class="col-12 col-lg-7">
             <div class="order-succes-wrapper p-2 border rounded-15">
+
+                {% if from_profile  %}
+                <p class="text-center ">Your order information is below. <br>
+                    A confirmation email was send to {{ order.email }} <br>
+                    On {{ order.date }}</p>
+                {% else %}
+
                 <p class="text-center ">Your confirmation email has been sent to <br>{{  order.email }}</p>
+                {% endif %}
                 <div class="row ">
                     <div class="col">
                         <small class="text-muted text-center aw">Your Order</small>
@@ -197,9 +220,13 @@
                     <div class="col-12 col-md-8 text-right">
                         <p class="mb-0 aw">{{ order.grand_total }}</p>
                     </div>
+
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row">
+
     </div>
 </div>
 <div id="loading-overlay">
