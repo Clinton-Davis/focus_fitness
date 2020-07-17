@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
     'blog',
+    'memberships',
+
 
 
 ]
@@ -150,6 +152,9 @@ STRIPE_WH_SECRET = env('STRIPE_WH_SECRET')
 
 
 if DEBUG is False:
+    STRIPE_SECRET_KEY = ''
+    STRIPE_WH_SECRET = ''
+
     SESSION_COOKIE_SECURE = True
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
