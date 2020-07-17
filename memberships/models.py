@@ -15,7 +15,7 @@ MEMBERSHIP_CHOICES = (
 class Membership(models.Model):
 
     slug = models.SlugField()
-    membership = models.CharField(
+    membership_type = models.CharField(
         choices=MEMBERSHIP_CHOICES,
         default='Free',
         max_length=30)
