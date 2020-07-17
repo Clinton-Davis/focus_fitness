@@ -2,9 +2,9 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path, include
 from django.views.generic.base import RedirectView
 from django.contrib.staticfiles.storage import staticfiles_storage
+from django.urls import path, include
 
 from home import views
 
@@ -14,6 +14,7 @@ urlpatterns = [
     path('', include('home.urls')),
     path('products/', include('products.urls')),
     path('cart/', include('cart.urls')),
+    path('programs/', include('programs.urls', namespace='programs')),
     path('profile/', include('profiles.urls')),
     path('checkout/', include('checkout.urls')),
 
