@@ -141,6 +141,9 @@
 
                     <div class="row ">
                         {% for product in products %}
+
+
+
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card w-100 h-100 border-1">
 
@@ -158,6 +161,9 @@
                                 <div class="card-body pb-0">
                                     <p class="aw text-center">{{ product.name }}</p>
                                 </div>
+
+
+                                {% if products.in_stock %}
                                 <div class="card-footer bg-white pt-0 border-0 text-center">
                                     <div class="row ">
                                         <div class="col">
@@ -180,6 +186,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                {% else %}
+                                <p>sorry out of stock</p>
+                                {% endif %}
+
+
+
+
                             </div>
                         </div>
                         <!--To make sure there is a hr ling under each card on all screens-->
@@ -207,8 +220,12 @@
                         </div>
                         {% endif %}
 
+
+
                         {% endfor %}
                     </div>
+
+
                 </div>
             </div>
         </div>
