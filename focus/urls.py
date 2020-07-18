@@ -9,9 +9,9 @@ from django.urls import path, include
 from home import views
 
 urlpatterns = [
+    path('', include('home.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-    path('', include('home.urls')),
     path('products/', include('products.urls')),
     path('cart/', include('cart.urls')),
     path('programs/', include('programs.urls', namespace='programs')),
