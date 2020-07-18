@@ -34,11 +34,25 @@
                 </ul>
                 <h5 class="aw text-wht">Focus Programs</h5>
                 <ul>
+
                     {% for program in object.program_set.all %}
                     <li class="aw text-wht">{{ program.title }}</li>
 
                     {% endfor %}
                 </ul>
+                <hr>
+                {% if object.membership_type != 'Free' %}
+                <form action="" method="POST">
+                    {% csrf_token %}
+
+                    {% if object.membership_type != current_membership %}
+                    <button class="aw w-50 text-wht btn btn-success" type="submit">Select</button>
+                    {% else %}
+                    <small class="aw text-wht">Your Currnet Membership</small>
+                    {% endif %}
+                    <input type="hidden" name="membership_type" value="{{ object.membership_type }}">
+                </form>
+                {% endif %}
 
             </div>
             {% endfor %}
