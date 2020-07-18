@@ -82,6 +82,7 @@
                         <a class="dropdown-item" href="#">Project Management</a>
                         {% endif %}
                         <a class="dropdown-item" href="{% url 'profile' %}">My Profile</a>
+                        <a class="dropdown-item" href="{% url 'memberships:select-membership' %}">My Memberships</a>
 
                         <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
                         {% else %}
