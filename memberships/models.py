@@ -55,10 +55,10 @@ class UserMembership(models.Model):
 
 
 class Subscription(models.Model):
-    user_memdership = models.ForeignKey(
-        UserMembership, on_delete=models.CASCADE)
+    user_membership = models.ForeignKey(UserMembership,
+                                        on_delete=models.CASCADE)
     stripe_subscription_id = models.CharField(max_length=50)
     active = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.user_memdership.user.username
+        return self.user_membership.user.username

@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="container-fluid bg-black">
+    <div class="row">
+        <div class="col-md-12 mb-0">
+            <a class="text-wht aw pl-2" href="{% url 'home' %}">Home</a>
+            <span class="mx-2 mb-0 text-wht">/</span>
+            <strong class="text-wht aw">Dashboard</strong>
+        </div>
+    </div>
+</div>
+<div id="profile-pic">
+    <div class="container profile">
+        <div class="profile-overlay">
+            <div class="col p-4">
+                <h4 class="text-wht aw display-4 text-center">Select a Membership</h4>
+            </div>
+        </div>
+        <div class="row">
+
+            {% for object in object_list %}
+            <div class="col-sm-6 col-md-6 bg-black-a rounded-15 p-2">
+                <h1 class="aw text-wht">{{ object.membership_type }}</h1>
+                <p class="aw text-wht">Price: ${{ object.price }}<small>/month</small></p>
+                <h4 class="aw text-wht">Inclueds:</h4>
+                <h5 class="aw text-wht">User DashBoard</h5>
+                <h5 class="aw text-wht">Blogs:</h5>
+                <ul>
+                    <li class="aw text-wht">Writing blogs</li>
+                    <li class="aw text-wht">Blogs comments</li>
+                </ul>
+                <h5 class="aw text-wht">Focus Programs</h5>
+                <ul>
+
+                    {% for program in object.program_set.all %}
+                    <li class="aw text-wht">{{ program.title }}</li>
+
+                    {% endfor %}
+                </ul>
+                <hr>
+                {% if object.membership_type != 'Free' %}
+                <form action="{% url 'memberships:select-membership' %}" method="POST">
+                    {% csrf_token %}
+
+                    {% if object.membership_type != current_membership %}
+                    <button class="aw w-50 text-wht btn btn-success" type="submit">Select</button>
+                    {% else %}
+                    <small class="aw text-wht">Your Currnet Membership</small>
+                    {% endif %}
+                    <input type="hidden" name="membership_type" value="{{ object.membership_type }}">
+                </form>
+                {% endif %}
+
+            </div>
+            {% endfor %}
+
+        </div>
+
+
+
+
+    </div>
+</div>
+{% endblock content %}

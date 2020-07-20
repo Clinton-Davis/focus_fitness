@@ -1,0 +1,12 @@
+<div class="message aw text-wht">
+    {% if messages %}
+    {% for message in messages %}
+    <div class="w-100 message alert alert-{{ message.tags }} alert-dismissible fade show text-center mb-0" role="alert">
+        <i class="fad fa-dumbbell fa-lg"></i> {{ message }} <i class="fad fa-dumbbell fa-lg"></i>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+    {% endif %}
+</div>
