@@ -83,6 +83,7 @@
                         {% endif %}
                         <a class="dropdown-item" href="{% url 'profile' %}">My Profile</a>
                         <a class="dropdown-item" href="{% url 'memberships:select-membership' %}">My Memberships</a>
+                        <a class="dropdown-item" href="{% url 'blog:list' %}">Blogs</a>
 
                         <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
                         {% else %}

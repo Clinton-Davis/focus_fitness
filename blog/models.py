@@ -1,5 +1,5 @@
 from django.db import models
-from profiles.models import UserProfile
+from profiles.models import User
 
 
 class Blog(models.Model):
@@ -8,8 +8,8 @@ class Blog(models.Model):
     thumbnail = models.ImageField()
     publish_date = models.DateTimeField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)
-    # author = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
-    #                            null=True, blank=True, related_name='')
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    slug = models.SlugField()
 
     def __str__(self):
         return self.title
@@ -17,8 +17,7 @@ class Blog(models.Model):
 
 class BlogComment(models.Model):
     """To be able to comment on a blog"""
-    # user = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
-    #                            null=True, blank=True, related_name='user')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
     content = models.TextField()
@@ -29,8 +28,7 @@ class BlogComment(models.Model):
 
 class BlogView(models.Model):
     """Keeps track of unike views """
-    # user = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
-    #                            null=True, blank=True, related_name='user')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
 
@@ -40,8 +38,7 @@ class BlogView(models.Model):
 
 class Like(models.Model):
     """To keep track of all the likes """
-    # user = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
-    #                            null=True, blank=True, related_name='user')
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
 
     def __str__(self):
