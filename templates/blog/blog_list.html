@@ -1,9 +1,30 @@
 {% extends "base.html" %}
 
+
 {% block content %}
 <div class="container">
     {% for object in object_list %}
-    {{ object.title }}
+    <a href="{{ object.get_absolute_url }}">
+        <div class="card mb-3">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="{{ object.thumbnail.url }}" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ object.title }}</h5>
+                        <p class="aw"> {{ object.content|truncatechars:50 }}</p>
+                        <hr>
+                        <p>
+                            <span><i class="fad fa-eye"></i> :</span><br>
+                            <span><i class="fad fa-thumbs-up"></i> :</span><br>
+                            <span><i class="fad fa-comments-alt"></i> :</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
     {% endfor %}
 </div>
 {% endblock content %}

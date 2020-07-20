@@ -1,5 +1,6 @@
 from django.db import models
 from profiles.models import User
+from django.shortcuts import reverse
 
 
 class Blog(models.Model):
@@ -13,6 +14,9 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('blog:details', kwargs={'slug': self.slug})
 
 
 class BlogComment(models.Model):
