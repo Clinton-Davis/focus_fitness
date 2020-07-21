@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Blog, BlogComment, BlogView, Like
-from .forms import BlogPostForm
+from .forms import BlogPostForm, BlogCommentForm
 
 
 class BlogListView(ListView):
@@ -11,6 +11,25 @@ class BlogListView(ListView):
 
 class BlogDetailView(DetailView):
     model = Blog
+
+    def post(self, *args, **kwargs):
+        form = BlogCommentForm(self.request.POST)
+        if form.is_valid():
+            blog = self.get_object()
+            blogcomment = form.instance
+            blogcomment.user = self.request.user
+            blogcomment.blog = blog
+            blogcomment.save()
+            return redirect("blog:details", slug=blog.slug)
+        return redirect("blog:details", slug=self.get_object().slug)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update({
+            'form': BlogCommentForm()
+
+        })
+        return context
 
     def get_object(self, **kwargs):
         """Counts the number of authenticated users view the blog """

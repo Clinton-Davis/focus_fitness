@@ -33,6 +33,10 @@ class Blog(models.Model):
     def get_like_count(self):
         return self.like_set.all().count()
 
+    @property
+    def blogcomments(self):
+        return self.blogcomment_set.all()
+
 
 class BlogComment(models.Model):
     """To be able to comment on a blog"""

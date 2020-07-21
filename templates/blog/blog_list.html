@@ -28,7 +28,7 @@
                 <div class="card mb-4">
                     <img class="card-img-top" src="{{ object.thumbnail.url }}" alt="Card image cap">
                     <div class="card-body">
-                        <h2 class="aw card-title">{{ object.title }}</h2>
+                        <h2 class="aw card-title">{{ object.title|title }}</h2>
                         <p class="card-text">{{ object.content|truncatechars:200 }}</p>
                         <div class="row m-1">
                             <div class="col-md-4 col-sm-12"><span><i class="fad fa-eye"></i>
@@ -41,16 +41,11 @@
             </a>
         </div>
         <div class="card-footer text-muted">
-            Posted on: {{ object.publish_date}} by <strong>{{ object.author }}</strong>
+            Posted on: {{ object.publish_date}} by <strong>{{ object.author|title }}</strong>
         </div>
     </div>
     {% endfor %}
-    <!-- Blog Post -->
-
-
-    <!-- Blog Post -->
-
-
+    <!-- 
     <!-- Pagination -->
     <ul class="pagination justify-content-center mb-4">
         <li class="page-item">
@@ -130,7 +125,7 @@
         </div>
         {% endfor %}
 
-    </div>
+    </div> -->
 
 </div>
 <!-- /.row -->
