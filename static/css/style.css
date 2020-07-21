@@ -68,6 +68,10 @@ p {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+.bg-trans {
+  background-color: transparent;
+}
+
 .minus-block {
   color: black;
   background-color: rgb(231, 49, 63);
@@ -420,7 +424,7 @@ nav {
 
 }
 
-#blog-pic {
+.blog-pic {
   height: fit-content;
   background: url(/static/images/evan-wise-blog-bg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
