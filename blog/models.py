@@ -18,6 +18,21 @@ class Blog(models.Model):
     def get_absolute_url(self):
         return reverse('blog:details', kwargs={'slug': self.slug})
 
+    def get_like_url(self):
+        return reverse('blog:like', kwargs={'slug': self.slug})
+
+    @property
+    def get_comment_count(self):
+        return self.blogcomment_set.all().count()
+
+    @property
+    def get_view_count(self):
+        return self.blogview_set.all().count()
+
+    @property
+    def get_like_count(self):
+        return self.like_set.all().count()
+
 
 class BlogComment(models.Model):
     """To be able to comment on a blog"""

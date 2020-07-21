@@ -1,6 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="container-fluid bg-black">
+    <div class="row">
+        <div class="col-md-12 mb-0">
+            <a class="text-wht aw pl-2" href="{% url 'blog:list' %}">Blogs</a>
+            <span class="mx-2 mb-0 text-wht">/</span>
+            <strong class="text-wht aw">Blog</strong>
+        </div>
+    </div>
+</div>
 
 <div class="container">
     <div class="row">
@@ -8,18 +17,21 @@
         <div class="col-lg-8">
 
             <!-- Title -->
-            <h1 class="mt-4"> {{ object.title }}</h1>
+            <h1 class="mt-4 aw"> {{ object.title|title }}</h1>
 
             <!-- Author -->
             <p class="lead">
-                by
-                <a href="#">{{ object.author}}</a>
+                by: {{ object.author|title }}
             </p>
 
             <hr>
 
             <!-- Date/Time -->
-            <p>Posted on {{ object.publish_date}}</p>
+            <span><i class="px-2 fad fa-comments-alt"></i> {{ object.get_comment_count }}</span>
+            <span><i class="px-2 fad fa-eye"></i> {{ object.get_view_count }}</span>
+            <span><i class="px-2 fad fa-thumbs-up"></i> {{ object.get_like_count }}</span>
+            <span class="text-mute float-right">Posted: {{ object.publish_date|timesince }}</span>
+
 
             <hr>
 
@@ -30,10 +42,17 @@
 
             <!-- Post Content -->
             <p class="lead">{{ object.content }}</p>
-
-
             <hr>
+            <p class="">If you like the Post, give it a
+                <a class="text-muted" href="{{ object.get_like_url }}">
+                    <i class="pl-2 fad fa-thumbs-up fa-lg"></i>
+                    {{ object.get_like_count }}
+                </a>
 
+            </p>
+            <hr>
+            <small class="text-muted">First Posted on the {{ object.publish_date}}</small>
+            <hr>
             <!-- Comments Form -->
             <div class="card my-4">
                 <h5 class="card-header">Leave a Comment:</h5>

@@ -2,6 +2,15 @@
 
 
 {% block content %}
+<div class="container-fluid bg-black">
+    <div class="row">
+        <div class="col-md-12 mb-0">
+            <a class="text-wht aw pl-2" href="{% url 'home' %}">Home</a>
+            <span class="mx-2 mb-0 text-wht">/</span>
+            <strong class="text-wht aw">Blogs</strong>
+        </div>
+    </div>
+</div>
 
 <!-- Page Content -->
 <div class="container-fluid blog-pic">
@@ -22,9 +31,12 @@
                         <h2 class="aw card-title">{{ object.title }}</h2>
                         <p class="card-text">{{ object.content|truncatechars:200 }}</p>
                         <div class="row m-1">
-                            <div class="col-md-4 col-sm-12"><span><i class="fad fa-eye"></i> :</span></div>
-                            <div class="col-md-4 col-sm-12"><span><i class="fad fa-thumbs-up"></i> :</span><br></div>
-                            <div class="col-md-4 col-sm-12"><span><i class="fad fa-comments-alt"></i> :</span></div>
+                            <div class="col-md-4 col-sm-12"><span><i class="fad fa-eye"></i>
+                                    {{ object.get_view_count }}</span></div>
+                            <div class="col-md-4 col-sm-12"><span><i class="fad fa-thumbs-up"></i>
+                                    {{ object.get_like_count }}</span><br></div>
+                            <div class="col-md-4 col-sm-12"><span><i class="fad fa-comments-alt"></i>
+                                    {{ object.get_comment_count }}</span></div>
                         </div>
             </a>
         </div>
