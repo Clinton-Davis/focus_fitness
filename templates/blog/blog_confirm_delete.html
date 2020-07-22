@@ -1,13 +1,38 @@
 {% extends "base.html" %}
+{% load static %}
+
 
 {% block content %}
-<div class="container">
-    {{ object.title }}
-    <h1>Are you sure you wna to delete this blog</h1>
-    <form action="" method="POST">
-        {% csrf_token %}
-        <button type="submit" class="aw btn btn-danger"> Confirm</button>
-    </form>
-
+<div class="container-fluid bg-black">
+    <div class="row">
+        <div class="col-md-12 mb-0">
+            <a class="text-wht aw pl-2" href="{% url 'home' %}">Home</a>
+            <span class="mx-2 mb-0 text-wht">/</span>
+            <strong class="text-wht aw">About</strong>
+        </div>
+    </div>
+</div>
+<div id="about-pic">
+    <div class="container about">
+        <div class="overlay border border-white ">
+            <div class="col p-4">
+                <p class="text-red aw display-3 text-center">Delete Blog </p>
+                <h4 class="text-wht aw text-center">Are you sure you want to delete
+                    <br>
+                    <br>
+                    {{ object.title|title }} ? </h4>
+                <form class="" action="" method="POST">
+                    {% csrf_token %}
+                    <button class="mt-3 w-100 text-bk aw btn btn-danger border border-dark" type="submit">Yes. Delete
+                        this post
+                        Post</button>
+                </form>
+                <span><a href="{{ object.get_absolute_url }}"
+                        class="aw text-wht mt-3 w-100 btn btn-success text-bk border border-white">No.
+                        Take me
+                        back to blogs </a></span>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock content %}

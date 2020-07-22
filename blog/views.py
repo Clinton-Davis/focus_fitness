@@ -7,6 +7,7 @@ from .forms import BlogForm, BlogCommentForm
 
 class BlogListView(ListView):
     model = Blog
+    ordering = ['-publish_date']
 
 
 class BlogDetailView(DetailView):

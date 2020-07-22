@@ -24,6 +24,9 @@ class Blog(models.Model):
     def get_update_url(self):
         return reverse('blog:update', kwargs={'slug': self.slug})
 
+    def get_delete_url(self):
+        return reverse('blog:delete', kwargs={'slug': self.slug})
+
     def get_like_url(self):
         return reverse('blog:like', kwargs={'slug': self.slug})
 

@@ -72,6 +72,10 @@ p {
   background-color: transparent;
 }
 
+.font-small {
+  font-size: 0.75rem;
+}
+
 .minus-block {
   color: black;
   background-color: rgb(231, 49, 63);
