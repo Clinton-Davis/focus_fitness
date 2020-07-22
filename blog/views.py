@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Blog, BlogComment, BlogView, Like
-from .forms import BlogPostForm, BlogCommentForm
+from .forms import BlogForm, BlogCommentForm
 
 
 class BlogListView(ListView):
@@ -13,6 +13,7 @@ class BlogDetailView(DetailView):
     model = Blog
 
     def post(self, *args, **kwargs):
+        """Adding comments to blogs"""
         form = BlogCommentForm(self.request.POST)
         if form.is_valid():
             blog = self.get_object()
@@ -40,7 +41,7 @@ class BlogDetailView(DetailView):
 
 
 class BlogCreateView(CreateView):
-    form_class = BlogPostForm
+    form_class = BlogForm
     model = Blog
     success_url = '/blog/'
 
@@ -53,7 +54,7 @@ class BlogCreateView(CreateView):
 
 
 class BlogUpdateView(UpdateView):
-    form_class = BlogPostForm
+    form_class = BlogForm
     model = Blog
     success_url = '/blog/'
 

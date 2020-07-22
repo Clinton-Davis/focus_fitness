@@ -22,12 +22,15 @@
             <!-- Author -->
             <p class="lead">
                 by: {{ object.author|title }}
+
+                <small><a href="{{ object.get_update_url }}">- Edit</a></small>
+
             </p>
 
             <hr>
 
             <!-- Date/Time -->
-            <span><i class="px-2 fad fa-comments-alt"></i> {{ object.get_comment_count }}</span>
+            <span><i class=" px-2 fad fa-comments-alt"></i> {{ object.get_comment_count }}</span>
             <span><i class="px-2 fad fa-eye"></i> {{ object.get_view_count }}</span>
             <span><i class="px-2 fad fa-thumbs-up"></i> {{ object.get_like_count }}</span>
             <span class="text-mute float-right">Posted: {{ object.publish_date|timesince }}</span>
@@ -56,7 +59,7 @@
             <!-- Comments Form -->
 
             {% if request.user.is_authenticated %}
-            <div class="card my-4">
+            <div class=" card my-4">
                 <h5 class="card-header">Leave a Comment:</h5>
                 <div class="card-body">
                     <form method="POST">

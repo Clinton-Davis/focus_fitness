@@ -8,6 +8,11 @@
             <a class="text-wht aw pl-2" href="{% url 'home' %}">Home</a>
             <span class="mx-2 mb-0 text-wht">/</span>
             <strong class="text-wht aw">Blogs</strong>
+            {% if request.user.is_authenticated %}
+            <span class="mx-2 mb-0 text-wht">/</span>
+            <a class="text-wht aw pl-2" href="{% url 'blog:create' %}">Create Blog</a>
+            {% else %}
+            {% endif %}
         </div>
     </div>
 </div>
