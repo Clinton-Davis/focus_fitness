@@ -6,8 +6,18 @@ from django.shortcuts import reverse
 from django.utils.text import slugify
 
 
+class Category(models.Model):
+    class Meta:
+        verbose_name_plural = 'Categories'
+    name = models.CharField(max_length=254)
+
+    def __str__(self):
+        return self.name
+
+
 class Blog(models.Model):
     title = models.CharField(max_length=100)
+    category = models.CharField(max_length=100)
     content = models.TextField()
     thumbnail = models.ImageField()
     publish_date = models.DateTimeField(auto_now_add=True)
