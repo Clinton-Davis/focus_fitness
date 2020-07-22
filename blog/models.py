@@ -1,6 +1,9 @@
 from django.db import models
+from django.db.models.signals import pre_save
 from profiles.models import User
 from django.shortcuts import reverse
+
+from django.utils.text import slugify
 
 
 class Blog(models.Model):
@@ -10,7 +13,7 @@ class Blog(models.Model):
     publish_date = models.DateTimeField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    slug = models.SlugField()
+    slug = models.SlugField(unique=True)
 
     def __str__(self):
         return self.title + ' | ' + str(self.author)
@@ -39,6 +42,26 @@ class Blog(models.Model):
     @property
     def blogcomments(self):
         return self.blogcomment_set.all()
+
+
+def create_slug(instance, new_slug=None):
+    slug = slugify(instance.title)
+    if new_slug is not None:
+        slug = new_slug
+    qs = Blog.objects.filter(slug=slug)
+    exists = qs.exists()
+    if exists:
+        new_slug = "%s-%s" % (slug, qs.first().id)
+        return create_slug(instance, new_slug=new_slug)
+    return slug
+
+
+def post_save_blog_receiver(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        instance.slug = create_slug(instance)
+
+
+pre_save.connect(post_save_blog_receiver, sender=Blog)
 
 
 class BlogComment(models.Model):
