@@ -7,6 +7,7 @@ class BlogForm(forms.ModelForm):
         model = Blog
         fields = (
             'title',
+            'category',
             'content',
             'thumbnail',
 
@@ -24,8 +25,9 @@ class BlogForm(forms.ModelForm):
 
         self.fields['title'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            placeholder = placeholders[field]
-            self.fields[field].widget.attrs['placeholder'] = placeholder
+            if field != 'category':
+                placeholder = placeholders[field]
+                self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'mont_r'
             self.fields[field].label = False
 
