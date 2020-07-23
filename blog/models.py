@@ -2,6 +2,8 @@ from django.db import models
 from django.db.models.signals import pre_save
 from profiles.models import User
 from django.shortcuts import reverse
+from ckeditor.fields import RichTextField
+
 
 from django.utils.text import slugify
 
@@ -17,9 +19,8 @@ class Category(models.Model):
 
 class Blog(models.Model):
     title = models.CharField(max_length=100)
-    category = models.ForeignKey(
-        'Category', null=True, on_delete=models.SET_NULL)
-    content = models.TextField()
+    category = models.CharField(max_length=100, default='cats')
+    content = RichTextField(blank=True, null=True)
     thumbnail = models.ImageField()
     publish_date = models.DateTimeField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)

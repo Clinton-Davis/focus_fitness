@@ -30,5 +30,5 @@ class UserProfileAddressForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = ' aw bg-black-a'
+            self.fields[field].widget.attrs['class'] = ' aw '
             self.fields[field].label = False

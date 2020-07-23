@@ -17,16 +17,16 @@
         <div class="col-lg-12">
 
             <!-- Title -->
-            <h1 class="mt-4 aw"> {{ object.title|title }}</h1>
+            <h1 class="mt-4 aw"> {{ blog.title|title }}</h1>
 
             <!-- Author -->
             <p class="lead">
-                by: {{ object.author|title }}
+                by: {{ blog.author|title }}
 
                 {% if  user.is_authenticated and user == blog.author %}
-                <span><a class="font-small ml-3 mb-0 text-grn" href="{{ object.get_update_url }}"> (Edit)</a></span>
+                <span><a class="font-small ml-3 mb-0 text-grn" href="{{ blog.get_update_url }}"> (Edit)</a></span>
                 <span class="font-small mb-0 text-bk">/</span>
-                <span><a class="font-small mb-0 text-red" href="{{ object.get_delete_url }}"> (Delete)</a></span>
+                <span><a class="font-small mb-0 text-red" href="{{ blog.get_delete_url }}"> (Delete)</a></span>
 
                 {% endif %}
             </p>
@@ -34,31 +34,31 @@
             <hr>
 
             <!-- Date/Time -->
-            <span><i class=" px-2 fad fa-comments-alt"></i> {{ object.get_comment_count }}</span>
-            <span><i class="px-2 fad fa-eye"></i> {{ object.get_view_count }}</span>
-            <span><i class="px-2 fad fa-thumbs-up"></i> {{ object.get_like_count }}</span>
-            <span class="text-mute float-right">Posted: {{ object.publish_date|timesince }}</span>
+            <span><i class=" px-2 fad fa-comments-alt"></i> {{ blog.get_comment_count }}</span>
+            <span><i class="px-2 fad fa-eye"></i> {{ blog.get_view_count }}</span>
+            <span><i class="px-2 fad fa-thumbs-up"></i> {{ blog.get_like_count }}</span>
+            <span class="text-mute float-right">Posted: {{ blog.publish_date|timesince }}</span>
 
 
             <hr>
 
             <!-- Preview Image -->
-            <img class="img-fluid mx-auto rounded" src="{{ object.thumbnail.url }}" alt="">
+            <img class="img-fluid mx-auto rounded" src="{{ blog.thumbnail.url }}" alt="">
 
             <hr>
 
             <!-- Post Content -->
-            <p class="lead">{{ object.content }}</p>
+            <p class="lead">{{ blog.content|safe }}</p>
             <hr>
             <p class="">If you like the Post, give it a
-                <a class="text-muted" href="{{ object.get_like_url }}">
+                <a class="text-muted" href="{{ blog.get_like_url }}">
                     <i class="pl-2 fad fa-thumbs-up fa-lg"></i>
-                    {{ object.get_like_count }}
+                    {{ blog.get_like_count }}
                 </a>
 
             </p>
             <hr>
-            <small class="text-muted">First Posted on the {{ object.publish_date}}</small>
+            <small class="text-muted">First Posted on the {{ blog.publish_date}}</small>
             <hr>
             <!-- Comments Form -->
 
@@ -77,7 +77,7 @@
             <a href="{% url 'account_login' %}" class=" mb-4 btn btn-warning">Login to Comment</a>
             {% endif %}
             <!-- Single Comment -->
-            {% for blogcomment in object.blogcomments %}
+            {% for blogcomment in blog.blogcomments %}
             <div class=" media mb-4">
                 <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
                 <div class="media-body">
@@ -88,15 +88,8 @@
             </div>
             <hr>
             {% endfor %}
-
         </div>
-
-        <!-- Sidebar Widgets Column -->
-
-
     </div>
-    <!-- /.row -->
-
 </div>
 <!-- /.container -->
 

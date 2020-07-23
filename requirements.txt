@@ -5,9 +5,12 @@ chardet==3.0.4
 defusedxml==0.6.0
 Django==3.0.8
 django-allauth==0.42.0
+django-autoslug==1.9.8
+django-ckeditor==5.9.0
 django-countries==6.1.2
 django-crispy-forms==1.9.1
 django-environ==0.4.5
+django-js-asset==1.2.2
 idna==2.10
 oauthlib==3.1.0
 Pillow==7.2.0

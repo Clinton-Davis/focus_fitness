@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 
     'crispy_forms',
+    'ckeditor',
 
     'home',
     'products',

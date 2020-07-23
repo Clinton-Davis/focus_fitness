@@ -6,6 +6,10 @@ html {
   overflow-x: hidden;
 }
 
+/* body {
+  font-size: 4vw;
+} */
+
 p {
   font-family: "montserrat", sans-serif;
   font-weight: 400;
@@ -183,7 +187,7 @@ p {
 
 #cart {
   position: absolute;
-  top: -0.3rem;
+  top: -2rem;
   right: 15px;
   z-index: 99;
   font-size: 1.35rem;
