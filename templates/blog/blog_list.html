@@ -11,6 +11,7 @@
             {% if request.user.is_authenticated %}
             <span class="mx-2 mb-0 text-wht">/</span>
             <a class="text-wht aw pl-2" href="{% url 'blog:create' %}">Create Blog</a>
+
             {% else %}
             {% endif %}
         </div>
@@ -19,35 +20,34 @@
 
 <!-- Page Content -->
 <div class="container-fluid blog-pic">
-
     <div class="row mx-4">
-
         <!-- Blog Entries Column -->
         <div class="col-md-8">
             <div class="overlay">
                 <h1 class="my-4 aw text-wht text-center">Featured Blogs</h1>
             </div>
-            {% for object in object_list %}
+            {% for blog in object_list %}
             <!-- Blog Post -->
-            <a href="{{ object.get_absolute_url }}" class="text-bk">
+            <a href="{{ blog.get_absolute_url }}" class="text-bk">
                 <div class="card mb-4">
-                    <img class="card-img-top" src="{{ object.thumbnail.url }}" alt="Card image cap">
+                    <img class="card-img-top" src="{{ blog.thumbnail.url }}" alt="Card image cap">
                     <div class="card-body">
-                        <h2 class="aw card-title">{{ object.title|title }}</h2>
-                        <small class="text-muted">{{ object.category }}</small>
-                        <p class="card-text">{{ object.content|truncatechars:200 }}</p>
+                        <h2 class="aw card-title">{{ blog.title|title }}</h2>
+                        <a href="{% url 'blog:category' blog.category %}"><small
+                                class="text-muted">{{ blog.category }}</small></a>
+                        <p class="card-text">{{ blog.content|truncatechars:200 }}</p>
                         <div class="row m-1">
                             <div class="col-md-4 col-sm-12"><span><i class="fad fa-eye"></i>
-                                    {{ object.get_view_count }}</span></div>
+                                    {{ blog.get_view_count }}</span></div>
                             <div class="col-md-4 col-sm-12"><span><i class="fad fa-thumbs-up"></i>
-                                    {{ object.get_like_count }}</span><br></div>
+                                    {{ blog.get_like_count }}</span><br></div>
                             <div class="col-md-4 col-sm-12"><span><i class="fad fa-comments-alt"></i>
-                                    {{ object.get_comment_count }}</span></div>
+                                    {{ blog.get_comment_count }}</span></div>
                         </div>
             </a>
         </div>
         <div class="card-footer text-muted">
-            Posted on: {{ object.publish_date}} by <strong>{{ object.author|title }}</strong>
+            Posted on: {{ blog.publish_date}} by <strong>{{ blog.author|title }}</strong>
         </div>
     </div>
     {% endfor %}
@@ -87,30 +87,16 @@
             <div class="row">
                 <div class="col-lg-6">
                     <ul class="list-unstyled mb-0">
+                        {% for blog in object_list %}
+
                         <li>
-                            <a href="#">Web Design</a>
+                            <a href="">{{blog.category}}</a>
                         </li>
-                        <li>
-                            <a href="#">HTML</a>
-                        </li>
-                        <li>
-                            <a href="#">Freebies</a>
-                        </li>
+                        {% endfor %}
+
                     </ul>
                 </div>
-                <div class="col-lg-6">
-                    <ul class="list-unstyled mb-0">
-                        <li>
-                            <a href="#">JavaScript</a>
-                        </li>
-                        <li>
-                            <a href="#">CSS</a>
-                        </li>
-                        <li>
-                            <a href="#">Tutorials</a>
-                        </li>
-                    </ul>
-                </div>
+
             </div>
         </div>
     </div>

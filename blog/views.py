@@ -1,13 +1,23 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.models import User
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Blog, BlogComment, BlogView, Like
+from .models import Blog, BlogComment, BlogView, Like, Category
 from .forms import BlogForm, BlogCommentForm
 
 
 class BlogListView(ListView):
     model = Blog
     ordering = ['-publish_date']
+
+
+def CategoryView(request, category):
+    category_blogs = Blog.objects.filter(category=category)
+    context = {
+        'category': category,
+        'category_blogs': category_blogs
+    }
+
+    return render(request, 'blog/blog_categories.html', context)
 
 
 class BlogDetailView(DetailView):

@@ -17,8 +17,7 @@ class Category(models.Model):
 
 class Blog(models.Model):
     title = models.CharField(max_length=100)
-    category = models.ForeignKey(
-        'Category', null=True, on_delete=models.SET_NULL)
+    category = models.CharField(max_length=100, default='cats')
     content = models.TextField()
     thumbnail = models.ImageField()
     publish_date = models.DateTimeField(auto_now_add=True)
