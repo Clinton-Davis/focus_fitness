@@ -34,6 +34,7 @@
                     <img class="card-img-top" src="{{ object.thumbnail.url }}" alt="Card image cap">
                     <div class="card-body">
                         <h2 class="aw card-title">{{ object.title|title }}</h2>
+                        <small class="text-muted">{{ object.category }}</small>
                         <p class="card-text">{{ object.content|truncatechars:200 }}</p>
                         <div class="row m-1">
                             <div class="col-md-4 col-sm-12"><span><i class="fad fa-eye"></i>

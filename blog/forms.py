@@ -1,8 +1,11 @@
 from django import forms
-from .models import Blog, BlogComment
+from .models import Blog, BlogComment, Category
 
 
 class BlogForm(forms.ModelForm):
+    category = forms.ModelChoiceField(
+        queryset=Category.objects.all(), empty_label='Select the category')
+
     class Meta:
         model = Blog
         fields = (
@@ -16,6 +19,7 @@ class BlogForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
 
         super().__init__(*args, **kwargs)
+
         placeholders = {
             'title': 'Your Blogs Title',
             'content': 'Write your Blog in here',
@@ -24,12 +28,14 @@ class BlogForm(forms.ModelForm):
         }
 
         self.fields['title'].widget.attrs['autofocus'] = True
+
         for field in self.fields:
             if field != 'category':
                 placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'mont_r'
             self.fields[field].label = False
+        # self.fields['category'].label = 'Choise Category'
 
 
 class BlogCommentForm(forms.ModelForm):
