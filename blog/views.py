@@ -9,6 +9,12 @@ class BlogListView(ListView):
     model = Blog
     ordering = ['-publish_date']
 
+    def get_context_data(self, *args, **kwargs):
+        category_menu = Category.objects.all()
+        context = super(BlogListView, self).get_context_data(*args, **kwargs)
+        context['category_menu'] = category_menu
+        return context
+
 
 def CategoryView(request, category):
     category_blogs = Blog.objects.filter(category=category)

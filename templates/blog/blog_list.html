@@ -11,7 +11,6 @@
             {% if request.user.is_authenticated %}
             <span class="mx-2 mb-0 text-wht">/</span>
             <a class="text-wht aw pl-2" href="{% url 'blog:create' %}">Create Blog</a>
-
             {% else %}
             {% endif %}
         </div>
@@ -35,7 +34,7 @@
                         <h2 class="aw card-title">{{ blog.title|title }}</h2>
                         <a href="{% url 'blog:category' blog.category %}"><small
                                 class="text-muted">{{ blog.category }}</small></a>
-                        <p class="card-text">{{ blog.content|truncatechars:200 }}</p>
+                        <p class="card-text">{{ blog.content|safe|truncatechars:200 }}</p>
                         <div class="row m-1">
                             <div class="col-md-4 col-sm-12"><span><i class="fad fa-eye"></i>
                                     {{ blog.get_view_count }}</span></div>
@@ -87,11 +86,8 @@
             <div class="row">
                 <div class="col-lg-6">
                     <ul class="list-unstyled mb-0">
-                        {% for blog in object_list %}
-
-                        <li>
-                            <a href="">{{blog.category}}</a>
-                        </li>
+                        {% for item in category_menu %}
+                        <a class="dropdown-item aw" href="{% url 'blog:category' item %}">{{ item }}</a>
                         {% endfor %}
 
                     </ul>

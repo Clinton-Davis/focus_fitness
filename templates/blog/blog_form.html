@@ -8,6 +8,7 @@
     <h1 class="aw">{{ view_type|title }} Blog</h1>
     <form action="" method="POST" class="aw" enctype="multipart/form-data">
         {% csrf_token %}
+        {{ form.media }}
         {{ form|crispy}}
         <button type="submit" class=" mb-4 btn btn-success">{{ view_type|title }}</button>
     </form>
