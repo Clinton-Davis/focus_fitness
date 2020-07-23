@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% include "static" %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<div class="container">
+    <h1 class="aw">{{ view_type|title }} Blog</h1>
+    <form action="" method="POST" class="aw" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy}}
+        <button type="submit" class=" mb-4 btn btn-success">{{ view_type|title }}</button>
+    </form>
+</div>
+<!--If a user trys to edit or created a post with out being authenticated-->
+{% else %}
+<div id="about-pic">
+    <div class="container about">
+        <div class="overlay">
+            <div class="col p-4">
+                <h1 class="text-wht aw text-center">Please Login</h1>
+                <a class="aw btn btn-success w-100" href="{% url 'account_login' %}">Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock content %}

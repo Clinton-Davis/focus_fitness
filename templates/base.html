@@ -83,6 +83,7 @@
                         {% endif %}
                         <a class="dropdown-item" href="{% url 'profile' %}">My Profile</a>
                         <a class="dropdown-item" href="{% url 'memberships:select-membership' %}">My Memberships</a>
+                        <a class="dropdown-item" href="{% url 'blog:list' %}">Blogs</a>
 
                         <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
                         {% else %}
@@ -99,7 +100,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item " href="{% url 'about' %}">About</a>
                         <a class="dropdown-item" href="{% url 'products' %}">Shop</a>
-                        <a class="dropdown-item" href="#">Blog</a>
+                        <a class="dropdown-item" href="{% url 'blog:list' %}">Blog</a>
                         <a class="dropdown-item" href="{% url 'contact' %}">Contact Us</a>
                     </div>
                 </li>
