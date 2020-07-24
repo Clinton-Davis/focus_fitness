@@ -149,7 +149,7 @@
 
                                 {% if product.in_stock == True %}
                                 {% if product.image %}
-                                <a class="mx-auto" href="{% url 'product_detail' product.id %}">
+                                <a class="mx-auto" href="{{ product.get_absolute_url }}">
                                     <img class="mx-auto card-img-top shop-card-top-img img-fluid"
                                         src="{{ product.image.url }}" alt="{{ product.name }}">
                                 </a>
