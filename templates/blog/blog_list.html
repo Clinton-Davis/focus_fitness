@@ -25,15 +25,17 @@
             <div class="overlay">
                 <h1 class="my-4 aw text-wht text-center">Featured Blogs</h1>
             </div>
+
             {% for blog in object_list %}
+            {% if blog.featured == True %}
             <!-- Blog Post -->
             <a href="{{ blog.get_absolute_url }}" class="text-bk">
                 <div class="card mb-4">
                     <img class="card-img-top" src="{{ blog.thumbnail.url }}" alt="Card image cap">
                     <div class="card-body">
-                        <h2 class="aw card-title">{{ blog.title|title }}</h2>
-                        <a href="{% url 'blog:category' blog.category %}"><small
-                                class="text-muted">{{ blog.category }}</small></a>
+                        <h2 class="aw text-center card-title">{{ blog.title|title }}</h2>
+                        <a href="{% url 'blog:category' blog.category %}"><small class="text-muted">Category:
+                                {{ blog.category }}</small></a>
                         <p class="card-text">{{ blog.content|safe|truncatechars:200 }}</p>
                         <div class="row m-1">
                             <div class="col-md-4 col-sm-12"><span><i class="fad fa-eye"></i>
@@ -49,6 +51,7 @@
             Posted on: {{ blog.publish_date}} by <strong>{{ blog.author|title }}</strong>
         </div>
     </div>
+    {% endif %}
     {% endfor %}
     <!-- 
     <!-- Pagination -->
@@ -96,24 +99,25 @@
             </div>
         </div>
     </div>
-
+    {% for blog in object_list %}
+    {% if blog.featured != True %}
     <!-- Side Widget -->
-    <div class="card my-4 bg-trans">
-        <div class="overlay">
-            <h5 class="aw card-header text-wht text-center">All Blogs</h5>
+    <div class="card my-4 ">
+        <h5 class="aw card-header text-bk text-center">All Blogs</h5>
+        <div class="card-body ">
+            <a class="text-bk" href="{{ object.get_absolute_url }}">
+                <h5 class="aw text-center ">{{ blog.title|title }}</h5>
+                <a href="{% url 'blog:category' blog.category %}"><small class="text-muted">Category:
+                        {{ blog.category }}</small></a>
+                <p class="text-bk">{{ blog.content|truncatechars:50 }}</p>
+            </a>
         </div>
-        {% for object in object_list %}
-        <div class="overlay">
-            <div class="card-body ">
-                <a href="{{ object.get_absolute_url }}">
-                    <h5 class="aw text-center text-wht">{{ object.title }}</h5>
-                    <p class="text-wht">{{ object.content|truncatechars:50 }}</p>
-                </a>
-            </div>
-        </div>
-        {% endfor %}
+    </div>
+</div>
+{% endif %}
+{% endfor %}
 
-    </div> -->
+</div> -->
 
 </div>
 <!-- /.row -->
