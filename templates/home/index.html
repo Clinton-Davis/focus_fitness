@@ -125,8 +125,8 @@
                 <p class="aw card-text text-center"><strong>${{ items.price }}</strong></p>
             </div>
             <div class=" text-center">
-                <a class="ripple-surface w-100 btn btn-success btn-lg aw text-wht border border-secondary bs-2" href="#"
-                    role="button">Select</a>
+                <a class="ripple-surface w-100 btn btn-success btn-lg aw text-wht border border-secondary bs-2"
+                    href="{% url 'product_detail' items.id %}" role="button">Select</a>
             </div>
         </div>
         {% endfor %}
