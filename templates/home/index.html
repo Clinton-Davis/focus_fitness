@@ -10,8 +10,8 @@
 
         </div>
     </div>
+    <p class="aw text-wht">{{ object_list }}</p>
 </div>
-{{ shop_items }}
 <section id="section1">
     <div id="section1-pic">
         <div class="spaces-1"></div>
@@ -115,45 +115,22 @@
     </div>
     <!--Product Cards-->
     <div class="card-deck">
+
+        {% for items in sale_items %}
         <div class="card bs-5">
-            <img src="{% static 'images\protien.jpg' %}" class="card-img-top card-item-size mt-2" alt="...">
+            <img src="{{ item.image.url }}" class="card-img-top card-item-size mt-2" alt="...">
             <div class="card-body">
-                <h5 class="card-title aw text-center">Card title</h5>
-                <p class="card-text text-center">A powerful Whey Protein Isolate post-workout to
-                    supercharge muscle growth and recovery in the golden hour after training</p>
-                <p class="aw card-text text-center"><strong>$29.95</strong></p>
+                <h5 class="card-title aw text-center">{{ items.name }}</h5>
+
+                <p class="aw card-text text-center"><strong>${{ items.price }}</strong></p>
             </div>
             <div class=" text-center">
-                <a class="ripple-surface w-100 btn btn-success btn-lg aw text-wht border border-secondary bs-2" href="#"
-                    role="button">Select</a>
+                <a class="ripple-surface w-100 btn btn-success btn-lg aw text-wht border border-secondary bs-2"
+                    href="{% url 'product_detail' items.id %}" role="button">Select</a>
             </div>
         </div>
-        <div class="card bs-5">
-            <img src="{% static 'images\creatine.jpg' %}" class="card-img-top card-item-size mt-2" alt="...">
-            <div class="card-body">
-                <h5 class="card-title aw text-center">C-HCl CREATINE</h5>
-                <p class="card-text text-center">Patented Creatine HCL
-                    The ONLY Patented Creatine HCL!</p>
-                <p class="aw card-text text-center"><strong>$15.95</strong></p>
-            </div>
-            <div class=" text-center">
-                <a class="ripple-surface w-100 btn btn-success btn-lg aw text-wht border border-secondary bs-2" href="#"
-                    role="button">Select</a>
-            </div>
-        </div>
-        <div class="card bs-5">
-            <img src="{% static 'images/bcaa.jpg' %}" class="card-img-top card-item-size mt-2" alt="..."></>
-            <div class="card-body">
-                <h5 class="card-title aw text-center">LeanBCAA Fat Burner</h5>
-                <p class="card-text text-center">BCAA Powder</p>
-                <p class="aw card-text text-center"><strong>$29.95</strong></p>
-            </div>
-            <div class=" text-center">
-                <a class="ripple-surface w-100 btn btn-success btn-lg aw text-wht border border-secondary bs-2" href="#"
-                    role="button">Select
-                </a>
-            </div>
-        </div>
+        {% endfor %}
+
     </div>
 
     <!-- <div class="container">
@@ -206,42 +183,23 @@
             <h2 class="aw active-size text-center text-wht overlay mt-5 pt-4 pb-4">Feature Blogs</h2>
 
             <div class="row">
-                <!--{for loop here}-->
+                {% for blog in feature_blog %}
                 <div class="col-md-4 col-12 ">
                     <div class="card ">
-                        <img src="{% static 'images\big-man.jpg' %}" class="card-img-top mt-3 card-item-size" alt="...">
+                        <img src="{{ blog.thumbnail.url }}" class="card-img-top mt-3 card-item-size" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title aw text-center">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk of the card's content.</p>
-                            <a href="#" class="ripple-surface w-100 aw btn btn-primary">Read more..</a>
+                            <h5 class="card-title aw text-center">{{ blog.title|title }}</h5>
+                            <a href="{% url 'blog:category' blog.category %}"><small
+                                    class="text-muted">{{ blog.category }}</small></a>
+                            <p class="card-text">{{ blog.content|safe|truncatechars:200 }}</p>
+                            <a href="{{ blog.get_absolute_url }}" class="ripple-surface w-100 aw btn btn-primary">Read
+                                more..</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-12 ">
-                    <div class="card">
-                        <img src="{% static 'images\ladypress.jpg' %}" class="card-img-top mt-3 card-item-size"
-                            alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title aw text-center">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk of the card's content.</p>
-                            <a href="#" class="ripple-surface w-100 aw btn btn-primary">Read more..</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-12">
-                    <div class="card">
-                        <img src="{% static 'images\alora-griffiths-lady-pull.jpg' %}"
-                            class="card-img-top mt-3 card-item-size" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title aw text-center">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the
-                                bulk of the card's content.</p>
-                            <a href="#" class="ripple-surface w-100 aw btn btn-primary">Read more..</a>
-                        </div>
-                    </div>
-                </div>
+
+                {% endfor %}
+
             </div>
         </div>
         <div class="spaces-2"></div>

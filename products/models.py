@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import reverse
 
 
 class Category(models.Model):
@@ -27,6 +28,10 @@ class Product(models.Model):
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     in_stock = models.BooleanField(default=True)
+    on_sale = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
+
+    # def get_absolute_url(self):
+    #     return reverse('products/products_detail.html', kwargs={'product.id': self.id})

@@ -5,18 +5,18 @@ from django.shortcuts import reverse, render
 from django.views import generic
 from .forms import ContactForm
 from products.models import Product
+from blog.models import Blog
 from django.views.generic import TemplateView
 
 
-class IndexView(TemplateView):
-    template_name = "home/index.html"
-# categories = Category.objects.filter(name__in=categories)
+def IndexView(request):
+    feature_blog = Blog.objects.filter(featured=True)
+    sale_items = Product.objects.filter(on_sale=True)
 
-    def get_context_data(self, *args, **kwargs):
-        shop_items = Product.objects.all()
-        context = super(IndexView, self).get_context_data(*args, **kwargs)
-        context['shop_items'] = shop_items
-        return context
+    context = {
+        'feature_blog': feature_blog,
+        'sale_items':  sale_items}
+    return render(request, "home/index.html", context)
 
 
 class AboutView(TemplateView):

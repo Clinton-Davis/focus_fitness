@@ -3,14 +3,10 @@ from .models import Product, Category
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = (
-        'name',
-        'category',
-        'price',
-        'rating',
-        'image',
-        'in_stock',
-    )
+    list_display = ('name', 'in_stock', 'on_sale', 'category',
+                    'price', 'rating', 'image',)
+
+    list_editable = ('in_stock', 'on_sale', 'price',)
 
 
 class CategoryAdmin(admin.ModelAdmin):
