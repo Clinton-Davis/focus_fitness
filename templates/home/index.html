@@ -117,8 +117,8 @@
     <div class="card-deck">
 
         {% for items in sale_items %}
-        <div class="card bs-5">
-            <img src="{{ item.image.url }}" class="card-img-top card-item-size mt-2" alt="...">
+        <div class="card bs-5" style="width: 18rem;">
+            <img src="{{ items.image.url }}" class="card-img-top card-item-size mt-2" alt="...">
             <div class="card-body">
                 <h5 class="card-title aw text-center">{{ items.name }}</h5>
 
