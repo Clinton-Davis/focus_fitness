@@ -29,7 +29,7 @@ class Blog(models.Model):
     featured = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.title + ' | ' + str(self.author)
+        return self.title
 
     def get_absolute_url(self):
         return reverse('blog:details', kwargs={'slug': self.slug})
