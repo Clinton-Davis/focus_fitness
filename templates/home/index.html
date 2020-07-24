@@ -11,7 +11,7 @@
         </div>
     </div>
 </div>
-
+{{ shop_items }}
 <section id="section1">
     <div id="section1-pic">
         <div class="spaces-1"></div>
@@ -36,11 +36,11 @@
                 </div>
                 <div class="col-md-3 col-6 d-flex d-flex justify-content-center no-gutters">
                     <a class="ripple-surface hero-btn btn btn-warning btn-lg aw text-wht m-1 border border-white"
-                        href="#" role="button">Blog</a>
+                        href="{% url 'blog:list' %}" role="button">Blog</a>
                 </div>
                 <div class="col-md-3 col-6 d-flex d-flex justify-content-center no-gutters">
                     <a class="ripple-surface hero-btn btn btn-success btn-lg aw text-wht m-1 border border-white"
-                        href="#" role="button">Login</a>
+                        href="{% url 'account_login' %}" role="button">Login</a>
                 </div>
             </div>
         </div>

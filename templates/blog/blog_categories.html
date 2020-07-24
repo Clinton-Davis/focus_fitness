@@ -2,6 +2,15 @@
 
 
 {% block content %}
+<div class="container-fluid bg-black">
+    <div class="row">
+        <div class="col-md-12 mb-0">
+            <a class="text-wht aw pl-2" href="{% url 'blog:list' %}">Blogs</a>
+            <span class="mx-2 mb-0 text-wht">/</span>
+            <strong class="text-wht aw">Blog</strong>
+        </div>
+    </div>
+</div>
 {% if category_blogs %}
 <div class="container-fluid blog-pic">
     <div class="row mx-4">
