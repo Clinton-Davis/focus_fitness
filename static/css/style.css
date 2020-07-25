@@ -6,9 +6,13 @@ html {
   overflow-x: hidden;
 }
 
-/* body {
-  font-size: 4vw;
-} */
+body {
+  margin-top: 6rem;
+}
+
+.crumbs {
+  margin-top: 6rem;
+}
 
 p {
   font-family: "montserrat", sans-serif;
@@ -186,10 +190,10 @@ p {
 }
 
 #cart {
-  position: absolute;
-  top: -2rem;
-  right: 15px;
-  z-index: 99;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  z-index: 999999;
   font-size: 1.35rem;
 }
 

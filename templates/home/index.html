@@ -3,14 +3,14 @@
 
 
 {% block content %}
-<div class="container-fluid bg-black">
+<div class="container-fluid bg-black fixed-top crumbs">
     <div class="row">
         <div class="col-md-12 mb-0">
             <a class="text-wht aw pl-2 ripple-surface" href="{% url 'home' %}">Home</a>
 
         </div>
     </div>
-    <p class="aw text-wht">{{ object_list }}</p>
+
 </div>
 <section id="section1">
     <div id="section1-pic">
@@ -113,94 +113,75 @@
         <h2 class="aw active-size text-center">SPECIAL OFFERS</h2>
         <h4 class="aw text-center mb-5">Look your Best and Feel even Better</h4>
     </div>
-    <!--Product Cards-->
-    <div class="card-deck">
 
+    <div class="row ">
         {% for items in sale_items %}
-        <div class="card bs-5" style="width: 18rem;">
-            <img src="{{ items.image.url }}" class="card-img-top card-item-size mt-2" alt="...">
-            <div class="card-body">
-                <h5 class="card-title aw text-center">{{ items.name }}</h5>
-
-                <p class="aw card-text text-center"><strong>${{ items.price }}</strong></p>
-            </div>
-            <div class=" text-center">
-                <a class="ripple-surface w-100 btn btn-success btn-lg aw text-wht border border-secondary bs-2"
-                    href="{% url 'product_detail' items.id %}" role="button">Select</a>
+        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="card w-100 h-100 border-1">
+                <a class="mx-auto" href="{% url 'product_detail' items.id %}">
+                    <img class="mx-auto card-img-top shop-card-top-img img-fluid" src="{{ items.image.url }}"
+                        alt="{{ items.name }}">
+                </a>
+                <div class="card-body pb-0">
+                    <p class="aw text-center">{{ items.name }}</p>
+                </div>
+                <div class="card-footer bg-white pt-0 border-0 text-center">
+                    <div class="row ">
+                        <div class="col">
+                            <p class="lead mb-0  aw">${{ items.price }}</p>
+                            {% if items.rating %}
+                            <i class="fad fa-star mr-1"></i>
+                            <small class="text-muted">{{ items.rating }}</small>
+                            {% else %}
+                            <small class="text-muted">No rating</small>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         {% endfor %}
-
     </div>
 
-    <!-- <div class="container">
-        <div class="row mb-5">
-
-            <div class="col-lg-4 col-md-6 mb-4">
-                <figure class="block-4-image">
-                    <a href=""><img class="img-fluid" src="{% static 'images\bcaa.jpg' %}" alt=""></a>
-                </figure>
-                <div class="block-4-text p-4">
-                    <a href="">
-                        <h3>Product <title></title>
-                        </h3>
-                    </a>
-                    <p class="mb-0 text-bk">product.description</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <figure class="block-4-image mx-auto">
-                    <a href=""><img class="img-fluid" src="{% static 'images\creatine.jpg' %}" alt=""></a>
-                </figure>
-                <div class="block-4-text text-center p-4">
-                    <a href="">
-                        <h3>Product <title></title>
-                        </h3>
-                    </a>
-                    <p class="mb-0 text-bk">product.description</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <figure class="block-4-image">
-                    <a href=""><img class="img-fluid" src="{% static 'images\protien.jpg' %}" alt=""></a>
-                </figure>
-                <div class="block-4-text p-4">
-                    <a href="">
-                        <h3>Product <title></title>
-                        </h3>
-                    </a>
-                    <p class="mb-0 text-bk">product.description</p>
-                </div>
-            </div> -->
-    <!--  {% for product in object_list %}  {% endfor %} -->
-    </div>
-    </div>
 </section>
 <section id="section3">
     <!--BLOG-->
     <div class="blog-image">
         <div class="container">
             <h2 class="aw active-size text-center text-wht overlay mt-5 pt-4 pb-4">Feature Blogs</h2>
-
-            <div class="row">
+            <div class="row ">
                 {% for blog in feature_blog %}
-                <div class="col-md-4 col-12 ">
-                    <div class="card ">
-                        <img src="{{ blog.thumbnail.url }}" class="card-img-top mt-3 card-item-size" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title aw text-center">{{ blog.title|title }}</h5>
-                            <a href="{% url 'blog:category' blog.category %}"><small
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                    <div class="card w-100 h-100 border-1 ">
+                        <a class="mx-auto" href="{{ blog.get_absolute_url }}">
+                            <img class="mx-auto card-img-top  img-fluid" src="{{ blog.thumbnail.url }}"
+                                alt="{{ blog.title|title }}">
+                        </a>
+                        <div class="card-body pb-0">
+                            <p class="aw text-center">{{ blog.title|title }}</p>
+                            <a href="{{ blog.get_absolute_url }}"><small
                                     class="text-muted">{{ blog.category }}</small></a>
-                            <p class="card-text">{{ blog.content|safe|truncatechars:200 }}</p>
-                            <a href="{{ blog.get_absolute_url }}" class="ripple-surface w-100 aw btn btn-primary">Read
-                                more..</a>
+                        </div>
+                        <div class="card-footer bg-white pt-0 border-0 rounded-10 text-center">
+                            <div class="row ">
+                                <div class="col">
+                                    <p class=" mb-0  aw">{{ blog.content|safe|truncatechars:200 }}</p>
+
+                                    <i class="fad fa-star mr-1"></i>
+                                    <small class="text-muted">{{ items.rating }}</small>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
                 {% endfor %}
-
             </div>
+
+
+
+
+
+
         </div>
         <div class="spaces-2"></div>
     </div>

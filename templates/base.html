@@ -57,7 +57,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <a href="{% url 'home' %}" class="nav-link main-logo-link">
             <img id="design2" src="{% static 'images/logo.png' %}" alt="" />
         </a>
@@ -122,16 +122,15 @@
 
                 <div id="cart" class="mr-md-4">
                     <a href="{% url 'cart_view' %}" class="site-cart ">
+                        <span><i class="fad fa-shopping-cart text-wht"></i></span>
 
                         <span class="{% if grand_total %} text-grn {% else %} text-wht {% endif %}aw text-wht">
                             {% if grand_total %}
                             ${{ grand_total|floatformat:2 }}
                             {% else %}
-                            $0.00
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             {% endif %}
                         </span>
-                        <span><i
-                                class="fad fa-shopping-cart text-wht {% if grand_total %} fa-lg {% else %}  {% endif %}"></i></span>
                     </a>
                 </div>
 
