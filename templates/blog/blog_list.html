@@ -99,25 +99,26 @@
             </div>
         </div>
     </div>
-    {% for blog in object_list %}
-    {% if blog.featured != True %}
     <!-- Side Widget -->
     <div class="card my-4 ">
         <h5 class="aw card-header text-bk text-center">All Blogs</h5>
+        {% for blog in object_list %}
+        {% if blog.featured != True %}
         <div class="card-body ">
             <a class="text-bk" href="{{ object.get_absolute_url }}">
                 <h5 class="aw text-center ">{{ blog.title|title }}</h5>
                 <a href="{% url 'blog:category' blog.category %}"><small class="text-muted">Category:
                         {{ blog.category }}</small></a>
-                <p class="text-bk">{{ blog.content|truncatechars:50 }}</p>
+                <p class="text-bk">{{ blog.content|safe|truncatechars:50 }}</p>
             </a>
         </div>
+        <hr>
+        {% endif %}
+        {% endfor %}
     </div>
 </div>
-{% endif %}
-{% endfor %}
 
-</div> -->
+
 
 </div>
 <!-- /.row -->
