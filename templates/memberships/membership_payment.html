@@ -3,6 +3,8 @@
 
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/members_checkout.css' %}">
+
 <div class="container-fluid bg-black fixed-top crumbs">
     <div class="row">
         <div class="col-md-12 mb-0">
@@ -26,7 +28,7 @@
             </p>
         </div>
 
-        <button onclick="toggleDisplay();" class="btn btn-warning" style="width: 100%;">Checkout with a credit
+        <button onclick="toggleDisplay();" class="btn btn-warning w-50" style="width: 100%;">Checkout with a credit
             card</button>
 
         <div id="collapseStripe" class="wrapper">
@@ -79,9 +81,7 @@
     <!-- script for the stripe form -->
     <script src="{% static 'js/checkout.js' %}"></script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
+
 
     <script src="https://js.braintreegateway.com/web/dropin/1.13.0/js/dropin.min.js"></script>
     <script>

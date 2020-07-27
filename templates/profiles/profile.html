@@ -21,18 +21,25 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-12  bg-black-a rounded-15">
+                <div class="col-md-3 col-12  bg-black-a rounded-15">
                     <a href="{% url 'profile_details' %}">
                         <h5 class="aw text-wht text-center">Shipping Details &<br>Order History</h5>
                     </a>
                     <div class="profile-overlay">
                     </div>
                 </div>
-                <div class="col-md-4 col-12  bg-black-a rounded-15">
+                <div class="col-md-3 col-12  bg-black-a rounded-15  align-items-center">
+                    <h5 class="aw text-wht text-center">Subscriptions</h5>
+                    <a href="{% url 'profile_subscriptions' %}">
+                        <p class="aw text-wht text-center">{{ user_membership.membership.membership_type }}</p>
+                    </a>
+                    <div class="profile-overlay"></div>
+                </div>
+                <div class="col-md-3 col-12  bg-black-a rounded-15">
                     <h5 class="aw text-wht text-center">Favour Blogs</h5>
                     <div class="profile-overlay"></div>
                 </div>
-                <div class="col-md-4 col-12  bg-black-a rounded-15">
+                <div class="col-md-3 col-12  bg-black-a rounded-15">
                     <h5 class="aw text-wht text-center">My Blogs</h5>
                     <div class="profile-overlay"></div>
                 </div>

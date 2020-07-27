@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -72,15 +72,91 @@ class MembershipSelectView(ListView):
         return HttpResponseRedirect(reverse('memberships:payment'))
 
 
-def PaymentView(request):
+def paymentview(request):
     """Provide user with payment form and payment"""
     user_membership = get_user_membership(request)
+    try:
+        selected_membership = get_selected_membership(request)
+    except:
+        return redirect(reverse("memberships:select"))
 
-    selected_membership = get_selected_membership(request)
     publicKey = settings.STRIPE_PUBLIC_KEY
+
+    if request.method == "POST":
+        try:
+            token = request.POST['stripeToken']
+
+            customer = stripe.Customer.retrieve(
+                user_membership.stripe_customer_id)
+            customer.source = token  # 4242424242424242
+            customer.save()
+
+            subscription = stripe.Subscription.create(
+                customer=user_membership.stripe_customer_id,
+                items=[
+                    {
+                        "plan": selected_membership.stripe_plan_id,
+                    },
+                ]
+
+            )
+
+            return redirect(reverse("memberships:update-transactions",
+                                    kwargs={'subscription_id': subscription.id}))
+
+        except:
+            messages.info(
+                request, "An error has occurred, investigate it in the console")
 
     context = {
         'publicKey': publicKey,
         'selected_membership': selected_membership
     }
     return render(request, 'memberships/membership_payment.html', context)
+
+
+def updatetransaction(request, subscription_id):
+    """ Updating the UserMembership model on focus backend """
+    user_membership = get_user_membership(request)
+    selected_membership = get_selected_membership(request)
+
+    user_membership.membership = selected_membership
+    user_membership.save()
+
+    sub, created = Subscription.objects.get_or_create(
+        user_membership=user_membership)
+    sub.stripe_subscription_id = subscription_id
+    sub.active = True
+    sub.save()
+
+    try:
+        del request.session['selected_membership_type']
+    except:
+        pass
+    messages.info(request, 'Successfully created {} membership'.format(
+        selected_membership))
+    return redirect('/programs')
+
+
+def cancelsubscription(request):
+    user_sub = get_user_subscription(request)
+
+    if user_sub.active == False:
+        message.infor(request, "You dont have a active membership")
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    sub = stripe.Subscription.retrieve(user_sub.stripe_subscription_id)
+    sub.delete()
+
+    user_sub.active = False
+    user_sub.save()
+
+    free_membership = Membership.objects.filter(membership_type='Free').first()
+    user_membership = get_user_membership(request)
+    user_membership.membership = free_membership
+    user_membership.save()
+
+    messages.info(
+        request, "Successfully cancelled membership, A email has been sent.")
+    # sending a emial here
+
+    return redirect('/memberships')

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div class="container-fluid bg-black fixed-top crumbs">
+    <div class="row">
+        <div class="col-md-12 mb-0">
+            <a class="text-wht aw pl-2" href="{% url 'home' %}">Home</a>
+            <span class="mx-2 mb-0 text-wht">/</span>
+            <strong class="text-wht aw">Dashboard</strong>
+        </div>
+    </div>
+</div>
+<div id="profile-pic">
+    <div class="container profile">
+        <div class="profile-overlay">
+            <div class="col p-4">
+                <h4 class="text-wht aw display-4 text-center"> {{ user.username|title }}'s Subscriptions</h4>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center h-100">
+
+                <div class="col-md-6 col-12  bg-black-a rounded-15  align-items-center">
+                    {% if user_subscription != None %}
+                    <p class="text-wht">Current Membership: {{ user_membership.membership.membership_type }}</p>
+                    <p class="text-wht">Member since: {{ user_subscription.get_created_date }}</p>
+
+                    {% if user_subscription.active != False %}
+                    <p class="text-wht">Next payment due: {{ user_subscription.get_next_billing_date }}</p>
+                    <a href="{% url 'memberships:cancel' %}">Cancel Subscription</a>
+                    {% else %}
+
+                    <p class="text-wht">You don't have a membership Plan, Check them out
+                        <a href="{% url 'memberships:select-membership' %}">here.</a>
+                    </p>
+                    {% endif %}
+
+
+                    <div class="profile-overlay"></div>
+                    {% endif %}
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

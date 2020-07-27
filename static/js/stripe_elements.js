@@ -46,7 +46,7 @@ card.addEventListener('change', function (event) {
 });
 
 // Handle form submit
-var form = document.getElementById('payment-form');
+var form = document.getElementById('shop_payment-form');
 
 form.addEventListener('submit', function (ev) {
     ev.preventDefault();
@@ -54,7 +54,7 @@ form.addEventListener('submit', function (ev) {
         'disabled': true
     });
     $('#submit-button').attr('disabled', true);
-    $('#payment-form').fadeToggle(100);
+    $('#shop_payment-form').fadeToggle(100);
     $('#loading-overlay').fadeToggle(100);
 
     var saveInfo = Boolean($('#id-save-info').attr('checked'));
@@ -105,7 +105,7 @@ form.addEventListener('submit', function (ev) {
                         </span>
                         <span>${result.error.message}</span>`;
                 $(errorDiv).html(html);
-                $('#payment-form').fadeToggle(100);
+                $('#shop_payment-form').fadeToggle(100);
                 $('#loading-overlay').fadeToggle(100);
                 card.update({
                     'disabled': false

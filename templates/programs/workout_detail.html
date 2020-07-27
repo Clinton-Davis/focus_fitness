@@ -16,11 +16,18 @@
     <div class="container profile">
         <div class="profile-overlay">
             <div class="col p-4">
-                <h4 class="text-wht aw display-4 text-center">Worktout Details View</h4>
+                <h4 class="text-wht aw display-4 text-center">{{ object.title }}</h4>
 
                 {% if object is not None %}
                 <p class="aw text-wht">{{ object.title }}</p>
                 <p class="aw text-wht">{{ object.description }}</p>
+
+                <video width="320" height="240" autoplay controls>
+                    <source src="{{ object.video_url }}" type="video/mp4">
+
+
+
+                </video>
                 {% else %}
                 <h3 class="aw text-wht">Upgrade membership</h3>
 
@@ -28,7 +35,7 @@
 
 
             </div>
-        </div>f
+        </div>
     </div>
 </div>
 {% endblock content %}
