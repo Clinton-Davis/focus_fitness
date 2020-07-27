@@ -85,21 +85,11 @@ def paymentview(request):
     if request.method == "POST":
         try:
             token = request.POST['stripeToken']
-            # UPDATE FOR STRIPE API CHANGE 2018-05-21
-
-            '''
-            First we need to add the source for the customer
-            '''
 
             customer = stripe.Customer.retrieve(
                 user_membership.stripe_customer_id)
             customer.source = token  # 4242424242424242
             customer.save()
-
-            '''
-            Now we can create the subscription using only the customer as we don't need to pass their
-            credit card source anymore
-            '''
 
             subscription = stripe.Subscription.create(
                 customer=user_membership.stripe_customer_id,
@@ -146,3 +136,27 @@ def updatetransaction(request, subscription_id):
     messages.info(request, 'Successfully created {} membership'.format(
         selected_membership))
     return redirect('/programs')
+
+
+def cancelsubscription(request):
+    user_sub = get_user_subscription(request)
+
+    if user_sub.active == False:
+        message.infor(request, "You dont have a active membership")
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    sub = stripe.Subscription.retrieve(user_sub.stripe_subscription_id)
+    sub.delete()
+
+    user_sub.active = False
+    user_sub.save()
+
+    free_membership = Membership.objects.filter(membership_type='Free').first()
+    user_membership = get_user_membership(request)
+    user_membership.membership = free_membership
+    user_membership.save()
+
+    messages.info(
+        request, "Successfully cancelled membership, A email has been sent.")
+    # sending a emial here
+
+    return redirect('/memberships')
