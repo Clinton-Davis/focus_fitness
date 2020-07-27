@@ -5,14 +5,40 @@ from django.contrib import messages
 from .models import UserProfile
 from checkout.models import Order
 from .forms import UserProfileAddressForm
+from memberships.views import (
+    get_user_membership,
+    get_selected_membership,
+    get_user_subscription
+)
 
 
 def profile(request):
     profile = get_object_or_404(UserProfile, user=request.user)
     """Displaying user Profile """
+    user_membership = get_user_membership(request)
+    user_subscription = get_user_subscription(request)
+
     template = 'profiles/profile.html'
     context = {
         'profile': profile,
+        'user_membership': user_membership,
+        'user_subscription': user_subscription
+    }
+
+    return render(request, template, context)
+
+
+def profile_subscriptions(request):
+    profile = get_object_or_404(UserProfile, user=request.user)
+    """Displaying user Profile """
+    user_membership = get_user_membership(request)
+    user_subscription = get_user_subscription(request)
+
+    template = 'profiles/profile_subscriptions.html'
+    context = {
+        'profile': profile,
+        'user_membership': user_membership,
+        'user_subscription': user_subscription
     }
 
     return render(request, template, context)
