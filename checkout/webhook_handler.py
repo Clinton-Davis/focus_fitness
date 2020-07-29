@@ -8,6 +8,8 @@ from .models import Order, OrderLineItem
 from products.models import Product
 from profiles.models import UserProfile
 
+from memberships.views import cancelsubscription
+
 import json
 import time
 
@@ -18,21 +20,28 @@ class StripeWH_Handler:
 
         self.request = request
 
-    def _send_invoice_email(self, intent):
-
+    def _send_invoice_paid_email(self, intent):
+        """ Sends a finalized invoice email when subscritpion is fully paid. """
         customer_email = intent.customer_email
         period_start = datetime.fromtimestamp(intent.period_start)
-        period_end = datetime.fromtimestamp(intent.period_end)
         amount_paid = intent.amount_paid / 100
+        invoice_pdf = intent.invoice_pdf
+        hosted_invoice_url = intent.hosted_invoice_url
         subject = render_to_string(
             'checkout/confirmation_emails/finalized_invoice_subject.txt',
-            {'intent': intent}
+            {'intent': intent,
+             'customer_email': customer_email,
+             }
         )
-
         body = render_to_string(
             'checkout/confirmation_emails/finalized_invoice_body.txt',
-            {'intent': intent,
-             }
+            {
+                'customer_email': customer_email,
+                'period_start': period_start,
+                'period_end': period_end,
+                'amount_paid': amount_paid,
+                'invoice_pdf': invoice_pdf,
+                'hosted_invoice_url': hosted_invoice_url, }
         )
         send_mail(
             subject,
@@ -191,20 +200,14 @@ class StripeWH_Handler:
             status=200
         )
 
-    def handle_invoice_finalized(self, event):
-        """Handeling the invoice """
-        intent = event.data.object
+    def handle_invoice_paid(self, event):
+        """Calls the Invoice Paid send email fuction """
 
-        # print(intent.account_name)
-        # print(intent.amount_paid)
-        # print(intent.currency)
-        # print(intent.hosted_invoice_url)
-        # print(intent.invoice_pdf)
-        # print(period_start)
-        # print(period_end)
-        self._send_invoice_email(intent)
+        intent = event.data.object
+        self._send_invoice_paid_email(intent)
+
         return HttpResponse(
-            content=f'Webhook invoice finalized revieved: {event["type"]}',
+            content=f'Webhook invoice paid revieved: {event["type"]}',
             status=200
         )
 
@@ -218,6 +221,7 @@ class StripeWH_Handler:
 
     def handle_subscription_deleted(self, event):
         """ Handles  subscription deleting events"""
+        intent = event.data.object
 
         return HttpResponse(
             content=f'Webhook subscription deleted revieved: {event["type"]}',

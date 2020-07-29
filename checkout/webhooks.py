@@ -45,7 +45,7 @@ def webhook(request):
         'customer.subscription.created': handler.handle_subscription_created,
         'customer.subscription.deleted': handler.handle_subscription_deleted,
         'customer.subscription.updated': handler.handle_subscription_updated,
-        'invoice.finalized':  handler.handle_invoice_finalized,
+        'invoice.paid':  handler.handle_invoice_paid,
     }
     # Get the webhook type from Stripe
     event_type = event['type']
