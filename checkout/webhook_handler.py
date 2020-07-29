@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
+from datetime import datetime
 
 from .models import Order, OrderLineItem
 from products.models import Product
@@ -17,7 +18,30 @@ class StripeWH_Handler:
 
         self.request = request
 
-    def _send_confirmation_email(self, order):
+    def _send_invoice_email(self, intent):
+
+        customer_email = intent.customer_email
+        period_start = datetime.fromtimestamp(intent.period_start)
+        period_end = datetime.fromtimestamp(intent.period_end)
+        amount_paid = intent.amount_paid / 100
+        subject = render_to_string(
+            'checkout/confirmation_emails/finalized_invoice_subject.txt',
+            {'intent': intent}
+        )
+
+        body = render_to_string(
+            'checkout/confirmation_emails/finalized_invoice_body.txt',
+            {'intent': intent,
+             }
+        )
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [customer_email]
+        )
+
+    def _send_shopping_confirmation_email(self, order):
         """Send a confirmation email"""
         customer_email = order.email
         subject = render_to_string(
@@ -45,12 +69,20 @@ class StripeWH_Handler:
         )
 
     def handle_event_success(self, event):
-        """ Handles payments success intent events"""
+        """ Handles payments success intent events for both
+            Subscriptions and shop payments and"""
         intent = event.data.object
+
+        if intent.description == 'Subscription creation':
+
+            return HttpResponse(
+                content=f'Webhook Subscription payments revieved: {event["type"]}',
+                status=200
+            )
+
         pid = intent.id
         cart = intent.metadata.cart
         save_info = intent.metadata.save_info
-
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
         grand_total = round(intent.charges.data[0].amount / 100, 2)
@@ -101,7 +133,7 @@ class StripeWH_Handler:
                 attempt += 1
                 time.sleep(1)
         if order_exists:
-            self._send_confirmation_email(order)
+            self._send_shopping_confirmation_email(order)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
@@ -145,7 +177,7 @@ class StripeWH_Handler:
                     order.delete()
                     return HttpResponse(content=f'Webhook revieved: {event["type"]} | ERROR: {e}',
                                         status=500)
-        self._send_confirmation_email(order)
+        self._send_shopping_confirmation_email(order)
         return HttpResponse(
             content=f'Webhook payments revieved: {event["type"]} | SUCCESS: Created order in webhook',
             status=200
@@ -156,6 +188,23 @@ class StripeWH_Handler:
 
         return HttpResponse(
             content=f'Webhook failed revieved: {event["type"]}',
+            status=200
+        )
+
+    def handle_invoice_finalized(self, event):
+        """Handeling the invoice """
+        intent = event.data.object
+
+        # print(intent.account_name)
+        # print(intent.amount_paid)
+        # print(intent.currency)
+        # print(intent.hosted_invoice_url)
+        # print(intent.invoice_pdf)
+        # print(period_start)
+        # print(period_end)
+        self._send_invoice_email(intent)
+        return HttpResponse(
+            content=f'Webhook invoice finalized revieved: {event["type"]}',
             status=200
         )
 
