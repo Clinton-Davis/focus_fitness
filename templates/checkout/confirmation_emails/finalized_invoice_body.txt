@@ -1,0 +1,20 @@
+Hello {{ intent.account_name }}!
+
+This is a invoice for you subcription at Facus Fitness.
+Stripe invoice: {{ hosted_invoice_url }}
+Stripe Invoice Pdf: {{ invoice_pdf }}
+
+
+
+Total paid: ${{ amount_paid|floatformat:2 }}
+Start Period: {{ period_start }}
+
+
+Thank you for Subcribing
+
+If you have any questions, feel free to contact us at {{ contact_email }}.
+
+
+Greatfully
+
+Focus Fitness

@@ -82,7 +82,7 @@
 
         <div class="co-12 col-lg-6">
             <p class="text-muted aw">Please fill out the form below to compleate you order</p>
-            <form action="{% url 'checkout' %}" method="POST" id="shop_shop_payment-form">
+            <form action="{% url 'checkout' %}" method="POST" id="shop_payment-form">
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-5">
                     <legend class="fieldset-label small px-2 w-auto aw">Details</legend>
