@@ -23,9 +23,9 @@
 
             {% for object in object_list %}
             <div class="col-sm-6 col-md-6 bg-black-a rounded-15 p-2">
-                <h1 class="aw text-wht">{{ object.membership_type }}</h1>
-                <p class="aw text-wht">Price: ${{ object.price }}<small>/month</small></p>
-                <h4 class="aw text-wht">Inclueds:</h4>
+                <h1 class="text-center aw text-wht">{{ object.membership_type }}</h1>
+                <p class="text-center aw text-wht">Price: ${{ object.price }}<small>/month</small></p>
+                <h4 class="text-center aw text-wht">Inclueds</h4>
                 <h5 class="aw text-wht">User DashBoard</h5>
                 <h5 class="aw text-wht">Blogs:</h5>
                 <ul>
@@ -46,12 +46,17 @@
                     {% csrf_token %}
 
                     {% if object.membership_type != current_membership %}
-                    <button class="aw w-50 text-wht btn btn-success" type="submit">Select</button>
+                    <div class="row justify-content-center">
+                        <button class=" aw w-75 text-wht btn btn-success" type="submit">Select</button>
+                    </div>
+
                     {% else %}
-                    <small class="aw text-wht">Your Currnet Membership</small>
+                    <p class="text-center aw text-wht">Your Currnet Membership</p>
                     {% endif %}
                     <input type="hidden" name="membership_type" value="{{ object.membership_type }}">
                 </form>
+                {% else %}
+                <p class="text-center aw text-wht">Your Currnet Membership</p>
                 {% endif %}
 
             </div>

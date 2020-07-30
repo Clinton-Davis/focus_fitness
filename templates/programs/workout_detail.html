@@ -28,13 +28,30 @@
 
 
                 </video>
-                {% else %}
-                <h3 class="aw text-wht">Upgrade membership</h3>
-
-                {% endif %}
 
 
             </div>
+            {% else %}
+
+            <div class="col p-4 ">
+                <h2 class="text-wht aw display-4 text-center">Upgrade membership</h2><br>
+                <h4 class="text-wht text-center">Please Upgrade Your Membership to View</h4>
+                <div class="row d-flex flex-row">
+                    <div class="col-12">
+                        <span>
+                            <a class=" my-2 w-100 text-wht aw px-4 btn btn-success"
+                                href="{% url 'memberships:select-membership' %}">Select Membership </a>
+                        </span>
+                        <span>
+                            <a class="my-2 w-100 text-wht aw px-4 btn btn-primary" href="{% url 'home' %}">Home</a>
+                        </span>
+
+                    </div>
+
+                </div>
+            </div>
+
+            {% endif %}
         </div>
     </div>
 </div>
