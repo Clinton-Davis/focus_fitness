@@ -2,15 +2,7 @@
 {% load static %}
 {% block content %}
 
-<div class="container-fluid bg-black fixed-top crumbs">
-    <div class="row">
-        <div class="col-md-12 mb-0">
-            <a class="text-wht aw" href="{% url 'home' %}">Home</a>
-            <span class="mx-2 mb-0 text-wht">/</span>
-            <strong class="text-wht aw">Shop</strong>
-        </div>
-    </div>
-</div>
+
 <div class="container-shop ">
     <div class="container-fluid  blog-image">
         <div class="container">
@@ -93,6 +85,17 @@
             </a>
             {% endfor %}
 
+            <div class="col-12 mx-auto d-flex justify-content-center"">
+                    <form method=" GET" action="{% url 'products' %}" class=" form-inline my-2 my-lg-0 pl-2">
+                <input class="ml-3 aw" type="text" name="q" placeholder="Search Shop" aria-label="Search" />
+                <button class="aw btn btn-outline-text-light my-2 my-sm-0" type="submit">
+                    <span class="icon">
+                        <i class="text-wht fas fa-search fa-lg"></i>
+                    </span>
+                </button>
+                </form>
+            </div>
+
             <div class="row d-flex justify-content-around">
                 <div class="product-containter col-10 offser-1">
                     <div class="row mt-1 mb-2">
@@ -146,19 +149,19 @@
 
                                 {% if product.in_stock == True %}
                                 {% if product.image %}
-                                <a class="mx-auto" href="{% url 'product_detail' product.id %}">
+                                <a class="ripple-surface mx-auto" href="{% url 'product_detail' product.id %}">
                                     <img class="mx-auto card-img-top shop-card-top-img img-fluid"
                                         src="{{ product.image.url }}" alt="{{ product.name }}">
                                 </a>
                                 {% else %}
                                 <a href="{% url 'product_detail' product.id %}">
-                                    <img class="" card-img-top shop-card-top-img img-fluid"
+                                    <img class="ripple-surface card-img-top shop-card-top-img img-fluid"
                                         src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                 </a>
                                 {% endif %}
                                 {% else %}
                                 <a class="mx-auto" href="">
-                                    <img class="mx-auto card-img-top shop-card-top-img img-fluid"
+                                    <img class="ripple-surface mx-auto card-img-top shop-card-top-img img-fluid"
                                         src="{% static 'images/out-of-stock.png' %}" alt="{{ product.name }}">
                                 </a>
                                 <div class="card-body pb-0">
@@ -192,12 +195,7 @@
                                 {% else %}
                                 <p class="aw text-center">Sorry Out Of Stock</p>
 
-
-
                                 {% endif %}
-
-
-
 
                             </div>
                         </div>
@@ -226,17 +224,13 @@
                         </div>
                         {% endif %}
 
-
-
                         {% endfor %}
                     </div>
-
-
                 </div>
             </div>
         </div>
     </div>
-    <div class="btt-button shadow-sm rounded-15 border border-black bg-dark-a">
+    <div class="ripple-surface btt-button shadow-sm rounded-15 border border-black bg-dark-a">
         <a class="btt-link d-flex h-100 bg-black rounded-15">
             <i class="fad fa-hand-point-up fa-lg text-wht mx-auto my-auto"></i>
         </a>
@@ -271,7 +265,6 @@
         } else {
             currentUrl.searchParams.delete("sort");
             currentUrl.searchParams.delete("direction");
-
             window.location.replace(currentUrl);
         }
     })

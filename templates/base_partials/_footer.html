@@ -1,0 +1,78 @@
+{% load static %}
+
+<div class=" container-fluid footer-image">
+    <div class="row align-items-center">
+        <div class="col-3 d-none d-md-block ">
+            <img class="ml-3" src="{% static 'images/logo.png' %}" alt="">
+        </div>
+        <div class="col-md-6 col-sm-9 col-12">
+            <p class="aw text-wht text-center">Be the First to recieve exciting news, Features, and special
+                offers
+                from Focus Fitness!
+            </p>
+            <form>
+                <div class="form-row align-items-center">
+
+                    <div class="col-auto mx-auto">
+                        <label class="sr-only" for="inlineFormInputGroup">Email</label>
+                        <div class="input-group  mb-2">
+                            <input type="text" class="form-control " id="inlineFormInputGroup" placeholder="Email">
+                            <div class="input-group-prepend">
+                                <button type="submit" class="btn btn-outline-light btn-sm">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="col-12 ">
+                <div class="social text-center">
+                    <a class="mx-3" href="#">
+                        <i class="fab fa-twitter text-light fa-lg"></i>
+                    </a>
+                    <a class="mx-3" href="#">
+                        <i class="fab fa-facebook text-light  fa-lg"></i>
+                    </a>
+
+                    <a class="mx-3" href="#">
+                        <i class="fab fa-instagram  text-light fa-lg"></i>
+                    </a>
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-sm-3 col-8 mx-auto">
+            <div class="col-auto ">
+                <div class="row d-flex justify-content-center">
+                    <a class=" col-12 btn btn-danger btn-sm aw text-wht  border border-white m-2" href="#"
+                        role="button">Join
+                        <!--Go to checkout-->
+                        Up</a>
+                    <a class="col-12 btn btn-primary btn-sm aw text-wht border border-white m-2"
+                        href="{% url 'products' %}" role="button">Shop
+                    </a>
+                    <a class="col-12 btn btn-warning btn-sm aw text-wht border border-white m-2" href="#"
+                        role="button">Blog</a>
+
+
+                    <a class="col-12 btn btn-success btn-sm aw text-wht border border-white m-2" href="#"
+                        role="button">Login</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="text-center d-block d-md-none">
+        <img src="{% static 'images/logo.png' %}" alt="">
+        <h4 class="aw text-wht text-center mb-2">CopyRight ©
+        </h4>
+    </div>
+    <div class="row">
+        <div class="col-12 feet-bg">
+            <h4 class="aw text-center my-3">Web Design by Clinton Davis</h4>
+        </div>
+    </div>
+</div>

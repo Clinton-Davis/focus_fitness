@@ -3,6 +3,11 @@
 
 
 {% block content %}
+
+{% if request.user.is_authenticated %}
+
+
+
 <div class="container-fluid bg-black fixed-top crumbs">
     <div class="row">
         <div class="col-md-12 mb-0">
@@ -27,6 +32,33 @@
                         <h5 class="aw text-wht text-center">{{ object }}</h5>
                     </a>
                     {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<div id="about-pic">
+    <div class="container about">
+        <div class="overlay">
+            <div class="col p-4 ">
+                <p class="text-wht aw display-3 text-center">Focus Fitness</p>
+                <h3 class="text-wht text-center">If you would like to use the Programs<br> Please Login or Sign up and
+                    become a
+                    member.</h3>
+                <div class="row d-flex flex-row">
+                    <div class="col-12">
+                        <span>
+                            <a class=" my-2 w-100 text-wht aw px-4 btn btn-success"
+                                href="{% url 'account_login' %}">Login / Sign Up</a>
+                        </span>
+                        <span>
+                            <a class="my-2 w-100 text-wht aw px-4 btn btn-primary" href="{% url 'home' %}">Home</a>
+                        </span>
+
+                    </div>
+
                 </div>
             </div>
         </div>

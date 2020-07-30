@@ -44,7 +44,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://js.stripe.com/v3/"></script>
-    <script rel="stylesheet" href="{% static 'js/ripple.js' %}"></script>
+    <script rel="stylesheet" src="{% static 'js/ripple.js' %}"></script>
     <script rel="stylesheet" href="{% static 'js/cart.js' %}"></script>
     <script src="{% static 'js/stripe_elements.js' %}"></script>
     {% endblock Core_js %}
@@ -57,177 +57,21 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <a href="{% url 'home' %}" class="nav-link main-logo-link">
-            <img id="design2" src="{% static 'images/logo.png' %}" alt="" />
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <!--NavBar-->
+    {% include "base_partials/_navbar.html" %}
+    {% include "base_partials/_mini_cart.html" %}
 
-        <div class="justify-content-center collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="aw navbar-nav mx-3">
-                <li class="nav-item dropdown">
-                    <a class="mx-3 text-wht dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        My Dashboard
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        {% block post_detail_link %}
-                        {% endblock post_detail_link %}
 
-                        {% if request.user.is_authenticated %}
-                        {% if request.user.is_superuser %}
-                        <a class="dropdown-item" href="#">Project Management</a>
-                        {% endif %}
-                        <a class="dropdown-item" href="{% url 'profile' %}">My Profile</a>
-                        <a class="dropdown-item" href="{% url 'memberships:select-membership' %}">My Memberships</a>
-                        <a class="dropdown-item" href="{% url 'blog:list' %}">Blogs</a>
-
-                        <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
-                        {% else %}
-                        <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
-                        <a class=" dropdown-item" href="{% url 'account_signup' %}">register</a>
-                        {% endif %}
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="mx-3 text-wht nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Pages
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item " href="{% url 'about' %}">About</a>
-                        <a class="dropdown-item" href="{% url 'products' %}">Shop</a>
-                        <a class="dropdown-item" href="{% url 'blog:list' %}">Blog</a>
-                        <a class="dropdown-item" href="{% url 'contact' %}">Contact Us</a>
-                    </div>
-                </li>
-            </ul>
-            <form method="GET" action="{% url 'products' %}" class=" form-inline my-2 my-lg-0 pl-2">
-                <input class="ml-3 aw" type="text" name="q" placeholder="Search Focus" aria-label="Search" />
-                <button class="aw btn btn-outline-text-light my-2 my-sm-0" type="submit">
-                    <span class="icon">
-                        <i class="text-wht fas fa-search fa-lg"></i>
-                    </span>
-                </button>
-            </form>
-        </div>
-
-    </nav>
-    <div class="container-fluid bg-black">
-        <div class="row ">
-            <div class="col-md-12 mb-0  text-right">
-
-                <div id="cart" class="mr-md-4">
-                    <a href="{% url 'cart_view' %}" class="site-cart ">
-                        <span><i class="fad fa-shopping-cart text-wht"></i></span>
-
-                        <span class="{% if grand_total %} text-grn {% else %} text-wht {% endif %}aw text-wht">
-                            {% if grand_total %}
-                            ${{ grand_total|floatformat:2 }}
-                            {% else %}
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            {% endif %}
-                        </span>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </div>
     {% include "messages/messages.html" %}
-
-
 
     {% block content %}
     {% endblock content %}
 
-
-
     {% block postloadjs %}
 
     {% endblock postloadjs %}
-
-
     <!--footer-->
-    <div class=" container-fluid footer-image">
-        <div class="row align-items-center">
-            <div class="col-3 d-none d-md-block ">
-                <img class="ml-3" src="{% static 'images/logo.png' %}" alt="">
-            </div>
-            <div class="col-md-6 col-sm-9 col-12">
-                <p class="aw text-wht text-center">Be the First to recieve exciting news, Features, and special
-                    offers
-                    from Focus Fitness!
-                </p>
-                <form>
-                    <div class="form-row align-items-center">
-
-                        <div class="col-auto mx-auto">
-                            <label class="sr-only" for="inlineFormInputGroup">Email</label>
-                            <div class="input-group  mb-2">
-                                <input type="text" class="form-control " id="inlineFormInputGroup" placeholder="Email">
-                                <div class="input-group-prepend">
-                                    <button type="submit" class="btn btn-outline-light btn-sm">Submit</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-
-                <div class="col-12 ">
-                    <div class="social text-center">
-                        <a class="mx-3" href="#">
-                            <i class="fab fa-twitter text-light fa-lg"></i>
-                        </a>
-                        <a class="mx-3" href="#">
-                            <i class="fab fa-facebook text-light  fa-lg"></i>
-                        </a>
-
-                        <a class="mx-3" href="#">
-                            <i class="fab fa-instagram  text-light fa-lg"></i>
-                        </a>
-
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="col-sm-3 col-8 mx-auto">
-                <div class="col-auto ">
-                    <div class="row d-flex justify-content-center">
-                        <a class=" col-12 btn btn-danger btn-sm aw text-wht  border border-white m-2" href="#"
-                            role="button">Join
-                            <!--Go to checkout-->
-                            Up</a>
-                        <a class="col-12 btn btn-primary btn-sm aw text-wht border border-white m-2"
-                            href="{% url 'products' %}" role="button">Shop
-                        </a>
-                        <a class="col-12 btn btn-warning btn-sm aw text-wht border border-white m-2" href="#"
-                            role="button">Blog</a>
-
-
-                        <a class="col-12 btn btn-success btn-sm aw text-wht border border-white m-2" href="#"
-                            role="button">Login</a>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-        <div class="text-center d-block d-md-none">
-            <img src="{% static 'images/logo.png' %}" alt="">
-            <h4 class="aw text-wht text-center mb-2">CopyRight ©
-            </h4>
-        </div>
-        <div class="row">
-            <div class="col-12 feet-bg">
-                <h4 class="aw text-center my-3">Web Design by Clinton Davis</h4>
-            </div>
-        </div>
-    </div>
+    {% include "base_partials/_footer.html" %}
 
 </body>
 

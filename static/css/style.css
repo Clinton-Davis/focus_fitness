@@ -213,7 +213,7 @@ p {
 /* TopNav*/
 .navbar {
   padding: 0px;
-
+  height: 8rem
 }
 
 .navbar-toggler {
