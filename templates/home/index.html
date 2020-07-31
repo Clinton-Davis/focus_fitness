@@ -48,10 +48,12 @@
         <div class="card">
             <img src="{% static 'images/bidman.jpg' %}" class="card-img-top" alt="..." />
             <div class="card-body">
-                <h3 class="card-title text-center aw">Work Outs</h3>
-                <a class="card-text d-block text-center mont_b text-bk" href="">Strenth Training</a>
-                <a class="card-text d-block text-center mont_b text-bk" href="">Endurance Training</a>
-                <a class="card-text d-block text-center mont_b text-bk" href="">Size Training</a>
+                <h3 class="card-title aw text-center">Programs</h3>
+                {% for program in programs %}
+                <a class="card-text d-block text-center mont_b text-bk"
+                    href="{% url 'programs:list' %}">{{ program }}</a>
+                {% endfor %}
+
             </div>
         </div>
         <div class="card">
@@ -67,10 +69,13 @@
         <div class="card">
             <img src="{% static 'images/pool-man.jpg' %}" class="card-img-top" alt="..." />
             <div class="card-body">
-                <h3 class="card-title text-center aw">Diet Plans</h3>
-                <a class="card-text d-block text-center mont_b text-bk" href="">Weight Loss</a>
-                <a class="card-text d-block text-center mont_b text-bk" href="">Weight Maintenance</a>
-                <a class="card-text d-block text-center mont_b text-bk" href="">Bulking</a>
+                <h3 class="card-title text-center aw">Focus Shop</h3>
+                <a class="card-text d-block text-center mont_b text-bk"
+                    href="{% url 'products' %}?category=protein">Protiens</a>
+                <a class="card-text d-block text-center mont_b text-bk"
+                    href="{% url 'products' %}?category=pants,vest,tops">Activewear</a>
+                <a class="card-text d-block text-center mont_b text-bk"
+                    href="{% url 'products' %}?category=equipment">Accssories</a>
             </div>
         </div>
     </div>
