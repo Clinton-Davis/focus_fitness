@@ -17,12 +17,13 @@ def profile(request):
     """Displaying user Profile """
     user_membership = get_user_membership(request)
     user_subscription = get_user_subscription(request)
-
+    orders = profile.Orders.all()
     template = 'profiles/profile.html'
     context = {
         'profile': profile,
         'user_membership': user_membership,
-        'user_subscription': user_subscription
+        'user_subscription': user_subscription,
+        'orders': orders,
     }
 
     return render(request, template, context)
