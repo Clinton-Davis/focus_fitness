@@ -3,7 +3,81 @@
 
 
 {% block content %}
-<div class="container-fluid bg-black fixed-top crumbs">
+
+{% if request.user.is_authenticated %}
+<div id="profile-pic">
+    <div class="container profile">
+        <div class="profile-overlay">
+            <div class="col p-4">
+                <h4 class="text-wht aw display-4 text-center">Programs</h4>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="card-group">
+
+
+                    {% for object in object_list  %}
+                    <div class="card">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <a href="{{ object.get_absolute_url }}">
+                                <h5 class="card-title">{{ object }}</h5>
+                            </a>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This card has even longer content than the first to show that equal
+                                height action.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="col-md-12 col-12  bg-black-a rounded-15">
+                    <a href="{{ object.get_absolute_url }}">
+                        <h5 class="aw text-wht text-center">{{ object }}</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+
+
+<div id="about-pic">
+    <div class="container about">
+        <div class="overlay">
+            <div class="col p-4 ">
+                <p class="text-wht aw display-3 text-center">Focus Fitness</p>
+                <h3 class="text-wht text-center">If you would like to use the Programs<br> Please Login or Sign up and
+                    become a
+                    member.</h3>
+                <div class="row d-flex flex-row">
+                    <div class="col-12">
+                        <span>
+                            <a class=" my-2 w-100 text-wht aw px-4 btn btn-success"
+                                href="{% url 'account_login' %}">Login / Sign Up</a>
+                        </span>
+                        <span>
+                            <a class="my-2 w-100 text-wht aw px-4 btn btn-primary" href="{% url 'home' %}">Home</a>
+                        </span>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endif %}
+{% endblock content %}
+
+<!-- <div class="container-fluid bg-black fixed-top crumbs">
     <div class="row">
         <div class="col-md-12 mb-0">
             <a class="text-wht aw pl-2" href="{% url 'home' %}">Home</a>
@@ -11,25 +85,4 @@
             <strong class="text-wht aw">Dashboard</strong>
         </div>
     </div>
-</div>
-<div id="profile-pic">
-    <div class="container profile">
-        <div class="profile-overlay">
-            <div class="col p-4">
-                <h4 class="text-wht aw display-4 text-center">Programs</h4>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-12  bg-black-a rounded-15">
-                    {% for object in object_list  %}
-                    <a href="{{ object.get_absolute_url }}">
-                        <h5 class="aw text-wht text-center">{{ object }}</h5>
-                    </a>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-{% endblock content %}
+</div> -->

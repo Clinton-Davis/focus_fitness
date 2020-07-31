@@ -3,16 +3,17 @@
 
 
 {% block content %}
-<div class="container-fluid bg-black fixed-top crumbs">
-    <div class="row">
-        <div class="col-md-12 mb-0">
-            <a class="text-wht aw pl-2" href="{% url 'home' %}">Home</a>
-            <span class="mx-2 mb-0 text-wht">/</span>
-            <strong class="text-wht aw">Dashboard</strong>
+
+<div id="profile-pic">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mb-0">
+                <a class="text-wht aw pl-2" href="{% url 'programs:list' %}">Programs</a>
+                <span class="mx-2 mb-0 text-wht">/</span>
+                <small class="text-wht aw">Dashboard</small>
+            </div>
         </div>
     </div>
-</div>
-<div id="profile-pic">
     <div class="container profile">
         <div class="profile-overlay">
             <div class="col p-4">
@@ -21,14 +22,24 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-12  bg-black-a rounded-15">
-                    {% for workout in object.workouts %}
-                    <a href="{{ workout.get_absolute_url }}">
-                        <h5 class="aw text-wht text-center">{{ workout.title }}</h5>
-                    </a>
-                    {% endfor %}
+                <div class="pt-2 col-md-8 col-12  bg-black-a rounded-15">
+                    <p class="text-wht">{{ object.description }}</p>
+                </div>
+                <div class="pt-2 col-md-4 col-12  bg-black-a rounded-15">
+                    <h4 class="text-center aw text-ylw">Workout Videos</h4><br>
+                    <ul class="aw text-wht">
+                        {% for workout in object.workouts %}
+                        <li>
+                            <a href="{{ workout.get_absolute_url }}">
+                                <h5 class="aw text-wht ">{{ workout.title }}</h5>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+
 
                 </div>
+
             </div>
         </div>
     </div>

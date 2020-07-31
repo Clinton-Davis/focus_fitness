@@ -8,6 +8,7 @@ class Program(models.Model):
     slug = models.SlugField()
     title = models.CharField(max_length=200)
     description = models.TextField()
+    thumbnail = models.ImageField()
     allowed_memberships = models.ManyToManyField(Membership)
 
     def __str__(self):

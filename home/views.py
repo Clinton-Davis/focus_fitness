@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 from django.shortcuts import reverse, render
 from django.views import generic
 from .forms import ContactForm
+from programs.models import Program
 from products.models import Product
 from blog.models import Blog
 from django.views.generic import TemplateView
@@ -12,10 +13,13 @@ from django.views.generic import TemplateView
 def IndexView(request):
     feature_blog = Blog.objects.filter(featured=True)
     sale_items = Product.objects.filter(on_sale=True)
+    programs = Program.objects.all()
 
     context = {
         'feature_blog': feature_blog,
-        'sale_items':  sale_items}
+        'sale_items':  sale_items,
+        'programs': programs
+    }
     return render(request, "home/index.html", context)
 
 

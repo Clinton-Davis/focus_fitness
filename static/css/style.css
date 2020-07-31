@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  margin-top: 6rem;
+  margin-top: 8rem;
 }
 
 .crumbs {
@@ -73,7 +73,7 @@ p {
 }
 
 .bg-black-a {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .bg-trans {
@@ -213,7 +213,7 @@ p {
 /* TopNav*/
 .navbar {
   padding: 0px;
-
+  height: 8rem
 }
 
 .navbar-toggler {
@@ -627,6 +627,18 @@ nav {
   position: relative;
   height: fit-content;
   background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  z-index: 0;
+}
+
+.program-overlay {
+  position: relative;
+  height: fit-content;
+  background-color: rgba(0, 0, 0, 0.9);
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
