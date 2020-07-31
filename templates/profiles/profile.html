@@ -47,8 +47,23 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-12  bg-black-a rounded-15">
-                    <h4 class="aw text-wht text-center">Favour Blogs</h4>
-                    <div class="profile-overlay"></div>
+                    <h4 class="aw text-wht text-center">My Blogs</h4>
+                    <div class="profile-overlay">
+                        <ul>
+                            {% for blog in user_blog %}
+
+                            <li>
+                                <p class="text-wht">
+                                    <a href="{{ blog.get_absolute_url }}">{{ blog.title|title }}</a><br>
+                                    <span class="text-grn">{{ blog.category }}</span>
+                                    <span class="text-red"> / </span>
+                                    <span class="text-ylw">{{ blog.publish_date|date:"SHORT_DATE_FORMAT" }}</span>
+                                </p>
+                            </li>
+                            {% endfor %}
+                        </ul>
+
+                    </div>
                 </div>
                 <div class="col-md-4 col-12  bg-black-a rounded-15">
 
