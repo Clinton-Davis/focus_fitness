@@ -55,9 +55,10 @@
                             <li>
                                 <p class="text-wht">
                                     <a href="{{ blog.get_absolute_url }}">{{ blog.title|title }}</a><br>
-                                    <span class="text-grn">{{ blog.category }}</span>
-                                    <span class="text-red"> / </span>
-                                    <span class="text-ylw">{{ blog.publish_date|date:"SHORT_DATE_FORMAT" }}</span>
+                                    <small><span class="text-grn">{{ blog.category }}</span></small>
+                                    <small><span class="text-red"> / </span></small>
+                                    <small><span
+                                            class="text-ylw">{{ blog.publish_date|date:"SHORT_DATE_FORMAT" }}</span></small>
                                 </p>
                             </li>
                             {% endfor %}
