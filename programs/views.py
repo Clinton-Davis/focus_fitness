@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, View
 from memberships.models import UserMembership
+from memberships.views import get_user_membership
 from .models import Program, Workout
 
 

@@ -20,6 +20,17 @@ p {
   max-width: 600px;
 }
 
+ul {
+  list-style-type: none;
+}
+
+img {
+  object-fit: cover;
+}
+
+
+
+
 .message {
   position: absolute;
   top: 3 rem;
@@ -118,6 +129,11 @@ p {
 
 .spaces-3 {
   height: 4rem;
+}
+
+.red-hover:hover {
+  color: rgb(231, 49, 63);
+  text-decoration: none;
 }
 
 .rounded-10 {
@@ -226,9 +242,15 @@ p {
   margin: 2%;
 }
 
+.navbar-collapse {
+  background-color: rgba(0, 0, 0, 0.788);
+  padding-bottom: 10px;
+}
+
 .navbar-dark .navbar-toggler {
   color: rgba(255, 255, 255, 1);
-  border-color: rgba(255, 255, 255, 1);
+
+
 }
 
 .navbar-dark .navbar-toggler-icon {
@@ -613,6 +635,16 @@ nav {
   background-size: cover;
 }
 
+/*Programs*/
+
+.program-card {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+}
+
+
+
 /*Profile pages*/
 #profile-pic {
   background: url(/static/images/delaney-van-weights.jpg) no-repeat center center fixed;
@@ -679,6 +711,11 @@ nav {
   overflow-y: auto;
 }
 
+/* Dash Board */
+#dash_history {
+  max-height: 35rem;
+  overflow-y: auto;
+}
 
 /* Footer */
 .footer-image {

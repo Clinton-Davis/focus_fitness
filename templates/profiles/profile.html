@@ -16,32 +16,96 @@
     <div class="container profile">
         <div class="profile-overlay">
             <div class="col p-4">
-                <h4 class="text-wht aw display-4 text-center"> {{ user.username }} Dashboard</h4>
+                <h4 class="text-primary aw display-4 text-center"> Dashboard</h4>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-3 col-12  bg-black-a rounded-15">
-                    <a href="{% url 'profile_details' %}">
-                        <h5 class="aw text-wht text-center">Shipping Details &<br>Order History</h5>
-                    </a>
+                <div class="col-md-4 col-12  bg-black-a rounded-15">
+                    <h4 class="aw text-wht text-center">{{ user.username|title }}</h4>
+                    <h6 class="aw text-wht text-center">{{ user.email }}</h6>
                     <div class="profile-overlay">
+                        <ul>
+                            <li class="pt-2">
+                                <a class="aw text-wht text-center" href="{% url 'account_reset_password' %}">
+                                    Update Password
+                                </a>
+                            </li>
+                            <li class="pt-2">
+                                <a class="aw text-wht text-center" href="{% url 'profile_details' %}">
+                                    Shipping Details
+                                </a>
+                            </li>
+                            <li class="pt-2">
+                                <p class="aw text-wht">Subscription:
+                                    <a href="{% url 'profile_subscriptions' %}">
+                                        {{ user_membership.membership.membership_type }}
+                                    </a>
+                                </p>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-3 col-12  bg-black-a rounded-15  align-items-center">
-                    <h5 class="aw text-wht text-center">Subscriptions</h5>
-                    <a href="{% url 'profile_subscriptions' %}">
-                        <p class="aw text-wht text-center">{{ user_membership.membership.membership_type }}</p>
-                    </a>
-                    <div class="profile-overlay"></div>
+                <div class="col-md-4 col-12  bg-black-a rounded-15">
+                    <h4 class="aw text-wht text-center">My Blogs</h4>
+                    <div class="profile-overlay">
+                        <ul>
+                            {% for blog in user_blog %}
+
+                            <li>
+                                <p class="text-wht text-center">
+                                    <a href="{{ blog.get_absolute_url }}">{{ blog.title|title }}</a><br>
+                                    <small><span class="text-grn">{{ blog.category }}</span></small>
+                                    <small><span class="text-red"> / </span></small>
+                                    <small><span
+                                            class="text-ylw">{{ blog.publish_date|date:"SHORT_DATE_FORMAT" }}</span></small>
+                                </p>
+                            </li>
+                            {% endfor %}
+                        </ul>
+
+                    </div>
                 </div>
-                <div class="col-md-3 col-12  bg-black-a rounded-15">
-                    <h5 class="aw text-wht text-center">Favour Blogs</h5>
-                    <div class="profile-overlay"></div>
-                </div>
-                <div class="col-md-3 col-12  bg-black-a rounded-15">
-                    <h5 class="aw text-wht text-center">My Blogs</h5>
-                    <div class="profile-overlay"></div>
+                <div class="col-md-4 col-12  bg-black-a rounded-15">
+
+                    <h4 class="aw text-wht text-center">Order History</h4>
+                    <!--This the place for for orsers history -->
+                    <div class="profile-overlay border border-white">
+                        {% for order in orders %}
+                        <div id="dash_history" class="p-2 table-responsive">
+                            <table class="table table-sm table-borderless text-wht">
+                                <thead>
+                                    <tr>
+                                        <th>Order</th>
+                                        <th>Date</th>
+                                        <th>Items</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="{% url 'order_history' order.order_number %}"
+                                                title="{{ order.order_number }}">{{ order.order_number|truncatechars:6 }}
+                                            </a>
+                                        </td>
+                                        <td>{{ order.date|date:"D d M Y" }}</td>
+                                        <td>
+                                            <ul class="list-unstyled">
+                                                <li class="small">
+                                                    {% for item in order.lineitems.all %}
+                                                    {{ item.product.name}} x {{ item.quantity }}
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </td>
+                                        <td>{{ order.grand_total }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
