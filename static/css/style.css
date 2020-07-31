@@ -679,6 +679,11 @@ nav {
   overflow-y: auto;
 }
 
+/* Dash Board */
+#dash_history {
+  max-height: 35rem;
+  overflow-y: auto;
+}
 
 /* Footer */
 .footer-image {
