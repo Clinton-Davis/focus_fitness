@@ -3,18 +3,17 @@
 
 
 {% block content %}
-<div class="container-fluid bg-black fixed-top crumbs">
-    <div class="row">
-        <div class="col-md-12 mb-0">
-            <a class="text-wht aw pl-2" href="{% url 'home' %}">Home</a>
-            <span class="mx-2 mb-0 text-wht">/</span>
-            <a class="text-wht aw pl-2" href="{% url 'profile' %}">Dashboard</a>
-            <span class="mx-2 mb-0 text-wht">/</span>
-            <strong class="text-wht aw">Order History</strong>
+
+<div id="profile-pic">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-12 mb-0">
+                <a class="text-wht aw pl-2" href="{% url 'profile' %}">Dashboard</a>
+                <span class="mx-2 mb-0 text-wht">/</span>
+                <small class="text-wht aw">Shipping Details</small>
+            </div>
         </div>
     </div>
-</div>
-<div id="profile-pic">
     <div class="container profile">
 
         <div class="col p-4">
