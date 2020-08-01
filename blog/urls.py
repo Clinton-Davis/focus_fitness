@@ -8,15 +8,15 @@ from blog.views import (
     BlogDeleteView,
     like,
     CategoryView,
-    blog_search
+
 )
 
 app_name = 'blog'
 
 urlpatterns = [
 
-    path('', BlogListView.as_view(), name='list'),
-    path('blog_search/', blog_search, name='blog_search'),
+    # path('', BlogListView.as_view(), name='list'),
+    path('', BlogListView, name='list'),
     path('create/',  BlogCreateView.as_view(), name='create'),
     path('<slug>/', BlogDetailView.as_view(), name='details'),
     path('<slug>/update/', BlogUpdateView.as_view(), name='update'),
