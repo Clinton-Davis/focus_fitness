@@ -1,26 +1,44 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib.auth.models import User
+from django.contrib import messages
+from django.db.models import Q
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Blog, BlogComment, BlogView, Like, Category
 from .forms import BlogForm, BlogCommentForm
 
 
-class BlogListView(ListView):
-    model = Blog
-    ordering = ['-publish_date']
+def BlogListView(request):
+    all_blogs = Blog.objects.all()
+    category_menu = Category.objects.all()
+    quary = None
 
-    def get_context_data(self, *args, **kwargs):
-        category_menu = Category.objects.all()
-        context = super(BlogListView, self).get_context_data(*args, **kwargs)
-        context['category_menu'] = category_menu
-        return context
+    if 's' in request.GET:
+        query = request.GET['s']
+        if not query:
+            messages.info(request, "Sorry! No Input? Try again Please")
+            return redirect(reverse('blog:list'))
+
+        search = Q(title__icontains=query) | Q(content__icontains=query)
+        all_blogs = all_blogs.filter(search)
+
+    context = {
+        'all_blogs': all_blogs,
+        'category_menu': category_menu,
+
+    }
+    return render(request, 'blog/blog_list.html', context)
 
 
 def CategoryView(request, category):
     category_blogs = Blog.objects.filter(category=category)
+    category_menu = Category.objects.all()
+    all_blogs = Blog.objects.all()
+
     context = {
         'category': category,
-        'category_blogs': category_blogs
+        'category_blogs': category_blogs,
+        'category_menu': category_menu,
+        'all_blogs': all_blogs
     }
 
     return render(request, 'blog/blog_categories.html', context)

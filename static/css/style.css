@@ -4,10 +4,12 @@ html {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
+
 }
 
 body {
   margin-top: 8rem;
+
 }
 
 .crumbs {
@@ -18,6 +20,7 @@ p {
   font-family: "montserrat", sans-serif;
   font-weight: 400;
   max-width: 600px;
+  font-size: 1.125em;
 }
 
 ul {
@@ -28,7 +31,9 @@ img {
   object-fit: cover;
 }
 
-
+.display-4 {
+  font-size: 3.0rem;
+}
 
 
 .message {
@@ -89,6 +94,14 @@ img {
 
 .bg-trans {
   background-color: transparent;
+}
+
+.bg-green {
+  background-color: rgb(27, 216, 125);
+}
+
+.bg-yellow {
+  background-color: rgb(229, 206, 33);
 }
 
 .font-small {
@@ -210,7 +223,7 @@ img {
   top: 0px;
   right: 0px;
   z-index: 999999;
-  font-size: 1.35rem;
+  font-size: 1.125rem;
 }
 
 .btt-button {
@@ -264,6 +277,7 @@ nav {
 .nav-link {
   display: inline !important;
   padding: 0.5rem 1rem;
+  font-size: 1.125rem;
 }
 
 #topnav {
@@ -297,7 +311,7 @@ nav {
 #section1-pic {
   position: relative;
   top: 0px;
-  height: 100vh;
+  height: 80vh;
   background: url(/static/images/hipcravo-index-unsplash.jpg) no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -309,11 +323,11 @@ nav {
 
 .container-hero {
   background-color: rgba(0, 0, 0, 0.7);
-  margin-top: 7rem;
+  margin-top: 3rem;
   margin-bottom: 8rem;
 
   height: fit-content;
-  width: 70%;
+  width: 90%;
   border-radius: 30px;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
@@ -321,12 +335,8 @@ nav {
   -o-border-radius: 30px;
 }
 
-#hero-heading {
-  font-size: 8vw;
-}
-
 .active-size {
-  font-size: 7.5vw;
+  font-size: 11.5vw;
 }
 
 .hero-btn {
@@ -370,7 +380,7 @@ nav {
 
 .feature-container {
   position: relative;
-  width: 80%;
+  width: 90%;
   margin-right: auto;
   margin-left: auto;
   margin-top: -5rem;
@@ -436,6 +446,7 @@ nav {
 .overlay {
   position: relative;
   height: fit-content;
+  top: -65px;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -458,6 +469,10 @@ nav {
 .blog-container {
   max-width: 620px;
 
+}
+
+#blog-side-card {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .blog-pic {
@@ -754,4 +769,52 @@ nav {
   100% {
     background-position: left;
   }
+}
+
+
+
+@media (min-width: 576px) {
+  .active-size {
+    font-size: 10vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding-left: 1px;
+    padding-right: 1px;
+  }
+}
+
+@media (min-width: 768px) {
+  .active-size {
+    font-size: 7vw;
+  }
+
+  .feature-container {
+    width: 80%;
+  }
+
+  .container-hero {
+    width: 80%;
+
+  }
+}
+
+@media (min-width: 992px) {
+  .active-size {
+    font-size: 5vw;
+  }
+
+  .feature-container {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .active-size {
+    font-size: 5vw;
+  }
+
+
 }
