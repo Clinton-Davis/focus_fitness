@@ -23,7 +23,7 @@
         <!-- Blog Entries Column -->
         <div class="col-md-8">
             <div class="overlay">
-                <h1 class="my-4 aw text-wht text-center">Featured Blogs</h1>
+                <h1 class="my-4 aw text-red text-center">Featured Blogs</h1>
             </div>
 
             {% for blog in all_blogs %}
@@ -70,9 +70,9 @@
 <div class="col-md-4">
 
     <!-- Search Widget -->
-    <div class="card my-4">
-        <h5 class="aw card-header">Search</h5>
-        <div class="card-body">
+    <div id="blog-side-card" class="card my-4">
+        <!-- <h5 class="aw text-wht bg-green text-center card-header">Search</h5> -->
+        <div class="card-body mx-auto ">
             <div class="input-group">
                 <form method="GET" action="{% url 'blog:list' %}" class="form-inline my-2 my-lg-0">
                     <input class="aw form-control mr-sm-2" name="s" type="search" placeholder="Search Blogs"
@@ -84,13 +84,13 @@
 
         <!-- Categories Widget -->
         <div class="card my-4">
-            <h5 class="aw card-header bg-black-a">Categories</h5>
+            <h5 class="aw text-center card-header bg-green">Categories</h5>
             <div class="card-body">
                 <div class="row">
                     <div class="col-lg-6">
                         <ul class="list-unstyled mb-0">
                             {% for item in category_menu %}
-                            <a class="dropdown-item aw" href="{% url 'blog:category' item %}">{{ item }}</a>
+                            <a class=" dropdown-item aw" href="{% url 'blog:category' item %}">{{ item }}</a>
                             {% endfor %}
                         </ul>
                     </div>
@@ -100,7 +100,7 @@
         </div>
         <!-- Side Widget -->
         <div class="card my-4 ">
-            <h5 class="aw card-header text-bk text-center">All Blogs</h5>
+            <h5 class="aw bg-yellow  card-header text-bk text-center">All Blogs</h5>
             {% for blog in all_blogs %}
             {% if blog.featured != True %}
             <div class="card-body ">

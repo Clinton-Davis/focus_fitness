@@ -91,6 +91,14 @@ img {
   background-color: transparent;
 }
 
+.bg-green {
+  background-color: rgb(27, 216, 125);
+}
+
+.bg-yellow {
+  background-color: rgb(229, 206, 33);
+}
+
 .font-small {
   font-size: 0.75rem;
 }
@@ -458,6 +466,10 @@ nav {
 .blog-container {
   max-width: 620px;
 
+}
+
+#blog-side-card {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .blog-pic {
