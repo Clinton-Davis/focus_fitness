@@ -14,125 +14,42 @@
             </div>
         </div>
         <div class="container">
+            <br>
             {% for object in object_list  %}
             {% if not forloop.counter|divisibleby:2  %}
             <div class="  mx-auto row featurette profile-overlay" style="max-width: 40rem;">
-                <div class="col-md-7">
+                <div class="col-md-7 d-flex align-items-center text-wht">
                     <a href="{{ object.get_absolute_url }}">
-                        <h5 class="text-center aw card-title">{{ object }}</h5>
-                        <p class="text-center card-text">{{ object.description|truncatechars:50 }}</p>
+                        <h5 class="text-center aw card-title text-wht">{{ object }}</h5>
+                        <p class="text-center card-text text-wht">{{ object.description|truncatechars:50 }}</p>
                     </a>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-5 d-none d-md-block ">
                     <img src="{{ object.thumbnail.url }}" class="card-img program-card" alt="...">
                 </div>
             </div>
 
-            <hr class="featurette-divider">
+            <br>
 
             {% else %}
             <div class="row  mx-auto featurette  profile-overlay" style="max-width: 40rem;">
-                <div class="col-md-5">
+                <div class="col-md-5 d-none d-md-block">
                     <img src="{{ object.thumbnail.url }}" class="card-img program-card" alt="...">
                 </div>
-                <div class="col-md-7">
+                <div class="col-md-7 d-flex align-items-center">
                     <a href="{{ object.get_absolute_url }}">
-                        <h5 class="text-center aw card-title">{{ object }}</h5>
-                        <p class="text-center card-text">{{ object.description|truncatechars:50 }}</p>
+                        <h5 class="text-center aw card-title text-wht">{{ object }}</h5>
+                        <p class="text-center card-text text-wht">{{ object.description|truncatechars:50 }}</p>
                     </a>
                 </div>
             </div>
-            <hr class="featurette-divider">
+            <br>
             {% endif %}
             {% endfor %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <!-- <div class=" mx-auto card mb-3" style="max-width: 540px;">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="{{ object.thumbnail.url }}" class="card-img program-card" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <a href="{{ object.get_absolute_url }}">
-                                <h5 class="text-center aw card-title">{{ object }}</h5>
-                            </a>
-                            <p class="text-center card-text">{{ object.description|truncatechars:50 }}</p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% else %}
-            <div class=" mx-auto card mb-3" style="max-width: 540px;">
-                <div class="row no-gutters">
-
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <a href="{{ object.get_absolute_url }}">
-                                <h5 class="text-center aw card-title">{{ object }}</h5>
-                            </a>
-                            <p class="text-center card-text">{{ object.description|truncatechars:50 }}</p>
-
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <img src="{{ object.thumbnail.url }}" class="card-img program-card" alt="...">
-                    </div>
-                </div>
-            </div> -->
 
         </div>
     </div>
 </div>
 {% endif %}
-
-
-<div id="about-pic">
-    <div class="container about">
-        <div class="overlay">
-            <div class="col p-4 ">
-                <p class="text-wht aw display-3 text-center">Focus Fitness</p>
-                <h3 class="text-wht text-center">If you would like to use the Programs<br> Please Login or Sign up and
-                    become a
-                    member.</h3>
-                <div class="row d-flex flex-row">
-                    <div class="col-12">
-                        <span>
-                            <a class=" my-2 w-100 text-wht aw px-4 btn btn-success"
-                                href="{% url 'account_login' %}">Login / Sign Up</a>
-                        </span>
-                        <span>
-                            <a class="my-2 w-100 text-wht aw px-4 btn btn-primary" href="{% url 'home' %}">Home</a>
-                        </span>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div>
-
 
 {% endblock content %}
