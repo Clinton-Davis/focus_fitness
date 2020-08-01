@@ -18,9 +18,14 @@ class BlogListView(ListView):
 
 def CategoryView(request, category):
     category_blogs = Blog.objects.filter(category=category)
+    category_menu = Category.objects.all()
+    all_blogs = Blog.objects.all()
+
     context = {
         'category': category,
-        'category_blogs': category_blogs
+        'category_blogs': category_blogs,
+        'category_menu': category_menu,
+        'all_blogs': all_blogs
     }
 
     return render(request, 'blog/blog_categories.html', context)
