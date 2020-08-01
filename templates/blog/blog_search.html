@@ -23,11 +23,11 @@
         <!-- Blog Entries Column -->
         <div class="col-md-8">
             <div class="overlay">
-                <h1 class="my-4 aw text-wht text-center">Featured Blogs</h1>
+                <h1 class="my-4 aw text-wht text-center">Searched Blogs</h1>
             </div>
 
             {% for blog in all_blogs %}
-            {% if blog.featured == True %}
+
             <!-- Blog Post -->
             <a href="{{ blog.get_absolute_url }}" class="text-bk">
                 <div class="card mb-4">
@@ -51,7 +51,7 @@
             Posted on: {{ blog.publish_date}} by <strong>{{ blog.author|title }}</strong>
         </div>
     </div>
-    {% endif %}
+
     {% endfor %}
     <!-- 
     <!-- Pagination -->
@@ -74,7 +74,7 @@
         <h5 class="aw card-header">Search</h5>
         <div class="card-body">
             <div class="input-group">
-                <form method="GET" action="{% url 'blog:blog_search' %}">
+                <form method="GET" action="{% url 'blog:list' %}">
                     <input type="text" class="form-control" name="s" placeholder="Search for...">
                     <span class="input-group-append">
                         <button class="aw  btn btn-secondary" type="submit">Go!</button>
@@ -107,7 +107,7 @@
         {% for blog in all_blogs %}
         {% if blog.featured != True %}
         <div class="card-body ">
-            <a class="text-bk" href="{{ blog.get_absolute_url }}">
+            <a class="text-bk" href="{{ object.get_absolute_url }}">
                 <h5 class="aw text-center ">{{ blog.title|title }}</h5>
                 <a href="{% url 'blog:category' blog.category %}"><small class="text-muted">Category:
                         {{ blog.category }}</small></a>

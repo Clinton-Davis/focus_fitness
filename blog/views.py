@@ -7,6 +7,7 @@ from .forms import BlogForm, BlogCommentForm
 
 class BlogListView(ListView):
     model = Blog
+    context_object_name = 'all_blogs'
     ordering = ['-publish_date']
 
     def get_context_data(self, *args, **kwargs):
@@ -108,3 +109,8 @@ def like(request, slug):
         return redirect('blog:details', slug=slug)
     Like.objects.create(user=request.user, blog=blog)
     return redirect('blog:details', slug=slug)
+
+
+def blog_search(request):
+    all_blogs = Blog.objects.all()
+    return render(request, 'blog/blog_search.html', context)
