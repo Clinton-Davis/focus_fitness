@@ -29,6 +29,7 @@ ul {
 
 img {
   object-fit: cover;
+  max-width: 40rem;
 }
 
 .display-4 {
@@ -346,6 +347,7 @@ nav {
 
 .card {
   border: none;
+  max-width: 40rem;
 }
 
 .blog-card .product-cards {
