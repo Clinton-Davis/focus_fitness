@@ -762,6 +762,11 @@ nav {
   overflow-y: auto;
 }
 
+.video-width {
+  max-width: 250px;
+}
+
+
 /* Footer */
 .footer-image {
   /* background: url(/static/images/evan-wise-blog-bg.jpg) no-repeat center center fixed;
@@ -825,6 +830,10 @@ nav {
   .active-size {
     font-size: 10vw;
   }
+
+  .video-width {
+    max-width: 400px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -837,6 +846,10 @@ nav {
 @media (min-width: 768px) {
   .active-size {
     font-size: 7vw;
+  }
+
+  .video-width {
+    max-width: 600px;
   }
 
   .feature-container {
@@ -856,6 +869,10 @@ nav {
 
   .feature-container {
     width: 70%;
+  }
+
+  .video-width {
+    max-width: 800px;
   }
 }
 

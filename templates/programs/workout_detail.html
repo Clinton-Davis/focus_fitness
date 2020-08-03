@@ -15,19 +15,16 @@
         </div>
     </div>
     <div class="container profile">
-        <div class="profile-overlay">
+        <div class="alpha-overlay">
             <div class="col p-4">
-                <h4 class="text-wht aw display-4 text-center">{{ object.title }}</h4>
+                <h1 class="text-wht aw text-center">{{ object.title }}</h1>
 
                 {% if object is not None %}
-                <p class="aw text-wht">{{ object.title }}</p>
+                <h4 class="aw text-center text-wht">{{ object.title }}</h4>
                 <p class="aw text-wht">{{ object.description }}</p>
 
-                <video width="320" height="240" autoplay controls>
+                <video class="mx-auto video-width" autoplay controls>
                     <source src="{{ object.video_url }}" type="video/mp4">
-
-
-
                 </video>
 
 
