@@ -15,7 +15,7 @@ def BlogListView(request):
     if 's' in request.GET:
         query = request.GET['s']
         if not query:
-            messages.info(request, "Sorry! No Input? Try again Please")
+            messages.error(request, "Sorry! No Input? Try again Please")
             return redirect(reverse('blog:list'))
 
         search = Q(title__icontains=query) | Q(content__icontains=query)
