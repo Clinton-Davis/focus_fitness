@@ -365,7 +365,7 @@ nav {
 
 .card {
   border: none;
-  max-width: 40rem;
+
 }
 
 .blog-card .product-cards {
@@ -704,18 +704,6 @@ nav {
   position: relative;
   height: fit-content;
   background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-  z-index: 0;
-}
-
-.program-overlay {
-  position: relative;
-  height: fit-content;
-  background-color: rgba(0, 0, 0, 0.9);
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
