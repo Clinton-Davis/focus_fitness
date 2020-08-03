@@ -28,7 +28,7 @@ ul {
 }
 
 img {
-  object-fit: cover;
+  object-fit: fill;
   max-width: 40rem;
 }
 
@@ -774,6 +774,24 @@ nav {
 }
 
 
+/* ------Messages  */
+.message-container {
+  position: fixed;
+  top: 100px;
+  right: 15px;
+  z-index: 999999999;
+}
+
+.custom-toast {
+  overflow: visible;
+}
+
+.toast-capper {
+  height: 5px;
+}
+
+
+/*----------Media Queries */
 
 @media (min-width: 576px) {
   .active-size {
