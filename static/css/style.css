@@ -36,7 +36,7 @@ img {
   font-size: 3.0rem;
 }
 
-
+/* 
 .message {
   position: absolute;
   top: 3 rem;
@@ -44,7 +44,25 @@ img {
   width: 100%;
   z-index: 999;
 
+} */
+
+.alpha-overlay {
+  position: relative;
+  height: fit-content;
+  width: fit-content;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  z-index: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
 }
+
 
 .container-fluid {
   padding-left: 0px;
@@ -660,6 +678,16 @@ nav {
   object-fit: cover;
 }
 
+#card-errors {
+  height: 20px;
+  padding: 4px 0;
+  color: #cf0101;
+  text-align: center;
+  font-family: "montserrat", sans-serif;
+  font-weight: 600;
+  text-shadow: 0.5px 0.5px aliceblue;
+
+}
 
 
 /*Profile pages*/
