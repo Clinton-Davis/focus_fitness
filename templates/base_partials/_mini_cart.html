@@ -8,12 +8,22 @@
             <div id="cart" class="mr-md-4">
 
                 {% if request.user.is_authenticated %}
+                {% if request.user.is_staff %}
+                <a href="{% url 'admin' %}">
+                    <span class="aw text-wht">
+                        <i class="fad fa-user-cog"></i>
+                        Admin Login
+                    </span>
+                </a>
+                {% else %}
+                {% endif%}
                 <a href="{% url 'profile' %}">
                     <span class="aw text-wht">
                         <i class="fad fa-user-alt"></i>
                         &nbsp;{{ user.username|title }}
                     </span>
                 </a>
+
                 {% else %}
                 <span class="aw text-wht">
                     <i class="fad fa-user-alt"></i>

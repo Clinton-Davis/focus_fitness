@@ -105,7 +105,7 @@ def paymentview(request):
                                     kwargs={'subscription_id': subscription.id}))
 
         except:
-            messages.info(
+            messages.error(
                 request, "An error has occurred, investigate it in the console")
 
     context = {
@@ -133,7 +133,7 @@ def updatetransaction(request, subscription_id):
         del request.session['selected_membership_type']
     except:
         pass
-    messages.info(request, 'Successfully created {} membership'.format(
+    messages.success(request, 'Successfully created {} membership'.format(
         selected_membership))
     return redirect('/programs')
 
@@ -155,7 +155,7 @@ def cancelsubscription(request):
     user_membership.membership = free_membership
     user_membership.save()
 
-    messages.info(
+    messages.success(
         request, "Successfully cancelled membership, A email has been sent.")
     # sending a emial here
 

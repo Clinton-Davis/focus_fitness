@@ -66,7 +66,7 @@ document.querySelector('.wrapper').addEventListener('click', function () {
 });
 
 function stripeTokenHandler(token) {
-    successElement.className = '';
+    successElement.className = 'sub';
     successElement.querySelector('.token').textContent = token.id;
     // Insert the token ID into the form so it gets submitted to the server
     var form = document.getElementById('payment-form');
