@@ -17,9 +17,20 @@
             </h2>
             <div class="row d-flex justify-content-center">
                 <div class=" col-12 d-flex d-flex justify-content-center no-gutters">
+                    {% if current_membership == False %}
                     <a class="ripple-surface hero-btn btn btn-danger btn-lg aw text-wht m-1 border border-white"
                         href="{% url 'account_signup' %}" role="button">Join Up</a>
+                    {% endif %}
 
+                    {% if current_membership == "Free" %}
+                    <a class="ripple-surface hero-btn btn btn-danger btn-lg aw text-wht m-1 border border-white"
+                        href="{% url 'memberships:select-membership' %}" role="button">Subcribe</a>
+                    {% endif %}
+
+                    {% if current_membership == "Professional" %}
+                    <a class="ripple-surface hero-btn btn btn-danger btn-lg aw text-wht m-1 border border-white"
+                        href="{% url 'programs:list' %}" role="button">Programs</a>
+                    {% endif %}
                 </div>
                 <div class=" col-6 d-flex d-flex justify-content-center no-gutters">
                     <a class="ripple-surface hero-btn btn btn-primary btn-lg aw text-wht m-1 border border-white"
@@ -86,7 +97,7 @@
     </div>
 
     <!--SubScribe banner-->
-    <div hidden class="card my-5 py-5">
+    <div {% if current_membership == "Professional" %} hidden {% else %}{% endif %} class="card my-5 py-5">
         <div class="row no-gutters align-items-center">
             <div class="col-md-4 mx-auto" style="max-width: 300px;">
                 <img src="{% static 'images/womenblog-crop.jpg' %}" class="card-img bs-2" alt="...">

@@ -3,11 +3,12 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from django.shortcuts import reverse, render
 from django.views import generic
+from django.views.generic import TemplateView
 from .forms import ContactForm
 from programs.models import Program
 from products.models import Product
 from blog.models import Blog
-from django.views.generic import TemplateView
+from memberships.views import get_user_membership
 
 
 def IndexView(request):
@@ -15,11 +16,20 @@ def IndexView(request):
     sale_items = Product.objects.filter(on_sale=True)
     programs = Program.objects.all()
 
+    if request.user.is_authenticated:
+        current_membership = get_user_membership(request)
+        current_membership = str(current_membership.membership)
+
+    else:
+        current_membership = False
+
     context = {
         'feature_blog': feature_blog,
         'sale_items':  sale_items,
-        'programs': programs
+        'programs': programs,
+        'current_membership': current_membership
     }
+
     return render(request, "home/index.html", context)
 
 

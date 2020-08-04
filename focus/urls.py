@@ -9,7 +9,7 @@ from django.urls import path, include
 from home import views
 
 urlpatterns = [
-    path('', include('home.urls', namespace='home')),
+    path('', include('home.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('products/', include('products.urls')),
@@ -17,7 +17,7 @@ urlpatterns = [
     path('programs/', include('programs.urls', namespace='programs')),
     path('memberships/', include('memberships.urls', namespace='memberships')),
     path('blog/', include('blog.urls', namespace='blog')),
-    path('profile/', include('profiles.urls', namespace='profiles')),
+    path('profile/', include('profiles.urls')),
     path('checkout/', include('checkout.urls')),
 
     path('favicon.ico', RedirectView.as_view(
