@@ -6,6 +6,7 @@ from .forms import OrderForm
 from cart.contexts import cart_contents
 from products.models import Product
 from profiles.models import UserProfile
+from memberships.views import get_user_membership
 from profiles.forms import UserProfileAddressForm
 from .models import Order, OrderLineItem
 
@@ -96,8 +97,8 @@ def checkout(request):
             return redirect(reverse('products'))
 
         current_cart = cart_contents(request)
-        total = current_cart['grand_total']
-        stripe_total = round(total * 100)
+        grand_total = current_cart['grand_total']
+        stripe_total = round(grand_total * 100)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,

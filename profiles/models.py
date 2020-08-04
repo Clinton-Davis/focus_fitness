@@ -6,14 +6,6 @@ from django_countries.fields import CountryField
 from memberships.models import UserMembership
 
 
-class UserPersonalProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    bio = models.TextField()
-    avatar = models.ImageField()
-    membership = models.ForeignKey(UserMembership,
-                                   on_delete=models.CASCADE)
-
-
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 

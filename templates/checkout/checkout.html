@@ -69,13 +69,20 @@
             <div class="row text-black text-right">
                 <div class="col-7 offset-2">
                     <p class="my-0 aw">Order Total:</p>
+                    <p class="my-0 aw">Discount:</p>
+                    <p class="my-0 aw">Sub Total:</p>
+                    <p class="my-0 aw">TAX:</p>
                     <p class="my-0 aw">Delivery:</p>
                     <p class="my-0 aw">Grand Total:</p>
                 </div>
                 <div class="col-3">
-                    <p class="my-0 aw">${{ total | floatformat:2 }}</p>
+
+                    <p class="my-0 aw">${{ order_total | floatformat:2 }}</p>
+                    <p class="my-0 aw">${{ discount | floatformat:2 }}</p>
+                    <p class="my-0 aw">${{ sub_total | floatformat:2 }}</p>
+                    <p class="my-0 aw">${{ tax | floatformat:2 }}</p>
                     <p class="my-0 aw">${{ delivery | floatformat:2 }}</p>
-                    <p class="my-0 aw"><strong>${{ grand_total | floatformat:2 }}</strong></p>
+                    <p class="my-0 aw">${{ grand_total | floatformat:2 }}</strong></p>
                 </div>
             </div>
         </div>

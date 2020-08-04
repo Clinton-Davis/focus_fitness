@@ -2,6 +2,23 @@ from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
+from memberships.views import get_user_membership
+
+
+def get_loged_user_discount(request):
+    """Checks to see if the use is authenticated.
+        Looks to get_user_membership function in memberships.views for current membership.
+        If membership is 'Pro' added discount to cart"""
+    if request.user.is_authenticated:
+        current_membership = get_user_membership(request)
+        current_membership = str(current_membership.membership)
+    else:
+        current_membership = False
+    if current_membership == "Professional":
+        discount = True
+        return discount
+    else:
+        return None
 
 
 def cart_contents(request):
@@ -10,6 +27,8 @@ def cart_contents(request):
     cart_items = []
     total = 0
     product_count = 0
+    discount = 0
+    tax = 0
     cart = request.session.get('cart', {})
 
     for item_id, item_data in cart.items():
@@ -33,23 +52,30 @@ def cart_contents(request):
                     'product': product,
                     'size': size,
                 })
-
-    if total < settings.FREE_DELIVERY_THRESHOLD:
-        delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
-        free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total
+    if request.user.is_authenticated:
+        user_discount = get_loged_user_discount(request)
+        if user_discount == True:
+            discount = total * Decimal(settings.SUB_DISCOUNT_PERCENTAGE / 100)
     else:
-        delivery = 0
-        free_delivery_delta = 0
+        discount = 0
 
-    grand_total = delivery + total
+    cart_total = total
+    sub_total = cart_total - discount
+    delivery = sub_total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
+    tax = sub_total * Decimal(settings.TAX_RATE_PERCENTAGE / 100)
+    grand_total = sub_total + delivery + tax
+    tax_rate = Decimal(settings.TAX_RATE_PERCENTAGE)
+    discount_percentage = Decimal(settings.STANDARD_DELIVERY_PERCENTAGE)
 
     context = {
         'cart_items': cart_items,
+        'sub_total': sub_total,
+        'tax': tax,
+        'cart_total': cart_total,
         'total': total,
         'product_count': product_count,
         'delivery': delivery,
-        'free_delivery_delta': free_delivery_delta,
-        'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
+        'discount': discount,
         'grand_total': grand_total,
     }
 

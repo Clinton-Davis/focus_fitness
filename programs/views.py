@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.contrib import messages
+from django.shortcuts import render, redirect, reverse
 from django.views.generic import ListView, DetailView, View
 from memberships.models import UserMembership
 from memberships.views import get_user_membership
@@ -8,6 +9,18 @@ from .models import Program, Workout
 class ProgramListView(ListView):
     model = Program
 
+    def get(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            messages.info(request, "You Need to Login First")
+            return redirect(reverse('account_login'))
+        else:
+            programs = Program.objects.all()
+
+        context = {
+            'programs': programs
+        }
+        return render(request, "programs/program_list.html", context)
+
 
 class ProgramDetailView(DetailView):
     model = Program
@@ -16,7 +29,7 @@ class ProgramDetailView(DetailView):
 class WorkoutDetailView(View):
     """ getting the workouts that are associated with the programs 
         and filtering by slug. Checks to see if the memebership type 
-        is allowed to be viewed, if true, it adds it to contect."""
+        is allowed to be viewed, if true, it adds it to context."""
 
     def get(self, request, program_slug, workout_slug, *args, **kwargs):
         program_qs = Program.objects.filter(slug=program_slug)

@@ -61,6 +61,10 @@ img {
   padding-right: 0px;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 .aw {
   font-family: "audiowide", sans-serif;
 }
