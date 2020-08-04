@@ -6,6 +6,7 @@ from .forms import OrderForm
 from cart.contexts import cart_contents
 from products.models import Product
 from profiles.models import UserProfile
+from memberships.views import get_user_membership
 from profiles.forms import UserProfileAddressForm
 from .models import Order, OrderLineItem
 

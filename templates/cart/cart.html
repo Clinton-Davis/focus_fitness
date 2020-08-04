@@ -3,19 +3,19 @@
 {% block content %}
 
 
-<div class="container-fluid bg-black fixed-top crumbs">
-    <div class="row">
-        <div class="col-md-12 mb-0">
-            <a class="text-wht aw" href="{% url 'home' %}">Home</a>
-            <span class="mx-2 mb-0 text-wht">/</span>
-            <strong class="text-wht aw">Cart</strong>
-        </div>
-    </div>
-</div>
 
 <!-- <div class="container-cart"> -->
 <!-- <div class="container product-overlay"> -->
 <div class="container mb-2">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-12 mb-0">
+                <a class="text-bk aw pl-2" href="{% url 'home' %}">Home</a>
+                <span class="mx-2 mb-0 text-bk">/</span>
+
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col">
             <hr>
@@ -101,9 +101,18 @@
                     {% endfor %}
                     <tr>
                         <td colspan="5" class="pt-5 text-right">
-                            <h6><strong class="aw">Bag Total: ${{ total|floatformat:2 }}</strong></h6>
-                            <h6 class="aw">Delivery ${{ delivery|floatformat:2 }}</h6>
-                            <h4 class="mt-4 aw"><strong>Total: ${{grand_total|floatformat:2 }}</strong></h4>
+                            <h6 class="aw">Cart Total: <span class="underline">${{ cart_total|floatformat:2 }}</span>
+                            </h6>
+                            {% if discount > 0 %}
+                            <h6 class="aw">Discount:&nbsp;&nbsp;&nbsp; ${{ discount|floatformat:2 }}</h6>
+                            <h6 class="aw">Sub total:&nbsp; <span
+                                    class="underline">${{ sub_total|floatformat:2 }}</span></h6>
+                            {% else %}
+                            {% endif %}
+                            <h6 class="aw">Delivery:&nbsp;&nbsp;&nbsp; ${{ delivery|floatformat:2 }}</h6>
+                            <h6 class="aw">TAX:&nbsp;&nbsp;&nbsp; ${{ tax|floatformat:2 }}</h6>
+                            <h5 class="mt-4 aw">Grand Total: <span
+                                    class="underline">${{grand_total|floatformat:2 }}</span></h5>
 
 
                         </td>
