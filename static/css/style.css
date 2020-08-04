@@ -63,6 +63,7 @@ img {
 
 .underline {
   text-decoration: underline;
+  ;
 }
 
 .aw {
@@ -506,9 +507,19 @@ nav {
 }
 
 /*SHOP*/
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.form-inline {
 
+  display: flex;
+  flex-flow: initial;
 
+  -ms-flex-align: center;
+  align-items: center;
+}
 
 .product-overlay {
   background-color: rgb(255, 255, 255);

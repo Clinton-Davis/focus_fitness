@@ -6,7 +6,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ('name', 'in_stock', 'on_sale', 'category',
                     'price', 'rating', 'image',)
 
-    list_editable = ('in_stock', 'on_sale', 'price',)
+    list_editable = ('in_stock', 'on_sale', 'price', 'category',)
 
 
 class CategoryAdmin(admin.ModelAdmin):
