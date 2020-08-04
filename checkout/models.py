@@ -27,7 +27,13 @@ class Order(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     delivery_cost = models.DecimalField(
         max_digits=6, decimal_places=2, null=False, default=0)
+    sub_discount = models.DecimalField(
+        max_digits=6, decimal_places=2, null=False, default=0)
+    tax = models.DecimalField(
+        max_digits=6, decimal_places=2, null=False, default=0)
     order_total = models.DecimalField(
+        max_digits=10, decimal_places=2, null=False, default=0)
+    sub_total = models.DecimalField(
         max_digits=10, decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(
         max_digits=10, decimal_places=2, null=False, default=0)
@@ -36,24 +42,25 @@ class Order(models.Model):
         max_length=254, null=False, blank=True, default='')
 
     def _generate_order_number(self):
-        """
-            Generate a random, unique order number using UUID
-            """
+        """Generate a random, unique order number using UUID"""
         return uuid.uuid4().hex.upper()
 
     def update_total(self):
         """
         Update grand total each time a line item is added,
-        accounting for delivery costs.
+        accounting for delivery costs, tax, and discounts
         """
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))[
             'lineitem_total__sum'] or 0
-        if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
-            self.delivery_cost = self.order_total * \
-                settings.STANDARD_DELIVERY_PERCENTAGE / 100
+
+        if self.sub_discount > 0:
+            self.sub_discount = self.order_total * settings.SUB_DISCOUNT_PERCENTAGE / 100
         else:
-            self.delivery_cost = 0
-        self.grand_total = self.order_total + self.delivery_cost
+            self.sub_discount = 0
+        self.sub_total = self.order_total - self.sub_discount
+        self.delivery_cost = self.sub_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
+        self.tax = self.order_total * settings.TAX_RATE_PERCENTAGE / 100
+        self.grand_total = self.sub_total + self.delivery_cost + self.tax
         self.save()
 
     def save(self, *args, **kwargs):
