@@ -25,11 +25,11 @@
                             </div>
                         </a>
                         <div class="row justify-content-center">
-                            <div class="text-center col-md-2"><span><i class="fad fa-eye"></i>
+                            <div class="text-center col-md-2"><span><i class="text-grn fad fa-eye"></i>
                                     {{ blog.get_view_count }}</span></div>
-                            <div class="text-center col-md-2"><span><i class="fad fa-thumbs-up"></i>
+                            <div class="text-center col-md-2"><span><i class="text-primary fad fa-thumbs-up"></i>
                                     {{ blog.get_like_count }}</span><br></div>
-                            <div class="text-center col-md-2"><span><i class="fad fa-comments-alt"></i>
+                            <div class="text-center col-md-2"><span><i class="text-ylw fad fa-comments-alt"></i>
                                     {{ blog.get_comment_count }}</span></div>
                         </div>
                     </div>
@@ -113,16 +113,9 @@
             {% endif %}
             {% endif %}
             {% endfor %}
-
-
-
-
-
         </div>
-
         <!-- Sidebar Widgets Column -->
         <div class="col-md-4">
-
             <!-- Search Widget -->
             <div id="blog-side-card" class="card my-4">
                 <!-- <h5 class="aw text-wht bg-green text-center card-header">Search</h5> -->
@@ -138,13 +131,14 @@
 
                 <!-- Categories Widget -->
                 <div class="card my-4">
-                    <h5 class="aw text-center card-header bg-green">Categories</h5>
-                    <div class="card-body">
+                    <h5 class="aw text-center card-header text-wht bg-green">Categories</h5>
+                    <div class="card-body bg-black-a">
                         <div class="row">
                             <div class="col-lg-6">
                                 <ul class="list-unstyled mb-0">
                                     {% for item in category_menu %}
-                                    <a class=" dropdown-item aw" href="{% url 'blog:category' item %}">{{ item }}</a>
+                                    <a class=" dropdown-item aw text-wht"
+                                        href="{% url 'blog:category' item %}">{{ item }}</a>
                                     {% endfor %}
                                 </ul>
                             </div>

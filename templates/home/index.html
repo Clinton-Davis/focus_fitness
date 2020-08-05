@@ -163,31 +163,39 @@
         <div class="container">
             <h2 class="aw active-size text-center text-wht mt-5 pt-4 pb-4">Feature Blogs</h2>
             <div class="row ">
-                {% for blog in feature_blog %}
-                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                    <div class="card w-100 h-100 border-1 ">
-                        <a class="mx-auto" href="{{ blog.get_absolute_url }}">
-                            <img class="mx-auto card-img-top  img-fluid" src="{{ blog.thumbnail.url }}"
-                                alt="{{ blog.title|title }}">
-                        </a>
-                        <div class="card-body pb-0">
-                            <p class="aw text-center">{{ blog.title|title }}</p>
-                            <a href="{{ blog.get_absolute_url }}"><small
-                                    class="text-muted">{{ blog.category }}</small></a>
-                        </div>
-                        <div class="card-footer bg-white pt-0 border-0 rounded-10 text-center">
-                            <div class="row ">
-                                <div class="col">
-                                    <p class=" mb-0  aw">{{ blog.content|safe|truncatechars:100 }}</p>
-
-                                    <i class="fad fa-star mr-1"></i>
-                                    <small class="text-muted">{{ items.rating }}</small>
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner text-wht">
+                        {% for blog in feature_blog %}
+                        <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}"
+                            id="slide{{ forloop.counter }} ">
+                            <a href="{{ blog.get_absolute_url }}">
+                                <img class="d-block carosel-img mx-auto" src="{{ blog.thumbnail.url }}"
+                                    alt="First slide">
+                                <div class="row justify-content-center">
+                                    <h5 class="text-center text-wht">{{ blog.title|title }}</h5>
                                 </div>
+                            </a>
+                            <div class="row justify-content-center">
+                                <div class="text-center col-md-2"><span><i class="text-grn fad fa-eye"></i>
+                                        {{ blog.get_view_count }}</span></div>
+                                <div class="text-center col-md-2"><span><i class="text-primary fad fa-thumbs-up"></i>
+                                        {{ blog.get_like_count }}</span><br></div>
+                                <div class="text-center col-md-2"><span><i class="text-ylw fad fa-comments-alt"></i>
+                                        {{ blog.get_comment_count }}</span></div>
                             </div>
                         </div>
+
+                        {% endfor %}
                     </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-                {% endfor %}
             </div>
 
 
@@ -205,3 +213,30 @@
     {{ block.super }}
 
     {% endblock postload_js %}
+
+    <div class="row ">
+        {% for blog in feature_blog %}
+        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <div class="card w-100 h-100 border-1 ">
+                <a class="mx-auto" href="{{ blog.get_absolute_url }}">
+                    <img class="mx-auto card-img-top  img-fluid" src="{{ blog.thumbnail.url }}"
+                        alt="{{ blog.title|title }}">
+                </a>
+                <div class="card-body pb-0">
+                    <p class="aw text-center">{{ blog.title|title }}</p>
+                    <a href="{{ blog.get_absolute_url }}"><small class="text-muted">{{ blog.category }}</small></a>
+                </div>
+                <div class="card-footer bg-white pt-0 border-0 rounded-10 text-center">
+                    <div class="row ">
+                        <div class="col">
+                            <p class=" mb-0  aw">{{ blog.content|safe|truncatechars:100 }}</p>
+
+                            <i class="fad fa-star mr-1"></i>
+                            <small class="text-muted">{{ items.rating }}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>

@@ -90,7 +90,11 @@ img {
 }
 
 .text-wht {
-  color: rgb(252, 252, 252);
+  color: rgb(235, 235, 235);
+}
+
+.text-off-wht {
+  color: rgb(192, 190, 190);
 }
 
 .text-grn {
@@ -449,6 +453,7 @@ nav {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  height: 100vh;
 }
 
 /*contact page*/

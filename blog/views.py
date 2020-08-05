@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.db.models import Q
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
@@ -110,6 +111,7 @@ class BlogDeleteView(DeleteView):
     success_url = '/blog/'
 
 
+@login_required(login_url="/accounts/login")
 def like(request, slug):
     """ Checks to see if the use has liked the blog
     If True, then delete the like if False then create the like"""
