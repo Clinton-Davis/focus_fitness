@@ -435,12 +435,7 @@ nav {
 }
 
 /*About Page*/
-.about {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 #about-pic {
   background: url(/static/images/delaney-van-whiets.jpg) no-repeat center center fixed;
@@ -482,7 +477,12 @@ nav {
 /* BLOG PAGES*/
 .blog-container {
   max-width: 620px;
+}
 
+.carosel-img {
+  min-width: 25rem;
+  max-width: 25rem;
+  /* object-fit: fill; */
 }
 
 #blog-side-card {
