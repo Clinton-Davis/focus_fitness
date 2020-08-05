@@ -28,7 +28,7 @@ class BlogForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
 
         placeholders = {
-            'title': 'Your Blogs Title',
+            'title': 'Your Blogs Title, 50 Characters max',
             'content': 'Write your Blog in here',
             'thumbnail': 'Picture',
 
@@ -43,7 +43,6 @@ class BlogForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'mont_r'
             self.fields[field].label = False
-        # self.fields['category'].label = 'Choise Category'
 
 
 class BlogCommentForm(forms.ModelForm):

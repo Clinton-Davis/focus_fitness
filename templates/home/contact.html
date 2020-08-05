@@ -14,14 +14,14 @@
             </div>
         </div>
     </div>
-    <div class="container about">
+    <div class="container center-block">
         <div class="overlay">
             <div class="col p-4">
                 <p class="text-wht aw display-3 text-center">Contact Us</p>
                 <form method="POST" class="text-wht p4 mb-4 aw">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    <input type="submit" class="aw text-wht btn btn-warning" value="Submit message" />
+                    <input type="submit" class="aw text-wht btn btn-warning w-50" value="Submit message" />
                 </form>
             </div>
         </div>

@@ -93,13 +93,14 @@
 
                 <!-- Categories Widget -->
                 <div class="card my-4">
-                    <h5 class="aw text-center card-header bg-green">Categories</h5>
-                    <div class="card-body">
+                    <h5 class="aw text-center text-wht card-header bg-green">Categories</h5>
+                    <div class="card-body bg-black-a">
                         <div class="row">
                             <div class="col-lg-6">
                                 <ul class="list-unstyled mb-0">
                                     {% for item in category_menu %}
-                                    <a class=" dropdown-item aw" href="{% url 'blog:category' item %}">{{ item }}</a>
+                                    <a class="text-wht dropdown-item aw"
+                                        href="{% url 'blog:category' item %}">{{ item }}</a>
                                     {% endfor %}
                                 </ul>
                             </div>

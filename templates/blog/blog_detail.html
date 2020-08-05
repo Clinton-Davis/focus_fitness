@@ -3,21 +3,35 @@
 {% block content %}
 
 <div class="blog-pic">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-12 mb-0">
+                <a class="text-wht aw pl-2" href="{% url 'home' %}">Home</a>
+                <span class="mx-2 mb-0 text-wht">/</span>
+                {% if user.is_authenticated %}
+                <a class="text-wht aw pl-2" href="{% url 'blog:create' %}">Create</a>
+                <span class="mx-2 mb-0 text-wht">/</span>
+                {% endif %}
+
+                <small class="text-wht aw">Blogs</small>
+            </div>
+        </div>
+    </div>
     <div class="container center-block">
         <div class="row mx-auto bg-black-a text-wht">
             <!-- Post Content Column -->
             <div class="col-lg-12">
 
                 <!-- Title -->
-                <h1 class="mt-4 aw"> {{ blog.title|title }}</h1>
+                <h1 class="mt-4 aw text-center"> {{ blog.title|title }}</h1>
 
                 <!-- Author -->
                 <p class="lead">
-                    by: {{ blog.author|title }}
+                    By: {{ blog.author|title }}
 
                     {% if  user.is_authenticated and user == blog.author %}
                     <span><a class="font-small ml-3 mb-0 text-grn" href="{{ blog.get_update_url }}"> (Edit)</a></span>
-                    <span class="font-small mb-0 text-bk">/</span>
+                    <span class="font-small mb-0 text-wht">/</span>
                     <span><a class="font-small mb-0 text-red" href="{{ blog.get_delete_url }}"> (Delete)</a></span>
 
                     {% endif %}
@@ -26,9 +40,9 @@
                 <hr>
 
                 <!-- Date/Time -->
-                <span><i class=" px-2 fad fa-comments-alt"></i> {{ blog.get_comment_count }}</span>
-                <span><i class="px-2 fad fa-eye"></i> {{ blog.get_view_count }}</span>
-                <span><i class="px-2 fad fa-thumbs-up"></i> {{ blog.get_like_count }}</span>
+                <span><i class="px-2 text-grn fad fa-eye"></i> {{ blog.get_view_count }}</span>
+                <span><i class="px-2 text-primary fad fa-thumbs-up"></i> {{ blog.get_like_count }}</span>
+                <span><i class=" px-2 text-ylw fad fa-comments-alt"></i> {{ blog.get_comment_count }}</span>
                 <span class="text-mute float-right">Posted: {{ blog.publish_date|timesince }}</span>
 
 
@@ -44,7 +58,7 @@
                 <hr>
                 <p class="">If you like the Post, give it a
                     <a class="text-muted" href="{{ blog.get_like_url }}">
-                        <i class="pl-2 fad fa-thumbs-up fa-lg"></i>
+                        <i class="pl-2 text-primary fad fa-thumbs-up fa-lg"></i>
                         {{ blog.get_like_count }}
                     </a>
 
@@ -56,12 +70,12 @@
 
                 {% if request.user.is_authenticated %}
                 <div class=" card my-4">
-                    <h5 class="card-header">Leave a Comment:</h5>
-                    <div class="card-body">
+                    <h5 class="card-header aw text-wht bg-black-a">Leave a Comment:</h5>
+                    <div class="card-body bg-black-a">
                         <form method="POST">
                             {% csrf_token %}
                             {{ form|crispy }}
-                            <button type="submit" class="btn btn-primary">Comment</button>
+                            <button type="submit" class="aw btn btn-primary">Comment</button>
                         </form>
                     </div>
                 </div>
@@ -71,10 +85,10 @@
                 <!-- Single Comment -->
                 {% for blogcomment in blog.blogcomments %}
                 <div class=" media mb-4">
-                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
                     <div class="media-body">
-                        <h5 class="mt-0">{{ blogcomment.user|title }}</h5>
-                        <p>{{ blogcomment.content}}</p>
+
+                        <h5 class="mt-0"><small>Message from: </small>{{ blogcomment.user|title }}</h5>
+                        <p class="pl-3">{{ blogcomment.content}}</p>
                         <small>{{ blogcomment.timestamp|timesince }} ago</small>
                     </div>
                 </div>
