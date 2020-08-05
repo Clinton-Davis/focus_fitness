@@ -6,13 +6,13 @@
 
 {% block content %}
 <div class="reg-pic ">
-  <div class="container about">
+  <div class="container center-block">
     <div class="overlay">
       <div class="col p-4">
         <p class="text-red aw display-3 text-center">Sign Up</p>
 
 
-        <p class="aw text-wht">{% blocktrans %}Already have an account? Then please <a class="text-red"
+        <p class="text-wht">{% blocktrans %}Already have an account? Then please <a class="text-red"
             href="{{ login_url }}">sign
             in</a>.{% endblocktrans %}</p>
 
@@ -22,7 +22,7 @@
           {% if redirect_field_value %}
           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
           {% endif %}
-          <button class="rounded-10 p-2 text-wht bg-danger" type="submit">{% trans "Sign Up" %} &raquo;</button>
+          <button class="rounded-10 p-2 text-wht bg-danger w-100" type="submit">{% trans "Sign Up" %} &raquo;</button>
         </form>
       </div>
     </div>

@@ -36,7 +36,12 @@ img {
   font-size: 3.0rem;
 }
 
+.center-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+}
 
 .alpha-overlay {
   position: relative;
@@ -455,7 +460,7 @@ nav {
 .overlay {
   position: relative;
   height: fit-content;
-  top: -65px;
+  top: 0px;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 20px;
   -webkit-border-radius: 20px;
