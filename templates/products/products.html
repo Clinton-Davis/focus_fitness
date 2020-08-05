@@ -23,12 +23,11 @@
 
                 </div>
             </div>
-
+            <!-- Catogerys Dropdown list -->
             <div class="row justify-content-center">
-
                 <ul class="nav aw text-bk">
-                    <li class="nav-item dropdown ">
-                        <a class="logo-font font-weight-bold nav-link text-grn mr-5" href="#" id="all-products-link"
+                    <li class="nav-item dropdown center">
+                        <a class="logo-font font-weight-bold nav-link text-grn  mr-3" href="#" id="all-products-link"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             All Products
                         </a>
@@ -41,8 +40,8 @@
                             <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="logo-font font-weight-bold nav-link text-red mr-5" href="#" id="activewear-link"
+                    <li class="nav-item dropdown center">
+                        <a class="logo-font font-weight-bold nav-link text-red  mr-3" href="#" id="activewear-link"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Activewear & EQP
                         </a>
@@ -57,8 +56,8 @@
                                 class="dropdown-item">All</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="logo-font font-weight-bold nav-link text-blue mr-5" href="#" id="supplements-link"
+                    <li class="nav-item dropdown center">
+                        <a class="logo-font font-weight-bold nav-link text-blue mr-3" href="#" id="supplements-link"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Supplements
                         </a>
@@ -72,19 +71,13 @@
                                 Supplements</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="logo-font font-weight-bold nav-link text-ylw" href="#" id="specials-link"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                    <li class="nav-item dropdown center">
+                        <a class="logo-font font-weight-bold nav-link text-ylw  mr-3"
+                            href="{% url 'products' %}?category=special_offers" id="specials-link"
+                            aria-expanded="false">
                             Special Offers
                         </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                            <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
-                            <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
-                            <a href="{% url 'products' %}?category=clearance" class="dropdown-item">Clearance</a>
-                            <a href="{% url 'products' %}?category=new_arrivals,deals,clearance"
-                                class="dropdown-item">All
-                                Specials</a>
-                        </div>
                     </li>
                 </ul>
             </div>
@@ -106,7 +99,7 @@
                 </button>
                 </form>
             </div>
-
+            <!-- Sort By Nav -->
             <div class="row d-flex justify-content-around">
                 <div class="product-containter col-10 offser-1">
                     <div class="row mt-1 mb-2">
@@ -152,24 +145,19 @@
                             </p>
                         </div>
                     </div>
-
+                    <!-- Product Cards -->
                     <div class="row ">
                         {% for product in products %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card w-100 h-100 border-1">
 
                                 {% if product.in_stock == True %}
-                                {% if product.image %}
+
                                 <a class="ripple-surface mx-auto" href="{% url 'product_detail' product.id %}">
-                                    <img class="mx-auto card-img-top shop-card-top-img img-fluid"
+                                    <img class="mx-auto mt-1 card-img-top shop-card-top-img img-fluid"
                                         src="{{ product.image.url }}" alt="{{ product.name }}">
                                 </a>
-                                {% else %}
-                                <a href="{% url 'product_detail' product.id %}">
-                                    <img class="ripple-surface card-img-top shop-card-top-img img-fluid"
-                                        src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                                </a>
-                                {% endif %}
+
                                 {% else %}
                                 <a class="mx-auto" href="">
                                     <img class="ripple-surface mx-auto card-img-top shop-card-top-img img-fluid"
@@ -181,9 +169,12 @@
 
                                 {% endif %}
                                 {% if product.in_stock == True %}
-                                <div class="card-footer bg-white pt-0 border-0 text-center">
-                                    <div class="row ">
-                                        <div class="col">
+                                <div class="row ">
+                                    <div class="col">
+                                        <div class="card-body pb-0">
+                                            <p class="aw text-center">{{ product.name }}</p>
+                                        </div>
+                                        <div class="card-footer bg-white pt-0 border-0 text-center">
                                             <p class="lead mb-0  aw">${{ product.price }}</p>
                                             {% if product.category %}
                                             <p class="small mt-1 mb-0">

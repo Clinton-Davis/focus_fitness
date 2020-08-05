@@ -55,10 +55,29 @@
                             <li>
                                 <p class="text-wht text-center">
                                     <a href="{{ blog.get_absolute_url }}">{{ blog.title|title }}</a><br>
-                                    <small><span class="text-grn">{{ blog.category }}</span></small>
-                                    <small><span class="text-red"> / </span></small>
-                                    <small><span
-                                            class="text-ylw">{{ blog.publish_date|date:"SHORT_DATE_FORMAT" }}</span></small>
+                                    <div class="row justify-content-center">
+                                        <div class="col-4"><small class="text-wht"><i class="text-grn fad fa-eye"></i>
+                                                {{ blog.get_view_count }}</small>
+                                        </div>
+                                        <div class="col-4"><small class="text-wht"><i
+                                                    class="text-primary fad fa-thumbs-up"></i>
+                                                {{ blog.get_like_count }}</small>
+                                        </div>
+                                        <div class="col-4"><small class="text-wht"><i
+                                                    class="text-ylw fad fa-comments-alt"></i>
+                                                {{ blog.get_comment_count }}</small>
+                                        </div>
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <div class="col-6"><small class="text-wht"><i class="fad fa-tags"></i>
+                                                {{ blog.category }}</small>
+                                        </div>
+
+                                        <div class="col-6"><small class="text-wht"><i class="fad fa-calendar-check"></i>
+                                                {{ blog.publish_date|date:"SHORT_DATE_FORMAT" }}</small>
+                                        </div>
+                                    </div>
+
                                 </p>
                             </li>
                             {% endfor %}
@@ -89,7 +108,7 @@
                                                 title="{{ order.order_number }}">{{ order.order_number|truncatechars:6 }}
                                             </a>
                                         </td>
-                                        <td>{{ order.date|date:"D d M Y" }}</td>
+                                        <td>{{ order.date|date:"SHORT_DATE_FORMAT" }}</td>
                                         <td>
                                             <ul class="list-unstyled">
                                                 <li class="small">

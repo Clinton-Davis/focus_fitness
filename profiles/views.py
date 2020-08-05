@@ -14,15 +14,16 @@ from memberships.views import (
 
 
 def profile(request):
+    template = 'profiles/profile.html'
+
     profile = get_object_or_404(UserProfile, user=request.user)
     """Displaying user Profile """
     user_membership = get_user_membership(request)
     user_subscription = get_user_subscription(request)
     orders = profile.Orders.all().order_by('-date')
-
     user_blog = Blog.objects.filter(
         author=request.user).order_by('-publish_date')
-    template = 'profiles/profile.html'
+
     context = {
         'profile': profile,
         'user_membership': user_membership,
