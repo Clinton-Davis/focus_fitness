@@ -18,7 +18,7 @@
             <div class="row d-flex justify-content-center">
                 <div class=" col-12 d-flex d-flex justify-content-center no-gutters">
                     {% if current_membership == False %}
-                    <a class="  hero-btn btn btn-danger btn-lg aw text-wht m-1 border border-white"
+                    <a class=" hover-shadow hero-btn btn btn-danger btn-lg aw text-wht m-1 border border-white"
                         href="{% url 'account_signup' %}" role="button">Join Up</a>
                     {% endif %}
 
@@ -28,25 +28,25 @@
                     {% endif %}
 
                     {% if current_membership == "Professional" %}
-                    <a class="  hero-btn btn btn-danger btn-lg aw text-wht m-1 border border-white"
+                    <a class="hover-shadow  hero-btn btn btn-danger btn-lg aw text-wht m-1 border border-white"
                         href="{% url 'programs:list' %}" role="button">Programs</a>
                     {% endif %}
                 </div>
                 <div class=" col-6 d-flex d-flex justify-content-center no-gutters">
-                    <a class="  hero-btn btn btn-primary btn-lg aw text-wht m-1 border border-white"
+                    <a class=" hover-shadow hero-btn btn btn-primary btn-lg aw text-wht m-1 border border-white"
                         href="{% url 'products' %}" role="button">Shop
                     </a>
                 </div>
                 <div class=" col-6 d-flex d-flex justify-content-center no-gutters">
-                    <a class="  hero-btn btn btn-warning btn-lg aw text-wht m-1 border border-white"
+                    <a class=" hover-shadow hero-btn btn btn-warning btn-lg aw text-wht m-1 border border-white"
                         href="{% url 'blog:list' %}" role="button">Blog</a>
                 </div>
                 <div class="mb-2 col-12 d-flex d-flex justify-content-center no-gutters">
                     {% if request.user.is_authenticated %}
-                    <a class="  hero-btn btn btn-success btn-lg aw text-wht m-1 border border-white"
+                    <a class=" hover-shadow hero-btn btn btn-success btn-lg aw text-wht m-1 border border-white"
                         href="{% url 'account_logout' %}" role="button">Logout</a>
                     {% else %}
-                    <a class="  hero-btn btn btn-success btn-lg aw text-wht m-1 border border-white"
+                    <a class=" light-shadow hero-btn btn btn-success btn-lg aw text-wht m-1 border border-white"
                         href="{% url 'account_login' %}" role="button">Login</a>
                     {% endif %}
                 </div>
