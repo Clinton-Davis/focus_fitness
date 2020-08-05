@@ -159,4 +159,4 @@ def cancelsubscription(request):
         request, "Successfully cancelled membership, A email has been sent.")
     # sending a emial here
 
-    return redirect('/memberships')
+    return redirect('profile')

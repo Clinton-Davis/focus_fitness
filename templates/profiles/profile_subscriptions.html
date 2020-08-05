@@ -20,32 +20,36 @@
             </div>
         </div>
         <div class="container">
-            <div class="row d-flex align-items-center justify-content-center h-100">
-
-                <div class="col-md-6 col-12  bg-black-a rounded-15  align-items-center">
-                    {% if user_subscription != None %}
-                    <p class="text-wht">Current Membership: {{ user_membership.membership.membership_type }}</p>
-                    <p class="text-wht">Member since: {{ user_subscription.get_created_date }}</p>
-
-                    {% if user_subscription.active != False %}
-                    <p class="text-wht">Next payment due: {{ user_subscription.get_next_billing_date }}</p>
-                    <a href="{% url 'memberships:cancel' %}">Cancel Subscription</a>
-                    {% else %}
-
-                    <p class="text-wht">You don't have a membership Plan, Check them out
+            <div class="row mt-3 justify-content-center mx-auto w-50 h-100 bg-black-a rounded-10">
+                {% if user_subscription != None %}
+                <div class="my-2 aw text-wht col-md-6 col-12 ">Current Membership:</div>
+                <div class="my-2 text-wht col-md-6 col-12 ">
+                    {{ user_membership.membership.membership_type }}</div>
+                <div class="my-2 aw text-wht col-md-6 col-12">Member since:</div>
+                <div class="my-2 text-wht col-md-6 col-12 ">
+                    {{ user_subscription.get_created_date }}
+                </div>
+                {% if user_subscription.active != False %}
+                <div class="my-2 aw text-wht col-md-6 col-12  ">Next payment due:</div>
+                <div class="my-2 text-wht col-md-6 col-12 ">
+                    {{ user_subscription.get_next_billing_date }}</div>
+                <div class="my-2 row justify-content-center">
+                    <a class="aw btn btn-danger" href="{% url 'cancel_sub' %}">Cancel Subscription</a>
+                </div>
+                {% endif %}
+                {% else %}
+                <div class="text-wht col-12 mt-4 text-center ">
+                    <p class="text-wht">You don't have any membership subscription yet.<br>If you would like to see
+                        them, you can check them out
                         <a href="{% url 'memberships:select-membership' %}">here.</a>
                     </p>
-                    {% endif %}
-
-
-                    <div class="profile-overlay"></div>
-                    {% endif %}
                 </div>
 
-
+                {% endif %}
             </div>
         </div>
     </div>
+</div>
 </div>
 
 {% endblock content %}
