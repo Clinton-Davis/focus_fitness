@@ -42,7 +42,7 @@ def CategoryView(request, category):
         'all_blogs': all_blogs
     }
 
-    return render(request, 'blog/blog_categories.html', context)
+    return render(request, 'blog/blog_categories.html', {})
 
 
 class BlogDetailView(DetailView):
