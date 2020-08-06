@@ -60,7 +60,7 @@ class Order(models.Model):
         self.sub_total = self.order_total - self.sub_discount
         self.delivery_cost = self.sub_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
         self.tax = self.order_total * settings.TAX_RATE_PERCENTAGE / 100
-        self.grand_total = self.sub_total + self.delivery_cost + self.tax
+        self.grand_total = self.sub_total + self.delivery_cost
         self.save()
 
     def save(self, *args, **kwargs):

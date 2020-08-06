@@ -63,7 +63,7 @@ def cart_contents(request):
     sub_total = cart_total - discount
     delivery = sub_total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
     tax = sub_total * Decimal(settings.TAX_RATE_PERCENTAGE / 100)
-    grand_total = sub_total + delivery + tax
+    grand_total = sub_total + delivery
     tax_rate = Decimal(settings.TAX_RATE_PERCENTAGE)
     discount_percentage = Decimal(settings.STANDARD_DELIVERY_PERCENTAGE)
 
