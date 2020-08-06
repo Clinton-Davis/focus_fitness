@@ -43,7 +43,7 @@
     <script src="https://kit.fontawesome.com/81e9d69a66.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script rel="stylesheet" src="{% static 'js/ripple.js' %}"></script>
+    <script rel="stylesheet" src="{% static 'js/main.js' %}"></script>
     <script rel="stylesheet" href="{% static 'js/cart.js' %}"></script>
     <script src="{% static 'js/stripe_elements.js' %}"></script>
     <script src="https://js.stripe.com/v3/"></script>
@@ -60,6 +60,7 @@
     <!--NavBar-->
     {% include "base_partials/_navbar.html" %}
     {% include "base_partials/_mini_cart.html" %}
+    {% include "base_partials/_up.html" %}
 
 
     {% if messages %}

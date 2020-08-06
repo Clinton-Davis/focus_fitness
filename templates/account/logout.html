@@ -6,24 +6,26 @@
 
 {% block content %}
 <div class="empty-pic ">
-  <div class="container about">
-    <div class="overlay">
-      <div class="col p-4">
-        <p class="text-wht aw display-3 text-center">Sign Out</p>
+  <div class="container center-block">
+    <div class="row justify-content-center d-flex align-items-center bg-black-a mt-5 rounded-10">
+      <div class="col align-items-center">
+        <p class="text-red aw display-3 mx-auto text-center">Sign Out</p>
         <h1>{% trans "" %}</h1>
 
-        <p class="aw text-wht">{% trans 'Are you sure you want to sign out?' %}</p>
+        <p class="aw text-wht mx-auto text-center">{% trans 'Are you sure you want to sign out?' %}</p>
 
-        <form method="post" action="{% url 'account_logout' %}">
+        <form class=" pb-4" method="post" action="{% url 'account_logout' %}">
           {% csrf_token %}
           {% if redirect_field_value %}
           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
           {% endif %}
-          <button class="aw col rounded-10 p-2" type="submit">{% trans 'Sign Out' %}</button>
+          <button class=" light-shadow aw btn-danger col rounded-10 p-2" type="submit">{% trans 'Sign Out' %}<i
+              class="pl-3 fad fa-sign-out"></i></button>
         </form>
 
       </div>
     </div>
+
   </div>
 </div>
 {% endblock %}

@@ -7,7 +7,7 @@
 
 {% block content %}
 <div class="login-pic ">
-  <div class="container about">
+  <div class="container center-block">
     <div class="overlay">
       <div class="col p-4">
         <p class="text-grn aw display-3 text-center">Login</p>
@@ -31,7 +31,7 @@
         {% include "socialaccount/snippets/login_extra.html" %}
 
         {% else %}
-        <p class="aw text-wht">{% blocktrans %}If you have not created an account yet, then please
+        <p class=" text-center text-wht">{% blocktrans %}If you have not created an account yet,<br> then please
           <a class="text-grn" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
         {% endif %}
 
@@ -42,8 +42,9 @@
           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
           {% endif %}
           <a class="button text-grn secondaryAction"
-            href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-          <button class="primaryAction rounded-10  p-2" type="submit">{% trans "Sign In" %}</button>
+            href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a><br>
+          <button class="light-shadow primaryAction rounded-10 btn-success w-100 p-2 mt-2" type="submit"><i
+              class="pr-2 fad fa-sign-in"></i>{% trans "Sign In" %}</button>
         </form>
       </div>
     </div>

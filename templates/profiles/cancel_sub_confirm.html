@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<div id="about-pic">
+    <div class="container about">
+        <div class="overlay border border-white ">
+            <div class="col p-4">
+
+                <h4 class="text-warning aw text-center">Are you sure you want to Cancel your Subscription
+
+                </h4>
+                <span><a href="{% url 'profile' %}"
+                        class="aw text-wht mt-3 w-100 btn btn-success text-bk border border-white">No.
+                        Take me
+                        back to Dashboard </a></span>
+                <span><a href="{% url 'memberships:cancel' %}"
+                        class="aw text-wht mt-3 w-100 btn btn-danger text-bk border border-white">Yes. Cancel
+                        My
+                        Subscription</a></span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

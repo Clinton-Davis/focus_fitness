@@ -32,11 +32,38 @@ img {
   max-width: 40rem;
 }
 
+.form-control {
+  padding-left: 4rem;
+}
+
+.hover-shadow:hover {
+  -webkit-box-shadow: 0px 10px 19px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 10px 19px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 10px 19px -5px rgba(0, 0, 0, 0.75);
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.bg-wht {
+  background-color: rgba(255, 255, 255, 0.555);
+}
+
 .display-4 {
   font-size: 3.0rem;
 }
 
+.center-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+}
+
+.center-block-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .alpha-overlay {
   position: relative;
@@ -66,6 +93,10 @@ img {
   ;
 }
 
+.mb--1 {
+  margin-bottom: -0.5rem;
+}
+
 .aw {
   font-family: "audiowide", sans-serif;
 }
@@ -85,7 +116,11 @@ img {
 }
 
 .text-wht {
-  color: rgb(252, 252, 252);
+  color: rgb(235, 235, 235);
+}
+
+.text-off-wht {
+  color: rgb(192, 190, 190);
 }
 
 .text-grn {
@@ -201,38 +236,6 @@ img {
 
 
 
-/*RIPPLE EFFECT*/
-
-.ripple-surface {
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-}
-
-.ripple-surface span {
-  position: absolute;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.685);
-  width: 100px;
-  height: 100px;
-  margin-top: -50px;
-  margin-left: -50px;
-  animation: ripple 700ms;
-  opacity: 0;
-  -webkit-animation: ripple 700ms;
-}
-
-@keyframes ripple {
-  from {
-    opacity: 1;
-    transform: scale(0);
-  }
-
-  to {
-    opacity: 0;
-    transform: scale(10);
-  }
-}
 
 #cart {
   position: fixed;
@@ -435,12 +438,7 @@ nav {
 }
 
 /*About Page*/
-.about {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 #about-pic {
   background: url(/static/images/delaney-van-whiets.jpg) no-repeat center center fixed;
@@ -449,6 +447,7 @@ nav {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  height: 100vh;
 }
 
 /*contact page*/
@@ -460,7 +459,7 @@ nav {
 .overlay {
   position: relative;
   height: fit-content;
-  top: -65px;
+  top: 0px;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -482,7 +481,12 @@ nav {
 /* BLOG PAGES*/
 .blog-container {
   max-width: 620px;
+}
 
+.carosel-img {
+  min-width: 25rem;
+  max-width: 25rem;
+  /* object-fit: fill; */
 }
 
 #blog-side-card {

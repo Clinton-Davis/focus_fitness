@@ -153,14 +153,14 @@
 
                                 {% if product.in_stock == True %}
 
-                                <a class="ripple-surface mx-auto" href="{% url 'product_detail' product.id %}">
+                                <a class="  mx-auto" href="{% url 'product_detail' product.id %}">
                                     <img class="mx-auto mt-1 card-img-top shop-card-top-img img-fluid"
                                         src="{{ product.image.url }}" alt="{{ product.name }}">
                                 </a>
 
                                 {% else %}
                                 <a class="mx-auto" href="">
-                                    <img class="ripple-surface mx-auto card-img-top shop-card-top-img img-fluid"
+                                    <img class="  mx-auto card-img-top shop-card-top-img img-fluid"
                                         src="{% static 'images/out-of-stock.png' %}" alt="{{ product.name }}">
                                 </a>
                                 <div class="card-body pb-0">
@@ -232,7 +232,7 @@
             </div>
         </div>
     </div>
-    <div class="ripple-surface btt-button shadow-sm rounded-15 border border-black bg-dark-a">
+    <div class="  btt-button shadow-sm rounded-15 border border-black bg-dark-a">
         <a class="btt-link d-flex h-100 bg-black rounded-15">
             <i class="fad fa-hand-point-up fa-lg text-wht mx-auto my-auto"></i>
         </a>

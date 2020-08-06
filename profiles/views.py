@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from django.contrib import messages
 
 from .models import UserProfile
@@ -88,3 +88,7 @@ def OrderHistory(request, order_number):
     }
 
     return render(request, template, context)
+
+
+class Cancel_Sub_Confirm(TemplateView):
+    template_name = "profiles/cancel_sub_confirm.html"
