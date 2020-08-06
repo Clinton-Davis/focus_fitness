@@ -1,5 +1,6 @@
 from django.db import models
 from django.shortcuts import reverse
+from ckeditor.fields import RichTextField
 
 
 class Category(models.Model):
@@ -20,7 +21,8 @@ class Product(models.Model):
     category = models.ForeignKey(
         'Category', null=True, on_delete=models.SET_NULL)
     name = models.CharField(max_length=254)
-    description = models.TextField()
+    # description = models.TextField()
+    description = RichTextField(blank=True, null=True)
     has_sizes = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(

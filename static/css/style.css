@@ -32,6 +32,10 @@ img {
   max-width: 40rem;
 }
 
+.form-control {
+  padding-left: 4rem;
+}
+
 .hover-shadow:hover {
   -webkit-box-shadow: 0px 10px 19px -5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 10px 19px -5px rgba(0, 0, 0, 0.75);
@@ -87,6 +91,10 @@ img {
 .underline {
   text-decoration: underline;
   ;
+}
+
+.mb--1 {
+  margin-bottom: -0.5rem;
 }
 
 .aw {
