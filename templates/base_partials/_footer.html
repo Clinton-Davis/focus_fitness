@@ -14,13 +14,15 @@
                 <div class="form-row align-items-center">
 
                     <div class="col-auto mx-auto">
-                        <label class="sr-only" for="inlineFormInputGroup">Email</label>
-                        <div class="input-group  mb-2">
-                            <input type="text" class="form-control " id="inlineFormInputGroup" placeholder="Email">
-                            <div class="input-group-prepend">
-                                <button type="submit" class="btn btn-outline-light btn-sm">Submit</button>
+                        <form action="{% url 'newsletter_sub' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="input-group  mb-2">
+                                {{ news_form }}
+                                <div class="input-group-prepend">
+                                    <button type="submit" class="aw btn btn-outline-light btn-sm">Submit</button>
+                                </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </form>

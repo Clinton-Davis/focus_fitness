@@ -32,7 +32,7 @@ img {
   max-width: 40rem;
 }
 
-.form-control {
+.custom-pl {
   padding-left: 4rem;
 }
 
@@ -208,7 +208,9 @@ img {
   -o-border-radius: 10px;
 }
 
-
+.max-width {
+  max-width: 100%;
+}
 
 .rounded-15 {
   border-radius: 15px;
@@ -481,6 +483,10 @@ nav {
 /* BLOG PAGES*/
 .blog-container {
   max-width: 620px;
+}
+
+.blog-list-img {
+  max-width: 20rem;
 }
 
 .carosel-img {
@@ -873,11 +879,20 @@ nav {
     width: 80%;
 
   }
+
+  .max-width {
+    max-width: 70%;
+  }
+
 }
 
 @media (min-width: 992px) {
   .active-size {
     font-size: 5vw;
+  }
+
+  .max-width {
+    max-width: 65%;
   }
 
   .feature-container {
@@ -892,6 +907,10 @@ nav {
 @media (min-width: 1200px) {
   .active-size {
     font-size: 5vw;
+  }
+
+  .max-width {
+    max-width: 65%;
   }
 
 

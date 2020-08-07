@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'blog',
     'memberships',
     'programs',
+    'marketing',
 
 
 
@@ -88,9 +89,18 @@ WSGI_APPLICATION = 'focus.wsgi.application'
 
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': env('NAME'),
+        'USER': env('USER'),
+        'PASSWORD': env('PASSWORD'),
+        'HOST': env('HOST'),
+        'PORT': env('PORT')
+
     }
 }
 
@@ -116,6 +126,10 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1
+
+MAILCHIMP_API_KEY = env('MAILCHIMP_API_KEY'),
+MAILCHIMP_DATA_CENTER = env('MAILCHIMP_DATA_CENTER'),
+MAILCHIMP_EMAIL_LIST_ID = env('MAILCHIMP_EMAIL_LIST_ID')
 
 
 ACCOUNT_AUTHENTICATION_METHOD = 'email'

@@ -47,8 +47,8 @@ class BlogForm(forms.ModelForm):
 
 class BlogCommentForm(forms.ModelForm):
     content = forms.CharField(required=True, widget=forms.Textarea(attrs={
-        'rows': 4
-    }))
+        'rows': 4,
+    }), label="")
 
     class Meta:
         model = BlogComment

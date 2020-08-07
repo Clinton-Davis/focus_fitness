@@ -3,6 +3,8 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
 from memberships.views import get_user_membership
+from marketing.models import NewsLetterSignups
+from marketing.forms import NewLetterEmailSignupForm
 
 
 def get_loged_user_discount(request):
@@ -23,12 +25,12 @@ def get_loged_user_discount(request):
 
 def cart_contents(request):
     """ Makes the cart_contents context avaible to all apps """
-
     cart_items = []
     total = 0
     product_count = 0
     discount = 0
     tax = 0
+    form = NewLetterEmailSignupForm()
     cart = request.session.get('cart', {})
 
     for item_id, item_data in cart.items():
@@ -63,7 +65,7 @@ def cart_contents(request):
     sub_total = cart_total - discount
     delivery = sub_total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
     tax = sub_total * Decimal(settings.TAX_RATE_PERCENTAGE / 100)
-    grand_total = sub_total + delivery + tax
+    grand_total = sub_total + delivery
     tax_rate = Decimal(settings.TAX_RATE_PERCENTAGE)
     discount_percentage = Decimal(settings.STANDARD_DELIVERY_PERCENTAGE)
 
@@ -77,6 +79,7 @@ def cart_contents(request):
         'delivery': delivery,
         'discount': discount,
         'grand_total': grand_total,
+        'news_form': form
     }
 
     return context

@@ -11,7 +11,7 @@ from django.utils.text import slugify
 class Category(models.Model):
     class Meta:
         verbose_name_plural = 'Categories'
-    name = models.CharField(max_length=254)
+    name = models.CharField(max_length=254, default='')
 
     def __str__(self):
         return self.name
@@ -19,7 +19,7 @@ class Category(models.Model):
 
 class Blog(models.Model):
     title = models.CharField(max_length=50)
-    category = models.CharField(max_length=100, default='cats')
+    category = models.CharField(max_length=150)
     content = RichTextField(blank=True, null=True)
     thumbnail = models.ImageField()
     publish_date = models.DateTimeField(auto_now_add=True)

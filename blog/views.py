@@ -34,6 +34,7 @@ def CategoryView(request, category):
     category_blogs = Blog.objects.filter(category=category)
     category_menu = Category.objects.all()
     all_blogs = Blog.objects.all()
+    print(category_menu)
 
     context = {
         'category': category,
