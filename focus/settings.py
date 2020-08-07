@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'blog',
     'memberships',
     'programs',
+    'marketing',
 
 
 
@@ -125,6 +126,10 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1
+
+MAILCHIMP_API_KEY = env('MAILCHIMP_API_KEY'),
+MAILCHIMP_DATA_CENTER = env('MAILCHIMP_DATA_CENTER'),
+MAILCHIMP_EMAIL_LIST_ID = env('MAILCHIMP_EMAIL_LIST_ID')
 
 
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
