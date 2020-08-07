@@ -208,7 +208,9 @@ img {
   -o-border-radius: 10px;
 }
 
-
+.max-width {
+  max-width: 100%;
+}
 
 .rounded-15 {
   border-radius: 15px;
@@ -877,11 +879,20 @@ nav {
     width: 80%;
 
   }
+
+  .max-width {
+    max-width: 70%;
+  }
+
 }
 
 @media (min-width: 992px) {
   .active-size {
     font-size: 5vw;
+  }
+
+  .max-width {
+    max-width: 65%;
   }
 
   .feature-container {
@@ -896,6 +907,10 @@ nav {
 @media (min-width: 1200px) {
   .active-size {
     font-size: 5vw;
+  }
+
+  .max-width {
+    max-width: 65%;
   }
 
 

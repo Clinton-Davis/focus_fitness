@@ -172,7 +172,9 @@
                                 <img class="d-block carosel-img mx-auto" src="{{ blog.thumbnail.url }}"
                                     alt="First slide">
                                 <div class="row justify-content-center">
-                                    <h5 class="text-center text-wht">{{ blog.title|title }}</h5>
+                                    <h5 class="text-center text-wht">{{ blog.title|title }}</h5><br>
+                                    <a href="{{ blog.get_absolute_url }}"><small
+                                            class="text-muted">{{ blog.category }}</small></a>
                                 </div>
                             </a>
                             <div class="row justify-content-center">
@@ -183,6 +185,7 @@
                                 <div class="text-center col-md-2"><span><i class="text-ylw fad fa-comments-alt"></i>
                                         {{ blog.get_comment_count }}</span></div>
                             </div>
+
                         </div>
 
                         {% endfor %}
