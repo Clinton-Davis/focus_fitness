@@ -22,6 +22,17 @@
                     quo cupiditate temporibus, mollitia maxime, odit illo architecto aliquid obcaecati inventore.
                     Nulla excepturi commodi provident sunt est.</p>
             </div>
+            <div class="col-auto mx-auto">
+                <form action="{% url 'newsletter_sub' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="input-group  mb-2">
+                        {{ news_form }}
+                        <div class="input-group-prepend">
+                            <button type="submit" class="aw btn btn-outline-light btn-sm">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>

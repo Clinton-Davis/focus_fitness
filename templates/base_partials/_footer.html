@@ -14,10 +14,10 @@
                 <div class="form-row align-items-center">
 
                     <div class="col-auto mx-auto">
-                        <form action="{% url 'newsignups' %}" method="POST">
+                        <form action="{% url 'newsletter_sub' %}" method="POST">
                             {% csrf_token %}
                             <div class="input-group  mb-2">
-                                {{ newsletterform }}
+                                {{ news_form }}
                                 <div class="input-group-prepend">
                                     <button type="submit" class="aw btn btn-outline-light btn-sm">Submit</button>
                                 </div>

@@ -21,6 +21,23 @@ members_endpoint = '{api_url}/lists/{list_id}/members'.format(
 )
 
 
+def newsletter_sub(request):
+    form = NewLetterEmailSignupForm(request.POST or None)
+    if request.method == 'POST':
+        if form.is_valid():
+            newslettersignups_qs = NewsLetterSignups.objects.filter(
+                email=form.instance.email)
+            if newslettersignups_qs.exists():
+                messages.info(
+                    request, 'You are already part of the News Letter mailing list')
+            else:
+                email = request.POST["email"]
+                new_signup = NewsLetterSignups()
+                new_signup.email = email
+                new_signup.save()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
 def newsletter_subscribe(email):
     """ Sends newletter subscribers email to mailchimps email list """
     data = {
@@ -32,6 +49,7 @@ def newsletter_subscribe(email):
         auth=("", MAILCHIMP_API_KEY),
         data=json.dumps(data)
     )
+    print(data)
     return r.status_code, r.json()
 
 
@@ -48,10 +66,6 @@ def newsletter_signup(request):
                 messages.info(
                     request, 'You are already part of the News Letter mailing list')
             else:
-                email = request.POST["email"]
-                new_newslettersignups = NewsLetterSignups()
-                new_newslettersignups.email = email
-                new_newslettersignups.save()
                 newsletter_subscribe(form.instance.email)
                 form.save()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
