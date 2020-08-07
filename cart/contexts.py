@@ -3,6 +3,7 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
 from memberships.views import get_user_membership
+from marketing.forms import NewLetterEmailSignupForm
 
 
 def get_loged_user_discount(request):
@@ -23,7 +24,7 @@ def get_loged_user_discount(request):
 
 def cart_contents(request):
     """ Makes the cart_contents context avaible to all apps """
-
+    form = NewLetterEmailSignupForm(request.POST)
     cart_items = []
     total = 0
     product_count = 0
@@ -77,6 +78,7 @@ def cart_contents(request):
         'delivery': delivery,
         'discount': discount,
         'grand_total': grand_total,
+        'newsletterform': form
     }
 
     return context

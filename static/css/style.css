@@ -483,6 +483,10 @@ nav {
   max-width: 620px;
 }
 
+.blog-list-img {
+  max-width: 20rem;
+}
+
 .carosel-img {
   min-width: 25rem;
   max-width: 25rem;

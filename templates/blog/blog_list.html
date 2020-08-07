@@ -69,10 +69,10 @@
             <a href="{{ blog.get_absolute_url }}">
                 <div class="card mb-3" style="max-width: 830px;">
                     <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <img src="{{ blog.thumbnail.url }}" class="card-img" alt="...">
+                        <div class="col-md-2">
+                            <img src="{{ blog.thumbnail.url }}" class="card-img blog-list-img" alt="...">
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-10">
                             <div class="card-body bg-black-a">
                                 <h5 class="card-title text-center text-wht">{{ blog.title|title }}</h5>
                                 <small class="card-text text-wht">{{ blog.content|safe|truncatechars:100 }}</small>
@@ -100,7 +100,7 @@
                 <div class="card mb-3" style="max-width: 830px;">
                     <div class="row no-gutters">
 
-                        <div class="col-md-8">
+                        <div class="col-md-10">
                             <div class="card-body  bg-black-a">
                                 <h5 class="card-title text-center text-wht">{{ blog.title|title }}</h5>
                                 <small class="card-text text-wht">{{ blog.content|safe|truncatechars:100 }}</small><span
@@ -118,8 +118,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <img src="{{ blog.thumbnail.url }}" class="card-img" alt="...">
+                        <div class="col-md-2">
+                            <img src="{{ blog.thumbnail.url }}" class="card-img blog-list-img" alt="...">
                         </div>
                     </div>
                 </div>
