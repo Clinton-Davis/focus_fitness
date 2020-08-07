@@ -113,10 +113,17 @@
                         share you experainces. <span class="aw">All subscribers get 10% all shope items!</span>
                         Just click the Button below to Join.</p>
 
+                    {% if request.user.is_authenticated  %}
                     <div class="text-center">
-                        <a class="  w-50 hero-btn btn btn-success btn-lg aw text-wht border border-secondary bs-2"
-                            href="" role="button">Join Up</a>
+                        <a class=" w-50 hero-btn btn btn-success btn-lg aw text-wht border border-secondary bs-2"
+                            href="{% url 'memberships:select-membership' %}" role="button">Join Up</a>
                     </div>
+                    {% else %}
+                    <div class="text-center">
+                        <a class=" w-50 hero-btn btn btn-success btn-lg aw text-wht border border-secondary bs-2"
+                            href="{% url 'account_login' %}" role="button">Join Up</a>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -172,8 +179,9 @@
                                 <img class="d-block carosel-img mx-auto" src="{{ blog.thumbnail.url }}"
                                     alt="First slide">
                                 <div class="row justify-content-center">
-                                    <h5 class="text-center text-wht">{{ blog.title|title }}</h5><br>
-                                    <a href="{{ blog.get_absolute_url }}"><small
+                                    <h5 class="text-center text-wht mr-2">{{ blog.title|title }}</h5><br>
+                                    <a href="{{ blog.get_absolute_url }}"><i
+                                            class="mr-2 text-wht fad fa-tags"></i><small
                                             class="text-muted">{{ blog.category }}</small></a>
                                 </div>
                             </a>
@@ -217,29 +225,5 @@
 
 {% endblock postload_js %}
 
-<div class="row ">
-    {% for blog in feature_blog %}
-    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-        <div class="card w-100 h-100 border-1 ">
-            <a class="mx-auto" href="{{ blog.get_absolute_url }}">
-                <img class="mx-auto card-img-top  img-fluid" src="{{ blog.thumbnail.url }}"
-                    alt="{{ blog.title|title }}">
-            </a>
-            <div class="card-body pb-0">
-                <p class="aw text-center">{{ blog.title|title }}</p>
-                <a href="{{ blog.get_absolute_url }}"><small class="text-muted">{{ blog.category }}</small></a>
-            </div>
-            <div class="card-footer bg-white pt-0 border-0 rounded-10 text-center">
-                <div class="row ">
-                    <div class="col">
-                        <p class=" mb-0  aw">{{ blog.content|safe|truncatechars:100 }}</p>
 
-                        <i class="fad fa-star mr-1"></i>
-                        <small class="text-muted">{{ items.rating }}</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
 </div>
