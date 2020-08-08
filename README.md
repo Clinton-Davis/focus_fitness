@@ -1,4 +1,5 @@
 # focus_fitness
+
  MileStone 4
 
 ## Index Page
@@ -17,8 +18,8 @@ If the use has a login but not subcribed to the programs.
 If the user is a "Pro" subcriber and logged in.
 
 - We offer the programs botton.
-
-The section 3 "Subscribe Today" banner will not be shown if the user a "Pro" subcriber
+The section 3 "Subscribe Today" banners button will redirect the user to 'login' if not loged in and Membership select is logged in.
+The Banner will not be shown if the user has a "Professional" membership.
 
 ### Programs Page
 

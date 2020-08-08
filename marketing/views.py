@@ -38,34 +38,34 @@ def newsletter_sub(request):
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 
-def newsletter_subscribe(email):
-    """ Sends newletter subscribers email to mailchimps email list """
-    data = {
-        'email_address': email,
-        'status': 'subscribed'
-    }
-    r = requests.POST(
-        members_endpoint,
-        auth=("", MAILCHIMP_API_KEY),
-        data=json.dumps(data)
-    )
-    print(data)
-    return r.status_code, r.json()
+# def newsletter_subscribe(email):
+#     """ Sends newletter subscribers email to mailchimps email list """
+#     data = {
+#         'email_address': email,
+#         'status': 'subscribed'
+#     }
+#     r = requests.POST(
+#         members_endpoint,
+#         auth=("", MAILCHIMP_API_KEY),
+#         data=json.dumps(data)
+#     )
+#     print(data)
+#     return r.status_code, r.json()
 
 
-def newsletter_signup(request):
-    """Check to see if form is post, checks to see if user 
-        has already joined if True message else save email
-        and send email instance to newsletter_subcrible function"""
-    form = NewLetterEmailSignupForm(request.POST or None)
-    if request.method == 'POST':
-        if form.is_valid():
-            newslettersignups_qs = NewsLetterSignups.objects.filter(
-                email=form.instance.email)
-            if newslettersignups_qs.exists():
-                messages.info(
-                    request, 'You are already part of the News Letter mailing list')
-            else:
-                newsletter_subscribe(form.instance.email)
-                form.save()
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+# def newsletter_signup(request):
+#     """Check to see if form is post, checks to see if user 
+#         has already joined if True message else save email
+#         and send email instance to newsletter_subcrible function"""
+#     form = NewLetterEmailSignupForm(request.POST or None)
+#     if request.method == 'POST':
+#         if form.is_valid():
+#             newslettersignups_qs = NewsLetterSignups.objects.filter(
+#                 email=form.instance.email)
+#             if newslettersignups_qs.exists():
+#                 messages.info(
+#                     request, 'You are already part of the News Letter mailing list')
+#             else:
+#                 newsletter_subscribe(form.instance.email)
+#                 form.save()
+#     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
