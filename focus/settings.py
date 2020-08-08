@@ -4,8 +4,8 @@ import os
 import environ
 import dj_database_url
 
-DEBUG = False
-ALLOWED_HOSTS = ['focus-fitness.herokuapp.com', 'localhost']
+DEBUG = True
+ALLOWED_HOSTS = ['*']
 
 if DEBUG is True:
     env = environ.Env()

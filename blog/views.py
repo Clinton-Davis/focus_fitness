@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.db.models import Q
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Blog, BlogComment, BlogView, Like
-from .forms import BlogCommentForm, BlogForm
+from .forms import BlogCommentForm, BlogForm, Category
 
 
 def BlogListView(request):
