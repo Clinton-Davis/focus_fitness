@@ -4,7 +4,7 @@ import os
 import environ
 import dj_database_url
 
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['focus-fitness.herokuapp.com', 'localhost']
 
 if DEBUG is True:
