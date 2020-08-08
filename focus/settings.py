@@ -18,6 +18,10 @@ if DEBUG is True:
     DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
     NOTIFY_EMAIL = env('NOTIFY_EMAIL')
 
+    DATABASES = {
+        'default': dj_database_url.parse(env('DATABASE_URL'))
+    }
+
 
 if DEBUG is False:
     SECRET_KEY = os.environ.get('SECRET_KEY')
@@ -96,10 +100,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'focus.wsgi.application'
 
-
-DATABASES = {
-    'default': dj_database_url.parse(env('DATABASE_URL'))
-}
 
 if DEBUG is False:
     DATABASES = {
