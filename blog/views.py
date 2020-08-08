@@ -5,14 +5,12 @@ from django.contrib import messages
 from django.db.models import Q
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Blog, BlogComment, BlogView, Like
-from .forms import BlogCommentForm
-
-# BlogForm,
+from .forms import BlogCommentForm, BlogForm
 
 
 def BlogListView(request):
     all_blogs = Blog.objects.all()
-    # category_menu = Category.objects.all()
+    category_menu = Category.objects.all()
     quary = None
 
     if 's' in request.GET:
@@ -26,26 +24,26 @@ def BlogListView(request):
 
     context = {
         'all_blogs': all_blogs,
-        # 'category_menu': category_menu,
+        'category_menu': category_menu,
 
     }
     return render(request, 'blog/blog_list.html', context)
 
 
-# def CategoryView(request, category):
-#     category_blogs = Blog.objects.filter(category=category)
-#     category_menu = Category.objects.all()
-#     all_blogs = Blog.objects.all()
-#     print(category_menu)
+def CategoryView(request, category):
+    category_blogs = Blog.objects.filter(category=category)
+    category_menu = Category.objects.all()
+    all_blogs = Blog.objects.all()
+    print(category_menu)
 
-#     context = {
-#         'category': category,
-#         'category_blogs': category_blogs,
-#         'category_menu': category_menu,
-#         'all_blogs': all_blogs
-#     }
+    context = {
+        'category': category,
+        'category_blogs': category_blogs,
+        'category_menu': category_menu,
+        'all_blogs': all_blogs
+    }
 
-#     return render(request, 'blog/blog_categories.html', context)
+    return render(request, 'blog/blog_categories.html', context)
 
 
 class BlogDetailView(DetailView):
@@ -80,7 +78,7 @@ class BlogDetailView(DetailView):
 
 
 class BlogCreateView(CreateView):
-    # form_class = BlogForm
+    form_class = BlogForm
     model = Blog
     success_url = '/blog/'
 
@@ -97,7 +95,7 @@ class BlogCreateView(CreateView):
 
 
 class BlogUpdateView(UpdateView):
-    # form_class = BlogForm
+    form_class = BlogForm
     model = Blog
     success_url = '/blog/'
 

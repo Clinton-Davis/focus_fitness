@@ -27,3 +27,20 @@ If a anomymous clickes on the Programs button in the Index page. They will be re
 
  Bugs:
  after adding a check to see if user is the same as the author, as to let the author edir or update post I have noticed the comments messages is chnaging as to how is logged it.
+
+### deplyment
+
+If you are starting with a new Database.
+You will have to comment out all 'Blog categorys' forms views
+
+make migrations
+
+then before you make superuser, you will have to comment out:
+memberships.models - def post_save_usermembership_create
+cart.context.py - def get_loged_user_discount(request): and the if request.user.is_authenticated:(the entire if statment).
+
+profiles.models - create_or_update_user_profile.
+Then you will be ok to make superuser.
+Login to /admin/ and make memberships Fre/Pro and fill Stripe Products API id.
+Then in UserMemberships, make the superuser a member.
+Once that is done, uncomment everything, and you will be ready to go.
