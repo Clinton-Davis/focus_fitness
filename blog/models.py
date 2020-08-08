@@ -8,13 +8,13 @@ from ckeditor.fields import RichTextField
 from django.utils.text import slugify
 
 
-class Category(models.Model):
-    class Meta:
-        verbose_name_plural = 'Categories'
-    name = models.CharField(max_length=254, default='')
+# class Category(models.Model):
+#     class Meta:
+#         verbose_name_plural = 'Categories'
+#     name = models.CharField(max_length=254, default='')
 
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
 
 
 class Blog(models.Model):

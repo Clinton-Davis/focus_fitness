@@ -1,48 +1,47 @@
-from django import forms
-from .models import Blog, BlogComment, Category
+# from django import forms
+# from .models import Blog, BlogComment
+
+# choices = Category.objects.all().values_list('name', 'name')
+# choices_list = []
+
+# for item in choices:
+#     choices_list.append(item)
 
 
-choices = Category.objects.all().values_list('name', 'name')
-choices_list = []
+# class BlogForm(forms.ModelForm):
+#     category = forms.ModelChoiceField(
+#         queryset=Category.objects.all(), empty_label='Select the category')
 
-for item in choices:
-    choices_list.append(item)
+#     class Meta:
+#         model = Blog
+#         fields = (
+#             'title',
+#             'category',
+#             'content',
+#             'thumbnail',
 
+#         )
 
-class BlogForm(forms.ModelForm):
-    category = forms.ModelChoiceField(
-        queryset=Category.objects.all(), empty_label='Select the category')
+#     def __init__(self, *args, **kwargs):
 
-    class Meta:
-        model = Blog
-        fields = (
-            'title',
-            'category',
-            'content',
-            'thumbnail',
+#         super().__init__(*args, **kwargs)
 
-        )
+#         placeholders = {
+#             'title': 'Your Blogs Title, 50 Characters max',
+#             'content': 'Write your Blog in here',
+#             'thumbnail': 'Picture',
 
-    def __init__(self, *args, **kwargs):
+#         }
 
-        super().__init__(*args, **kwargs)
+#         self.fields['title'].widget.attrs['autofocus'] = True
+#         self.fields['category'].widget.attrs['choices'] = choices_list
 
-        placeholders = {
-            'title': 'Your Blogs Title, 50 Characters max',
-            'content': 'Write your Blog in here',
-            'thumbnail': 'Picture',
-
-        }
-
-        self.fields['title'].widget.attrs['autofocus'] = True
-        self.fields['category'].widget.attrs['choices'] = choices_list
-
-        for field in self.fields:
-            if field != 'category':
-                placeholder = placeholders[field]
-                self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'mont_r'
-            self.fields[field].label = False
+#         for field in self.fields:
+#             if field != 'category':
+#                 placeholder = placeholders[field]
+#                 self.fields[field].widget.attrs['placeholder'] = placeholder
+#             self.fields[field].widget.attrs['class'] = 'mont_r'
+#             self.fields[field].label = False
 
 
 class BlogCommentForm(forms.ModelForm):
