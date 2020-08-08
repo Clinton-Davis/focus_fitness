@@ -31,7 +31,8 @@ If a anomymous clickes on the Programs button in the Index page. They will be re
 ### deplyment
 
 If you are starting with a new Database.
-You will have to comment out all 'Blog categorys' forms views
+You will have to comment out all 'Blog categorys' forms views.
+We have to do this because the catogery functions looking for blog_catogerys and throus a tabl does not exist. 
 
 make migrations
 

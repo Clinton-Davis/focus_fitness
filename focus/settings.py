@@ -96,7 +96,7 @@ WSGI_APPLICATION = 'focus.wsgi.application'
 #     }
 # }
 DATABASES = {
-    'default': dj_database_url.parse('postgres://vmgpeuxzrzsgig:d3f2e74d9f9e7c1ca0a90f8392b082a94d35342119e8650f683a369740beef91@ec2-54-228-209-117.eu-west-1.compute.amazonaws.com:5432/d4re06a637jp4q')
+    'default': dj_database_url.parse(env('DATABASE'))
 }
 
 
