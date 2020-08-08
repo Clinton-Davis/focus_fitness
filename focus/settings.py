@@ -4,19 +4,29 @@ import os
 import environ
 import dj_database_url
 
-
-env = environ.Env()
-
-# read the .env file
-environ.Env.read_env()
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SECRET_KEY = env('SECRET_KEY')
-DEBUG = env('DEBUG')
-
+DEBUG = True
 ALLOWED_HOSTS = ['focus-fitness.herokuapp.com', 'localhost']
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+if DEBUG is True:
+    env = environ.Env()
+    # read the .env file
+    environ.Env.read_env()
+
+    SECRET_KEY = env('SECRET_KEY')
+
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
+    NOTIFY_EMAIL = env('NOTIFY_EMAIL')
+
+
+if DEBUG is False:
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
+    NOTIFY_EMAIL = os.environ.get('NOTIFY_EMAIL')
+
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -47,8 +57,6 @@ INSTALLED_APPS = [
 
 ]
 
-DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
-NOTIFY_EMAIL = env('NOTIFY_EMAIL')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -89,12 +97,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'focus.wsgi.application'
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
 DATABASES = {
     'default': dj_database_url.parse(env('DATABASE'))
 }
@@ -122,9 +124,9 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
-MAILCHIMP_API_KEY = env('MAILCHIMP_API_KEY'),
-MAILCHIMP_DATA_CENTER = env('MAILCHIMP_DATA_CENTER'),
-MAILCHIMP_EMAIL_LIST_ID = env('MAILCHIMP_EMAIL_LIST_ID')
+# MAILCHIMP_API_KEY = env('MAILCHIMP_API_KEY'),
+# MAILCHIMP_DATA_CENTER = env('MAILCHIMP_DATA_CENTER'),
+# MAILCHIMP_EMAIL_LIST_ID = env('MAILCHIMP_EMAIL_LIST_ID')
 
 
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
@@ -157,14 +159,17 @@ TAX_RATE_PERCENTAGE = 15
 
 
 # stripe
-
-STRIPE_CURRENCY = 'usd'
-STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY')
-STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
-STRIPE_WH_SECRET = env('STRIPE_WH_SECRET')
+if DEBUG is True:
+    STRIPE_CURRENCY = 'usd'
+    STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY')
+    STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
+    STRIPE_WH_SECRET = env('STRIPE_WH_SECRET')
 
 
 if DEBUG is False:
+    STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
+    STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
+    STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET')
 
     SESSION_COOKIE_SECURE = True
     SECURE_BROWSER_XSS_FILTER = True
@@ -172,18 +177,4 @@ if DEBUG is False:
     SECURE_HSTS_SECONDS = 3153600
     SECURE_REDIRECT_EXEMPT = []
     SECURE_SSL_REDIRECT = True
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-    ALLOWED_HOSTS = []
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': '',
-            'USER': '',
-            'PASSWORD': '',
-            'HOST': '',
-            'PORT': ''
-        }
-    }
+    # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
