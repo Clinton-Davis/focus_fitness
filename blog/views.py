@@ -4,8 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.db.models import Q
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Blog, BlogComment, BlogView, Like, Category
-from .forms import BlogForm, BlogCommentForm
+from .models import Blog, BlogComment, BlogView, Like
+from .forms import BlogCommentForm, BlogForm
 
 
 def BlogListView(request):
