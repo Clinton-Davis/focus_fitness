@@ -61,6 +61,7 @@ def all_products(request):
 
 class ProductDetailView(DetailView):
     model = Product
+    template_name = 'products/product_detail.html'
 
 # def product_detail(request, product_id):
 #     """A view to show product details, """
