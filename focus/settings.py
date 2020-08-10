@@ -23,7 +23,10 @@ if DEBUG is True:
 
 if DEBUG is False:
     SECRET_KEY = os.environ.get('SECRET_KEY')
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    # Just for testing
+    # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
     DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
     NOTIFY_EMAIL = os.environ.get('NOTIFY_EMAIL')
 
