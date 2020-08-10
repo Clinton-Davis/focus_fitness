@@ -4,9 +4,9 @@ import os
 import environ
 import dj_database_url
 
-DEVELOPMENT = True
+DEVELOPMENT = False
 
-if DEVELOPMENT is True:
+if 'DEVELOPMENT' is True:
 
     DEBUG = True
     ALLOWED_HOSTS = ['*']
@@ -31,7 +31,7 @@ if DEVELOPMENT is True:
     STRIPE_WH_SECRET = env('STRIPE_WH_SECRET')
 
 
-if DEVELOPMENT is False:
+if 'DEVELOPMENT' is False:
 
     DEBUG = True
     ALLOWED_HOSTS = ['focus-fitness.herokuapp.com']
@@ -59,7 +59,7 @@ if DEVELOPMENT is False:
 
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-    AWS_S3_OJECTS_PARAMETERS = {
+    AWS_S3_OBJECT_PARAMETERS = {
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
     }
