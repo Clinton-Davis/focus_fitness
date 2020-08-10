@@ -812,8 +812,9 @@ nav {
 /* ------Messages  */
 .message-container {
   position: fixed;
-  top: 30px;
-  right: 30px;
+  top: 73px;
+  right: 10px;
+  min-width: 315;
   z-index: 999999999;
 
 }
@@ -821,25 +822,14 @@ nav {
 
 
 .toast {
-  /*max-width: 350px;
- */
-  /*overflow: hidden;
- */
-  font-size: .875rem;
-  /*background-color: rgba(255,255,255,.85);
- */
   background-clip: padding-box;
   /*border: 1px solid rgba(0,0,0,.1);
- */
+  */
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .1);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   opacity: 0;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
+
 }
 
 
