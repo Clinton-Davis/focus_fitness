@@ -32,12 +32,13 @@
                             All Products
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                            <a href="{% url 'products:products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                            <a href="{% url 'products:products' %}?sort=rating&direction=desc" class="dropdown-item ">By
+                            <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By
+                                Price</a>
+                            <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By
                                 Rating</a>
-                            <a href="{% url 'products:products' %}?sort=category&direction=asc" class="dropdown-item ">By
+                            <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By
                                 Category</a>
-                            <a href="{% url 'products:products' %}" class="dropdown-item">All Products</a>
+                            <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown center">
@@ -46,13 +47,13 @@
                             Activewear & EQP
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="activewear-link">
-                            <a href="{% url 'products:products' %}?category=pants,vest,tops" class="dropdown-item">Activewear</a>
-                            <a href="{% url 'products:products' %}?category=equipment" class="dropdown-item">Equipment</a>
-                            <a href="{% url 'products:products' %}?category=pants" class="dropdown-item">Pants</a>
-                            <a href="{% url 'products:products' %}?category=vest" class="dropdown-item">Vests</a>
-                            <a href="{% url 'products:products' %}?category=tops" class="dropdown-item">Tops</a>
-                            <a href="{% url 'products:products' %}?category=jacket" class="dropdown-item">Jackets</a>
-                            <a href="{% url 'products:products' %}?category=equipment,pants,vests,tops,jacket"
+                            <a href="{% url 'products' %}?category=pants,vest,tops" class="dropdown-item">Activewear</a>
+                            <a href="{% url 'products' %}?category=equipment" class="dropdown-item">Equipment</a>
+                            <a href="{% url 'products' %}?category=pants" class="dropdown-item">Pants</a>
+                            <a href="{% url 'products' %}?category=vest" class="dropdown-item">Vests</a>
+                            <a href="{% url 'products' %}?category=tops" class="dropdown-item">Tops</a>
+                            <a href="{% url 'products' %}?category=jacket" class="dropdown-item">Jackets</a>
+                            <a href="{% url 'products' %}?category=equipment,pants,vests,tops,jacket"
                                 class="dropdown-item">All</a>
                         </div>
                     </li>
@@ -62,11 +63,11 @@
                             Supplements
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="supplements-link">
-                            <a href="{% url 'products:products' %}?category=protein" class="dropdown-item">Proteins</a>
-                            <a href="{% url 'products:products' %}?category=pre_workout" class="dropdown-item">Pre-Workouts</a>
-                            <a href="{% url 'products:products' %}?category=bcaa" class="dropdown-item">BCAA</a>
-                            <a href="{% url 'products:products' %}?category=vitamins" class="dropdown-item">Multi-Vitamins</a>
-                            <a href="{% url 'products:products' %}?category=protein,pre-workout,bcaa,vitamins"
+                            <a href="{% url 'products' %}?category=protein" class="dropdown-item">Proteins</a>
+                            <a href="{% url 'products' %}?category=pre_workout" class="dropdown-item">Pre-Workouts</a>
+                            <a href="{% url 'products' %}?category=bcaa" class="dropdown-item">BCAA</a>
+                            <a href="{% url 'products' %}?category=vitamins" class="dropdown-item">Multi-Vitamins</a>
+                            <a href="{% url 'products' %}?category=protein,pre-workout,bcaa,vitamins"
                                 class="dropdown-item">All
                                 Supplements</a>
                         </div>
@@ -74,7 +75,7 @@
 
                     <li class="nav-item dropdown center">
                         <a class="logo-font font-weight-bold nav-link text-ylw  mr-3"
-                            href="{% url 'products:products' %}?category=special_offers" id="specials-link"
+                            href="{% url 'products' %}?category=special_offers" id="specials-link"
                             aria-expanded="false">
                             Special Offers
                         </a>
@@ -83,14 +84,14 @@
             </div>
             <hr class="w-50">
             {% for c in categories %}
-            <a class="category-badge text-decoration-none" href="{% url 'products:products' %}?category={{ c.name }}">
+            <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
                 <span
                     class="p-2 mt-2 badge badge-white text-black rounded-1 border border-dark">{{ c.friendly_name }}</span>
             </a>
             {% endfor %}
 
             <div class="col-12 mx-auto d-flex justify-content-center"">
-                    <form method=" GET" action="{% url 'products:products' %}" class=" form-inline my-2 my-lg-0 pl-2">
+                    <form method=" GET" action="{% url 'products' %}" class=" form-inline my-2 my-lg-0 pl-2">
                 <input class="ml-3 aw" type="text" name="q" placeholder="Search Shop" aria-label="Search" />
                 <button class="aw btn btn-outline-text-light my-2 my-sm-0" type="submit">
                     <span class="icon">
@@ -138,7 +139,7 @@
                         <div class="col-12 col-md-6 order-md-first">
                             <p class=" mt-3 text-center text-wht text-md-left">
                                 {% if search_term or current_categories or current_sorting != 'None_None' %}
-                                <span class="small "><a href="{% url 'products:products' %}">All Products </a> | </span>
+                                <span class="small "><a href="{% url 'products' %}">All Products </a> | </span>
                                 {% endif %}
                                 {{ products|length }} Products{% if search_term %} found for
                                 <strong>"{{ search_term }}"</strong>{% endif %}
@@ -155,7 +156,7 @@
                                 {% if product.image %}
                                 {% if product.in_stock == True %}
 
-                                <a class="  mx-auto" href="{{ product.get_absolute_url }}">
+                                <a class="  mx-auto" href="{% url 'product_detail' product.id %}">
                                     <img class="mx-auto mt-1 card-img-top shop-card-top-img img-fluid"
                                         src="{{ product.image.url }}" alt="{{ product.name }}">
                                 </a>
@@ -188,7 +189,7 @@
                                             {% if product.category %}
                                             <p class="small mt-1 mb-0">
                                                 <a class="text-muted"
-                                                    href="{% url 'products:products' %}?category={{ product.category.name }}">
+                                                    href="{% url 'products' %}?category={{ product.category.name }}">
                                                     <i
                                                         class="fad fa-tags"></i>&nbsp;{{ product.category.friendly_name }}
                                                 </a>
