@@ -34,7 +34,7 @@
                 </div>
                 <div class=" col-6 d-flex d-flex justify-content-center no-gutters">
                     <a class=" hover-shadow hero-btn btn btn-primary btn-lg aw text-wht m-1 border border-white"
-                        href="{% url 'products:products' %}" role="button">Shop
+                        href="{% url 'products' %}" role="button">Shop
                     </a>
                 </div>
                 <div class=" col-6 d-flex d-flex justify-content-center no-gutters">
@@ -87,11 +87,11 @@
             <div class="card-body">
                 <h3 class="card-title text-center aw">Focus Shop</h3>
                 <a class="card-text d-block text-center mont_b text-bk"
-                    href="{% url 'products:products' %}?category=protein">Protiens</a>
+                    href="{% url 'products' %}?category=protein">Protiens</a>
                 <a class="card-text d-block text-center mont_b text-bk"
-                    href="{% url 'products:products' %}?category=pants,vest,tops">Activewear</a>
+                    href="{% url 'products' %}?category=pants,vest,tops">Activewear</a>
                 <a class="card-text d-block text-center mont_b text-bk"
-                    href="{% url 'products:products' %}?category=equipment">Accssories</a>
+                    href="{% url 'products' %}?category=equipment">Accssories</a>
             </div>
         </div>
     </div>
@@ -138,7 +138,7 @@
         {% for items in sale_items %}
         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
             <div class="card w-100 h-100 border-1">
-                <a class="back-up-img mx-auto" href="{{ product.get_absolute_url }}">
+                <a class="back-up-img mx-auto" href="{% url 'product_detail' product.id %}">
                     <img class="mx-auto card-img-top shop-card-top-img img-fluid" src="{{ items.image.url }}"
                         alt="{{ items.name }}">
                 </a>
