@@ -151,6 +151,8 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card w-100 h-100 border-1">
 
+
+                                {% if product.image %}
                                 {% if product.in_stock == True %}
 
                                 <a class="  mx-auto" href="{% url 'product_detail' product.id %}">
@@ -166,8 +168,15 @@
                                 <div class="card-body pb-0">
                                     <p class="aw text-center">{{ product.name }}</p>
                                 </div>
-
                                 {% endif %}
+
+                                {% else %}
+                                <a class="  mx-auto" href="{% url 'product_detail' product.id %}">
+                                    <img class="mx-auto mt-1 card-img-top shop-card-top-img img-fluid"
+                                        src="{{ MEDIA_URL }}noimage.png"" alt=" {{ product.name }}">
+                                </a>
+                                {% endif %}
+
                                 {% if product.in_stock == True %}
                                 <div class="row ">
                                     <div class="col">

@@ -520,10 +520,8 @@ nav {
 }
 
 .form-inline {
-
   display: flex;
   flex-flow: initial;
-
   -ms-flex-align: center;
   align-items: center;
 }
@@ -532,6 +530,14 @@ nav {
   background-color: rgb(255, 255, 255);
   width: 100%;
   height: fit-content;
+}
+
+.back-up-img {
+  background-image: url(/static/images/no-image.png)no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .shop-card-top-img {
