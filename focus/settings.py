@@ -163,6 +163,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 AWS_STORAGE_BUCKET_NAME = 'focus-fitness'
 AWS_S3_REGION_NAME = 'eu-west-1'
 AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+AWS_DEFAULT_ACL = None
 
 if DEBUG is False:
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')

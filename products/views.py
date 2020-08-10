@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category
+from django.views.generic import DetailView
 
 
 def all_products(request):
@@ -44,6 +45,8 @@ def all_products(request):
 
     sorting = f'{sort}_{direction}'
 
+    template_name = 'products/products.html'
+
     context = {
         'products': products,
         'search_term': query,
@@ -56,12 +59,15 @@ def all_products(request):
     return render(request, 'products/products.html', context)
 
 
-def product_detail(request, product_id):
-    """A view to show product details, """
-    product = get_object_or_404(Product, pk=product_id)
+class ProductDetailView(DetailView):
+    model = Product
 
-    context = {
-        'product': product,
-    }
+# def product_detail(request, product_id):
+#     """A view to show product details, """
+#     product = get_object_or_404(Product, pk=product_id)
 
-    return render(request, 'products/product_detail.html', context)
+#     context = {
+#         'product': product,
+#     }
+
+#     return render(request, 'products/product_detail.html', context)

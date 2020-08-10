@@ -34,7 +34,7 @@
                 </div>
                 <div class=" col-6 d-flex d-flex justify-content-center no-gutters">
                     <a class=" hover-shadow hero-btn btn btn-primary btn-lg aw text-wht m-1 border border-white"
-                        href="{% url 'products' %}" role="button">Shop
+                        href="{% url 'products:products' %}" role="button">Shop
                     </a>
                 </div>
                 <div class=" col-6 d-flex d-flex justify-content-center no-gutters">
@@ -87,11 +87,11 @@
             <div class="card-body">
                 <h3 class="card-title text-center aw">Focus Shop</h3>
                 <a class="card-text d-block text-center mont_b text-bk"
-                    href="{% url 'products' %}?category=protein">Protiens</a>
+                    href="{% url 'products:products' %}?category=protein">Protiens</a>
                 <a class="card-text d-block text-center mont_b text-bk"
-                    href="{% url 'products' %}?category=pants,vest,tops">Activewear</a>
+                    href="{% url 'products:products' %}?category=pants,vest,tops">Activewear</a>
                 <a class="card-text d-block text-center mont_b text-bk"
-                    href="{% url 'products' %}?category=equipment">Accssories</a>
+                    href="{% url 'products:products' %}?category=equipment">Accssories</a>
             </div>
         </div>
     </div>
