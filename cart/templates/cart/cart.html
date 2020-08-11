@@ -1,0 +1,260 @@
+{% extends "base.html" %}
+{% load bag_tools %}
+{% block content %}
+
+
+
+<div class="container-fluid blog-image">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-12 mb-0">
+                <a class="text-wht aw pl-2" href="{% url 'products' %}">Shop</a>
+                <span class="mx-2 mb-0 text-wht">/</span>
+                <span class="mx-2 mb-0 text-wht"><small class="aw">Cart</small></span>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container ">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="aw text-wht mb-4 text-center">
+                    Shopping Cart
+                </h2>
+            </div>
+        </div>
+
+        <div class="row bg-white rounded-10">
+            <div class="col">
+                {% if cart_items %}
+                <div class="d-block d-md-none">
+                    <div class="row">
+                        <div class="col">
+                            {% include "cart/includes/cart-total.html" %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            {% include "cart/includes/checkout-btns.html" %}
+                        </div>
+                    </div>
+                    {% for item in cart_items %}
+                    <div class="row">
+                        <div class="col-12 col-sm-6 mb-2">
+                            {% include "cart/includes/product-image.html" %}
+                        </div>
+                        <div class="col-12 col-sm-6 mb-2">
+                            {% include "cart/includes/product-info.html" %}
+                        </div>
+                        <div class="col-12 col-sm-6 order-sm-last">
+                            <p class="text-right">${{ item.product.price|calc_subtotal:item.quantity }}</p>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            {% include "cart/includes/quantity-form.html" %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <hr>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+                </div>
+                <div class="table-responsive rounded-10 d-none d-md-block">
+                    <table class="table table-sm table-borderless">
+                        <thead class="aw text-center text-bk">
+                            <tr>
+                                <th class="d-none d-sm-none d-md-block" scope="col">&nbsp;</th>
+                                <th scope="col" class="text-center"><u>Product</u></th>
+                                <th scope="col"><u>Price</u></th>
+                                <th scope="col"><u>Qty</u></th>
+                                <th scope="col" class="text-right"><u>SubTotal</u></th>
+
+                            </tr>
+                        </thead>
+                        {% for item in cart_items %}
+                        <tr class="text-off-wht">
+                            <td class="p-md-3 p-0 w-75 d-none d-sm-none d-md-block">
+                                {% include "cart/includes/product-image.html" %}
+                            </td>
+                            <td class="py-3 text-bk">
+                                {% include "cart/includes/product-info.html" %}
+                            </td>
+                            <td class="py-3 text-bk">
+                                <p class="text-center">${{ item.product.price }}</p>
+                            </td>
+
+                            <td class="py-3  text-center">
+                                {% include "cart/includes/quantity-form.html" %}
+
+                            </td>
+                            <td class="aw text-bk py-3 text-center">
+                                <p class="text-right">${{ item.product.price|calc_subtotal:item.quantity }}</p>
+                            </td>
+
+                        </tr>
+                        {% endfor %}
+                    </table>
+                    <div class="container float-right">
+                        <div class="row">
+                            <div class="col-6 ml-auto">
+                                {% include "cart/includes/cart-total.html" %}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6 ml-auto">
+                                {% include "cart/includes/checkout-btns.html" %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <div class="container">
+                    <div class="row align-items-center">
+                        <h5 class="col-12 empty aw">
+                            There are no items in your cart.&nbsp; <a href="{% url 'products' %}"> Continue
+                                Shopping</a>
+                        </h5>
+                    </div>
+                </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock content %}
+
+
+{% block postloadjs %}
+{{ block.super }}
+{% include "products\includes\quantity_input_script.html" %}
+
+<script type="text/javascript">
+    // Update quantity on click
+    $('.update-link').click(function (e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // Remove item and reload on click
+    $('.remove-item').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('product_size');
+        var url = `/cart/remove/${itemId}/`;
+        var data = {
+            'csrfmiddlewaretoken': csrfToken,
+            'product_size': size
+        };
+
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    })
+</script>
+
+{% endblock postloadjs %}
+
+
+
+<!--
+<div class="container-fluid">
+    <div class="row align-items-center">
+        <div class="col-12 text-center bg-black">
+            <h3 classbk aw">
+                Cart
+            </h3>
+        </div>
+    </div>
+    <div class="container-fluid  bg-black-a shop-container">
+
+        <div class="row justify-content-around text-center  bg-black-a rounded-10 text-wht">
+            <div class="col-md-2 col-12 align-self-center my-2">
+                <img src="" class="rounded-10" style="width: 8rem;" alt="">
+            </div>
+            <div class="col-md-3  col-12 align-items-center">
+                <h4 class="text-center"></h4>
+                <small>Size: </small>
+                <p class="text-center">This is some text about the product</p>
+            </div>
+            <div class="col-md-2 col-12 align-self-center mb-2">
+                <div class="mx-auto input-group" style="max-width: 120px;">
+                    <div class="input-group-prepend">
+                        <a id="minus" href="" class=" btn btn-outline-light">
+                            <strong>&minus;</strong>
+                        </a>
+                    </div>
+                    <input type="text" class="aw form-control text-center" value="">
+                    <div class="input-group-append">
+                        <a id="plus" href="" class=" btn btn-outline-light">
+                            <strong>&plus;</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-12 align-self-center">
+                <h5 class="aw">$</h5>
+            </div>
+            <div class="col-md-1 col-12 align-self-center">
+                <a id="trash" href="" class="text-wht btn btn-outline-light btn-md"><i class="fad fa-trash-alt"></i></a>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="container">
+            <div class="row align-items-center">
+                <h5 class="col-12 empty">
+                    There are no items in your cart. <a href="">Continue
+                        Shopping</a>
+                </h5>
+            </div>
+        </div>
+
+
+      
+    
+
+  Totals Section
+    <div class="row  justify-content-end ">
+        <div class="col-md-7 col-6"></div>
+        <div class=" text-wht col-md-4 col-12 rounded-10 bg-black-a mr-3">
+
+
+
+            <div class="row mt-3 ">
+                <div class="aw d-flex justify-content-start col-6">
+                    <h5>SubTotal</h5>
+                </div>
+                <div class="aw d-flex justify-content-end col-6">
+                    <h5>$</h5>
+                </div>
+                <div class="aw d-flex justify-content-start col-6">
+                    <h5>Total</h5>
+                </div>
+                <div class="aw d-flex justify-content-end col-6">
+                    <h5>$</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-end aw mt-1 ">
+        <div class="col-md-6 col-12">
+            <a href="" class="btn btn-primary w-100 rounded-10">Keep Shopping</a>
+        </div>
+        <div class="col-md-6 col-12">
+            <a href="" class="btn btn-success w-100 rounded-10">CheckOut</a>
+        </div>
+    </div>
+
+    <div class="spaces-2"></div>
+</div> -->

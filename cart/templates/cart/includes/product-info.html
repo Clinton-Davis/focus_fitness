@@ -1,0 +1,5 @@
+<p class="aw text-center font-lrg">{{ item.product.name }}</p>
+{% if item.product.has_sizes %}
+<p class="aw text-center pl-2">Size: {{ item.size|upper }}</p>
+{% else %}
+{% endif %}

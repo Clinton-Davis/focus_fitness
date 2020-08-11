@@ -32,6 +32,12 @@ img {
   max-width: 40rem;
 }
 
+.btn-danger:hover {
+  color: black;
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
 .custom-pl {
   padding-left: 4rem;
 }
@@ -97,6 +103,8 @@ img {
   margin-bottom: -0.5rem;
 }
 
+
+
 .aw {
   font-family: "audiowide", sans-serif;
 }
@@ -157,6 +165,10 @@ img {
 
 .font-small {
   font-size: 0.75rem;
+}
+
+.font-lrg {
+  font-size: 1.125rem;
 }
 
 .minus-block {
@@ -569,8 +581,7 @@ nav {
 }
 
 .cart-img-size {
-  max-width: 7rem;
-
+  max-width: 15rem;
 }
 
 .cart-actions {
@@ -595,6 +606,10 @@ nav {
   color: rgb(229, 206, 33);
 }
 
+.black-hover:hover {
+  color: black;
+}
+
 #minus:hover {
   color: rgb(255, 255, 255);
   background-color: rgb(229, 206, 33);
@@ -617,6 +632,11 @@ nav {
   background-size: cover;
 }
 
+/*Cart*/
+
+.cart-total-container {
+  max-width: 200px;
+}
 
 /* Check out Page*/
 .order-wrap {
