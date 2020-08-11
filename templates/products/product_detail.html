@@ -59,7 +59,6 @@
                         <small class="">No Rating</small>
                         {% endif %}
                     </div>
-
                     <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
@@ -103,7 +102,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row justify-content-around align-content-center">
                                 <div class="mx-1">
                                     <button type="submit"
