@@ -129,6 +129,8 @@
     {% endblock content %}
     {% block postloadjs %}
     {{ block.super }}
-    {% include 'products/includes/quantity_input_script.html' %}
+    <script rel="stylesheet" src="{% static 'js/quantity_input_script.js' %}"></script>
+
+
 
     {% endblock postloadjs %}
