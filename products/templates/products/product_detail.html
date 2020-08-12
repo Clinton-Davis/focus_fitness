@@ -57,7 +57,7 @@
 
                     <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
                         {% csrf_token %}
-                        <div class="form-row">
+                        <div>
                             {% with product.has_sizes as s %}
                             {% if s %}
                             <div class="d-flex justify-content-center col-12 mt-3">
