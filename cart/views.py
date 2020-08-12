@@ -5,7 +5,7 @@ from products.models import Product
 
 def cart_view(request):
     """A view to the cart contents page """
-
+    template_name = 'cart/cart.html'
     return render(request, 'cart/cart.html')
 
 

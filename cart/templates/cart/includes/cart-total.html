@@ -1,0 +1,27 @@
+<div class="container cart-total-container">
+    <div class="row mb--1">
+        <h6 class="text-center pr-3 col-6 aw">Cart Total:</h6>
+        <p class="text-right col-6 " underline">${{ cart_total|floatformat:2 }}</p>
+    </div>
+    <div class="row mb--1">
+        <h6 class="text-center pr-3 col-6 aw">Discount:</h6>
+        <p class="text-right col-6">${{ discount|floatformat:2 }}</p>
+    </div>
+    <div class="row mb--1">
+        <h6 class="text-center pr-3 col-6 aw">Sub total:</h6>
+        <p class="text-right col-6 underline">${{ sub_total|floatformat:2 }}</p>
+    </div>
+    <div class="row mb--1">
+        <h6 class="text-center pr-3 col-6 aw">Delivery: </h6>
+        <p class="text-right col-6">${{ delivery|floatformat:2 }}</p>
+    </div>
+    <div class="row mb--1">
+        <h6 class="text-center pr-3 col-6 pr-5 aw">TAX: </h6>
+        <p class="text-right col-6">${{ tax|floatformat:2 }}</p>
+    </div>
+    <div class="row mb--1">
+        <h5 class="text-center pr-3 col-6 aw">Grand Total: </h5>
+        <p class="text-right col-6 underline">${{grand_total|floatformat:2 }}</p>
+    </div>
+
+</div>
