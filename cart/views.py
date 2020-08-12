@@ -1,12 +1,11 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.views.generic import TemplateView
 from django.contrib import messages
 from products.models import Product
 
 
-def cart_view(request):
-    """A view to the cart contents page """
+class CartView(TemplateView):
     template_name = 'cart/cart.html'
-    return render(request, 'cart/cart.html')
 
 
 def add_to_cart(request, item_id):

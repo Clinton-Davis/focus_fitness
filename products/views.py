@@ -59,10 +59,6 @@ def all_products(request):
     return render(request, 'products/products.html', context)
 
 
-# class ProductDetailView(DetailView):
-#     model = Product
-#     template_name = 'products/product_detail.html'
-
 def product_detail(request, product_id):
     """A view to show product details, """
     product = get_object_or_404(Product, pk=product_id)
@@ -72,3 +68,7 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+# class ProductDetailView(DetailView):
+#     model = Product
+#     template_name = 'products/product_detail.html'

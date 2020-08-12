@@ -20,7 +20,6 @@ def BlogListView(request):
         if not query:
             messages.error(request, "Sorry! No Input? Try again Please")
             return redirect(reverse('blog:list'))
-
         search = Q(title__icontains=query) | Q(content__icontains=query)
         all_blogs = all_blogs.filter(search)
 
@@ -28,7 +27,6 @@ def BlogListView(request):
         'feature_blog': feature_blog,
         'all_blogs': all_blogs,
         'category_menu': category_menu,
-
     }
     return render(request, 'blog/blog_list.html', context)
 
@@ -38,7 +36,6 @@ def CategoryView(request, category):
     category_blogs = Blog.objects.filter(category=category)
     category_menu = Category.objects.all()
     all_blogs = Blog.objects.all()
-    print(category_menu)
 
     context = {
         'category': category,
