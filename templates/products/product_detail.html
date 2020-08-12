@@ -131,6 +131,6 @@
     {% endblock content %}
     {% block postloadjs %}
     {{ block.super }}
-    {% include "products\includes\quantity_input_script.html" %}
+    <script href="{% static 'quantity_input_script.js' %}"></script>
 
     {% endblock postloadjs %}
