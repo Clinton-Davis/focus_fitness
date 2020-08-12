@@ -10,15 +10,14 @@
                 {% if request.user.is_authenticated %}
                 {% if request.user.is_staff %}
                 <a href="/admin/">
-                    <span class="aw text-wht">
-                        <i class="fad fa-user-cog"></i>
-                        Admin Login
+                    <span class="aw text-wht" title="Admin Login"><i class="fad fa-sign-in-alt"></i>
+                        <i class="fad fa-user-cog mr-4"></i>
                     </span>
                 </a>
                 {% else %}
                 {% endif%}
                 <a href="{% url 'profile' %}">
-                    <span class="aw text-wht">
+                    <span class="aw text-wht" title="User Login">
                         <i class="fad fa-user-alt"></i>
                         &nbsp;{{ user.username|title }}
                     </span>
@@ -29,9 +28,9 @@
                     <i class="fad fa-user-alt"></i>
 
                 </span>
-                <a class="aw text-wht" href="{% url 'account_login' %}"> &nbsp;Login</a>
+                <a class="aw text-wht" href="{% url 'account_login' %}" title="User Login"> &nbsp;Login</a>
                 <span class="mx-2 mb-0 text-wht">/</span>
-                <a class="aw text-wht" href="{% url 'account_signup' %}"> &nbsp;Sign up</a>
+                <a class="aw text-wht" href="{% url 'account_signup' %}" title="Registration Form"> &nbsp;Sign up</a>
 
                 {% endif %}
 
@@ -39,7 +38,8 @@
                 <a href="{% url 'cart_view' %}" class="site-cart ">
                     <span><i class="fad fa-shopping-cart text-wht"></i></span>
 
-                    <span class="{% if grand_total %} text-grn {% else %} text-wht {% endif %}aw text-wht">
+                    <span title="Go to CheckOut"
+                        class="{% if grand_total %} text-grn {% else %} text-wht {% endif %}aw text-wht">
                         {% if grand_total %}
                         ${{ grand_total|floatformat:2 }}
                         {% else %}

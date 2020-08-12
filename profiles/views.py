@@ -14,7 +14,7 @@ from memberships.views import (
 
 
 def profile(request):
-    template = 'profiles/profile.html'
+    template_name = 'profiles/profile.html'
 
     profile = get_object_or_404(UserProfile, user=request.user)
     """Displaying user Profile """
@@ -32,7 +32,7 @@ def profile(request):
         'user_blog': user_blog,
     }
 
-    return render(request, template, context)
+    return render(request, 'profiles/profile.html', context)
 
 
 def profile_subscriptions(request):

@@ -241,8 +241,8 @@ img {
 
 #cart {
   position: fixed;
-  top: 0px;
-  right: 0px;
+  top: 2px;
+  right: 10px;
   z-index: 999999;
   font-size: 1.125rem;
 }
