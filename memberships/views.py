@@ -40,6 +40,7 @@ def get_selected_membership(request):
 
 class MembershipSelectView(ListView):
     model = Membership
+    template_name = 'memberships/membership_list.html'
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -49,13 +50,10 @@ class MembershipSelectView(ListView):
 
     def post(self, request, **kwargs):
         selected_membership_type = request.POST.get('membership_type')
-
         user_membership = get_user_membership(request)
         user_subscription = get_user_subscription(request)
-
         selected_membership_qs = Membership.objects.filter(
             membership_type=selected_membership_type)
-
         if selected_membership_qs.exists():
             selected_membership = selected_membership_qs.first()
 
