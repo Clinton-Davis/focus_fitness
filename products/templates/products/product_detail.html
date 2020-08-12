@@ -15,12 +15,12 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row pb-4">
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2 bg-white rounded-left">
-                <div class="image-container my-5">
+                <div class="image-container center-block my-5">
                     {% if product.image %}
                     <a class="mx-auto  " href="{{ product.image.url }}" target="_blank">
-                        <img class="mx-auto card-img-top  img-fluid" src="{{ product.image.url }}"
+                        <img class="mx-auto card-img-top img-fluid detail-img" src="{{ product.image.url }}"
                             alt="{{ product.name }}">
                     </a>
                     {% else %}
@@ -29,11 +29,6 @@
                             alt="{{ product.name }}">
                     </a>
                     {% endif %}
-                </div>
-
-                <div class="col-12 ">
-                    <h4 class="aw">Overview</h4>
-                    <p class="detail-p">{{ product.description|safe }}</p>
                 </div>
 
             </div>
@@ -124,6 +119,15 @@
                     </form>
                 </div>
             </div>
+
+
+            <div class="col-md-8 col-sm-12 mx-auto bg-white rounded-bottom">
+                <h4 class="aw text-center pt-2">Overview</h4>
+                <p class="detail-p">{{ product.description|safe }}</p>
+            </div>
+
+
+
             <!-- <p class="col-12 mt-3  mx-auto detail-p">{{ product.description }}</p> -->
         </div>
     </div>

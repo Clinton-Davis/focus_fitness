@@ -28,6 +28,14 @@ If a anomymous clickes on the Programs button in the Index page. They will be re
  Bugs:
  after adding a check to see if user is the same as the author, as to let the author edir or update post I have noticed the comments messages is chnaging as to how is logged it.
 
+ I was having a getting the right product_id in the idex.html. I was using {% url 'product_detail' product.id %}, I was get a Error:  
+
+~~~
+Reverse for 'product_detail' with arguments '('',)' not found. 1 pattern(s) tried: ['products/(?P<product_id>[^/]+)/$']
+~~~
+
+Fix: Im my for loop I was using the word 'items' in sale_item so once I change the product.id for item.id it fixed the bug.
+
 ### deplyment
 
 If you are starting with a new Database.
