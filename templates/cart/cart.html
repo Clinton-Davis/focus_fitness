@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load bag_tools %}
+{% load static %}
 {% block content %}
 
 
@@ -159,7 +160,7 @@
 
 {% block postloadjs %}
 {{ block.super }}
-{% include "products\includes\quantity_input_script.html" %}
+<script src="{% static 'js/stripe_elements.js' %}"></script>
 
 <script type="text/javascript">
     // Update quantity on click
