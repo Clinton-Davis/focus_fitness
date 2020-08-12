@@ -28,6 +28,8 @@ If a anomymous clickes on the Programs button in the Index page. They will be re
  Bugs:
  after adding a check to see if user is the same as the author, as to let the author edir or update post I have noticed the comments messages is chnaging as to how is logged it.
 
+#### Bugs
+
  I was having a getting the right product_id in the idex.html. I was using {% url 'product_detail' product.id %}, I was get a Error:  
 
 ~~~
@@ -35,6 +37,21 @@ Reverse for 'product_detail' with arguments '('',)' not found. 1 pattern(s) trie
 ~~~
 
 Fix: Im my for loop I was using the word 'items' in sale_item so once I change the product.id for item.id it fixed the bug.
+
+#### Bugs
+
+There is a boostrap4 carousel in the blog#-list.html page that shows featured blogs. I was using a for loop to get the blog post to show. After that I was using a if statement to pick out the featured post from the others.
+But it was not working.
+When i tested the carousel to if that was the problem, it worked fine. 
+I then made sure the for loop was working with {{ blogs.featured }} True and False where being shown, that that was not the bug.
+To make the carousel work with looped objects you have to loop the counter with 1 being active.
+~~~
+<div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}"
+                        id="slide{{ forloop.counter }} ">
+~~~
+
+When I had my {% if blog.featured == Ture %} the div's class if loop was cause an error and nothing was being shown.
+Fix: in the BlogListView I added a quaryset with a filter to loop for featured blogs and passed them into the context. From there i just looped through them.
 
 ### deplyment
 

@@ -9,6 +9,8 @@ from .forms import BlogCommentForm, BlogForm, Category
 
 
 def BlogListView(request):
+    template_name = 'blog/blog_list.html'
+    feature_blog = Blog.objects.filter(featured=True)
     all_blogs = Blog.objects.all()
     category_menu = Category.objects.all()
     quary = None
@@ -23,6 +25,7 @@ def BlogListView(request):
         all_blogs = all_blogs.filter(search)
 
     context = {
+        'feature_blog': feature_blog,
         'all_blogs': all_blogs,
         'category_menu': category_menu,
 
@@ -31,6 +34,7 @@ def BlogListView(request):
 
 
 def CategoryView(request, category):
+    template_name = 'blog/blog_categories.html'
     category_blogs = Blog.objects.filter(category=category)
     category_menu = Category.objects.all()
     all_blogs = Blog.objects.all()
@@ -47,6 +51,7 @@ def CategoryView(request, category):
 
 
 class BlogDetailView(DetailView):
+
     model = Blog
 
     def post(self, *args, **kwargs):
