@@ -5,7 +5,7 @@ import dj_database_url
 DEBUG = True
 ALLOWED_HOSTS = ['*']
 
-if DEBUG is True:
+if DEBUG is False:
     env = environ.Env()
     # read the .env file
     environ.Env.read_env()
@@ -21,7 +21,7 @@ if DEBUG is True:
     }
 
 
-if DEBUG is False:
+if DEBUG is True:
     SECRET_KEY = os.environ.get('SECRET_KEY')
     # Just for testing
     # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -103,7 +103,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'focus.wsgi.application'
 
 
-if DEBUG is False:
+if DEBUG is True:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
@@ -155,13 +155,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
-if DEBUG is False:
+if DEBUG is True:
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
     AWS_STORAGE_BUCKET_NAME = 'focus-fitness'
@@ -185,7 +186,7 @@ TAX_RATE_PERCENTAGE = 15
 
 
 # stripe
-if DEBUG is False:
+if DEBUG is True:
     STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
     STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
     STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET')
@@ -198,7 +199,7 @@ if DEBUG is False:
     # SECURE_SSL_REDIRECT = True
     # # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-if DEBUG is True:
+if DEBUG is False:
     STRIPE_CURRENCY = 'usd'
     STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY')
     STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
