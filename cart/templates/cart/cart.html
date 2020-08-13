@@ -71,6 +71,8 @@
 
                     {% endfor %}
                 </div>
+
+
                 <div class="table-responsive rounded-10 d-none d-md-block">
                     <table class="table table-sm table-borderless">
                         <thead class="aw text-center text-bk">
@@ -80,6 +82,7 @@
                                 <th scope="col"><u>Price</u></th>
                                 <th scope="col"><u>Qty</u></th>
                                 <th scope="col" class="text-right"><u>SubTotal</u></th>
+                                <th scope="col" class="text-right text-red"><u>Remove</u></th>
 
                             </tr>
                         </thead>
@@ -102,11 +105,23 @@
                             <td class="aw text-bk py-3 text-center">
                                 <p class="text-right">${{ item.product.price|calc_subtotal:item.quantity }}</p>
                             </td>
+                            <td class="aw text-bk py-3 text-right">
+                                {% include "cart/includes/remove.html" %}
+                            </td>
+
 
                         </tr>
                         {% endfor %}
                     </table>
                     <div class="container float-right">
+                        <div class="row">
+                            <div class="col-7">
+                            </div>
+                            <div class="col-5 mb-2 text-center">
+                                <h2 class="aw text-grn">Order Summary</h2>
+                                <hr>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-6 ml-auto">
                                 {% include "cart/includes/cart-total.html" %}

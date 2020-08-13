@@ -16,10 +16,10 @@
                 </a>
                 {% else %}
                 {% endif%}
-                <a href="{% url 'profile' %}">
+                <a class="mr-3" href="{% url 'profile' %}">
                     <span class="aw text-wht" title="User Login">
-                        <i class="fad fa-user-alt"></i>
-                        &nbsp;{{ user.username|title }}
+                        <i class="fad fa-user-alt mr-1"></i>
+                        {{ user.username|title }}
                     </span>
                 </a>
 
@@ -36,14 +36,14 @@
 
 
                 <a href="{% url 'cart_view' %}" class="site-cart ">
-                    <span><i class="fad fa-shopping-cart text-wht"></i></span>
+                    <span><i class="fad fa-shopping-cart text-wht " title="Go to CheckOut"></i></span>
 
                     <span title="Go to CheckOut"
-                        class="{% if grand_total %} text-grn {% else %} text-wht {% endif %}aw text-wht">
+                        class=" {% if grand_total %} text-grn {% else %} text-wht {% endif %}aw text-wht">
                         {% if grand_total %}
-                        ${{ grand_total|floatformat:2 }}
+                        <span class="mont_b">$ </span>{{ grand_total|floatformat:2 }}
                         {% else %}
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <small>Empty</small>
                         {% endif %}
                     </span>
                 </a>
