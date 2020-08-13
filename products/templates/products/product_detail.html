@@ -98,7 +98,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="row justify-content-around align-content-center">
                                 <div class="mx-1">
                                     <button type="submit"
@@ -119,22 +118,16 @@
                     </form>
                 </div>
             </div>
-
-
             <div class="col-md-8 col-sm-12 mx-auto bg-white rounded-bottom">
                 <h4 class="aw text-center pt-2">Overview</h4>
                 <p class="detail-p">{{ product.description|safe }}</p>
             </div>
-
-
-
-            <!-- <p class="col-12 mt-3  mx-auto detail-p">{{ product.description }}</p> -->
         </div>
     </div>
 
     {% endblock content %}
     {% block postloadjs %}
     {{ block.super }}
-    <script href="{% static 'quantity_input_script.js' %}"></script>
+    <script src="{% static 'js/quantity_input_script.js' %}"></script>
 
     {% endblock postloadjs %}
