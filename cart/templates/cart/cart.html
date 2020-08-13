@@ -49,11 +49,18 @@
                         <div class="col-12 col-sm-6 mb-2">
                             {% include "cart/includes/product-info.html" %}
                         </div>
-                        <div class="col-12 col-sm-6 order-sm-last">
+
+                        <div class="col-3">
+                            {% include "cart/includes/quantity.html" %}
+                        </div>
+                        <div class="col-5 mb-2">
+                            <p class="text-center">@ ${{ item.product.price }}</p>
+                        </div>
+                        <div class="col-4 order-sm-last">
                             <p class="text-right">${{ item.product.price|calc_subtotal:item.quantity }}</p>
                         </div>
-                        <div class="col-12 col-sm-6">
-                            {% include "cart/includes/quantity-form.html" %}
+                        <div class="col-12 text-right order-sm-last">
+                            {% include "cart/includes/remove.html" %}
                         </div>
                     </div>
                     <div class="row">
@@ -85,11 +92,11 @@
                                 {% include "cart/includes/product-info.html" %}
                             </td>
                             <td class="py-3 text-bk">
-                                <p class="text-center">${{ item.product.price }}</p>
+                                <p class="text-center">@ ${{ item.product.price }}</p>
                             </td>
 
                             <td class="py-3  text-center">
-                                {% include "cart/includes/quantity-form.html" %}
+                                {% include "cart/includes/quantity.html" %}
 
                             </td>
                             <td class="aw text-bk py-3 text-center">
@@ -115,11 +122,14 @@
                 </div>
                 {% else %}
                 <div class="container">
-                    <div class="row align-items-center">
+                    <div class="row center-block-col">
                         <h5 class="col-12 empty aw">
-                            There are no items in your cart.&nbsp; <a href="{% url 'products' %}"> Continue
-                                Shopping</a>
+                            <a href="{% url 'products' %}"><span class="vert-aline"> Your cart is
+                                    empty.</span>
+                                <span><i class="mb-0 fad fa-cart-plus fa-2x"></i></span>
+                            </a>
                         </h5>
+
                     </div>
                 </div>
                 {% endif %}
@@ -135,8 +145,6 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script src="{% static 'js/quantity_input_script.js' %}"></script>
-<script src="{% static 'js/upDateBtn.js' %}"></script>
 
 {% endblock postloadjs %}
 
