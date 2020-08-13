@@ -1,6 +1,7 @@
 from django.db import models
 from django.shortcuts import reverse
 from ckeditor.fields import RichTextField
+from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -34,3 +35,14 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class productComment(models.Model):
+    """To be able to comment on a Product"""
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name_product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    timestamp = models.DateTimeField(auto_now_add=True)
+    content = models.TextField()
+
+    def __str__(self):
+        return self.user.username

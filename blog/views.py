@@ -48,7 +48,6 @@ def CategoryView(request, category):
 
 
 class BlogDetailView(DetailView):
-
     model = Blog
 
     def post(self, *args, **kwargs):
@@ -118,11 +117,14 @@ class BlogDeleteView(DeleteView):
 def like(request, slug):
     """ Checks to see if the use has liked the blog
     If True, then delete the like if False then create the like"""
+
     blog = get_object_or_404(Blog, slug=slug)
     like_qs = Like.objects.filter(user=request.user, blog=blog)
+
     if like_qs.exists():
         # unlike the post
         like_qs[0].delete()
         return redirect('blog:details', slug=slug)
+
     Like.objects.create(user=request.user, blog=blog)
     return redirect('blog:details', slug=slug)

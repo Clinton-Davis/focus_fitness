@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Category
+from .models import Product, Category,  productComment
+from .forms import ProductCommentForm
 from django.views.generic import DetailView
 
 
@@ -52,23 +53,44 @@ def all_products(request):
         'search_term': query,
         'current_categories': categories,
         'sorting': sorting,
-
-
     }
-
     return render(request, 'products/products.html', context)
 
 
-def product_detail(request, product_id):
-    """A view to show product details, """
-    product = get_object_or_404(Product, pk=product_id)
+class ProductDetailView(DetailView):
+    model = Product
+    template_name = 'products/product_details.html'
+    context_object_name = 'product'
 
-    context = {
-        'product': product,
-    }
+    # def post(self, *args, **kwargs):
+    #     """ name_product is the product (pk)"""
+    #     form = ProductCommentForm(self.request.POST)
+    #     if form.is_valid():
+    #         name_product = self.get_object()
+    #         comment = form.instance
+    #         comment.user = self.request.user
+    #         comment.name_product = name_product
+    #         comment.save()
+    #         return redirect("product_detail", pk=name_product.pk)
 
-    return render(request, 'products/product_detail.html', context)
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['form'] = ProductCommentForm()
+    #     return context
 
-# class ProductDetailView(DetailView):
-#     model = Product
-#     template_name = 'products/product_detail.html'
+    # def get_object(self, **kwargs):
+
+    #     object = super().get_object(**kwargs)
+    #     if self.request.user.is_authenticated:
+    #         productComment.objects.get_or_create(
+    #             user=self.request.user, name_product=object)
+    #     return object
+
+
+# def product_detail(request, pk):
+#     """A view to show product details, """
+#     product = get_object_or_404(Product, pk=pk)
+#     context = {
+#         'product': product,
+#     }
+#     return render(request, 'products/product_detail.html', context)

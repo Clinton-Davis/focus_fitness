@@ -54,13 +54,8 @@
                     <p class="aw lead mb-0 text-center font-weight-bold"><span
                             class="mont_b">$</span>{{ product.price }}
                     </p>
-
                     <div class="row justify-content-around">
-
-
-
                     </div>
-
                     <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
                         {% csrf_token %}
                         <div>
