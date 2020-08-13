@@ -59,7 +59,7 @@ def all_products(request):
 
 class ProductDetailView(DetailView):
     model = Product
-    template_name = 'products/product_details.html'
+    template_name = 'products/product_detail.html'
     context_object_name = 'product'
 
     # def post(self, *args, **kwargs):
