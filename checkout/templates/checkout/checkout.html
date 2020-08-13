@@ -10,18 +10,9 @@
 {% block content %}
 
 
-<div class="container-fluid bg-black">
-    <div class="row">
-        <div class="col-md-12 mb-0">
-            <a class="text-wht aw" href="{% url 'home' %}">Home</a>
-            <span class="mx-2 mb-0 text-wht">/</span>
-            <strong class="text-wht aw">Cart</strong>
-        </div>
-    </div>
-</div>
 
 <!-- <div class="container-cart"> -->
-<!-- <div class="container product-overlay"> -->
+<!-- <div class="container"> -->
 <div class="container mb-2">
     <div class="row">
         <div class="col">
@@ -77,7 +68,7 @@
                 </div>
                 <div class="col-3">
 
-                    <p class="my-0 aw">${{ order_total | floatformat:2 }}</p>
+                    <p class="my-0 aw">${{ cart_total | floatformat:2 }}</p>
                     <p class="my-0 aw">${{ discount | floatformat:2 }}</p>
                     <p class="my-0 aw">${{ sub_total | floatformat:2 }}</p>
                     <p class="my-0 aw">${{ tax | floatformat:2 }}</p>
