@@ -122,7 +122,18 @@
             <div class="col-md-8 col-sm-12 mx-auto bg-white rounded-bottom">
                 <h4 class="aw text-center pt-2">Overview</h4>
                 <p class="detail-p">{{ product.description|safe }}</p>
+                <h4 class="aw pt-2">Review</h4>
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" class="btn btn-secondary">Submint</button>
+                </form>
+
+                <p>from:</p>
+                <p>message:</p>
+                <p><small> time ago</small></p>
             </div>
+
         </div>
     </div>
 
