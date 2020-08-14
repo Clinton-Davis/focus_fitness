@@ -11,7 +11,7 @@
 
 <!-- <div class="container-cart"> -->
 <!-- <div class="container product-overlay"> -->
-<div class="container mb-2">
+<div class="container-fluid pb-4 checkout-pic">
     <div class="container ">
         <div class="row">
             <div class="col-md-12 mb-0">
@@ -21,34 +21,31 @@
             </div>
         </div>
     </div>
-    <div class="row p">
-        <div class="col">
+    <div class="row p text-wht">
+        <div class="col text-center">
             <hr>
             {% if from_profile %}
             <h2 class="aw mb-4 text-center">
                 Thank's again
             </h2>
+            <p class="mx-auto">Your order information is below. <br>
+                A confirmation email was send to {{ order.email }} <br>
+                On {{ order.date|date:"D d M Y" }}</p>
             {% else %}
             <h2 class="aw mb-4 text-center">
                 Thank You
             </h2>
+            <p class="text-center ">Your confirmation email has been sent to <br>{{  order.email }}</p>
             {% endif %}
 
         </div>
     </div>
 
-    <div class="row order-wrap">
-        <div class="col-12 col-lg-7">
-            <div class="order-succes-wrapper p-2 border rounded-15">
-
-                {% if from_profile  %}
-                <p class="text-center ">Your order information is below. <br>
-                    A confirmation email was send to {{ order.email }} <br>
-                    On {{ order.date|date:"D d M Y" }}</p>
-                {% else %}
-
-                <p class="text-center ">Your confirmation email has been sent to <br>{{  order.email }}</p>
-                {% endif %}
+    <!-- <div class="row order-wrap">
+        <!-- Order Info -->
+    <div class="row center-block-justify">
+        <div class="card-text col-md-6 col-sm-12" style="max-width:400px">
+            <div class="order-succes-wrapper bg-wht fixed-shadow p-2 border rounded-15">
                 <div class="row ">
                     <div class="col">
                         <small class="text-muted text-center aw">Your Order</small>
@@ -94,6 +91,62 @@
                     </div>
                 </div>
                 {% endfor %}
+
+
+                <div class="row">
+                    <div class="col">
+                        <small class="aw text-muted text-center">Billing Info:</small>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0 text-black aw">Cart Total:</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-right">
+                        <p class="mb-0 aw">${{ order.order_total }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0 text-black aw">Discounts:</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-right">
+                        <p class="mb-0 aw">${{ order.sub_discount }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0 text-black aw">TAX:<small class="text-muted"> 15%</small></p>
+                    </div>
+                    <div class="col-12 col-md-8 text-right">
+                        <p class="mb-0 aw">${{ order.tax }}</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0 aw">Delivery:</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-right">
+                        <p class="mb-0 aw">${{ order.delivery_cost }}</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <p class="mb-0 aw ">Grand Total:</p>
+                    </div>
+                    <div class="col-12 col-md-8 text-right">
+                        <p class="mb-0 aw"><span class="underline ">${{ order.grand_total }}</span></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Delivering block -->
+        <div class=" col-md-6 col-sm-12" style="max-width:400px">
+            <div class="order-succes-wrapper bg-wht fixed-shadow p-2 border rounded-15">
 
                 <div class="row">
                     <div class="col">
@@ -179,69 +232,15 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col">
-                        <small class="aw text-muted text-center">Billing Info:</small>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <p class="mb-0 text-black aw">Cart Total:</p>
-                    </div>
-                    <div class="col-12 col-md-8 text-right">
-                        <p class="mb-0 aw">${{ order.order_total }}</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <p class="mb-0 text-black aw">Discounts:</p>
-                    </div>
-                    <div class="col-12 col-md-8 text-right">
-                        <p class="mb-0 aw">${{ order.sub_discount }}</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <p class="mb-0 text-black aw">TAX:<small class="text-muted"> 15%</small></p>
-                    </div>
-                    <div class="col-12 col-md-8 text-right">
-                        <p class="mb-0 aw">${{ order.tax }}</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <p class="mb-0 aw">Delivery:</p>
-                    </div>
-                    <div class="col-12 col-md-8 text-right">
-                        <p class="mb-0 aw">${{ order.delivery_cost }}</p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-12 col-md-4">
-                        <p class="mb-0 aw ">Grand Total:</p>
-                    </div>
-                    <div class="col-12 col-md-8 text-right">
-                        <p class="mb-0 aw"><span class="underline ">${{ order.grand_total }}</span></p>
-                    </div>
-
-                </div>
             </div>
         </div>
     </div>
-    <div class="row">
+</div>
+</div>
 
-    </div>
 </div>
-<div id="loading-overlay">
-    <h1 class="text-light logo-font loading-spinner">
-        <span class="icon">
-            <i class="fas fa-3x fa-sync-alt fa-spin"></i>
-        </span>
-    </h1>
-</div>
+
 
 
 {% endblock content %}

@@ -20,7 +20,7 @@ p {
   font-family: "montserrat", sans-serif;
   font-weight: 400;
   max-width: 600px;
-  font-size: 1.125em;
+  /* font-size: 1.125em; */
 }
 
 ul {
@@ -32,12 +32,27 @@ img {
   max-width: 40rem;
 }
 
+.hr-wht {
+  border-top: 1px solid rgb(255, 255, 255);
+}
+
+.hr-gry {
+  border-top: 1px solid rgba(160, 160, 160, 0.493);
+}
+
 .custom-pl {
   padding-left: 4rem;
 }
 
 
 .hover-shadow:hover {
+  -webkit-box-shadow: 0px 10px 19px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 10px 19px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 10px 19px -5px rgba(0, 0, 0, 0.75);
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.fixed-shadow {
   -webkit-box-shadow: 0px 10px 19px -5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 10px 19px -5px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 10px 19px -5px rgba(0, 0, 0, 0.75);
@@ -56,6 +71,11 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.center-block-justify {
+  display: flex;
+  justify-content: center;
 
 }
 
@@ -122,6 +142,10 @@ img {
 
 .text-off-wht {
   color: rgb(192, 190, 190);
+}
+
+.text-off-wht-d {
+  color: rgb(150, 147, 147);
 }
 
 .text-grn {
@@ -639,6 +663,16 @@ nav {
   color: white;
 
   justify-content: center;
+}
+
+.checkout-pic {
+  background: url(/static/images/delaney-van-weights.jpg) no-repeat center center fixed;
+  /* background-color: #fff; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: fit-content;
 }
 
 .login-overlay {
