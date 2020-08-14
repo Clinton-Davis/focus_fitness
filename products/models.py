@@ -36,6 +36,10 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+    @property
+    def productcomments(self):
+        return self.productcomment_set.all()
+
 
 class productComment(models.Model):
     """To be able to comment on a Product"""
@@ -43,6 +47,16 @@ class productComment(models.Model):
     name_product = models.ForeignKey(Product, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
     content = models.TextField()
+
+    def __str__(self):
+        return self.user.username
+
+
+class ProductView(models.Model):
+    """Keeps track of views """
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.user.username

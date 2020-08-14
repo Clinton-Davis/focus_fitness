@@ -20,7 +20,7 @@ p {
   font-family: "montserrat", sans-serif;
   font-weight: 400;
   max-width: 600px;
-  font-size: 1.125em;
+  /* font-size: 1.125em; */
 }
 
 ul {
@@ -30,6 +30,14 @@ ul {
 img {
   object-fit: fill;
   max-width: 40rem;
+}
+
+.hr-wht {
+  border-top: 1px solid rgb(255, 255, 255);
+}
+
+.hr-gry {
+  border-top: 1px solid rgba(160, 160, 160, 0.493);
 }
 
 .custom-pl {

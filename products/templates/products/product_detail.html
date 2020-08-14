@@ -120,23 +120,77 @@
                 </div>
             </div>
             <div class="col-md-8 col-sm-12 mx-auto bg-white rounded-bottom">
-                <h4 class="aw text-center pt-2">Overview</h4>
+                <h4 class=" aw text-center w-50 rounded pb-2 text-wht bg-black-a pt-2">Overview</h4>
                 <p class="detail-p">{{ product.description|safe }}</p>
-                <h4 class="aw pt-2">Review</h4>
-                <form method="POST" action="">
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    <button type="submit" class="btn btn-secondary">Submint</button>
-                </form>
+                <hr>
 
-                <p>from:</p>
-                <p>message:</p>
-                <p><small> time ago</small></p>
+                <!-- Button to Open the Modal -->
+                <button type="button" class="btn btn-primary hover-shadow border-bk aw" data-toggle="modal"
+                    data-target="#review_Modal">
+                    WRITE A REVIEW
+                </button>
+
+                <hr>
+                <small>By clicking the button above, you agree to entering the Focus-Fitness.com Reviews section.
+                    Products
+                    in the Store are not intended to diagnose, treat, cure or prevent any disease.</small>
+                <br>
+                <hr>
+                <p class=" aw text-primary">Reviews</p>
+                <hr>
+                <!-- The Modal -->
+                <div class="modal" id="review_Modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header bg-black-a">
+                                <h3 class="modal-title text-wht aw">Product Reviewing</h3>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class=" card my-4">
+                                    <p class="text-bk aw">Product: <span class="mont_r">{{ product.name }}</span></p>
+
+                                    </p>
+                                    <p class="text-bk">Leave a Review Below:</p>
+                                    <div class="card-body">
+                                        <form method="POST">
+                                            {% csrf_token %}
+                                            {{ form|crispy }}
+                                            <button type="submit" class="aw btn btn-primary border-bk hover-shadow">Post
+                                                Review</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- modal end -->
+                {% if request.user.is_authenticated %}
+                {% for comment in product.productcomments %}
+                <div class=" media mb-4">
+                    <div class="media-body">
+
+                        <h5 class="mt-0"><small class="mr-2 aw">From:</small>{{ comment.user|title }}</h5>
+
+                        <p class="pl-3">{{ comment.content }}</p>
+                        <small class="card-footer rounded">{{ comment.timestamp|timesince }} ago</small>
+                    </div>
+                </div>
+                <hr>
+                {% endfor %}
+
+                {% else %}
+                <a href="{% url 'account_login' %}" class="aw mb-4 btn btn-warning hover-shadow">Login to Comment</a>
+                {% endif %}
             </div>
-
         </div>
     </div>
-
     {% endblock content %}
     {% block postloadjs %}
     {{ block.super }}

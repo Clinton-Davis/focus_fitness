@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Category,  productComment
+from .models import Product, Category, productComment, ProductView
 from .forms import ProductCommentForm
 from django.views.generic import DetailView
 
@@ -61,34 +61,32 @@ class ProductDetailView(DetailView):
     model = Product
     template_name = 'products/product_detail.html'
     context_object_name = 'product'
-    form = ProductCommentForm()
+
+    def post(self, *args, **kwargs):
+        """  name_product is the product (pk)"""
+        form = ProductCommentForm(self.request.POST)
+        if form.is_valid():
+            name_product = self.get_object()
+            productcomment = form.instance
+            productcomment.user = self.request.user
+            productcomment.name_product = name_product
+            productcomment.save()
+            return redirect("product_detail", pk=name_product.pk)
+        return redirect("product_detail", pk=self.get_object().pk)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context.update({
+            'form': ProductCommentForm(),
+        })
+        return context
 
     def get_object(self):
         object = super().get_object()
         if self.request.user.is_authenticated:
-            productComment.objects.get_or_create(
-                user=self.request.user,  name_product=object)
+            ProductView.objects.get_or_create(
+                user=self.request.user, product=object)
         return object
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['form'] = self.form
-        return context
-
-    def post(self, *args, **kwargs):
-        """  name_product is the product (pk)"""
-        form = ProductCommentForm()
-        if form.is_valid():
-            name_product = self.get_object()
-            form.instance.user = request.user
-            form.instance.name_product = name_product
-            form.save()
-            return redirect(reverse("product_detail", kwargs={
-                'pk': name_product.pk
-            }))
-        return redirect(reverse("product_detail", kwargs={
-            'pk': self.get_object().pk
-        }))
 
 
 # def product_detail(request, pk):

@@ -92,7 +92,7 @@ class BlogComment(models.Model):
 
 
 class BlogView(models.Model):
-    """Keeps track of unike views """
+    """Keeps track of views """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)

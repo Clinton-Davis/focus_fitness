@@ -45,16 +45,16 @@
                 <span class="text-mute float-right">Posted: {{ blog.publish_date|timesince }}</span>
 
 
-                <hr>
+                <hr class="hr-wht">
 
                 <!-- Preview Image -->
                 <img class="img-fluid mx-auto rounded" src="{{ blog.thumbnail.url }}" alt="">
 
-                <hr>
+                <hr class="hr-wht">
 
                 <!-- Post Content -->
                 <p class="text-off-wht mx-auto">{{ blog.content|safe }}</p>
-                <hr>
+                <hr class="hr-wht">
                 <p class="">If you like the Post, give it a
                     <a class="text-muted" href="{{ blog.get_like_url }}">
                         <i class="pl-2 text-primary fad fa-thumbs-up fa-lg"></i>
@@ -62,36 +62,76 @@
                     </a>
 
                 </p>
-                <hr>
+                <hr class="hr-gry">
                 <small class="text-muted">First Posted on the {{ blog.publish_date}}</small>
-                <hr>
+                <hr class="hr-wht">
                 <!-- Comments Form -->
+                <button type="button" class="btn btn-primary hover-shadow border-bk aw" data-toggle="modal"
+                    data-target="#blog_Modal">
+                    WRITE A COMMENT
+                </button>
 
-                {% if request.user.is_authenticated %}
-                <div class=" card my-4">
-                    <h5 class="card-header aw text-wht bg-black-a">Leave a Comment:</h5>
-                    <div class="card-body bg-black-a">
-                        <form method="POST">
-                            {% csrf_token %}
-                            {{ form|crispy }}
-                            <button type="submit" class="aw btn btn-primary">Comment</button>
-                        </form>
+                <hr class="hr-gry">
+                <p>By clicking the button above, you agree to entering the <br>Focus-Fitness.com Reviews section.
+                    Products
+                    in the Store are not intended to diagnose, treat, cure or prevent any disease.</p>
+
+                <hr class="hr-gry">
+                <h5 class=" aw text-primary">Comments</h5>
+                <hr class="hr-wht">
+                <!-- The Modal -->
+                <div class="modal" id="blog_Modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header bg-black-a">
+                                <h3 class="modal-title text-wht aw">Blog Comments</h3>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class=" card my-4">
+                                    <p class="text-bk aw">{{ blog.name }}</p>
+
+                                    <small class="text-bk">By clicking the button below you have agreed to the term and
+                                        condition of
+                                        focus-fitness.com</small>
+
+                                    < <p class="text-bk">Leave a Comment Below:</p>
+                                        <div class="card-body">
+                                            <form method="POST">
+                                                {% csrf_token %}
+                                                {{ form|crispy }}
+                                                <button type="submit"
+                                                    class="aw btn btn-primary border-bk hover-shadow">Post
+                                                    Comment</button>
+                                            </form>
+                                        </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
+                {% if request.user.is_authenticated %}
+
                 {% else %}
-                <a href="{% url 'account_login' %}" class="aw mb-4 btn btn-warning">Login to Comment</a>
+                <a href="{% url 'account_login' %}" class="aw mb-4 bg-black-a btn btn-warning">Login to
+                    Comment</a>
                 {% endif %}
                 <!-- Single Comment -->
                 {% for blogcomment in blog.blogcomments %}
                 <div class=" media mb-4">
                     <div class="media-body">
 
-                        <h5 class="mt-0"><small>Message from: </small>{{ blogcomment.user|title }}</h5>
+                        <h5 class="mt-0"><small class="mr-2 aw">From: </small>{{ blogcomment.user|title }}</h5>
                         <p class="pl-3">{{ blogcomment.content}}</p>
                         <small>{{ blogcomment.timestamp|timesince }} ago</small>
                     </div>
                 </div>
-                <hr>
+                <hr class="hr-gry">
                 {% endfor %}
             </div>
         </div>
