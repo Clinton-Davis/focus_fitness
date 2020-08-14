@@ -52,6 +52,13 @@ img {
   color: rgba(0, 0, 0, 0.75);
 }
 
+.fixed-shadow {
+  -webkit-box-shadow: 0px 10px 19px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 10px 19px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 10px 19px -5px rgba(0, 0, 0, 0.75);
+  color: rgba(0, 0, 0, 0.75);
+}
+
 .bg-wht {
   background-color: rgba(255, 255, 255, 0.555);
 }
@@ -64,6 +71,11 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.center-block-justify {
+  display: flex;
+  justify-content: center;
 
 }
 
@@ -647,6 +659,16 @@ nav {
   color: white;
 
   justify-content: center;
+}
+
+.checkout-pic {
+  background: url(/static/images/delaney-van-weights.jpg) no-repeat center center fixed;
+  /* background-color: #fff; */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: fit-content;
 }
 
 .login-overlay {
