@@ -23,7 +23,7 @@
                     Nulla excepturi commodi provident sunt est.</p>
             </div>
             <div class="col-auto mx-auto">
-                <form action="{% url 'newsletter_sub' %}" method="POST">
+                <form action="{% url 'marketing:newsubs' %}" method="POST">
                     {% csrf_token %}
                     <div class="input-group  mb-2">
                         {{ news_form }}

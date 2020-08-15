@@ -19,7 +19,7 @@
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2 bg-white rounded-left">
                 <div class="image-container center-block my-5">
                     {% if product.image %}
-                    <a class="mx-auto  " href="{{ product.image.url }}" target="_blank">
+                    <a class="mx-auto" href="{{ product.image.url }}" target="_blank">
                         <img class="mx-auto card-img-top img-fluid detail-img" src="{{ product.image.url }}"
                             alt="{{ product.name }}">
                     </a>
@@ -122,21 +122,30 @@
             <div class="col-md-8 col-sm-12 mx-auto bg-white rounded-bottom">
                 <h4 class=" aw text-center w-50 rounded pb-2 text-wht bg-black-a pt-2">Overview</h4>
                 <p class="detail-p">{{ product.description|safe }}</p>
+                <hr class="hr-bk ">
+                <p class=" aw text-primary">REVIEWS</p>
                 <hr>
+                {% for comment in product.productcomments %}
+                <div class=" media mb-4">
+                    <div class="media-body">
+                        <h5 class="mt-0"><i class="fad fa-user mr-3"></i>{{ comment.user|title }}</h5>
+                        <p><i class="fad fa-comments fa-lg mr-2"></i>{{ comment.content }}</p>
+                        <small class="p-1 rounded bg-off-white">{{ comment.timestamp|timesince }} ago</small>
+                    </div>
+                </div>
+                <hr>
+                {% endfor %}
 
+                {% if request.user.is_authenticated %}
                 <!-- Button to Open the Modal -->
                 <button type="button" class="btn btn-primary hover-shadow border-bk aw" data-toggle="modal"
                     data-target="#review_Modal">
                     WRITE A REVIEW
                 </button>
-
                 <hr>
                 <small>By clicking the button above, you agree to entering the Focus-Fitness.com Reviews section.
-                    Products
-                    in the Store are not intended to diagnose, treat, cure or prevent any disease.</small>
+                    Products in the Store are not intended to diagnose, treat, cure or prevent any disease.</small>
                 <br>
-                <hr>
-                <p class=" aw text-primary">Reviews</p>
                 <hr>
                 <!-- The Modal -->
                 <div class="modal" id="review_Modal">
@@ -153,8 +162,6 @@
                             <div class="modal-body">
                                 <div class=" card my-4">
                                     <p class="text-bk aw">Product: <span class="mont_r">{{ product.name }}</span></p>
-
-                                    </p>
                                     <p class="text-bk">Leave a Review Below:</p>
                                     <div class="card-body">
                                         <form method="POST">
@@ -171,22 +178,9 @@
                     </div>
                 </div>
                 <!-- modal end -->
-                {% if request.user.is_authenticated %}
-                {% for comment in product.productcomments %}
-                <div class=" media mb-4">
-                    <div class="media-body">
-
-                        <h5 class="mt-0"><small class="mr-2 aw">From:</small>{{ comment.user|title }}</h5>
-
-                        <p class="pl-3">{{ comment.content }}</p>
-                        <small class="card-footer rounded">{{ comment.timestamp|timesince }} ago</small>
-                    </div>
-                </div>
-                <hr>
-                {% endfor %}
-
                 {% else %}
-                <a href="{% url 'account_login' %}" class="aw mb-4 btn btn-warning hover-shadow">Login to Comment</a>
+                <a href="{% url 'account_login' %}" class="aw mb-4 btn btn-warning border-bk hover-shadow">LOGIN TO
+                    REVIEW</a>
                 {% endif %}
             </div>
         </div>
