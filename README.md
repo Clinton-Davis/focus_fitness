@@ -51,7 +51,9 @@ To make the carousel work with looped objects you have to loop the counter with 
 ~~~
 
 When I had my {% if blog.featured == Ture %} the div's class if loop was cause an error and nothing was being shown.
-Fix: in the BlogListView I added a quaryset with a filter to loop for featured blogs and passed them into the context. From there i just looped through them.
+Fix: in the bloglistview I added a quaryset with a filter to loop for featured blogs and passed them into the context. From there i just looped through them.
+
+I had a form with in a form in the footer thats why is was not getting to the view
 
 ### deplyment
 

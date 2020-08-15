@@ -29,7 +29,7 @@ ul {
 }
 
 img {
-  object-fit: fill;
+  object-fit: contain;
   max-width: 40rem;
 }
 
