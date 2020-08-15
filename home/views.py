@@ -9,6 +9,7 @@ from programs.models import Program
 from products.models import Product
 from blog.models import Blog
 from memberships.views import get_user_membership
+import requests
 
 
 def IndexView(request):
@@ -20,7 +21,6 @@ def IndexView(request):
     if request.user.is_authenticated:
         current_membership = get_user_membership(request)
         current_membership = str(current_membership.membership)
-
     else:
         current_membership = False
 
@@ -45,10 +45,11 @@ class ContactView(generic.FormView):
     def get_success_url(self):
         return reverse("contact")
 
-    """" Getting clean data from the form and creating
-        a message to get sent to default email"""
-
     def form_valid(self, form):
+        """" 
+        Getting clean data from the form and creating
+        a message to get sent to default email
+        """
         messages.success(self.request,
                          "Thank you for getting in touch with us. We have received your message.")
         name = form.cleaned_data.get('name')
