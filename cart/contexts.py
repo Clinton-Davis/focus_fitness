@@ -23,8 +23,11 @@ def get_loged_user_discount(request):
         return None
 
 
-def cart_contents(request):
-    """ Makes the cart_contents context avaible to all apps """
+def global_context(request):
+    """ Makes the global_context context avaible to all apps.
+        This hold the cart sessions and does the math for
+        the cart total discount and tax 
+    """
     cart_items = []
     total = 0
     product_count = 0

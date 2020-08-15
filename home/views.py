@@ -9,7 +9,6 @@ from programs.models import Program
 from products.models import Product
 from blog.models import Blog
 from memberships.views import get_user_membership
-import requests
 
 
 def IndexView(request):
