@@ -14,7 +14,6 @@ MEMBERSHIP_CHOICES = (
 
 
 class Membership(models.Model):
-
     slug = models.SlugField()
     membership_type = models.CharField(
         choices=MEMBERSHIP_CHOICES,

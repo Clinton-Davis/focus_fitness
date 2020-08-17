@@ -45,10 +45,11 @@ class ContactView(generic.FormView):
     def get_success_url(self):
         return reverse("contact")
 
-    """" Getting clean data from the form and creating
-        a message to get sent to default email"""
-
     def form_valid(self, form):
+        """" 
+        Getting clean data from the form and creating
+        a message to get sent to default email
+        """
         messages.success(self.request,
                          "Thank you for getting in touch with us. We have received your message.")
         name = form.cleaned_data.get('name')

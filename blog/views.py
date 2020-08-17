@@ -8,13 +8,12 @@ from .models import Blog, BlogComment, BlogView, Like
 from .forms import BlogCommentForm, BlogForm, Category
 
 
-def BlogListView(request):
+def bloglistview(request):
     template_name = 'blog/blog_list.html'
     feature_blog = Blog.objects.filter(featured=True)
     all_blogs = Blog.objects.all()
     category_menu = Category.objects.all()
     quary = None
-
     if 's' in request.GET:
         query = request.GET['s']
         if not query:
@@ -22,7 +21,6 @@ def BlogListView(request):
             return redirect(reverse('blog:list'))
         search = Q(title__icontains=query) | Q(content__icontains=query)
         all_blogs = all_blogs.filter(search)
-
     context = {
         'feature_blog': feature_blog,
         'all_blogs': all_blogs,
