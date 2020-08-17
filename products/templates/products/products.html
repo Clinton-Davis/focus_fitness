@@ -156,7 +156,7 @@
                                 {% if product.image %}
                                 {% if product.in_stock == True %}
 
-                                <a class="  mx-auto" href="{% url 'product_detail' product.id %}">
+                                <a class="  mx-auto" href="{{ product.get_absolute_url }}">
                                     <img class="mx-auto mt-1 card-img-top shop-card-top-img img-fluid"
                                         src="{{ product.image.url }}" alt="{{ product.name }}">
                                 </a>
@@ -172,7 +172,7 @@
                                 {% endif %}
 
                                 {% else %}
-                                <a class="  mx-auto" href="{% url 'product_detail' product.id %}">
+                                <a class="  mx-auto" href="{{ product.get_absolute_url }}">
                                     <img class="mx-auto mt-1 card-img-top shop-card-top-img img-fluid"
                                         src="{{ MEDIA_URL }}noimage.png"" alt=" {{ product.name }}">
                                 </a>

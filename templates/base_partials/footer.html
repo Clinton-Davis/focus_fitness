@@ -5,67 +5,67 @@
         <div class="col-3 d-none d-md-block ">
             <img class="ml-3" src="{% static 'images/logo.png' %}" alt="">
         </div>
-        <div class="col-md-6 col-sm-9 col-12">
+        <div class="col-md-6 col-sm-9 col-12 pt-3">
             <p class="aw text-wht text-center">Be the First to recieve exciting news, Features, and special
-                offers
-                from Focus Fitness!
+                offers from Focus Fitness!
             </p>
-            <form>
-                <div class="form-row align-items-center">
 
-                    <!-- <div class="col-auto mx-auto">
-                        <form action="" method="POST">
-                            {% csrf_token %}
-                            <div class="input-group  mb-2">
-                                {{ news_form }}
-                                <div class="input-group-prepend">
-                                    <button type="submit" class="aw btn btn-outline-light btn-sm">Submit</button>
-                                </div>
+            <div class="form-row align-items-center">
+                <div class="col-auto mx-auto">
+                    <form action="{% url 'marketing:newsubs' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="input-group  mb-2">
+                            {{ news_form }}
+                            <div class="input-group-prepend">
+                                <button type="submit" class="aw btn btn-outline-light btn-sm">Submit</button>
                             </div>
-                        </form>
-                    </div> -->
-                </div>
-            </form>
-
-            <div class="col-12 ">
-                <div class="social text-center">
-                    <a class="mx-3" href="#">
-                        <i class="fab fa-twitter text-light fa-lg"></i>
-                    </a>
-                    <a class="mx-3" href="#">
-                        <i class="fab fa-facebook text-light  fa-lg"></i>
-                    </a>
-
-                    <a class="mx-3" href="#">
-                        <i class="fab fa-instagram  text-light fa-lg"></i>
-                    </a>
-
+                        </div>
+                    </form>
                 </div>
             </div>
 
 
+            <div class="col-12 ">
+                <div class="social text-center">
+                    <a class="mx-3" href="https://twitter.com/" target="_blank">
+                        <i class="fab fa-twitter text-light fa-lg"></i>
+                    </a>
+                    <a class="mx-3" href="https://www.facebook.com/" target="_blank">
+                        <i class="fab fa-facebook text-light  fa-lg"></i>
+                    </a>
+                    <a class="mx-3" href="https://www.instagram.com/" target="_blank">
+                        <i class="fab fa-instagram  text-light fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-12 mt-2">
+                <p id="footer-legal" class="mx-auto text-center"><small>
+                        Always consult with a qualified healthcare professional prior to beginning any diet or exercise
+                        program
+                        or taking any dietary supplement. The content on our website is for informational and
+                        educational
+                        purposes only and is not intended as medical advice or to replace a relationship with a
+                        qualified
+                        healthcare professional.
+                    </small>
+                </p>
+            </div>
         </div>
         <div class="col-sm-3 col-8 mx-auto">
             <div class="col-auto ">
                 <div class="row d-flex justify-content-center">
                     <a class=" col-12 btn btn-danger btn-sm aw text-wht  border border-white m-2" href="#"
-                        role="button">Join
-                        <!--Go to checkout-->
-                        Up</a>
+                        role="button">Join Up</a>
                     <a class="col-12 btn btn-primary btn-sm aw text-wht border border-white m-2"
                         href="{% url 'products' %}" role="button">Shop
                     </a>
                     <a class="col-12 btn btn-warning btn-sm aw text-wht border border-white m-2" href="#"
                         role="button">Blog</a>
-
-
                     <a class="col-12 btn btn-success btn-sm aw text-wht border border-white m-2" href="#"
                         role="button">Login</a>
                 </div>
             </div>
-
         </div>
-
     </div>
     <div class="text-center d-block d-md-none">
         <img src="{% static 'images/logo.png' %}" alt="">
@@ -74,7 +74,7 @@
     </div>
     <div class="row">
         <div class="col-12 feet-bg">
-            <h4 class="aw text-center my-3">Web Design by Clinton Davis</h4>
+            <h6 class="aw text-center my-3">Web Design by Clinton Davis</h6>
         </div>
     </div>
 </div>

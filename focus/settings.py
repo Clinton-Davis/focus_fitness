@@ -25,7 +25,11 @@ if DEBUG is True:
     SECRET_KEY = os.environ.get('SECRET_KEY')
     # Just for testing
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+<<<<<<< HEAD
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+=======
+    # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+>>>>>>> ddf324f57f7753dea7f6b3d936d20e376a06eb79
 
     DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
     NOTIFY_EMAIL = os.environ.get('NOTIFY_EMAIL')
@@ -90,7 +94,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
-                'cart.contexts.cart_contents',
+                'cart.contexts.global_context',
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
@@ -130,10 +134,6 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1
-
-# MAILCHIMP_API_KEY = env('MAILCHIMP_API_KEY'),
-# MAILCHIMP_DATA_CENTER = env('MAILCHIMP_DATA_CENTER'),
-# MAILCHIMP_EMAIL_LIST_ID = env('MAILCHIMP_EMAIL_LIST_ID')
 
 
 ACCOUNT_AUTHENTICATION_METHOD = 'email'

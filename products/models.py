@@ -36,6 +36,9 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('product_detail', kwargs={'pk': self.pk})
+
     @property
     def productcomments(self):
         return self.productcomment_set.all()

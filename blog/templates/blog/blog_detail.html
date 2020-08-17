@@ -54,31 +54,24 @@
 
                 <!-- Post Content -->
                 <p class="text-off-wht-d  mx-auto">{{ blog.content|safe }}</p>
+                <hr class="hr-gry">
+                <small class="text-muted">First Posted on the {{ blog.publish_date}}</small>
                 <hr class="hr-wht">
                 <p class="">If you like the Post, give it a
                     <a class="text-muted" href="{{ blog.get_like_url }}">
                         <i class="pl-2 text-primary fad fa-thumbs-up fa-lg"></i>
                         {{ blog.get_like_count }}
                     </a>
-
                 </p>
-                <hr class="hr-gry">
-                <small class="text-muted">First Posted on the {{ blog.publish_date}}</small>
+
                 <hr class="hr-wht">
+
+                {% if request.user.is_authenticated %}
                 <!-- Comments Form -->
                 <button type="button" class="btn btn-primary hover-shadow border-bk aw" data-toggle="modal"
                     data-target="#blog_Modal">
                     WRITE A COMMENT
                 </button>
-
-                <hr class="hr-gry">
-                <p>By clicking the button above, you agree to entering the <br>Focus-Fitness.com Reviews section.
-                    Products
-                    in the Store are not intended to diagnose, treat, cure or prevent any disease.</p>
-
-                <hr class="hr-gry">
-                <h5 class=" aw text-primary">Comments</h5>
-                <hr class="hr-wht">
                 <!-- The Modal -->
                 <div class="modal" id="blog_Modal">
                     <div class="modal-dialog">
@@ -115,17 +108,23 @@
                         </div>
                     </div>
                 </div>
-                {% if request.user.is_authenticated %}
 
+                <hr class="hr-gry">
+                <p class="mx-auto text-center"><small>By clicking the button above, you agree to entering the
+                        <br>Focus-Fitness.com Blog comment sections. Logged in members may post comments suggestions,
+                        ideas,
+                        questions or other information, as long as the content is not illegal, obscene, abusive,
+                        threatening, defamantory or invasive of privacy.</small></p>
+                <hr class="hr-gry">
                 {% else %}
-                <a href="{% url 'account_login' %}" class="aw mb-4 bg-black-a btn btn-warning">Login to
-                    Comment</a>
+                <a href="{% url 'account_login' %}" class="aw mb-4 btn btn-warning">Login to Comment</a>
                 {% endif %}
-                <!-- Single Comment -->
+
+                <h5 class=" aw text-primary">Comments</h5>
+                <hr class="hr-wht">
                 {% for blogcomment in blog.blogcomments %}
                 <div class=" media mb-4">
                     <div class="media-body">
-
                         <h5 class="mt-0"><small class="mr-2 aw">From: </small>{{ blogcomment.user|title }}</h5>
                         <p class="pl-3">{{ blogcomment.content}}</p>
                         <small>{{ blogcomment.timestamp|timesince }} ago</small>

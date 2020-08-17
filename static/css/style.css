@@ -9,6 +9,7 @@ html {
 
 body {
   margin-top: 8rem;
+  overflow-x: hidden;
 
 }
 
@@ -28,7 +29,7 @@ ul {
 }
 
 img {
-  object-fit: fill;
+  object-fit: contain;
   max-width: 40rem;
 }
 
@@ -38,6 +39,10 @@ img {
 
 .hr-gry {
   border-top: 1px solid rgba(160, 160, 160, 0.493);
+}
+
+.hr-bk {
+  border-top: 1px solid rgba(0, 0, 0, 0.801);
 }
 
 .custom-pl {
@@ -180,8 +185,16 @@ img {
   background-color: rgb(229, 206, 33);
 }
 
+.bg-off-white {
+  background-color: rgba(150, 147, 147, 0.404);
+}
+
 .font-small {
   font-size: 0.75rem;
+}
+
+.display-4 {
+  font-size: 2.7rem;
 }
 
 .minus-block {
@@ -826,7 +839,14 @@ nav {
   background-color: black;
 }
 
+#footer-legal {
+  color: rgb(128, 128, 128);
+  line-height: 0.9rem;
+  font-size: 0.8em;
+}
+
 .feet-bg {
+  font-size: 0.9rem;
   font-weight: 600;
   background-image: linear-gradient(-45deg,
       rgb(27, 240, 8),
@@ -895,6 +915,10 @@ nav {
   .video-width {
     max-width: 400px;
   }
+
+  .display-4 {
+    font-size: 3.5rem;
+  }
 }
 
 @media (max-width: 576px) {
@@ -953,6 +977,10 @@ nav {
 
   .max-width {
     max-width: 65%;
+  }
+
+  .display-4 {
+    font-size: 4rem;
   }
 
 

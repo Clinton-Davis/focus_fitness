@@ -68,7 +68,7 @@
             <a href="{{ blog.get_absolute_url }}">
                 <div class="card mb-3" style="max-width: 830px;">
                     <div class="row no-gutters">
-                        <div class="col-md-4">
+                        <div class="col-md-4 bg-black-a">
                             <img src="{{ blog.thumbnail.url }}" class="card-img blog-list-img" alt="...">
                         </div>
                         <div class="col-md-8">
@@ -79,12 +79,12 @@
                                 <span class="text-mute float-right"><small class="text-muted"> Posted:
                                         {{ blog.publish_date|timesince }}</small></span>
                                 <div class="row justify-content-around">
-                                    <div class="text-center text-wht col-md-2"><span><i class="text-grn fad fa-eye"></i>
+                                    <div class="text-center text-wht col-2"><span><i class="text-grn fad fa-eye"></i>
                                             {{ blog.get_view_count }}</span></div>
-                                    <div class="text-center text-wht col-md-2"><span><i
+                                    <div class="text-center text-wht col-2"><span><i
                                                 class="text-primary fad fa-thumbs-up"></i>
                                             {{ blog.get_like_count }}</span><br></div>
-                                    <div class="text-center text-wht col-md-2"><span><i
+                                    <div class="text-center text-wht col-2"><span><i
                                                 class="text-ylw fad fa-comments-alt"></i>
                                             {{ blog.get_comment_count }}</span></div>
                                 </div>

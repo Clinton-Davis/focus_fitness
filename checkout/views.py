@@ -3,7 +3,7 @@ from django.views.decorators.http import require_POST
 from django.conf import settings
 from django.contrib import messages
 from .forms import OrderForm
-from cart.contexts import cart_contents
+from cart.contexts import global_context
 from products.models import Product
 from profiles.models import UserProfile
 from memberships.views import get_user_membership
@@ -96,7 +96,7 @@ def checkout(request):
                 request, "There's nothing in your cart at the moment")
             return redirect(reverse('products'))
 
-        current_cart = cart_contents(request)
+        current_cart = global_context(request)
         grand_total = current_cart['grand_total']
         stripe_total = round(grand_total * 100)
         stripe.api_key = stripe_secret_key

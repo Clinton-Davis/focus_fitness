@@ -5,7 +5,7 @@ from django.contrib import admin
 from django.views.generic.base import RedirectView
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.urls import path, include
-from marketing.views import newsletter_sub
+
 
 from home import views
 
@@ -18,9 +18,10 @@ urlpatterns = [
     path('programs/', include('programs.urls', namespace='programs')),
     path('memberships/', include('memberships.urls', namespace='memberships')),
     path('blog/', include('blog.urls', namespace='blog')),
+    path('marketing/', include('marketing.urls', namespace='marketing')),
     path('profile/', include('profiles.urls')),
     path('checkout/', include('checkout.urls')),
-    path('newsignups/', newsletter_sub, name='newsletter_sub'),
+    # path('newsignups/', newsletter_sub, name='newsletter_sub'),
 
     path('favicon.ico', RedirectView.as_view(
         url=staticfiles_storage.url('images/favicon.ico')))
