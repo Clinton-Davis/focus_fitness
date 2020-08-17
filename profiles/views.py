@@ -75,18 +75,18 @@ def ProfileDetail(request):
 
 
 def OrderHistory(request, order_number):
+    """
+    Gets a past oder and displays if with a message
+    """
     order = get_object_or_404(Order, order_number=order_number)
-
     messages.info(request, (
         f'This is a past confirmed order: { order_number }.'
     ))
-
     template = 'checkout/checkout_success.html'
     context = {
         'order': order,
         'from_profile': True,
     }
-
     return render(request, template, context)
 
 

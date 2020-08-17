@@ -71,8 +71,8 @@ class ProductDetailView(DetailView):
             productcomment.user = self.request.user
             productcomment.name_product = name_product
             productcomment.save()
-            return redirect("product_detail", pk=name_product.pk)
-        return redirect("product_detail", pk=self.get_object().pk)
+            return redirect("products:product_detail", pk=name_product.pk)
+        return redirect("products:product_detail", pk=self.get_object().pk)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

@@ -9,7 +9,7 @@
         <div class="container ">
             <div class="row">
                 <div class="col-md-12 mb-0">
-                    <a class="text-wht aw pl-2" href="{% url 'products' %}">Shop</a>
+                    <a class="text-wht aw pl-2" href="{% url 'products:products' %}">Shop</a>
                     <span class="mx-2 mb-0 text-wht">/</span>
                     <small class="text-wht aw">Product</small>
                 </div>
@@ -37,7 +37,7 @@
                     <h5 class="aw text-center mb-2">{{ product.name }}</h5>
                     <div class="row justify-content-around">
                         {% if product.category %}
-                        <a class="mx-2" href="{% url 'products' %}?category={{ product.category.name }}">
+                        <a class="mx-2" href="{% url 'products:products' %}?category={{ product.category.name }}">
                             <i class="fad fa-tags"></i>&nbsp;{{ product.category.friendly_name }}
                         </a>
 
@@ -107,7 +107,7 @@
                                     </button>
                                 </div>
                                 <div class="mx-1">
-                                    <a href="{% url 'products' %}"
+                                    <a href="{% url 'products:products' %}"
                                         class="hover-shadow aw px-2 py-4 btn btn-outline-black rounded-10 mt-5 bg-warning border-bk ">
                                         <i class="pr-3 fad fa-store"></i>Keep Shopping
                                     </a>
