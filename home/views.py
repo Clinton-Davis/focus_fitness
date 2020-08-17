@@ -11,7 +11,11 @@ from blog.models import Blog
 from memberships.views import get_user_membership
 
 
-def IndexView(request):
+def indexview(request):
+    """
+    Displays the featured blogs and sale items on the index page.
+    Also gets the user memebershp status to display the right buttons, to join up or Subscribe.
+    """
     template_name = "home/index.html"
     feature_blog = Blog.objects.filter(featured=True)
     sale_items = Product.objects.filter(on_sale=True)
@@ -20,7 +24,6 @@ def IndexView(request):
     if request.user.is_authenticated:
         current_membership = get_user_membership(request)
         current_membership = str(current_membership.membership)
-
     else:
         current_membership = False
 
@@ -30,7 +33,6 @@ def IndexView(request):
         'programs': programs,
         'current_membership': current_membership
     }
-
     return render(request, "home/index.html", context)
 
 

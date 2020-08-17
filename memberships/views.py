@@ -84,12 +84,10 @@ def paymentview(request):
     if request.method == "POST":
         try:
             token = request.POST['stripeToken']
-
             customer = stripe.Customer.retrieve(
                 user_membership.stripe_customer_id)
             customer.source = token  # 4242424242424242
             customer.save()
-
             subscription = stripe.Subscription.create(
                 customer=user_membership.stripe_customer_id,
                 items=[
@@ -97,16 +95,12 @@ def paymentview(request):
                         "plan": selected_membership.stripe_plan_id,
                     },
                 ]
-
             )
-
             return redirect(reverse("memberships:update-transactions",
                                     kwargs={'subscription_id': subscription.id}))
-
         except:
             messages.error(
                 request, "An error has occurred, investigate it in the console")
-
     context = {
         'publicKey': publicKey,
         'selected_membership': selected_membership
@@ -156,6 +150,5 @@ def cancelsubscription(request):
 
     messages.success(
         request, "Successfully cancelled membership, A email has been sent.")
-    # sending a emial here
 
     return redirect('profile')

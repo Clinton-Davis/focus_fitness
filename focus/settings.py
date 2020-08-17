@@ -5,7 +5,7 @@ import dj_database_url
 DEBUG = True
 ALLOWED_HOSTS = ['*']
 
-if DEBUG is False:
+if DEBUG is True:
     env = environ.Env()
     # read the .env file
     environ.Env.read_env()
@@ -13,7 +13,16 @@ if DEBUG is False:
     SECRET_KEY = env('SECRET_KEY')
 
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
+    # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASS')
+    DEFAULT_FROM_EMAIL = env('EMAIL_HOST_USER')
+    NOTIFY_EMAIL = env('NOTIFY_EMAIL')
+
     NOTIFY_EMAIL = env('NOTIFY_EMAIL')
 
     DATABASES = {
@@ -21,14 +30,18 @@ if DEBUG is False:
     }
 
 
-if DEBUG is True:
+if DEBUG is False:
     SECRET_KEY = os.environ.get('SECRET_KEY')
-    # Just for testing
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-    DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     NOTIFY_EMAIL = os.environ.get('NOTIFY_EMAIL')
+
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
+    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -103,7 +116,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'focus.wsgi.application'
 
 
-if DEBUG is True:
+if DEBUG is False:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
@@ -157,7 +170,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
-if DEBUG is True:
+if DEBUG is False:
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
     AWS_STORAGE_BUCKET_NAME = 'focus-fitness'
@@ -183,7 +196,7 @@ STRIPE_CURRENCY = 'usd'
 
 
 # stripe
-if DEBUG is True:
+if DEBUG is False:
     STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
     STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
     STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET')
@@ -196,7 +209,7 @@ if DEBUG is True:
     # SECURE_SSL_REDIRECT = True
     # # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-if DEBUG is False:
+if DEBUG is True:
     STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY')
     STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
-    STRIPE_WH_SECRET = env('STRIPE_WH_SECRET')
+    NRGOK_STRIPE_WH_SECRET = env('NRGOK_STRIPE_WH_SECRET')

@@ -80,7 +80,6 @@ class StripeWH_Handler:
             Subscriptions and shop payments and"""
         intent = event.data.object
         if intent.description == 'Subscription creation':
-
             return HttpResponse(
                 content=f'Webhook Subscription payments revieved: {event["type"]}',
                 status=200
@@ -181,7 +180,6 @@ class StripeWH_Handler:
                     return HttpResponse(content=f'Webhook revieved: {event["type"]} | ERROR: {e}',
                                         status=500)
         self._send_shopping_confirmation_email(order)
-
         return HttpResponse(
             content=f'Webhook payments revieved: {event["type"]} | SUCCESS: Created order in webhook',
             status=200
@@ -197,10 +195,8 @@ class StripeWH_Handler:
 
     def handle_invoice_paid(self, event):
         """Calls the Invoice Paid send email fuction """
-
         intent = event.data.object
         self._send_invoice_paid_email(intent)
-
         return HttpResponse(
             content=f'Webhook invoice paid revieved: {event["type"]}',
             status=200
@@ -208,25 +204,9 @@ class StripeWH_Handler:
 
     def handle_subscription_created(self, event):
         """ Handles subscription creation events"""
-
-        return HttpResponse(
-            content=f'Webhook subscription_created revieved: {event["type"]}',
-            status=200
-        )
-
-    def handle_subscription_deleted(self, event):
-        """ Handles  subscription deleting events"""
         intent = event.data.object
 
         return HttpResponse(
-            content=f'Webhook subscription deleted revieved: {event["type"]}',
-            status=200
-        )
-
-    def handle_subscription_updated(self, event):
-        """ Handles subscription updating events"""
-
-        return HttpResponse(
-            content=f'Webhook subscription updated revieved: {event["type"]}',
+            content=f'Webhook subscription_created revieved: {event["type"]}',
             status=200
         )
