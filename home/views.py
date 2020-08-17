@@ -20,6 +20,7 @@ def IndexView(request):
     if request.user.is_authenticated:
         current_membership = get_user_membership(request)
         current_membership = str(current_membership.membership)
+
     else:
         current_membership = False
 

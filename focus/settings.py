@@ -24,8 +24,8 @@ if DEBUG is True:
 if DEBUG is False:
     SECRET_KEY = os.environ.get('SECRET_KEY')
     # Just for testing
-    # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
     DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
     NOTIFY_EMAIL = os.environ.get('NOTIFY_EMAIL')
@@ -130,10 +130,6 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1
-
-# MAILCHIMP_API_KEY = env('MAILCHIMP_API_KEY'),
-# MAILCHIMP_DATA_CENTER = env('MAILCHIMP_DATA_CENTER'),
-# MAILCHIMP_EMAIL_LIST_ID = env('MAILCHIMP_EMAIL_LIST_ID')
 
 
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
