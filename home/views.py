@@ -18,7 +18,7 @@ def indexview(request):
     """
     template_name = "home/index.html"
     feature_blog = Blog.objects.filter(featured=True)
-    sale_items = Product.objects.filter(on_sale=True)
+    sale_items = Product.objects.filter(display_items=True)
     programs = Program.objects.all()
 
     if request.user.is_authenticated:
