@@ -3,25 +3,28 @@
 
 
 {% block content %}
-<div class="container-fluid bg-black fixed-top crumbs">
-    <div class="row">
-        <div class="col-md-12 mb-0">
-            <a class="text-wht aw pl-2" href="{% url 'home' %}">Home</a>
-            <span class="mx-2 mb-0 text-wht">/</span>
-            <strong class="text-wht aw">Dashboard</strong>
-        </div>
-    </div>
-</div>
+
 <div id="profile-pic">
     <div class="container profile">
+        <div class="row">
+            <div class="col-md-12 mb-0">
+                <a class="text-wht aw pl-2" href="{% url 'blog:list' %}">Dashboard</a>
+                <span class="mx-2 mb-0 text-wht">/</span>
+                <small class="text-wht aw">Subscriptions</small>
+            </div>
+        </div>
         <div class="profile-overlay">
             <div class="col p-4">
-                <h4 class="text-wht aw display-4 text-center"> {{ user.username|title }}'s Subscriptions</h4>
+                <h4 class="text-wht aw display-4 text-center">Subscriptions</h4>
             </div>
         </div>
         <div class="container">
             <div class="row mt-3 justify-content-center mx-auto w-50 h-100 bg-black-a rounded-10">
                 {% if user_subscription != None %}
+                <div class="div">
+                    <p class="text-wht text-center">With this membership, you get 12% off the price of any item in
+                        the <a href="{% url 'products:products' %}">shop.</a></p>
+                </div>
                 <div class="my-2 aw text-wht col-md-6 col-12 ">Current Membership:</div>
                 <div class="my-2 text-wht col-md-6 col-12 ">
                     {{ user_membership.membership.membership_type }}</div>

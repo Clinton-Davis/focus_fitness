@@ -38,6 +38,7 @@ def search_blog(request):
         all_blogs = all_blogs.filter(search)
 
     context = {
+        'search_words': query,
         'all_blogs': all_blogs,
         'category_menu': category_menu,
     }

@@ -27,8 +27,10 @@
                 <h2 class="my-4 aw text-primary text-center">Searched Blogs</h2>
             </div>
 
-            {% for blog in all_blogs %}
+            {% if blog %}
 
+
+            {% for blog in all_blogs %}
             {% if not forloop.counter|divisibleby:2  %}
             <a href="{{ blog.get_absolute_url }}">
                 <div class="card mb-3" style="max-width: 830px;">
@@ -89,9 +91,19 @@
                     </div>
                 </div>
             </a>
-
             {% endif %}
             {% endfor %}
+            {% else %}
+            <div class=" bg-trans text-center rounded-10">
+                <div class="card-body bg-black-a text-wht rounded-10">
+                    <h5 class="card-title">Sorry, Nothing Fond</h5>
+                    <p class=" text center card-text">We could not find "{{ search_words|title }}" in any of our blog
+                        post. </p>
+                    <a href="{% url 'blog:list' %}" class="aw hover-shadow border-bk btn btn-primary">Back to Blogs</a>
+                </div>
+            </div>
+
+            {% endif %}
         </div>
         <!-- Sidebar Widgets Column -->
         <div class="col-md-4">
