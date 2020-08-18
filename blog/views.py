@@ -8,12 +8,27 @@ from .models import Blog, BlogComment, BlogView, Like
 from .forms import BlogCommentForm, BlogForm, Category
 
 
-def bloglistview(request):
+class BlogListView(ListView):
+    model = Blog
     template_name = 'blog/blog_list.html'
-    feature_blog = Blog.objects.filter(featured=True)
+    ordering = ['-publish_date']
+    context_object_name = 'all_blogs'
+
+    def get_context_data(self, **kwargs):
+        feature_blog = Blog.objects.filter(featured=True)
+        category_menu = Category.objects.all()
+        context = super().get_context_data(**kwargs)
+        context['feature_blog'] = feature_blog
+        context['category_menu'] = category_menu
+        return context
+
+
+def search_blog(request):
+    template_name = 'blog/blog_search.html'
     all_blogs = Blog.objects.all()
     category_menu = Category.objects.all()
     quary = None
+
     if 's' in request.GET:
         query = request.GET['s']
         if not query:
@@ -21,12 +36,12 @@ def bloglistview(request):
             return redirect(reverse('blog:list'))
         search = Q(title__icontains=query) | Q(content__icontains=query)
         all_blogs = all_blogs.filter(search)
+
     context = {
-        'feature_blog': feature_blog,
         'all_blogs': all_blogs,
         'category_menu': category_menu,
     }
-    return render(request, 'blog/blog_list.html', context)
+    return render(request, 'blog/blog_search.html', context)
 
 
 def CategoryView(request, category):
@@ -34,14 +49,12 @@ def CategoryView(request, category):
     category_blogs = Blog.objects.filter(category=category)
     category_menu = Category.objects.all()
     all_blogs = Blog.objects.all()
-
     context = {
         'category': category,
         'category_blogs': category_blogs,
         'category_menu': category_menu,
         'all_blogs': all_blogs
     }
-
     return render(request, 'blog/blog_categories.html', context)
 
 
@@ -111,7 +124,7 @@ class BlogDeleteView(DeleteView):
     success_url = '/blog/'
 
 
-@login_required(login_url="/accounts/login")
+@ login_required()
 def like(request, slug):
     """ Checks to see if the use has liked the blog
     If True, then delete the like if False then create the like"""
