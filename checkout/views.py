@@ -40,6 +40,7 @@ def checkout(request):
         If the user is authenticated looks for saved data and initialise the form with 
         saved data Redirect back to products. 
     """
+    template = 'checkout/checkout.html'
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -62,9 +63,11 @@ def checkout(request):
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
+
             user_discount = global_context(request)
             discount = user_discount['discount']
             order.sub_discount = discount
+            # order.stripe_receipt =
             order.original_cart = json.dumps(cart)
             order.save()
             for item_id, item_data in cart.items():
@@ -115,6 +118,7 @@ def checkout(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
+
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
@@ -136,7 +140,7 @@ def checkout(request):
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
             Did you forget to set it in your environment?')
-    template = 'checkout/checkout.html'
+
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,

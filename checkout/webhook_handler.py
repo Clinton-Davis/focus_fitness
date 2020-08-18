@@ -53,6 +53,7 @@ class StripeWH_Handler:
     def _send_shopping_confirmation_email(self, order):
         """Send a confirmation email"""
         customer_email = order.email
+
         subject = render_to_string(
             'checkout/confirmation_emails/confirmation_email_subject.txt',
             {'order': order}
@@ -80,14 +81,17 @@ class StripeWH_Handler:
         """ Handles payments success intent events for both
             Subscriptions and shop payments and"""
         intent = event.data.object
+
         if intent.description == 'Subscription creation':
             return HttpResponse(
                 content=f'Webhook Subscription payments revieved: {event["type"]}',
                 status=200
             )
+
         pid = intent.id
         cart = intent.metadata.cart
         save_info = intent.metadata.save_info
+        stripe_receipt = intent.charges.data[0].receipt_url
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
         grand_total = round(intent.charges.data[0].amount / 100, 2)
