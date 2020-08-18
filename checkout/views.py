@@ -55,6 +55,9 @@ def checkout(request):
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
+            user_discount = global_context(request)
+            discount = user_discount['discount']
+            order.sub_discount = discount
             order.original_cart = json.dumps(cart)
             order.save()
             for item_id, item_data in cart.items():
@@ -85,7 +88,7 @@ def checkout(request):
                     return redirect(reverse('cart_view'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout:checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
@@ -94,9 +97,10 @@ def checkout(request):
         if not cart:
             messages.error(
                 request, "There's nothing in your cart at the moment")
-            return redirect(reverse('products'))
+            return redirect(reverse('products:products'))
 
         current_cart = global_context(request)
+        discount = current_cart['discount']
         grand_total = current_cart['grand_total']
         stripe_total = round(grand_total * 100)
         stripe.api_key = stripe_secret_key

@@ -8,7 +8,9 @@ Order Date: {{ order.date }}
 
 Order Total: ${{ order.order_total }}
 Delivery: ${{ order.delivery_cost }}
-Total: ${{ order.grand_total }}
+Discounts: ${{ order.sub_discount}}
+Grand Total: ${{ order.grand_total }}
+
 
 Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
 

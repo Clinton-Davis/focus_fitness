@@ -44,7 +44,7 @@ def add_to_cart(request, item_id):
             messages.success(request, f'Added {product.name}')
 
     request.session['cart'] = cart
-    return redirect(reverse('products'))
+    return redirect(reverse('products:products'))
 
 
 def adjust_cart(request, item_id):

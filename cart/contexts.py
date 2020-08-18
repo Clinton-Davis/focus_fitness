@@ -16,6 +16,7 @@ def get_loged_user_discount(request):
         current_membership = str(current_membership.membership)
     else:
         current_membership = False
+
     if current_membership == "Professional":
         discount = True
         return discount
@@ -70,7 +71,7 @@ def global_context(request):
     tax = sub_total * Decimal(settings.TAX_RATE_PERCENTAGE / 100)
     grand_total = sub_total + delivery
     tax_rate = Decimal(settings.TAX_RATE_PERCENTAGE)
-    discount_percentage = Decimal(settings.STANDARD_DELIVERY_PERCENTAGE)
+    discount_percentage = Decimal(settings.SUB_DISCOUNT_PERCENTAGE)
 
     context = {
         'cart_items': cart_items,

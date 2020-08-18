@@ -37,7 +37,7 @@
             {% for item in cart_items %}
             <div class="row">
                 <div class="col-2 mb-1">
-                    <a href="{% url 'product_detail' item.product.id %}">
+                    <a href="{% url 'products:product_detail' item.product.id %}">
                         {% if item.product.image %}
                         <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
                         {% else %}
@@ -80,7 +80,7 @@
 
         <div class="co-12 col-lg-6">
             <p class="text-muted aw">Please fill out the form below to compleate you order</p>
-            <form action="{% url 'checkout' %}" method="POST" id="shop_payment-form">
+            <form action="{% url 'checkout:checkout' %}" method="POST" id="shop_payment-form">
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-5">
                     <legend class="fieldset-label small px-2 w-auto aw">Details</legend>

@@ -1,4 +1,4 @@
-from .models import Order
+from checkout.models import Order
 
 
 def get_or_set_order_session(request):
