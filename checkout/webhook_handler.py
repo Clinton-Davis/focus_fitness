@@ -118,7 +118,7 @@ class StripeWH_Handler:
         order_exists = False
         """Creating delay just in case the web hook is before the order """
         attempt = 1
-        while attempt <= 5:
+        while attempt <= 7:
             try:
                 order = Order.objects.get(
                     full_name__iexact=shipping_details.name,
@@ -133,15 +133,16 @@ class StripeWH_Handler:
                     grand_total=grand_total,
                     original_cart=cart,
                     stripe_pid=pid,
-                    # stripe_receipt=stripe_receipt,
                 )
+
                 order_exists = True
                 break
             except Order.DoesNotExist:
                 attempt += 1
                 time.sleep(1)
         if order_exists:
-            print('mail send at 144')
+            order.stripe_receipt = stripe_receipt
+            order.save()
             self._send_shopping_confirmation_email(order)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
@@ -162,7 +163,7 @@ class StripeWH_Handler:
                     county=shipping_details.address.state,
                     original_cart=cart,
                     stripe_pid=pid,
-                    # stripe_receipt=stripe_receipt,
+                    stripe_receipt=stripe_receipt,
                 )
                 for item_id, item_data in json.loads(cart).items():
                     product = Product.objects.get(id=item_id)
