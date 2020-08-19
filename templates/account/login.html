@@ -11,20 +11,16 @@
     <div class="overlay">
       <div class="col p-4">
         <p class="text-grn aw display-3 text-center">Login</p>
+        <P class="text-wht">Login below or Create an account <a class="text-grn" href="{{ signup_url }}">Here</a> </P>
         {% get_providers as socialaccount_providers %}
-
         {% if socialaccount_providers %}
-        <p>{% blocktrans with site.name as site_name %}Please sign in with one
-          of your existing third party accounts. Or, <a class="text-grn" href="{{ signup_url }}">sign up</a>
-          for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+        <p class="text-wht">
 
-        <div class="socialaccount_ballot">
+        </p>
 
-          <ul class="socialaccount_providers">
-            {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-          </ul>
+        <div class="socialaccount_ballot mb-2">
 
-          <div class="login-or">{% trans 'or' %}</div>
+          {% include "socialaccount/snippets/provider_list.html" with process="login" %}
 
         </div>
 
