@@ -63,11 +63,10 @@ def checkout(request):
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
-
             user_discount = global_context(request)
             discount = user_discount['discount']
             order.sub_discount = discount
-            # order.stripe_receipt =
+
             order.original_cart = json.dumps(cart)
             order.save()
             for item_id, item_data in cart.items():

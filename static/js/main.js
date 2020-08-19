@@ -1,3 +1,4 @@
+// Back to top button
 $(document).ready(function () {
     $('.btt-link').click(function (e) {
         $("html").animate({

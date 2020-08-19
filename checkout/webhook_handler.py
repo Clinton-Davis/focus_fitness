@@ -80,8 +80,8 @@ class StripeWH_Handler:
     def handle_event_success(self, event):
         """ Handles payments success intent events for both
             Subscriptions and shop payments and"""
-        intent = event.data.object
 
+        intent = event.data.object
         if intent.description == 'Subscription creation':
             return HttpResponse(
                 content=f'Webhook Subscription payments revieved: {event["type"]}',
@@ -91,13 +91,16 @@ class StripeWH_Handler:
         pid = intent.id
         cart = intent.metadata.cart
         save_info = intent.metadata.save_info
+
         stripe_receipt = intent.charges.data[0].receipt_url
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
         grand_total = round(intent.charges.data[0].amount / 100, 2)
+
         for field, value in shipping_details.address.items():
             if value == '':
                 shipping_details.address[field] = None
+
         profile = None
         username = intent.metadata.username
         if username != 'AnonymousUser':
@@ -111,6 +114,7 @@ class StripeWH_Handler:
                 profile.default_street_address2 = shipping_details.address.line2
                 profile.default_county = shipping_details.address.state
                 profile.save()
+
         order_exists = False
         """Creating delay just in case the web hook is before the order """
         attempt = 1
@@ -129,17 +133,15 @@ class StripeWH_Handler:
                     grand_total=grand_total,
                     original_cart=cart,
                     stripe_pid=pid,
+                    # stripe_receipt=stripe_receipt,
                 )
                 order_exists = True
                 break
-                self._send_shopping_confirmation_email(order)
-                return HttpResponse(
-                    content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
-                    status=200)
             except Order.DoesNotExist:
                 attempt += 1
                 time.sleep(1)
         if order_exists:
+            print('mail send at 144')
             self._send_shopping_confirmation_email(order)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
@@ -160,6 +162,7 @@ class StripeWH_Handler:
                     county=shipping_details.address.state,
                     original_cart=cart,
                     stripe_pid=pid,
+                    # stripe_receipt=stripe_receipt,
                 )
                 for item_id, item_data in json.loads(cart).items():
                     product = Product.objects.get(id=item_id)
@@ -184,6 +187,7 @@ class StripeWH_Handler:
                     order.delete()
                     return HttpResponse(content=f'Webhook revieved: {event["type"]} | ERROR: {e}',
                                         status=500)
+        print('mail send at at line 190')
         self._send_shopping_confirmation_email(order)
         return HttpResponse(
             content=f'Webhook payments revieved: {event["type"]} | SUCCESS: Created order in webhook',
