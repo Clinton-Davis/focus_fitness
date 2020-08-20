@@ -44,7 +44,7 @@ class Product(models.Model):
         return self.productcomment_set.all()
 
     @property
-    def get_product_view_count(self):
+    def view_count(self):
         return self.productview_set.all().count()
 
 
