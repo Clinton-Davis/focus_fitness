@@ -43,6 +43,10 @@ class Product(models.Model):
     def productcomments(self):
         return self.productcomment_set.all()
 
+    @property
+    def get_product_view_count(self):
+        return self.productview_set.all().count()
+
 
 class productComment(models.Model):
     """To be able to comment on a Product"""
@@ -62,4 +66,4 @@ class ProductView(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.user.username
+        return self.product
