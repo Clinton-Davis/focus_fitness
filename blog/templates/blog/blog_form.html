@@ -14,14 +14,18 @@
     </div>
     {% if user.is_authenticated %}
     <div class="container center-block-col">
-        <h1 class="aw text-wht">{{ view_type|title }} Blog</h1>
-        <form action="" method="POST" class="aw text-wht" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form.media }}
-            {{ form|crispy}}
-            <button type="submit" class="w-50 mb-4 btn btn-success"><i
-                    class="pr-3 fad fa-edit"></i>{{ view_type|title }}</button>
-        </form>
+        <div class="row">
+            <div class="col-12">
+                <h1 class="aw text-wht">{{ view_type|title }} Blog</h1>
+                <form action="" method="POST" class="aw text-wht" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.media }}
+                    {{ form|crispy}}
+                    <button type="submit" class="w-50 mb-4 btn btn-success"><i
+                            class="pr-3 fad fa-edit"></i>{{ view_type|title }}</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 <!--If a user trys to edit or created a post with out being authenticated-->

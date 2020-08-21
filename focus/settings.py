@@ -192,6 +192,21 @@ SUB_DISCOUNT_PERCENTAGE = 12
 TAX_RATE_PERCENTAGE = 15
 STRIPE_CURRENCY = 'usd'
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        # You can change this based on your requirements.
+        'toolbar': 'Custom',
+        'width': 'auto',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline', 'Format', 'Image', ],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-',
+                'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ]
+
+    },
+}
 
 # stripe
 if DEBUG is False:
