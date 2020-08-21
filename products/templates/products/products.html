@@ -36,7 +36,8 @@
                                 Price</a>
                             <a href="{% url 'products:products' %}?sort=rating&direction=desc" class="dropdown-item ">By
                                 Rating</a>
-                            <a href="{% url 'products:products' %}?sort=category&direction=asc" class="dropdown-item ">By
+                            <a href="{% url 'products:products' %}?sort=category&direction=asc"
+                                class="dropdown-item ">By
                                 Category</a>
                             <a href="{% url 'products:products' %}" class="dropdown-item">All Products</a>
                         </div>
@@ -47,8 +48,10 @@
                             Activewear & EQP
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="activewear-link">
-                            <a href="{% url 'products:products' %}?category=pants,vest,tops" class="dropdown-item">Activewear</a>
-                            <a href="{% url 'products:products' %}?category=equipment" class="dropdown-item">Equipment</a>
+                            <a href="{% url 'products:products' %}?category=pants,vest,tops"
+                                class="dropdown-item">Activewear</a>
+                            <a href="{% url 'products:products' %}?category=equipment"
+                                class="dropdown-item">Equipment</a>
                             <a href="{% url 'products:products' %}?category=pants" class="dropdown-item">Pants</a>
                             <a href="{% url 'products:products' %}?category=vest" class="dropdown-item">Vests</a>
                             <a href="{% url 'products:products' %}?category=tops" class="dropdown-item">Tops</a>
@@ -64,9 +67,11 @@
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="supplements-link">
                             <a href="{% url 'products:products' %}?category=protein" class="dropdown-item">Proteins</a>
-                            <a href="{% url 'products:products' %}?category=pre_workout" class="dropdown-item">Pre-Workouts</a>
+                            <a href="{% url 'products:products' %}?category=pre_workout"
+                                class="dropdown-item">Pre-Workouts</a>
                             <a href="{% url 'products:products' %}?category=bcaa" class="dropdown-item">BCAA</a>
-                            <a href="{% url 'products:products' %}?category=vitamins" class="dropdown-item">Multi-Vitamins</a>
+                            <a href="{% url 'products:products' %}?category=vitamins"
+                                class="dropdown-item">Multi-Vitamins</a>
                             <a href="{% url 'products:products' %}?category=protein,pre-workout,bcaa,vitamins"
                                 class="dropdown-item">All
                                 Supplements</a>
@@ -195,12 +200,9 @@
                                                 </a>
                                             </p>
                                             {% endif %}
-                                            {% if product.rating %}
-                                            <i class="fad fa-star mr-1"></i>
-                                            <small class="text-muted">{{ product.rating }}</small>
-                                            {% else %}
-                                            <small class="text-muted">No rating</small>
-                                            {% endif %}
+
+                                            <p class=""><i
+                                                    class="fas text-ylw fa-star mr-2"></i>{{ product.rating_ave }}</p>
                                         </div>
                                     </div>
                                 </div>

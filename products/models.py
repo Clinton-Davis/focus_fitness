@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Avg
 from django.shortcuts import reverse
 from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
@@ -26,8 +27,6 @@ class Product(models.Model):
     description = RichTextField(blank=True, null=True)
     has_sizes = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.DecimalField(
-        max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     in_stock = models.BooleanField(default=True)
@@ -43,11 +42,27 @@ class Product(models.Model):
     def productcomments(self):
         return self.productcomment_set.all()
 
+    @property
+    def productcomments_count(self):
+        return self.productcomment_set.all().count
+
+    @property
+    def rating_ave(self):
+        all_ratings = self.productcomment_set.all().aggregate(Avg('rating'))
+        ave_rating_list = list(all_ratings.values())
+        rating_number = (str(ave_rating_list).strip('[]'))
+        return rating_number
+
+    @property
+    def view_count(self):
+        return self.productview_set.all().count()
+
 
 class productComment(models.Model):
     """To be able to comment on a Product"""
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name_product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    rating = models.IntegerField(default=0)
     timestamp = models.DateTimeField(auto_now_add=True)
     content = models.TextField()
 
@@ -62,4 +77,4 @@ class ProductView(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.user.username
+        return self.product
