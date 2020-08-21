@@ -148,13 +148,14 @@
                 <div class="card-footer bg-white pt-0 border-0 text-center">
                     <div class="row ">
                         <div class="col">
-                            <p class="lead mb-0  aw">${{ items.price }}</p>
-                            {% if items.rating %}
-                            <i class="fad fa-star mr-1"></i>
-                            <small class="text-muted">{{ items.rating }}</small>
-                            {% else %}
-                            <small class="text-muted">No rating</small>
-                            {% endif %}
+
+                            <p class="mb-0  aw">Was <span class="mont_b">$</span><s
+                                    class="text-red">{{ items.price }}</s></p>
+                            <p class="lead mb-0  aw">Now <span class="mont_b">$</span>{{ items.sale_price }}</p>
+
+                            <i class="fas text-ylw fa-lg fa-star mr-1"></i>
+                            <small class="">{{ items.rating_ave}}</small>
+
                         </div>
                     </div>
                 </div>
