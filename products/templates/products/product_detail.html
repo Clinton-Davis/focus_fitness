@@ -43,7 +43,7 @@
 
                         {% endif %}
                         {% if product.rating %}
-                        <span class="text-bk text-center"><i class="fad fa-star fa-lg mr-1"></i>{{ product.rating }}
+                        <span class="text-bk text-center"><i class="fad fa-star fa-lg mr-1"></i>{{ product.rating_ave }}
                             /
                             5
                             {% else %}
@@ -129,6 +129,8 @@
                 <div class=" media mb-4">
                     <div class="media-body">
                         <h5 class="mt-0"><i class="fad fa-user mr-3"></i>{{ comment.user|title }}</h5>
+
+                        <p><i class="fad fa-star"></i>{{ comment.rating }}</p>
                         <p><i class="fad fa-comments fa-lg mr-2"></i>{{ comment.content }}</p>
                         <small class="p-1 rounded bg-off-white">{{ comment.timestamp|timesince }} ago</small>
                     </div>

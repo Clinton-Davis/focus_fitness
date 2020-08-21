@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Avg
 from django.shortcuts import reverse
 from ckeditor.fields import RichTextField
 from django.contrib.auth.models import User
@@ -44,6 +45,13 @@ class Product(models.Model):
         return self.productcomment_set.all()
 
     @property
+    def rating_ave(self):
+        all_ratings = self.productcomment_set.all().aggregate(Avg('rating'))
+        ave_rating_list = list(all_ratings.values())
+        rating_number = (str(ave_rating_list).strip('[]'))
+        return rating_number
+
+    @property
     def view_count(self):
         return self.productview_set.all().count()
 
@@ -54,6 +62,7 @@ class productComment(models.Model):
     name_product = models.ForeignKey(Product, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
     content = models.TextField()
+    rating = models.IntegerField(default=0)
 
     def __str__(self):
         return self.user.username

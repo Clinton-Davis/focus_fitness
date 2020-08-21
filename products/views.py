@@ -68,6 +68,7 @@ class ProductDetailView(DetailView):
         if form.is_valid():
             name_product = self.get_object()
             productcomment = form.instance
+            rating = form.instance
             productcomment.user = self.request.user
             productcomment.name_product = name_product
             productcomment.save()
