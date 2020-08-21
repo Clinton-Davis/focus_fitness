@@ -45,6 +45,10 @@ class Product(models.Model):
         return self.productcomment_set.all()
 
     @property
+    def productcomments_count(self):
+        return self.productcomment_set.all().count
+
+    @property
     def rating_ave(self):
         all_ratings = self.productcomment_set.all().aggregate(Avg('rating'))
         ave_rating_list = list(all_ratings.values())
@@ -60,9 +64,9 @@ class productComment(models.Model):
     """To be able to comment on a Product"""
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name_product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    rating = models.IntegerField(default=0)
     timestamp = models.DateTimeField(auto_now_add=True)
     content = models.TextField()
-    rating = models.IntegerField(default=0)
 
     def __str__(self):
         return self.user.username

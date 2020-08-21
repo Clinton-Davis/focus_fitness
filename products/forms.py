@@ -21,4 +21,4 @@ class ProductCommentForm(forms.ModelForm):
 
     class Meta:
         model = productComment
-        fields = ('content', 'rating',)
+        fields = ('rating', 'content', )
