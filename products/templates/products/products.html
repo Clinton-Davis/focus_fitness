@@ -158,29 +158,28 @@
                             <div class="card w-100 h-100 border-1">
 
 
-                                {% if product.image %}
                                 {% if product.in_stock == True %}
-
+                                {% if product.image %}
                                 <a class="  mx-auto" href="{{ product.get_absolute_url }}">
                                     <img class="mx-auto mt-1 card-img-top shop-card-top-img img-fluid"
                                         src="{{ product.image.url }}" alt="{{ product.name }}">
                                 </a>
 
                                 {% else %}
+                                <a class="  mx-auto" href="{{ product.get_absolute_url }}">
+                                    <img class="mx-auto mt-1 card-img-top shop-card-top-img img-fluid"
+                                        src="{{ MEDIA_URL }}no-image.png" alt=" {{ product.name }}">
+                                </a>
+                                {% endif %}
+                                {% else %}
                                 <a class="mx-auto" href="">
                                     <img class="  mx-auto card-img-top shop-card-top-img img-fluid"
-                                        src="{% static 'images/out-of-stock.png' %}" alt="{{ product.name }}">
+                                        src="{% static 'images/outofstock.png' %}" alt="{{ product.name }}">
                                 </a>
                                 <div class="card-body pb-0">
                                     <p class="aw text-center">{{ product.name }}</p>
                                 </div>
-                                {% endif %}
 
-                                {% else %}
-                                <a class="  mx-auto" href="{{ product.get_absolute_url }}">
-                                    <img class="mx-auto mt-1 card-img-top shop-card-top-img img-fluid"
-                                        src="{{ MEDIA_URL }}noimage.png"" alt=" {{ product.name }}">
-                                </a>
                                 {% endif %}
 
                                 {% if product.in_stock == True %}
