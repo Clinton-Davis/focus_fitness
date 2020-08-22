@@ -35,20 +35,13 @@
             <div class=" col-12 col-md-6 col-lg-4 bg-white rounded-right">
                 <div class="product-details-container mb-5 mt-md-5">
                     <h5 class="aw text-center mb-2">{{ product.name }}</h5>
-                    <div class="row justify-content-around">
-                        {% if product.category %}
+                    <div class="row mt-4 justify-content-around">
                         <a class="mx-2" href="{% url 'products:products' %}?category={{ product.category.name }}">
                             <i class="fad fa-tags"></i>&nbsp;{{ product.category.friendly_name }}
                         </a>
-
-                        {% endif %}
-                        {% if product.rating %}
-                        <span class="text-bk text-center"><i class="fad fa-star fa-lg mr-1"></i>{{ product.rating_ave }}
-                            /
-                            5
-                            {% else %}
-                            <small class="col-12">No Rating</small>
-                            {% endif %}
+                        <p><i class="px-1 text-ylw fas fa-star"></i> <span>{{  product.rating_ave }} /5
+                                <small>({{ product.productcomments_count }})</small></span>
+                        </p>
                     </div>
                     <hr>
                     <p class="aw lead mb-0 text-center font-weight-bold"><span
@@ -62,7 +55,7 @@
                             {% with product.has_sizes as s %}
                             {% if s %}
                             <div class="d-flex justify-content-center col-12 mt-3">
-                                <p class="aw mr-2 mt-1">Size:</p>
+                                <p class="aw mr-4 mt-1">Size:</p>
                                 <select class="form-control custom-pl rounded-10 w-50" name="product_size"
                                     id='id_product_size'>
                                     <option class="aw" value="xs">XS</option>
@@ -103,7 +96,7 @@
                                 <div class="">
                                     <button type="submit"
                                         class="hover-shadow font-weight-bold aw text-wht py-4 px-3 btn btn-outline-black text-uppercase rounded-10 mt-5 bg-primary border-bk">
-                                        Add To cart <i class="pl-2 fad fa-cart-plus"></i>
+                                        Add To cart <i class="px-1 fad fa-cart-plus fa-lg"></i>
                                     </button>
                                 </div>
                                 <!-- <div class="">
@@ -119,10 +112,10 @@
                     </form>
                 </div>
             </div>
-            <div class="col-md-8 col-sm-12 mx-auto bg-white rounded-bottom">
-                <h4 class=" aw text-center w-50 rounded pb-2 text-wht bg-black-a pt-2">Overview</h4>
+            <div class=" pl-4 col-md-8 col-sm-12 mx-auto bg-white rounded-bottom">
+                <h4 class=" aw  rounded pb-2 text-bk pt-2 border-bottom">Product Overview</h4>
                 <p class="detail-p">{{ product.description|safe }}</p>
-                <hr class="hr-bk ">
+                <hr>
                 <p class=" aw text-primary">REVIEWS</p>
                 <p>Overall Rating:<i class=" px-1 text-ylw fas fa-star"></i> <span>{{  product.rating_ave }} /5
                         <small>({{ product.productcomments_count }} Ratings)</small></span>
