@@ -109,7 +109,7 @@
                         <p class="mb-0 text-black aw">Cart Total:</p>
                     </div>
                     <div class="col-12 col-md-8 text-right">
-                        <p class="mb-0 aw">${{ order.order_total }}</p>
+                        <p class="mb-0 aw"><span class="mont_r">$</span>{{ order.order_total }}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -117,7 +117,7 @@
                         <p class="mb-0 text-black aw">Discounts:</p>
                     </div>
                     <div class="col-12 col-md-8 text-right">
-                        <p class="mb-0 aw">${{ order.sub_discount }}</p>
+                        <p class="mb-0 aw"><span class="mont_r">$</span>{{ order.sub_discount }}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -126,7 +126,7 @@
                                 15%</small></p>
                     </div>
                     <div class="col-12 col-md-8 text-right">
-                        <p class="mb-0 aw">${{ order.tax }}</p>
+                        <p class="mb-0 aw"><span class="mont_r">$</span>{{ order.tax }}</p>
                     </div>
                 </div>
 
@@ -135,7 +135,7 @@
                         <p class="mb-0 aw">Delivery:</p>
                     </div>
                     <div class="col-12 col-md-8 text-right">
-                        <p class="mb-0 aw">${{ order.delivery_cost }}</p>
+                        <p class="mb-0 aw"><span class="mont_r">$</span>{{ order.delivery_cost }}</p>
                     </div>
                 </div>
 
@@ -144,7 +144,8 @@
                         <p class="mb-0 aw ">Grand Total:</p>
                     </div>
                     <div class="col-12 col-md-6 text-right">
-                        <p class="mb-0 aw"><span class="underline ">${{ order.grand_total }}</span></p>
+                        <p class="mb-0 aw"><span class="underline "><span
+                                    class="mont_r">$</span>{{ order.grand_total }}</span></p>
                     </div>
                     <div class="col-12 col-md-8 py-2">
                         <a class="aw btn btn-primary border-bk hover-shadow" href="{{  order.stripe_receipt }}"

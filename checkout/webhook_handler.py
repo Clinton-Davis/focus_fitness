@@ -38,7 +38,7 @@ class StripeWH_Handler:
             {
                 'customer_email': customer_email,
                 'period_start': period_start,
-                'period_end': period_end,
+                # 'period_end': period_end,
                 'amount_paid': amount_paid,
                 'invoice_pdf': invoice_pdf,
                 'hosted_invoice_url': hosted_invoice_url, }
@@ -83,6 +83,7 @@ class StripeWH_Handler:
 
         intent = event.data.object
         if intent.description == 'Subscription creation':
+            print('This has gone to the if statmest')
             return HttpResponse(
                 content=f'Webhook Subscription payments revieved: {event["type"]}',
                 status=200
