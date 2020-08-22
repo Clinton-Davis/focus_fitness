@@ -83,7 +83,7 @@ class StripeWH_Handler:
 
         intent = event.data.object
         if intent.description == 'Subscription creation':
-            print('This has gone to the if statmest')
+
             return HttpResponse(
                 content=f'Webhook Subscription payments revieved: {event["type"]}',
                 status=200

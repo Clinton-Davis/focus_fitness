@@ -50,8 +50,8 @@
                     <h4 class="aw text-wht text-center">My Blogs</h4>
                     <div class="profile-overlay">
                         <ul>
+                            {% if blog %}
                             {% for blog in user_blog %}
-
                             <li>
                                 <p class="text-wht text-center">
                                     <a href="{{ blog.get_absolute_url }}">{{ blog.title|title }}</a><br>
@@ -81,6 +81,19 @@
                                 </p>
                             </li>
                             {% endfor %}
+                            {% else %}
+                            <p class="aw text-wht">You hanv't writen any blogs yet</p>
+
+                            <p class="text-wht">
+                                You blog can be on anything gym related, It doesnt have to be on giving others admice,
+                                It can be on your experience or how you find a product or if you are looking for advice.
+                                Our Pro Trainer and Bloggers are always reading members blog to see if they can help or
+                                give advice. Use catogery Members.<br>
+                                <a href="{% url 'blog:create' %}">Click Here</a> to get started.
+
+                            </p>
+
+                            {% endif %}
                         </ul>
 
                     </div>
