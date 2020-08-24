@@ -2,7 +2,7 @@ import os
 import environ
 import dj_database_url
 
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 if DEBUG is True:

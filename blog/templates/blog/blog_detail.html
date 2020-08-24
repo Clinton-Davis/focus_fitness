@@ -68,8 +68,8 @@
 
                 {% if request.user.is_authenticated %}
                 <!-- Comments Form -->
-                <button type="button" class="btn btn-primary hover-shadow border-bk aw" data-toggle="modal"
-                    data-target="#blog_Modal">
+                <button type="button" class="ripple-surface btn btn-primary hover-shadow border-bk aw"
+                    data-toggle="modal" data-target="#blog_Modal">
                     WRITE A COMMENT
                 </button>
                 <!-- The Modal -->
@@ -98,7 +98,7 @@
                                                 {% csrf_token %}
                                                 {{ form|crispy }}
                                                 <button type="submit"
-                                                    class="aw btn btn-primary border-bk hover-shadow">Post
+                                                    class="ripple-surface aw btn btn-primary border-bk hover-shadow">Post
                                                     Comment</button>
                                             </form>
                                         </div>

@@ -21,8 +21,8 @@
                     {% csrf_token %}
                     {{ form.media }}
                     {{ form|crispy}}
-                    <button type="submit" class="w-50 mb-4 btn btn-success"><i
-                            class="pr-3 fad fa-edit"></i>{{ view_type|title }}</button>
+                    <button type="submit" class="ripple-surface w-50 mb-4 btn btn-success"><img class="mr-3"
+                            src="https://img.icons8.com/fluent/32/000000/blog.png" />{{ view_type|title }} Blog</button>
                 </form>
             </div>
         </div>
