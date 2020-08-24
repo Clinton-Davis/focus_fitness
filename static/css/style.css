@@ -282,7 +282,37 @@ img {
   width: 1.5rem;
 }
 
+.ripple-surface {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
 
+.ripple-surface span {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.685);
+
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+
+  animation: ripple 1500ms;
+  opacity: 0;
+}
+
+@keyframes ripple {
+  from {
+    opacity: 1;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(10);
+  }
+}
 
 
 #cart {
