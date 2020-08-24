@@ -39,7 +39,7 @@
                         <a class="mx-2" href="{% url 'products:products' %}?category={{ product.category.name }}">
                             <i class="fad fa-tags"></i>&nbsp;{{ product.category.friendly_name }}
                         </a>
-                        <p><i class="px-1 text-ylw fas fa-star"></i> <span>{{  product.rating_ave }} /5
+                        <p><i class="px-1 text-ylw fas fa-star"></i> <span>{{  product.rating_ave|floatformat:1 }} /5
                                 <small>({{ product.productcomments_count }})</small></span>
                         </p>
                     </div>
@@ -95,16 +95,11 @@
                             <div class="row center-block">
                                 <div class="">
                                     <button type="submit"
-                                        class="hover-shadow font-weight-bold aw text-wht py-4 px-3 btn btn-outline-black text-uppercase rounded-10 mt-5 bg-primary border-bk">
+                                        class="ripple-surface hover-shadow font-weight-bold aw text-wht py-4 px-3 btn btn-outline-black text-uppercase rounded-10 mt-5 bg-primary border-bk">
                                         Add To cart <i class="px-1 fad fa-cart-plus fa-lg"></i>
                                     </button>
                                 </div>
-                                <!-- <div class="">
-                                    <a href="{% url 'products:products' %}"
-                                        class="hover-shadow aw px-2 py-2 btn btn-outline-black rounded-10 mt-3 bg-warning border-bk ">
-                                        <i class="pr-3 fad fa-store"></i>Keep Shopping
-                                    </a>
-                                </div> -->
+
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             {% endwith %}
@@ -123,8 +118,8 @@
                 <hr>
                 {% if request.user.is_authenticated %}
                 <!-- Button to Open the Modal -->
-                <button type="button" class="btn btn-primary hover-shadow border-bk aw" data-toggle="modal"
-                    data-target="#review_Modal">
+                <button type="button" class="ripple-surface btn btn-primary hover-shadow border-bk aw"
+                    data-toggle="modal" data-target="#review_Modal">
                     WRITE A REVIEW
                 </button>
                 <hr>
@@ -160,7 +155,7 @@
                                             {% csrf_token %}
                                             {{ form|crispy }}
                                             <button type="submit"
-                                                class="aw w-100 btn btn-primary border-bk hover-shadow">Post
+                                                class="ripple-surface aw w-100 btn btn-primary border-bk hover-shadow">Post
                                                 Review</button>
                                         </form>
                                         <p class=" mt-3 text-center">Thank You, For Reviewing this product</p>

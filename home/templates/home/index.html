@@ -18,35 +18,35 @@
             <div class="row d-flex justify-content-center">
                 <div class=" col-12 d-flex d-flex justify-content-center no-gutters">
                     {% if current_membership == False %}
-                    <a class=" hover-shadow hero-btn btn btn-danger btn-lg aw text-wht m-1 border border-white"
+                    <a class="ripple-surface hover-shadow hero-btn btn btn-danger btn-lg aw text-wht m-1 border border-white"
                         href="{% url 'account_signup' %}" role="button">Join Up</a>
                     {% endif %}
 
                     {% if current_membership == "Free" %}
-                    <a class=" hover-shadow hero-btn btn btn-danger btn-lg aw text-wht m-1 border border-white"
+                    <a class="ripple-surface hover-shadow hero-btn btn btn-danger btn-lg aw text-wht m-1 border border-white"
                         href="{% url 'memberships:select-membership' %}" role="button">Subcribe</a>
                     {% endif %}
 
                     {% if current_membership == "Professional" %}
-                    <a class="hover-shadow  hero-btn btn btn-danger btn-lg aw text-wht m-1 border border-white"
+                    <a class="ripple-surface hover-shadow  hero-btn btn btn-danger btn-lg aw text-wht m-1 border border-white"
                         href="{% url 'programs:list' %}" role="button">Programs</a>
                     {% endif %}
                 </div>
                 <div class=" col-6 d-flex d-flex justify-content-center no-gutters">
-                    <a class=" hover-shadow hero-btn btn btn-primary btn-lg aw text-wht m-1 border border-white"
+                    <a class="ripple-surface hover-shadow hero-btn btn btn-primary btn-lg aw text-wht m-1 border border-white"
                         href="{% url 'products:products' %}" role="button">Shop
                     </a>
                 </div>
                 <div class=" col-6 d-flex d-flex justify-content-center no-gutters">
-                    <a class=" hover-shadow hero-btn btn btn-warning btn-lg aw text-wht m-1 border border-white"
+                    <a class="ripple-surface hover-shadow hero-btn btn btn-warning btn-lg aw text-wht m-1 border border-white"
                         href="{% url 'blog:list' %}" role="button">Blog</a>
                 </div>
                 <div class="mb-2 col-12 d-flex d-flex justify-content-center no-gutters">
                     {% if request.user.is_authenticated %}
-                    <a class=" hover-shadow hero-btn btn btn-success btn-lg aw text-wht m-1 border border-white"
+                    <a class="ripple-surface hover-shadow hero-btn btn btn-success btn-lg aw text-wht m-1 border border-white"
                         href="{% url 'account_logout' %}" role="button">Logout</a>
                     {% else %}
-                    <a class="hover-shadow light-shadow hero-btn btn btn-success btn-lg aw text-wht m-1 border border-white"
+                    <a class="ripple-surface hover-shadow light-shadow hero-btn btn btn-success btn-lg aw text-wht m-1 border border-white"
                         href="{% url 'account_login' %}" role="button">Login</a>
                     {% endif %}
                 </div>
@@ -115,12 +115,12 @@
 
                     {% if request.user.is_authenticated  %}
                     <div class="text-center">
-                        <a class=" w-50 hero-btn btn btn-success btn-lg aw text-wht hover-shadow border border-bk bs-2"
+                        <a class="ripple-surface w-50 hero-btn btn btn-success btn-lg aw text-wht hover-shadow border border-bk bs-2"
                             href="{% url 'memberships:select-membership' %}" role="button">Join Up</a>
                     </div>
                     {% else %}
                     <div class="text-center">
-                        <a class=" w-50 hero-btn btn btn-success btn-lg aw text-wht border border-secondary bs-2"
+                        <a class="ripple-surface w-50 hero-btn btn btn-success btn-lg aw text-wht border border-secondary bs-2"
                             href="{% url 'account_login' %}" role="button">Join Up</a>
                     </div>
                     {% endif %}
@@ -138,7 +138,7 @@
         {% for items in display_items %}
         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
             <div class="card w-100 h-100 border-1">
-                <a class="back-up-img mx-auto" href="{% url 'products:product_detail' items.id %}">
+                <a class="ripple-surface back-up-img mx-auto" href="{% url 'products:product_detail' items.id %}">
                     <img class="mx-auto card-img-top shop-card-top-img img-fluid" src="{{ items.image.url }}"
                         alt="{{ items.name }}">
                 </a>
@@ -150,8 +150,10 @@
                         <div class="col">
 
                             <p class="mb-0  aw">Was <span class="mont_b">$</span><s
-                                    class="text-red">{{ items.price }}</s></p>
-                            <p class="lead mb-0  aw">Now <span class="mont_b">$</span>{{ items.sale_price }}</p>
+                                    class="text-red">{{ items.was_price }}</s></p>
+
+                            <p class="lead mb-0  aw">Now <span class="mont_b">$
+                                </span>{{ items.price }}</p>
 
                             <i class="fas text-ylw fa-lg fa-star mr-1"></i>
                             <small class="">{{ items.rating_ave}}</small>

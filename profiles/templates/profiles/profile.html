@@ -27,21 +27,24 @@
                     <div class="profile-overlay">
                         <ul>
                             <li class="pt-2">
-                                <a class="aw text-wht text-center" href="{% url 'account_reset_password' %}">
+                                <img src="https://img.icons8.com/office/32/000000/re-enter-pincode.png" />
+                                <a class="aw text-wht text-center mr-1" href="{% url 'account_reset_password' %}">
                                     Update Password
                                 </a>
                             </li>
                             <li class="pt-2">
-                                <a class="aw text-wht text-center" href="{% url 'profile_details' %}">
+                                <img src="https://img.icons8.com/fluent/32/000000/map-marker.png" />
+                                <a class="aw text-wht text-center mr-1" href="{% url 'profile_details' %}">
                                     Shipping Details
                                 </a>
                             </li>
                             <li class="pt-2">
-                                <p class="aw text-wht">Subscription:
-                                    <a href="{% url 'profile_subscriptions' %}">
-                                        {{ user_membership.membership.membership_type }}
-                                    </a>
-                                </p>
+                                <img src="https://img.icons8.com/dusk/32/000000/membership-card.png" />
+
+                                <a class="aw text-wht mr-1" href="{% url 'profile_subscriptions' %}">
+                                    Subscription: {{ user_membership.membership.membership_type }}
+                                </a>
+
                             </li>
                         </ul>
                     </div>

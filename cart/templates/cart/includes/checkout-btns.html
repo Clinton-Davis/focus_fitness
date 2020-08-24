@@ -1,23 +1,13 @@
 <div class="row justify-content-center pb-3">
     <div class="col-md-6 col-sm-12">
-        <a href="{% url 'products:products' %}" class="w-100 text-wht border-bk btn btn-warning hover-shadow">
-            <span class="icon">
-                <i class="fad fa-store"></i>
-            </span>
-            <span class="aw text-center">Keep Shopping</span>
-            </span>
+        <a href="{% url 'products:products' %}"
+            class="ripple-surface aw p-2 w-100 border-bk btn btn-warning hover-shadow">
+            <img class="mr-2" src="https://img.icons8.com/cotton/32/000000/online-order.png" />Keep Shopping
         </a>
     </div>
 
     <div class="col-md-6 col-sm-12">
-        <a href="{% url 'checkout:checkout' %}" class="w-100 border-bk btn btn-success hover-shadow">
-
-            <span class="aw text-center">Checkout</span>
-            </span>
-            <span class="icon">
-                <i class="fad fa-lock-alt"></i>
-            </span>
-        </a>
-    </div>
-
+        <a href="{% url 'checkout:checkout' %}"
+            class="ripple-surface aw p-2 w-100 border-bk btn btn-success hover-shadow">Checkout
+            <img class="ml-2" src="https://img.icons8.com/dusk/32/000000/password-check.png" /> </i> </a> </div>
 </div>

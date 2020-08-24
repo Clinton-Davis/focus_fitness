@@ -1,7 +1,10 @@
 {% load static %}
 <a class="pr-2 btt-link remove-item text-danger hover-shadow" id="remove_{{ item.item_id }}"
-    data-product_size="{{ item.size }}"><i class=" fad fa-trash-alt text-red fa-lg"></i>
-</a>
+    data-product_size="{{ item.size }}"><img src="https://img.icons8.com/plasticine/32/000000/filled-trash.png" /></a>
+
+<!-- <a href=""><i class=" fad fa-trash-alt text-primary fa-lg"></i></a> -->
+
+
 
 {% block postloadjs %}
 <script>
@@ -15,7 +18,6 @@
             'csrfmiddlewaretoken': csrfToken,
             'product_size': size
         };
-
         $.post(url, data)
             .done(function () {
                 location.reload();
