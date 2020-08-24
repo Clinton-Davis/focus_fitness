@@ -34,8 +34,8 @@
                         <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                             <a href="{% url 'products:products' %}?sort=price&direction=asc" class="dropdown-item">By
                                 Price</a>
-                            <a href="{% url 'products:products' %}?sort=rating&direction=desc" class="dropdown-item ">By
-                                Rating</a>
+                            <!-- <a href="{% url 'products:products' %}?sort=rating&direction=desc" class="dropdown-item ">By
+                                Rating</a> -->
                             <a href="{% url 'products:products' %}?sort=category&direction=asc"
                                 class="dropdown-item ">By
                                 Category</a>
@@ -123,10 +123,10 @@
                                     <option value="price_desc" {% if sorting == 'price_desc' %}selected{% endif %}>
                                         Price
                                         (high to low)</option>
-                                    <option value="rating_asc" {% if sorting == 'rating_asc' %}selected{% endif %}>
+                                    <!-- <option value="rating_asc" {% if sorting == 'rating_asc' %}selected{% endif %}>
                                         Rating (low to high)</option>
                                     <option value="rating_desc" {% if sorting == 'rating_desc' %}selected{% endif %}>
-                                        Rating (high to low)</option>
+                                        Rating (high to low)</option> -->
                                     <option value="name_asc" {% if sorting == 'name_asc' %}selected{% endif %}>Name
                                         (A-Z)</option>
                                     <option value="name_desc" {% if sorting == 'name_desc' %}selected{% endif %}>
@@ -189,7 +189,17 @@
                                             <p class="aw text-center">{{ product.name }}</p>
                                         </div>
                                         <div class="card-footer bg-white pt-0 border-0 text-center">
-                                            <p class="lead mb-0  aw">${{ product.price }}</p>
+                                            <!-- if product is on sale -->
+                                            {% if product.was_price != None  %}
+                                            <p class="mb-0  aw">Was <span class="mont_b">$</span><s
+                                                    class="text-red">{{ product.was_price}}</s></p>
+                                            <p class="lead mb-0 aw"><span class="mont_b">$
+                                                </span>{{ product.price }}</p>
+                                            {% else %}
+                                            <p class="lead mb-0 aw"><span class="mont_b">$
+                                                </span>{{ product.price }}</p>
+                                            {% endif %}
+                                            <!-- end onsale if  -->
                                             {% if product.category %}
                                             <p class="small mt-1 mb-0">
                                                 <a class="text-muted"
@@ -199,7 +209,6 @@
                                                 </a>
                                             </p>
                                             {% endif %}
-
                                             <p class=""><i
                                                     class="fas text-ylw fa-star mr-2"></i>{{ product.rating_ave }}</p>
                                         </div>
@@ -207,8 +216,8 @@
                                 </div>
                                 {% else %}
                                 <p class="aw text-center">Sorry Out Of Stock</p>
-
                                 {% endif %}
+                                <!-- end if in stock  -->
 
                             </div>
                         </div>
