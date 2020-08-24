@@ -83,12 +83,14 @@
             <form action="{% url 'checkout:checkout' %}" method="POST" id="shop_payment-form">
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-5">
-                    <legend class="fieldset-label small px-2 w-auto aw">Details</legend>
+                    <legend class="fieldset-label small px-2 w-auto aw"><img class="mr-2"
+                            src="https://img.icons8.com/dusk/32/000000/contact-card.png" />Contact details:</legend>
                     {{ order_form.full_name | as_crispy_field }}
                     {{ order_form.email | as_crispy_field }}
                 </fieldset>
                 <fieldset class="rounded px-3 mb-5">
-                    <legend class="fieldset-label small px-2 w-auto aw">Delivary</legend>
+                    <legend class="fieldset-label small px-2 w-auto aw"><img class="mr-2"
+                            src="https://img.icons8.com/fluent/32/000000/map-marker.png" />Deliver To:</legend>
                     {{ order_form.phone_number | as_crispy_field }}
                     {{ order_form.street_address1 | as_crispy_field }}
                     {{ order_form.street_address2 | as_crispy_field }}
@@ -112,7 +114,7 @@
                 </fieldset>
                 <fieldset class="px-3">
 
-                    <i class="fab fa-stripe fa-2x"></i>
+                    <img src="https://img.icons8.com/color/48/000000/stripe.png" />
                     <!-- A Stripe card element will go here -->
                     <div class="mb-2" id="card-element"></div>
                     <!-- Used to display form errors -->
@@ -120,18 +122,15 @@
                     <!-- Pass the client secret to the view so we can get the payment intent id -->
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                     <div class="submit-button text-center mt-2 mb-2">
+                        <a href="{% url 'cart_view' %}" class="btn btn-warning ">
+                            <img src="https://img.icons8.com/doodle/32/000000/reply-arrow.png" />
+                            <span class="font-weight-bold">Adjust Bag</span>
+
+                        </a>
                         <button id="submit-button" class="btn btn-success">
                             <span class=" font-weight-bold">Complete Order</span>
-                            <span class="icon">
-                                <i class="fas fa-lock"></i>
-                            </span>
+                            <img class="ml-2" src="https://img.icons8.com/dusk/32/000000/password-check.png" />
                         </button>
-                        <a href="{% url 'cart_view' %}" class="btn btn-warning ">
-                            <span class="font-weight-bold">Adjust Bag</span>
-                            <span class="icon">
-                                <i class="fad fa-angle-double-right"></i>
-                            </span>
-                        </a>
                         <p class="small text-danger my-0">
                             <span class="icon">
                                 <i class="fas fa-exclamation-circle"></i>
