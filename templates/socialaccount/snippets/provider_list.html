@@ -3,19 +3,19 @@
 {% get_providers as socialaccount_providers %}
 
 {% for provider in socialaccount_providers %}
-{% if provider.id == "openid" %}
+
 {% for brand in provider.get_brands %}
 <li>
   <a title="{{brand.name}}" class="socialaccount_provider {{provider.id}} {{brand.id}} aw "
     href="{% provider_login_url provider.id openid=brand.openid_url process=process %}">{{brand.name}}</a>
 </li>
 {% endfor %}
-{% endif %}
 
 <a title="{{provider.name}}"
-  class="socialaccount_provider {{provider.id}} btn btn btn-outline-dark text-bk px-4 w-100 aw rounded-10 bg-light"
+  class="socialaccount_provider {{provider.id}} btn btn btn-outline-dark text-bk px-2 w-100 aw rounded-10 bg-light"
   href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
-  <img class="mr-4" src="https://img.icons8.com/color/30/000000/google-logo.png" />
+  <img class="mr-4"
+    src="{% if provider.name == 'Facebook' %}https://img.icons8.com/cute-clipart/30/000000/facebook-new.png{% else %}https://img.icons8.com/color/30/000000/google-logo.png {% endif %}" />
   <span class="aw">Sign up with </span>{{provider.name}}</a>
 
 {% endfor %}

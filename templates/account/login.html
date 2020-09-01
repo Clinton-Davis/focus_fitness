@@ -18,7 +18,6 @@
 
         <div class="socialaccount_ballot mb-2">
           {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-          <a href="{% provider_login_url "facebook" method="js_sdk" %}">Login Button image</a>
         </div>
         {% include "socialaccount/snippets/login_extra.html" %}
         {% else %}
