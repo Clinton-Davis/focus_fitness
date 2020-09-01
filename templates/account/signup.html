@@ -1,6 +1,7 @@
 {% extends "account/base.html" %}
 
 {% load i18n %}
+{% load account socialaccount %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
@@ -13,8 +14,17 @@
 
 
         <p class="text-wht">{% blocktrans %}Already have an account? Then please <a class="text-red"
-            href="{{ login_url }}">sign
-            in</a>.{% endblocktrans %}</p>
+            href="{{ login_url }}">Login here</a>{% endblocktrans %}</p>
+
+        {% get_providers as socialaccount_providers %}
+        {% if socialaccount_providers %}
+
+        <div class="socialaccount_ballot mb-2">
+          {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+        </div>
+        {% include "socialaccount/snippets/login_extra.html" %}
+        {% else %}
+        {% endif %}
 
         <form class="signup aw text-wht" id="signup_form" method="post" action="{% url 'account_signup' %}">
           {% csrf_token %}
@@ -22,7 +32,8 @@
           {% if redirect_field_value %}
           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
           {% endif %}
-          <button class="rounded-10 p-2 text-wht bg-danger w-100" type="submit">{% trans "Sign Up" %} &raquo;</button>
+          <button class="rounded-10 p-2 btn-outline-light text-wht bg-danger w-100" type="submit">{% trans "Sign Up" %}
+            &raquo;</button>
         </form>
       </div>
     </div>

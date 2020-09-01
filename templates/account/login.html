@@ -2,6 +2,7 @@
 
 {% load i18n %}
 {% load account socialaccount %}
+{% providers_media_js %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
@@ -11,22 +12,17 @@
     <div class="overlay">
       <div class="col p-4">
         <p class="text-grn aw display-3 text-center">Login</p>
-        <P class="text-wht">Login below or Create an account <a class="text-grn" href="{{ signup_url }}">Here</a> </P>
+        <P class="text-wht">Login below or Create an account <a class="text-grn" href="{{ signup_url }}">here</a> </P>
         {% get_providers as socialaccount_providers %}
         {% if socialaccount_providers %}
-        <p class="text-wht">
-
-        </p>
 
         <div class="socialaccount_ballot mb-2">
-
           {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-
+          <a href="{% provider_login_url "facebook" method="js_sdk" %}">Login Button image</a>
         </div>
-
         {% include "socialaccount/snippets/login_extra.html" %}
-
         {% else %}
+
         <p class=" text-center text-wht">{% blocktrans %}If you have not created an account yet,<br> then please
           <a class="text-grn" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
         {% endif %}
@@ -39,8 +35,9 @@
           {% endif %}
           <a class="button text-grn secondaryAction"
             href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a><br>
-          <button class="light-shadow primaryAction rounded-10 btn-success w-100 p-2 mt-2" type="submit"><i
-              class="pr-2 fad fa-sign-in"></i>{% trans "Sign In" %}</button>
+          <button
+            class="ripple-surface light-shadow primaryAction rounded-10 btn-success btn-outline-light w-100 p-2 mt-2"
+            type="submit"><i class="pr-2 fad fa-sign-in"></i>{% trans "Sign In" %}</button>
         </form>
       </div>
     </div>

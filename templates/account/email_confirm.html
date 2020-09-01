@@ -25,7 +25,8 @@
 
                     <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
                         {% csrf_token %}
-                        <button class="aw btn btn-success px-5" type="submit">{% trans 'Confirm' %}</button>
+                        <button class="aw ripple-surface btn btn-success px-5"
+                            type="submit">{% trans 'Confirm' %}</button>
                     </form>
 
                 </div>

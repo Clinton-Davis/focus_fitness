@@ -2,25 +2,25 @@
 
 {% load i18n %}
 
-{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+{% block head_title %}{% trans "Logout" %}{% endblock %}
 
 {% block content %}
 <div class="empty-pic ">
   <div class="container center-block">
     <div class="row justify-content-center d-flex align-items-center bg-black-a mt-5 rounded-10">
       <div class="col align-items-center">
-        <p class="text-red aw display-3 mx-auto text-center">Sign Out</p>
+        <p class="text-red aw display-3 mx-auto text-center">Logout</p>
         <h1>{% trans "" %}</h1>
 
-        <p class="aw text-wht mx-auto text-center">{% trans 'Are you sure you want to sign out?' %}</p>
+        <p class="aw text-wht mx-auto text-center">{% trans 'Are you sure you want to logout?' %}</p>
 
         <form class=" pb-4" method="post" action="{% url 'account_logout' %}">
           {% csrf_token %}
           {% if redirect_field_value %}
           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
           {% endif %}
-          <button class=" light-shadow aw btn-danger col rounded-10 p-2" type="submit">{% trans 'Sign Out' %}<i
-              class="pl-3 fad fa-sign-out"></i></button>
+          <button class="ripple-surface light-shadow aw btn-danger btn-outline-light col rounded-10 p-2"
+            type="submit">{% trans 'Logout' %}<i class="pl-3 fad fa-sign-out"></i></button>
         </form>
 
       </div>
