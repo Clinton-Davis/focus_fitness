@@ -57,3 +57,7 @@ a:visited {
 .app-memberships {
     background-color: rgba(255, 238, 0, 0.493);
 }
+
+.app-programs {
+    background-color: rgba(0, 0, 255, 0.205);
+}
