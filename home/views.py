@@ -39,6 +39,13 @@ class AboutView(TemplateView):
     template_name = "home/about.html"
 
 
+class TermsView(TemplateView):
+    template_name = "home/terms.html"
+    
+class PrivacyView(TemplateView):
+    template_name = "home/privacy.html"
+
+
 class ContactView(generic.FormView):
     form_class = ContactForm
     template_name = "home/contact.html"
