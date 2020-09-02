@@ -566,9 +566,9 @@ nav {
 }
 
 .carosel-img {
-  min-width: 25rem;
-  max-width: 25rem;
-  /* object-fit: fill; */
+  min-width: 18rem;
+  max-width: 18rem;
+
 }
 
 #blog-side-card {
@@ -960,6 +960,11 @@ nav {
     font-size: 3.5rem;
   }
 
+  .carosel-img {
+    min-width: 20rem;
+    max-width: 20rem;
+  }
+
 
 
 
@@ -996,6 +1001,11 @@ nav {
     max-width: 70%;
   }
 
+  .carosel-img {
+    min-width: 30rem;
+    max-width: 30rem;
+  }
+
 
 }
 
@@ -1022,6 +1032,11 @@ nav {
     max-width: 800px;
   }
 
+  .carosel-img {
+    min-width: 30rem;
+    max-width: 30rem;
+  }
+
 }
 
 @media (min-width: 1200px) {
@@ -1037,5 +1052,9 @@ nav {
     font-size: 4rem;
   }
 
+  .carosel-img {
+    min-width: 35rem;
+    max-width: 35rem;
+  }
 
 }

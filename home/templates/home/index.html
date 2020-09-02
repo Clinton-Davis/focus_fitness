@@ -64,7 +64,7 @@
         <div class="card">
             <img src="{% static 'images/bidman.jpg' %}" class="card-img-top" alt="BodyBuilder" />
             <div class="card-body">
-                <h3 class="card-title aw text-center">Programs</h3>
+                <h3 class="card-title aw text-center">Member Programs</h3>
                 {% for program in programs %}
                 <a class="card-text d-block text-center mont_b text-bk red-hover"
                     href="{% url 'programs:list' %}">{{ program }}</a>
@@ -183,13 +183,12 @@
                                     alt="First slide">
                                 <div class="row justify-content-center">
                                     <h5 class="text-center text-wht mr-2">{{ blog.title|title }}</h5><br>
-                                    <a href="{{ blog.get_absolute_url }}"><i
-                                            class="mr-2 text-wht fad fa-tags"></i><small
-                                            class="text-muted">{{ blog.category }}</small>
-                                    </a>
                                 </div>
                             </a>
                             <div class="row justify-content-center">
+                                <a href="{{ blog.get_absolute_url }}"><i class="mx-2 text-wht fad fa-tags"></i><small
+                                        class="text-muted">{{ blog.category }}</small>
+                                </a>
                                 <div class="text-center col-2"><span><i class="text-grn fad fa-eye"></i>
                                         {{ blog.get_view_count }}</span></div>
                                 <div class="text-center col-2"><span><i class="text-primary fad fa-thumbs-up"></i>

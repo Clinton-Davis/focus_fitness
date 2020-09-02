@@ -39,6 +39,9 @@
                             </div>
                         </a>
                         <div class="row justify-content-center">
+                            <a href="{{ blog.get_absolute_url }}"><i class="mx-2 text-wht fad fa-tags"></i><small
+                                    class="text-muted">{{ blog.category }}</small>
+                            </a>
                             <div class="text-center col-md-2"><span><i class="text-grn fad fa-eye"></i>
                                     {{ blog.get_view_count }}</span></div>
                             <div class="text-center col-md-2"><span><i class="text-primary fad fa-thumbs-up"></i>
@@ -59,20 +62,21 @@
                 </a>
             </div>
             <div class="ovalpha-overlay rounded-10">
-                <h2 class="my-4 aw text-primary text-center">All Blogs</h2>
+                <h2 class="my-4 aw text-primary text-center">Blogs</h2>
             </div>
 
             {% for blog in all_blogs %}
             {% if blog.featured != True %}
+            {% if blog.category != 'Members' %}
             {% if not forloop.counter|divisibleby:2  %}
             <a href="{{ blog.get_absolute_url }}">
                 <div class="card mb-3" style="max-width: 830px;">
                     <div class="row no-gutters">
-                        <div class="col-md-4 bg-black-a">
+                        <div class="col-md-4 bg-black">
                             <img src="{{ blog.thumbnail.url }}" class="card-img blog-list-img" alt="...">
                         </div>
-                        <div class="col-md-8">
-                            <div class="card-body bg-black-a">
+                        <div class="col-md-8 bg-black">
+                            <div class="card-body bg-black">
                                 <h5 class="card-title text-center text-wht">{{ blog.title|title }}</h5>
                                 <small class="text-muted">{{ blog.category }}</small>
                                 <small class="card-text text-wht">{{ blog.content|safe|truncatechars:100 }}</small>
@@ -100,8 +104,8 @@
                 <div class="card mb-3" style="max-width: 830px;">
                     <div class="row no-gutters">
 
-                        <div class="col-md-8">
-                            <div class="card-body  bg-black-a">
+                        <div class="col-md-8 bg-black">
+                            <div class="card-body bg-black">
                                 <h5 class="card-title text-center text-wht">{{ blog.title|title }}</h5>
                                 <small class="card-text text-wht">{{ blog.content|safe|truncatechars:100 }}</small><span
                                     class="text-mute float-right"><small class="text-muted"> Posted:
@@ -126,13 +130,14 @@
             </a>
             {% endif %}
             {% endif %}
+            {% endif %}
             {% endfor %}
         </div>
         <!-- Sidebar Widgets Column -->
         <div class="col-md-4">
             <!-- Search Widget -->
             <div id="blog-side-card" class="card my-4">
-                <!-- <h5 class="aw text-wht bg-green text-center card-header">Search</h5> -->
+
                 <div class="card-body mx-auto ">
                     <div class="input-group">
                         <form method="GET" action="{% url 'blog:search' %}" class="form-inline my-2 my-lg-0">
@@ -153,6 +158,39 @@
                                     {% for item in category_menu %}
                                     <a class=" dropdown-item aw text-wht"
                                         href="{% url 'blog:category' item %}">{{ item }}</a>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card my-4">
+                    <h5 class="aw text-center card-header text-wht bg-warning">Member Blogs</h5>
+                    <div class="card-body bg-black-a">
+                        <div class="row">
+                            <div class="col-12">
+                                <ul class="list-unstyled mb-0">
+                                    {% for blog in all_blogs %}
+                                    {% if blog.category == 'Members' %}
+                                    <small class="text-wht"><i class="fad fa-user mr-2"></i>
+                                        {{ blog.author|title }}</small>
+                                    <a href="{{ blog.get_absolute_url }}">
+                                        <p class="card-title text-center text-wht">{{ blog.title|title }}</p>
+                                    </a>
+                                    <div class="row justify-content-around">
+                                        <div class="text-center text-wht col-md-2"><span><i
+                                                    class="text-grn fad fa-eye"></i>
+                                                {{ blog.get_view_count }}</span></div>
+                                        <div class="text-center text-wht col-md-2"><span><i
+                                                    class="text-primary fad fa-thumbs-up"></i>
+                                                {{ blog.get_like_count }}</span><br></div>
+                                        <div class="text-center text-wht col-md-2"><span><i
+                                                    class="text-ylw fad fa-comments-alt"></i>
+                                                {{ blog.get_comment_count }}</span></div>
+                                    </div>
+                                    <hr>
+                                    {% endif %}
                                     {% endfor %}
                                 </ul>
                             </div>
