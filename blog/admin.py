@@ -4,8 +4,10 @@ from .models import Blog, BlogComment, BlogView, Like, Category
 
 
 class BlogListAdmin(admin.ModelAdmin):
-    list_display = ('title', 'featured', 'author', 'category', )
-    list_filter = ('author', 'category',)
+    list_display = ('title', 'featured', 'author',
+                    'category',)
+    list_filter = ('author',
+                   'category',)
 
     list_editable = ('featured',)
 
