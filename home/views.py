@@ -41,7 +41,8 @@ class AboutView(TemplateView):
 
 class TermsView(TemplateView):
     template_name = "home/terms.html"
-    
+
+
 class PrivacyView(TemplateView):
     template_name = "home/privacy.html"
 
