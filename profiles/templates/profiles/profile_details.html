@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block head_title %} - {{ user.username|title }} | Shipping Details {% endblock head_title %}
 
 {% block content %}
 
@@ -27,8 +28,7 @@
                         <form method="POST" action="" class=" my-2" id="shipping-update-form">
                             {% csrf_token %}
                             {{ form|crispy }}
-                            <button type="submit"
-                                class="  dark-btn uppercase col-12 aw rounded-10 px-4 py-2">Update
+                            <button type="submit" class="  dark-btn uppercase col-12 aw rounded-10 px-4 py-2">Update
                                 Shipping Details</button>
                         </form>
                     </div>

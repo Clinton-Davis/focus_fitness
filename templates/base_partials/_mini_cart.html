@@ -4,7 +4,6 @@
 <div class="container-fluid bg-black">
     <div class="row ">
         <div class="col-md-12 mb-0  text-right">
-
             <div id="cart" class="mr-md-4">
 
                 {% if request.user.is_authenticated %}
@@ -16,6 +15,7 @@
                 </a>
                 {% else %}
                 {% endif%}
+
                 <a class="mr-3" href="{% url 'profile' %}">
                     <span class="aw text-wht" title="User Login">
                         <i class="fad fa-user-alt mr-1"></i>

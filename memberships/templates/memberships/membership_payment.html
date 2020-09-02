@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-
+{% block head_title %} - Memberships | Payment {% endblock head_title %}
 {% block content %}
 <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/members_checkout.css' %}"> -->
 
@@ -19,7 +19,7 @@
     <div class="container profile">
         <div class="alpha-overlay">
             <div class="col p-4">
-                <h1 class="text-wht aw text-center">Membership Payments</h1>
+                <h1 class="text-wht aw text-center">Membership Payment</h1>
             </div>
 
             <div class="row">
@@ -40,9 +40,11 @@
 
                     <input type="hidden" id="nonce" name="payment_method_nonce" />
                     <div class="row justify-content-center">
-                        <button type="submit" class="ripple-surface sub aw btn btn-success"><img class="ml-2"
-                                src="https://img.icons8.com/dusk/32/000000/password-check.png" />&nbsp;Submit
-                            Payment</button>
+                        <button type="submit"
+                            class="ripple-surface sub aw btn btn-success btn-outline-light hover-shadow"><img
+                                class="ml-2" src="https://img.icons8.com/dusk/32/000000/password-check.png"
+                                alt="Lock" />&nbsp;Submit Payment
+                        </button>
                     </div>
                 </fieldset>
             </form>

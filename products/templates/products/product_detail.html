@@ -1,5 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block head_title %} - Shop | {{ product.name }} {% endblock head_title %}
+
 {% block content %}
 
 <div class="blog-pic">
@@ -112,7 +115,8 @@
                 <p class="detail-p">{{ product.description|safe }}</p>
                 <hr>
                 <p class=" aw text-primary">REVIEWS</p>
-                <p>Overall Rating:<i class=" px-1 text-ylw fas fa-star"></i> <span>{{  product.rating_ave }} /5
+                <p>Overall Rating:<i class=" px-1 text-ylw fas fa-star"></i>
+                    <span>{{  product.rating_ave|floatformat:1 }}/5
                         <small>({{ product.productcomments_count }} Ratings)</small></span>
                 </p>
                 <hr>
@@ -176,7 +180,7 @@
                     <div class="media-body">
                         <p class="mt-0 font-lrg"><i
                                 class="ml-1 text-primary fad fa-user fa-lg mr-3"></i>{{ comment.user|title }}</p>
-                        <p><i class="fas fa-star text-ylw fa-lg mr-2"></i>{{ comment.rating }}</p>
+                        <p><i class="fas fa-star text-ylw fa-lg mr-2"></i>{{ comment.rating }}/5</p>
                         <p><i class="ml-1 fad fa-comments fa-lg mr-2"></i>{{ comment.content }}</p>
                         <small class="p-1 rounded bg-off-white">{{ comment.timestamp|timesince }} ago</small>
                     </div>

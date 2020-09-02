@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-
+{% block head_title %} - Memberships {% endblock head_title %}
 {% block content %}
 
 <div id="profile-pic">
@@ -50,7 +50,8 @@
 
                     {% if object.membership_type != current_membership %}
                     <div class="row justify-content-center">
-                        <button class="ripple-surface  aw w-75 text-wht btn btn-success" type="submit">Select</button>
+                        <button class="ripple-surface aw w-75 text-wht btn btn-success btn-outline-light hover-shadow"
+                            type="submit">Select</button>
                     </div>
 
                     {% else %}
