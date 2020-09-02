@@ -24,4 +24,6 @@ def newsletter_sub(request):
                 new_signup = NewsLetterSignups()
                 new_signup.email = email
                 new_signup.save()
+                messages.success(
+                    request, 'Thank you for joining our mailing list')
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
