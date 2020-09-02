@@ -23,10 +23,10 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="pt-2 col-md-8 col-12  bg-black-a rounded-15">
-                    <p class="text-wht">{{ object.description }}</p>
+                <div class="text-wht pt-2 col-md-8 col-12  bg-black-a rounded-15">
+                    <p>{{ object.description|safe }}</p>
                 </div>
-                <div class="pt-2 col-md-4 col-12  bg-black-a rounded-15">
+                <div class=" pt-2 col-md-4 col-12 bg-black-a rounded-15">
                     <h4 class="text-center aw text-ylw">Workout Videos</h4><br>
                     <ul class="aw text-wht">
                         {% for workout in object.workouts %}

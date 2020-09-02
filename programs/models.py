@@ -1,13 +1,14 @@
 from django.db import models
 from django.urls import reverse
 from memberships.models import Membership
+from ckeditor.fields import RichTextField
 
 
 class Program(models.Model):
 
     slug = models.SlugField()
     title = models.CharField(max_length=200)
-    description = models.TextField()
+    description = RichTextField(blank=True, null=True)
     thumbnail = models.ImageField()
     allowed_memberships = models.ManyToManyField(Membership)
 
