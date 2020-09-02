@@ -73,3 +73,18 @@ Then you will be ok to make superuser.
 Login to /admin/ and make memberships Fre/Pro and fill Stripe Products API id.
 Then in UserMemberships, make the superuser a member.
 Once that is done, uncomment everything, and you will be ready to go.
+
+
+### Auto Testing 
+test_views.py
+"""
+$ python manage.py test
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+........
+----------------------------------------------------------------------
+Ran 8 tests in 0.298s
+
+OK
+Destroying test database for alias 'default'...
+"""
