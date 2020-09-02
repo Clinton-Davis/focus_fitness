@@ -28,9 +28,9 @@ if DEBUG is True:
     SOCIAL_AUTH_FACEBOOK_KEY = env('SOCIAL_AUTH_FACEBOOK_KEY')
     SOCIAL_AUTH_FACEBOOK_SECRET = env('SOCIAL_AUTH_FACEBOOK_SECRET')
 
-    DATABASES = {
-        'default': dj_database_url.parse(env('DATABASE_URL'))
-    }
+    # DATABASES = {
+    #     'default': dj_database_url.parse(env('DATABASE_URL'))
+    # }
 
 
 if DEBUG is False:
@@ -117,13 +117,13 @@ TEMPLATES = [
         },
     },
 ]
-# if DEBUG is True:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         }
-#     }
+if DEBUG is True:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 WSGI_APPLICATION = 'focus.wsgi.application'
 

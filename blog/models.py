@@ -4,7 +4,6 @@ from profiles.models import User
 from django.shortcuts import reverse
 from ckeditor.fields import RichTextField
 
-
 from django.utils.text import slugify
 
 
@@ -61,6 +60,9 @@ class Blog(models.Model):
 
 
 def create_slug(instance, new_slug=None):
+    """
+    Slugifys the title, if slug exists it adds a id to make it unique
+    """
     slug = slugify(instance.title)
     if new_slug is not None:
         slug = new_slug
