@@ -117,13 +117,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'focus.wsgi.application'
 
+
+# Changes the Admin heading to show in Develpoment or Production
 if DEBUG is True:
     ENVIRONMENT_NAME = 'Development'
-
 else:
     ENVIRONMENT_NAME = 'Live Production'
 
-
+# Choosing the db to use in development or production
 if DEBUG is True:
     DATABASES = {
         'default': {
@@ -131,7 +132,6 @@ if DEBUG is True:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-
 else:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
@@ -157,7 +157,7 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
-
+# FaceBook Provider account loging
 SOCIALACCOUNT_PROVIDERS = \
     {'facebook':
      {'METHOD': 'oauth2',

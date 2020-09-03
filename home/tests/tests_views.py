@@ -1,30 +1,36 @@
 from django.test import TestCase
+from django.urls import reverse
 from home.views import *
 
 
-class HomeViewTest(TestCase):
+class TestHomeView(TestCase):
 
     def test_index_view(self):
-        response = self.client.get('/')
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, template_name="home/index.html")
+        url = reverse('home')
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+        self.assertTemplateUsed(resp, template_name="home/index.html")
 
     def test_about_view(self):
-        response = self.client.get('/about/')
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, template_name="home/about.html")
+        url = reverse('about')
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+        self.assertTemplateUsed(resp, template_name="home/about.html")
 
     def test_terms_view(self):
-        response = self.client.get('/terms/')
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, template_name="home/terms.html")
+        url = reverse('terms')
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+        self.assertTemplateUsed(resp, template_name="home/terms.html")
 
     def test_Privacy_view(self):
-        response = self.client.get('/privacy/')
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, template_name="home/privacy.html")
+        url = reverse('privacy')
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+        self.assertTemplateUsed(resp, template_name="home/privacy.html")
 
     def test_contact_view(self):
-        response = self.client.get('/contact/')
-        self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, template_name="home/contact.html")
+        url = reverse('contact')
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+        self.assertTemplateUsed(resp, template_name="home/contact.html")
