@@ -28,10 +28,6 @@ if DEBUG is True:
     SOCIAL_AUTH_FACEBOOK_KEY = env('SOCIAL_AUTH_FACEBOOK_KEY')
     SOCIAL_AUTH_FACEBOOK_SECRET = env('SOCIAL_AUTH_FACEBOOK_SECRET')
 
-    # DATABASES = {
-    #     'default': dj_database_url.parse(env('DATABASE_URL'))
-    # }
-
 
 if DEBUG is False:
     SECRET_KEY = os.environ.get('SECRET_KEY')
@@ -117,6 +113,10 @@ TEMPLATES = [
         },
     },
 ]
+
+WSGI_APPLICATION = 'focus.wsgi.application'
+
+
 if DEBUG is True:
     DATABASES = {
         'default': {
@@ -125,10 +125,7 @@ if DEBUG is True:
         }
     }
 
-WSGI_APPLICATION = 'focus.wsgi.application'
-
-
-if DEBUG is False:
+else:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
@@ -237,7 +234,6 @@ CKEDITOR_CONFIGS = {
 
     # },
     'default': {
-        # You can change this based on your requirements.
         'toolbar': 'Custom',
         'width': 'auto',
         'toolbar_Custom': [
@@ -245,7 +241,7 @@ CKEDITOR_CONFIGS = {
             ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-',
                 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
             ['Link', 'Unlink'],
-            ['RemoveFormat', 'Source']
+            ['RemoveFormat', 'Source', ]
         ]
 
     },
