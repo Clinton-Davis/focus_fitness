@@ -87,3 +87,9 @@ def global_context(request):
     }
 
     return context
+
+
+def from_settings(request):
+    return {
+        "ENVIRONMENT_NAME":  settings.ENVIRONMENT_NAME,
+    }

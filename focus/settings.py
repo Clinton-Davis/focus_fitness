@@ -105,6 +105,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
                 'cart.contexts.global_context',
+                'cart.contexts.from_settings',
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
@@ -115,6 +116,14 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'focus.wsgi.application'
+
+if DEBUG is True:
+    ENVIRONMENT_NAME = 'Development'
+    
+
+else:
+    ENVIRONMENT_NAME = 'Live Site'
+    
 
 
 if DEBUG is True:
