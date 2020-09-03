@@ -5,21 +5,13 @@
     <img src="{% static 'images/logo.png' %}" class="brand_img" alt="Focus Fitness" height="50" width="100">
 
 </h1>
-<link rel="stylesheet" href="{% static 'css/admin.css' %}">
 {% endblock %}
 
 {% block extrastyle %}
+<link rel="stylesheet" href="{% static 'css/admin.css' %}">
 <style type="text/css">
     body::before {
-        display: block;
-        line-height: 35px;
-        text-align: center;
-        font-family: "audiowide", sans-serif;
-        text-transform: uppercase;
-        color: rgb(255, 255, 255);
-        background-color: rgba(0, 0, 0, 0.548);
         content: "{{ ENVIRONMENT_NAME }}";
-
     }
 </style>
 

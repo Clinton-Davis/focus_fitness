@@ -119,11 +119,9 @@ WSGI_APPLICATION = 'focus.wsgi.application'
 
 if DEBUG is True:
     ENVIRONMENT_NAME = 'Development'
-    
 
 else:
-    ENVIRONMENT_NAME = 'Live Site'
-    
+    ENVIRONMENT_NAME = 'Live Production'
 
 
 if DEBUG is True:
