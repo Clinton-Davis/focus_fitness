@@ -1,0 +1,27 @@
+[{
+    "model": "blog.category",
+    "pk": 1,
+    "fields": {
+        "name": "Strength Training"
+    }
+}, {
+    "model": "blog.category",
+    "pk": 2,
+    "fields": {
+        "name": "Members"
+    }
+}, {
+    "model": "blog.blog",
+    "pk": 1,
+    "fields": {
+        "title": "Testing",
+        "category": "Strength Training",
+        "content": "<p>Strength Training</p>",
+        "thumbnail": "5ball.png",
+        "publish_date": "2020-09-04T06:30:36.494Z",
+        "last_updated": "2020-09-04T06:30:36.494Z",
+        "author": 1,
+        "slug": "testing",
+        "featured": false
+    }
+}]

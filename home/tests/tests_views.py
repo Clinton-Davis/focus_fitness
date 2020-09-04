@@ -6,35 +6,47 @@ from products.models import Product
 
 class TestHomeViews(TestCase):
 
-    def setUp(self):
-        self.client = Client()
-        self.index_url = reverse('home')
-        self.about_url = reverse('about')
-        self.terms_url = reverse('terms')
-        self.privacy_url = reverse('privacy')
-        self.contact_url = reverse('contact')
-
     def test_index_view_GET(self):
-        resp = self.client.get(self.index_url)
+        resp = self.client.get(reverse('home'))
         self.assertEqual(resp.status_code, 200)
+        self.assertTrue('display_items' in resp.context)
         self.assertTemplateUsed(resp, template_name="home/index.html")
 
     def test_about_view_GET(self):
-        resp = self.client.get(self.about_url)
+        resp = self.client.get(reverse('about'))
         self.assertEqual(resp.status_code, 200)
         self.assertTemplateUsed(resp, template_name="home/about.html")
 
     def test_terms_view_GET(self):
-        resp = self.client.get(self.terms_url)
+        resp = self.client.get(reverse('terms'))
         self.assertEqual(resp.status_code, 200)
         self.assertTemplateUsed(resp, template_name="home/terms.html")
 
     def test_Privacy_view_GET(self):
-        resp = self.client.get(self.privacy_url)
+        resp = self.client.get(reverse('privacy'))
         self.assertEqual(resp.status_code, 200)
         self.assertTemplateUsed(resp, template_name="home/privacy.html")
 
     def test_contact_view_GET(self):
-        resp = self.client.get(self.contact_url)
+        resp = self.client.get(reverse('contact'))
         self.assertEqual(resp.status_code, 200)
         self.assertTemplateUsed(resp, template_name="home/contact.html")
+
+
+class TestIndexContext(TestCase):
+
+    def test_display_items_GET(self):
+        resp = self.client.get(reverse('home'))
+        self.assertTrue('display_items' in resp.context)
+
+    def test_current_membership_GET(self):
+        resp = self.client.get(reverse('home'))
+        self.assertTrue('current_membership' in resp.context)
+
+    def test_programs_GET(self):
+        resp = self.client.get(reverse('home'))
+        self.assertTrue('programs' in resp.context)
+
+    def test_feature_blog_GET(self):
+        resp = self.client.get(reverse('home'))
+        self.assertTrue('feature_blog' in resp.context)
