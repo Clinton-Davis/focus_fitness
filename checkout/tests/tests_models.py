@@ -17,13 +17,19 @@ class TestCheckoutModels(TestCase):
             order_number=000,
             full_name="Testing Mc Testalot",
             email='testing@tesing.com',
-            phone_number='987766544667',
+            phone_number=987766544667,
             country='IRE',
             town_or_city='Testing Town',
             street_address1='Testing Street',
-            delivery_cost='0',
+
         )
 
     def test_Checkout_name(self):
-        order_number = Order.objects.get(id=1)
-        self.assertEqual(Order.order_number, 000)
+        order = Order.objects.get(id=1)
+        self.assertEqual(order.full_name, 'Testing Mc Testalot')
+        self.assertEqual(order.email, 'testing@tesing.com')
+        self.assertEqual(order.town_or_city, 'Testing Town')
+
+    def test_Checkout_generate_order_number(self):
+        order = Order.objects.get(id=1)
+        self.assertFalse(order.order_number == 000)
