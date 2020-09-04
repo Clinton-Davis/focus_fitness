@@ -2,7 +2,7 @@ import os
 import environ
 import dj_database_url
 
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 if DEBUG is True:
@@ -60,7 +60,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    # 'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.facebook',
 
     'crispy_forms',
     'ckeditor',
