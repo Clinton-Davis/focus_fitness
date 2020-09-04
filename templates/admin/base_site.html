@@ -1,12 +1,18 @@
-{% extends "admin/base.html" %}
+{% extends "admin/base_site.html" %}
 {% load static %}
-{% block head_title %} - Admin {% endblock head_title %}
 {% block branding %}
 <h1 id="head">
-    <img src="{% static 'images/logo.png' %}" class="brand_img" alt="Focus Fitness" height="50" width="100"> Focus Admin
+    <img src="{% static 'images/logo.png' %}" class="brand_img" alt="Focus Fitness" height="50" width="100">
+
 </h1>
-<link rel="stylesheet" href="{% static 'css/admin.css' %}">
 {% endblock %}
 
-{% block extrastyling %}
-{% endblock extrastyling %}
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'css/admin.css' %}">
+<style type="text/css">
+    body::before {
+        content: "{{ ENVIRONMENT_NAME }}";
+    }
+</style>
+
+{% endblock extrastyle %}

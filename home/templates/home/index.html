@@ -135,28 +135,28 @@
     </div>
 
     <div class="row row justify-content-center ">
-        {% for items in display_items %}
+        {% for product in display_items %}
         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
             <div class="card w-100 h-100 border-1">
-                <a class="ripple-surface back-up-img mx-auto" href="{% url 'products:product_detail' items.id %}">
-                    <img class="mx-auto card-img-top shop-card-top-img img-fluid" src="{{ items.image.url }}"
-                        alt="{{ items.name }}">
+                <a class="ripple-surface back-up-img mx-auto" href="{% url 'products:product_detail' product.id %}">
+                    <img class="mx-auto card-img-top shop-card-top-img img-fluid" src="{{ product.image.url }}"
+                        alt="{{ product.name }}">
                 </a>
                 <div class="card-body pb-0">
-                    <p class="text-center">{{ items.name }}</p>
+                    <p class="text-center">{{ product.name }}</p>
                 </div>
                 <div class="card-footer bg-white pt-0 border-0 text-center">
                     <div class="row ">
                         <div class="col">
 
                             <p class="mb-0  aw">Was <span class="mont_b">$</span><s
-                                    class="text-red">{{ items.was_price }}</s></p>
+                                    class="text-red">{{ product.was_price }}</s></p>
 
                             <p class="lead mb-0  aw">Now <span class="mont_b">$
-                                </span>{{ items.price }}</p>
+                                </span>{{ product.price }}</p>
 
                             <i class="fas text-ylw fa-lg fa-star mr-1"></i>
-                            <small class="">{{ items.rating_ave|floatformat:1 }}</small>
+                            <small class="">{{ product.rating_ave|floatformat:1 }}</small>
 
                         </div>
                     </div>

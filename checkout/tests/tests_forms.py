@@ -1,8 +1,9 @@
 from django.test import TestCase
 from home.forms import ContactForm
+from checkout.forms import OrderForm
 
 
-class TestContactForm(TestCase):
+class TestOrderForm(TestCase):
 
     def test_name_is_required(self):
         form = ContactForm({'name': 'Testing_name'})
@@ -15,3 +16,5 @@ class TestContactForm(TestCase):
     def test_message_is_required(self):
         form = ContactForm({'message': ''})
         self.assertFalse(form.is_valid())
+
+# Create your tests here.

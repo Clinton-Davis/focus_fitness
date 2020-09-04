@@ -36,7 +36,6 @@ def global_context(request):
     tax = 0
     form = NewLetterEmailSignupForm()
     cart = request.session.get('cart', {})
-
     for item_id, item_data in cart.items():
         if isinstance(item_data, int):
             product = get_object_or_404(Product, pk=item_id)
@@ -64,7 +63,6 @@ def global_context(request):
             discount = total * Decimal(settings.SUB_DISCOUNT_PERCENTAGE / 100)
     else:
         discount = 0
-
     cart_total = total
     sub_total = cart_total - discount
     delivery = sub_total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
@@ -72,7 +70,6 @@ def global_context(request):
     grand_total = sub_total + delivery
     tax_rate = Decimal(settings.TAX_RATE_PERCENTAGE)
     discount_percentage = Decimal(settings.SUB_DISCOUNT_PERCENTAGE)
-
     context = {
         'cart_items': cart_items,
         'sub_total': sub_total,
@@ -85,5 +82,11 @@ def global_context(request):
         'grand_total': grand_total,
         'news_form': form
     }
-
     return context
+
+
+def from_settings(request):
+    """ This Keeps the admin 'ENVIRONMENT_NAME' in the golbal context """
+    return {
+        "ENVIRONMENT_NAME":  settings.ENVIRONMENT_NAME,
+    }

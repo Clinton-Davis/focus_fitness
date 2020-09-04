@@ -143,6 +143,7 @@ img {
 
 .text-bk {
   color: rgb(0, 0, 0);
+
 }
 
 .text-wht {
@@ -563,6 +564,7 @@ nav {
 
 .blog-list-img {
   max-width: 20rem;
+  max-height: 10rem;
 }
 
 .carosel-img {

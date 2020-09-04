@@ -27,7 +27,7 @@ def search_blog(request):
     template_name = 'blog/blog_search.html'
     all_blogs = Blog.objects.all()
     category_menu = Category.objects.all()
-    quary = None
+    query = None
 
     if 's' in request.GET:
         query = request.GET['s']
@@ -91,6 +91,10 @@ class BlogDetailView(DetailView):
 
 
 class BlogCreateView(CreateView):
+    """
+    Uses the 'blog_form.html' as it needs the inputs,
+    The context is changed to 'create'
+    """
     form_class = BlogForm
     model = Blog
     success_url = '/blog/'
@@ -108,6 +112,10 @@ class BlogCreateView(CreateView):
 
 
 class BlogUpdateView(UpdateView):
+    """
+    Uses the 'blog_form.html' as it needs the inputs,
+    The context is changed to 'Update'
+    """
     form_class = BlogForm
     model = Blog
     success_url = '/blog/'

@@ -28,10 +28,6 @@ if DEBUG is True:
     SOCIAL_AUTH_FACEBOOK_KEY = env('SOCIAL_AUTH_FACEBOOK_KEY')
     SOCIAL_AUTH_FACEBOOK_SECRET = env('SOCIAL_AUTH_FACEBOOK_SECRET')
 
-    # DATABASES = {
-    #     'default': dj_database_url.parse(env('DATABASE_URL'))
-    # }
-
 
 if DEBUG is False:
     SECRET_KEY = os.environ.get('SECRET_KEY')
@@ -109,6 +105,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
                 'cart.contexts.global_context',
+                'cart.contexts.from_settings',
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
@@ -117,6 +114,17 @@ TEMPLATES = [
         },
     },
 ]
+
+WSGI_APPLICATION = 'focus.wsgi.application'
+
+
+# Changes the Admin heading to show in Develpoment or Production
+if DEBUG is True:
+    ENVIRONMENT_NAME = 'Development'
+else:
+    ENVIRONMENT_NAME = 'Live Production'
+
+# Choosing the db to use in development or production
 if DEBUG is True:
     DATABASES = {
         'default': {
@@ -124,11 +132,7 @@ if DEBUG is True:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-
-WSGI_APPLICATION = 'focus.wsgi.application'
-
-
-if DEBUG is False:
+else:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
@@ -153,7 +157,7 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
-
+# FaceBook Provider account loging
 SOCIALACCOUNT_PROVIDERS = \
     {'facebook':
      {'METHOD': 'oauth2',
@@ -237,7 +241,6 @@ CKEDITOR_CONFIGS = {
 
     # },
     'default': {
-        # You can change this based on your requirements.
         'toolbar': 'Custom',
         'width': 'auto',
         'toolbar_Custom': [
@@ -245,7 +248,7 @@ CKEDITOR_CONFIGS = {
             ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-',
                 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
             ['Link', 'Unlink'],
-            ['RemoveFormat', 'Source']
+            ['RemoveFormat', 'Source', ]
         ]
 
     },

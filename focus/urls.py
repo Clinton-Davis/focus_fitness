@@ -11,7 +11,7 @@ from home import views
 
 urlpatterns = [
     path('', include('home.urls')),
-    path('admin/', admin.site.urls),
+    path('secret-focus-admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('products/', include('products.urls', namespace='products')),
     path('cart/', include('cart.urls')),
@@ -29,3 +29,8 @@ if settings.DEBUG:
 
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
+
+
+admin.site.index_title = "Focus Fitness Administration"
+admin.site.site_header = "Focus Fitness"
+admin.site.site_title = "Focus Fitness"
