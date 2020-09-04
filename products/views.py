@@ -4,6 +4,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Category, productComment, ProductView
 from .forms import ProductCommentForm
+
 from django.views.generic import DetailView
 
 
@@ -15,20 +16,19 @@ def all_products(request):
     sort = None
     direction = None
 
-    if request.GET:
-        if 'sort' in request.GET:
-            sortkey = request.GET['sort']
-            sort = sortkey
-            if sortkey == 'name':
-                sortkey = 'lower_name'
-                products = products.annotate(lower_name=Lower('name'))
-            if sortkey == 'category':
-                sortkey = 'category__name'
-            if 'direction' in request.GET:
-                direction = request.GET['direction']
-                if direction == 'desc':
-                    sortkey = f'-{sortkey}'
-            products = products.order_by(sortkey)
+    if 'sort' in request.GET:
+        sortkey = request.GET['sort']
+        sort = sortkey
+        if sortkey == 'name':
+            sortkey = 'lower_name'
+            products = products.annotate(lower_name=Lower('name'))
+        if sortkey == 'category':
+            sortkey = 'category__name'
+        if 'direction' in request.GET:
+            direction = request.GET['direction']
+            if direction == 'desc':
+                sortkey = f'-{sortkey}'
+        products = products.order_by(sortkey)
 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
@@ -38,10 +38,12 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "Sorry! No Input? Try again Please")
+                messages.error(
+                    request, "Sorry! No Input? Try again Please")
                 return redirect(reverse('products'))
 
-            search = Q(name__icontains=query) | Q(description__icontains=query)
+            search = Q(name__icontains=query) | Q(
+                description__icontains=query)
             products = products.filter(search)
 
     sorting = f'{sort}_{direction}'

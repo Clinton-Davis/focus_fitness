@@ -1,225 +1,224 @@
-[
-{
-  "model": "blog.category",
-  "pk": 1,
-  "fields": {
-    "name": "Members"
+[{
+    "model": "blog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Members"
+    }
+  },
+  {
+    "model": "blog.category",
+    "pk": 2,
+    "fields": {
+      "name": "Covid-19"
+    }
+  },
+  {
+    "model": "blog.category",
+    "pk": 3,
+    "fields": {
+      "name": "Dieting"
+    }
+  },
+  {
+    "model": "blog.category",
+    "pk": 4,
+    "fields": {
+      "name": "Strength Training"
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 1,
+    "fields": {
+      "title": "HOW TO CLEAN CARDIO MACHINES",
+      "category": "Covid-19",
+      "content": "<p>For many people, wiping down gym machines after use is a long-formed habit to help make the gym a nicer, fresher place for all. However, as we settle into the &lsquo;new normal&rsquo;, it&rsquo;s more important than ever to take care in carefully cleaning equipment such as the treadmill, cross trainer, rower and step machine before and after use.</p>\r\n\r\n<p>Keep reading to learn more about how you can clean the&nbsp;<a href=\"https://www.puregym.com/blog/gym-machine-set-up/\">cardio machines at the gym</a>.</p>\r\n\r\n<p><strong>General cleaning of cardio machines</strong></p>\r\n\r\n<p>Each cardio machine will need to be cleaned in a slightly different way, but there are some universal tips to bear in mind, including:</p>\r\n\r\n<ol>\r\n\t<li>Clean hands: wash or sanitise your hands as regularly as possible while at the gym, including when you arrive. At PureGym you&rsquo;ll be able to make use of the many sanitisation stations we&rsquo;ll provide around the gym.</li>\r\n\t<li>Clean machines before and after use: this will ensure your exercise area is ready for you before you start and also clean for whoever comes next. All gym members will be encouraged to do the same.</li>\r\n\t<li>Use antiviral wipes or sprayed paper towels: give the machines a clean down with either a folded paper towel, spritzed at least twice with cleaning spray, or with sanitising wipes. We&rsquo;ll be ensuring plenty of both are available around the gym. Don&rsquo;t spray cleaning fluid directly onto the machinery as it could push anything sitting on the surface into the air.</li>\r\n\t<li>Don&rsquo;t use a sweat towel: stick to using the cleaning products and towels provided by the gyms rather than bringing your own gym/sweat towel; this will help to limit the spread of germs from outside the gym.</li>\r\n\t<li>Be careful around screens and electrics: While it&rsquo;s important to wipe these down if you&rsquo;re touching them, don&rsquo;t let screens get too damp.</li>\r\n\t<li>Focus on cleaning the main touch points of equipment: including any handles, seats, adjustment points, buttons you may press and so on.</li>\r\n\t<li>Clean under your phone and water bottle: if you rested any of your own belongings on the equipment, or the water bottle holder, make sure to give these areas a wipe over.</li>\r\n\t<li>But don&rsquo;t forget the rest: as a courtesy, also give the parts of the equipment directly in front of you a wipe down when you&rsquo;re finished too &ndash; you&rsquo;ll be breathing heavily over these areas during your workout.</li>\r\n\t<li>Wait a few seconds after wiping down: the cleaning liquid will need a few moments to work and dry, so please wait 20 to 30 seconds before using so the surfaces aren&rsquo;t slippery for use.</li>\r\n\t<li>Bin cloths and wipes: put these in the bins provided &ndash; don&rsquo;t leave any used tissues on the gym floor or on the equipment.</li>\r\n\t<li>Try not to touch afterwards: when wiping down the equipment after use, try not to place your hands on the cleaned areas.</li>\r\n</ol>\r\n\r\n<p><strong>How to clean a treadmill</strong></p>\r\n\r\n<p>While&nbsp;<a href=\"https://www.puregym.com/blog/10-reasons-why-you-should-use-a-treadmill/\">exercising on the treadmill</a>&nbsp;focuses mostly on your footwork as you walk or run, there are also several touch points you&rsquo;ll need to consider when cleaning it down.</p>\r\n\r\n<ul>\r\n\t<li>Wipe down the full length of the side grip handles, both on top and underneath</li>\r\n\t<li>Ensure you also wipe over the entire front display, but with a lighter pressure on the display screen</li>\r\n\t<li>Focus in particular on any buttons you will be or have pressed</li>\r\n</ul>\r\n\r\n<p><strong>How to clean the cross trainer</strong></p>\r\n\r\n<p>Again, while the focus may be on your legs while using the&nbsp;<a href=\"https://www.puregym.com/blog/6-reasons-why-you-should-start-using-a-cross-trainer/\">cross trainer</a>, there are also several areas you&rsquo;ll be touching and handling as you work out.</p>\r\n\r\n<ul>\r\n\t<li>Wipe over the entirety of both the moving and static handles, taking care to wipe all sides and over the top end</li>\r\n\t<li>Clean over the front display, paying particular attention to any buttons you may have pressed when turning on or adjusting the incline etc.</li>\r\n</ul>\r\n\r\n<p><strong>How to clean the step machine</strong></p>\r\n\r\n<p>Paying careful attention to which parts of the&nbsp;<a href=\"https://www.puregym.com/blog/stepping-up-to-fitness/\">step machine</a>&nbsp;you&rsquo;ve made contact with will help you ensure a thorough clean.</p>\r\n\r\n<ul>\r\n\t<li>Take particular note of any handles or support bars you touched or used while working out or getting on to the step machine and make sure you&rsquo;ve cleaned them thoroughly</li>\r\n\t<li>Wipe over the whole of the display screen, paying particular attention to the buttons you&rsquo;ve pressed while adjusting the settings</li>\r\n</ul>\r\n\r\n<p>With a little consideration for cleanliness, we can dramatically reduce the risks faced from Covid-19 and other viruses, and create a safer space for all our members.&nbsp;</p>",
+      "thumbnail": "trainsafe_cleaning_blogheader-5.jpg",
+      "publish_date": "2020-08-08T15:09:41.086Z",
+      "last_updated": "2020-08-08T15:09:41.086Z",
+      "author": 2,
+      "slug": "how-to-clean-cardio-machines",
+      "featured": false
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 2,
+    "fields": {
+      "title": "HOW TO SUPPORT YOUR IMMUNE SYSTEM",
+      "category": "Dieting",
+      "content": "<p>It seems that there&rsquo;s one word which is quite literally on everyone&rsquo;s lips at the moment. The coronavirus or Covid-19 has instilled new meaning to the term &ldquo;going viral&rdquo; and the World Health Organisation has finally classified the global spread of this new kid on the block as a pandemic.</p>\r\n\r\n<p>Remove the middle three letters from this word and ironically, you&rsquo;re left with &ldquo;panic&rdquo; which is perhaps the most immediate and obvious side-effect of the outbreak so far. Uncertainty is the oxygen that fuels this. Which is why we want to make sure that we provide our members with accurate up to date advice and guidance. And what we&rsquo;re hearing is that you want to know how best to protect yourselves and your loved ones.</p>\r\n\r\n<p>We spoke with&nbsp;<em>Dr. Sarah Hattam</em>, who has supported us over the years in creating evidence backed content about wellbeing and health. Dr. Sarah has 25 years&rsquo; experience and is on a mission to fight the pseudo-science in the industry. She is passionate about sharing information that is backed by the latest science and research about how our human bodies and brains really thrive. This is what she had to say:</p>\r\n\r\n<p>First and foremost, it&rsquo;s critical that we all follow the government&rsquo;s advice which you can find&nbsp;<a href=\"https://www.gov.uk/coronavirus\" rel=\"noopener\" target=\"_blank\" title=\"UK GOV\">here</a>&nbsp;if you&#39;re living in the UK. Please make sure to follow the guidelines to help reduce the spread of the virus and help to flatten the curve.</p>\r\n\r\n<p>The most crucial advice is to wash hands frequently with soap and hot water for 30 seconds or 60% alcohol hand sanitiser if this isn&rsquo;t available.</p>\r\n\r\n<p>To always wash hands thoroughly before eating.&nbsp; But we were doing this before anyway right? To avoid touching the face, mouth and eyes and to treat your mobile phone like a third hand, wiping it over with alcohol wipes regularly.</p>\r\n\r\n<p>As with any infection, our bodies have an army of immune cells ready to be deployed to wage war against such bugs. Our immune response is an incredible, but also complex system &ndash; that can become suppressed (weakened) as a result of some of our day to day habits. It is important to note is that there is no magic pill or solution to &lsquo;boost&rsquo; your immune system, and because of the way our immune system is designed to work you really don&rsquo;t want it to be &lsquo;boosted&rsquo;. But there are some simple steps you can take to help support your immune response - giving your immune system the best chance to fight coronavirus quickly and effectively.</p>\r\n\r\n<h3>SLEEP ON IT</h3>\r\n\r\n<p>A lack of sleep is one of the main contributors that can reduce the effectiveness of your immune system.</p>\r\n\r\n<p>Studies show that people who don&#39;t get quality sleep or enough sleep are more likely to get sick after being exposed to a virus [1].</p>\r\n\r\n<p>Not enough sleep can also affect how quickly you recover if you do get sick, as our white blood cells (also known as the body&rsquo;s natural killer cells) become less effective when we are sleep deprived. But we understand that it&rsquo;s not quite as easy as just saying &lsquo;get more sleep&rsquo;. Some simple tips to improve sleep quality are to ditch the devices before bed, avoid caffeine after mid-afternoon and remember to give yourself time to unwind from the day. A clear mind not only can help you drift off into dream land quicker, but also helps you reach the deep phase of sleep which is where the most restorative sleep happens.</p>\r\n\r\n<h3>KEEP MOVING</h3>\r\n\r\n<p>Just like a healthy diet, exercise contributes to good health, and subsequently a healthy immune system.</p>\r\n\r\n<p>Research shows that adults who are physically active are almost half as likely to succumb to minor infections in comparison to sedentary adults [2].</p>\r\n\r\n<p>One reason for this is thought to be because exercise promotes good circulation. Good Circulation allows immune cells to move through your bloodstream and do their job more efficiently, meaning more effective scanning and action to deal with disease-causing bugs.</p>\r\n\r\n<h3>DON&#39;T FORGET VITAMIN D</h3>\r\n\r\n<p>Generally, a lot of emphasis is put on Vitamin A, C and E and their role in immune function. But it&rsquo;s important to not forget Vitamin D. Not only does it play an essential role in supporting healthy bones but has also been recognised as supporting our immune system. Specifically, the immune response to viral infections. However, unsurprisingly 29% of adults have insufficient levels of vitamin D in the winter months [3]. This so-called sunshine vitamin is only manufactured in our body when sunlight hits our skin, making it common for us to be under the recommended 10ug per day.</p>\r\n\r\n<p>Therefore, it&rsquo;s recommended that you include vitamin D rich food sources within your diet.</p>\r\n\r\n<p>Foods such as oily fish, eggs and fortified cereals can help to increase vitamin D levels. But vitamin D supplements are also a good, cost-effective option which have even been shown to reduce respiratory infections and improve asthma control [4].</p>\r\n\r\n<h3>DIAL DOWN STRESS</h3>\r\n\r\n<p>Easy for us to say, right?&nbsp; 21st&nbsp;century life is full on; we&rsquo;re juggling competing demands and the incessant news chatter about the current pandemic isn&rsquo;t exactly helping the situation. But we know that persistent stress and the subsequent release of stress hormones in our blood stream can damp down our immune system&rsquo;s ability to respond effectively to infections [5].</p>\r\n\r\n<p>So, don&rsquo;t forget to keep doing the things that bring you joy, and remember to&nbsp;take a mindful moment or two during a busy day.</p>\r\n\r\n<p>All of these things allow our &ldquo;tend and mend&rdquo; system to be switched on which has many beneficial effects for health&rdquo;</p>\r\n\r\n<h3>BE SENSIBLE ABOUT SUPPLEMENTS</h3>\r\n\r\n<p>Lots of dietary supplements claim to have immune boosting properties. But what does the science actually say? The NHS website says that there is little evidence that supplements such as vitamin C, echinacea or garlic either prevent viral infections or speed up recovery. It&rsquo;s important to remember that most of us can meet our RDA nutrient needs with a varied, balanced diet. So, when it comes to supplements, you could be wasting your money if expensive products make extravagant claims. Remember, if something sounds too good to be true, it usually is!</p>\r\n\r\n<h3>EAT SMART</h3>\r\n\r\n<p>Like any effective army, our immune system fights on its stomach. So, the best and most effective way to fuel a healthy immune system is by eating an abundant variety of fresh fruit and vegetables.</p>\r\n\r\n<p>Eating a rainbow of different coloured fruit and veg will give your body a range of phytonutrients and micronutrients to improve its defences.</p>\r\n\r\n<p>And the good guys in your gut, the health-giving bacteria that make up our microbiome will thank you for ever because you&rsquo;ll be feeding them too.</p>\r\n\r\n<h3>WHEN TO EAT</h3>\r\n\r\n<p>As we get older, our immune system becomes less effective at fighting off potentially harmful invaders. Allowing your digestive system to have a whole 12-hour break from food overnight can keep our digestive system healthy, allow cells to repair themselves and keep our immune system strong.</p>\r\n\r\n<h3>WATCH THE BOOZE</h3>\r\n\r\n<p>Studies show that alcohol weakens our immune system [6] and can also disrupt quality sleep and tends to drive us towards unhealthier food decisions. So, there are lots of reasons why it could be sensible to cut right back or even avoid it altogether.</p>\r\n\r\n<p>So, keep on making healthy lifestyle choices because they will help you to keep your immune system tip-top and aid your recovery if you do get sick.&nbsp;</p>\r\n\r\n<p><strong>Disclaimer:</strong>&nbsp;None of the above is intended to be medical advice. Please consult your GP as usual if you have ongoing medical conditions or take regular medication before making any significant changes.</p>\r\n\r\n<p><em>References:</em></p>\r\n\r\n<ol>\r\n\t<li>Cohen, S., Doyle, W., Alpher, C., Deverts, D., &amp; Turner, R. (2009) Sleep habits and susceptibility to the common cold.&nbsp;<em>Archives of Internal Medicine,&nbsp;</em>169, (1) pp. 62 &ndash; 67.</li>\r\n\t<li>Shephard, R., Shek, P. &amp; DiNubile, N. (1999) Exercise, immunity and susceptibility to infection.&nbsp;<em>The Physician and Sports Medicine.&nbsp;</em>27, (6). pp. 47 &ndash; 71.</li>\r\n\t<li>National Diet and Nutrition Survey: Years 1 to 9 of the Rolling Programme (2008/2009 &ndash; 2016/2017): Time trend and income analyses. Public Health England. Published January 2019</li>\r\n\t<li>Ginde, A., Mansbach, J &amp; Camargo, C. (2009) Vitamin D, respiratory infections, and asthma.&nbsp;<em>Currently Allergy &amp; Asthma Report.&nbsp;</em>9, (1). pp. 81 &ndash; 87.</li>\r\n\t<li>Cohen, S., Tyrrell, D. &amp; Smith, A. (1991) Psychological stress and susceptibility to the common cold.&nbsp;<em>The New England Journal of Medicine,&nbsp;</em>325, (9). pp. 606 &ndash; 612.</li>\r\n\t<li>Sarkar, D., Jung, K. &amp; Wang, H. (2015) Alcohol and the immune system.&nbsp;<em>Alcohol Research,&nbsp;</em>37, (2). pp. 153 &ndash; 155.</li>\r\n</ol>",
+      "thumbnail": "immunesystemblogheader.jpg",
+      "publish_date": "2020-08-08T15:10:56.075Z",
+      "last_updated": "2020-08-12T15:22:46.429Z",
+      "author": 2,
+      "slug": "how-to-support-your-immune-system",
+      "featured": true
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 3,
+    "fields": {
+      "title": "5 FUNCTIONAL EXERCISES TO MASTER",
+      "category": "Strength Training",
+      "content": "<p><strong>Functional fitness</strong>&nbsp;has become something of a buzz word over the past few years. What is it? In simple terms, I like to define it as full body exercises based around movements and activities you do every day and which work through multiple plains. These can be replicated in the gym, with or without added weight.</p>\r\n\r\n<p>Functional exercises includes&nbsp;movements such as:</p>\r\n\r\n<ul>\r\n\t<li>Squatting</li>\r\n\t<li>Lunging</li>\r\n\t<li>Pushing</li>\r\n\t<li>Pulling</li>\r\n\t<li>Twisting</li>\r\n</ul>\r\n\r\n<p>Incorporating functional exercises into your standard routine allows the entire body to work together to produce optimal movements. There are many benefits of adding functional training exercises to your workouts including: improved balance, better posture and coordination, increased strength, and decreased chance of injury. Tt is important that we include these into our routine, particularly as we age, so that we can stay mobile and to perform everyday activities.</p>\r\n\r\n<p><strong>If you want to improve your ability to perform everyday tasks, build overall strength and balance, and develop your resistance to injury then the following exercises are must-haves.</strong></p>\r\n\r\n<h3>1. DEADLIFT</h3>\r\n\r\n<p><strong>Purpose:</strong>&nbsp;This move will help strengthen all your whole body, particularly the pull muscles required to perform this movement, including your back, quads, glutes, and hamstrings.</p>\r\n\r\n<p><strong>Real-life applicaiton:</strong>&nbsp;The deadlift works every muscle to perform an essential movement - picking something up.</p>\r\n\r\n<p><strong>How do deadlift:</strong></p>\r\n\r\n<ol>\r\n\t<li>To perform the deadlift correctly, start by getting your foot position correct. The easiest way to do that is to start in your normal standing position, jump up and down a couple of times and your natural landing position is your ideal deadlift stance.</li>\r\n\t<li>Stand close to the bar with your shins approximately 2 fingers width away from the bar and your shins as vertical as possible.</li>\r\n\t<li><a href=\"https://www.puregym.com/blog/5-functional-exercises-you-should-include-in-your-training/#anchor-1\">Hip hinge</a>&nbsp;and reach down to touch the bar&nbsp;just wider than the leg width. You can&nbsp;either use a double overhand grip or a 1 hand reverse grip - whichever you prefer.</li>\r\n\t<li>Keeping the lower back&nbsp;straight,&nbsp;start the lift by engaging your glutes, hamstrings and lower back (in that order). Keep your shins straight and vertical throughout the lift. Stand fully erect and that is the deadlift.</li>\r\n</ol>\r\n\r\n<p>Tip: If you are having trouble getting the glutes to fire first then there are a couple of glute activation exercises you can do. The one easiest with no equipment is to lay on your back with the knees bent and thrusting the hips upward.</p>\r\n\r\n<h4>2. POWER CLEAN TO OVERHEAD PRESS</h4>\r\n\r\n<p><strong>Purpose:&nbsp;</strong>To improve total-body explosiveness and&nbsp;build upper-body and core strength.</p>\r\n\r\n<p><strong>Real-life application:&nbsp;</strong>Jumping and standing up fast. The ability to extend your hips, knees, and ankles powerfully is pivotal for applying force. Unlike the bench press, the overhead press has you on your feet,&nbsp;making you work on stabilising your body as well.</p>\r\n\r\n<p><strong>How to perform a Clean to overhead press:</strong></p>\r\n\r\n<ol>\r\n\t<li>Take hold of the bar with about a shoulder-width grip.</li>\r\n\t<li>Hinge your hips while keeping your knees bent. Extend your legs and thrust your hips forward.</li>\r\n\t<li>The bar should explode off from the ground. As it continues up, shrug your traps&nbsp;until it reaches about chest height.</li>\r\n\t<li>Flick your elbows forward and under the bar catching the bar across your collar bones. Settle the bar there (if necessary, widen the grip a little). With a slight dip of the knee, continue the momentum up and thrust the bar overhead.</li>\r\n</ol>\r\n\r\n<p>Can&rsquo;t do the power clean and press? Replace it with this easier substitute: Dumbbell clean to press or kettlebell press.</p>\r\n\r\n<h4>3. SQUAT</h4>\r\n\r\n<p><strong>Purpose:&nbsp;</strong>To strengthen your lower body and enhance athletic posture.</p>\r\n\r\n<p><strong>Real-life application:&nbsp;</strong>Jumping and pushing. Standing from a seated position</p>\r\n\r\n<p><strong>How to perform a&nbsp; squat:</strong></p>\r\n\r\n<ol>\r\n\t<li>For the general squat position, start with the bar in the rack, just below shoulder height. Grab the bar just wider than shoulder width (wider if this is not possible), flex the elbows backwards and you should feel a ridge forming where the traps tighten. This is the perfect position to rest the bar and will avoid you needing a barbell pad or a towel (both of which make for an unstable bar).</li>\r\n\t<li>Pick the bar off the rack and take a step backwards.</li>\r\n\t<li>Position your feet just wider than the deadlift position with the toes turned out a little further (this will allow for a better hip position).</li>\r\n\t<li>Keeping the bar pulled down into the traps, flex your lats and keep tight as you descend till your hips are positioned below the knees. You should go as low as your body will comfortably allow for a full range of motion but avoid going so low that you get what they call &ldquo;Butt Wink&rdquo;. At the bottom of the squat pause for a second then drive hard back to a standing position.</li>\r\n</ol>\r\n\r\n<p>Can&rsquo;t do the squat? Replace it with this easier substitute: Step up or split squat (static lunge).<strong>&nbsp;</strong>These two strengthen your quads, glutes, and hamstrings thoroughly.</p>\r\n\r\n<h4>4. CHIN UP</h4>\r\n\r\n<p><strong>Purpose:</strong>&nbsp;To build upper body strength and relative strength.</p>\r\n\r\n<p><strong>Real-life application:</strong>&nbsp;Climbing, dragging, and wrestling - chin ups force you to master your own body weight while working the entire upper body.</p>\r\n\r\n<p><strong>How to perform a chin up:&nbsp;</strong>A&nbsp;chin up can be performed safely in many ways. There&rsquo;s wide grip, narrow grip, palms forward, palms backward, and palms neutral - all will work the back muscles.</p>\r\n\r\n<ol>\r\n\t<li>Start by taking hold of the bar. You can use a palms towards you grip or a palms away from you grip. I prefer the palms facing me as I find I get a fuller range of motion through the lift.</li>\r\n\t<li>From your handing position, engage your shoulder muscles, and pull yourself up to the bar by&nbsp;concentrating on flexing your lats and pulling my elbows down and back behind you, as if you were elbowing someone behind&nbsp;you.&nbsp;</li>\r\n\t<li>Once you get your chin or chest to the bar, you can reverse the movement. Try to lower yourself slowly back to starting hanging position and keep the lats engaged.</li>\r\n</ol>\r\n\r\n<p>If you struggle with this move use a step to get into the top position and work on the decent. This is one of the best ways to get stronger at chin ups.</p>\r\n\r\n<p>Can&rsquo;t do the chin up? Replace it with this easier substitute, a bent-over row or one-arm dumbbell row. Strong pulling movements helps improve posture and prevents shoulder pain.</p>\r\n\r\n<h4>5. FARMERS WALK</h4>\r\n\r\n<p><strong>Purpose:&nbsp;</strong>To build and strengthen the core whilst moving and improve posterior chain stability.</p>\r\n\r\n<p><strong>Real-life application:&nbsp;</strong>Walking, carrying, climbing stairs.</p>\r\n\r\n<p><strong>How to perform a farmers walk:</strong></p>\r\n\r\n<ol>\r\n\t<li>The farmers walk is relatively easy to perform. Pick up a weight in each hand and walk with it. If you want to perform this with much heavier weight some technique is necessary &ndash; The Worlds Strongest Man walks over 150kg per hand!</li>\r\n\t<li>Make sure to keep your chest up and your core tight.</li>\r\n</ol>\r\n\r\n<p>Can&rsquo;t do the farmers walk? Start with a static lunge or a lighter weight farmers walk.</p>\r\n\r\n<p>Doing the above 5 moves regularly 2 to 3 times per week for 3 sets of 8 to 12 repetitions will help you through daily life long into old age. These are the movements we start to struggle with as we age such as getting up out of a chair, and walking with loads, so performing these exercises now will be beneficial in helping you stay healthy and strong.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Here is an additional exercise if you can&rsquo;t perform the deadlift&nbsp;or clean:</p>\r\n\r\n<h4>HIP HINGE</h4>\r\n\r\n<p>The hip hinge when performed correctly is very important in both the deadlift and the clean &ndash; here&rsquo;s how to perform it correctly.</p>\r\n\r\n<p>The first thing to understand is the difference between a hinge and a squat:</p>\r\n\r\n<ul>\r\n\t<li>Squat: Maximal knee bend and maximal hip bend</li>\r\n\t<li>Hinge: Minimal knee bend and maximal hip bend</li>\r\n</ul>\r\n\r\n<p>When first learning the hip hinge, most people will want to bend at the knees when, in fact, they need to simply focus on pushing the butt back.</p>\r\n\r\n<p><strong>How To Hip Hinge:</strong></p>\r\n\r\n<ol>\r\n\t<li>Start as close to the wall as needed (about 6-8 inches away fromt he wall). Begin by standing tall with feet about shoulder-width apart. Keep your chest up, shoulder blades retracted in toward the spine and head up and facing forward. I like to have people &ldquo;feel the hinge&rdquo; by placing their hands palms-up and gently pressing on the crease of the hip flexors just below the hip bone.</li>\r\n\t<li>Brace the abs and focus on moving the hips back until your butt touches the wall. You should feel the hips fold down on the hands as you hinge forward and remember, there should be very little bend in the knees!</li>\r\n\t<li>As you become more comfortable with your hinge you can slowly move further away from the wall.</li>\r\n</ol>",
+      "thumbnail": "deadlift-feature.jpg",
+      "publish_date": "2020-08-08T15:13:24.387Z",
+      "last_updated": "2020-08-12T07:45:36.455Z",
+      "author": 2,
+      "slug": "5-functional-exercises-to-master",
+      "featured": true
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 4,
+    "fields": {
+      "title": "UPPER BODY DUMBBELL WORKOUT",
+      "category": "Strength Training",
+      "content": "<p>Get an effective upper body workout with a friend using a pair of dumbbells. Watch the full workout featuring personal trainer</p>\r\n\r\n<p>Push ups are a great way to increase your upper body strength and working out with a partner is great way to boost motivation and overall performance.</p>\r\n\r\n<p>Start off by getting in to the full press up position. From here touch your shoulder with the opposite hand on both sides before performing the press up. Once back&nbsp;at the top of the movement, touch hands with your partner. Complete 10 reps, the main challenge is trying to keep in time with your partner.</p>\r\n\r\n<h4>BICEP CURL INTO SHOULDER PRESS - 10 REPS</h4>\r\n\r\n<p>By combining these two popular upper body exercises you will be targeting more muscles groups at one time, so it&#39;s a ground all round upper body move to add to your upper body routine especially if you&#39;re short on time.&nbsp;</p>\r\n\r\n<p>To perform the bicep curl into shoulder press move, grab a set of dumbbells. Stand upright with feet hip-width distance apart with your abs tight. Keeping your elbows tucked into your side, curl the dumbbell up towards your shoulders. From here rotate your arms as you push the dumbbells up and over your head. Slowly lower your dumbbells to the side of your ears, and return back to starting position. Avoid using momentum from your body. Complete a total of 10 reps before moving on to the next exercise.</p>\r\n\r\n<h4>BENT OVER ROW - 10 REPS</h4>\r\n\r\n<p>A great exercise primarily targeting the middle back. The increased strength gained from performing this exercise can help to improve your posture and reduce the risk of lower back injuries.</p>\r\n\r\n<p>Grab one dumbbell and move to a bench or step. Start with placing the other hand on the bench or step, and the same side knee on the bench. Keeping your back straight, pull the dumbbell in towards your abs. Squeeze your back muscles at the top of the movement and slowly lower the weight back down. Complete 10 reps for each arm.</p>\r\n\r\n<h4>OVERHEAD TRICEP EXTENSION - 10 REPS</h4>\r\n\r\n<p>This move is great for working the triceps whilst working your core. &nbsp;</p>\r\n\r\n<p>Using both hands hold the dumbbell above your head. Lower the weight slowly keeping your elbows facing forward and squeeze through the triceps to return to the starting position. Aim for a total of 10 reps.</p>\r\n\r\n<h4>LATERAL RAISE - 12 REPS</h4>\r\n\r\n<p>This exercise targets your shoulders, but will also work your core, upper back and arms.&nbsp;</p>\r\n\r\n<p>Grab a dumbbell in each hand. Keeping your core tight and your chest up, slowly raise the dumbbells up to shoulder height keeping elbows bent. Slowly lower the dumbbells back to above</p>\r\n\r\n<p>your hips. Keep the movement controlled throughout. Perform 12 reps before heading into the final</p>\r\n\r\n<p>exercise.</p>\r\n\r\n<h4>DUMBBELL SNATCH - 10 REPS</h4>\r\n\r\n<p>This dynamic, compound move is going to work the whole body and improve your power and coordination.&nbsp;</p>\r\n\r\n<p>Position a dumbbell on the floor in between your legs. Take up a starting squat position with your feet slightly wider than shoulder width apart, toes slightly turned out. From this position, grab the dumbbell and drive upwards powerfully using your legs and thrust your hips forward. This should give you the momentum you need to lift the dumbbell above your head and hold it at the top. Make sure to keep the dumbbell close to your body throughout the whole movement. Return back to squat position as you lower the dumbbell back to the floor.</p>\r\n\r\n<p>Alternate sides until 10 reps have been completed on each arm.</p>\r\n\r\n<p>That completes the workout. Give it a go with a friend next time you hit the gym!</p>",
+      "thumbnail": "extra_images_0006_kaybeth.jpg",
+      "publish_date": "2020-08-08T15:15:07.095Z",
+      "last_updated": "2020-09-02T10:46:57.833Z",
+      "author": 2,
+      "slug": "upper-body-dumbbell-workout",
+      "featured": false
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 5,
+    "fields": {
+      "title": "New to this",
+      "category": "Members",
+      "content": "<p>Hi everyone,</p>\r\n\r\n<p>I am very new to this blogging thing and to gym in general.</p>\r\n\r\n<p>I have got my self some gear and I ready for the gym.</p>\r\n\r\n<p>What would be the best way to start?</p>\r\n\r\n<p>Thanks all</p>\r\n\r\n<p>Chat soon</p>",
+      "thumbnail": "me.jpg",
+      "publish_date": "2020-08-22T10:00:31.733Z",
+      "last_updated": "2020-09-02T10:41:33.938Z",
+      "author": 3,
+      "slug": "new-to-this",
+      "featured": false
+    }
+  },
+  {
+    "model": "blog.blogcomment",
+    "pk": 1,
+    "fields": {
+      "user": 2,
+      "blog": 3,
+      "timestamp": "2020-08-14T11:38:12.336Z",
+      "content": "testing"
+    }
+  },
+  {
+    "model": "blog.blogcomment",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "blog": 3,
+      "timestamp": "2020-08-14T11:45:07.595Z",
+      "content": "another test"
+    }
+  },
+  {
+    "model": "blog.blogcomment",
+    "pk": 3,
+    "fields": {
+      "user": 8,
+      "blog": 1,
+      "timestamp": "2020-08-19T17:33:33.161Z",
+      "content": "I liked this blog, good work"
+    }
+  },
+  {
+    "model": "blog.blogcomment",
+    "pk": 4,
+    "fields": {
+      "user": 2,
+      "blog": 5,
+      "timestamp": "2020-08-22T10:03:47.945Z",
+      "content": "Hi Clinton, Welcome and congrats on your first Blog, Have a look in the Features blogs there are a few Good one on how to start, Try 5 Functional Exercises To Master, and go from there. Good Luck"
+    }
+  },
+  {
+    "model": "blog.blogview",
+    "pk": 3,
+    "fields": {
+      "user": 2,
+      "blog": 3,
+      "timestamp": "2020-08-12T07:44:48.829Z"
+    }
+  },
+  {
+    "model": "blog.blogview",
+    "pk": 4,
+    "fields": {
+      "user": 2,
+      "blog": 4,
+      "timestamp": "2020-08-12T07:45:44.774Z"
+    }
+  },
+  {
+    "model": "blog.blogview",
+    "pk": 5,
+    "fields": {
+      "user": 2,
+      "blog": 1,
+      "timestamp": "2020-08-14T13:47:26.735Z"
+    }
+  },
+  {
+    "model": "blog.blogview",
+    "pk": 6,
+    "fields": {
+      "user": 2,
+      "blog": 2,
+      "timestamp": "2020-08-15T15:07:08.870Z"
+    }
+  },
+  {
+    "model": "blog.blogview",
+    "pk": 8,
+    "fields": {
+      "user": 8,
+      "blog": 1,
+      "timestamp": "2020-08-19T17:33:03.238Z"
+    }
+  },
+  {
+    "model": "blog.blogview",
+    "pk": 9,
+    "fields": {
+      "user": 8,
+      "blog": 5,
+      "timestamp": "2020-08-22T10:01:02.406Z"
+    }
+  },
+  {
+    "model": "blog.blogview",
+    "pk": 10,
+    "fields": {
+      "user": 2,
+      "blog": 5,
+      "timestamp": "2020-08-22T10:01:50.363Z"
+    }
+  },
+  {
+    "model": "blog.blogview",
+    "pk": 11,
+    "fields": {
+      "user": 8,
+      "blog": 3,
+      "timestamp": "2020-08-24T18:03:04.206Z"
+    }
+  },
+  {
+    "model": "blog.like",
+    "pk": 2,
+    "fields": {
+      "user": 8,
+      "blog": 3
+    }
   }
-},
-{
-  "model": "blog.category",
-  "pk": 2,
-  "fields": {
-    "name": "Covid-19"
-  }
-},
-{
-  "model": "blog.category",
-  "pk": 3,
-  "fields": {
-    "name": "Dieting"
-  }
-},
-{
-  "model": "blog.category",
-  "pk": 4,
-  "fields": {
-    "name": "Strength Training"
-  }
-},
-{
-  "model": "blog.blog",
-  "pk": 1,
-  "fields": {
-    "title": "HOW TO CLEAN CARDIO MACHINES",
-    "category": "Covid-19",
-    "content": "<p>For many people, wiping down gym machines after use is a long-formed habit to help make the gym a nicer, fresher place for all. However, as we settle into the &lsquo;new normal&rsquo;, it&rsquo;s more important than ever to take care in carefully cleaning equipment such as the treadmill, cross trainer, rower and step machine before and after use.</p>\r\n\r\n<p>Keep reading to learn more about how you can clean the&nbsp;<a href=\"https://www.puregym.com/blog/gym-machine-set-up/\">cardio machines at the gym</a>.</p>\r\n\r\n<p><strong>General cleaning of cardio machines</strong></p>\r\n\r\n<p>Each cardio machine will need to be cleaned in a slightly different way, but there are some universal tips to bear in mind, including:</p>\r\n\r\n<ol>\r\n\t<li>Clean hands: wash or sanitise your hands as regularly as possible while at the gym, including when you arrive. At PureGym you&rsquo;ll be able to make use of the many sanitisation stations we&rsquo;ll provide around the gym.</li>\r\n\t<li>Clean machines before and after use: this will ensure your exercise area is ready for you before you start and also clean for whoever comes next. All gym members will be encouraged to do the same.</li>\r\n\t<li>Use antiviral wipes or sprayed paper towels: give the machines a clean down with either a folded paper towel, spritzed at least twice with cleaning spray, or with sanitising wipes. We&rsquo;ll be ensuring plenty of both are available around the gym. Don&rsquo;t spray cleaning fluid directly onto the machinery as it could push anything sitting on the surface into the air.</li>\r\n\t<li>Don&rsquo;t use a sweat towel: stick to using the cleaning products and towels provided by the gyms rather than bringing your own gym/sweat towel; this will help to limit the spread of germs from outside the gym.</li>\r\n\t<li>Be careful around screens and electrics: While it&rsquo;s important to wipe these down if you&rsquo;re touching them, don&rsquo;t let screens get too damp.</li>\r\n\t<li>Focus on cleaning the main touch points of equipment: including any handles, seats, adjustment points, buttons you may press and so on.</li>\r\n\t<li>Clean under your phone and water bottle: if you rested any of your own belongings on the equipment, or the water bottle holder, make sure to give these areas a wipe over.</li>\r\n\t<li>But don&rsquo;t forget the rest: as a courtesy, also give the parts of the equipment directly in front of you a wipe down when you&rsquo;re finished too &ndash; you&rsquo;ll be breathing heavily over these areas during your workout.</li>\r\n\t<li>Wait a few seconds after wiping down: the cleaning liquid will need a few moments to work and dry, so please wait 20 to 30 seconds before using so the surfaces aren&rsquo;t slippery for use.</li>\r\n\t<li>Bin cloths and wipes: put these in the bins provided &ndash; don&rsquo;t leave any used tissues on the gym floor or on the equipment.</li>\r\n\t<li>Try not to touch afterwards: when wiping down the equipment after use, try not to place your hands on the cleaned areas.</li>\r\n</ol>\r\n\r\n<p><strong>How to clean a treadmill</strong></p>\r\n\r\n<p>While&nbsp;<a href=\"https://www.puregym.com/blog/10-reasons-why-you-should-use-a-treadmill/\">exercising on the treadmill</a>&nbsp;focuses mostly on your footwork as you walk or run, there are also several touch points you&rsquo;ll need to consider when cleaning it down.</p>\r\n\r\n<ul>\r\n\t<li>Wipe down the full length of the side grip handles, both on top and underneath</li>\r\n\t<li>Ensure you also wipe over the entire front display, but with a lighter pressure on the display screen</li>\r\n\t<li>Focus in particular on any buttons you will be or have pressed</li>\r\n</ul>\r\n\r\n<p><strong>How to clean the cross trainer</strong></p>\r\n\r\n<p>Again, while the focus may be on your legs while using the&nbsp;<a href=\"https://www.puregym.com/blog/6-reasons-why-you-should-start-using-a-cross-trainer/\">cross trainer</a>, there are also several areas you&rsquo;ll be touching and handling as you work out.</p>\r\n\r\n<ul>\r\n\t<li>Wipe over the entirety of both the moving and static handles, taking care to wipe all sides and over the top end</li>\r\n\t<li>Clean over the front display, paying particular attention to any buttons you may have pressed when turning on or adjusting the incline etc.</li>\r\n</ul>\r\n\r\n<p><strong>How to clean the step machine</strong></p>\r\n\r\n<p>Paying careful attention to which parts of the&nbsp;<a href=\"https://www.puregym.com/blog/stepping-up-to-fitness/\">step machine</a>&nbsp;you&rsquo;ve made contact with will help you ensure a thorough clean.</p>\r\n\r\n<ul>\r\n\t<li>Take particular note of any handles or support bars you touched or used while working out or getting on to the step machine and make sure you&rsquo;ve cleaned them thoroughly</li>\r\n\t<li>Wipe over the whole of the display screen, paying particular attention to the buttons you&rsquo;ve pressed while adjusting the settings</li>\r\n</ul>\r\n\r\n<p>With a little consideration for cleanliness, we can dramatically reduce the risks faced from Covid-19 and other viruses, and create a safer space for all our members.&nbsp;</p>",
-    "thumbnail": "trainsafe_cleaning_blogheader-5.jpg",
-    "publish_date": "2020-08-08T15:09:41.086Z",
-    "last_updated": "2020-08-08T15:09:41.086Z",
-    "author": 2,
-    "slug": "how-to-clean-cardio-machines",
-    "featured": false
-  }
-},
-{
-  "model": "blog.blog",
-  "pk": 2,
-  "fields": {
-    "title": "HOW TO SUPPORT YOUR IMMUNE SYSTEM",
-    "category": "Dieting",
-    "content": "<p>It seems that there&rsquo;s one word which is quite literally on everyone&rsquo;s lips at the moment. The coronavirus or Covid-19 has instilled new meaning to the term &ldquo;going viral&rdquo; and the World Health Organisation has finally classified the global spread of this new kid on the block as a pandemic.</p>\r\n\r\n<p>Remove the middle three letters from this word and ironically, you&rsquo;re left with &ldquo;panic&rdquo; which is perhaps the most immediate and obvious side-effect of the outbreak so far. Uncertainty is the oxygen that fuels this. Which is why we want to make sure that we provide our members with accurate up to date advice and guidance. And what we&rsquo;re hearing is that you want to know how best to protect yourselves and your loved ones.</p>\r\n\r\n<p>We spoke with&nbsp;<em>Dr. Sarah Hattam</em>, who has supported us over the years in creating evidence backed content about wellbeing and health. Dr. Sarah has 25 years&rsquo; experience and is on a mission to fight the pseudo-science in the industry. She is passionate about sharing information that is backed by the latest science and research about how our human bodies and brains really thrive. This is what she had to say:</p>\r\n\r\n<p>First and foremost, it&rsquo;s critical that we all follow the government&rsquo;s advice which you can find&nbsp;<a href=\"https://www.gov.uk/coronavirus\" rel=\"noopener\" target=\"_blank\" title=\"UK GOV\">here</a>&nbsp;if you&#39;re living in the UK. Please make sure to follow the guidelines to help reduce the spread of the virus and help to flatten the curve.</p>\r\n\r\n<p>The most crucial advice is to wash hands frequently with soap and hot water for 30 seconds or 60% alcohol hand sanitiser if this isn&rsquo;t available.</p>\r\n\r\n<p>To always wash hands thoroughly before eating.&nbsp; But we were doing this before anyway right? To avoid touching the face, mouth and eyes and to treat your mobile phone like a third hand, wiping it over with alcohol wipes regularly.</p>\r\n\r\n<p>As with any infection, our bodies have an army of immune cells ready to be deployed to wage war against such bugs. Our immune response is an incredible, but also complex system &ndash; that can become suppressed (weakened) as a result of some of our day to day habits. It is important to note is that there is no magic pill or solution to &lsquo;boost&rsquo; your immune system, and because of the way our immune system is designed to work you really don&rsquo;t want it to be &lsquo;boosted&rsquo;. But there are some simple steps you can take to help support your immune response - giving your immune system the best chance to fight coronavirus quickly and effectively.</p>\r\n\r\n<h3>SLEEP ON IT</h3>\r\n\r\n<p>A lack of sleep is one of the main contributors that can reduce the effectiveness of your immune system.</p>\r\n\r\n<p>Studies show that people who don&#39;t get quality sleep or enough sleep are more likely to get sick after being exposed to a virus [1].</p>\r\n\r\n<p>Not enough sleep can also affect how quickly you recover if you do get sick, as our white blood cells (also known as the body&rsquo;s natural killer cells) become less effective when we are sleep deprived. But we understand that it&rsquo;s not quite as easy as just saying &lsquo;get more sleep&rsquo;. Some simple tips to improve sleep quality are to ditch the devices before bed, avoid caffeine after mid-afternoon and remember to give yourself time to unwind from the day. A clear mind not only can help you drift off into dream land quicker, but also helps you reach the deep phase of sleep which is where the most restorative sleep happens.</p>\r\n\r\n<h3>KEEP MOVING</h3>\r\n\r\n<p>Just like a healthy diet, exercise contributes to good health, and subsequently a healthy immune system.</p>\r\n\r\n<p>Research shows that adults who are physically active are almost half as likely to succumb to minor infections in comparison to sedentary adults [2].</p>\r\n\r\n<p>One reason for this is thought to be because exercise promotes good circulation. Good Circulation allows immune cells to move through your bloodstream and do their job more efficiently, meaning more effective scanning and action to deal with disease-causing bugs.</p>\r\n\r\n<h3>DON&#39;T FORGET VITAMIN D</h3>\r\n\r\n<p>Generally, a lot of emphasis is put on Vitamin A, C and E and their role in immune function. But it&rsquo;s important to not forget Vitamin D. Not only does it play an essential role in supporting healthy bones but has also been recognised as supporting our immune system. Specifically, the immune response to viral infections. However, unsurprisingly 29% of adults have insufficient levels of vitamin D in the winter months [3]. This so-called sunshine vitamin is only manufactured in our body when sunlight hits our skin, making it common for us to be under the recommended 10ug per day.</p>\r\n\r\n<p>Therefore, it&rsquo;s recommended that you include vitamin D rich food sources within your diet.</p>\r\n\r\n<p>Foods such as oily fish, eggs and fortified cereals can help to increase vitamin D levels. But vitamin D supplements are also a good, cost-effective option which have even been shown to reduce respiratory infections and improve asthma control [4].</p>\r\n\r\n<h3>DIAL DOWN STRESS</h3>\r\n\r\n<p>Easy for us to say, right?&nbsp; 21st&nbsp;century life is full on; we&rsquo;re juggling competing demands and the incessant news chatter about the current pandemic isn&rsquo;t exactly helping the situation. But we know that persistent stress and the subsequent release of stress hormones in our blood stream can damp down our immune system&rsquo;s ability to respond effectively to infections [5].</p>\r\n\r\n<p>So, don&rsquo;t forget to keep doing the things that bring you joy, and remember to&nbsp;take a mindful moment or two during a busy day.</p>\r\n\r\n<p>All of these things allow our &ldquo;tend and mend&rdquo; system to be switched on which has many beneficial effects for health&rdquo;</p>\r\n\r\n<h3>BE SENSIBLE ABOUT SUPPLEMENTS</h3>\r\n\r\n<p>Lots of dietary supplements claim to have immune boosting properties. But what does the science actually say? The NHS website says that there is little evidence that supplements such as vitamin C, echinacea or garlic either prevent viral infections or speed up recovery. It&rsquo;s important to remember that most of us can meet our RDA nutrient needs with a varied, balanced diet. So, when it comes to supplements, you could be wasting your money if expensive products make extravagant claims. Remember, if something sounds too good to be true, it usually is!</p>\r\n\r\n<h3>EAT SMART</h3>\r\n\r\n<p>Like any effective army, our immune system fights on its stomach. So, the best and most effective way to fuel a healthy immune system is by eating an abundant variety of fresh fruit and vegetables.</p>\r\n\r\n<p>Eating a rainbow of different coloured fruit and veg will give your body a range of phytonutrients and micronutrients to improve its defences.</p>\r\n\r\n<p>And the good guys in your gut, the health-giving bacteria that make up our microbiome will thank you for ever because you&rsquo;ll be feeding them too.</p>\r\n\r\n<h3>WHEN TO EAT</h3>\r\n\r\n<p>As we get older, our immune system becomes less effective at fighting off potentially harmful invaders. Allowing your digestive system to have a whole 12-hour break from food overnight can keep our digestive system healthy, allow cells to repair themselves and keep our immune system strong.</p>\r\n\r\n<h3>WATCH THE BOOZE</h3>\r\n\r\n<p>Studies show that alcohol weakens our immune system [6] and can also disrupt quality sleep and tends to drive us towards unhealthier food decisions. So, there are lots of reasons why it could be sensible to cut right back or even avoid it altogether.</p>\r\n\r\n<p>So, keep on making healthy lifestyle choices because they will help you to keep your immune system tip-top and aid your recovery if you do get sick.&nbsp;</p>\r\n\r\n<p><strong>Disclaimer:</strong>&nbsp;None of the above is intended to be medical advice. Please consult your GP as usual if you have ongoing medical conditions or take regular medication before making any significant changes.</p>\r\n\r\n<p><em>References:</em></p>\r\n\r\n<ol>\r\n\t<li>Cohen, S., Doyle, W., Alpher, C., Deverts, D., &amp; Turner, R. (2009) Sleep habits and susceptibility to the common cold.&nbsp;<em>Archives of Internal Medicine,&nbsp;</em>169, (1) pp. 62 &ndash; 67.</li>\r\n\t<li>Shephard, R., Shek, P. &amp; DiNubile, N. (1999) Exercise, immunity and susceptibility to infection.&nbsp;<em>The Physician and Sports Medicine.&nbsp;</em>27, (6). pp. 47 &ndash; 71.</li>\r\n\t<li>National Diet and Nutrition Survey: Years 1 to 9 of the Rolling Programme (2008/2009 &ndash; 2016/2017): Time trend and income analyses. Public Health England. Published January 2019</li>\r\n\t<li>Ginde, A., Mansbach, J &amp; Camargo, C. (2009) Vitamin D, respiratory infections, and asthma.&nbsp;<em>Currently Allergy &amp; Asthma Report.&nbsp;</em>9, (1). pp. 81 &ndash; 87.</li>\r\n\t<li>Cohen, S., Tyrrell, D. &amp; Smith, A. (1991) Psychological stress and susceptibility to the common cold.&nbsp;<em>The New England Journal of Medicine,&nbsp;</em>325, (9). pp. 606 &ndash; 612.</li>\r\n\t<li>Sarkar, D., Jung, K. &amp; Wang, H. (2015) Alcohol and the immune system.&nbsp;<em>Alcohol Research,&nbsp;</em>37, (2). pp. 153 &ndash; 155.</li>\r\n</ol>",
-    "thumbnail": "immunesystemblogheader.jpg",
-    "publish_date": "2020-08-08T15:10:56.075Z",
-    "last_updated": "2020-08-12T15:22:46.429Z",
-    "author": 2,
-    "slug": "how-to-support-your-immune-system",
-    "featured": true
-  }
-},
-{
-  "model": "blog.blog",
-  "pk": 3,
-  "fields": {
-    "title": "5 FUNCTIONAL EXERCISES TO MASTER",
-    "category": "Strength Training",
-    "content": "<p><strong>Functional fitness</strong>&nbsp;has become something of a buzz word over the past few years. What is it? In simple terms, I like to define it as full body exercises based around movements and activities you do every day and which work through multiple plains. These can be replicated in the gym, with or without added weight.</p>\r\n\r\n<p>Functional exercises includes&nbsp;movements such as:</p>\r\n\r\n<ul>\r\n\t<li>Squatting</li>\r\n\t<li>Lunging</li>\r\n\t<li>Pushing</li>\r\n\t<li>Pulling</li>\r\n\t<li>Twisting</li>\r\n</ul>\r\n\r\n<p>Incorporating functional exercises into your standard routine allows the entire body to work together to produce optimal movements. There are many benefits of adding functional training exercises to your workouts including: improved balance, better posture and coordination, increased strength, and decreased chance of injury. Tt is important that we include these into our routine, particularly as we age, so that we can stay mobile and to perform everyday activities.</p>\r\n\r\n<p><strong>If you want to improve your ability to perform everyday tasks, build overall strength and balance, and develop your resistance to injury then the following exercises are must-haves.</strong></p>\r\n\r\n<h3>1. DEADLIFT</h3>\r\n\r\n<p><strong>Purpose:</strong>&nbsp;This move will help strengthen all your whole body, particularly the pull muscles required to perform this movement, including your back, quads, glutes, and hamstrings.</p>\r\n\r\n<p><strong>Real-life applicaiton:</strong>&nbsp;The deadlift works every muscle to perform an essential movement - picking something up.</p>\r\n\r\n<p><strong>How do deadlift:</strong></p>\r\n\r\n<ol>\r\n\t<li>To perform the deadlift correctly, start by getting your foot position correct. The easiest way to do that is to start in your normal standing position, jump up and down a couple of times and your natural landing position is your ideal deadlift stance.</li>\r\n\t<li>Stand close to the bar with your shins approximately 2 fingers width away from the bar and your shins as vertical as possible.</li>\r\n\t<li><a href=\"https://www.puregym.com/blog/5-functional-exercises-you-should-include-in-your-training/#anchor-1\">Hip hinge</a>&nbsp;and reach down to touch the bar&nbsp;just wider than the leg width. You can&nbsp;either use a double overhand grip or a 1 hand reverse grip - whichever you prefer.</li>\r\n\t<li>Keeping the lower back&nbsp;straight,&nbsp;start the lift by engaging your glutes, hamstrings and lower back (in that order). Keep your shins straight and vertical throughout the lift. Stand fully erect and that is the deadlift.</li>\r\n</ol>\r\n\r\n<p>Tip: If you are having trouble getting the glutes to fire first then there are a couple of glute activation exercises you can do. The one easiest with no equipment is to lay on your back with the knees bent and thrusting the hips upward.</p>\r\n\r\n<h4>2. POWER CLEAN TO OVERHEAD PRESS</h4>\r\n\r\n<p><strong>Purpose:&nbsp;</strong>To improve total-body explosiveness and&nbsp;build upper-body and core strength.</p>\r\n\r\n<p><strong>Real-life application:&nbsp;</strong>Jumping and standing up fast. The ability to extend your hips, knees, and ankles powerfully is pivotal for applying force. Unlike the bench press, the overhead press has you on your feet,&nbsp;making you work on stabilising your body as well.</p>\r\n\r\n<p><strong>How to perform a Clean to overhead press:</strong></p>\r\n\r\n<ol>\r\n\t<li>Take hold of the bar with about a shoulder-width grip.</li>\r\n\t<li>Hinge your hips while keeping your knees bent. Extend your legs and thrust your hips forward.</li>\r\n\t<li>The bar should explode off from the ground. As it continues up, shrug your traps&nbsp;until it reaches about chest height.</li>\r\n\t<li>Flick your elbows forward and under the bar catching the bar across your collar bones. Settle the bar there (if necessary, widen the grip a little). With a slight dip of the knee, continue the momentum up and thrust the bar overhead.</li>\r\n</ol>\r\n\r\n<p>Can&rsquo;t do the power clean and press? Replace it with this easier substitute: Dumbbell clean to press or kettlebell press.</p>\r\n\r\n<h4>3. SQUAT</h4>\r\n\r\n<p><strong>Purpose:&nbsp;</strong>To strengthen your lower body and enhance athletic posture.</p>\r\n\r\n<p><strong>Real-life application:&nbsp;</strong>Jumping and pushing. Standing from a seated position</p>\r\n\r\n<p><strong>How to perform a&nbsp; squat:</strong></p>\r\n\r\n<ol>\r\n\t<li>For the general squat position, start with the bar in the rack, just below shoulder height. Grab the bar just wider than shoulder width (wider if this is not possible), flex the elbows backwards and you should feel a ridge forming where the traps tighten. This is the perfect position to rest the bar and will avoid you needing a barbell pad or a towel (both of which make for an unstable bar).</li>\r\n\t<li>Pick the bar off the rack and take a step backwards.</li>\r\n\t<li>Position your feet just wider than the deadlift position with the toes turned out a little further (this will allow for a better hip position).</li>\r\n\t<li>Keeping the bar pulled down into the traps, flex your lats and keep tight as you descend till your hips are positioned below the knees. You should go as low as your body will comfortably allow for a full range of motion but avoid going so low that you get what they call &ldquo;Butt Wink&rdquo;. At the bottom of the squat pause for a second then drive hard back to a standing position.</li>\r\n</ol>\r\n\r\n<p>Can&rsquo;t do the squat? Replace it with this easier substitute: Step up or split squat (static lunge).<strong>&nbsp;</strong>These two strengthen your quads, glutes, and hamstrings thoroughly.</p>\r\n\r\n<h4>4. CHIN UP</h4>\r\n\r\n<p><strong>Purpose:</strong>&nbsp;To build upper body strength and relative strength.</p>\r\n\r\n<p><strong>Real-life application:</strong>&nbsp;Climbing, dragging, and wrestling - chin ups force you to master your own body weight while working the entire upper body.</p>\r\n\r\n<p><strong>How to perform a chin up:&nbsp;</strong>A&nbsp;chin up can be performed safely in many ways. There&rsquo;s wide grip, narrow grip, palms forward, palms backward, and palms neutral - all will work the back muscles.</p>\r\n\r\n<ol>\r\n\t<li>Start by taking hold of the bar. You can use a palms towards you grip or a palms away from you grip. I prefer the palms facing me as I find I get a fuller range of motion through the lift.</li>\r\n\t<li>From your handing position, engage your shoulder muscles, and pull yourself up to the bar by&nbsp;concentrating on flexing your lats and pulling my elbows down and back behind you, as if you were elbowing someone behind&nbsp;you.&nbsp;</li>\r\n\t<li>Once you get your chin or chest to the bar, you can reverse the movement. Try to lower yourself slowly back to starting hanging position and keep the lats engaged.</li>\r\n</ol>\r\n\r\n<p>If you struggle with this move use a step to get into the top position and work on the decent. This is one of the best ways to get stronger at chin ups.</p>\r\n\r\n<p>Can&rsquo;t do the chin up? Replace it with this easier substitute, a bent-over row or one-arm dumbbell row. Strong pulling movements helps improve posture and prevents shoulder pain.</p>\r\n\r\n<h4>5. FARMERS WALK</h4>\r\n\r\n<p><strong>Purpose:&nbsp;</strong>To build and strengthen the core whilst moving and improve posterior chain stability.</p>\r\n\r\n<p><strong>Real-life application:&nbsp;</strong>Walking, carrying, climbing stairs.</p>\r\n\r\n<p><strong>How to perform a farmers walk:</strong></p>\r\n\r\n<ol>\r\n\t<li>The farmers walk is relatively easy to perform. Pick up a weight in each hand and walk with it. If you want to perform this with much heavier weight some technique is necessary &ndash; The Worlds Strongest Man walks over 150kg per hand!</li>\r\n\t<li>Make sure to keep your chest up and your core tight.</li>\r\n</ol>\r\n\r\n<p>Can&rsquo;t do the farmers walk? Start with a static lunge or a lighter weight farmers walk.</p>\r\n\r\n<p>Doing the above 5 moves regularly 2 to 3 times per week for 3 sets of 8 to 12 repetitions will help you through daily life long into old age. These are the movements we start to struggle with as we age such as getting up out of a chair, and walking with loads, so performing these exercises now will be beneficial in helping you stay healthy and strong.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Here is an additional exercise if you can&rsquo;t perform the deadlift&nbsp;or clean:</p>\r\n\r\n<h4>HIP HINGE</h4>\r\n\r\n<p>The hip hinge when performed correctly is very important in both the deadlift and the clean &ndash; here&rsquo;s how to perform it correctly.</p>\r\n\r\n<p>The first thing to understand is the difference between a hinge and a squat:</p>\r\n\r\n<ul>\r\n\t<li>Squat: Maximal knee bend and maximal hip bend</li>\r\n\t<li>Hinge: Minimal knee bend and maximal hip bend</li>\r\n</ul>\r\n\r\n<p>When first learning the hip hinge, most people will want to bend at the knees when, in fact, they need to simply focus on pushing the butt back.</p>\r\n\r\n<p><strong>How To Hip Hinge:</strong></p>\r\n\r\n<ol>\r\n\t<li>Start as close to the wall as needed (about 6-8 inches away fromt he wall). Begin by standing tall with feet about shoulder-width apart. Keep your chest up, shoulder blades retracted in toward the spine and head up and facing forward. I like to have people &ldquo;feel the hinge&rdquo; by placing their hands palms-up and gently pressing on the crease of the hip flexors just below the hip bone.</li>\r\n\t<li>Brace the abs and focus on moving the hips back until your butt touches the wall. You should feel the hips fold down on the hands as you hinge forward and remember, there should be very little bend in the knees!</li>\r\n\t<li>As you become more comfortable with your hinge you can slowly move further away from the wall.</li>\r\n</ol>",
-    "thumbnail": "deadlift-feature.jpg",
-    "publish_date": "2020-08-08T15:13:24.387Z",
-    "last_updated": "2020-08-12T07:45:36.455Z",
-    "author": 2,
-    "slug": "5-functional-exercises-to-master",
-    "featured": true
-  }
-},
-{
-  "model": "blog.blog",
-  "pk": 4,
-  "fields": {
-    "title": "UPPER BODY DUMBBELL WORKOUT",
-    "category": "Strength Training",
-    "content": "<p>Get an effective upper body workout with a friend using a pair of dumbbells. Watch the full workout featuring personal trainer</p>\r\n\r\n<p>Push ups are a great way to increase your upper body strength and working out with a partner is great way to boost motivation and overall performance.</p>\r\n\r\n<p>Start off by getting in to the full press up position. From here touch your shoulder with the opposite hand on both sides before performing the press up. Once back&nbsp;at the top of the movement, touch hands with your partner. Complete 10 reps, the main challenge is trying to keep in time with your partner.</p>\r\n\r\n<h4>BICEP CURL INTO SHOULDER PRESS - 10 REPS</h4>\r\n\r\n<p>By combining these two popular upper body exercises you will be targeting more muscles groups at one time, so it&#39;s a ground all round upper body move to add to your upper body routine especially if you&#39;re short on time.&nbsp;</p>\r\n\r\n<p>To perform the bicep curl into shoulder press move, grab a set of dumbbells. Stand upright with feet hip-width distance apart with your abs tight. Keeping your elbows tucked into your side, curl the dumbbell up towards your shoulders. From here rotate your arms as you push the dumbbells up and over your head. Slowly lower your dumbbells to the side of your ears, and return back to starting position. Avoid using momentum from your body. Complete a total of 10 reps before moving on to the next exercise.</p>\r\n\r\n<h4>BENT OVER ROW - 10 REPS</h4>\r\n\r\n<p>A great exercise primarily targeting the middle back. The increased strength gained from performing this exercise can help to improve your posture and reduce the risk of lower back injuries.</p>\r\n\r\n<p>Grab one dumbbell and move to a bench or step. Start with placing the other hand on the bench or step, and the same side knee on the bench. Keeping your back straight, pull the dumbbell in towards your abs. Squeeze your back muscles at the top of the movement and slowly lower the weight back down. Complete 10 reps for each arm.</p>\r\n\r\n<h4>OVERHEAD TRICEP EXTENSION - 10 REPS</h4>\r\n\r\n<p>This move is great for working the triceps whilst working your core. &nbsp;</p>\r\n\r\n<p>Using both hands hold the dumbbell above your head. Lower the weight slowly keeping your elbows facing forward and squeeze through the triceps to return to the starting position. Aim for a total of 10 reps.</p>\r\n\r\n<h4>LATERAL RAISE - 12 REPS</h4>\r\n\r\n<p>This exercise targets your shoulders, but will also work your core, upper back and arms.&nbsp;</p>\r\n\r\n<p>Grab a dumbbell in each hand. Keeping your core tight and your chest up, slowly raise the dumbbells up to shoulder height keeping elbows bent. Slowly lower the dumbbells back to above</p>\r\n\r\n<p>your hips. Keep the movement controlled throughout. Perform 12 reps before heading into the final</p>\r\n\r\n<p>exercise.</p>\r\n\r\n<h4>DUMBBELL SNATCH - 10 REPS</h4>\r\n\r\n<p>This dynamic, compound move is going to work the whole body and improve your power and coordination.&nbsp;</p>\r\n\r\n<p>Position a dumbbell on the floor in between your legs. Take up a starting squat position with your feet slightly wider than shoulder width apart, toes slightly turned out. From this position, grab the dumbbell and drive upwards powerfully using your legs and thrust your hips forward. This should give you the momentum you need to lift the dumbbell above your head and hold it at the top. Make sure to keep the dumbbell close to your body throughout the whole movement. Return back to squat position as you lower the dumbbell back to the floor.</p>\r\n\r\n<p>Alternate sides until 10 reps have been completed on each arm.</p>\r\n\r\n<p>That completes the workout. Give it a go with a friend next time you hit the gym!</p>",
-    "thumbnail": "extra_images_0006_kaybeth.jpg",
-    "publish_date": "2020-08-08T15:15:07.095Z",
-    "last_updated": "2020-09-02T10:46:57.833Z",
-    "author": 2,
-    "slug": "upper-body-dumbbell-workout",
-    "featured": false
-  }
-},
-{
-  "model": "blog.blog",
-  "pk": 5,
-  "fields": {
-    "title": "New to this",
-    "category": "Members",
-    "content": "<p>Hi everyone,</p>\r\n\r\n<p>I am very new to this blogging thing and to gym in general.</p>\r\n\r\n<p>I have got my self some gear and I ready for the gym.</p>\r\n\r\n<p>What would be the best way to start?</p>\r\n\r\n<p>Thanks all</p>\r\n\r\n<p>Chat soon</p>",
-    "thumbnail": "me.jpg",
-    "publish_date": "2020-08-22T10:00:31.733Z",
-    "last_updated": "2020-09-02T10:41:33.938Z",
-    "author": 8,
-    "slug": "new-to-this",
-    "featured": false
-  }
-},
-{
-  "model": "blog.blogcomment",
-  "pk": 1,
-  "fields": {
-    "user": 2,
-    "blog": 3,
-    "timestamp": "2020-08-14T11:38:12.336Z",
-    "content": "testing"
-  }
-},
-{
-  "model": "blog.blogcomment",
-  "pk": 2,
-  "fields": {
-    "user": 2,
-    "blog": 3,
-    "timestamp": "2020-08-14T11:45:07.595Z",
-    "content": "another test"
-  }
-},
-{
-  "model": "blog.blogcomment",
-  "pk": 3,
-  "fields": {
-    "user": 8,
-    "blog": 1,
-    "timestamp": "2020-08-19T17:33:33.161Z",
-    "content": "I liked this blog, good work"
-  }
-},
-{
-  "model": "blog.blogcomment",
-  "pk": 4,
-  "fields": {
-    "user": 2,
-    "blog": 5,
-    "timestamp": "2020-08-22T10:03:47.945Z",
-    "content": "Hi Clinton, Welcome and congrats on your first Blog, Have a look in the Features blogs there are a few Good one on how to start, Try 5 Functional Exercises To Master, and go from there. Good Luck"
-  }
-},
-{
-  "model": "blog.blogview",
-  "pk": 3,
-  "fields": {
-    "user": 2,
-    "blog": 3,
-    "timestamp": "2020-08-12T07:44:48.829Z"
-  }
-},
-{
-  "model": "blog.blogview",
-  "pk": 4,
-  "fields": {
-    "user": 2,
-    "blog": 4,
-    "timestamp": "2020-08-12T07:45:44.774Z"
-  }
-},
-{
-  "model": "blog.blogview",
-  "pk": 5,
-  "fields": {
-    "user": 2,
-    "blog": 1,
-    "timestamp": "2020-08-14T13:47:26.735Z"
-  }
-},
-{
-  "model": "blog.blogview",
-  "pk": 6,
-  "fields": {
-    "user": 2,
-    "blog": 2,
-    "timestamp": "2020-08-15T15:07:08.870Z"
-  }
-},
-{
-  "model": "blog.blogview",
-  "pk": 8,
-  "fields": {
-    "user": 8,
-    "blog": 1,
-    "timestamp": "2020-08-19T17:33:03.238Z"
-  }
-},
-{
-  "model": "blog.blogview",
-  "pk": 9,
-  "fields": {
-    "user": 8,
-    "blog": 5,
-    "timestamp": "2020-08-22T10:01:02.406Z"
-  }
-},
-{
-  "model": "blog.blogview",
-  "pk": 10,
-  "fields": {
-    "user": 2,
-    "blog": 5,
-    "timestamp": "2020-08-22T10:01:50.363Z"
-  }
-},
-{
-  "model": "blog.blogview",
-  "pk": 11,
-  "fields": {
-    "user": 8,
-    "blog": 3,
-    "timestamp": "2020-08-24T18:03:04.206Z"
-  }
-},
-{
-  "model": "blog.like",
-  "pk": 2,
-  "fields": {
-    "user": 8,
-    "blog": 3
-  }
-}
 ]
