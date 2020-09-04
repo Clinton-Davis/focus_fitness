@@ -1,0 +1,113 @@
+[
+{
+  "model": "programs.program",
+  "pk": 1,
+  "fields": {
+    "slug": "dieting",
+    "title": "Dieting",
+    "description": "<h3><strong>Dieting</strong></h3>\r\n\r\n<p>Dieting is the practice of eating food in a regulated and supervised fashion to decrease, maintain, or increase body weight, or to prevent and treat diseases, such as diabetes and obesity.</p>\r\n\r\n<p>A restricted diet is more often pursued by those wanting to lose weight. Continuous dieting is recommended by US guidelines for obese or diabetic individuals to reduce body weight and improve general health.</p>\r\n\r\n<p>Some people follow a diet to gain weight (usually in the form of muscle). Diets can also be used to maintain a stable body weight and improve health.</p>\r\n\r\n<p>Several diets to promote weight loss have been devised: low-fat, low-carbohydrate, low-calorie, very low calorie and more recently flexible dieting.</p>\r\n\r\n<p>A meta-analysis of six randomized controlled trials found no difference between low-calorie, low-carbohydrate, and low-fat diets, with a 2&ndash;4 kilogram weight loss over 12&ndash;18 months in all studies.</p>\r\n\r\n<p>At two years, all calorie-reduced diet types cause equal weight loss irrespective of the macro nutrients emphasized.</p>\r\n\r\n<p>In general, the most effective diet is any which reduces calorie consumption. Several diets are effective for weight loss of obese individuals with similar results, diet success being most predicted by adherence with little effect of the type or brand of diet.</p>\r\n\r\n<p>Dieting appears more effective than exercise for weight loss, but combining both provides even greater long-term results.</p>",
+    "thumbnail": "dieting_1.jpeg",
+    "allowed_memberships": [
+      2
+    ]
+  }
+},
+{
+  "model": "programs.program",
+  "pk": 2,
+  "fields": {
+    "slug": "strength-training",
+    "title": "Strength Training",
+    "description": "<p>Strength training involves the performance of physical exercises which are designed to improve strength and endurance.</p>\r\n\r\n<p>It is often associated with the use of weights but can take a variety of different forms.</p>\r\n\r\n<p>When properly performed, strength training can provide significant functional benefits and improvement in overall health and well-being, including increased bone, muscle, tendon, and ligament strength and toughness, improved joint function, reduced potential for injury, increased bone density, increased metabolism, increased fitness and improved cardiac function.</p>\r\n\r\n<p>Training commonly uses the technique of progressively increasing the force output of the muscle through incremental weight increases and uses a variety of exercises and types of equipment to target specific muscle groups.</p>\r\n\r\n<p>Strength training is primarily an anaerobic activity, although some proponents have adapted it to provide the benefits of aerobic exercise through circuit training.</p>",
+    "thumbnail": "training-strength.jpg",
+    "allowed_memberships": [
+      2
+    ]
+  }
+},
+{
+  "model": "programs.program",
+  "pk": 3,
+  "fields": {
+    "slug": "endurance-training",
+    "title": "Endurance training",
+    "description": "<p><strong>Endurance training</strong>&nbsp;is the act of exercising to increase&nbsp;endurance.</p>\r\n\r\n<p>The term endurance training generally refers to&nbsp;training the aerobic system&nbsp;as opposed to the&nbsp;anaerobic&nbsp;system. The need for endurance in sports is often predicated as the need of cardiovascular and simple muscular endurance, but the issue of endurance is far more complex.</p>\r\n\r\n<p>Endurance can be divided into two categories including:</p>\r\n\r\n<p>general endurance and specific endurance. It can be shown that endurance in sport is closely tied to the execution of skill and technique. A well conditioned athlete can be defined as, the athlete who executes his or her technique consistently and effectively with the least effort.&nbsp;Key for measuring endurance are heart rate, power in&nbsp;cycling&nbsp;and pace in&nbsp;running.</p>",
+    "thumbnail": "hipcravo.jpg",
+    "allowed_memberships": [
+      2
+    ]
+  }
+},
+{
+  "model": "programs.workout",
+  "pk": 1,
+  "fields": {
+    "slug": "What_Happens_When_You_Burn_Fat",
+    "title": "What Happens Inside When You Burn Fat",
+    "Program": 1,
+    "position": 1,
+    "video_url": "https://res.cloudinary.com/dayietcj3/video/upload/v1596471443/What_Happens_Inside_Your_Body_When_You_Burn_Fat_copy_hvusgi.mp4",
+    "thumbnail": "burn-fat.jpg"
+  }
+},
+{
+  "model": "programs.workout",
+  "pk": 2,
+  "fields": {
+    "slug": "Lose_Belly_Fat_Effortlessly",
+    "title": "Lose Belly Fat Effortlessly",
+    "Program": 1,
+    "position": 2,
+    "video_url": "https://res.cloudinary.com/dayietcj3/video/upload/v1596471553/14_Tips_to_Lose_Belly_Fat_Effortlessly_zxzsed.mp4",
+    "thumbnail": "loose_fat.jpg"
+  }
+},
+{
+  "model": "programs.workout",
+  "pk": 3,
+  "fields": {
+    "slug": "Intermittent_Fasting__Top_5_Mistakes",
+    "title": "Intermittent Fasting Top 5 Mistakes",
+    "Program": 1,
+    "position": 3,
+    "video_url": "https://res.cloudinary.com/dayietcj3/video/upload/v1596471671/Intermittent_Fasting__Top_5_Mistakes-_Thomas_DeLauer_eyaqdn.mp4",
+    "thumbnail": "IFasting.jpg"
+  }
+},
+{
+  "model": "programs.workout",
+  "pk": 4,
+  "fields": {
+    "slug": "How_To_Start_Eating_Healthy",
+    "title": "How To Start Eating Healthy",
+    "Program": 1,
+    "position": 4,
+    "video_url": "https://res.cloudinary.com/dayietcj3/video/upload/v1596471621/How_To_Start_Eating_Healthy_LIFE_CHANGING_rmolj6.mp4",
+    "thumbnail": "keto_eNpmYrR.jpg"
+  }
+},
+{
+  "model": "programs.workout",
+  "pk": 5,
+  "fields": {
+    "slug": "Resistance_Training_Principle",
+    "title": "Basics of Resistance Training Principle",
+    "Program": 2,
+    "position": 1,
+    "video_url": "https://res.cloudinary.com/dayietcj3/video/upload/v1595865363/Basics_of_Resistance_Training_Principles_somelj.mp4",
+    "thumbnail": "womenblog2_MqrY5PM.jpg"
+  }
+},
+{
+  "model": "programs.workout",
+  "pk": 6,
+  "fields": {
+    "slug": "focus_10_min_sweat",
+    "title": "10 Min Sweat Workout",
+    "Program": 3,
+    "position": 1,
+    "video_url": "https://res.cloudinary.com/dayietcj3/video/upload/v1596471263/focus_10_min_sweet_t2k1jg.mp4",
+    "thumbnail": "bruce-mars-gJtDg6WfMlQ-unsplash.jpg"
+  }
+}
+]
