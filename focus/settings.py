@@ -2,10 +2,10 @@ import os
 import environ
 import dj_database_url
 
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['*']
 
-if DEBUG is False:
+if DEBUG is True:
     env = environ.Env()
     # read the .env file
     environ.Env.read_env()
