@@ -52,7 +52,7 @@ def profile_subscriptions(request):
 
 
 def ProfileDetail(request):
-    """Displaying User Order history and edit address froms """
+    """Displaying User Order history and edit address froms (Login form Code Institute)"""
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
@@ -61,7 +61,7 @@ def ProfileDetail(request):
             form.save()
             messages.success(
                 request, 'Your Shipping details have been updated')
-    # This line below populates forms with instance of profile saved details
+
     form = UserProfileAddressForm(instance=profile)
     orders = profile.Orders.all()
 
@@ -77,6 +77,7 @@ def ProfileDetail(request):
 def OrderHistory(request, order_number):
     """
     Gets a past oder and displays if with a message
+    (Login and Code form Code Institute)
     """
     order = get_object_or_404(Order, order_number=order_number)
     messages.info(request, (

@@ -63,6 +63,7 @@ def CategoryView(request, category):
 
 
 class BlogDetailView(DetailView):
+    """(Logic by Mat @ JustDjango)"""
     model = Blog
 
     def post(self, *args, **kwargs):
@@ -96,7 +97,7 @@ class BlogDetailView(DetailView):
 class BlogCreateView(CreateView):
     """
     Uses the 'blog_form.html' as it needs the inputs,
-    The context is changed to 'create'
+    The context is changed to 'create', (Logic by Mat @ JustDjango)
     """
     form_class = BlogForm
     model = Blog
@@ -117,7 +118,7 @@ class BlogCreateView(CreateView):
 class BlogUpdateView(UpdateView):
     """
     Uses the 'blog_form.html' as it needs the inputs,
-    The context is changed to 'Update'
+    The context is changed to 'Update', (Logic by Mat @ JustDjango)
     """
     form_class = BlogForm
     model = Blog
@@ -139,7 +140,8 @@ class BlogDeleteView(DeleteView):
 @ login_required()
 def like(request, slug):
     """ Checks to see if the use has liked the blog
-    If True, then delete the like if False then create the like"""
+    If True, then delete the like if False then create the like
+    (Logic and code by Mat @ JustDjango)"""
 
     blog = get_object_or_404(Blog, slug=slug)
     like_qs = Like.objects.filter(user=request.user, blog=blog)

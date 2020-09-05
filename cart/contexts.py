@@ -27,7 +27,8 @@ def get_loged_user_discount(request):
 def global_context(request):
     """ Makes the global_context context avaible to all apps.
         This hold the cart sessions and does the math for
-        the cart total discount and tax 
+        the cart total discount and tax, 
+        (Login form Code Institute adapted to work for Focus)
     """
     cart_items = []
     total = 0

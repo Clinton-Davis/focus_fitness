@@ -16,6 +16,7 @@ import json
 
 @require_POST
 def cache_checkout_data(request):
+    """(Login and Code for Code Institute)"""
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -39,6 +40,7 @@ def checkout(request):
         If the except happens an error message happens and redirect back to cart. 
         If the user is authenticated looks for saved data and initialise the form with 
         saved data Redirect back to products. 
+        (Login and Code for Code Institute)
     """
     template = 'checkout/checkout.html'
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
@@ -151,6 +153,7 @@ def checkout(request):
 def checkout_success(request, order_number):
     """
     Handle successful checkouts
+    (Login and Code for Code Institute)
     """
     template = 'checkout/checkout_success.html'
     save_info = request.session.get('save_info')
