@@ -12,6 +12,7 @@ def add_to_cart(request, item_id):
     """ Adds a specified product to cart, Checks for sizes and quantity of the sizes
     if sizes are the same it adds to quantity, addes to cart and redirecs to products page
     """
+    # def post(self, request, *args, **kwargs):
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
@@ -45,37 +46,6 @@ def add_to_cart(request, item_id):
             cart[item_id] = quantity
             messages.success(request, f'Added {product.name}')
 
-    request.session['cart'] = cart
-    return redirect(reverse('products:products'))
-
-
-def adjust_cart(request, item_id):
-    """ Adjust the quantity of the specified product to the specified amount """
-    product = get_object_or_404(Product, pk=item_id)
-    quantity = int(request.POST.get('quantity'))
-    size = None
-    if 'product_size' in request.POST:
-        size = request.POST['product_size']
-    cart = request.session.get('cart', {})
-    if size:
-        if quantity > 0:
-            cart[item_id]['items_by_size'][size] = quantity
-            messages.success(
-                request, f'Updated size {size.upper()} - {product.name}')
-        else:
-            del cart[item_id]['items_by_size'][size]
-            if not cart[item_id]['items_by_size']:
-                cart.pop(item_id)
-            messages.warning(
-                request, f'Removed size {size.upper()} - {product.name}')
-    else:
-        if quantity > 0:
-            cart[item_id] = quantity
-            messages.success(
-                request, f'Updated {product.name}')
-        else:
-            cart.pop[item_id]
-            messages.warning(request, f'Removed {product.name}')
     request.session['cart'] = cart
     return redirect(reverse('cart_view'))
 
