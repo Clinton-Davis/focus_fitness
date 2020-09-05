@@ -132,13 +132,13 @@ if DEBUG is True:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-
     # DATABASES = {
-    #     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    #     'default': dj_database_url.parse(env('DATABASE_URL'))
     # }
+
 else:
     DATABASES = {
-        'default': dj_database_url.parse(env('DATABASE_URL'))
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 
 

@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.db.models import Q
+from django.views import View
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Blog, BlogComment, BlogView, Like
 from .forms import BlogCommentForm, BlogForm, Category
@@ -23,26 +24,28 @@ class BlogListView(ListView):
         return context
 
 
-def search_blog(request):
+class SearchView(View):
     template_name = 'blog/blog_search.html'
-    all_blogs = Blog.objects.all()
-    category_menu = Category.objects.all()
-    query = None
 
-    if 's' in request.GET:
-        query = request.GET['s']
-        if not query:
-            messages.error(request, "Sorry! No Input? Try again Please")
-            return redirect(reverse('blog:list'))
-        search = Q(title__icontains=query) | Q(content__icontains=query)
-        all_blogs = all_blogs.filter(search)
+    def get(self, request, *args, **kwargs):
+        all_blogs = Blog.objects.all()
+        category_menu = Category.objects.all()
+        query = None
 
-    context = {
-        'search_words': query,
-        'all_blogs': all_blogs,
-        'category_menu': category_menu,
-    }
-    return render(request, 'blog/blog_search.html', context)
+        if 's' in request.GET:
+            query = request.GET['s']
+            if not query:
+                messages.error(request, "Sorry! No Input? Try again Please")
+                return redirect(reverse('blog:list'))
+            search = Q(title__icontains=query) | Q(content__icontains=query)
+            all_blogs = all_blogs.filter(search)
+
+        context = {
+            'search_words': query,
+            'all_blogs': all_blogs,
+            'category_menu': category_menu,
+        }
+        return render(request, 'blog/blog_search.html', context)
 
 
 def CategoryView(request, category):
@@ -60,6 +63,7 @@ def CategoryView(request, category):
 
 
 class BlogDetailView(DetailView):
+    """(Logic by Mat @ JustDjango)"""
     model = Blog
 
     def post(self, *args, **kwargs):
@@ -93,7 +97,7 @@ class BlogDetailView(DetailView):
 class BlogCreateView(CreateView):
     """
     Uses the 'blog_form.html' as it needs the inputs,
-    The context is changed to 'create'
+    The context is changed to 'create', (Logic by Mat @ JustDjango)
     """
     form_class = BlogForm
     model = Blog
@@ -114,7 +118,7 @@ class BlogCreateView(CreateView):
 class BlogUpdateView(UpdateView):
     """
     Uses the 'blog_form.html' as it needs the inputs,
-    The context is changed to 'Update'
+    The context is changed to 'Update', (Logic by Mat @ JustDjango)
     """
     form_class = BlogForm
     model = Blog
@@ -136,7 +140,8 @@ class BlogDeleteView(DeleteView):
 @ login_required()
 def like(request, slug):
     """ Checks to see if the use has liked the blog
-    If True, then delete the like if False then create the like"""
+    If True, then delete the like if False then create the like
+    (Logic and code by Mat @ JustDjango)"""
 
     blog = get_object_or_404(Blog, slug=slug)
     like_qs = Like.objects.filter(user=request.user, blog=blog)

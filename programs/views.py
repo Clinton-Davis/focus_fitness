@@ -29,7 +29,8 @@ class ProgramDetailView(DetailView):
 class WorkoutDetailView(View):
     """ getting the workouts that are associated with the programs 
         and filtering by slug. Checks to see if the memebership type 
-        is allowed to be viewed, if true, it adds it to context."""
+        is allowed to be viewed, if true, it adds it to context.
+         (Logic and code from Mat @ JustDjango)"""
 
     def get(self, request, program_slug, workout_slug, *args, **kwargs):
         program_qs = Program.objects.filter(slug=program_slug)

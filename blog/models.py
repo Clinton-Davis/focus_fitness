@@ -62,6 +62,7 @@ class Blog(models.Model):
 def create_slug(instance, new_slug=None):
     """
     Slugifys the title, if slug exists it adds a id to make it unique
+    (Logic by CodingEntrepreneurs)
     """
     slug = slugify(instance.title)
     if new_slug is not None:

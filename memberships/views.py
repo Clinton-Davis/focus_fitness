@@ -11,7 +11,7 @@ import stripe
 
 
 def get_user_membership(request):
-    """gets the users current membership"""
+    """gets the users current membership (Logic and code by Mat @ JustDjango)"""
     user_membership_qs = UserMembership.objects.filter(user=request.user)
     if user_membership_qs.exists():
         return user_membership_qs.first()
@@ -19,7 +19,8 @@ def get_user_membership(request):
 
 
 def get_user_subscription(request):
-    """Gets the subcription name"""
+    """Gets the subcription name (Logic and code by Mat @ JustDjango)"""
+    user_membership_qs = UserMembership.objects.filter(user=request.user)
     user_subscription_qs = Subscription.objects.filter(
         user_membership=get_user_membership(request))
     if user_subscription_qs.exists():
@@ -29,7 +30,7 @@ def get_user_subscription(request):
 
 
 def get_selected_membership(request):
-    """Gets the membership type from the session"""
+    """Gets the membership type from the session (Logic and code by Mat @ JustDjango)"""
     membership_type = request.session['selected_membership_type']
     selected_membership_qs = Membership.objects.filter(
         membership_type=membership_type)
@@ -39,6 +40,7 @@ def get_selected_membership(request):
 
 
 class MembershipSelectView(ListView):
+    """List the selected membership (Logic and code by Mat @ JustDjango)"""
     model = Membership
     template_name = 'memberships/membership_list.html'
 
@@ -72,7 +74,8 @@ class MembershipSelectView(ListView):
 
 
 def paymentview(request):
-    """Provide user with payment form and payment"""
+    """Provide user with payment form and payment Logic and code by Mat @ JustDjango """
+
     user_membership = get_user_membership(request)
     try:
         selected_membership = get_selected_membership(request)
@@ -109,7 +112,7 @@ def paymentview(request):
 
 
 def updatetransaction(request, subscription_id):
-    """ Updating the UserMembership model on focus backend """
+    """ Updating the UserMembership model on focus backend (Logic and code by Mat @ JustDjango) """
     user_membership = get_user_membership(request)
     selected_membership = get_selected_membership(request)
 
@@ -132,10 +135,15 @@ def updatetransaction(request, subscription_id):
 
 
 def cancelsubscription(request):
+    """
+    Checks to see it user is active, if true retrieves stripe id and deletes it,
+    Then sets user active to false, Then turns user membership back to free.
+    (Logic and code by Mat @ JustDjango)
+    """
     user_sub = get_user_subscription(request)
 
     if user_sub.active == False:
-        message.infor(request, "You dont have a active membership")
+        messages.info(request, "You dont have a active membership")
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     sub = stripe.Subscription.retrieve(user_sub.stripe_subscription_id)
     sub.delete()

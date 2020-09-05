@@ -1,4 +1,8 @@
-<p class="aw text-center font-lrg">{{ item.product.name }}</p>
+<a class="text-bk"
+    title="Click to change {% if item.product.has_sizes %} Size and/or Quanty {% else %} Quanty {% endif %}"
+    href="{% url 'products:product_detail' item.product.id %}">
+    <p class="aw text-center font-lrg">{{ item.product.name }}</p>
+</a>
 {% if item.product.has_sizes %}
 <p class="aw text-center pl-2">Size: {{ item.size|upper }}</p>
 {% else %}
