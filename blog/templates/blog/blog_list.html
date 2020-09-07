@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load user_agents %}
 
 {% block head_title %} - All Blogs {% endblock head_title %}
 {% block content %}
@@ -68,13 +69,45 @@
             {% for blog in all_blogs %}
             {% if blog.featured != True %}
             {% if blog.category != 'Members' %}
-            {% if not forloop.counter|divisibleby:2  %}
-            <p class="text-wht">{{ request.headers.user_agent }}</p>
+            {% if screen_size == True %}
             <a href="{{ blog.get_absolute_url }}">
                 <div class="card mb-3" style="max-width: 830px;">
                     <div class="row no-gutters">
                         <div class="col-md-4 bg-black">
                             <img src="{{ blog.thumbnail.url }}" class="card-img blog-list-img" alt="...">
+                        </div>
+                        <div class="col-md-8 bg-black">
+                            <div class="card-body bg-black">
+                                <h5 class="card-title text-center text-wht">{{ blog.title|title }}</h5>
+                                <small class="text-muted">{{ blog.category }}</small>
+                                <small class="card-text text-wht">{{ blog.content|safe|truncatechars:100 }}</small>
+                                <span class="text-mute float-right"><small class="text-muted"> Posted:
+                                        {{ blog.publish_date|timesince }}</small></span>
+                                <div class="row w-100 justify-content-around">
+                                    <div class="text-center text-wht col-2"><span><i class="text-grn fad fa-eye"></i>
+                                            {{ blog.get_view_count }}</span></div>
+                                    <div class="text-center text-wht col-2"><span><i
+                                                class="text-primary fad fa-thumbs-up"></i>
+                                            {{ blog.get_like_count }}</span><br></div>
+                                    <div class="text-center text-wht col-2"><span><i
+                                                class="text-ylw fad fa-comments-alt"></i>
+                                            {{ blog.get_comment_count }}</span></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </a>
+            {% else %}
+            {% if not forloop.counter|divisibleby:2  %}
+            <a href="{{ blog.get_absolute_url }}">
+                <div class="card mb-3" style="max-width: 830px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4 bg-black">
+                            <img src="{{ blog.thumbnail.url }}" class="card-img blog-list-img"
+                                alt="{{ blog.title|title }}">
                         </div>
                         <div class="col-md-8 bg-black">
                             <div class="card-body bg-black">
@@ -124,12 +157,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <img src="{{ blog.thumbnail.url }}" class="card-img blog-list-img" alt="...">
+                        <div class="col-md-4 bg-black">
+                            <img src="{{ blog.thumbnail.url }}" class="card-img blog-list-img"
+                                alt="{{ blog.title|title }}">
                         </div>
                     </div>
                 </div>
             </a>
+            {% endif%}
             {% endif %}
             {% endif %}
             {% endif %}

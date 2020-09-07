@@ -5,6 +5,25 @@ from products.models import Product
 from memberships.views import get_user_membership
 from marketing.models import NewsLetterSignups
 from marketing.forms import NewLetterEmailSignupForm
+from django_user_agents.utils import get_user_agent
+
+
+def from_settings(request):
+    """ This Keeps the admin 'ENVIRONMENT_NAME' in the golbal context """
+    return {
+        "ENVIRONMENT_NAME":  settings.ENVIRONMENT_NAME,
+    }
+
+
+def get_size(request):
+    """Checks to see if user is on moble or not"""
+    user_agent = get_user_agent(request)
+    print(user_agent)
+    if user_agent.is_mobile:
+        screen_size = True
+    else:
+        screen_size = False
+    return screen_size
 
 
 def get_loged_user_discount(request):
@@ -26,9 +45,12 @@ def get_loged_user_discount(request):
 
 def global_context(request):
     """ Makes the global_context context avaible to all apps.
-        This hold the cart sessions and does the math for
-        the cart total discount and tax, 
-        (Login form Code Institute adapted to work for Focus)
+        create a seession var called cart
+        adds the items to cart with with all product data
+        calls the 'get_loged_user_discount' fuction to check the user membership static
+        does a the maths with delivery charges/ Tax amount/ and discounts if applicable
+        Calls the 'get_size' fuction to get screen size and adds into global context
+        (Cart Login from Code Institute adapted to work for Focus)
     """
     cart_items = []
     total = 0
@@ -64,6 +86,7 @@ def global_context(request):
             discount = total * Decimal(settings.SUB_DISCOUNT_PERCENTAGE / 100)
     else:
         discount = 0
+    screen_size = get_size(request)
     cart_total = total
     sub_total = cart_total - discount
     delivery = sub_total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
@@ -81,13 +104,7 @@ def global_context(request):
         'delivery': delivery,
         'discount': discount,
         'grand_total': grand_total,
-        'news_form': form
+        'news_form': form,
+        'screen_size': screen_size
     }
     return context
-
-
-def from_settings(request):
-    """ This Keeps the admin 'ENVIRONMENT_NAME' in the golbal context """
-    return {
-        "ENVIRONMENT_NAME":  settings.ENVIRONMENT_NAME,
-    }
