@@ -5,7 +5,7 @@ import dj_database_url
 DEBUG = False
 ALLOWED_HOSTS = ['*']
 
-if DEBUG is True:
+if DEBUG is False:
     env = environ.Env()
     # read the .env file
     environ.Env.read_env()
@@ -60,7 +60,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.facebook',
+    # 'allauth.socialaccount.providers.facebook',
 
     'crispy_forms',
     'ckeditor',
