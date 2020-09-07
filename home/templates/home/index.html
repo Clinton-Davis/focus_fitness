@@ -61,13 +61,13 @@
 
 <section id="section2">
     <div class="feature-container card-group">
-        <div class="card">
-            <a href="{% url 'programs:list' %}" class="ripple-surface">
+        <div class="card ">
+            <a href="{% url 'programs:list' %}" class="ripple-surface-r">
                 <img src="{% static 'images/bidman.jpg' %}" class="card-img-top" alt="BodyBuilder" />
                 <div class="card-body">
                     <h4 class="card-title text-bk aw text-center">Training Programs</h4>
                     {% for program in programs %}
-                    <p class="card-text d-block text-center mont_b text-bk red-hover">
+                    <p class="card-text d-block text-center mont_b text-bk">
                         {{ program }}</p>
                     {% endfor %}
                 </div>
@@ -75,34 +75,47 @@
         </div>
         {% if screen_size == True %}
         <div class="card">
-            <a href="{% url 'blog:list' %}" class="ripple-surface">
+            <a href="{% url 'blog:list' %}" class="ripple-surface-y">
                 <img src="{% static 'images/sven-mieke.jpg' %}" class="card-img-top" alt="Lady in gym" />
                 <div class="card-body">
-                    <h3 class="card-title text-center aw">Community Blogs</h3>
                     {% include "home/includes/community_blog.html" %}
                 </div>
             </a>
         </div>
         {% else %}
         <div class="card">
-            <div class="card-body">
-                <h3 class="card-title text-center aw">Community Blogs</h3>
-                {% include "home/includes/community_blog.html" %}
-            </div>
-            <img src="{% static 'images/sven-mieke.jpg' %}" class="card-img-top" alt="Lady in gym" />
+            <a href="{% url 'blog:list' %}" class="ripple-surface-y">
+                <div class="card-body">
+                    {% include "home/includes/community_blog.html" %}
+                </div>
+                <img src="{% static 'images/sven-mieke.jpg' %}" class="card-img-top" alt="Lady in gym" />
+            </a>
         </div>
         {% endif %}
         <div class="card">
-            <img src="{% static 'images/pool-man.jpg' %}" class="card-img-top" alt="Thin man in pool" />
-            <div class="card-body">
-                <h3 class="card-title text-center aw">Focus Shop</h3>
-                <a class="card-text d-block text-center mont_b text-bk"
-                    href="{% url 'products:products' %}?category=protein">Protiens</a>
-                <a class="card-text d-block text-center mont_b text-bk"
-                    href="{% url 'products:products' %}?category=pants,vest,tops">Activewear</a>
-                <a class="card-text d-block text-center mont_b text-bk"
-                    href="{% url 'products:products' %}?category=equipment">Accssories</a>
-            </div>
+            <a href="{% url 'products:products' %}" class="ripple-surface-b">
+                <img src="{% static 'images/pool-man.jpg' %}" class="card-img-top" alt="Thin man in pool" />
+                <div class="card-body">
+
+                    <h4 class="card-title text-bk aw text-center">Focus Shop Categories</h4>
+
+                    <div class="row">
+                        {% for categorys in category%}
+                        {% if not forloop.counter|divisibleby:2  %}
+                        <div class="col-6">
+                            <p class="card-text text-center d-block mont_b text-bk">
+                                {{ categorys.friendly_name }}</p>
+                        </div>
+                        {% else %}
+                        <div class="col-6">
+                            <p class="card-text text-center d-block mont_b text-bk">
+                                {{ categorys.friendly_name }}</p>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
 

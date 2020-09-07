@@ -8,6 +8,7 @@ from .forms import ContactForm
 from programs.models import Program
 from products.models import Product
 from blog.models import Blog
+from products.models import Category
 from memberships.views import get_user_membership
 import requests
 
@@ -17,6 +18,7 @@ def IndexView(request):
     feature_blog = Blog.objects.filter(featured=True)
     display_items = Product.objects.filter(display_items=True)
     programs = Program.objects.all()
+    category = Category.objects.all()
 
     if request.user.is_authenticated:
         current_membership = get_user_membership(request)
@@ -29,7 +31,8 @@ def IndexView(request):
         'feature_blog': feature_blog,
         'display_items': display_items,
         'programs': programs,
-        'current_membership': current_membership
+        'current_membership': current_membership,
+        'category': category
     }
 
     return render(request, "home/index.html", context)

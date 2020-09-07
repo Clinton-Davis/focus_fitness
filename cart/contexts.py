@@ -18,7 +18,6 @@ def from_settings(request):
 def get_size(request):
     """Checks to see if user is on moble or not"""
     user_agent = get_user_agent(request)
-    print(user_agent)
     if user_agent.is_mobile:
         screen_size = True
     else:
