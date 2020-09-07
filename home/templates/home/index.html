@@ -62,7 +62,7 @@
 <section id="section2">
     <div class="feature-container card-group">
         <div class="card ">
-            <a href="{% url 'programs:list' %}" class="ripple-surface-r">
+            <a href="{% url 'programs:list' %}" class="ripple-surface">
                 <img src="{% static 'images/bidman.jpg' %}" class="card-img-top" alt="BodyBuilder" />
                 <div class="card-body">
                     <h4 class="card-title text-bk aw text-center">Training Programs</h4>
@@ -75,7 +75,7 @@
         </div>
         {% if screen_size == True %}
         <div class="card">
-            <a href="{% url 'blog:list' %}" class="ripple-surface-y">
+            <a href="{% url 'blog:list' %}" class="ripple-surface">
                 <img src="{% static 'images/sven-mieke.jpg' %}" class="card-img-top" alt="Lady in gym" />
                 <div class="card-body">
                     {% include "home/includes/community_blog.html" %}
@@ -84,7 +84,7 @@
         </div>
         {% else %}
         <div class="card">
-            <a href="{% url 'blog:list' %}" class="ripple-surface-y">
+            <a href="{% url 'blog:list' %}" class="ripple-surface">
                 <div class="card-body">
                     {% include "home/includes/community_blog.html" %}
                 </div>
@@ -93,7 +93,7 @@
         </div>
         {% endif %}
         <div class="card">
-            <a href="{% url 'products:products' %}" class="ripple-surface-b">
+            <a href="{% url 'products:products' %}" class="ripple-surface">
                 <img src="{% static 'images/pool-man.jpg' %}" class="card-img-top" alt="Thin man in pool" />
                 <div class="card-body">
 

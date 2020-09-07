@@ -26,8 +26,8 @@
             <br>
             {% for program in programs  %}
             {% if not forloop.counter|divisibleby:2  %}
-            <a href="{{ program.get_absolute_url }}" class="my-3 text-wht rounded border border-light">
-                <div class="card  hover-shadow-col-lit rounded" style="max-width: 40rem;">
+            <a href="{{ program.get_absolute_url }}" class="text-wht rounded">
+                <div class="card  border border-light hover-shadow-col-lit rounded" style="max-width: 40rem;">
                     <div class="row no-gutters  rounded">
                         <div class="col-md-4 bg-black rounded">
                             <img src="{{  program.thumbnail.url }}" class="card-img" alt="{{  program.title|title }}">
@@ -42,9 +42,10 @@
                     </div>
                 </div>
             </a>
+            <br>
             {% else %}
-            <a href="{{ program.get_absolute_url }} " class="my-3 text-wht rounded border border-light">
-                <div class="card  hover-shadow-col-lit rounded" style="max-width: 40rem;">
+            <a href="{{ program.get_absolute_url }} " class="text-wht rounded ">
+                <div class="card border border-light hover-shadow-col-lit rounded" style="max-width: 40rem;">
                     <div class="row d-flex flex-row-reverse no-gutters text-wht rounded">
                         <div class="col-md-4 bg-black rounded">
                             <img src="{{ program.thumbnail.url }}" class="card-img" alt="{{  program.title|title }}">
@@ -58,7 +59,7 @@
                     </div>
                 </div>
             </a>
-
+            <br>
             {% endif%}
             {% endfor %}
 

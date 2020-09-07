@@ -5,7 +5,7 @@ import dj_database_url
 DEBUG = True
 ALLOWED_HOSTS = ['*']
 
-if DEBUG is False:
+if DEBUG is True:
     env = environ.Env()
     # read the .env file
     environ.Env.read_env()
@@ -134,6 +134,7 @@ if DEBUG is True:
     #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     #     }
     # }
+
     DATABASES = {
         'default': dj_database_url.parse(env('DATABASE_URL'))
     }
