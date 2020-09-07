@@ -17,44 +17,49 @@
         </div>
     </div>
     <div class="container profile">
-        <div class="profile-overlay">
-            <div class="col p-4">
+        <div class="profile-overlay w-75 mx-auto">
+            <div class="col p-4 ">
                 <h4 class="text-wht aw display-4 text-center">Programs</h4>
-
             </div>
         </div>
-        <div class="container">
+        <div class="container center-block-col pb-4">
             <br>
             {% for program in programs  %}
             {% if not forloop.counter|divisibleby:2  %}
-            <div class="  mx-auto row featurette profile-overlay" style="max-width: 40rem;">
-                <div class="col-md-7 d-flex align-items-center text-wht">
-                    <a href="{{ program.get_absolute_url }}">
-                        <h5 class="text-center aw card-title text-wht">{{ program.title }}</h5>
-                        <p class="text-center card-text text-wht">{{program.description|safe|truncatechars:50 }}</p>
-                    </a>
+            <a href="{{ program.get_absolute_url }}" class="my-3 text-wht rounded border border-light">
+                <div class="card  hover-shadow-col-lit rounded" style="max-width: 40rem;">
+                    <div class="row no-gutters  rounded">
+                        <div class="col-md-4 bg-black rounded">
+                            <img src="{{  program.thumbnail.url }}" class="card-img" alt="{{  program.title|title }}">
+                        </div>
+                        <div class="col-md-8 bg-black rounded">
+                            <div class="card-body bg-black rounded">
+                                <h5 class="card-title text-center text-wht">{{ program.title|title }}</h5>
+                                <small
+                                    class="card-text text-wht">{{ program.description|safe|truncatechars:100 }}</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-5 d-none d-md-block ">
-                    <img src="{{ program.thumbnail.url }}" class="card-img program-card" alt="...">
-                </div>
-            </div>
-
-            <br>
-
+            </a>
             {% else %}
-            <div class="row  mx-auto featurette  profile-overlay" style="max-width: 40rem;">
-                <div class="col-md-5 d-none d-md-block">
-                    <img src="{{program.thumbnail.url }}" class="card-img program-card" alt="...">
+            <a href="{{ program.get_absolute_url }} " class="my-3 text-wht rounded border border-light">
+                <div class="card  hover-shadow-col-lit rounded" style="max-width: 40rem;">
+                    <div class="row d-flex flex-row-reverse no-gutters text-wht rounded">
+                        <div class="col-md-4 bg-black rounded">
+                            <img src="{{ program.thumbnail.url }}" class="card-img" alt="{{  program.title|title }}">
+                        </div>
+                        <div class="col-md-8 bg-black rounded">
+                            <div class="card-body bg-black rounded">
+                                <h5 class="card-title text-center text-wht">{{ program.title|title }}</h5>
+                                <p class="card-text text-wht">{{ program.description|safe|truncatechars:100 }}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-7 d-flex align-items-center">
-                    <a href="{{program.get_absolute_url }}">
-                        <h5 class="text-center aw card-title text-wht">{{program }}</h5>
-                        <p class="text-center card-text text-wht">{{program.description|safe|truncatechars:50 }}</p>
-                    </a>
-                </div>
-            </div>
-            <br>
-            {% endif %}
+            </a>
+
+            {% endif%}
             {% endfor %}
 
         </div>
@@ -66,3 +71,8 @@
 
 
 {% endblock content %}
+
+
+
+
+class="col-md-5 d-none d-md-block ">

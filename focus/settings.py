@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'ckeditor',
     'storages',
+    'django_user_agents',
 
     'home',
     'products',
@@ -86,6 +87,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_user_agents.middleware.UserAgentMiddleware',
 ]
 
 ROOT_URLCONF = 'focus.urls'

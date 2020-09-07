@@ -21,7 +21,12 @@ p {
   font-family: "montserrat", sans-serif;
   font-weight: 400;
   max-width: 600px;
+  margin-bottom: .5rem;
 
+}
+
+a {
+  text-decoration: none !important;
 }
 
 ul {
@@ -58,8 +63,18 @@ img {
   -webkit-box-shadow: 0px 10px 19px -5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 10px 19px -5px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 10px 19px -5px rgba(0, 0, 0, 0.75);
-  color: rgba(0, 0, 0, 0.75);
+  color: rgba(253, 252, 252, 0.932);
 }
+
+.hover-shadow-col-lit:hover {
+  -webkit-box-shadow: 0px 10px 19px -5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 10px 19px -5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 10px 19px -5px rgba(0, 0, 0, 0.75);
+
+}
+
+
+
 
 .fixed-shadow {
   -webkit-box-shadow: 0px 10px 19px -5px rgba(0, 0, 0, 0.75);
@@ -283,37 +298,6 @@ img {
   width: 1.5rem;
 }
 
-.ripple-surface {
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-}
-
-.ripple-surface span {
-  position: absolute;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.685);
-
-  width: 100px;
-  height: 100px;
-  margin-top: -50px;
-  margin-left: -50px;
-
-  animation: ripple 1500ms;
-  opacity: 0;
-}
-
-@keyframes ripple {
-  from {
-    opacity: 1;
-    transform: scale(0);
-  }
-
-  to {
-    opacity: 0;
-    transform: scale(10);
-  }
-}
 
 
 #cart {

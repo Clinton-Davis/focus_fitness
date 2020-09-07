@@ -1,0 +1,87 @@
+.ripple-surface {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple-surface span {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.685);
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -50px;
+    animation: ripple 1300ms;
+    opacity: 0;
+    -webkit-animation: ripple 1300ms;
+}
+
+.ripple-surface-b {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple-surface-b span {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(149, 227, 247, 0.541);
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -50px;
+    animation: ripple 1300ms;
+    opacity: 0;
+    -webkit-animation: ripple 1300ms;
+}
+
+.ripple-surface-r {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple-surface-r span {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgb(231, 49, 63, 0.5);
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -50px;
+    animation: ripple 1300ms;
+    opacity: 0;
+    -webkit-animation: ripple 1300ms;
+}
+
+.ripple-surface-y {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple-surface-y span {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgb(229, 206, 33, 0.5);
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -50px;
+    animation: ripple 1300ms;
+    opacity: 0;
+    -webkit-animation: ripple 1300ms;
+}
+
+@keyframes ripple {
+    from {
+        opacity: 1;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(10);
+    }
+}
