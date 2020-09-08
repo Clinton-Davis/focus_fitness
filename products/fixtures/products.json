@@ -1,280 +1,279 @@
-[
-{
-  "model": "products.category",
-  "pk": 1,
-  "fields": {
-    "name": "tops",
-    "friendly_name": "Tops"
+[{
+    "model": "products.category",
+    "pk": 1,
+    "fields": {
+      "name": "tops",
+      "friendly_name": "Tops"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 2,
+    "fields": {
+      "name": "vitamins",
+      "friendly_name": "Vitamins"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 3,
+    "fields": {
+      "name": "bcaa",
+      "friendly_name": "BCAA"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 4,
+    "fields": {
+      "name": "protein",
+      "friendly_name": "Protein"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 5,
+    "fields": {
+      "name": "sale",
+      "friendly_name": "Sale"
+    }
+  },
+  {
+    "model": "products.category",
+    "pk": 6,
+    "fields": {
+      "name": "jacket",
+      "friendly_name": "Jacket"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "category": 4,
+      "name": "Gold Standard 100% Whey Protein",
+      "description": "<p>OPTIMUM NUTRITION&rsquo;S GOLD STANDARD 100% WHEY SUPPORTS MUSCLES REPAIR, HELPING THE BODY PREPARE PROPERLY FOR WHAT IS TO COME. IT&rsquo;S RAPIDLY DIGESTED, MEANING IT KICK STARTS MUSCLE PROTEIN SYNTHESIS &ndash; MUSCLE GROWTH &ndash; SOON AFTER INTAKE. IT&rsquo;S ALSO RICH IN AMINO ACIDS, PARTICULARLY BRANCH CHAIN AMINO ACIDS (BCAAS) WHICH ARE DELIVERED TO MUSCLES FAST AFTER EXERCISE. OVER 30 YEARS OF EXPERTISE IN ENGINEERING PROTEIN LIES BEHIND THE PRODUCTION OF OUR GOLD STANDARD 100% WHEY PROTEIN. MANUFACTURED BY OUR SCIENTISTS AND NUTRITIONISTS IN OUR OWN START-OF-THE-ART FACILITY MEANS THAT WE NEVER COMPROMISE ON QUALITY, TASTE OR CONSISTENCY.</p>\r\n\r\n<p>USING GOLD STANDARD 100% WHEY PROTEIN AFTER EACH WORKOUT CAN HELP ENSURE YOUR BODY IS IN THE BEST SHAPE POSSIBLE WHEN IT&rsquo;S TIME TO HIT THE WEIGHTS ROOM AGAIN.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>TIP:</strong>&nbsp;Adjust the intensity of your Gold Standard 100% Whey&trade; by varying the amount of liquid that you use to prepare it. For a bolder flavor with slightly more body and sweetness, mix each scoop with 4-6 oz of water, milk, or your favorite beverage. For a milder tasting, less sweet shake, use 8-10 oz of liquid per scoop.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<table id=\"facts_table\">\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td colspan=\"3\">Ingredients:</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td colspan=\"3\">Protein Blend (Whey Protein Isolate, Cultured Whey Protein Concentrate, Whey Peptides), Cocoa Powder (Processed With Alkali), Natural And Artificial Flavors, Lecithin, Creamer (Sunflower Oil, Maltodextrin, Modified Food Starch, Di-Potassium Phosphate, Tricalcium Phosphate, Tocopherols), Salt, Acesulfame Potassium, Sucralose, Lactase.</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td colspan=\"3\">CONTAINS: MILK AND SOY.</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>",
+      "has_sizes": false,
+      "was_price": "51.00",
+      "price": "45.00",
+      "image_url": null,
+      "image": "Goldstatdard.png",
+      "in_stock": true,
+      "display_items": true
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "category": 6,
+      "name": "Navy Blue Mens Jacket",
+      "description": "<p>Navy Blue Mens hooded contrast stripe jacket</p>\r\n\r\n<p>Brushed inside and structure knit on outside</p>\r\n\r\n<p>Contrast colour inside hood, piping,</p>\r\n\r\n<p>stripe at rib and front zip.</p>\r\n\r\n<p>80% polyester, 20% cotton with wicking function</p>\r\n\r\n<p>Weight: 300 g/m2&nbsp;</p>",
+      "has_sizes": true,
+      "was_price": "150.00",
+      "price": "125.00",
+      "image_url": null,
+      "image": "Men-jacket-navy-blue-resize.png",
+      "in_stock": true,
+      "display_items": true
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+      "category": 1,
+      "name": "Ladies strap Back Vest",
+      "description": "<h4><strong>Ladies strap Back Vest</strong></h4>\r\n\r\n<div>Black vest with Focus small logo.</div>\r\n\r\n<div>Enhanced moisture wicking performance material</div>\r\n\r\n<div>Tight fit creates a second-skin feel</div>\r\n\r\n<div>Elastic Racer back</div>\r\n\r\n<div>Fabric - 100% polyester</div>\r\n\r\n<div>Weight &ndash; 135 gsm</div>\r\n\r\n<div>Wash at 40&deg;</div>\r\n\r\n<h3>&nbsp;</h3>",
+      "has_sizes": true,
+      "was_price": "10.00",
+      "price": "5.00",
+      "image_url": null,
+      "image": "womens-vest-bk.png",
+      "in_stock": true,
+      "display_items": true
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+      "category": 1,
+      "name": "Ladies strap Red Vest",
+      "description": "<h4><strong>Ladies strap Back Vest</strong></h4>\r\n\r\n<ul>\r\n\t<li>\r\n\t<p>Black vest with Focus small logo.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Enhanced moisture wicking performance material</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Tight fit creates a second-skin feel</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Elastic Racer back</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Fabric - 100% polyester</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Weight &ndash; 135 gsm</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Wash at 40&deg;</p>\r\n\t</li>\r\n</ul>",
+      "has_sizes": true,
+      "was_price": null,
+      "price": "10.00",
+      "image_url": null,
+      "image": "womens-vest-red.png",
+      "in_stock": true,
+      "display_items": true
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+      "category": 6,
+      "name": "Red Men's Jacket",
+      "description": "<p>Red Mens hooded contrast stripe jacket</p>\r\n\r\n<p>Brushed inside and structure knit on outside</p>\r\n\r\n<p>Contrast colour inside hood, piping,</p>\r\n\r\n<p>stripe at rib and front zip.</p>\r\n\r\n<p>80% polyester, 20% cotton with wicking function</p>\r\n\r\n<p>Weight: 300 g/m2&nbsp;</p>",
+      "has_sizes": true,
+      "was_price": "175.00",
+      "price": "150.00",
+      "image_url": null,
+      "image": "Mens-jacket-red.png",
+      "in_stock": true,
+      "display_items": true
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+      "category": 6,
+      "name": "Light Blue Men's Jacket",
+      "description": "<p>Light Blue Mens hooded contrast stripe jacket</p>\r\n\r\n<p>Brushed inside and structure knit on outside</p>\r\n\r\n<p>Contrast colour inside hood, piping,</p>\r\n\r\n<p>stripe at rib and front zip.</p>\r\n\r\n<p>80% polyester, 20% cotton with wicking function</p>\r\n\r\n<p>Weight: 300 g/m2&nbsp;</p>",
+      "has_sizes": true,
+      "was_price": "200.00",
+      "price": "150.00",
+      "image_url": null,
+      "image": "Mens-jacket-blue.png",
+      "in_stock": true,
+      "display_items": true
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+      "category": 6,
+      "name": "Light Gray Mens jacket",
+      "description": "<p>Light Blue Mens hooded contrast stripe jacket</p>\r\n\r\n<p>Brushed inside and structure knit on outside</p>\r\n\r\n<p>Contrast colour inside hood, piping,</p>\r\n\r\n<p>stripe at rib and front zip.</p>\r\n\r\n<p>80% polyester, 20% cotton with wicking function</p>\r\n\r\n<p>Weight: 300 g/m2&nbsp;</p>",
+      "has_sizes": true,
+      "was_price": null,
+      "price": "150.00",
+      "image_url": null,
+      "image": "Mens-jacket-gray.png",
+      "in_stock": true,
+      "display_items": false
+    }
+  },
+  {
+    "model": "products.productcomment",
+    "pk": 28,
+    "fields": {
+      "user": 1,
+      "name_product": 4,
+      "rating": 5,
+      "timestamp": "2020-08-21T11:51:03.347Z",
+      "content": "Always the best price and fastest shipping. I stopped looking at other retailers. Only complaint, and it\u2019s minor, is there are small chunks of powder no matter how long I shake in mixer. Not an issue really."
+    }
+  },
+  {
+    "model": "products.productcomment",
+    "pk": 29,
+    "fields": {
+      "user": 1,
+      "name_product": 5,
+      "rating": 5,
+      "timestamp": "2020-08-21T13:30:38.728Z",
+      "content": "I Love this Jacket, It fits so well and looks so good, Good work."
+    }
+  },
+  {
+    "model": "products.productcomment",
+    "pk": 30,
+    "fields": {
+      "user": 1,
+      "name_product": 5,
+      "rating": 5,
+      "timestamp": "2020-08-21T19:19:14.219Z",
+      "content": "Great Jacket, warm and not to heavy, wind a good rain projection, good buy"
+    }
+  },
+  {
+    "model": "products.productcomment",
+    "pk": 31,
+    "fields": {
+      "user": 1,
+      "name_product": 5,
+      "rating": 4,
+      "timestamp": "2020-08-24T13:40:42.471Z",
+      "content": "Testing"
+    }
+  },
+  {
+    "model": "products.productcomment",
+    "pk": 32,
+    "fields": {
+      "user": 1,
+      "name_product": 6,
+      "rating": 4,
+      "timestamp": "2020-08-24T14:58:15.588Z",
+      "content": "test"
+    }
+  },
+  {
+    "model": "products.productview",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "product": 4,
+      "timestamp": "2020-08-14T10:57:21.582Z"
+    }
+  },
+  {
+    "model": "products.productview",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "product": 5,
+      "timestamp": "2020-08-14T11:11:46.164Z"
+    }
+  },
+  {
+    "model": "products.productview",
+    "pk": 5,
+    "fields": {
+      "user": 1,
+      "product": 5,
+      "timestamp": "2020-08-20T11:17:39.868Z"
+    }
+  },
+  {
+    "model": "products.productview",
+    "pk": 6,
+    "fields": {
+      "user": 1,
+      "product": 4,
+      "timestamp": "2020-08-21T20:50:03.253Z"
+    }
+  },
+  {
+    "model": "products.productview",
+    "pk": 7,
+    "fields": {
+      "user": 1,
+      "product": 6,
+      "timestamp": "2020-08-22T08:20:18.751Z"
+    }
+  },
+  {
+    "model": "products.productview",
+    "pk": 8,
+    "fields": {
+      "user": 1,
+      "product": 7,
+      "timestamp": "2020-08-22T09:12:43.544Z"
+    }
+  },
+  {
+    "model": "products.productview",
+    "pk": 9,
+    "fields": {
+      "user": 1,
+      "product": 9,
+      "timestamp": "2020-09-04T15:35:01.840Z"
+    }
   }
-},
-{
-  "model": "products.category",
-  "pk": 2,
-  "fields": {
-    "name": "vitamins",
-    "friendly_name": "Vitamins"
-  }
-},
-{
-  "model": "products.category",
-  "pk": 3,
-  "fields": {
-    "name": "bcaa",
-    "friendly_name": "BCAA"
-  }
-},
-{
-  "model": "products.category",
-  "pk": 4,
-  "fields": {
-    "name": "protein",
-    "friendly_name": "Protein"
-  }
-},
-{
-  "model": "products.category",
-  "pk": 5,
-  "fields": {
-    "name": "sale",
-    "friendly_name": "Sale"
-  }
-},
-{
-  "model": "products.category",
-  "pk": 6,
-  "fields": {
-    "name": "jacket",
-    "friendly_name": "Jacket"
-  }
-},
-{
-  "model": "products.product",
-  "pk": 4,
-  "fields": {
-    "category": 4,
-    "name": "Gold Standard 100% Whey Protein",
-    "description": "<p>OPTIMUM NUTRITION&rsquo;S GOLD STANDARD 100% WHEY SUPPORTS MUSCLES REPAIR, HELPING THE BODY PREPARE PROPERLY FOR WHAT IS TO COME. IT&rsquo;S RAPIDLY DIGESTED, MEANING IT KICK STARTS MUSCLE PROTEIN SYNTHESIS &ndash; MUSCLE GROWTH &ndash; SOON AFTER INTAKE. IT&rsquo;S ALSO RICH IN AMINO ACIDS, PARTICULARLY BRANCH CHAIN AMINO ACIDS (BCAAS) WHICH ARE DELIVERED TO MUSCLES FAST AFTER EXERCISE. OVER 30 YEARS OF EXPERTISE IN ENGINEERING PROTEIN LIES BEHIND THE PRODUCTION OF OUR GOLD STANDARD 100% WHEY PROTEIN. MANUFACTURED BY OUR SCIENTISTS AND NUTRITIONISTS IN OUR OWN START-OF-THE-ART FACILITY MEANS THAT WE NEVER COMPROMISE ON QUALITY, TASTE OR CONSISTENCY.</p>\r\n\r\n<p>USING GOLD STANDARD 100% WHEY PROTEIN AFTER EACH WORKOUT CAN HELP ENSURE YOUR BODY IS IN THE BEST SHAPE POSSIBLE WHEN IT&rsquo;S TIME TO HIT THE WEIGHTS ROOM AGAIN.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>TIP:</strong>&nbsp;Adjust the intensity of your Gold Standard 100% Whey&trade; by varying the amount of liquid that you use to prepare it. For a bolder flavor with slightly more body and sweetness, mix each scoop with 4-6 oz of water, milk, or your favorite beverage. For a milder tasting, less sweet shake, use 8-10 oz of liquid per scoop.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<table id=\"facts_table\">\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td colspan=\"3\">Ingredients:</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td colspan=\"3\">Protein Blend (Whey Protein Isolate, Cultured Whey Protein Concentrate, Whey Peptides), Cocoa Powder (Processed With Alkali), Natural And Artificial Flavors, Lecithin, Creamer (Sunflower Oil, Maltodextrin, Modified Food Starch, Di-Potassium Phosphate, Tricalcium Phosphate, Tocopherols), Salt, Acesulfame Potassium, Sucralose, Lactase.</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td colspan=\"3\">CONTAINS: MILK AND SOY.</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>",
-    "has_sizes": false,
-    "was_price": "51.00",
-    "price": "45.00",
-    "image_url": null,
-    "image": "Goldstatdard.png",
-    "in_stock": true,
-    "display_items": true
-  }
-},
-{
-  "model": "products.product",
-  "pk": 5,
-  "fields": {
-    "category": 6,
-    "name": "Navy Blue Mens Jacket",
-    "description": "<p>Navy Blue Mens hooded contrast stripe jacket</p>\r\n\r\n<p>Brushed inside and structure knit on outside</p>\r\n\r\n<p>Contrast colour inside hood, piping,</p>\r\n\r\n<p>stripe at rib and front zip.</p>\r\n\r\n<p>80% polyester, 20% cotton with wicking function</p>\r\n\r\n<p>Weight: 300 g/m2&nbsp;</p>",
-    "has_sizes": true,
-    "was_price": "150.00",
-    "price": "125.00",
-    "image_url": null,
-    "image": "Men-jacket-navy-blue-resize.png",
-    "in_stock": true,
-    "display_items": true
-  }
-},
-{
-  "model": "products.product",
-  "pk": 6,
-  "fields": {
-    "category": 1,
-    "name": "Ladies strap Back Vest",
-    "description": "<h4><strong>Ladies strap Back Vest</strong></h4>\r\n\r\n<div>Black vest with Focus small logo.</div>\r\n\r\n<div>Enhanced moisture wicking performance material</div>\r\n\r\n<div>Tight fit creates a second-skin feel</div>\r\n\r\n<div>Elastic Racer back</div>\r\n\r\n<div>Fabric - 100% polyester</div>\r\n\r\n<div>Weight &ndash; 135 gsm</div>\r\n\r\n<div>Wash at 40&deg;</div>\r\n\r\n<h3>&nbsp;</h3>",
-    "has_sizes": true,
-    "was_price": "10.00",
-    "price": "5.00",
-    "image_url": null,
-    "image": "womens-vest-bk.png",
-    "in_stock": true,
-    "display_items": true
-  }
-},
-{
-  "model": "products.product",
-  "pk": 7,
-  "fields": {
-    "category": 1,
-    "name": "Ladies strap Red Vest",
-    "description": "<h4><strong>Ladies strap Back Vest</strong></h4>\r\n\r\n<ul>\r\n\t<li>\r\n\t<p>Black vest with Focus small logo.</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Enhanced moisture wicking performance material</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Tight fit creates a second-skin feel</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Elastic Racer back</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Fabric - 100% polyester</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Weight &ndash; 135 gsm</p>\r\n\t</li>\r\n\t<li>\r\n\t<p>Wash at 40&deg;</p>\r\n\t</li>\r\n</ul>",
-    "has_sizes": true,
-    "was_price": null,
-    "price": "10.00",
-    "image_url": null,
-    "image": "womens-vest-red.png",
-    "in_stock": true,
-    "display_items": true
-  }
-},
-{
-  "model": "products.product",
-  "pk": 8,
-  "fields": {
-    "category": 6,
-    "name": "Red Men's Jacket",
-    "description": "<p>Red Mens hooded contrast stripe jacket</p>\r\n\r\n<p>Brushed inside and structure knit on outside</p>\r\n\r\n<p>Contrast colour inside hood, piping,</p>\r\n\r\n<p>stripe at rib and front zip.</p>\r\n\r\n<p>80% polyester, 20% cotton with wicking function</p>\r\n\r\n<p>Weight: 300 g/m2&nbsp;</p>",
-    "has_sizes": true,
-    "was_price": "175.00",
-    "price": "150.00",
-    "image_url": null,
-    "image": "Mens-jacket-red.png",
-    "in_stock": true,
-    "display_items": true
-  }
-},
-{
-  "model": "products.product",
-  "pk": 9,
-  "fields": {
-    "category": 6,
-    "name": "Light Blue Men's Jacket",
-    "description": "<p>Light Blue Mens hooded contrast stripe jacket</p>\r\n\r\n<p>Brushed inside and structure knit on outside</p>\r\n\r\n<p>Contrast colour inside hood, piping,</p>\r\n\r\n<p>stripe at rib and front zip.</p>\r\n\r\n<p>80% polyester, 20% cotton with wicking function</p>\r\n\r\n<p>Weight: 300 g/m2&nbsp;</p>",
-    "has_sizes": true,
-    "was_price": "200.00",
-    "price": "150.00",
-    "image_url": null,
-    "image": "Mens-jacket-blue.png",
-    "in_stock": true,
-    "display_items": true
-  }
-},
-{
-  "model": "products.product",
-  "pk": 10,
-  "fields": {
-    "category": 6,
-    "name": "Light Gray Mens jacket",
-    "description": "<p>Light Blue Mens hooded contrast stripe jacket</p>\r\n\r\n<p>Brushed inside and structure knit on outside</p>\r\n\r\n<p>Contrast colour inside hood, piping,</p>\r\n\r\n<p>stripe at rib and front zip.</p>\r\n\r\n<p>80% polyester, 20% cotton with wicking function</p>\r\n\r\n<p>Weight: 300 g/m2&nbsp;</p>",
-    "has_sizes": true,
-    "was_price": null,
-    "price": "150.00",
-    "image_url": null,
-    "image": "Mens-jacket-gray.png",
-    "in_stock": true,
-    "display_items": false
-  }
-},
-{
-  "model": "products.productcomment",
-  "pk": 28,
-  "fields": {
-    "user": 2,
-    "name_product": 4,
-    "rating": 5,
-    "timestamp": "2020-08-21T11:51:03.347Z",
-    "content": "Always the best price and fastest shipping. I stopped looking at other retailers. Only complaint, and it\u2019s minor, is there are small chunks of powder no matter how long I shake in mixer. Not an issue really."
-  }
-},
-{
-  "model": "products.productcomment",
-  "pk": 29,
-  "fields": {
-    "user": 2,
-    "name_product": 5,
-    "rating": 5,
-    "timestamp": "2020-08-21T13:30:38.728Z",
-    "content": "I Love this Jacket, It fits so well and looks so good, Good work."
-  }
-},
-{
-  "model": "products.productcomment",
-  "pk": 30,
-  "fields": {
-    "user": 8,
-    "name_product": 5,
-    "rating": 5,
-    "timestamp": "2020-08-21T19:19:14.219Z",
-    "content": "Great Jacket, warm and not to heavy, wind a good rain projection, good buy"
-  }
-},
-{
-  "model": "products.productcomment",
-  "pk": 31,
-  "fields": {
-    "user": 2,
-    "name_product": 5,
-    "rating": 4,
-    "timestamp": "2020-08-24T13:40:42.471Z",
-    "content": "Testing"
-  }
-},
-{
-  "model": "products.productcomment",
-  "pk": 32,
-  "fields": {
-    "user": 2,
-    "name_product": 6,
-    "rating": 4,
-    "timestamp": "2020-08-24T14:58:15.588Z",
-    "content": "test"
-  }
-},
-{
-  "model": "products.productview",
-  "pk": 1,
-  "fields": {
-    "user": 2,
-    "product": 4,
-    "timestamp": "2020-08-14T10:57:21.582Z"
-  }
-},
-{
-  "model": "products.productview",
-  "pk": 2,
-  "fields": {
-    "user": 2,
-    "product": 5,
-    "timestamp": "2020-08-14T11:11:46.164Z"
-  }
-},
-{
-  "model": "products.productview",
-  "pk": 5,
-  "fields": {
-    "user": 8,
-    "product": 5,
-    "timestamp": "2020-08-20T11:17:39.868Z"
-  }
-},
-{
-  "model": "products.productview",
-  "pk": 6,
-  "fields": {
-    "user": 8,
-    "product": 4,
-    "timestamp": "2020-08-21T20:50:03.253Z"
-  }
-},
-{
-  "model": "products.productview",
-  "pk": 7,
-  "fields": {
-    "user": 2,
-    "product": 6,
-    "timestamp": "2020-08-22T08:20:18.751Z"
-  }
-},
-{
-  "model": "products.productview",
-  "pk": 8,
-  "fields": {
-    "user": 2,
-    "product": 7,
-    "timestamp": "2020-08-22T09:12:43.544Z"
-  }
-},
-{
-  "model": "products.productview",
-  "pk": 9,
-  "fields": {
-    "user": 2,
-    "product": 9,
-    "timestamp": "2020-09-04T15:35:01.840Z"
-  }
-}
 ]
