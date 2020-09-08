@@ -1,0 +1,14 @@
+[{
+    "model": "profiles.userprofile",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "default_phone_number": "+353863941979",
+        "default_street_address1": "60 Llewellyn Grove, Rathfarnham,",
+        "default_street_address2": "Rathfarnham",
+        "default_town_or_city": "Dublin",
+        "default_postcode": "D16WF62",
+        "default_county": "Dublin",
+        "default_country": "IE"
+    }
+}]
