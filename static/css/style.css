@@ -35,7 +35,7 @@ ul {
 
 img {
   object-fit: contain;
-  max-width: 40rem;
+  max-width: 18rem;
 }
 
 .hr-wht {
@@ -934,6 +934,11 @@ nav {
 /*----------Media Queries */
 
 @media (min-width: 576px) {
+  img {
+
+    max-width: 30rem;
+  }
+
   .active-size {
     font-size: 10vw;
   }
@@ -966,6 +971,11 @@ nav {
 }
 
 @media (min-width: 768px) {
+  img {
+
+    max-width: 33rem;
+  }
+
   .active-size {
     font-size: 7vw;
   }
@@ -1002,6 +1012,7 @@ nav {
 }
 
 @media (min-width: 992px) {
+
   .active-size {
     font-size: 5vw;
   }
