@@ -222,19 +222,23 @@ img {
 }
 
 .minus-block {
-  color: black;
+  color: rgb(0, 0, 0);
   background-color: rgb(231, 49, 63);
-  border: 1px solid black;
+  border: 1px solid rgb(0, 0, 0);
 }
 
 .add-block {
   color: black;
   background-color: rgb(27, 216, 125);
-  border: 1px solid black;
+  border: 1px solid rgb(0, 0, 0);
 }
 
 .border-bk {
-  border: 1px solid black;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.border-off-wht {
+  border: 1px solid rgb(194, 192, 192);
 }
 
 .bs-5 {
@@ -269,6 +273,8 @@ img {
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
 }
+
+
 
 .max-width {
   max-width: 100%;
