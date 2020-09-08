@@ -128,16 +128,16 @@ else:
 
 # Choosing the db to use in development or production
 if DEBUG is True:
-    # DATABASES = {
-    #     'default': {
-    #         'ENGINE': 'django.db.backends.sqlite3',
-    #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    #     }
-    # }
-
     DATABASES = {
-        'default': dj_database_url.parse(env('DATABASE_URL'))
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
+
+    # DATABASES = {
+    #     'default': dj_database_url.parse(env('DATABASE_URL'))
+    # }
 
 else:
     DATABASES = {
@@ -242,23 +242,12 @@ TAX_RATE_PERCENTAGE = 15
 STRIPE_CURRENCY = 'usd'
 
 CKEDITOR_CONFIGS = {
-    # 'default': {
-    #     'toolbar': 'full',
-    #     'width': 'auto',
-
-    # },
     'default': {
-        'toolbar': 'Custom',
+        'toolbar': 'full',
         'width': 'auto',
-        'toolbar_Custom': [
-            ['Bold', 'Italic', 'Underline', 'Format', 'Image', 'Lineheight', ],
-            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-',
-                'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
-            ['Link', 'Unlink'],
-            ['RemoveFormat', 'Source', ]
-        ]
 
     },
+
 }
 
 # stripe

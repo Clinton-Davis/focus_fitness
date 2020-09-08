@@ -27,11 +27,9 @@
                 <h2 class="my-4 aw text-primary text-center">Searched Blogs</h2>
             </div>
 
-            {% if blog %}
-
 
             {% for blog in all_blogs %}
-            {% if not forloop.counter|divisibleby:2  %}
+            {% if screen_size == True %}
             <a href="{{ blog.get_absolute_url }}">
                 <div class="card mb-3" style="max-width: 830px;">
                     <div class="row no-gutters">
@@ -63,10 +61,39 @@
                 </div>
             </a>
             {% else %}
+            {% if not forloop.counter|divisibleby:2  %}
             <a href="{{ blog.get_absolute_url }}">
                 <div class="card mb-3" style="max-width: 830px;">
                     <div class="row no-gutters">
-
+                        <div class="col-md-4 bg-black-a">
+                            <img src="{{ blog.thumbnail.url }}" class="card-img blog-list-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body bg-black-a">
+                                <h5 class="card-title text-center text-wht">{{ blog.title|title }}</h5>
+                                <small class="text-muted">{{ blog.category }}</small>
+                                <small class="card-text text-wht">{{ blog.content|safe|truncatechars:100 }}</small>
+                                <span class="text-mute float-right"><small class="text-muted"> Posted:
+                                        {{ blog.publish_date|timesince }}</small></span>
+                                <div class="row justify-content-around">
+                                    <div class="text-center text-wht col-2"><span><i class="text-grn fad fa-eye"></i>
+                                            {{ blog.get_view_count }}</span></div>
+                                    <div class="text-center text-wht col-2"><span><i
+                                                class="text-primary fad fa-thumbs-up"></i>
+                                            {{ blog.get_like_count }}</span><br></div>
+                                    <div class="text-center text-wht col-2"><span><i
+                                                class="text-ylw fad fa-comments-alt"></i>
+                                            {{ blog.get_comment_count }}</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% else %}
+            <a href="{{ blog.get_absolute_url }}">
+                <div class="card mb-3" style="max-width: 830px;">
+                    <div class="row no-gutters">
                         <div class="col-md-8">
                             <div class="card-body  bg-black-a">
                                 <h5 class="card-title text-center text-wht">{{ blog.title|title }}</h5>
@@ -92,8 +119,10 @@
                 </div>
             </a>
             {% endif %}
-            {% endfor %}
-            {% else %}
+            <!-- endif forloop.counter -->
+            {% endif %}
+            <!--endif screen_size -->
+            {% empty %}
             <div class=" bg-trans text-center rounded-10">
                 <div class="card-body bg-black-a text-wht rounded-10">
                     <h5 class="card-title">Sorry, Nothing Fond</h5>
@@ -102,14 +131,15 @@
                     <a href="{% url 'blog:list' %}" class="aw hover-shadow border-bk btn btn-primary">Back to Blogs</a>
                 </div>
             </div>
+            {% endfor %}
 
-            {% endif %}
+
+
+            <!-- endif all_blogs -->
         </div>
         <!-- Sidebar Widgets Column -->
         <div class="col-md-4">
-            <!-- Search Widget -->
             <div id="blog-side-card" class="card my-4">
-                <!-- <h5 class="aw text-wht bg-green text-center card-header">Search</h5> -->
                 <div class="card-body mx-auto ">
                     <div class="input-group">
                         <form method="GET" action="{% url 'blog:list' %}" class="form-inline my-2 my-lg-0">
@@ -137,15 +167,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Side Widget -->
             </div>
-
-
-
         </div>
-        <!-- /.row -->
-
     </div>
-    <!-- /.container -->
-
     {% endblock content %}

@@ -16,6 +16,6 @@
   href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
   <img class="mr-4"
     src="{% if provider.name == 'Facebook' %}https://img.icons8.com/cute-clipart/30/000000/facebook-new.png{% else %}https://img.icons8.com/color/30/000000/google-logo.png {% endif %}" />
-  <span class="aw">Sign up with </span>{{provider.name}}</a>
+  <span class="aw">Sign in with </span>{{provider.name}}</a>
 
 {% endfor %}
