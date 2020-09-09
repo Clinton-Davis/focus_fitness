@@ -2,13 +2,17 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase, Client
 from django.urls import reverse
 from blog.models import *
-
-
-User = get_user_model()
+from memberships.models import *
 
 
 class TestCreateBlogModels(TestCase):
     """testing the creation on a blog """
+
+    fixtures = [
+        'membersshipsm.json',
+        'user.json'
+    ]
+
     @classmethod
     def setUpTestData(cls):
         User.objects.create_user(
@@ -30,6 +34,12 @@ class TestCreateBlogModels(TestCase):
 
 class TestBlog(TestCase):
     """Testing the blog details and get_absolute_url() """
+
+    fixtures = [
+        'membersshipsm.json',
+        'user.json'
+    ]
+
     @classmethod
     def setUpTestData(cls):
         User.objects.create_user(
@@ -73,3 +83,25 @@ class TestBlog(TestCase):
     def test_get_blog_category(self):
         newblog = Blog.objects.get(id=1)
         self.assertTrue(newblog.category, 'testingCatergory')
+
+    def test_blog_string(self):
+        newblog = Blog.objects.get(id=1)
+        self.assertEqual(newblog.__str__(), newblog.title)
+
+
+class TestCategory(TestCase):
+
+    @classmethod
+    def setUpTestData(cls):
+        Category.objects.create(name='TestCat')
+
+    def setUp(self):
+        self.name = Category.objects.get(name='TestCat')
+
+    def test_create_category(self):
+        catergory = Category.objects.create(name=self.name)
+        self.assertTrue(isinstance(catergory, Category))
+
+    def test_category_string(self):
+        catergory = Category.objects.create(name=self.name)
+        self.assertEqual(catergory.__str__(), self.name)
