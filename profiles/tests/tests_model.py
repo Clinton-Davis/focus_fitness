@@ -6,7 +6,7 @@ from memberships.models import Membership, UserMembership
 class UserProfileTest(TestCase):
 
     fixtures = [
-        'membersshipsm.json',
+        'member-memberships.json',
         'user.json'
     ]
 

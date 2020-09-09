@@ -9,7 +9,7 @@ class TestCreateBlogModels(TestCase):
     """testing the creation on a blog """
 
     fixtures = [
-        'membersshipsm.json',
+        'member-memberships.json',
         'user.json'
     ]
 
@@ -36,7 +36,7 @@ class TestBlog(TestCase):
     """Testing the blog details and get_absolute_url() """
 
     fixtures = [
-        'membersshipsm.json',
+        'member-memberships.json',
         'user.json'
     ]
 

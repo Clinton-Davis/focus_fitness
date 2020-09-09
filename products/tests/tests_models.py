@@ -35,5 +35,4 @@ class ProductModelTests(TestCase):
 
     def test_get_absolute_url(self):
         product = Product.objects.get(id=1)
-        # This will also fail if the urlconf is not defined.
         self.assertEquals(product.get_absolute_url(), '/products/1/')
