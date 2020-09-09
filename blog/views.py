@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.db.models import Q
 from django.views import View
@@ -94,7 +95,7 @@ class BlogDetailView(DetailView):
         return object
 
 
-class BlogCreateView(CreateView):
+class BlogCreateView(LoginRequiredMixin, CreateView):
     """
     Uses the 'blog_form.html' as it needs the inputs,
     The context is changed to 'create', (Logic by Mat @ JustDjango)
@@ -115,7 +116,7 @@ class BlogCreateView(CreateView):
         return context
 
 
-class BlogUpdateView(UpdateView):
+class BlogUpdateView(LoginRequiredMixin, UpdateView):
     """
     Uses the 'blog_form.html' as it needs the inputs,
     The context is changed to 'Update', (Logic by Mat @ JustDjango)
@@ -132,7 +133,7 @@ class BlogUpdateView(UpdateView):
         return context
 
 
-class BlogDeleteView(DeleteView):
+class BlogDeleteView(LoginRequiredMixin, DeleteView):
     model = Blog
     success_url = '/blog/'
 

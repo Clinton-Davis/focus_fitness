@@ -32,7 +32,9 @@ class TestBlogViews(TestCase):
         self.assertTrue('view_type' in resp.context)
 
     def test_blog_category_view_GET(self):
-        resp = self.client.get('/blog/category/Strength%20Training/')
+        cat = Category.objects.get(id=2)
+        cat_name = cat.name
+        resp = self.client.get(f'/blog/category/{cat_name}/')
         self.assertEqual(resp.status_code, 200)
         self.assertTemplateUsed(
             resp, template_name='blog/blog_categories.html')
