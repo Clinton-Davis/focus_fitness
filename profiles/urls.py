@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 from .views import Cancel_Sub_Confirm
 
-
+app_name = 'profiles'
 urlpatterns = [
 
     path('', views.profile, name='profile'),
