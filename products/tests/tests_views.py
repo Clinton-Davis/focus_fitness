@@ -6,7 +6,7 @@ from products.views import *
 class TestProduct(TestCase):
 
     fixtures = [
-        'memberships.json',
+        'membersshipsm.json',
         'user.json',
         'products.json',
     ]

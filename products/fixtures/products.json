@@ -162,7 +162,7 @@
     "model": "products.productcomment",
     "pk": 28,
     "fields": {
-      "user": 1,
+      "user": 2,
       "name_product": 4,
       "rating": 5,
       "timestamp": "2020-08-21T11:51:03.347Z",
@@ -173,7 +173,7 @@
     "model": "products.productcomment",
     "pk": 29,
     "fields": {
-      "user": 1,
+      "user": 2,
       "name_product": 5,
       "rating": 5,
       "timestamp": "2020-08-21T13:30:38.728Z",
@@ -184,7 +184,7 @@
     "model": "products.productcomment",
     "pk": 30,
     "fields": {
-      "user": 1,
+      "user": 2,
       "name_product": 5,
       "rating": 5,
       "timestamp": "2020-08-21T19:19:14.219Z",
@@ -195,7 +195,7 @@
     "model": "products.productcomment",
     "pk": 31,
     "fields": {
-      "user": 1,
+      "user": 2,
       "name_product": 5,
       "rating": 4,
       "timestamp": "2020-08-24T13:40:42.471Z",
@@ -206,7 +206,7 @@
     "model": "products.productcomment",
     "pk": 32,
     "fields": {
-      "user": 1,
+      "user": 2,
       "name_product": 6,
       "rating": 4,
       "timestamp": "2020-08-24T14:58:15.588Z",
@@ -217,7 +217,7 @@
     "model": "products.productview",
     "pk": 1,
     "fields": {
-      "user": 1,
+      "user": 2,
       "product": 4,
       "timestamp": "2020-08-14T10:57:21.582Z"
     }
@@ -226,7 +226,7 @@
     "model": "products.productview",
     "pk": 2,
     "fields": {
-      "user": 1,
+      "user": 2,
       "product": 5,
       "timestamp": "2020-08-14T11:11:46.164Z"
     }
@@ -235,7 +235,7 @@
     "model": "products.productview",
     "pk": 5,
     "fields": {
-      "user": 1,
+      "user": 2,
       "product": 5,
       "timestamp": "2020-08-20T11:17:39.868Z"
     }
@@ -244,7 +244,7 @@
     "model": "products.productview",
     "pk": 6,
     "fields": {
-      "user": 1,
+      "user": 2,
       "product": 4,
       "timestamp": "2020-08-21T20:50:03.253Z"
     }
@@ -253,7 +253,7 @@
     "model": "products.productview",
     "pk": 7,
     "fields": {
-      "user": 1,
+      "user": 2,
       "product": 6,
       "timestamp": "2020-08-22T08:20:18.751Z"
     }
@@ -262,7 +262,7 @@
     "model": "products.productview",
     "pk": 8,
     "fields": {
-      "user": 1,
+      "user": 2,
       "product": 7,
       "timestamp": "2020-08-22T09:12:43.544Z"
     }
@@ -271,7 +271,7 @@
     "model": "products.productview",
     "pk": 9,
     "fields": {
-      "user": 1,
+      "user": 2,
       "product": 9,
       "timestamp": "2020-09-04T15:35:01.840Z"
     }

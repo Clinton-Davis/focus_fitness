@@ -5,7 +5,7 @@ from checkout.models import *
 class TestCheckoutModels(TestCase):
 
     fixtures = [
-        'memberships.json',
+        'membersshipsm.json',
         'user.json',
         'products.json',
 

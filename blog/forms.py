@@ -30,7 +30,7 @@ class BlogForm(forms.ModelForm):
         placeholders = {
             'title': 'Your Blogs Title, 50 Characters max',
             'content': 'Write your Blog in here',
-            'thumbnail': 'Picture',
+            'thumbnail': '830x450px',
 
         }
 
