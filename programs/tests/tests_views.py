@@ -62,7 +62,7 @@ class TestWorkoutDetailView(TestCase):
         self.assertTemplateUsed(
             resp, template_name="programs/workout_detail.html")
 
-    def test_logged_in_user_workout_detail_view_(self):
+    def test_logged_out_user_workout_detail_view_(self):
         program = Program.objects.get(id=2)
         workout = Workout.objects.get(id=2)
         program_slug = program.slug
