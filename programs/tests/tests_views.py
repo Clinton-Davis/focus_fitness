@@ -4,8 +4,6 @@ from django.test import TestCase, Client
 from django.urls import reverse
 from programs.models import Program, Workout
 
-# Create your tests here.
-
 
 class TestProgramsViews(TestCase):
 

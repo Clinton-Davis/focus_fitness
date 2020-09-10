@@ -24,13 +24,13 @@ class WorkoutDetailView(LoginRequiredMixin, View):
          (Logic and code from Mat @ JustDjango)"""
 
     def get(self, request, program_slug, workout_slug, *args, **kwargs):
-        program_qs = Program.objects.filter(slug=program_slug)
-        if program_qs.exists():
-            program = program_qs.first()
+        get_program = Program.objects.filter(slug=program_slug)
+        if get_program.exists():
+            program = get_program.first()
 
-        workout_qs = program.workouts.filter(slug=workout_slug)
-        if workout_qs.exists():
-            workout = workout_qs.first()
+        get_workout = program.workouts.filter(slug=workout_slug)
+        if get_workout.exists():
+            workout = get_workout.first()
 
         user_membership = UserMembership.objects.filter(
             user=request.user).first()
