@@ -1,23 +1,39 @@
 from django.test import TestCase
-from django.contrib.auth import get_user_model
-from blog.forms import BlogForm
-from blog.models import Blog
-from memberships.models import Membership, UserMembership
+from blog.forms import BlogForm, BlogCommentForm
+from blog.models import *
+from django.forms import Select
 
 
-User = get_user_model()
+class TestBlogForm(TestCase):
+
+    def test_order_form_required(self):
+        invalid_data = {
+            'title': '',
+            'category': '',
+            'content': '',
+            'thumbnail': '',
+        }
+        form = BlogForm(data=invalid_data)
+        self.assertFalse(form.is_valid())
+        self.assertTrue(form.errors)
+        self.assertIn('title', form.errors.keys())
+        self.assertIn('category', form.errors.keys())
+        self.assertIn('thumbnail', form.errors.keys())
+
+    def test_blog_form_metaclass(self):
+        form = BlogForm()
+        self.assertEqual(form.Meta.fields,
+                         ('title', 'category', 'content', 'thumbnail',))
 
 
-# class TestBlogForm(TestCase):
+class TestBlogCommentForm(TestCase):
 
-#     def test_blog_create_form(self):
+    def test_order_blog_comment_form_required(self):
+        form = BlogCommentForm({'content': ''})
+        self.assertFalse(form.is_valid())
+        self.assertTrue(form.errors)
+        self.assertIn('content', form.errors.keys())
 
-#         invalid_data = {
-#             "title": "testing",
-#             "content": "this is a test",
-#             "thumbnail": " "
-#         }
-#         form = BlogForm(data=invalid_data)
-#         print(BlogForm)
-#         form.is_valid()
-#         self.assertTrue(form.errors)
+    def test_blog_comment_form_metaclass(self):
+        form = BlogCommentForm()
+        self.assertEqual(form.Meta.fields, ('content',))

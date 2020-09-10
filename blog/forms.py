@@ -15,13 +15,7 @@ class BlogForm(forms.ModelForm):
 
     class Meta:
         model = Blog
-        fields = (
-            'title',
-            'category',
-            'content',
-            'thumbnail',
-
-        )
+        fields = ('title', 'category', 'content', 'thumbnail',)
 
     def __init__(self, *args, **kwargs):
 

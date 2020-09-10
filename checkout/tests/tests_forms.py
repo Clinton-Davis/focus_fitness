@@ -30,7 +30,7 @@ class TestOrderForm(TestCase):
         self.assertIn('town_or_city', form.errors.keys())
         self.assertIn('postcode', form.errors.keys())
 
-    def test_OrderForm_form_metaclass(self):
+    def test_order_form_metaclass(self):
         form = OrderForm()
         self.assertEqual(form.Meta.fields, (
             'full_name', 'email', 'phone_number',

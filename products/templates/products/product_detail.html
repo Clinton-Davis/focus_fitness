@@ -146,7 +146,8 @@
                             <div class="modal-body">
                                 <div class=" card my-4">
                                     <h4 class="text-center aw font-lrg">{{ product.name }}
-                                        <span class=" p-2 rounded float-right bg-green"> {{ product.rating_ave }}</span>
+                                        <span class=" p-2 rounded float-right bg-green">
+                                            {{ product.rating_ave|floatformat:1 }}</span>
                                     </h4>
                                     <small class="text-center">Please base your reviews and ratings on personal
                                         experience.
