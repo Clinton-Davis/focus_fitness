@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.conf import settings
 from django.views.generic import TemplateView
 from django.contrib import messages
 from products.models import Product
@@ -6,6 +7,14 @@ from products.models import Product
 
 class CartView(TemplateView):
     template_name = 'cart/cart.html'
+
+    def get_context_data(self, **kwargs):
+        sub_discout = settings.SUB_DISCOUNT_PERCENTAGE
+        tax_rate = settings.TAX_RATE_PERCENTAGE
+        context = super().get_context_data(**kwargs)
+        context['sub_discout'] = sub_discout
+        context['tax_rate'] = tax_rate
+        return context
 
 
 def add_to_cart(request, item_id):
@@ -46,6 +55,46 @@ def add_to_cart(request, item_id):
         else:
             cart[item_id] = quantity
             messages.success(request, f'Added {product.name}')
+
+    request.session['cart'] = cart
+    return redirect(reverse('cart_view'))
+
+
+def adjust_cart(request, item_id):
+    """Adjust the quantity of the specified product to the specified amount"""
+
+    product = get_object_or_404(Product, pk=item_id)
+    quantity = int(request.POST.get('quantity'))
+    size = None
+    if 'product_size' in request.POST:
+        size = request.POST['product_size']
+    cart = request.session.get('cart', {})
+
+    if size:
+        if quantity > 0:
+            cart[item_id]['items_by_size'][size] = quantity
+            messages.success(request,
+                             (f'Updated size {size.upper()} '
+                              f'{product.name} quantity to '
+                              f'{cart[item_id]["items_by_size"][size]}'))
+        else:
+            del cart[item_id]['items_by_size'][size]
+            if not cart[item_id]['items_by_size']:
+                cart.pop(item_id)
+            messages.success(request,
+                             (f'Removed size {size.upper()} '
+                              f'{product.name} from your cart'))
+    else:
+        if quantity > 0:
+            cart[item_id] = quantity
+            messages.success(request,
+                             (f'Updated {product.name} '
+                              f'quantity to {cart[item_id]}'))
+        else:
+            cart.pop(item_id)
+            messages.success(request,
+                             (f'Removed {product.name} '
+                              f'from your cart'))
 
     request.session['cart'] = cart
     return redirect(reverse('cart_view'))

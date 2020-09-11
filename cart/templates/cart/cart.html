@@ -44,24 +44,20 @@
                     </div>
                     {% for item in cart_items %}
                     <div class="row">
-                        <div class="col-12 col-sm-6 mb-2">
+                        <div class="col-12 col-sm-6 mb-2 center-block">
                             {% include "cart/includes/product-image.html" %}
                         </div>
                         <div class="col-12 col-sm-6 mb-2">
                             {% include "cart/includes/product-info.html" %}
                         </div>
-
-                        <div class="col-3">
-                            {% include "cart/includes/quantity.html" %}
-                        </div>
-                        <div class="col-5 mb-2">
-                            <p class="text-center">@ ${{ item.product.price }}</p>
+                        <div class="col-8 mb-1">
+                            {% include "cart/includes/adjust_cart.html" %}
                         </div>
                         <div class="col-4 order-sm-last">
-                            <p class="text-right">${{ item.product.price|calc_subtotal:item.quantity }}</p>
+                            <p class="text-center">@ ${{ item.product.price }}</p>
                         </div>
                         <div class="col-12 text-right order-sm-last">
-                            {% include "cart/includes/remove.html" %}
+                            <p class="text-right">${{ item.product.price|calc_subtotal:item.quantity }}</p>
                         </div>
                     </div>
                     <div class="row">
@@ -72,8 +68,6 @@
 
                     {% endfor %}
                 </div>
-
-
                 <div class="table-responsive rounded-10 d-none d-md-block">
                     <table class="table table-sm table-borderless">
                         <thead class="aw text-center text-bk">
@@ -81,9 +75,10 @@
                                 <th class="d-none d-sm-none d-md-block" scope="col">&nbsp;</th>
                                 <th scope="col" class="text-center"><u>Product</u></th>
                                 <th scope="col"><u>Price</u></th>
-                                <th scope="col"><u>Qty</u></th>
+
+                                <th scope="col" class="text-center"><u>Qty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adjust Cart</u>
+                                </th>
                                 <th scope="col" class="text-right"><u>SubTotal</u></th>
-                                <th scope="col" class="text-right text-red"><u>Remove</u></th>
 
                             </tr>
                         </thead>
@@ -98,19 +93,12 @@
                             <td class="py-3 text-bk">
                                 <p class="text-center">@ ${{ item.product.price }}</p>
                             </td>
-
-                            <td class="py-3  text-center">
-                                {% include "cart/includes/quantity.html" %}
-
-                            </td>
                             <td class="aw text-bk py-3 text-center">
-                                <p class="text-right">${{ item.product.price|calc_subtotal:item.quantity }}</p>
+                                {% include "cart/includes/adjust_cart.html" %}
                             </td>
                             <td class="aw text-bk py-3 text-right">
-                                {% include "cart/includes/remove.html" %}
+                                <p class="text-right">${{ item.product.price|calc_subtotal:item.quantity }}</p>
                             </td>
-
-
                         </tr>
                         {% endfor %}
                     </table>
@@ -158,8 +146,30 @@
 
 {% endblock content %}
 
-
 {% block postloadjs %}
 {{ block.super }}
-
+<script rel="stylesheet" href="{% static 'js/quantityInputs.js' %}"></script>
+<script>
+    // Update quantity on click
+    // Code form Code Institute
+    $('.update-link').click(function (e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+    // Remove item and reload on click
+    $('.remove-item').click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('product_size');
+        var url = `/cart/remove/${itemId}/`;
+        var data = {
+            'csrfmiddlewaretoken': csrfToken,
+            'product_size': size
+        };
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    })
+</script>}
 {% endblock postloadjs %}
