@@ -44,7 +44,7 @@
         "thumbnail": "trainsafe_cleaning_blogheader-5.jpg",
         "publish_date": "2020-08-08T15:09:41.086Z",
         "last_updated": "2020-08-08T15:09:41.086Z",
-        "author": 1,
+        "author": 8,
         "slug": "how-to-clean-cardio-machines",
         "featured": false
     }
@@ -220,7 +220,7 @@
     "model": "blog.blogcomment",
     "pk": 1,
     "fields": {
-        "user": 1,
+        "user": 8,
         "blog": 3,
         "timestamp": "2020-08-14T11:38:12.336Z",
         "content": "testing"
@@ -256,7 +256,7 @@
     "model": "blog.blogview",
     "pk": 3,
     "fields": {
-        "user": 1,
+        "user": 2,
         "blog": 3,
         "timestamp": "2020-08-12T07:44:48.829Z"
     }
