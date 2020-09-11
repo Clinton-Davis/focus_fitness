@@ -15,7 +15,7 @@ def from_settings(request):
     }
 
 
-def get_size(request):
+def get_screen_size(request):
     """Checks to see if user is on moble or not"""
     user_agent = get_user_agent(request)
     if user_agent.is_mobile:
@@ -48,7 +48,7 @@ def global_context(request):
         adds the items to cart with with all product data
         calls the 'get_loged_user_discount' fuction to check the user membership static
         does a the maths with delivery charges/ Tax amount/ and discounts if applicable
-        Calls the 'get_size' fuction to get screen size and adds into global context
+        Calls the 'get_screen_size' fuction to get screen size and adds into global context
         (Cart Login from Code Institute adapted to work for Focus)
     """
     cart_items = []
@@ -85,7 +85,7 @@ def global_context(request):
             discount = total * Decimal(settings.SUB_DISCOUNT_PERCENTAGE / 100)
     else:
         discount = 0
-    screen_size = get_size(request)
+    screen_size = get_screen_size(request)
     cart_total = total
     sub_total = cart_total - discount
     delivery = sub_total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)

@@ -17,10 +17,10 @@
         </div>
     </form>
 
-    <a class="px-2 update-link text-info" title="Update Cart Qty"><img
-            src="https://img.icons8.com/fluent/38/000000/available-updates.png" /></a>
+    <a class="px-2  update-link text-info hover-shadow-lite vert-aline" title="Update Cart Qty">
+        <img class="pb-1" src="https://img.icons8.com/fluent/38/000000/available-updates.png" /></a>
 
-    <a class="btt-link remove-item text-danger hover-shadow" id="remove_{{ item.item_id }}"
+    <a class="btt-link remove-item text-danger hover-shadow  vert-aline" id="remove_{{ item.item_id }}"
         data-product_size="{{ item.size }}"
         title="Delete {% if item.product.has_sizes %}{{ item.product.name }} - {{ item.size|upper  }}{% else %}{{ item.product.name }}{% endif %}">
         <img src="https://img.icons8.com/plasticine/40/000000/filled-trash.png" />

@@ -22,7 +22,7 @@ def add_to_cart(request, item_id):
     if sizes are the same it adds to quantity, addes to cart and redirecs to products page
     (Login and Code for Code Institute)
     """
-    # def post(self, request, *args, **kwargs):
+
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
@@ -57,6 +57,7 @@ def add_to_cart(request, item_id):
             messages.success(request, f'Added {product.name}')
 
     request.session['cart'] = cart
+    print(cart)
     return redirect(reverse('cart_view'))
 
 

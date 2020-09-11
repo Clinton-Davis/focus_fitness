@@ -50,6 +50,7 @@ class Product(models.Model):
 
     @property
     def rating_ave(self):
+        """Gets the average rating on product"""
         all_ratings = self.productcomment_set.all().aggregate(Avg('rating'))
         ave_rating_list = list(all_ratings.values())
         rating_number = (str(ave_rating_list).strip('[]'))
