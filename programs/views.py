@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect, reverse
 from django.views.generic import ListView, DetailView, View
 from memberships.models import UserMembership
@@ -8,38 +9,28 @@ from .models import Program, Workout
 
 class ProgramListView(ListView):
     model = Program
-
-    def get(self, request, *args, **kwargs):
-        if not request.user.is_authenticated:
-            messages.info(request, "You Need to Login First")
-            return redirect(reverse('account_login'))
-        else:
-            programs = Program.objects.all()
-
-        context = {
-            'programs': programs
-        }
-        return render(request, "programs/program_list.html", context)
+    context_object_name = 'programs'
 
 
-class ProgramDetailView(DetailView):
+class ProgramDetailView(LoginRequiredMixin, DetailView):
     model = Program
+    context_object_name = 'programs'
 
 
-class WorkoutDetailView(View):
+class WorkoutDetailView(LoginRequiredMixin, View):
     """ getting the workouts that are associated with the programs 
         and filtering by slug. Checks to see if the memebership type 
         is allowed to be viewed, if true, it adds it to context.
          (Logic and code from Mat @ JustDjango)"""
 
     def get(self, request, program_slug, workout_slug, *args, **kwargs):
-        program_qs = Program.objects.filter(slug=program_slug)
-        if program_qs.exists():
-            program = program_qs.first()
+        get_program = Program.objects.filter(slug=program_slug)
+        if get_program.exists():
+            program = get_program.first()
 
-        workout_qs = program.workouts.filter(slug=workout_slug)
-        if workout_qs.exists():
-            workout = workout_qs.first()
+        get_workout = program.workouts.filter(slug=workout_slug)
+        if get_workout.exists():
+            workout = get_workout.first()
 
         user_membership = UserMembership.objects.filter(
             user=request.user).first()

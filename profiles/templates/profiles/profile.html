@@ -37,7 +37,7 @@
                             <li class="pt-2">
                                 <img src="https://img.icons8.com/fluent/32/000000/map-marker.png"
                                     alt="Shipping Setails" />
-                                <a class="aw text-wht text-center mx-2" href="{% url 'profile_details' %}">
+                                <a class="aw text-wht text-center mx-2" href="{% url 'profiles:profile_details' %}">
                                     Shipping Details
                                 </a>
                             </li>
@@ -45,7 +45,7 @@
                                 <img src="https://img.icons8.com/dusk/32/000000/membership-card.png"
                                     alt="Subscriptions" />
 
-                                <a class="aw text-wht mx-2" href="{% url 'profile_subscriptions' %}">
+                                <a class="aw text-wht mx-2" href="{% url 'profiles:profile_subscriptions' %}">
                                     Subscription: {{ user_membership.membership.membership_type }}
                                 </a>
 
@@ -124,7 +124,7 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <a href="{% url 'order_history' order.order_number %}"
+                                            <a href="{% url 'profiles:order_history' order.order_number %}"
                                                 title="{{ order.order_number }}">{{ order.order_number|truncatechars:6 }}
                                             </a>
                                         </td>

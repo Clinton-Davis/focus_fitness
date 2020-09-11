@@ -9,7 +9,7 @@
     <div class="container profile">
         <div class="row">
             <div class="col-md-12 mb-0">
-                <a class="text-wht aw pl-2" href="{% url 'profile' %}">Dashboard</a>
+                <a class="text-wht aw pl-2" href="{% url 'profiles:profile' %}">Dashboard</a>
                 <span class="mx-2 mb-0 text-wht">/</span>
                 <small class="text-wht aw">Subscriptions</small>
             </div>
@@ -38,7 +38,7 @@
                 <div class="my-2 text-wht col-md-6 col-12 ">
                     {{ user_subscription.get_next_billing_date }}</div>
                 <div class="my-2 row justify-content-center">
-                    <a class="aw btn btn-danger" href="{% url 'cancel_sub' %}">Cancel Subscription</a>
+                    <a class="aw btn btn-danger" href="{% url 'profiles:cancel_sub' %}">Cancel Subscription</a>
                 </div>
                 {% endif %}
                 {% else %}

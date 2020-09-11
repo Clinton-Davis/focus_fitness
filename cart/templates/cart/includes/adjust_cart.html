@@ -1,0 +1,28 @@
+{% load static %}
+<div class="row justify-content-center">
+
+    <form class="form update-form w-25" method="POST" action="{% url 'adjust_cart' item.item_id %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <div class="input-group">
+
+                <input class="form-control form-control-sm qty_input" type="number" name="quantity"
+                    value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}"
+                    id="id_qty_{{ item.item_id }}">
+
+                {% if item.product.has_sizes %}
+                <input type="hidden" name="product_size" value="{{ item.size }}">
+                {% endif %}
+            </div>
+        </div>
+    </form>
+
+    <a class="px-2  update-link text-info hover-shadow-lite vert-aline" title="Update Cart Qty">
+        <img class="pb-1" src="https://img.icons8.com/fluent/38/000000/available-updates.png" /></a>
+
+    <a class="btt-link remove-item text-danger hover-shadow  vert-aline" id="remove_{{ item.item_id }}"
+        data-product_size="{{ item.size }}"
+        title="Delete {% if item.product.has_sizes %}{{ item.product.name }} - {{ item.size|upper  }}{% else %}{{ item.product.name }}{% endif %}">
+        <img src="https://img.icons8.com/plasticine/40/000000/filled-trash.png" />
+    </a>
+</div>

@@ -5,10 +5,10 @@ from checkout.models import *
 class TestCheckoutModels(TestCase):
 
     fixtures = [
-        'memberships.json',
+        'member-memberships.json',
         'user.json',
         'products.json',
-        'blog.json',
+
     ]
 
     @classmethod
@@ -24,7 +24,7 @@ class TestCheckoutModels(TestCase):
 
         )
 
-    def test_Checkout_name(self):
+    def test_Checkout_details(self):
         order = Order.objects.get(id=1)
         self.assertEqual(order.full_name, 'Testing Mc Testalot')
         self.assertEqual(order.email, 'testing@tesing.com')

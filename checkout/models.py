@@ -1,13 +1,10 @@
-import uuid
-
+from django.conf import settings
 from django.db import models
 from django.db.models import Sum
-from django.conf import settings
-
 from django_countries.fields import CountryField
-
 from products.models import Product
 from profiles.models import UserProfile
+import uuid
 
 
 class Order(models.Model):
@@ -19,7 +16,8 @@ class Order(models.Model):
     phone_number = models.CharField(max_length=20, null=False, blank=False)
     country = CountryField(
         blank_label="Country *", blank=False, null=False)
-    postcode = models.CharField(max_length=20, null=True, blank=True)
+    postcode = models.CharField(
+        max_length=20, null=False, blank=False, default=0)
     town_or_city = models.CharField(max_length=40, null=False, blank=False)
     street_address1 = models.CharField(max_length=80, null=False, blank=False)
     street_address2 = models.CharField(max_length=80, null=True, blank=True)

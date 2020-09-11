@@ -73,6 +73,7 @@ class MembershipSelectView(ListView):
         return HttpResponseRedirect(reverse('memberships:payment'))
 
 
+@login_required
 def paymentview(request):
     """Provide user with payment form and payment Logic and code by Mat @ JustDjango """
 
@@ -111,6 +112,7 @@ def paymentview(request):
     return render(request, 'memberships/membership_payment.html', context)
 
 
+@login_required
 def updatetransaction(request, subscription_id):
     """ Updating the UserMembership model on focus backend (Logic and code by Mat @ JustDjango) """
     user_membership = get_user_membership(request)
@@ -134,6 +136,7 @@ def updatetransaction(request, subscription_id):
     return redirect('/programs')
 
 
+@login_required
 def cancelsubscription(request):
     """
     Checks to see it user is active, if true retrieves stripe id and deletes it,

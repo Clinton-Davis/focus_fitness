@@ -15,13 +15,7 @@ class BlogForm(forms.ModelForm):
 
     class Meta:
         model = Blog
-        fields = (
-            'title',
-            'category',
-            'content',
-            'thumbnail',
-
-        )
+        fields = ('title', 'category', 'content', 'thumbnail',)
 
     def __init__(self, *args, **kwargs):
 
@@ -30,7 +24,7 @@ class BlogForm(forms.ModelForm):
         placeholders = {
             'title': 'Your Blogs Title, 50 Characters max',
             'content': 'Write your Blog in here',
-            'thumbnail': 'Picture',
+            'thumbnail': '830x450px',
 
         }
 

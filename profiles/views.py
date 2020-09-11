@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView, TemplateView
 from django.contrib import messages
-
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import render, get_object_or_404
+from django.views.generic import TemplateView
 from .models import UserProfile
 from checkout.models import Order
 from .forms import UserProfileAddressForm
@@ -13,6 +14,7 @@ from memberships.views import (
 )
 
 
+@login_required
 def profile(request):
     template_name = 'profiles/profile.html'
 
@@ -35,13 +37,14 @@ def profile(request):
     return render(request, 'profiles/profile.html', context)
 
 
+@login_required
 def profile_subscriptions(request):
+    template = 'profiles/profile_subscriptions.html'
     profile = get_object_or_404(UserProfile, user=request.user)
     """Displaying user Profile """
     user_membership = get_user_membership(request)
     user_subscription = get_user_subscription(request)
 
-    template = 'profiles/profile_subscriptions.html'
     context = {
         'profile': profile,
         'user_membership': user_membership,
@@ -51,8 +54,10 @@ def profile_subscriptions(request):
     return render(request, template, context)
 
 
+@login_required
 def ProfileDetail(request):
     """Displaying User Order history and edit address froms (Login form Code Institute)"""
+    template = 'profiles/profile_details.html'
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
@@ -65,7 +70,6 @@ def ProfileDetail(request):
     form = UserProfileAddressForm(instance=profile)
     orders = profile.Orders.all()
 
-    template = 'profiles/profile_details.html'
     context = {
         'form': form,
         'orders': orders,
@@ -74,16 +78,17 @@ def ProfileDetail(request):
     return render(request, template, context)
 
 
+@login_required
 def OrderHistory(request, order_number):
     """
     Gets a past oder and displays if with a message
     (Login and Code form Code Institute)
     """
+    template = 'checkout/checkout_success.html'
     order = get_object_or_404(Order, order_number=order_number)
     messages.info(request, (
         f'This is a past confirmed order: { order_number }.'
     ))
-    template = 'checkout/checkout_success.html'
     context = {
         'order': order,
         'from_profile': True,
@@ -91,5 +96,5 @@ def OrderHistory(request, order_number):
     return render(request, template, context)
 
 
-class Cancel_Sub_Confirm(TemplateView):
+class Cancel_Sub_Confirm(LoginRequiredMixin, TemplateView):
     template_name = "profiles/cancel_sub_confirm.html"

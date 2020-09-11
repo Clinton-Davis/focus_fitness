@@ -5,7 +5,7 @@ from profiles.models import UserProfile
 
 class TestCheckoutViews(TestCase):
 
-    def test_get(self):
-        url = reverse('checkout:checkout')
-        response = self.client.get(url)
-        self.assertEqual(response.status_code, 302)
+    def test_Checkout_get(self):
+        resp = self.client.get(reverse('checkout:checkout'))
+        self.assertEqual(resp.status_code, 302)
+        self.assertRedirects(resp, "/products/")
