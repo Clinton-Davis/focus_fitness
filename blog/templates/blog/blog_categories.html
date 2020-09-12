@@ -8,18 +8,36 @@
 
 <!-- Page Content -->
 <div class="blog-pic pb-4">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-12 mb-0">
+                <a class="text-wht aw pl-2" href="{% url 'blog:list' %}">Blogs</a>
+                <span class="mx-2 mb-0 text-wht">/</span>
+                {% if user.is_authenticated %}
+                <a class="text-wht aw pl-2" href="{% url 'blog:create' %}">Create</a>
+                <span class="mx-2 mb-0 text-wht">/</span>
+                {% endif %}
+                <small class="text-wht aw {% if category  == 'Dieting' %} text-primary 
+                {% elif category  == 'Recover' %} text-warning 
+                {% elif category  == 'Covid-19' %} text-danger 
+                {% elif category  == 'Members' %} text-light 
+                {% elif category  == 'Endurance' %} text-info
+                {% else %} text-success {% endif %}">{{ category }}</small>
+            </div>
+        </div>
+    </div>
     <div class="row mx-4">
         <!-- Blog Entries Column -->
         <div class="col-md-8">
             {% if category_blogs %}
-            <div class="ovalpha-overlay bg-black-a rounded-10">
-                <h2 class="my-4 aw text-primary text-center 
+            <div class="ovalpha-overlay mx-auto w-75 bg-black-a rounded-10">
+                <h1 class="my-4 aw text-primary text-center 
                 {% if category  == 'Dieting' %} text-primary 
                 {% elif category  == 'Recover' %} text-warning 
                 {% elif category  == 'Covid-19' %} text-danger 
                 {% elif category  == 'Members' %} text-light 
                 {% elif category  == 'Endurance' %} text-info
-                {% else %} text-success {% endif %}">{{ category }} Blogs</h2>
+                {% else %} text-success {% endif %}">{{ category }} Blogs</h1>
             </div>
             {% for blog in category_blogs %}
             {% if screen_size == True %}
@@ -141,15 +159,15 @@
         </div>
         <!-- Sidebar Widgets Column -->
         <div class="col-md-4">
-            <!-- Search Widget -->
             <div id="blog-side-card" class="card my-4">
-                <!-- <h5 class="aw text-wht bg-green text-center card-header">Search</h5> -->
+
+                <!-- Search Widget -->
                 <div class="card-body mx-auto ">
                     <div class="input-group">
-                        <form method="GET" action="{% url 'blog:list' %}" class="form-inline my-2 my-lg-0">
+                        <form method="GET" action="{% url 'blog:search' %}" class="form-inline my-2 my-lg-0">
                             <input class="aw w-75 form-control mr-sm-2" name="s" type="search"
                                 placeholder="Search Blogs" aria-label="Search">
-                            <button class="aw btn btn-success my-2 my-sm-0" type="submit">Go!</button>
+                            <button class="ripple-surface aw btn btn-success my-2 my-sm-0" type="submit">Go!</button>
                         </form>
                     </div>
                 </div>
@@ -218,11 +236,3 @@
 {% endif %}
 
 {% endblock %}
-
-{% block postloadjs %}
-{{ block.super }}
-
-<script>
-    var cat = document.getElementsByClassName("someclassname");
-</script>
-{% endblock postloadjs %}
