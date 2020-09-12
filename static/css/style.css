@@ -499,7 +499,7 @@ nav {
 
 .blog-image {
   background: url(/static/images/evan-wise-blog-bg.jpg) no-repeat center center fixed;
-  /* background-color: #fff; */
+  height: fit-content;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

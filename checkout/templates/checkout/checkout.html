@@ -8,15 +8,14 @@
 
 
 
-<!-- <div class="container-cart"> -->
-<!-- <div class="container"> -->
-<div class="container mb-2">
+
+<div class="container mb-2 ">
     <div class="row">
         <div class="col">
             <hr>
-            <h2 class="aw mb-4 text-center">
+            <h1 class="aw mb-4 text-center">
                 Checkout
-            </h2>
+            </h1>
         </div>
     </div>
 
@@ -111,7 +110,7 @@
                 </fieldset>
                 <fieldset class="px-3">
 
-                    <i class="text-wht fab fa-stripe fa-2x"></i>
+                    <i class="pl-2 fab fa-stripe fa-3x"></i>
                     <!-- A Stripe card element will go here -->
                     <div class="mb-2" id="card-element"></div>
                     <!-- Used to display form errors -->
@@ -121,18 +120,19 @@
                     <div class="submit-button text-center mt-2 mb-2">
                         <a href="{% url 'cart_view' %}" class="btn btn-warning ">
                             <img src="https://img.icons8.com/doodle/32/000000/reply-arrow.png" />
-                            <span class="font-weight-bold">Adjust Bag</span>
+                            <span class="font-weight-bold">Adjust Cart</span>
 
                         </a>
                         <button id="submit-button" class="btn btn-success">
                             <span class=" font-weight-bold">Complete Order</span>
                             <img class="ml-2" src="https://img.icons8.com/dusk/32/000000/password-check.png" />
                         </button>
-                        <p class="small text-danger my-0">
+                        <p class="small text-warning my-0 mx-auto">
                             <span class="icon">
-                                <i class="fas fa-exclamation-circle"></i>
+                                <i class="fas fa-exclamation-triangle fa-lg"></i>
                             </span>
-                            <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
+                            <span class="text-bk">Your card will be charged <strong
+                                    class="text-danger">${{ grand_total|floatformat:2 }}</strong></span>
                         </p>
                     </div>
                 </fieldset>
@@ -140,6 +140,7 @@
         </div>
     </div>
 </div>
+
 <div id="loading-overlay">
     <h1 class="text-ligh logo-font loading-spinner">
 
