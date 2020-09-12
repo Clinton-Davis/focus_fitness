@@ -9,9 +9,7 @@ from blog.models import *
 class TestBlogListViews(TestCase):
     fixtures = [
         'member-memberships.json',
-        'usermembership.json',
         'user.json',
-        'products.json',
         'blog.json',
     ]
 
@@ -20,7 +18,7 @@ class TestBlogListViews(TestCase):
         User.objects.create_user(
             username="tester", email="testing@test.com", password="testing12345")
 
-    def test_blog_list_view_GET(self):
+    def test_blog_list_view(self):
         resp = self.client.get(reverse('blog:list'))
         self.assertEqual(resp.status_code, 200)
         self.assertTemplateUsed(resp, template_name='blog/blog_list.html')
@@ -31,19 +29,7 @@ class TestBlogListViews(TestCase):
         self.assertTrue('category_menu' in resp.context)
 
 
-class TestSearchView(TestCase):
-    fixtures = [
-        'member-memberships.json',
-        'usermembership.json',
-        'user.json',
-        'products.json',
-        'blog.json',
-    ]
-
-    @classmethod
-    def setUpTestData(cls):
-        User.objects.create_user(
-            username="tester", email="testing@test.com", password="testing12345")
+# Testing Blog Search View
 
     def test_blog_search_post(self):
         resp = self.client.get(
@@ -61,19 +47,7 @@ class TestSearchView(TestCase):
                          "Sorry! No Input? Try again Please")
 
 
-class TestBlogCreate_and_UpdateView(TestCase):
-    fixtures = [
-        'member-memberships.json',
-        'usermembership.json',
-        'user.json',
-        'products.json',
-        'blog.json',
-    ]
-
-    @classmethod
-    def setUpTestData(cls):
-        User.objects.create_user(
-            username="tester", email="testing@test.com", password="testing12345")
+# Testing Blog Create and Update Views
 
     def test_abstract_user_blog_create_view(self):
         resp = self.client.get(reverse('blog:create'))
@@ -105,22 +79,8 @@ class TestBlogCreate_and_UpdateView(TestCase):
         self.assertTemplateUsed(resp, template_name='blog/blog_form.html')
         self.assertEqual(resp.status_code, 200)
 
-
-class TestCategoryViewViews(TestCase):
-    fixtures = [
-        'member-memberships.json',
-        'usermembership.json',
-        'user.json',
-        'products.json',
-        'blog.json',
-    ]
-
-    @classmethod
-    def setUpTestData(cls):
-        User.objects.create_user(
-            username="tester", email="testing@test.com", password="testing12345")
-
-    def test_blog_category_view_GET(self):
+# Testing Blog Category View
+    def test_blog_category_view(self):
         cat = Category.objects.get(id=2)
         cat_name = cat.name
         resp = self.client.post(f'/blog/category/{cat_name}/')
@@ -132,22 +92,7 @@ class TestCategoryViewViews(TestCase):
         self.assertTrue('category_menu' in resp.context)
         self.assertTrue('all_blogs' in resp.context)
 
-
-class TestBlogDetailViews(TestCase):
-    fixtures = [
-        'member-memberships.json',
-        'usermembership.json',
-        'user.json',
-        'products.json',
-        'blog.json',
-
-    ]
-
-    @classmethod
-    def setUpTestData(cls):
-        User.objects.create_user(
-            username="tester", email="testing@test.com", password="testing12345")
-
+# Testing Blog Detail View
     def test_blog_detail_view(self):
         blog = Blog.objects.get(id=2)
         blog_slug = blog.slug
@@ -155,7 +100,7 @@ class TestBlogDetailViews(TestCase):
         self.assertEqual(resp.status_code, 200)
         self.assertTemplateUsed(resp, template_name='blog/blog_detail.html')
 
-    def test_blogt_comment_view_vaild_post(self):
+    def test_blog_comment_view_vaild_post(self):
         user = self.client.login(
             email="testing@test.com", password="testing12345")
         blog = Blog.objects.get(id=2)

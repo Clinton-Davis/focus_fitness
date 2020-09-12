@@ -1,7 +1,6 @@
 from django.test import TestCase
 from blog.forms import BlogForm, BlogCommentForm
 from blog.models import *
-from django.forms import Select
 
 
 class TestBlogForm(TestCase):

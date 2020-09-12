@@ -8,7 +8,6 @@ class TestCheckoutModels(TestCase):
         'member-memberships.json',
         'user.json',
         'products.json',
-
     ]
 
     @classmethod
