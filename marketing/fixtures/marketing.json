@@ -1,0 +1,17 @@
+[{
+        "model": "marketing.newslettersignups",
+        "pk": 1,
+        "fields": {
+            "email": "testing@testing.com",
+            "timestamp": "2020-09-12T09:40:06.547Z"
+        }
+    }, {
+        "model": "marketing.newslettersignups",
+        "pk": 2,
+        "fields": {
+            "email": "graham@fitness.com",
+            "timestamp": "2020-09-12T09:40:06.547Z"
+        }
+    }
+
+]

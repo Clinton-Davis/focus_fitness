@@ -1,8 +1,9 @@
 
 from django.contrib.auth.models import User
-from django.test import TestCase, Client
+from django.test import TestCase, Client, RequestFactory
 from django.urls import reverse
 from programs.models import Program, Workout
+from programs.views import *
 
 
 class TestProgramsViews(TestCase):
