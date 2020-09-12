@@ -74,14 +74,6 @@ class TestProfileDetailViews(TestCase):
             '/profile/profile_details/', {' default_phone_number': '5', })
         self.assertEqual(resp.status_code, 200)
 
-    # def test_profile_details_message_post(self):
-    #     resp = self.client.get(
-    #         '/profile/profile_details/', {' default_phone_number': '5', })
-    #     messages = list(resp.context['messages'])
-    #     self.assertEqual(len(messages), 1)
-    #     self.assertEqual(str(messages[0]),
-    #                      "'Your Shipping details have been updated'")
-
 
 class Test_profile_subscriptions(TestCase):
 
