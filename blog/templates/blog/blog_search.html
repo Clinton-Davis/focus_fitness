@@ -168,7 +168,12 @@
 
                 <!-- Categories Widget -->
                 <div class="card my-4">
-                    <h5 class="aw text-center card-header text-wht bg-green">Categories</h5>
+                    <button type="button"
+                        class="aw text-center ripple-surface card-header border border-success text-wht bg-green"
+                        data-toggle="modal" data-target="#category_Modal">Categories<i
+                            class="ml-2 fad fa-info-circle fa-lg"></i>
+                    </button>
+
                     <div class="card-body bg-black-a">
                         <div class="row">
                             <div class="col-lg-6">
@@ -180,10 +185,72 @@
                                     {% elif item.name  == 'Covid-19' %} text-danger 
                                     {% elif item.name  == 'Members' %} text-light 
                                     {% elif item.name  == 'Endurance' %} text-info
-                                    {% else %} text-success {% endif %}
-                                    " href="{% url 'blog:category' item %}">{{ item }}</a>
+                                    {% else %} text-success {% endif %}" href="{% url 'blog:category' item %}"
+                                        data-item_id="{{ item.name}}" id="blog_">{{ item }}</a>
                                     {% endfor %}
                                 </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Category Model -->
+                <div class="modal" id="category_Modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header bg-success">
+                                <h3 class="modal-title text-wht aw">Blog Catogery Guid</h3>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body bg-black-a">
+                                <div class=" card my-4">
+                                    <table class="table table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" class="aw text-center text-wht bg-black-a">Catogery</th>
+                                                <th scope="col" class="aw text-center text-wht bg-black-a">Info</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row" class="aw text-center">Members</th>
+                                                <td>This is for the members how would like to post there first blog, or
+                                                    ask a uestion or just tell us how you getting on with your training.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="aw bg-danger text-center">Covid-19</th>
+                                                <td>This is for all Covid-19 gym related topics</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="aw bg-primary text-center">Dieting</th>
+                                                <td colspan="2">This is for everything to with diet. Nutrision, tip and
+                                                    infomation</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="aw bg-success text-center">Strength Training</th>
+                                                <td colspan="2">All Blogs to do with Strength, builbing mussel, lifting
+                                                    techniques, Tip and exercises</td>
+                                            </tr>
+
+                                            <tr>
+                                                <th scope="row" class="aw bg-warning">Recovery</th>
+                                                <td colspan="2">All blogs to do with recovery</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row" class="aw bg-info">Endurance</th>
+                                                <td colspan="2">All blogs that focus on the endurance training side of
+                                                    thing, Running, Swimming</td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
 
                         </div>
