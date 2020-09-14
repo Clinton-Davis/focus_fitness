@@ -2,7 +2,7 @@ import os
 import environ
 import dj_database_url
 
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 if DEBUG is True:
@@ -208,15 +208,14 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-if DEBUG is True:
 
-    STATIC_URL = '/static/'
-    STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
-    MEDIA_URL = '/media/'
-    MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-else:
+if DEBUG is False:
 
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
