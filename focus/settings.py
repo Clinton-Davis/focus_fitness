@@ -2,7 +2,7 @@ import os
 import environ
 import dj_database_url
 
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 if DEBUG is True:
@@ -13,7 +13,6 @@ if DEBUG is True:
     SECRET_KEY = env('SECRET_KEY')
 
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
     EMAIL_USE_TLS = True
     EMAIL_PORT = 587
@@ -60,7 +59,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    # 'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.facebook',
 
     'crispy_forms',
     'ckeditor',
@@ -244,7 +243,6 @@ CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
         'width': 'auto',
-
     },
 
 }
