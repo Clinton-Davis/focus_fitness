@@ -14,6 +14,7 @@ class CartView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['sub_discout'] = sub_discout
         context['tax_rate'] = tax_rate
+        context['in_cart'] = True
         return context
 
 
@@ -27,9 +28,10 @@ def add_to_cart(request, item_id):
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     size = None
+
     if 'product_size' in request.POST:
         size = request.POST['product_size']
-        cart = request.session.get('cart', {})
+    cart = request.session.get('cart', {})
 
     if size:
         if item_id in list(cart.keys()):

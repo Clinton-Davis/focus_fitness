@@ -10,10 +10,16 @@ class CartViewsTests(TestCase):
     fixtures = ['products_products.json',
                 'products_catogerys']
 
-    def test_cart_list_view_GET(self):
+    def test_cart_list_view(self):
         resp = self.client.get(reverse('cart_view'))
         self.assertEqual(resp.status_code, 200)
         self.assertTemplateUsed(resp, template_name='cart/cart.html')
+
+    def test_cart_list_view_context(self):
+        resp = self.client.get(reverse('cart_view'))
+        self.assertTrue('sub_discout' in resp.context)
+        self.assertTrue('tax_rate' in resp.context)
+        self.assertTrue('in_cart' in resp.context)
 
     def test_add_to_cart_view(self):
         resp = self.client.get(reverse('cart_view'))
@@ -24,9 +30,10 @@ class CartViewsTests(TestCase):
             '/cart/add/5/', {'quantity': '7', 'redirect_url': 'cart_view', 'product_size': 'm'})
         messages = list(get_messages(resp.wsgi_request))
         self.assertEqual(resp.status_code, 302)
+
         self.assertEqual(len(messages), 1)
         self.assertEqual(str(messages[0]),
-                         'Added size M - Navy Blue Mens Jacket')
+                         'Added size M Navy Blue Mens Jacket to your cart')
 
     def test_add_item_qty_to_add_cart_views(self):
         resp = self.client.post(
@@ -35,7 +42,7 @@ class CartViewsTests(TestCase):
         self.assertEqual(resp.status_code, 302)
         self.assertEqual(len(messages), 1)
         self.assertEqual(str(messages[0]),
-                         'Added Gold Standard 100% Whey Protein')
+                         'Added Gold Standard 100% Whey Protein to your cart')
 
     def test_add_item_qty_size_to_adjust_cart_views(self):
         resp = self.client.post(

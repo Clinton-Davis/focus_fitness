@@ -922,8 +922,6 @@ nav {
 
 }
 
-
-
 .toast {
   background-clip: padding-box;
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .1);
@@ -932,8 +930,6 @@ nav {
   opacity: 0;
 
 }
-
-
 
 .toast-capper {
   height: 10px;
