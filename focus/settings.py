@@ -2,9 +2,12 @@ import os
 import environ
 import dj_database_url
 
-DEBUG = False
-ALLOWED_HOSTS = ['*']
+DEBUG = True
 
+if DEBUG is True:
+    ALLOWED_HOSTS = ['*']
+else:
+    ALLOWED_HOSTS = ['https://focus-fitness.herokuapp.com/']
 if DEBUG is True:
     env = environ.Env()
     # read the .env file
@@ -59,7 +62,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.facebook',
+    # 'allauth.socialaccount.providers.facebook',
 
     'crispy_forms',
     'ckeditor',
