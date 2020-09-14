@@ -10,11 +10,9 @@
 
     </div>
 
-    {% if in_cart == True %}
+    {% if in_cart == True and cart_items %}
     <a href="{% url 'checkout:checkout' %}"
         class="ripple-surface aw p-1 w-100 border-bk btn btn-success hover-shadow rounded-10">Checkout
         <img class="ml-2" src="https://img.icons8.com/dusk/32/000000/password-check.png" /> </i> </a>
-    {% else %}
-
     {% endif %}
 </div>
