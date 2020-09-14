@@ -906,18 +906,23 @@ nav {
 
 
 /* ------Messages  */
-.message-container {
+.message_container_mobile {
   position: fixed;
-  top: 30px;
-  right: 10px;
+  top: 5%;
+  min-width: 300px;
+  z-index: 999999999;
+}
 
+.message_container {
+  position: fixed;
+  top: 5%;
+  right: 2%;
+  min-width: 300px;
   z-index: 999999999;
 
 }
 
-.custom-toast {
-  min-width: 300px;
-}
+
 
 .toast {
   background-clip: padding-box;

@@ -1,5 +1,4 @@
-<div class="toast border border-success custom_toast rounded-10" data-autohide="true" data-delay="5000"
-    data-animation="true">
+<div class="toast border border-success rounded-10" data-autohide="true" data-delay="5000" data-animation="true">
 
     <div class="toast-header bg-black-a  text-wht">
         <h4 class="aw mx-auto text-grn"><i class=" fad fa-check-circle px-2"></i>Success!</h4>
@@ -8,5 +7,9 @@
     <div class="w-100 toast-capper bg-success"></div>
     <div class="toast-body bg-white text-center mont_r">
         {{ message }}
+
     </div>
+    <a href="{% url 'checkout:checkout' %}"
+        class="ripple-surface aw p-1 w-100 border-bk btn btn-success hover-shadow rounded-10">Checkout
+        <img class="ml-2" src="https://img.icons8.com/dusk/32/000000/password-check.png" /> </i> </a>
 </div>
