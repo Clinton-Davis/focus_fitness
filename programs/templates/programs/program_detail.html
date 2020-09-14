@@ -23,22 +23,27 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="text-wht pt-2 col-md-8 col-12  bg-black-a rounded-15">
+                <div class="text-wht pt-2 col-md-7 col-12  bg-black-a rounded-15">
                     <p>{{ programs.description|safe }}</p>
                 </div>
-                <div class=" pt-2 col-md-4 col-12 bg-black-a rounded-15">
+                <div class=" pt-2 col-md-5 col-12 bg-black-a rounded-15">
                     <h4 class="text-center aw text-ylw">{{ programs.title }} Videos</h4><br>
-                    <ul class="aw text-wht">
-                        {% for workout in programs.workouts %}
-                        <li>
+                    {% for workout in programs.workouts %}
+                    <div class="row">
+                        <div class="col-2 center-block">
+                            <a href="{{ workout.get_absolute_url }}">
+                                <img src="https://img.icons8.com/fluent/48/000000/circled-play.png" />
+                            </a>
+                        </div>
+                        <div class="col-10">
                             <a href="{{ workout.get_absolute_url }}">
                                 <h5 class="aw text-wht ">{{ workout.title }}</h5>
+                                <small class="text-muted">{{ workout.description }}</small>
                             </a>
-                        </li>
-                        <hr>
-                        {% endfor %}
-                    </ul>
-
+                        </div>
+                        <hr class="hr-gry">
+                    </div>
+                    {% endfor %}
 
                 </div>
 

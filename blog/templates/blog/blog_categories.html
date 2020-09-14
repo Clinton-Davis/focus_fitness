@@ -18,7 +18,7 @@
                 <span class="mx-2 mb-0 text-wht">/</span>
                 {% endif %}
                 <small class="text-wht aw {% if category  == 'Dieting' %} text-primary 
-                {% elif category  == 'Recover' %} text-warning 
+                {% elif category  == 'Recovery' %} text-warning 
                 {% elif category  == 'Covid-19' %} text-danger 
                 {% elif category  == 'Members' %} text-light 
                 {% elif category  == 'Endurance' %} text-info
@@ -33,7 +33,7 @@
             <div class="ovalpha-overlay mx-auto w-75 bg-black-a rounded-10">
                 <h1 class="my-4 aw text-primary text-center 
                 {% if category  == 'Dieting' %} text-primary 
-                {% elif category  == 'Recover' %} text-warning 
+                {% elif category  == 'Recovery' %} text-warning 
                 {% elif category  == 'Covid-19' %} text-danger 
                 {% elif category  == 'Members' %} text-light 
                 {% elif category  == 'Endurance' %} text-info
@@ -44,7 +44,7 @@
             <a href="{{ blog.get_absolute_url }}">
                 <div class="card mb-3 border rounded
                 {% if blog.category  == 'Dieting' %} border border-primary 
-                {% elif blog.category  == 'Recover' %} border border-warning 
+                {% elif blog.category  == 'Recovery' %} border border-warning 
                 {% elif blog.category  == 'Covid-19' %} border border-danger 
                 {% elif blog.category  == 'Endurance' %} border border-info
                 {% else %} border border-success {% endif %}"" style=" max-width: 830px;">
@@ -82,7 +82,7 @@
             <a href="{{ blog.get_absolute_url }}">
                 <div class="card mb-3 rounded
                         {% if blog.category  == 'Dieting' %} border border-primary 
-                        {% elif blog.category  == 'Recover' %} border border-warning 
+                        {% elif blog.category  == 'Recovery' %} border border-warning 
                         {% elif blog.category  == 'Covid-19' %} border border-danger 
                         {% elif blog.category  == 'Endurance' %} border border-info
                         {% else %} border border-success {% endif %}" style="max-width: 830px;">
@@ -120,7 +120,7 @@
             <a href="{{ blog.get_absolute_url }}">
                 <div class="card mb-3 rounded
                 {% if blog.category  == 'Dieting' %} border border-primary 
-                {% elif blog.category  == 'Recover' %} border border-warning 
+                {% elif blog.category  == 'Recovery' %} border border-warning 
                 {% elif blog.category  == 'Endurance' %} border border-info
                 {% elif blog.category  == 'Covid-19' %} border border-danger 
                 {% elif blog.category  == 'Members' %} border border-light 
@@ -187,7 +187,7 @@
                                     {% for item in category_menu %}
                                     <a class=" dropdown-item aw
                                     {% if item.name  == 'Dieting' %} text-primary 
-                                    {% elif item.name  == 'Recover' %} text-warning 
+                                    {% elif item.name  == 'Recovery' %} text-warning 
                                     {% elif item.name  == 'Covid-19' %} text-danger 
                                     {% elif item.name  == 'Members' %} text-light 
                                     {% elif item.name  == 'Endurance' %} text-info

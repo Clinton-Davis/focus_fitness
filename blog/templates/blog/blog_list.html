@@ -73,7 +73,7 @@
             <a href="{{ blog.get_absolute_url }}">
                 <div class="card mb-3 border rounded
                         {% if blog.category  == 'Dieting' %} border border-primary 
-                        {% elif blog.category  == 'Recover' %} border border-warning 
+                        {% elif blog.category  == 'Recovery' %} border border-warning 
                         {% elif blog.category  == 'Covid-19' %} border border-danger 
                         {% elif blog.category  == 'Endurance' %} border border-info
                         {% else %} border border-success {% endif %}" style=" max-width: 830px;">
@@ -111,7 +111,7 @@
             <a href="{{ blog.get_absolute_url }}">
                 <div class="card mb-3 
                         {% if blog.category  == 'Dieting' %} border border-primary 
-                        {% elif blog.category  == 'Recover' %} border border-warning 
+                        {% elif blog.category  == 'Recovery' %} border border-warning 
                         {% elif blog.category  == 'Covid-19' %} border border-danger 
                         {% elif blog.category  == 'Endurance' %} border border-info
                         {% else %} border border-success {% endif %}" style="max-width: 830px;">
@@ -149,7 +149,7 @@
             <a href="{{ blog.get_absolute_url }}">
                 <div class="card mb-3 
                 {% if blog.category  == 'Dieting' %} border border-primary 
-                {% elif blog.category  == 'Recover' %} border border-warning 
+                {% elif blog.category  == 'Recovery' %} border border-warning 
                 {% elif blog.category  == 'Endurance' %} border border-info
                 {% elif blog.category  == 'Covid-19' %} border border-danger 
                 {% elif blog.category  == 'Members' %} border border-light 
@@ -219,7 +219,7 @@
                                     {% for item in category_menu %}
                                     <a class=" dropdown-item aw
                                     {% if item.name  == 'Dieting' %} text-primary 
-                                    {% elif item.name  == 'Recover' %} text-warning 
+                                    {% elif item.name  == 'Recovery' %} text-warning 
                                     {% elif item.name  == 'Covid-19' %} text-danger 
                                     {% elif item.name  == 'Members' %} text-light 
                                     {% elif item.name  == 'Endurance' %} text-info

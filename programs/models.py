@@ -27,6 +27,7 @@ class Workout(models.Model):
     slug = models.SlugField()
     title = models.CharField(max_length=200)
     Program = models.ForeignKey(Program, on_delete=models.SET_NULL, null=True)
+    description = models.TextField()
     position = models.IntegerField()
     video_url = models.CharField(max_length=200)
     thumbnail = models.ImageField()
