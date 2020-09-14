@@ -2,7 +2,7 @@ import os
 import environ
 import dj_database_url
 
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 if DEBUG is True:
@@ -60,7 +60,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    # 'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.facebook',
 
     'crispy_forms',
     'ckeditor',
@@ -217,13 +217,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 if DEBUG is False:
 
-    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
     AWS_STORAGE_BUCKET_NAME = 'focus-fitness'
     AWS_S3_REGION_NAME = 'eu-west-1'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
     AWS_DEFAULT_ACL = None
-    STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
 
 # Static and media files
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
