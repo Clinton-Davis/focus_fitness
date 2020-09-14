@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load user_agents %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,13 +60,14 @@
 
 <body>
     <!--NavBar-->
-    {% include "base_partials/_navbar.html" %}
     {% include "base_partials/_mini_cart.html" %}
+    {% include "base_partials/_navbar.html" %}
     {% include "base_partials/_up.html" %}
 
 
     {% if messages %}
-    <div class="message-container">
+    {% if screen_size == True %}
+    <div class="message_container_mobile">
         {% for message in messages %}
         {% with message.level as level %}
         {% if level == 40 %}
@@ -81,6 +82,23 @@
         {% endwith %}
         {% endfor %}
     </div>
+    {% else %}
+    <div class="message_container">
+        {% for message in messages %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+        {% include 'includes/toasts/toast_success.html' %}
+        {% else %}
+        {% include 'includes/toasts/toast_info.html' %}
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
+    </div>
+    {% endif %}
     {% endif %}
 
     {% block content %}
