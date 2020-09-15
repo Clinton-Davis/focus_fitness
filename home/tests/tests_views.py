@@ -9,7 +9,7 @@ class TestHomeViews(TestCase):
     def test_index_view_GET(self):
         resp = self.client.get(reverse('home'))
         self.assertEqual(resp.status_code, 200)
-        self.assertTrue('display_items' in resp.context)
+        self.assertTrue('sales_items' in resp.context)
         self.assertTemplateUsed(resp, template_name="home/index.html")
 
     def test_about_view_GET(self):
@@ -37,7 +37,7 @@ class TestIndexContext(TestCase):
 
     def test_display_items_GET(self):
         resp = self.client.get(reverse('home'))
-        self.assertTrue('display_items' in resp.context)
+        self.assertTrue('sales_items' in resp.context)
 
     def test_current_membership_GET(self):
         resp = self.client.get(reverse('home'))

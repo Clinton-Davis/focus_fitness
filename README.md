@@ -171,10 +171,12 @@ About the Blogs
 
 ##### Blog Catogeries
 
-- Members
-- Covid-19
-- Dieting
-- Strength Training
+- **Members**: This is for the members how would like to post there first blog, or ask a uestion or just tell us how you getting on with your training.
+- **Covid-19**: This is for all Covid-19 gym related topics
+- **Dieting**: This is for everything to with diet. Nutrision, tip and infomation
+- **Strength Training**: All Blogs to do with Strength, builbing mussel, lifting techniques, Tip and exercises
+- **Endurance**: All blogs that focus on the endurance training side of thing, Running, Cycling, Swimming
+- **Recovery**: All blogs to do with recovery, ie, Sleep, Post-gym, Stretching.
 
  [CKEditor](https://ckeditor.com/)
 

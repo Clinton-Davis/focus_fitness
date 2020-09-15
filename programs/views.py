@@ -1,10 +1,12 @@
 from django.contrib import messages
+from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect, reverse
 from django.views.generic import ListView, DetailView, View
 from memberships.models import UserMembership
 from memberships.views import get_user_membership
 from .models import Program, Workout
+from django.views.generic.base import RedirectView
 
 
 class ProgramListView(ListView):

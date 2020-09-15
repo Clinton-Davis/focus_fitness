@@ -31,7 +31,7 @@ class ProductModelTests(TestCase):
 
     def test_product_display_items(self):
         product = Product.objects.get(id=1)
-        self.assertEqual(product.display_items, False)
+        self.assertEqual(product.sales_items, False)
 
     def test_get_absolute_url(self):
         product = Product.objects.get(id=1)

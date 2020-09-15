@@ -11,7 +11,7 @@
         "image_url": null,
         "image": "Goldstatdard.png",
         "in_stock": true,
-        "display_items": true
+        "sales_items": true
     }
 }, {
     "model": "products.product",
@@ -26,7 +26,7 @@
         "image_url": null,
         "image": "Men-jacket-navy-blue-resize.png",
         "in_stock": true,
-        "display_items": true
+        "sales_items": true
     }
 }, {
     "model": "products.product",
@@ -41,7 +41,7 @@
         "image_url": null,
         "image": "womens-vest-bk.png",
         "in_stock": true,
-        "display_items": true
+        "sales_items": true
     }
 }, {
     "model": "products.product",
@@ -56,7 +56,7 @@
         "image_url": null,
         "image": "womens-vest-red.png",
         "in_stock": true,
-        "display_items": true
+        "sales_items": true
     }
 }, {
     "model": "products.product",
@@ -71,7 +71,7 @@
         "image_url": null,
         "image": "Mens-jacket-red.png",
         "in_stock": true,
-        "display_items": true
+        "sales_items": true
     }
 }, {
     "model": "products.product",
@@ -86,7 +86,7 @@
         "image_url": null,
         "image": "Mens-jacket-blue.png",
         "in_stock": true,
-        "display_items": true
+        "sales_items": true
     }
 }, {
     "model": "products.product",
@@ -101,6 +101,6 @@
         "image_url": null,
         "image": "Mens-jacket-gray.png",
         "in_stock": true,
-        "display_items": false
+        "sales_items": false
     }
 }]

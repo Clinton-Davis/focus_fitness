@@ -68,6 +68,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'storages',
     'django_user_agents',
+    'admin_reorder',
 
     'home',
     'products',
@@ -90,7 +91,15 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_user_agents.middleware.UserAgentMiddleware',
+    'admin_reorder.middleware.ModelAdminReorder',
 ]
+
+ADMIN_REORDER = (
+    # Reordering admin tables
+    'products', 'checkout', 'blog', 'programs', 'memberships', 'account',
+    'auth', 'socialaccount', 'sites',
+
+)
 
 ROOT_URLCONF = 'focus.urls'
 

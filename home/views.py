@@ -16,7 +16,7 @@ import requests
 def IndexView(request):
     template_name = "home/index.html"
     feature_blog = Blog.objects.filter(featured=True)
-    display_items = Product.objects.filter(display_items=True)
+    sales_items = Product.objects.filter(sales_items=True)
     programs = Program.objects.all()
     category = Category.objects.all()
 
@@ -29,7 +29,7 @@ def IndexView(request):
 
     context = {
         'feature_blog': feature_blog,
-        'display_items': display_items,
+        'sales_items': sales_items,
         'programs': programs,
         'current_membership': current_membership,
         'category': category
