@@ -8,7 +8,6 @@ urlpatterns = [
 
     # path('', views.all_products, name='products'),
     path('', All_Products.as_view(), name='products'),
-
     path('<pk>/', ProductDetailView.as_view(), name='product_detail'),
 
 ]

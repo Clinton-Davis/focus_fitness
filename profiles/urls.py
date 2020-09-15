@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 from .views import Cancel_Sub_Confirm
 
+
 app_name = 'profiles'
 urlpatterns = [
 
@@ -12,6 +13,7 @@ urlpatterns = [
          name='profile_subscriptions'),
     path('order_history/<order_number>',
          views.OrderHistory, name='order_history'),
+    #     path('<int:pk>/', ShowProfilePageView.as_view(), name='ShowProfilePage')
 
 
 ]

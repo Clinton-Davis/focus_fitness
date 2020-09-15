@@ -1,8 +1,10 @@
 from django.contrib import messages
+from django.contrib.auth.models import User
+
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, DetailView
 from .models import UserProfile
 from checkout.models import Order
 from .forms import UserProfileAddressForm
@@ -98,3 +100,16 @@ def OrderHistory(request, order_number):
 
 class Cancel_Sub_Confirm(LoginRequiredMixin, TemplateView):
     template_name = "profiles/cancel_sub_confirm.html"
+
+
+# class ShowProfilePageView(LoginRequiredMixin, DetailView):
+#     model = UserProfile
+#     template_name = 'profiles/userprofile_detail.html'
+
+#     def get_context_data(self, *args, **kwargs):
+#         users = User.objects.all()
+#         context = super(ShowProfilePageView).get_context_data(*args, **kwargs)
+#         page_user = get_object_or_404(User, id=self.kwargs['pk'])
+#         context['page_user'] = page_user
+
+#         return context
