@@ -32,12 +32,13 @@
                     {% for blog in feature_blog %}
                     <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}"
                         id="slide{{ forloop.counter }} ">
-
                         <a class="" href="{{ blog.get_absolute_url }}">
                             <img class="d-block carosel-img mx-auto" src="{{ blog.thumbnail.url }}" alt="First slide">
                             <div class="row justify-content-center">
                                 <h5 class="text-center text-wht">{{ blog.title|title }}</h5>
                             </div>
+                            <p class="text-center text-wht"> <small class="text-wht">Author: </small>
+                                &nbsp;{{ blog.author|title }}</p>
                         </a>
                         <div class="row w-100 justify-content-center">
                             <a href="{{ blog.get_absolute_url }}"><i class="mx-2 text-wht fad fa-tags"></i><small
@@ -84,6 +85,8 @@
                         <div class="col-md-8 bg-black rounded">
                             <div class="card-body bg-black rounded">
                                 <h5 class="card-title text-center text-wht">{{ blog.title|title }}</h5>
+                                <p class="text-center text-wht"> <small class="text-wht">Author: </small>
+                                    &nbsp;{{ blog.author|title }}</p>
                                 <small class="text-muted"><i
                                         class="mx-2 text-wht fad fa-tags"></i>{{ blog.category }}</small>
                                 <small class="card-text text-wht">{{ blog.content|safe|truncatechars:100 }}</small>
@@ -123,6 +126,8 @@
                         <div class="col-md-8 bg-black rounded-right ">
                             <div class="card-body bg-black rounded-right">
                                 <h5 class="card-title text-center text-wht">{{ blog.title|title }}</h5>
+                                <p class="text-center text-wht"> <small class="text-wht">Author: </small>
+                                    &nbsp;{{ blog.author|title }}</p>
                                 <small class="text-muted"><i
                                         class="mx-2 text-wht fad fa-tags"></i>{{ blog.category }}</small>
                                 <small class="card-text text-wht">{{ blog.content|safe|truncatechars:100 }}</small>
@@ -159,6 +164,8 @@
                         <div class="col-md-8 bg-black rounded-left">
                             <div class="card-body bg-black rounded">
                                 <h5 class="card-title text-center text-wht">{{ blog.title|title }}</h5>
+                                <p class="text-center text-wht"> <small class="text-wht">Author: </small>
+                                    &nbsp;{{ blog.author|title }}</p>
                                 <small class="text-muted"><i
                                         class="mx-2 text-wht fad fa-tags"></i>{{ blog.category }}</small>
                                 <small class="card-text text-wht">{{ blog.content|safe|truncatechars:100 }}</small><span
@@ -204,6 +211,15 @@
                     </div>
                 </div>
 
+                <div class="">
+                    <ul>
+                        {% for author in author_blogs %}
+                        <a class="text wht" href="">
+                            {{author}}
+                        </a>
+                        {% endfor %}
+                    </ul>
+                </div>
                 <!-- Categories Widget -->
                 <div class="card my-4">
                     <button type="button"
@@ -211,6 +227,8 @@
                         data-toggle="modal" data-target="#category_Modal">Categories<i
                             class="ml-2 fad fa-info-circle fa-lg"></i>
                     </button>
+
+
 
                     <div class="card-body bg-black-a">
                         <div class="row">
@@ -337,6 +355,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
