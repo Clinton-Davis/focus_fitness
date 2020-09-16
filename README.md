@@ -56,23 +56,63 @@ Users would be able to subscribe to our training programs and also be able to do
 
 ## Scope
 
-**Focus Fitness** 
+**Focus Fitness** is a responsive subscription-based fitness portal, that allows users to read gym-related blog use the focus shop or subscribe to the trainging programs. Anyone may read the blog and use the Shop.
+We will be using [Django](<https://www.djangoproject.com/>) web framework and the site will be hosted on  [Heroku](https://www.heroku.com/postgres) using [Heroku Postgres](https://www.heroku.com/postgres) for the database.
 
-The web app is made using [Python](https://www.python.org/) and [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) as the main logical languages [Django](<https://www.djangoproject.com/>) and [Boostrap](https://getbootstrap.com/) Frameworks with [Heroku](https://www.heroku.com/postgres) hosting and [Heroku Postgres](https://www.heroku.com/postgres) for the database.
+**User**
+To become a user registration is required. Once users are logged in they will be able to access there dashboard where they can find past order history (if any) change their user password, gain access to a membership subscription, change shipping details, and have a list of all the blogs they have posted.
+Gain access to Members blogs where they can leave comments or write there own blogs.
+Users may rate and review products.
+Subscribed user members get access to all the Training and Nutritional Programs. As well as a store discount.
 
+**Administration**
+There should be an admin area where staff can control the workings of the site,
+From the admin area, we would like to control the stores’ products, add, edit or delete, and make out of stock or put on sale.
+A place to collect all the orders that as they are made.
+Control of the blogs in required, to be able to add a new blog from admin or main blog page, delete or edit blogs if users break code of conduct.
+Keep track of likes and comment s to see where the interest heading.
+Control the Training Programs content to be able to add or delete or edit.
+Have a place for all the newsletter emails
+And be able to change users membership level.
 
 ---
 
 [Back to Top](#table-of-contents)
 
 ## Structure
+The basic structure of the web page is 
+*Navigation* - Top level
+*Body* - Main page elements
+*Footer* - More navigation, email signup and legal
 
+This layout is thought out the web page.
+For a more detailed look at web site structure and page flow see Structure Diagram.
 
+<details>
+<summary>Structure Diagram (Click for image)</summary>
+
+<p align="center">
+<img src="media/wireframs/Focus_Fitness_Structure.png">
+</p>
+
+</details>
 
 ---
 
 #### **Navigation**
 
+The top Navigation is sticky so always stays at the top of each page,
+It is dynamic and will change if the user is logged in or not.
+It is divided into 3 part
+
+-  **Left - Focus Fitness Logo** -  Clickable link to the home page from anywhere on the web site
+-  **Center - Page navigation** - This is the main page navigation, this with change if the users is logged or not.
+-  **Right -User login and Cart** - This changes if the user is login or not.
+<img src="media/wireframs/admin_no_user.png">
+If the user is logged in, the user name will appear next to the user icon.
+It the user is authorised to the admin area, the is an admin login icon.
+<img src="media/wireframs/admin_nav.png">
+The cart is always visible if there is a running total Its turns green.
 
 
 <details>
@@ -87,17 +127,45 @@ The web app is made using [Python](https://www.python.org/) and [JavaScript](htt
 ---
 
 #### **Home Page (index.html page)**
-The Home page is the main landing page, Its the first page the user will see. 
+The home page or Index page is the main page for users to interact with.
+It is divided into 4 sections.
+
+**Section 1**
+Full-page background in black and white, in the middle, is a dark semitransparent block with the Focus Fitness heading and the mantra underneath.
+Underneath that are the main navigation buttons that are coloured using the supplementary colours.
+The buttons are dynamic and change with the user membership level.
+A public user will see Shop Sign up and Login Blog
+<img src="media/wireframs/btn_no_user.png">
+It the user has logged in but not a Subscribing member the button will change to
+Shop Subscribe logout and Blog
+<img src="media/wireframs/btn_user.png">
+If the user is a Subscriber the buttons will change to
+Shop Programs Logout Blog
+<img src="media/wireframs/btn_member.png">
+Underneath there are 3 clickable tiles each linking to there information they are displaying.
+The first one is displaying the Trainging Program categories, the 2nd one is about the blogs the 3rd one is showing all the categories of products in the shop.
+
+**Section 2**
+This a brief description of the Subscriptions and what perks you get for joining up.
+This is also dynamic If the member is a subscribing user this section is not shown.
+
+**Section 3**
+Here you will find all the special offer that are on offer in the shop.
+Each item is clickable and will go directly to the product detail page.
+
+
+**Section 4**
+Here are displayed all the featured blog, again clickable and will take to you to the blog post.
 
 <details>
-<summary>All Recipes Wireframes (Click for image)</summary>
+<summary>Home Page Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="static/wireframes/all_recipe_desk.png">
+
+<img src="media/wireframs/focus_index_pic.png">
+
 </p>
-<p align="center">
-<img src="static/wireframes/all_recipe_moble.png">
-</p>
+
 </details>
 
 ---
@@ -217,6 +285,7 @@ Underneath the Category selection box is the Members blogs, a list of all the us
 
 Once the category selection has been made, they will be redirected to here.
 All the blog post in that category will be displayed.
+Only logged in users may see the members category or posts
 
 <details>
 <summary>Add Recipes Wireframes (Click for image)</summary>
@@ -286,7 +355,7 @@ It is divided into 3 parts.
 
 - Here you can change your user password.
 - You can change or add your delivery details.
-- All see that subscription level you are at,   It the user is a top-level subscription, (Pro)  you are able to see when the next payment is   was and is due.
+- All see that subscription level you are at,   It the user is a top-level subscription, (Pro)  you are able to see when the next payment is due.
 
 **My Blogs**
 
@@ -299,14 +368,12 @@ It is divided into 3 parts.
 - There is also a link to get you Stripe receipt.
 
 <details>
-<summary>Add Recipes Wireframes (Click for image)</summary>
+<summary>Dashboard Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="static/wireframes/add_recipe_desk.png">
+<img src="media/wireframs/dashBoard.png">
 </p>
-<p align="center">
-<img src="static/wireframes/add_recipe_mobile.png">
-</p>
+
 </details>
 
 ---
