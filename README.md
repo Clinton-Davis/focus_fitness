@@ -37,16 +37,18 @@ My directive was to make an online community based around a fitness brand: **Foc
 A blog where users can interact with each other and get tips and trips from the Pros.
 Users would be able to subscribe to our training programs and also be able to do once-off purchases from our eCommerce store.
 
-
 ### User Stories
 
-1. I would like to be able to read about 
+1. It would be nice to be able to get everything I need to start my training from one website.
+2. I would like to see if there are any special offers.
+3. I would like to be able to purchase an item from the shop without having to log in.
+4. I would like to read Professional blog about training and nutrition.
+5. I would like to be able to watch a video on how to do exercises and techniques.
+6. I would like to have a place where I can see all my past orders
+7. I would like to be able to comment on other members blogs.
+8. I would like to be able to ask questions about a product or blog post.
+9. I would like to be able to review and rate products.
 
-2. I would like to have all of my recipes in one place.
-
-3. I would also like to be able to edit them if on the app.
-
-4. I would like to have my friends and family share our recipies we like so we can all enjoy them.
 
 ---
 

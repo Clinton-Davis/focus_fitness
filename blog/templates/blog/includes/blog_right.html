@@ -1,0 +1,36 @@
+{% load static %}
+<a href="{{ blog.get_absolute_url }}">
+    <div class="card mb-3 border rounded
+                {% if blog.category  == 'Dieting' %} border border-primary 
+                {% elif blog.category  == 'Recovery' %} border border-warning 
+                {% elif blog.category  == 'Covid-19' %} border border-danger 
+                {% elif blog.category  == 'Endurance' %} border border-info
+                {% else %} border border-success {% endif %}" style=" max-width: 830px;">
+        <div class="row no-gutters rounded">
+            <div class="col-md-4 bg-black rounded">
+                <img src="{{ blog.thumbnail.url }}" class="card-img blog-list-img" alt="...">
+            </div>
+            <div class="col-md-8 bg-black rounded">
+                <div class="card-body bg-black rounded">
+                    <h5 class="card-title text-center text-wht">{{ blog.title|title }}</h5>
+                    <p class="text-center text-wht"> <small class="text-wht">Author: </small>
+                        &nbsp;{{ blog.author|title }}</p>
+                    <small class="text-muted"><i class="mx-2 text-wht fad fa-tags"></i>{{ blog.category }}</small>
+                    <small class="card-text text-wht">{{ blog.content|safe|truncatechars:100 }}</small>
+                    <span class="text-mute float-right"><small class="text-muted"> Posted:
+                            {{ blog.publish_date|timesince }}</small></span>
+                    <div class="row w-100 justify-content-around">
+                        <div class="text-center text-wht col-2"><span><i class="text-grn fad fa-eye"></i>
+                                {{ blog.get_view_count }}</span></div>
+                        <div class="text-center text-wht col-2"><span><i class="text-primary fad fa-thumbs-up"></i>
+                                {{ blog.get_like_count }}</span><br></div>
+                        <div class="text-center text-wht col-2"><span><i class="text-ylw fad fa-comments-alt"></i>
+                                {{ blog.get_comment_count }}</span></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</a>

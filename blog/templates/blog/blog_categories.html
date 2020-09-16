@@ -40,129 +40,72 @@
                 {% else %} text-success {% endif %}">{{ category }} Blogs</h1>
             </div>
             {% for blog in category_blogs %}
+            {% if blog.category == 'Members' %}
+            {% if user.is_authenticated %}
             {% if screen_size == True %}
-            <a href="{{ blog.get_absolute_url }}">
-                <div class="card mb-3 border rounded
-                        {% if blog.category  == 'Dieting' %} border border-primary 
-                        {% elif blog.category  == 'Recovery' %} border border-warning 
-                        {% elif blog.category  == 'Covid-19' %} border border-danger 
-                        {% elif blog.category  == 'Endurance' %} border border-info
-                        {% else %} border border-success {% endif %}" style=" max-width: 830px;">
-                    <div class="row no-gutters rounded">
-                        <div class="col-md-4 bg-black rounded">
-                            <img src="{{ blog.thumbnail.url }}" class="card-img blog-list-img" alt="...">
-                        </div>
-                        <div class="col-md-8 bg-black rounded">
-                            <div class="card-body bg-black rounded">
-                                <h5 class="card-title text-center text-wht">{{ blog.title|title }}</h5>
-                                <p class="text-center text-wht"> <small class="text-wht">Author: </small>
-                                    &nbsp;{{ blog.author|title }}</p>
-                                <small class="text-muted"><i
-                                        class="mx-2 text-wht fad fa-tags"></i>{{ blog.category }}</small>
-                                <small class="card-text text-wht">{{ blog.content|safe|truncatechars:100 }}</small>
-                                <span class="text-mute float-right"><small class="text-muted"> Posted:
-                                        {{ blog.publish_date|timesince }}</small></span>
-                                <div class="row w-100 justify-content-around">
-                                    <div class="text-center text-wht col-2"><span><i class="text-grn fad fa-eye"></i>
-                                            {{ blog.get_view_count }}</span></div>
-                                    <div class="text-center text-wht col-2"><span><i
-                                                class="text-primary fad fa-thumbs-up"></i>
-                                            {{ blog.get_like_count }}</span><br></div>
-                                    <div class="text-center text-wht col-2"><span><i
-                                                class="text-ylw fad fa-comments-alt"></i>
-                                            {{ blog.get_comment_count }}</span></div>
-                                </div>
+            {% include "blog/includes/blog_right.html" %}
 
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </a>
+            <!-- else screen true  -->
             {% else %}
             {% if not forloop.counter|divisibleby:2  %}
-            <a href="{{ blog.get_absolute_url }}">
-                <div class="card mb-3 
-                        {% if blog.category  == 'Dieting' %} border border-primary 
-                        {% elif blog.category  == 'Recovery' %} border border-warning 
-                        {% elif blog.category  == 'Covid-19' %} border border-danger 
-                        {% elif blog.category  == 'Endurance' %} border border-info
-                        {% else %} border border-success {% endif %}" style="max-width: 830px;">
-                    <div class="row no-gutters rounded-left ">
-                        <div class="col-md-4 bg-black rounded">
-                            <img src="{{ blog.thumbnail.url }}" class="card-img blog-list-img "
-                                alt="{{ blog.title|title }}">
-                        </div>
-                        <div class="col-md-8 bg-black rounded-right ">
-                            <div class="card-body bg-black rounded-right">
-                                <h5 class="card-title text-center text-wht">{{ blog.title|title }}</h5>
-                                <p class="text-center text-wht"> <small class="text-wht">Author: </small>
-                                    &nbsp;{{ blog.author|title }}</p>
-                                <small class="text-muted"><i
-                                        class="mx-2 text-wht fad fa-tags"></i>{{ blog.category }}</small>
-                                <small class="card-text text-wht">{{ blog.content|safe|truncatechars:100 }}</small>
-                                <span class="text-mute float-right"><small class="text-muted"> Posted:
-                                        {{ blog.publish_date|timesince }}</small></span>
-                                <div class="row w-100 justify-content-around">
-                                    <div class="text-center text-wht col-2"><span><i class="text-grn fad fa-eye"></i>
-                                            {{ blog.get_view_count }}</span></div>
-                                    <div class="text-center text-wht col-2"><span><i
-                                                class="text-primary fad fa-thumbs-up"></i>
-                                            {{ blog.get_like_count }}</span><br></div>
-                                    <div class="text-center text-wht col-2"><span><i
-                                                class="text-ylw fad fa-comments-alt"></i>
-                                            {{ blog.get_comment_count }}</span></div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </a>
+            {% include "blog/includes/blog_right.html" %}
+            <!-- else counter loop  -->
             {% else %}
-            <a href="{{ blog.get_absolute_url }}">
-                <div class="card mb-3 
-                {% if blog.category  == 'Dieting' %} border border-primary 
-                {% elif blog.category  == 'Recovery' %} border border-warning 
-                {% elif blog.category  == 'Endurance' %} border border-info
-                {% elif blog.category  == 'Covid-19' %} border border-danger 
-                {% elif blog.category  == 'Members' %} border border-light 
-                {% else %} border border-success {% endif %}" style="max-width: 830px;">
-                    <div class="row no-gutters rounded-left">
+            {% include "blog/includes/blog_left.html" %}
+            <!-- endif counter loop  -->
+            {% endif %}
+            <!-- endif screen true -->
+            {% endif %}
+            <!-- else != auth -->
+            {% else %}
+            <!-- members only -->
+            <div class="container center-block pt-4">
+                <div class="overlay">
+                    <div class="col-12 p-4">
+                        <p class="text-wht aw display-3 text-center">{{ category }} only</p>
+                        <h5 class="text-wht text-center">If you would like to
+                            join you can <a class="text-red" href="{% url 'account_signup' %}">Sign up</a> or <a
+                                class="text-grn" href="{% url 'account_login' %}">Login</a> </h5>
+                        <div class="row d-flex flex-row">
+                            <div class="col-12">
+                                <span>
+                                    <a class="ripple-surface my-2 w-100 text-wht aw px-4 btn btn-warning"
+                                        href="{% url 'blog:list' %}">Back to
+                                        Blogs<i class="pl-3 fad fa-undo"></i></a>
+                                </span>
+                                <span>
+                                    <a class="ripple-surface my-2 w-100 text-wht aw px-4 btn btn-success"
+                                        href="{% url 'home' %}"><i class="pr-3 fad fa-home"></i>Home</a>
+                                </span>
 
-                        <div class="col-md-8 bg-black rounded-left">
-                            <div class="card-body bg-black rounded">
-                                <h5 class="card-title text-center text-wht">{{ blog.title|title }}</h5>
-                                <p class="text-center text-wht"> <small class="text-wht">Author: </small>
-                                    &nbsp;{{ blog.author|title }}</p>
-                                <small class="text-muted"><i
-                                        class="mx-2 text-wht fad fa-tags"></i>{{ blog.category }}</small>
-                                <small class="card-text text-wht">{{ blog.content|safe|truncatechars:100 }}</small><span
-                                    class="text-mute float-right"><small class="text-muted"> Posted:
-                                        {{ blog.publish_date|timesince }}</small></span>
-                                <div class="row w-100 justify-content-around">
-                                    <div class="text-center text-wht col-2"><span><i class="text-grn fad fa-eye"></i>
-                                            {{ blog.get_view_count }}</span></div>
-                                    <div class="text-center text-wht col-2"><span><i
-                                                class="text-primary fad fa-thumbs-up"></i>
-                                            {{ blog.get_like_count }}</span><br></div>
-                                    <div class="text-center text-wht col-2"><span><i
-                                                class="text-ylw fad fa-comments-alt"></i>
-                                            {{ blog.get_comment_count }}</span></div>
-                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4 bg-black rounded">
-                            <img src="{{ blog.thumbnail.url }}" class="card-img blog-list-img"
-                                alt="{{ blog.title|title }}">
+
                         </div>
                     </div>
                 </div>
-            </a>
+            </div>
+            <!-- endif auth -->
             {% endif %}
+            <!-- else != members -->
+            {% else %}
+            {% if screen_size == True %}
+            {% include "blog/includes/blog_right.html" %}
+            <!-- else screen true  -->
+            {% else %}
+            {% if not forloop.counter|divisibleby:2  %}
+            {% include "blog/includes/blog_right.html" %}
+            <!-- else counter loop  -->
+            {% else %}
+            {% include "blog/includes/blog_left.html" %}
+            <!-- end loop counter -->
             {% endif %}
+            <!-- endif screen true -->
+            {% endif %}
+            <!-- end if members -->
+            {% endif %}
+            <!-- end for blog loop -->
             {% endfor %}
+
         </div>
         <!-- Sidebar Widgets Column -->
         <div class="col-md-4">
