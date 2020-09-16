@@ -1,19 +1,27 @@
 from django.urls import path
 from . import views
-from .views import Cancel_Sub_Confirm
+from .views import (
+    Cancel_Sub_Confirm,
+    ShowProfilePageView,
+    ProfileView,
+    ProfileSubscription,
+    OrderHistory
+)
 
 
 app_name = 'profiles'
 urlpatterns = [
 
-    path('', views.profile, name='profile'),
-    path('profile_details/', views.ProfileDetail, name='profile_details'),
+    #     path('', views.profile, name='profile'),
+    path('', ProfileView.as_view(), name='profile'),
+    path('shipping_details/', views.shipping_details, name='shipping_details'),
     path('cancel_sub_confirm/', Cancel_Sub_Confirm.as_view(), name='cancel_sub'),
-    path('profile_subscriptions/', views.profile_subscriptions,
+    path('profile_subscriptions/', ProfileSubscription.as_view(),
          name='profile_subscriptions'),
     path('order_history/<order_number>',
-         views.OrderHistory, name='order_history'),
-    #     path('<int:pk>/', ShowProfilePageView.as_view(), name='ShowProfilePage')
+         OrderHistory.as_view(), name='order_history'),
+    path('userprofile/<int:pk>/',
+         ShowProfilePageView.as_view(), name='ShowProfilePage')
 
 
 ]

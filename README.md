@@ -4,11 +4,11 @@
 
 ---
 
-> **Chow by HotPoint** is a Web based cook book that allows anyone to upload a recipe and share it with the world.
+> **Focus Fitness** -  is an online gym portal where you can get everything you need to not just survive. Thrive!
 
 ---
 
-[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://shields.io/) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity) [![Python 3.8](https://img.shields.io/badge/Python-3.8.2-blue.svg)](https://www.python.org/downloads/release/python-360/) [![Generic badge](https://img.shields.io/badge/MongoDB-Atles-s.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Flask-1.1.2-lightgrey.svg)](https://shields.io/)
+ [![Generic badge](https://img.shields.io/badge/Django-3.0.8-s.svg)](https://shields.io/) [![Python 3.8](https://img.shields.io/badge/Python-3.8.2-blue.svg)](https://www.python.org/downloads/release/python-360/) [![Generic badge](https://img.shields.io/badge/Heroku-Postgres-s.svg)](https://shields.io/) 
 
 ## Demo
 
@@ -33,11 +33,14 @@
 
 ## UX
 
-My directive was to make an online 
+My directive was to make an online community based around a fitness brand: **Focus Fitness**
+A blog where users can interact with each other and get tips and trips from the Pros.
+Users would be able to subscribe to our training programs and also be able to do once-off purchases from our eCommerce store.
+
 
 ### User Stories
 
-1. I would like to be able to look up recipes from my favourite chefs.
+1. I would like to be able to read about 
 
 2. I would like to have all of my recipes in one place.
 
@@ -82,7 +85,7 @@ The web app is made using [Python](https://www.python.org/) and [JavaScript](htt
 ---
 
 #### **Home Page (index.html page)**
-
+The Home page is the main landing page, Its the first page the user will see. 
 
 <details>
 <summary>All Recipes Wireframes (Click for image)</summary>
@@ -157,7 +160,7 @@ The web app is made using [Python](https://www.python.org/) and [JavaScript](htt
 
 ##### Stripe payment
 
-The numbers below are used to test the [Stripe](https://stripe.com) Payent software.
+The numbers below are used to test the [Stripe](https://stripe.com) Payment software.
 
 - Card number - 4242 4242 4242 4242
 - CVC - Any 3 digit number.
@@ -167,18 +170,51 @@ The numbers below are used to test the [Stripe](https://stripe.com) Payent softw
 
 ### **Blog**
 
-About the Blogs
+The blog post is the main source of communication in Focus Fitness, it is how all the user connect with each other, by right blog about how they are getting on, experiences and success they have had, products or workouts they have used from the Focus Shop or Membership Programs. A special Category call Members is for users to support each other and getting support from our Focus Fitness Trainers.
+Featured Blog is chosen by our Trainers and is generally written by Pro trainers or athletes.
 
-##### Blog Catogeries
+The Blog Page is broken down into separate parts
 
-- **Members**: This is for the members how would like to post there first blog, or ask a uestion or just tell us how you getting on with your training.
-- **Covid-19**: This is for all Covid-19 gym related topics
-- **Dieting**: This is for everything to with diet. Nutrision, tip and infomation
-- **Strength Training**: All Blogs to do with Strength, builbing mussel, lifting techniques, Tip and exercises
-- **Endurance**: All blogs that focus on the endurance training side of thing, Running, Cycling, Swimming
-- **Recovery**: All blogs to do with recovery, ie, Sleep, Post-gym, Stretching.
 
- [CKEditor](https://ckeditor.com/)
+- **Featured**
+Is the first thing you see. And uses a carcel to flip through.
+
+- **Category selection**
+A green and grey Category selection box is on the right-hand side.
+Here you will find all the available categories and some information on each.
+Each category is colour coded.
+
+  - **Members**
+This is for our users to connect with each other, write blogs about how they are enjoying one of our Focus Products or how a Membership program is working for them. If they have a question or comments on how to do anything they will be answered by our Focus Trainers in this category. By leaving comments on their blog post.
+
+  - **Covid-19**
+In this category, we will take about everything COVID and gym-related, its managing training in lockdowns and gym hygiene. 
+
+  - **Dieting**
+All blog post that are diet-related, tips tricks and pitfalls 
+
+  - **Endurance**
+All blogs that focus on the endurance training side of thing, Running, Cycling, Swimming
+Strength Training
+This is a post the have to do with Resistance training, bodybuilding, techniques tips, tricks and pitfalls
+
+  - **Recovery**
+All blogs to do with the recovery side of the gym. Sleep, post-gym products, tips, tricks and pitfalls.
+
+
+- **Blogs**
+This is where all the other blogs live.
+All blog borders are colour coded as per there category, to make it easer to see what category a blog is at a glance.
+
+- **Members Blogs**
+Underneath the Category selection box is the Members blogs, a list of all the user member’s blogs shows up here. 
+
+----
+
+#### Blog Categories Page
+
+Once the category selection has been made, they will be redirected to here.
+All the blog post in that category will be displayed.
 
 <details>
 <summary>Add Recipes Wireframes (Click for image)</summary>
@@ -191,8 +227,18 @@ About the Blogs
 </p>
 </details>
 
-#### **Blog Details**
-This is where you read the blog
+#### **Blog Detail Page**
+
+Once the user has selected the blog post they would like to read, They are redirected to the blog detail page. blog_detail.html.
+The blog post with the only element on this page. Witch in include the
+
+- Blogs Title
+- The author
+- The amount of views, likes, and comments the post have
+- Also the age of the blog post.
+
+Once the user has finished reading the post there is a section where a user may ‘like’ or leave a comment.
+Note only logged in user may use this feature.
 
 <details>
 <summary>Add Recipes Wireframes (Click for image)</summary>
@@ -205,9 +251,16 @@ This is where you read the blog
 </p>
 </details>
 
-#### **Create and Edit Blog**
+#### **Create and Edit Blog Page**
 
-This is where you read the blog, and Give thumb up and comment
+The create and edit blogs views share the same HTML file: blog_form.html
+The HTML is a form that has all the needed fields to fill out when creating or editing a blog.
+The difference is when your creating a post the form is blank with ‘placeholders’ to guild you.
+When your editing a post, all the fields are prefilled with the data needed to edit.
+Only logging in users may create or edit a blog post and
+only the Author of a blog post is authorised to edit a post.
+We use [CKEditor](https://ckeditor.com/) to format the blogs post, this gives the user all the tools to use in creating good content.
+
 
 <details>
 <summary>Add Recipes Wireframes (Click for image)</summary>
@@ -224,7 +277,24 @@ This is where you read the blog, and Give thumb up and comment
 
 #### **Dashboard**
 
+The Dashboard is where the login in user can access all their personal information.
+It is divided into 3 parts.
 
+**Profile Admin**
+
+- Here you can change your user password.
+- You can change or add your delivery details.
+- All see that subscription level you are at,   It the user is a top-level subscription, (Pro)  you are able to see when the next payment is   was and is due.
+
+**My Blogs**
+
+- Here you can see all the blogs you have written, and if you haven’t written any yet, there is a link to start.
+
+**Orders History**
+
+- Here youll find a table will all you order history on it. Click on the blue coloured Order number to get the full Order.
+- The Orders are ordered from newest to oldest.
+- There is also a link to get you Stripe receipt.
 
 <details>
 <summary>Add Recipes Wireframes (Click for image)</summary>
@@ -287,43 +357,36 @@ The About page has a centre block format with a heading and information about Fo
 #### Fonts
 
 - [Montserrat](https://fonts.google.com/specimen/Montserrat?query=montserrat) - Primary Font
-- [Lobster](https://fonts.google.com/specimen/Lobster?query=lob) - Secondary Font
-- [Baloo Chetten 2](https://fonts.google.com/specimen/Baloo+Chettan+2?query=Baloo) - Supplementary Font
+- [Audiowide](https://fonts.google.com/specimen/Audiowide) - Secondary Font
 
-The primary font <a href="https://fonts.google.com/specimen/Montserrat?query=montserrat">Montserrat</a> is in the body of all pages. I chose it because of its readability and accessibility. It complements the secondary font.
-The Secondary is <a href="https://fonts.google.com/specimen/Lobster?query=lob">Lobster</a> is in the Heading and buttons, it is a big font with a very open face, has good readability and fits the look we wanted.
-The supplementary font <a href="https://fonts.google.com/specimen/Baloo+Chettan+2?query=Baloo">Baloo Chetten 2</a> is the clients logo font.
-The backup font "Sans-Serif" is the most popular backup in case there is a loading issue the web page always has a font.
+
+The primary font <a href="https://fonts.google.com/specimen/Montserrat">Montserrat</a> is used the body of all pages. I chose it because of its readability and accessibility. It complements the secondary font.
+The Secondary is <a href="https://fonts.google.com/specimen/Audiowide">Audiowide</a> is used in the logo and transposes well to the  Heading and buttons, the technology styled, typeface gives it a young and edgie feel and yet cleanly readable.
 
 ---
 
 #### Colour Scheme
 
-- ![#e9d9ca](https://placehold.it/15/e9d9ca/000000?text=+) `rgb(233, 217, 202)` - Primary-(Jumbo)
-- ![#72080b](https://placehold.it/15/72080b/000000?text=+) `rbg(114, 8, 11)` - Secondary (Header and Footer)
-- ![#ba9d81](https://placehold.it/15/ba9d81/000000?text=+) `rgb(186, 157, 129)` - Supplementary colour 1
-- ![#5c493e](https://placehold.it/15/5c493e/000000?text=+) `rgb(92, 73, 62)` - Supplementary colour 2
-- ![#bdac52](https://placehold.it/15/bdac52/000000?text=+) `rgb(189, 172, 82)` - Supplementary colour 3
+- ![#f7f7f7](https://placehold.it/15/f7f7f7/000000?text=+) `rgb(247, 247, 247)` - Primary-(Headings and text)
+- ![#000000cc](https://placehold.it/15/000000cc/000000?text=+) `rbg(0, 0, 0, 0.8)` - Secondary (Header, Footer Backgrounds)
+- ![#1bd87d](https://placehold.it/15/1bd87d/000000?text=+) `rgb(27, 216, 125)` - Supplementary colour 1
+- ![#e7313f](https://placehold.it/15/e7313f/000000?text=+) `rgb(231, 49, 63)` - Supplementary colour 2
+- ![#e5ce21](https://placehold.it/15/e5ce21/000000?text=+) `rgb(229, 206, 33)` - Supplementary colour 3
+- ![#0275d8](https://placehold.it/15/0275d8/000000?text=+) `rgb(91, 192, 222)` - Supplementary colour 4
 
-The Colour scheme has earthy natural colours. The supplementary colours ![#ba9d81](https://placehold.it/15/ba9d81/000000?text=+) ![#5c493e](https://placehold.it/15/5c493e/000000?text=+) ![#bdac52](https://placehold.it/15/bdac52/000000?text=+) are a mix of colours used in the background image that is throughout. The secondary colour ![#72080b](https://placehold.it/15/72080b/000000?text=+) is used for the Header/Navigation and the footer, the colour itself is from a picture of wooden floorboards that have had a deep red varnish and the picture was colour saturated and contrast sharpened to give it a look we were after.
-Primary colour ![#e9d9ca](https://placehold.it/15/e9d9ca/000000?text=+) is a soft neutral colour. It contrasts nicely with the text and is used as a background colour.
+The colour scheme is all about contrast, there are a lot a dark background with white text and bold bright colours used sparingly throughout the site.
+The Supplementary colours ![#1bd87d](https://placehold.it/15/1bd87d/000000?text=+) ![#e7313f](https://placehold.it/15/e7313f/000000?text=+)  ![#e5ce21](https://placehold.it/15/e5ce21/000000?text=+)  ![#0275d8](https://placehold.it/15/0275d8/000000?text=+)  follow the Olympic weightlifting colours standard. The colours are bold and work with the theme.
 
 ---
 
 #### Images
 
-Images are used extensively. The pictures we chose created the colour theme and worked well together.
+Images are used extensively. The pictures we chose are all gym and fitness related. We used them a background in most of the site. We darkened the original pictures to fix in with the colour schema.
 
-The background image is a country kitchen. We added a light filter to it, so it would not take away from the main content of the page.
+All images where source using [Unsplash](https://unsplash.com/) and have a CC licence. 
+A list of all the pictures can be fond (make link)here
 
-<details>
-<summary>BackGround Image</summary>
- 
-<p align="center">
-<img src="static/images/overexposed-andy-chilton.png">
-</p>
-</details>
- 
+
 ---
  
 The Header and Footer image of a wooden floor has been adjusted to give it a deep red colour. The colour complements the background image.
@@ -347,20 +410,25 @@ The Header and Footer image of a wooden floor has been adjusted to give it a dee
 - [HTML 5](https://en.wikipedia.org/wiki/HTML) ~ Markup language designed to be displayed in a web browser.
 - [CSS 3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) ~ Style sheet language used for describing the presentation of a document in HTML.
 - [Python 3.8](https://code.jquery.com/) ~ High-level, general-purpose programming language.
+- [Django 3.0.8](https://www.djangoproject.com/) ~ Django is a high-level Python Web framework.
+
 - [jQuery 3.5](https://code.jquery.com/) ~ lightweight JavaScript library.
- 
-- [Flask 1.1.2](https://flask-doc.readthedocs.io/en/latest/#) ~ Micro web framework.
  
 - [Bootstrap 4.5](https://getbootstrap.com/) ~ Design and customize responsive mobile-first sites.
  
-- [Visual Studio Code](https://code.visualstudio.com/) ~ Code editor redefined and optimized for building and debugging modern web and cloud applications.
 - [Heroku](https://heroku.com) ~ A cloud based platform as a service enabling deployment of CRUD applications
+
+- [Heroku Postgres](https://www.heroku.com/postgres) ~ PostgreSQL's capabilities as a fast, functional, and powerful data resource.
+
+- [Visual Studio Code](https://code.visualstudio.com/) ~ Code editor redefined and optimized for building and debugging modern web and cloud applications.
  
 ##### Third-Party Tools
  
-- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) ~ MongoDB Atlas is the global cloud database service for modern applications.
+
  
-- [Icons - Materialize](https://materializecss.com/icons.html) ~ Material Design icons
+- [Font Awesome](https://fontawesome.com/) ~ Font Awesome icons
+- [icons8](https://icons8.com/icons/set/instagram-logo) ~ Icons8 icons
+
 - [GitHub](https://github.com/) ~ Distributed version control and source code management (SCM) functionality of Git, plus its own features.
 - [Git](https://git-scm.com/) ~ Distributed version control system
 - [Figma](https://www.figma.com/) ~ A digital design and prototyping tool. It is a UI and UX design application that you can use to create websites, apps.

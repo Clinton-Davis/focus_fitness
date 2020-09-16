@@ -4,9 +4,10 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import TemplateView, DetailView
+from django.views.generic import TemplateView, ListView, View
 from .models import UserProfile
 from checkout.models import Order
+from blog.models import Blog
 from .forms import UserProfileAddressForm
 from blog.models import Blog
 from memberships.views import (
@@ -16,50 +17,53 @@ from memberships.views import (
 )
 
 
-@login_required
-def profile(request):
+class ProfileView(LoginRequiredMixin, View):
     template_name = 'profiles/profile.html'
+    context_object_name = 'profile'
 
-    profile = get_object_or_404(UserProfile, user=request.user)
-    """Displaying user Profile """
-    user_membership = get_user_membership(request)
-    user_subscription = get_user_subscription(request)
-    orders = profile.Orders.all().order_by('-date')
-    user_blog = Blog.objects.filter(
-        author=request.user).order_by('-publish_date')
+    def get(self, request, *args, **kwargs):
+        profile = get_object_or_404(UserProfile, user=request.user)
+        """Displaying user Profile """
+        user_membership = get_user_membership(request)
+        user_subscription = get_user_subscription(request)
+        orders = profile.Orders.all().order_by('-date')
+        user_blog = Blog.objects.filter(
+            author=request.user).order_by('-publish_date')
 
-    context = {
-        'profile': profile,
-        'user_membership': user_membership,
-        'user_subscription': user_subscription,
-        'orders': orders,
-        'user_blog': user_blog,
-    }
+        context = {
+            'profile': profile,
+            'user_membership': user_membership,
+            'user_subscription': user_subscription,
+            'orders': orders,
+            'user_blog': user_blog,
+        }
 
-    return render(request, 'profiles/profile.html', context)
+        return render(request, 'profiles/profile.html', context)
 
 
-@login_required
-def profile_subscriptions(request):
+class ProfileSubscription(LoginRequiredMixin, View):
     template = 'profiles/profile_subscriptions.html'
-    profile = get_object_or_404(UserProfile, user=request.user)
-    """Displaying user Profile """
-    user_membership = get_user_membership(request)
-    user_subscription = get_user_subscription(request)
+    context_object_name = 'profile'
 
-    context = {
-        'profile': profile,
-        'user_membership': user_membership,
-        'user_subscription': user_subscription
-    }
+    def get(self, request, *args, **kwargs):
+        profile = get_object_or_404(UserProfile, user=request.user)
+        """Displaying user Profile """
+        user_membership = get_user_membership(request)
+        user_subscription = get_user_subscription(request)
 
-    return render(request, template, context)
+        context = {
+            'profile': profile,
+            'user_membership': user_membership,
+            'user_subscription': user_subscription
+        }
+
+        return render(request, 'profiles/profile_subscriptions.html', context)
 
 
 @login_required
-def ProfileDetail(request):
+def shipping_details(request):
     """Displaying User Order history and edit address froms (Login form Code Institute)"""
-    template = 'profiles/profile_details.html'
+    template = 'profiles/shipping_details.html'
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
@@ -70,46 +74,44 @@ def ProfileDetail(request):
                 request, 'Your Shipping details have been updated')
 
     form = UserProfileAddressForm(instance=profile)
-    orders = profile.Orders.all()
 
     context = {
         'form': form,
-        'orders': orders,
     }
 
     return render(request, template, context)
 
 
-@login_required
-def OrderHistory(request, order_number):
-    """
-    Gets a past oder and displays if with a message
-    (Login and Code form Code Institute)
-    """
+class OrderHistory(LoginRequiredMixin, View):
     template = 'checkout/checkout_success.html'
-    order = get_object_or_404(Order, order_number=order_number)
-    messages.info(request, (
-        f'This is a past confirmed order: { order_number }.'
-    ))
-    context = {
-        'order': order,
-        'from_profile': True,
-    }
-    return render(request, template, context)
+    context_object_name = 'order'
+
+    def get(self, request, order_number, *args, **kwargs):
+        order = get_object_or_404(Order, order_number=order_number)
+        messages.info(request, (
+            f'This is a past confirmed order: { order_number }.'
+        ))
+        context = {
+            'order': order,
+            'from_profile': True,
+        }
+        return render(request, 'checkout/checkout_success.html', context)
 
 
 class Cancel_Sub_Confirm(LoginRequiredMixin, TemplateView):
     template_name = "profiles/cancel_sub_confirm.html"
 
 
-# class ShowProfilePageView(LoginRequiredMixin, DetailView):
-#     model = UserProfile
-#     template_name = 'profiles/userprofile_detail.html'
+class ShowProfilePageView(LoginRequiredMixin, View):
+    template_name = 'profiles/userprofile_detail.html'
+    context_object_name = 'user'
 
-#     def get_context_data(self, *args, **kwargs):
-#         users = User.objects.all()
-#         context = super(ShowProfilePageView).get_context_data(*args, **kwargs)
-#         page_user = get_object_or_404(User, id=self.kwargs['pk'])
-#         context['page_user'] = page_user
-
-#         return context
+    def get(self, request, *args, **kwargs):
+        user_profile = get_object_or_404(User, id=self.kwargs['pk'])
+        user_blog = Blog.objects.filter(
+            author=request.user).order_by('-publish_date')
+        context = {
+            'page_user': user_profile,
+            'user_blog': user_blog,
+        }
+        return render(request, 'profiles/userprofile_detail.html', context)
