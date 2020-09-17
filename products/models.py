@@ -34,7 +34,7 @@ class Product(models.Model):
     in_stock = models.BooleanField(default=True)
     sales_items = models.BooleanField(default=False)
     code = models.CharField(max_length=25, null=False,
-                            blank=False, default='Set_Code')
+                            blank=False)
 
     def __str__(self):
         return self.name
