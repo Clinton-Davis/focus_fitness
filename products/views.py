@@ -13,7 +13,7 @@ class All_Products(View):
 
     def get(self, request, *args, **kwargs):
         """ Gives the Login for the Search and the Sort dropdown (Login form Code Institute) """
-        products = Product.objects.all()
+        products = Product.objects.all().order_by('code')
         query = None
         categories = None
         sort = None

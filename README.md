@@ -80,7 +80,8 @@ And be able to change users membership level.
 [Back to Top](#table-of-contents)
 
 ## Structure
-The basic structure of the web page is 
+
+The basic structure of the web page is
 *Navigation* - Top level
 *Body* - Main page elements
 *Footer* - More navigation, email signup and legal
@@ -171,8 +172,7 @@ Here are displayed all the featured blog, again clickable and will take to you t
 ---
 
 ### Shop
-
-
+All the items in 
 
 <details>
 <summary>(Click for image)</summary>
@@ -208,13 +208,10 @@ Here are displayed all the featured blog, again clickable and will take to you t
 <p align="center">
 <img src="static/wireframes/recipe_desk.png">
 </p>
-<p align="center">
-<img src="static/wireframes/recipe_moble.png">
-</p>
+
 </details>
 
 #### Checkout
-
 
 <details>
 <summary>(Click for image)</summary>
@@ -222,9 +219,18 @@ Here are displayed all the featured blog, again clickable and will take to you t
 <p align="center">
 <img src="static/wireframes/recipe_desk.png">
 </p>
+
+</details>
+
+#### Checkout Success
+
+<details>
+<summary>(Click for image)</summary>
+
 <p align="center">
-<img src="static/wireframes/recipe_moble.png">
+<img src="static/wireframes/recipe_desk.png">
 </p>
+
 </details>
 
 

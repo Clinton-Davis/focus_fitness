@@ -3,7 +3,7 @@ import environ
 import dj_database_url
 
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -61,7 +61,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.facebook',
+    # 'allauth.socialaccount.providers.facebook',
 
     'crispy_forms',
     'ckeditor',
@@ -138,16 +138,16 @@ else:
 
 # Choosing the db to use in development or production
 if DEBUG is True:
-    # DATABASES = {
-    #     'default': {
-    #         'ENGINE': 'django.db.backends.sqlite3',
-    #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    #     }
-    # }
-
     DATABASES = {
-        'default': dj_database_url.parse(env('DATABASE_URL'))
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
+
+    # DATABASES = {
+    #     'default': dj_database_url.parse(env('DATABASE_URL'))
+    # }
 
 else:
     DATABASES = {
