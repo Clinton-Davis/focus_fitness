@@ -2,12 +2,10 @@ import os
 import environ
 import dj_database_url
 
-DEBUG = True
+DEBUG = False
 
-if DEBUG is True:
-    ALLOWED_HOSTS = ['*']
-else:
-    ALLOWED_HOSTS = ['https://focus-fitness.herokuapp.com/']
+ALLOWED_HOSTS = ['*']
+
 if DEBUG is True:
     env = environ.Env()
     # read the .env file
@@ -62,7 +60,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    # 'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.facebook',
 
     'crispy_forms',
     'ckeditor',
@@ -221,7 +219,8 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
