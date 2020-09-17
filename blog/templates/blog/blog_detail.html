@@ -26,11 +26,12 @@
                 <h1 class="mt-4 aw text-center"> {{ blog.title|title }}</h1>
                 <!-- Author -->
                 <p class="lead">
-                    <a href="{% url 'profiles:ShowProfilePage' blog.author.id %}">
+                    <a href="{% url 'profiles:AuthorsBlogs' blog.author.id %}"
+                        title="See all Blogs by: {{ blog.author|title }}">
                         By: {{ blog.author|title }}
                     </a>
                     {% if  user.is_authenticated and user == blog.author %}
-                    <span><a class="font-small ml-3 mb-0 text-grn" href="{{ blog.get_update_url }}"> (Edit)</a></span>
+                    <span><a class=" font-small ml-3 mb-0 text-grn" href="{{ blog.get_update_url }}"> (Edit)</a></span>
                     <span class="font-small mb-0 text-wht">/</span>
                     <span><a class="font-small mb-0 text-red" href="{{ blog.get_delete_url }}"> (Delete)</a></span>
                     {% endif %}
@@ -144,4 +145,4 @@
 
 {% endblock content %}
 
-<!-- <a href="{% url 'profiles:ShowProfilePage' blog.author.id %}"></a> -->
+<!-- <a href="{% url 'profiles:AuthorsBlogs' blog.author.id %}"></a> -->

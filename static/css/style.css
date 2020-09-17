@@ -738,9 +738,10 @@ nav {
 
 .reg-pic {
   background: url(/static/images/javier-santos-guzman.jpg) no-repeat fixed;
+  min-height: 90vh;
   height: fit-content;
   background-position: 50% 30%;
-  /* background-color: #fff; */
+
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

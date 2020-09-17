@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 from .views import (
     Cancel_Sub_Confirm,
-    ShowProfilePageView,
+    AuthorsBlogPageView,
     ProfileView,
     ProfileSubscription,
     OrderHistory
@@ -21,7 +21,7 @@ urlpatterns = [
     path('order_history/<order_number>',
          OrderHistory.as_view(), name='order_history'),
     path('userprofile/<int:pk>/',
-         ShowProfilePageView.as_view(), name='ShowProfilePage')
+         AuthorsBlogPageView.as_view(), name='AuthorsBlogs')
 
 
 ]

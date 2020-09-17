@@ -102,14 +102,14 @@ class Cancel_Sub_Confirm(LoginRequiredMixin, TemplateView):
     template_name = "profiles/cancel_sub_confirm.html"
 
 
-class ShowProfilePageView(LoginRequiredMixin, View):
+class AuthorsBlogPageView(LoginRequiredMixin, View):
     template_name = 'profiles/userprofile_detail.html'
     context_object_name = 'user'
 
     def get(self, request, *args, **kwargs):
         user_profile = get_object_or_404(User, id=self.kwargs['pk'])
         user_blog = Blog.objects.filter(
-            author=request.user).order_by('-publish_date')
+            author=user_profile.id).order_by('-publish_date')
         context = {
             'page_user': user_profile,
             'user_blog': user_blog,
