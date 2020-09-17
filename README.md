@@ -172,7 +172,34 @@ Here are displayed all the featured blog, again clickable and will take to you t
 ---
 
 ### Shop
-All the items in 
+
+*Layout*
+*The shop heading is top center*. -To let the user know where they are
+*Products Filtering area* - This get middle page, for easy accessibility
+*Product Cards* - The lower middle and the rest of the page,
+
+*Product Filtering area*
+The category selectors are coloured in the supplementary colour to distinguish them apart at a glance
+All products/ Activewaer & Eqp/ Supplements /Special offers
+All products - lets you sort by price, lowest to highest or by Category in an alphabetical order.
+Activewaer - let you sort by individual Activewaer categories
+Supplements - let you sort by individual supplements categories
+Special Offers - shows you all the Special Offers
+On the Right hand side there is a selector that lets you order by:
+Price -(low-high) or (high-low)
+Name - (A-Z) or (Z-A)
+Category (A-Z) or (Z-A)
+On the right hand side is another way to get back to default ordering and shows you how many products are in the search
+*Search bar*
+Here you can search a word or a the product name and it will look for a match in the title or in the description of the product.
+
+*Product cards*
+The products are displayed on cards that sit side next and on top of each other.
+The product picture is at the top with the name of the product underneath.
+If the product is on sale it will be shown here with a ‘was’ price next to it.
+The price of the item is displayed in bold numbers.
+The category is below the price.
+Next is the stars rating. The product is rated by the users and the average of all the ratings is displayed here, total out of 5.
 
 <details>
 <summary>(Click for image)</summary>
@@ -180,13 +207,23 @@ All the items in
 <p align="center">
 <img src="static/wireframes/recipe_desk.png">
 </p>
-<p align="center">
-<img src="static/wireframes/recipe_moble.png">
-</p>
+
 </details>
 
 #### Product Details
 
+The Details page is a center block design, with breadcrumbs navigation in the top left.
+The center is divided in half, the left hand side a picture of the product and on the right is the information
+Name / category / rating / price
+Below is a size selector, if the product has a size this is there,
+Next is a quantity selector - and +
+The Add to Cart button is below.
+The bottom part of the block is for the Product Overview
+This is where there are more details about the product.
+Under that there is the reviews section
+The product's overall rating is displayed here.
+This is where you write your review.
+Below is a list of all the reviews and individual ratings the users gave the product.
 
 <details>
 <summary>(Click for image)</summary>
@@ -194,12 +231,18 @@ All the items in
 <p align="center">
 <img src="static/wireframes/recipe_desk.png">
 </p>
-<p align="center">
-<img src="static/wireframes/recipe_moble.png">
-</p>
+
 </details>
 
 #### Cart
+
+The Cart is where you see a list of all the products that you have added.
+Center block design. The top horizontal half is a list of all the products with a small image on the left name / prince/ and a quantity adjuster if you have made a mistake, you can also remove  the product form here.
+The Order Summary is below the products list and hold all the details of your order
+Cart Total / discounts (if applicable) / Subtotal / Delivery charge / Tax amount (Note is is added into the total amount, The tax amount is just to show how much it it)
+Grand Total
+The Keep shopping button will take you back to the shop, and checkout will take to the check out.
+
 
 
 <details>
@@ -213,6 +256,20 @@ All the items in
 
 #### Checkout
 
+Full page layout with the user order form to complete. Contact details and delivery address.
+Where is a Save information to profile button that if pressed the information will be autofilled next time they use the shore.
+
+A Stripe payment system is inplace and takes all major cards.
+The numbers below are used to test the Stripe Payment software.
+
+-  Card number - 4242 4242 4242 4242
+
+-  CVC - Any 3 digit number.
+
+-  Expire date - Any date in the future
+
+If you need to adjust the cart there is an Adjust cart button to take you back or Complete Order.
+
 <details>
 <summary>(Click for image)</summary>
 
@@ -224,6 +281,11 @@ All the items in
 
 #### Checkout Success
 
+Two center blocks one on the left and right both hold all your order details.
+Breadcrumbs in the top left will take you to your dashboard.
+The left block has the order number / Date of order / detail of what you have ordered and the paid amounts / Stripe Receipt.
+Clicking the receipt will sent to a new page with you stripe receipt
+
 <details>
 <summary>(Click for image)</summary>
 
@@ -232,15 +294,6 @@ All the items in
 </p>
 
 </details>
-
-
-##### Stripe payment
-
-The numbers below are used to test the [Stripe](https://stripe.com) Payment software.
-
-- Card number - 4242 4242 4242 4242
-- CVC - Any 3 digit number.
-- Expire date - Any date in the future
 
 ---
 
@@ -414,7 +467,25 @@ The About page has a centre block format with a heading and information about Fo
 
 #### **Programs**
 
+<details>
+<summary>Chow Schema (Click for image)</summary>
 
+<p align="center">
+<img src="static/wireframes/schema.png">
+</p>
+</details>
+
+#### **Memberships**
+
+<details>
+<summary>Chow Schema (Click for image)</summary>
+
+<p align="center">
+<img src="static/wireframes/schema.png">
+</p>
+</details>
+
+#### **Data Base**
 
 <details>
 <summary>Chow Schema (Click for image)</summary>
