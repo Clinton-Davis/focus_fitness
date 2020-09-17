@@ -21,9 +21,9 @@
 
     <div class="row">
         <div class="col-12 col-lg-6 order-lg-last mb-5">
-            <p class="text-muted aw">Order Summary ({{ product_count }})</p>
+            <p class="text-muted aw ml-1">Order Summary ({{ product_count }})</p>
             <div class="row">
-                <div class="col-7 offset-2">
+                <div class="col-7 offset-1">
                     <p class="mb-1 mt-0 small text-muted">Item</p>
                 </div>
                 <div class="col-3 text-right">
@@ -32,16 +32,16 @@
             </div>
             {% for item in cart_items %}
             <div class="row">
-                <div class="col-2 mb-1">
+                <div class="col-2">
                     <a href="{% url 'products:product_detail' item.product.id %}">
                         {% if item.product.image %}
-                        <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
+                        <img class="ml-1 w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
                         {% else %}
-                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                        <img class="ml-1 w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                         {% endif %}
                     </a>
                 </div>
-                <div class="col-7">
+                <div class="col-6">
                     <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                     <p class="my-0 small">Size:
                         {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
@@ -53,8 +53,9 @@
             </div>
             {% endfor %}
             <hr class="my-0">
-            <div class="row text-black text-right">
-                <div class="col-7 offset-2">
+
+            <div class="row mt-4 text-black text-left">
+                <div class="col-7 offset-1">
                     <p class="my-0 aw">Order Total:</p>
                     <p class="my-0 aw">Discount:</p>
                     <p class="my-0 aw">Sub Total:</p>
@@ -62,8 +63,7 @@
                     <p class="my-0 aw">Delivery:</p>
                     <p class="my-0 aw">Grand Total:</p>
                 </div>
-                <div class="col-3">
-
+                <div class="col-3 text-right">
                     <p class="my-0 aw">${{ cart_total | floatformat:2 }}</p>
                     <p class="my-0 aw">${{ discount | floatformat:2 }}</p>
                     <p class="my-0 aw">${{ sub_total | floatformat:2 }}</p>
@@ -75,7 +75,7 @@
         </div>
 
         <div class="co-12 col-lg-6">
-            <p class="text-muted aw">Please fill out the form below to compleate you order</p>
+            <p class="ml-1 text-muted aw">Please fill out the form below to compleate you order</p>
             <form action="{% url 'checkout:checkout' %}" method="POST" id="shop_payment-form">
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-5">
@@ -118,12 +118,12 @@
                     <!-- Pass the client secret to the view so we can get the payment intent id -->
                     <input type="hidden" value="{{ client_secret }}" name="client_secret">
                     <div class="submit-button text-center mt-2 mb-2">
-                        <a href="{% url 'cart_view' %}" class="btn btn-warning ">
+                        <a href="{% url 'cart_view' %}" class="aw w-100 btn btn-warning ">
                             <img src="https://img.icons8.com/doodle/32/000000/reply-arrow.png" />
                             <span class="font-weight-bold">Adjust Cart</span>
 
                         </a>
-                        <button id="submit-button" class="btn btn-success">
+                        <button id="submit-button" class="mt-2 aw w-100 btn btn-success">
                             <span class=" font-weight-bold">Complete Order</span>
                             <img class="ml-2" src="https://img.icons8.com/dusk/32/000000/password-check.png" />
                         </button>

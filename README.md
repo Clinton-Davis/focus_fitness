@@ -245,7 +245,6 @@ Featured Blog is chosen by our Trainers and is generally written by Pro trainers
 
 The Blog Page is broken down into separate parts
 
-
 - **Featured**
 Is the first thing you see. And uses a carcel to flip through.
 
@@ -271,7 +270,6 @@ This is a post the have to do with Resistance training, bodybuilding, techniques
   - **Recovery**
 All blogs to do with the recovery side of the gym. Sleep, post-gym products, tips, tricks and pitfalls.
 
-
 - **Blogs**
 This is where all the other blogs live.
 All blog borders are colour coded as per there category, to make it easer to see what category a blog is at a glance.
@@ -279,24 +277,30 @@ All blog borders are colour coded as per there category, to make it easer to see
 - **Members Blogs**
 Underneath the Category selection box is the Members blogs, a list of all the user member’s blogs shows up here. 
 
+<details>
+<summary>Blog List Wireframes (Click for image)</summary>
+
+<p align="center">
+<img src="media/wireframs/blog_list_d_mo.png">
+</p>
+
+</details>
+
 ----
 
 #### Blog Categories Page
 
 Once the category selection has been made, they will be redirected to here.
 All the blog post in that category will be displayed.
-Only logged in users may see the members category or posts
+Only logged in users may see the Members posts
 
 <details>
-<summary>Add Recipes Wireframes (Click for image)</summary>
+<summary>Blog Categories Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="static/wireframes/add_recipe_desk.png">
+<img src="media/wireframs/blog_cat.png">
 </p>
-<p align="center">
-<img src="static/wireframes/add_recipe_mobile.png">
-</p>
-</details>
+
 
 #### **Blog Detail Page**
 
@@ -305,6 +309,7 @@ The blog post with the only element on this page. Witch in include the
 
 - Blogs Title
 - The author
+- The blog post its self
 - The amount of views, likes, and comments the post have
 - Also the age of the blog post.
 
@@ -312,14 +317,12 @@ Once the user has finished reading the post there is a section where a user may 
 Note only logged in user may use this feature.
 
 <details>
-<summary>Add Recipes Wireframes (Click for image)</summary>
+<summary>Blog Detais Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="static/wireframes/add_recipe_desk.png">
+<img src="media/wireframs/detail_blog.png">
 </p>
-<p align="center">
-<img src="static/wireframes/add_recipe_mobile.png">
-</p>
+
 </details>
 
 #### **Create and Edit Blog Page**
@@ -334,14 +337,12 @@ We use [CKEditor](https://ckeditor.com/) to format the blogs post, this gives th
 
 
 <details>
-<summary>Add Recipes Wireframes (Click for image)</summary>
+<summary>Blog Create/Edit Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="static/wireframes/add_recipe_desk.png">
+<img src="media/wireframs/blog_forms.png">
 </p>
-<p align="center">
-<img src="static/wireframes/add_recipe_mobile.png">
-</p>
+
 </details>
 
 ---
