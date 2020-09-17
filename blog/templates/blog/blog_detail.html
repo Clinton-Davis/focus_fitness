@@ -33,7 +33,6 @@
                     <span><a class="font-small ml-3 mb-0 text-grn" href="{{ blog.get_update_url }}"> (Edit)</a></span>
                     <span class="font-small mb-0 text-wht">/</span>
                     <span><a class="font-small mb-0 text-red" href="{{ blog.get_delete_url }}"> (Delete)</a></span>
-
                     {% endif %}
                 </p>
 
@@ -49,8 +48,12 @@
                 <hr class="hr-wht">
 
                 <!-- Preview Image -->
-                <img class="img-fluid mx-auto rounded" src="{{ blog.thumbnail.url }}" alt="">
-
+                {% if blog.category != 'Members' %}
+                <img class="img-fluid mx-auto rounded" src="{{ blog.thumbnail.url }}" alt="Blog Pic">
+                {% else %}
+                <img class="img-fluid mx-auto rounded" style="width: 12rem;" src="{{ blog.thumbnail.url }}"
+                    alt="Blog Pic">
+                {% endif %}
                 <hr class="hr-wht">
 
                 <!-- Post Content -->

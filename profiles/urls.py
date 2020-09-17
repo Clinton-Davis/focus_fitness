@@ -12,7 +12,7 @@ from .views import (
 app_name = 'profiles'
 urlpatterns = [
 
-    #     path('', views.profile, name='profile'),
+
     path('', ProfileView.as_view(), name='profile'),
     path('shipping_details/', views.shipping_details, name='shipping_details'),
     path('cancel_sub_confirm/', Cancel_Sub_Confirm.as_view(), name='cancel_sub'),
