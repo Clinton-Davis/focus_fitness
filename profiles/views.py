@@ -103,7 +103,7 @@ class Cancel_Sub_Confirm(LoginRequiredMixin, TemplateView):
 
 
 class AuthorsBlogPageView(LoginRequiredMixin, View):
-    template_name = 'profiles/userprofile_detail.html'
+    template_name = 'profiles/authorsblogs.html'
     context_object_name = 'user'
 
     def get(self, request, *args, **kwargs):
@@ -114,4 +114,4 @@ class AuthorsBlogPageView(LoginRequiredMixin, View):
             'page_user': user_profile,
             'user_blog': user_blog,
         }
-        return render(request, 'profiles/userprofile_detail.html', context)
+        return render(request, 'profiles/authorsblogs.html', context)
