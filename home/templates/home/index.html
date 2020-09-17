@@ -14,7 +14,7 @@
                 Focus Fitness
             </h1>
             <h2 class="aw text-wht mx-auto text-center">
-                Dont Just Survive. Thrive!
+                Don't Just Survive. Thrive!
             </h2>
             <div class="row d-flex justify-content-center">
                 <div class=" col-12 d-flex d-flex justify-content-center no-gutters">
@@ -130,22 +130,22 @@
             <div class="col-md-8">
                 <div class="card-body ">
                     <h2 class="active-size aw text-center">SUBSCRIBE TODAY</h2>
-                    <p class=" mx-auto text-center card-text">Subscribe today and get all the great feature Focus
-                        Fitness has to
-                        offer. You'll get full access to all the gym works and diets
-                        plans, Plus access to the community, Write your own blog post so
-                        share you experainces. All Subscribers get <span class="aw">12% Off</span> on all shope items!
-                        Just click the Button below to Join.</p>
+                    <p class=" mx-auto text-center card-text">Subscribe today and be welcomed into our community. For
+                        just $20 per month, our members gain access to our professional personal trainers that have made
+                        a host of training programs ranging from Strength training to dieting with video on how to and
+                        gym workouts. New content updated often and will keep you in tip-top shape. As a added bounces
+                        all subscribed members get a discount in the Focus Shop. We believe that being fit in the body
+                        keeps a fit mind. So subscribe today and Don’t Just Survive. Thrive!</p>
 
-                    {% if request.user.is_authenticated  %}
+                    {% if screen_size == True %}
                     <div class="text-center">
-                        <a class="ripple-surface w-50 hero-btn btn btn-success btn-lg aw text-wht hover-shadow border border-bk bs-2"
-                            href="{% url 'memberships:select-membership' %}" role="button">Join Up</a>
+                        <a class="ripple-surface w-100 hero-btn btn btn-success btn-lg aw text-wht border border-secondary bs-2"
+                            href="{% url 'account_login' %}" role="button">Join Up Today</a>
                     </div>
                     {% else %}
                     <div class="text-center">
                         <a class="ripple-surface w-50 hero-btn btn btn-success btn-lg aw text-wht border border-secondary bs-2"
-                            href="{% url 'account_login' %}" role="button">Join Up</a>
+                            href="{% url 'account_login' %}" role="button">Join Up Today</a>
                     </div>
                     {% endif %}
                 </div>
