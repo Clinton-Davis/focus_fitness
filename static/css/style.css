@@ -128,6 +128,23 @@ img {
   margin-top: 1rem;
 }
 
+.beta-overlay {
+  position: relative;
+  height: fit-content;
+  width: fit-content;
+
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  z-index: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+}
+
 
 .container-fluid {
   padding-left: 0px;
@@ -734,7 +751,7 @@ nav {
 
 
 
-.reg-pic {
+.reg_pic {
   background: url(/static/images/javier-santos-guzman.jpg) no-repeat fixed;
   min-height: 90vh;
   height: fit-content;
