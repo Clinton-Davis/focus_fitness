@@ -54,6 +54,10 @@ img {
   padding-left: 22%;
 }
 
+/* .innerPadding_qty {
+  padding-left: 22%;
+} */
+
 .cke_editable {
 
   line-height: 1.0;
@@ -275,9 +279,6 @@ img {
 
 
 
-.max-width {
-  max-width: 100%;
-}
 
 .rounded-15 {
   border-radius: 15px;
@@ -1005,9 +1006,6 @@ nav {
 
   }
 
-  .max-width {
-    max-width: 70%;
-  }
 
   .carosel-img {
     min-width: 30rem;
@@ -1029,9 +1027,7 @@ nav {
     font-size: 5vw;
   }
 
-  .max-width {
-    max-width: 65%;
-  }
+
 
   .feature-container {
     width: 70%;
@@ -1053,9 +1049,6 @@ nav {
     font-size: 5vw;
   }
 
-  .max-width {
-    max-width: 65%;
-  }
 
   .display-4 {
     font-size: 4rem;
