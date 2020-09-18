@@ -26,8 +26,7 @@
                 <h1 class="mt-4 aw text-center"> {{ blog.title|title }}</h1>
                 <!-- Author -->
                 <p class="lead">
-                    <a href="{% url 'profiles:AuthorsBlogs' blog.author.id %}"
-                        title="See all Blogs by: {{ blog.author|title }}">
+                    <a href="{% url 'blog:author' blog.author.id %}" title="See all Blogs by: {{ blog.author|title }}">
                         By: {{ blog.author|title }}
                     </a>
                     {% if  user.is_authenticated and user == blog.author %}
@@ -144,5 +143,3 @@
 <!-- /.container -->
 
 {% endblock content %}
-
-<!-- <a href="{% url 'profiles:AuthorsBlogs' blog.author.id %}"></a> -->

@@ -21,7 +21,7 @@
 1. [**UX**](#ux)
 2. [**Scope**](#scope)
 3. [**Structure and Wireframe Mockups**](#structure)
-   3.1. **Navigation**
+   3.1. [**Navigation**](#navigation)
    3.2. **Home Page (index.html page)**
    3.3. **Focus Shop**
    - *Detailed View*
@@ -125,19 +125,18 @@ For a more detailed look at web site structure and page flow see Structure Diagr
 
 </details>
 
-#### SignUp (Registration)
+#### Signup (Registration) and Login
+
+I have used a 3rd Party package called [Allauth](https://django-allauth.readthedocs.io/en/latest/) to take care of the logic.
+The Signup and Login pages have been customised to fix the themes of the site.
+Full Page background with a center-block design.
 
 <details>
-<summary>SignUp Wireframes (Click for image)</summary>
+<summary>SignUp and Login Wireframes (Click for image)</summary>
 
 <p align="center">
 <img src="media/wireframes/Reg.png">
 </p>
-
-#### **Login**
-
-<details>
-<summary>Login Wireframes(Click for image)</summary>
 
 <p align="center">
 <img src="media/wireframes/Login.png">
@@ -145,6 +144,7 @@ For a more detailed look at web site structure and page flow see Structure Diagr
 
 #### **Navigation**
 
+##### Top Navigation
 The top Navigation is sticky so always stays at the top of each page,
 It is dynamic and will change if the user is logged in or not.
 It is divided into 3 part
@@ -152,11 +152,22 @@ It is divided into 3 part
 -  **Left - Focus Fitness Logo** -  Clickable link to the home page from anywhere on the web site
 -  **Center - Page navigation** - This is the main page navigation, this with change if the users is logged or not.
 -  **Right -User login and Cart** - This changes if the user is login or not.
+
 <img src="media/wireframes/admin_no_user.png">
 If the user is logged in, the user name will appear next to the user icon.
 It the user is authorised to the admin area, the is an admin login icon.
 <img src="media/wireframes/admin_nav.png">
 The cart is always visible if there is a running total Its turns green.
+
+##### The Footer
+
+The footer stays at the button of each page.
+It is broken into 3 parts.
+Part 1 - Is the Logo.
+Part 2 - has the newsletter submitting form, the social icons and the legal.
+Part 3 - is more navigation to the pages of the site. Studies have shown that having some navigation on the footer increases hit rate on a websites.
+On the desktop they sit next to each. On mobile the part 2 and 3 are next to each other and part 1 is below.
+
 
 <details>
 <summary>Head Navigation / Footer (Click for image)</summary>
@@ -196,7 +207,6 @@ This is also dynamic If the member is a subscribing user this section is not sho
 **Section 3**
 Here you will find all the special offer that are on offer in the shop.
 Each item is clickable and will go directly to the product detail page.
-
 
 **Section 4**
 Here are displayed all the featured blog, again clickable and will take to you to the blog post.
@@ -254,7 +264,6 @@ Next is the stars rating. The product is rated by the users and the average of a
 
 </details>
 
-
 #### Product Details
 
 The Details page is a center block design, with breadcrumbs navigation in the top left.
@@ -279,7 +288,7 @@ Below is a list of all the reviews and individual ratings the users gave the pro
 
 </details>
 
-#### Cart
+#### Shopping Cart
 
 The Cart is where you see a list of all the products that you have added.
 Center block design. The top horizontal half is a list of all the products with a small image on the left name / prince/ and a quantity adjuster if you have made a mistake, you can also remove  the product form here.
@@ -305,11 +314,11 @@ Where is a Save information to profile button that if pressed the information wi
 A Stripe payment system is inplace and takes all major cards.
 The numbers below are used to test the Stripe Payment software.
 
--  Card number - 4242 4242 4242 4242
+- Card number - 4242 4242 4242 4242
 
--  CVC - Any 3 digit number.
+- CVC - Any 3 digit number.
 
--  Expire date - Any date in the future
+- Expire date - Any date in the future
 
 If you need to adjust the cart there is an Adjust cart button to take you back or Complete Order.
 
@@ -435,6 +444,17 @@ Only logging in users may create or edit a blog post and
 only the Author of a blog post is authorised to edit a post.
 We use [CKEditor](https://ckeditor.com/) to format the blogs post, this gives the user all the tools to use in creating good content.
 
+<details>
+<summary>Blog Create/Edit Wireframes (Click for image)</summary>
+
+<p align="center">
+<img src="media/wireframes/blog_forms.png">
+</p>
+
+#### Blog author Page
+
+
+</details>
 <details>
 <summary>Blog Create/Edit Wireframes (Click for image)</summary>
 
@@ -608,11 +628,9 @@ The Header and Footer image of a wooden floor has been adjusted to give it a dee
 - [Heroku Postgres](https://www.heroku.com/postgres) ~ PostgreSQL's capabilities as a fast, functional, and powerful data resource.
 
 - [Visual Studio Code](https://code.visualstudio.com/) ~ Code editor redefined and optimized for building and debugging modern web and cloud applications.
- 
-##### Third-Party Tools
- 
 
- 
+##### Third-Party Tools
+
 - [Font Awesome](https://fontawesome.com/) ~ Font Awesome icons
 - [icons8](https://icons8.com/icons/set/instagram-logo) ~ Icons8 icons
 
@@ -627,80 +645,24 @@ The Header and Footer image of a wooden floor has been adjusted to give it a dee
 - [TinyPNG](https://tinypng.com/) ~ A smart lossy compression technique to reduce the file size of your PNG files.
 - [Google Fonts](https://fonts.google.com/) ~ A library free licensed font families, an interactive web directory for browsing the library.
 - [CSSMatric](https://cssmatic.com/) ~ Automatically generates the code and shows you the effects in real time.
- 
+
 ---
- 
+
 [Back to Top](#table-of-contents)
- 
+
 ## Features
- 
-- **Registration:**
-  Anyone can register to use Chow. Email, username and password are required.
- 
-- **Password Encryption:**
-  Users passwords are secure as they are not stored in the database, We use a Python library called [Bcrypt](https://bcrypt-generator.com/) to encrypt the password. We store only the encrypted password. Even if the database gets hacked, the password can not be stolen.
- 
-- **No Duplicate users:**
-  We use the email address to check users' login, as emails by nature are unique.
- 
-- **Dynamic login/logout menu items:**
-  In the navigation header and footer the menu item login and logout changes dynamically if a user is logged in, or out.
- 
-- **Footer login:**
-  There is a handy login section in the footer. That is also dynamically hidden if the user is logged in.
- 
-- **User Only CRUD:**
- 
-  - Only a logged-in user may upload a new recipe.
- 
-  - Only the user that has uploaded the recipe may edit or delete it, and this is done by:
- 
-    - Checking to see if the logged in username is the same as the username that is added to the recipe when uploaded.
-    - Hiding the 'Delete' and 'Edit' button if the usernames don't match.
- 
-- **Category Select Button:**
-  Lets the user narrow down the list of recipes to browse from.
- 
-- **Search Bar:**
-  We implemented the search bar to help users pinpoint a recipe they are looking for. The search bar searches for a word or a sentence in the name of the recipe. If there are multiple results, a list of all results are shone.
+
+
  
 ### Future Features
- 
-- **A user profile page:** A profile section for the users.
-- **A star rating system:** To be able to sort the recipes from best down.
-- **A comments section in the recipes:** A comment section to leave advice or ideas to future users.
-- **A users favourite section:** To tag a recipe as favourite so the users may keep a list of all the recipes they enjoyed the most, to keep in their profile.
-- **A cloud-based image library:** The user may upload their own images. That gets stored in the cloud-based library. That optimizes the images and will speed up the loading time.
- 
+
+
 ---
- 
+
 [Back to Top](#table-of-contents)
- 
+
 ## Testing
- 
-- The first phase of testing is a step by step basis. As I implemented a new code, I would run the app on my localhost with the debugger on. If any of the Flask routes did not work, the debugger would catch them.
- 
-- If the routes are loaded, I tested them on Chrome and Firefox Developer Tools.
- 
-- I tested HTML with W3 Validator. I got an illegal character from [Jinja2](https://jinja.palletsprojects.com/en/2.11.x/) templates. They are acceptable errors as Flask needs the templates to connect throughout the site.
- 
-- I tested CSS with W3 CSS Validator. I only got errors with CSS Variables. The reason I use variables in the `:root`, is if the client needs to change a 'Font' or a 'Background colour', We only have to change it in one place, the `:root`, that changes it everywhere on the site.
-- These errors are an ongoing issue with W3, They are valid, but not recognised by W3. '[CSS variables ("custom properties"), a widely supported and crucial feature.CSS-Validator issues 111](https://github.com/w3c/css-validator/issues/111)'
- 
-- After the [jQuery](https://code.jquery.com/) was completed, I ran through the code to make sure it was working.
- 
-- I tested all the links to make sure they worked as intended.
- 
-- I tested the CRUD capabilities to make sure they all worked.
- 
-- I tested the registration and login route.
- 
-- I tested the 'Contact Us' link to ensure the correct email and subject are preloaded into the user email client.
- 
-- I tested the forms for form validation, making sure it displayed the Error message if input fields do not meet criteria.
- 
-- I sent it to the Slack community for feedback.
- 
+
 - I ran the application through [Website Responsive Testing](https://responsivetesttool.com) to make sure it is responsive. Below is a list of devices:
  
  <details>

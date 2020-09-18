@@ -138,6 +138,21 @@ class BlogDeleteView(LoginRequiredMixin, DeleteView):
     success_url = '/blog/'
 
 
+class BlogAuthorPageView(LoginRequiredMixin, View):
+    template_name = 'blog/blog_authors.html'
+    context_object_name = 'user'
+
+    def get(self, request, *args, **kwargs):
+        user_profile = get_object_or_404(User, id=self.kwargs['pk'])
+        user_blog = Blog.objects.filter(
+            author=user_profile.id).order_by('-publish_date')
+        context = {
+            'page_user': user_profile,
+            'user_blog': user_blog,
+        }
+        return render(request, 'blog/blog_authors.html', context)
+
+
 @ login_required()
 def like(request, slug):
     """ Checks to see if the use has liked the blog
