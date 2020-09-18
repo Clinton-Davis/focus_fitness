@@ -453,18 +453,83 @@ We use [CKEditor](https://ckeditor.com/) to format the blogs post, this gives th
 
 #### Blog author Page
 
+By Clicking on the authors name in the details blog page, you will be redirected to this page.
+Here you will be able to see all the blogs that this user has written.
+Each title is a link to the blog and you can see the amount of likes, comments, and thump up each post has.
 
 </details>
 <details>
 <summary>Blog Create/Edit Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframes/blog_forms.png">
+<img src="media/wireframes/Blog_author.png">
 </p>
 
 </details>
 
----
+#### **Memberships**
+
+Are an important part of how Focus Fitness works. There are 2 types of memberships
+Free and Pro
+The Free memberships are given to anyone who joins Focus by logging in. when you log in you profile is made and free status is given.
+This grains you asses to
+Writing Blog pos 
+Commenting rating and review on  blogs post and Products.
+The Dashboard
+The Pro or (Profesional) membership will give you access to all of the above and access to the Programs.
+It is a monthly subscription. 
+Canceling the Subscription can be done viva the Dashboard in the subscription tab.
+
+<details>
+<summary>Chow Schema (Click for image)</summary>
+
+<p align="center">
+<img src="static/wireframes/schema.png">
+</p>
+</details>
+
+#### **Programs**
+
+Only Subscribed users may use this app.
+The Programs page is where the user can find the programs they have subscribed to.
+The page is center based with horizontal cards stacked on top of each other.
+They consist of the different categories.
+Endurance Training
+Static Stretching
+Strength training
+Dieting
+More can be added in the administration section.
+Each Program has a number of workouts attached to them. They are all video based and can be added or ordered in any way the trainer wishes to show them.
+The video files itself is Not stored in the Focus Fitnesses database the videos are linked with a url from a video hosting server. Ie. Cloudinary. 
+To add a video:
+Make a Cloudinary account
+Upload the video
+Once it is uploaded a video url is given
+In the Focus admin section click on workouts in the Programs section
+Click ‘Add new’
+Fill out the form adding the url.
+
+<details>
+<summary>Workouts WireFrame(Click for image)</summary>
+
+<p align="center">
+<img src="media/wireframes/Programs.png">
+</p>
+</details>
+
+#### **Workouts**
+
+Once the workout is selected, you will be redirected to the workout.
+Its a center-block design which displays the title and the context of the work out.
+Below this is a video play which will fit the size of the user's display.
+
+<details>
+<summary>Workouts WireFrame(Click for image)</summary>
+
+<p align="center">
+<img src="media/wireframes/workdouts.png">
+</p>
+</details>
 
 #### **Dashboard**
 
@@ -496,7 +561,8 @@ It is divided into 3 parts.
 
 </details>
 
----
+
+
 
 #### **About**
 
@@ -523,29 +589,8 @@ The About page has a centre block format with a heading and information about Fo
 </p>
 </details>
 
----
-
-#### **Programs**
-
-<details>
-<summary>Chow Schema (Click for image)</summary>
-
-<p align="center">
-<img src="static/wireframes/schema.png">
-</p>
-</details>
-
-#### **Memberships**
-
-<details>
-<summary>Chow Schema (Click for image)</summary>
-
-<p align="center">
-<img src="static/wireframes/schema.png">
-</p>
-</details>
-
 #### **Data Base**
+For this Project we used Sqlite3db in development and Postgressdb hosted in HerokU in production
 
 <details>
 <summary>Chow Schema (Click for image)</summary>
@@ -566,11 +611,8 @@ The About page has a centre block format with a heading and information about Fo
 - [Montserrat](https://fonts.google.com/specimen/Montserrat?query=montserrat) - Primary Font
 - [Audiowide](https://fonts.google.com/specimen/Audiowide) - Secondary Font
 
-
-The primary font <a href="https://fonts.google.com/specimen/Montserrat">Montserrat</a> is used the body of all pages. I chose it because of its readability and accessibility. It complements the secondary font.
-The Secondary is <a href="https://fonts.google.com/specimen/Audiowide">Audiowide</a> is used in the logo and transposes well to the  Heading and buttons, the technology styled, typeface gives it a young and edgie feel and yet cleanly readable.
-
----
+The primary font [Montserrat]("https://fonts.google.com/specimen/Montserrat")</> is used the body of all pages. I chose it because of its readability and accessibility. It complements the secondary font.
+The Secondary is [Audiowide](https://fonts.google.com/specimen/Audiowide") is used in the logo and transposes well to the  Heading and buttons, the technology styled, typeface gives it a young and edgie feel and yet cleanly readable.
 
 #### Colour Scheme
 
@@ -593,36 +635,35 @@ Images are used extensively. The pictures we chose are all gym and fitness relat
 All images where source using [Unsplash](https://unsplash.com/) and have a CC licence. 
 A list of all the pictures can be fond (make link)here
 
-
 ---
- 
+
 The Header and Footer image of a wooden floor has been adjusted to give it a deep red colour. The colour complements the background image.
- 
+
 <details>
 <summary>Header and Footer Image</summary>
- 
+
 <p align="center">
 <img src="static/images/wood-Dark-luca-ruegg-crop.jpg">
 </p>
 </details>
- 
+
 ---
- 
+
 [Back to Top](#table-of-contents)
- 
+
 ## Technologies
- 
+
 ##### Core Languages, Frameworks, Editors
- 
+
 - [HTML 5](https://en.wikipedia.org/wiki/HTML) ~ Markup language designed to be displayed in a web browser.
 - [CSS 3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) ~ Style sheet language used for describing the presentation of a document in HTML.
 - [Python 3.8](https://code.jquery.com/) ~ High-level, general-purpose programming language.
 - [Django 3.0.8](https://www.djangoproject.com/) ~ Django is a high-level Python Web framework.
 
 - [jQuery 3.5](https://code.jquery.com/) ~ lightweight JavaScript library.
- 
+
 - [Bootstrap 4.5](https://getbootstrap.com/) ~ Design and customize responsive mobile-first sites.
- 
+
 - [Heroku](https://heroku.com) ~ A cloud based platform as a service enabling deployment of CRUD applications
 
 - [Heroku Postgres](https://www.heroku.com/postgres) ~ PostgreSQL's capabilities as a fast, functional, and powerful data resource.
@@ -652,10 +693,7 @@ The Header and Footer image of a wooden floor has been adjusted to give it a dee
 
 ## Features
 
-
- 
 ### Future Features
-
 
 ---
 
@@ -664,9 +702,9 @@ The Header and Footer image of a wooden floor has been adjusted to give it a dee
 ## Testing
 
 - I ran the application through [Website Responsive Testing](https://responsivetesttool.com) to make sure it is responsive. Below is a list of devices:
- 
+
  <details>
-<summary>Mobiles</summary> 
+<summary>Mobiles</summary>
 <ul>
 <li>Apple iPhone 3/4/4s/5/5s/6/6s/6plus/7/7Plus/8/8Plus/X/XR/XS/XSMax</li>
 <li>Nexus 6P/5X</li>
@@ -691,7 +729,7 @@ The Header and Footer image of a wooden floor has been adjusted to give it a dee
 <li>Microsoft Lumia 620/830/900/920/925/1020/1520</li>
 </details>
  <details>
-<summary>Tablet</summary> 
+<summary>Tablet</summary>
 <ul>
 <li>Apple iPad Pro/Pro9.7/1/2/mini</li>
 <li>Samsung Galaxy Tab 3 10"/Tab 2 10"/Tab (8.9")/Tab 2 (7")</li>
@@ -704,9 +742,9 @@ The Header and Footer image of a wooden floor has been adjusted to give it a dee
 <li>Blackberry Playbook</li>
 </details>
   <details>
-<summary>Desktops</summary> 
+<summary>Desktops</summary>
 <ul>
- 
+
 <li>Desktop/Laptop</li>
 <li>1024 x 768</li>
 <li>1280 x 800</li>
@@ -720,13 +758,13 @@ The Header and Footer image of a wooden floor has been adjusted to give it a dee
 <li>4096 x 2304</li>
 <li>5120 x 2880</li>
 </details>
- 
+
 ---
- 
+
 [Back to Top](#table-of-contents)
- 
-## Bugs 
- 
+
+## Bugs
+
 **Being able to login with a different username.**
 On registration the username/email and password get logged to the database. When the user logged in again, only the email was checked for duplicates. The problem was the user could login with the right email and password but wrong username.
 Upon adding a new recipe, the recipes get tagged with the username from `Sessions`, which means if the user logged in with a different username but correct email and password, they get logged in but not able edit/delete their recipe.
@@ -740,51 +778,15 @@ session['username'] = login_user['name']
 session['logged_in'] = True
  
 ```
- 
-**Case Sensitivity**
-In my testing, I found that users are using capital letters when entering their email addresses, this causes an issue if we need to use their emails later on.
- 
-> I used the `.lower()` method to keep all email in lower case
- 
-**Search Bar Case Sensitivity**
-I had a bug with the search bar not being able to pick out the words in a search, because `$regex` looks for identical matchmaking it case sensitive.
- 
-> My fix was to add the optional `$options` to the query, using the `'i'` makes it case-insensitive.
- 
-```python
-recipes = list(mongo.db.recipes.find({
-        "recipe_name": {"$regex": f'.*{search_text}.*', '$options': 'i'}}))
- 
-```
- 
-**Category Drop-Down Menu**
-I had an issue with using hyperlink tags `<a>` in the category drop-down menu because they use `href`. The only way to get the chosen link into [Flask](https://flask-doc.readthedocs.io/en/latest/#) is with [Jinja2](https://jinja.palletsprojects.com/en/2.11.x/) `{{url_for}}` and can not pass through a `value` for each item. Hyperlink tags do not support the `value` attribute. I would have to take a different route for every category listed. I also wanted to include 'Chefs and Servings' as catagories into the drop-down menu. Giving the user additional  sorting options.
- 
-> I decided to go with a form. The drop-down menu with the `select` and `options` uses a button and makes a `"POST"` request. This way I would only need 3 routes: one for the category, one for 'Chefs', and one for Servings.
-> To check if Chefs and Servings are selected or not. I used an `if` statement to select the right route. The `else` of the statement would go to the category's route.
- 
-```python
-if cat_search == "chef":
-   return redirect('chef')
-elif cat_search == "servings":
-   return redirect('servings')
-else:
- 
-```
- 
-**Rendering HTML tags instead of plain text**
-The issue I had with using the [CKEditor](https://ckeditor.com/) is that it uses HTML to keep the structure of what you have typed. When recalling the edited text back to be displayed. It was rendering the HTML with tags and not plain text.
- 
-> My fix was to use the {{  |safe }} in the Jinja2 template.
- 
+
 ---
- 
+
 [Back to Top](#table-of-contents)
- 
+
 ## Deployment
- 
+
 I hosted this site using [Heroku](https://www.heroku.com/).
- 
+
 Heroku is a container-based cloud Platform as a Service (PaaS). I used it because it's free, elegant, flexible, and easy to use, offering developers the simplest path to getting my app up.
 
 ### To deploy on Heroku

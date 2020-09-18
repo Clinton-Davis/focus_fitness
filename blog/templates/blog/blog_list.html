@@ -41,8 +41,14 @@
                                 &nbsp;{{ blog.author|title }}</p>
                         </a>
                         <div class="row w-100 justify-content-center">
-                            <a href="{{ blog.get_absolute_url }}"><i class="mx-2 text-wht fad fa-tags"></i><small
-                                    class="text-muted">{{ blog.category }}</small>
+                            <a class="text-grn {% if blog.category  == 'Dieting' %} text-primary 
+                            {% elif blog.category  == 'Recovery' %} text-warning 
+                            {% elif blog.category  == 'Endurance' %} text-info
+                            {% elif blog.category  == 'Covid-19' %} text-danger 
+                            {% elif blog.category  == 'Members' %} text-light 
+                            {% else %} text-success {% endif %}" href="{{ blog.get_absolute_url }}">
+                                <i class="mx-2 fad fa-tags"></i>
+                                <small>{{ blog.category }}</small>
                             </a>
                             <div class="text-center col-2"><span><i class="text-grn fad fa-eye"></i>
                                     {{ blog.get_view_count }}</span></div>
