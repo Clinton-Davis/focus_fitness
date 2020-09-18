@@ -306,8 +306,8 @@ img {
 
 #mini_cart {
   position: fixed;
-  top: 3px;
-  right: 30px;
+  top: 0.5%;
+  right: 5%;
   z-index: 9999;
   font-size: 1.125rem;
 }

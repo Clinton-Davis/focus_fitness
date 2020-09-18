@@ -21,6 +21,32 @@
 1. [**UX**](#ux)
 2. [**Scope**](#scope)
 3. [**Structure and Wireframe Mockups**](#structure)
+   3.1. **Navigation**
+   3.2. **Home Page (index.html page)**
+   3.3. **Focus Shop**
+   - *Detailed View*
+   - *Cart*
+   - *Checkout*
+   - *Checkout Success*
+
+    3.4. **Blog**
+   - *Checkout Success*
+   - *Checkout Success*
+   - *Checkout Success*
+
+   3.5 **Programs**
+      - *Checkout Success*
+      - *Checkout Success*
+      - *Checkout Success*
+
+   3.5 **Members**
+      - *Membership*
+      - *Checkout Success*
+
+   3.6 **Dashboard**
+   3.6 **About Page**
+   3.6 **Contact Page**
+
 4. [**Surface**](#surface)
 5. [**Technologies**](#technologies)
 6. [**Features**](#features)
@@ -93,12 +119,28 @@ For a more detailed look at web site structure and page flow see Structure Diagr
 <summary>Structure Diagram (Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframs/Focus_Fitness_Structure.png">
+<img src="media/wireframes/Focus_Fitness_Structure.png">
 </p>
 
 </details>
 
----
+#### SignUp (Registration)
+
+<details>
+<summary>SignUp Wireframes (Click for image)</summary>
+
+<p align="center">
+<img src="media/wireframes/Reg.png">
+</p>
+
+#### **Login**
+
+<details>
+<summary>Login Wireframes(Click for image)</summary>
+
+<p align="center">
+<img src="media/wireframes/Login.png">
+</p>
 
 #### **Navigation**
 
@@ -109,23 +151,23 @@ It is divided into 3 part
 -  **Left - Focus Fitness Logo** -  Clickable link to the home page from anywhere on the web site
 -  **Center - Page navigation** - This is the main page navigation, this with change if the users is logged or not.
 -  **Right -User login and Cart** - This changes if the user is login or not.
-<img src="media/wireframs/admin_no_user.png">
+<img src="media/wireframes/admin_no_user.png">
 If the user is logged in, the user name will appear next to the user icon.
 It the user is authorised to the admin area, the is an admin login icon.
-<img src="media/wireframs/admin_nav.png">
+<img src="media/wireframes/admin_nav.png">
 The cart is always visible if there is a running total Its turns green.
 
-
 <details>
-<summary>Header Navigation (Click for image)</summary>
+<summary>Head Navigation / Footer (Click for image)</summary>
 
 <p align="center">
-<img src="static/wireframes/nav-bar.png">
+<img src="media/wireframes/Nav_Footer_D_M.png">
 </p>
 
 </details>
 
 ---
+[Back to Top](#table-of-contents)
 
 #### **Home Page (index.html page)**
 The home page or Index page is the main page for users to interact with.
@@ -136,13 +178,13 @@ Full-page background in black and white, in the middle, is a dark semitransparen
 Underneath that are the main navigation buttons that are coloured using the supplementary colours.
 The buttons are dynamic and change with the user membership level.
 A public user will see Shop Sign up and Login Blog
-<img src="media/wireframs/btn_no_user.png">
+<img src="media/wireframes/btn_no_user.png">
 It the user has logged in but not a Subscribing member the button will change to
 Shop Subscribe logout and Blog
-<img src="media/wireframs/btn_user.png">
+<img src="media/wireframes/btn_user.png">
 If the user is a Subscriber the buttons will change to
 Shop Programs Logout Blog
-<img src="media/wireframs/btn_member.png">
+<img src="media/wireframes/btn_member.png">
 Underneath there are 3 clickable tiles each linking to there information they are displaying.
 The first one is displaying the Trainging Program categories, the 2nd one is about the blogs the 3rd one is showing all the categories of products in the shop.
 
@@ -163,13 +205,14 @@ Here are displayed all the featured blog, again clickable and will take to you t
 
 <p align="center">
 
-<img src="media/wireframs/focus_index_pic.png">
+<img src="media/wireframes/focus_index_pic.png">
 
 </p>
 
 </details>
 
 ---
+[Back to Top](#table-of-contents)
 
 ### Shop
 
@@ -205,10 +248,11 @@ Next is the stars rating. The product is rated by the users and the average of a
 <summary>(Click for image)</summary>
 
 <p align="center">
-<img src="static/wireframes/recipe_desk.png">
+<img src="media/wireframes/focus_shop.png">
 </p>
 
 </details>
+
 
 #### Product Details
 
@@ -226,10 +270,10 @@ This is where you write your review.
 Below is a list of all the reviews and individual ratings the users gave the product.
 
 <details>
-<summary>(Click for image)</summary>
+<summary>Shop Detail View WireFrames (Click for image)</summary>
 
 <p align="center">
-<img src="static/wireframes/recipe_desk.png">
+<img src="media/wireframes/detailed_view_D_M.png">
 </p>
 
 </details>
@@ -243,13 +287,11 @@ Cart Total / discounts (if applicable) / Subtotal / Delivery charge / Tax amount
 Grand Total
 The Keep shopping button will take you back to the shop, and checkout will take to the check out.
 
-
-
 <details>
-<summary>(Click for image)</summary>
+<summary>Shopping Cart Wireframes(Click for image)</summary>
 
 <p align="center">
-<img src="static/wireframes/recipe_desk.png">
+<img src="media/wireframes/Cart.png">
 </p>
 
 </details>
@@ -274,7 +316,7 @@ If you need to adjust the cart there is an Adjust cart button to take you back o
 <summary>(Click for image)</summary>
 
 <p align="center">
-<img src="static/wireframes/recipe_desk.png">
+<img src="media/wireframes/Checkout_D_M.png">
 </p>
 
 </details>
@@ -290,12 +332,13 @@ Clicking the receipt will sent to a new page with you stripe receipt
 <summary>(Click for image)</summary>
 
 <p align="center">
-<img src="static/wireframes/recipe_desk.png">
+<img src="media/wireframes/Checkoutsuccess_D_M.png">
 </p>
 
 </details>
 
 ---
+[Back to Top](#table-of-contents)
 
 ### **Blog**
 
@@ -340,12 +383,10 @@ Underneath the Category selection box is the Members blogs, a list of all the us
 <summary>Blog List Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframs/blog_list_d_mo.png">
+<img src="media/wireframes/blog_list_d_mo.png">
 </p>
 
 </details>
-
-----
 
 #### Blog Categories Page
 
@@ -357,9 +398,8 @@ Only logged in users may see the Members posts
 <summary>Blog Categories Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframs/blog_cat.png">
+<img src="media/wireframes/blog_cat.png">
 </p>
-
 
 #### **Blog Detail Page**
 
@@ -379,7 +419,7 @@ Note only logged in user may use this feature.
 <summary>Blog Detais Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframs/detail_blog.png">
+<img src="media/wireframes/detail_blog.png">
 </p>
 
 </details>
@@ -394,12 +434,11 @@ Only logging in users may create or edit a blog post and
 only the Author of a blog post is authorised to edit a post.
 We use [CKEditor](https://ckeditor.com/) to format the blogs post, this gives the user all the tools to use in creating good content.
 
-
 <details>
 <summary>Blog Create/Edit Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframs/blog_forms.png">
+<img src="media/wireframes/blog_forms.png">
 </p>
 
 </details>
@@ -431,7 +470,7 @@ It is divided into 3 parts.
 <summary>Dashboard Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframs/dashBoard.png">
+<img src="media/wireframes/dashBoard.png">
 </p>
 
 </details>
@@ -446,7 +485,7 @@ The About page has a centre block format with a heading and information about Fo
 <summary>About Page Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="static/wireframes/about_desk.png">
+<img src="media/wireframes/About.png">
 </p>
 </details>
 
@@ -459,7 +498,7 @@ The About page has a centre block format with a heading and information about Fo
 <summary>About Page Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="static/wireframes/about_desk.png">
+<img src="media/wireframes/Contact.png">
 </p>
 </details>
 
