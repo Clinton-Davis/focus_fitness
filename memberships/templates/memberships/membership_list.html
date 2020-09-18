@@ -17,16 +17,16 @@
     <div class="container profile">
         <div class="profile-overlay">
             <div class="col p-4">
-                <h4 class="text-wht aw display-4 text-center">Select a Membership</h4>
+                <h1 class="text-wht aw display-4 text-center">Select a Membership</h1>
             </div>
         </div>
         <div class="row pb-5">
             {% for object in object_list %}
             <div class="col-sm-6 col-md-6 bg-black-a rounded-15 p-2 pb-4">
 
-                <h1
+                <h2
                     class="text-center aw {% if not forloop.counter|divisibleby:2  %} text-grn {% else %} text-ylw {% endif %} ">
-                    {{ object.membership_type }}</h1>
+                    {{ object.membership_type }}</h2>
                 <p class="text-center text-wht">Price: ${{ object.price }}<small>/month</small></p>
                 <h4 class="text-center aw text-wht">Inclueds</h4>
                 <h5 class="aw text-wht">User DashBoard</h5>
