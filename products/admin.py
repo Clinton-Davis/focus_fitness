@@ -5,7 +5,7 @@ from .models import Product, Category, productComment, ProductView
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('name', 'code', 'in_stock', 'sales_items',
                     'was_price', 'price', 'category',
-                    'rating_ave', 'view_count',)
+                    'rating', 'view_count',)
 
     list_editable = ('in_stock', 'sales_items',
                      'was_price', 'price', 'category',)

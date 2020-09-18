@@ -29,7 +29,7 @@
                     </a>
                     {% else %}
                     <a href="">
-                        <img class="" card-img-top shop-card-top-img img-fluid" src="{{ MEDIA_URL }}noimage.png"
+                        <img class="" card-img-top shop-card-top-img img-fluid" src="{{ MEDIA_URL }}no_image.png"
                             alt="{{ product.name }}">
                     </a>
                     {% endif %}
@@ -44,9 +44,20 @@
                         <a class="mx-2" href="{% url 'products:products' %}?category={{ product.category.name }}">
                             <i class="fad fa-tags"></i>&nbsp;{{ product.category.friendly_name }}
                         </a>
-                        <p><i class="px-1 text-ylw fas fa-star"></i> <span>{{  product.rating_ave|floatformat:1 }} /5
-                                <small>({{ product.productcomments_count }})</small></span>
+
+                        {% if  product.rating > 0 %}
+                        <p><i class="px-1 text-ylw fas fa-star"></i>
+                            <span>{{  product.rating|floatformat:1 }} /5
+                                <small>({{ product.productcomments_count }})</small>
+                            </span>
                         </p>
+                        {% else %}
+                        <p><i class="px-1 text-ylw fas fa-star"></i>
+                            <span>
+                                <small class="text-muted">No Ratings</small>
+                            </span>
+                        </p>
+                        {% endif %}
                     </div>
                     <hr>
                     <p class="aw lead mb-0 text-center font-weight-bold"><span
@@ -119,7 +130,7 @@
                 <hr>
                 <p class=" aw text-primary">REVIEWS</p>
                 <p>Overall Rating:<i class=" px-1 text-ylw fas fa-star"></i>
-                    <span>{{  product.rating_ave|floatformat:1 }}/5
+                    <span>{{  product.rating|floatformat:1 }}/5
                         <small>({{ product.productcomments_count }} Ratings)</small></span>
                 </p>
                 <hr>
@@ -150,7 +161,7 @@
                                 <div class=" card my-4">
                                     <h4 class="text-center aw font-lrg">{{ product.name }}
                                         <span class=" p-2 rounded float-right bg-green">
-                                            {{ product.rating_ave|floatformat:1 }}</span>
+                                            {{ product.rating|floatformat:1 }}</span>
                                     </h4>
                                     <small class="text-center">Please base your reviews and ratings on personal
                                         experience.

@@ -35,6 +35,7 @@ class Product(models.Model):
     sales_items = models.BooleanField(default=False)
     code = models.CharField(max_length=25, null=False,
                             blank=False)
+    rating = models.FloatField(default=0)
 
     def __str__(self):
         return self.name
@@ -54,9 +55,10 @@ class Product(models.Model):
     def rating_ave(self):
         """Gets the average rating on product"""
         all_ratings = self.productcomment_set.all().aggregate(Avg('rating'))
-        ave_rating_list = list(all_ratings.values())
-        rating_number = (str(ave_rating_list).strip('[]'))
-        return rating_number
+        self.rating = all_ratings['rating__avg'] or 0
+        self.save()
+
+        return all_ratings['rating__avg']
 
     @property
     def view_count(self):

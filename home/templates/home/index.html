@@ -180,7 +180,12 @@
                                 </span>{{ product.price }}</p>
 
                             <i class="fas text-ylw fa-lg fa-star mr-1"></i>
-                            <small class="">{{ product.rating_ave|floatformat:1 }}</small>
+
+                            {% if product.rating > 0 %}
+                            <small class="">{{ product.rating|floatformat:1 }}/5</small>
+                            {% else %}
+                            <small class="">No Ratings</small>
+                            {% endif %}
 
                         </div>
                     </div>

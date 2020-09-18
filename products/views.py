@@ -14,6 +14,7 @@ class All_Products(View):
     def get(self, request, *args, **kwargs):
         """ Gives the Login for the Search and the Sort dropdown (Login form Code Institute) """
         products = Product.objects.all().order_by('code')
+        rating = Product.objects.all().order_by('rating')
         query = None
         categories = None
         sort = None
@@ -55,6 +56,7 @@ class All_Products(View):
             'search_term': query,
             'current_categories': categories,
             'sorting': sorting,
+            'rating': rating,
         }
         return render(request, 'products/products.html', context)
 

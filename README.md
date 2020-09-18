@@ -30,9 +30,10 @@
    - *Checkout Success*
 
     3.4. **Blog**
-   - *Checkout Success*
-   - *Checkout Success*
-   - *Checkout Success*
+   - *Blog Categories Page*
+   - *Blog details*
+   - *Blog Create and Edit*
+   - *Blog Create and Edit*
 
    3.5 **Programs**
       - *Checkout Success*
