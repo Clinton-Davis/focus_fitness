@@ -59,7 +59,7 @@
                             {% if s %}
                             <div class="d-flex justify-content-center col-12 mt-3">
                                 <p class="aw mr-4 mt-1">Size:</p>
-                                <select class="form-control custom-pl rounded-10 w-50" name="product_size"
+                                <select class="form-control innerPadding rounded-10 w-50" name="product_size"
                                     id='id_product_size'>
                                     <option class="aw" value="xs">XS</option>
                                     <option class="aw" value="s"> S</option>
@@ -81,7 +81,7 @@
                                                 </span>
                                             </button>
                                         </div>
-                                        <input class=" form-control qty_input border border-secondary custom-pl"
+                                        <input class=" form-control qty_input border border-secondary innerPadding"
                                             type="number" name="quantity" value="1" min="1" max="99"
                                             data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
                                         <div class="input-group-append ">
@@ -110,7 +110,7 @@
                     </form>
                 </div>
             </div>
-            <div class=" pl-4 col-md-8 col-sm-12 mx-auto bg-white rounded-bottom">
+            <div class=" pl-4 col-lg-8 col-sm-12 mx-auto bg-white rounded-bottom">
                 <h4 class=" aw  rounded pb-2 text-bk pt-2 border-bottom">Product Overview</h4>
                 <p class="detail-p">{{ product.description|safe }}</p>
                 <hr>

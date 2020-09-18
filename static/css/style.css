@@ -50,8 +50,8 @@ img {
   border-top: 1px solid rgba(0, 0, 0, 0.801);
 }
 
-.custom-pl {
-  padding-left: 4rem;
+.innerPadding {
+  padding-left: 22%;
 }
 
 .cke_editable {
