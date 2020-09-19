@@ -424,7 +424,7 @@ nav {
   -o-background-size: cover;
   background-size: cover;
   z-index: 1;
-  /* background-color: aqua; */
+
 }
 
 .container-hero {
@@ -469,13 +469,9 @@ nav {
   max-width: 15rem;
 }
 
-/* #card_1 {
-  max-width: 30rem;
-} */
-
-
-
-
+.custom_img {
+  max-width: 36rem !important
+}
 
 /*Index- Section 2*/
 #section2 {
@@ -1012,7 +1008,6 @@ nav {
 
 @media (min-width: 768px) {
   img {
-
     max-width: 33rem;
   }
 
@@ -1055,11 +1050,6 @@ nav {
   }
 
 
-
-  .feature-container {
-    width: 70%;
-  }
-
   .video-width {
     max-width: 800px;
   }
@@ -1087,18 +1077,34 @@ nav {
   }
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+/* Media Queries for Standard Devices CSS-TRICKS https://css-tricks.com/
+/* iPhone 5, 5S, 5C and 5SE */
+/* @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
   #section1-pic {
     height: 147vh;
   }
+}  */
 
-  .feature-container {
-    width: 55%;
+
+
+
+/*iPad Pro Portrait and Landscape */
+/* @media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
+  #section1-pic {
+    height: 70vh;
   }
-}
+} */
 
-/* @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-  .feature-container {
-    width: 55%;
+/*iPad Landscape */
+/* @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  #section1-pic {
+    height: 122vh;
+  }
+} */
+
+/*iPad Portrait */
+/* @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  #section1-pic {
+    height: 50vh;
   }
 } */
