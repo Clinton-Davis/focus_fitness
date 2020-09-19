@@ -1,6 +1,5 @@
 from django.contrib.auth.models import User
 from django.test import TestCase, Client
-from django.contrib.messages import get_messages
 from django.urls import reverse
 from profiles.models import UserProfile
 
@@ -127,6 +126,3 @@ class TestCancel_Sub_Confirm(TestCase):
         self.assertEqual(resp.status_code, 302)
         self.assertRedirects(
             resp, "/accounts/login/?next=/profile/cancel_sub_confirm/")
-
-
-# right a profile detaiview post for address and get mmessage

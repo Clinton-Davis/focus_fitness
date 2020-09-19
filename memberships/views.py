@@ -19,7 +19,7 @@ def get_user_membership(request):
 
 
 def get_user_subscription(request):
-    """Gets the subcription name (Logic and code by Mat @ JustDjango)"""
+    """Gets the subcription name (Logic and code by Mat @ JustDjango)."""
     user_membership_qs = UserMembership.objects.filter(user=request.user)
     user_subscription_qs = Subscription.objects.filter(
         user_membership=get_user_membership(request))
@@ -30,7 +30,7 @@ def get_user_subscription(request):
 
 
 def get_selected_membership(request):
-    """Gets the membership type from the session (Logic and code by Mat @ JustDjango)"""
+    """Gets the membership type from the session (Logic and code by Mat @ JustDjango)."""
     membership_type = request.session['selected_membership_type']
     selected_membership_qs = Membership.objects.filter(
         membership_type=membership_type)
@@ -40,7 +40,7 @@ def get_selected_membership(request):
 
 
 class MembershipSelectView(ListView):
-    """List the selected membership (Logic and code by Mat @ JustDjango)"""
+    """List the selected membership (Logic and code by Mat @ JustDjango)."""
     model = Membership
     template_name = 'memberships/membership_list.html'
 
@@ -75,7 +75,7 @@ class MembershipSelectView(ListView):
 
 @login_required
 def paymentview(request):
-    """Provide user with payment form and payment Logic and code by Mat @ JustDjango """
+    """Provide user with payment form and payment (Logic and code by Mat @ JustDjango)."""
 
     user_membership = get_user_membership(request)
     try:

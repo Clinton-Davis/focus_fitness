@@ -105,7 +105,7 @@ class BlogView(models.Model):
 
 
 class Like(models.Model):
-    """To keep track of all the likes """
+    """To keep track of all the likes"""
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
 

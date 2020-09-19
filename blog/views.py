@@ -50,7 +50,6 @@ class SearchView(View):
 
 
 def CategoryView(request, category):
-    template_name = 'blog/blog_categories.html'
     category_blogs = Blog.objects.filter(category=category)
     category_menu = Category.objects.all()
     all_blogs = Blog.objects.all()
@@ -88,7 +87,7 @@ class BlogDetailView(DetailView):
         return context
 
     def get_object(self, **kwargs):
-        """Counts the number of authenticated users view the blog """
+        """Counts the number of authenticated users view the blog"""
         object = super().get_object(**kwargs)
         if self.request.user.is_authenticated:
             BlogView.objects.get_or_create(user=self.request.user, blog=object)
@@ -155,7 +154,7 @@ class BlogAuthorPageView(LoginRequiredMixin, View):
 
 @ login_required()
 def like(request, slug):
-    """ Checks to see if the use has liked the blog
+    """Checks to see if the use has liked the blog
     If True, then delete the like if False then create the like
     (Logic and code by Mat @ JustDjango)"""
 

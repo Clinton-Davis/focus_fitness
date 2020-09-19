@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
 from django.test import TestCase, Client
 from django.urls import reverse
-from blog.models import *
+from blog.models import Category, Blog, BlogComment, BlogView, Like
 from memberships.models import *
 
 

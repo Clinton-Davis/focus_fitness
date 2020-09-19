@@ -9,7 +9,7 @@ from django_user_agents.utils import get_user_agent
 
 
 def from_settings(request):
-    """ This Keeps the admin 'ENVIRONMENT_NAME' in the golbal context """
+    """This Keeps the admin 'ENVIRONMENT_NAME' in the golbal context"""
     return {
         "ENVIRONMENT_NAME":  settings.ENVIRONMENT_NAME,
     }

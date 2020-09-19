@@ -21,7 +21,7 @@ class StripeWH_Handler:
         self.request = request
 
     def _send_invoice_paid_email(self, intent):
-        """ Sends a finalized invoice email when subscritpion is fully paid. """
+        """Sends a finalized invoice email when subscritpion is fully paid."""
         customer_email = intent.customer_email
         period_start = datetime.fromtimestamp(intent.period_start)
         amount_paid = intent.amount_paid / 100
@@ -38,7 +38,6 @@ class StripeWH_Handler:
             {
                 'customer_email': customer_email,
                 'period_start': period_start,
-                # 'period_end': period_end,
                 'amount_paid': amount_paid,
                 'invoice_pdf': invoice_pdf,
                 'hosted_invoice_url': hosted_invoice_url, }
@@ -73,13 +72,13 @@ class StripeWH_Handler:
         )
 
     def handle_event(self, event):
-        """ Handles genric/unknow/unexpected events"""
+        """Handles genric/unknow/unexpected events"""
         return HttpResponse(
             content=f'Unhandled Webhook revieved: {event["type"]}',
             status=200)
 
     def handle_event_success(self, event):
-        """ Handles payments success intent events for both
+        """Handles payments success intent events for both
             Subscriptions and shop payments and"""
 
         intent = event.data.object
@@ -118,7 +117,7 @@ class StripeWH_Handler:
                 profile.save()
 
         order_exists = False
-        """Creating delay just in case the web hook is before the order """
+        """Creating delay just in case the web hook is before the order"""
         attempt = 1
         while attempt <= 7:
             try:
@@ -215,7 +214,7 @@ class StripeWH_Handler:
         )
 
     def handle_subscription_created(self, event):
-        """ Handles subscription creation events"""
+        """Handles subscription creation events"""
         intent = event.data.object
 
         return HttpResponse(

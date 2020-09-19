@@ -3,7 +3,6 @@ from django.test import TestCase, Client
 from django.urls import reverse
 from profiles.models import UserProfile
 from checkout.models import Order
-from checkout.forms import OrderForm
 
 
 class TestCheckoutViews(TestCase):
