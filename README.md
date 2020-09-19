@@ -21,32 +21,30 @@
 1. [**UX**](#ux)
 2. [**Scope**](#scope)
 3. [**Structure and Wireframe Mockups**](#structure)
-   3.1. [**Navigation**](#navigation)
-   3.2. **Home Page (index.html page)**
-   3.3. **Focus Shop**
-   - *Detailed View*
-   - *Cart*
-   - *Checkout*
-   - *Checkout Success*
+    - [**Navigation**](#navigation)
+    - [**Home Page (Index.html)**](#home)
+    - [**Focus Shop**](#shop)
+      - [*Detailed View*](#detailed-view)
+      - [*Cart*](#cart)
+      - [*Checkout*](#checkout)
+      - [*Checkout Success*](#checkout-success)
 
-    3.4. **Blog**
-   - *Blog Categories Page*
-   - *Blog details*
-   - *Blog Create and Edit*
-   - *Blog Create and Edit*
+    - [**Blog**](#blog)
+      - [*Blog Categories Page*](#blogcategories)
+      - [*Blog Details*](#blogdetails)
+      - [*Blog Create and Edit**](#blogcreate)
+      - [*Blog Authors Page*](#blog_authors_page)
 
-   3.5 **Programs**
-      - *Checkout Success*
-      - *Checkout Success*
-      - *Checkout Success*
+    - [**Programs**](#programs)
+      - [*Program Details*](#program-details)
+    - [**Memberships**](#Membership)
+      - [*Program Details*](#program_details)
 
-   3.5 **Members**
-      - *Membership*
-      - *Checkout Success*
+    - [**Workouts**](#workouts)
 
-   3.6 **Dashboard**
-   3.6 **About Page**
-   3.6 **Contact Page**
+    - [**Dashboard**](#dashboard)
+    - [**About Page**](#about-page)
+    - [**Contact Page**](#contact-page)
 
 4. [**Surface**](#surface)
 5. [**Technologies**](#technologies)
@@ -127,8 +125,13 @@ For a more detailed look at web site structure and page flow see Structure Diagr
 
 #### Signup (Registration) and Login
 
-I have used a 3rd Party package called [Allauth](https://django-allauth.readthedocs.io/en/latest/) to take care of the logic.
-The Signup and Login pages have been customised to fix the themes of the site.
+I have used a 3rd Party package called [Allauth](https://django-allauth.readthedocs.io/en/latest/) to take care of the logic. 
+The users are asked to fill in the Registration with fields ‘Email’, ‘Username’, and password, this is done twice to make sure they are both the same.
+You may also use the social account sign up. Facebook and Google.
+**Login.**
+You may use the social account buttons to sign in or use the form.
+The form has two fields, ‘email’ and ‘Password’  and a remember me button and a link to your if you have forgotten your password.
+All of [Allauth](https://django-allauth.readthedocs.io/en/latest/) HTML  pages have been customised to fit the themes of the site.
 Full Page background with a center-block design.
 
 <details>
@@ -141,23 +144,18 @@ Full Page background with a center-block design.
 <p align="center">
 <img src="media/wireframes/Login.png">
 </p>
+</details>
 
 #### **Navigation**
 
 ##### Top Navigation
-The top Navigation is sticky so always stays at the top of each page,
-It is dynamic and will change if the user is logged in or not.
+
+The navbar is sticky (fixed) to top of each page, This makes navigation easer and qicker.
 It is divided into 3 part
 
--  **Left - Focus Fitness Logo** -  Clickable link to the home page from anywhere on the web site
--  **Center - Page navigation** - This is the main page navigation, this with change if the users is logged or not.
--  **Right -User login and Cart** - This changes if the user is login or not.
-
-<img src="media/wireframes/admin_no_user.png">
-If the user is logged in, the user name will appear next to the user icon.
-It the user is authorised to the admin area, the is an admin login icon.
-<img src="media/wireframes/admin_nav.png">
-The cart is always visible if there is a running total Its turns green.
+- **Left - Focus Fitness Logo** -  Clickable link to the home page from anywhere on the web site
+- **Center - Page navigation** - This is the main page navigation, this with change if the users is logged or not.
+- **Right -User login and Cart** - This changes if the user is login or not.
 
 ##### The Footer
 
@@ -167,7 +165,6 @@ Part 1 - Is the Logo.
 Part 2 - has the newsletter submitting form, the social icons and the legal.
 Part 3 - is more navigation to the pages of the site. Studies have shown that having some navigation on the footer increases hit rate on a websites.
 On the desktop they sit next to each. On mobile the part 2 and 3 are next to each other and part 1 is below.
-
 
 <details>
 <summary>Head Navigation / Footer (Click for image)</summary>
@@ -186,29 +183,24 @@ The home page or Index page is the main page for users to interact with.
 It is divided into 4 sections.
 
 **Section 1**
+
 Full-page background in black and white, in the middle, is a dark semitransparent block with the Focus Fitness heading and the mantra underneath.
 Underneath that are the main navigation buttons that are coloured using the supplementary colours.
-The buttons are dynamic and change with the user membership level.
-A public user will see Shop Sign up and Login Blog
-<img src="media/wireframes/btn_no_user.png">
-It the user has logged in but not a Subscribing member the button will change to
-Shop Subscribe logout and Blog
-<img src="media/wireframes/btn_user.png">
-If the user is a Subscriber the buttons will change to
-Shop Programs Logout Blog
-<img src="media/wireframes/btn_member.png">
-Underneath there are 3 clickable tiles each linking to there information they are displaying.
-The first one is displaying the Trainging Program categories, the 2nd one is about the blogs the 3rd one is showing all the categories of products in the shop.
 
 **Section 2**
+
+3 clickable tiles each linking to there information they are displaying.
+The first one is displaying the Trainging Program categories, the 2nd one is about the blogs the 3rd one is showing all the categories of products in the shop.
 This a brief description of the Subscriptions and what perks you get for joining up.
 This is also dynamic If the member is a subscribing user this section is not shown.
 
 **Section 3**
+
 Here you will find all the special offer that are on offer in the shop.
 Each item is clickable and will go directly to the product detail page.
 
 **Section 4**
+
 Here are displayed all the featured blog, again clickable and will take to you to the blog post.
 
 <details>
@@ -225,7 +217,7 @@ Here are displayed all the featured blog, again clickable and will take to you t
 ---
 [Back to Top](#table-of-contents)
 
-### Shop
+## Focus Shop
 
 *Layout*
 *The shop heading is top center*. -To let the user know where they are
@@ -410,6 +402,7 @@ Only logged in users may see the Members posts
 <p align="center">
 <img src="media/wireframes/blog_cat.png">
 </p>
+</details>
 
 #### **Blog Detail Page**
 
@@ -450,14 +443,14 @@ We use [CKEditor](https://ckeditor.com/) to format the blogs post, this gives th
 <p align="center">
 <img src="media/wireframes/blog_forms.png">
 </p>
+</details>
 
-#### Blog author Page
+#### Blog Author Page
 
 By Clicking on the authors name in the details blog page, you will be redirected to this page.
 Here you will be able to see all the blogs that this user has written.
 Each title is a link to the blog and you can see the amount of likes, comments, and thump up each post has.
 
-</details>
 <details>
 <summary>Blog Create/Edit Wireframes (Click for image)</summary>
 
@@ -472,13 +465,17 @@ Each title is a link to the blog and you can see the amount of likes, comments, 
 Are an important part of how Focus Fitness works. There are 2 types of memberships
 Free and Pro
 The Free memberships are given to anyone who joins Focus by logging in. when you log in you profile is made and free status is given.
-This grains you asses to
-Writing Blog pos 
-Commenting rating and review on  blogs post and Products.
-The Dashboard
-The Pro or (Profesional) membership will give you access to all of the above and access to the Programs.
-It is a monthly subscription. 
-Canceling the Subscription can be done viva the Dashboard in the subscription tab.
+This grains you asses to:
+
+- Writing Blog pos
+- Commenting rating and review on  blogs post and Products.
+- The Dashboard
+- The Pro or (Profesional) membership will give you access to all of the above and access to the Programs.
+It is a monthly subscription.
+To become a Pro member Click the ‘Select button on the card and you will be redirected to the members-payment page.
+Simple Center block design with the memberships details and monthly amount that will be billed.
+Below is the Stripe Payment Field.
+To Cancel a Subscription, it can be done viva the Dashboard in the subscription tab.
 
 <details>
 <summary>Chow Schema (Click for image)</summary>
@@ -499,18 +496,16 @@ Static Stretching
 Strength training
 Dieting
 More can be added in the administration section.
-Each Program has a number of workouts attached to them. They are all video based and can be added or ordered in any way the trainer wishes to show them.
-The video files itself is Not stored in the Focus Fitnesses database the videos are linked with a url from a video hosting server. Ie. Cloudinary. 
-To add a video:
-Make a Cloudinary account
-Upload the video
-Once it is uploaded a video url is given
-In the Focus admin section click on workouts in the Programs section
-Click ‘Add new’
-Fill out the form adding the url.
+
+##### Programs Details
+
+The page is a center block design and is divided in half.
+On the Left hand side is the description of the category the member has chosen.
+On the right hand side is the list of workouts within that Program.
+The workouts are all video based and can be added or ordered in any way the trainer wishes to show them.
 
 <details>
-<summary>Workouts WireFrame(Click for image)</summary>
+<summary>Programs WireFrame(Click for image)</summary>
 
 <p align="center">
 <img src="media/wireframes/Programs.png">
@@ -522,6 +517,15 @@ Fill out the form adding the url.
 Once the workout is selected, you will be redirected to the workout.
 Its a center-block design which displays the title and the context of the work out.
 Below this is a video play which will fit the size of the user's display.
+The video files itself is Not stored in the Focus Fitnesses database they are linked with a url from a video hosting server. Focus fitness uses Cloudinary  
+To add a video:
+Make a Cloudinary account
+Upload the video
+Once it is uploaded a video url is given
+In the Focus admin section click on workouts in the Programs section
+Click ‘Add new’
+Fill out the form adding the url.
+
 
 <details>
 <summary>Workouts WireFrame(Click for image)</summary>
@@ -536,17 +540,17 @@ Below this is a video play which will fit the size of the user's display.
 The Dashboard is where the login in user can access all their personal information.
 It is divided into 3 parts.
 
-**Profile Admin**
+###### Profile Admin
 
 - Here you can change your user password.
 - You can change or add your delivery details.
 - All see that subscription level you are at,   It the user is a top-level subscription, (Pro)  you are able to see when the next payment is due.
 
-**My Blogs**
+###### My Blogs
 
 - Here you can see all the blogs you have written, and if you haven’t written any yet, there is a link to start.
 
-**Orders History**
+###### Orders History
 
 - Here youll find a table will all you order history on it. Click on the blue coloured Order number to get the full Order.
 - The Orders are ordered from newest to oldest.
@@ -560,9 +564,6 @@ It is divided into 3 parts.
 </p>
 
 </details>
-
-
-
 
 #### **About**
 
@@ -586,6 +587,7 @@ The About page has a centre block format with a heading and information about Fo
 
 <p align="center">
 <img src="media/wireframes/Contact.png">
+
 </p>
 </details>
 
@@ -644,6 +646,7 @@ The Header and Footer image of a wooden floor has been adjusted to give it a dee
 
 <p align="center">
 <img src="static/images/wood-Dark-luca-ruegg-crop.jpg">
+
 </p>
 </details>
 
@@ -674,7 +677,7 @@ The Header and Footer image of a wooden floor has been adjusted to give it a dee
 
 - [Font Awesome](https://fontawesome.com/) ~ Font Awesome icons
 - [icons8](https://icons8.com/icons/set/instagram-logo) ~ Icons8 icons
-
+- [cloudinary](https://cloudinary.com/) ~  Cloud-based image and video management platform
 - [GitHub](https://github.com/) ~ Distributed version control and source code management (SCM) functionality of Git, plus its own features.
 - [Git](https://git-scm.com/) ~ Distributed version control system
 - [Figma](https://www.figma.com/) ~ A digital design and prototyping tool. It is a UI and UX design application that you can use to create websites, apps.
@@ -692,6 +695,114 @@ The Header and Footer image of a wooden floor has been adjusted to give it a dee
 [Back to Top](#table-of-contents)
 
 ## Features
+
+### Existing Features
+
+##### Navbar
+
+- Changes dymamicaly
+This changes depending on the membership status of the user.
+If the user is not logged in it shows the basic menu with signup/Login and shopping cart
+![admin_no_user](media/wireframes/admin_no_user.png)
+If the user is login but not a Pro member the menu extends to include there
+Dashboard, Programs, Logout.
+- Username and Admin Login
+
+  The Top right is now the users Username and a user icon.
+  If the user is a ‘Staff’ member a link to the admin ear is shown.
+  ![admin_nav](media/wireframes/admin_nav.png)
+
+#### Footer
+
+- Changes dymamicaly.
+The footer is dynamic and changes if the user is logging in or not. If not the menu button say login, *Blog*, *Shop*, *Sign up*,
+If the user is logged in the menu changes to: 
+*Subscribes*, *Blog*, *Shop*, *Logout*.
+And if the user is a Pro member, *Subscribes* changes to *Programs*.
+- Newsletter:
+The Newsletter sign ups form is in the footer. This way it is always on every page.
+- Back to Top.
+The Back to the top button is global but you see it mostly in the footer, This is a handly way to get back to the top of the page.
+
+#### Home Page (Index Page)
+
+*Section-1*
+
+- Dynamic buttons
+  The 4 main buttons in section 1 of the main page are dynamic and change with the user membership level.
+  A public user will see Shop Sign up and Login Blog
+
+  ![btn_no_user](media/wireframes/btn_no_user.png)
+
+  If the user has logged in but not a Pro member the button will change to
+
+  ![btn_user](media/wireframes/btn_user.png)
+
+  If the user is a Pro member the buttons will change to
+
+  ![btn_member](media/wireframes/btn_member.png)
+
+*Section-2*
+
+The tiled center block.
+The 3 tiles are links to different parts of the site. They are clickable and lead to Training Programs, Blogs and the Focus Shop.
+
+*Section 3*
+
+- Dynamic Subscription section.
+The subscription section users membership status.
+If the user is a Pro member this section is hidden. This gives the user less scrolling to get to the shop.
+
+*Section 4*
+
+- The Special Offers section
+Holds all the special offers that are listed.
+- Clickable Products
+The products are clickable and will take you to that products detailed page, where you can add to cart.
+ controlled in the admin All the products that are displayed here are controlled in the admin ears.
+- Hidden Dynamically
+If there are no special offers the section will be hidden.
+
+*Section 5*
+
+- Featured Blogs
+All the featured blogs are shown here with the help of Bootstrap's Carousel
+- Clickable blogs
+The blogs are clickable and will take you to the blog details where you can read it.
+Controlled in the admin All featured blogs are controlled in the admin area.
+
+##### Blog Page
+
+- Featured Blogs The same feature that is used in Home page Section 5 is used in the blog list page.
+- Search Blogs
+The search bar in the blogs section will look for a matching word or words in either the name or content of the blogs. If there are any matches they will be displayed in the blog search page. If there are none there is a link back to the blog page.
+
+- Colour Code Categories.
+The Categories in the blog menu are colour coded to make it easier to distinguish the blogs. Each blog post has a coloured border that matches the category colour.
+- Likes, Views and Comments
+Every time a logged on user clicks and views a blog it is recorded and shown on the blogs views counter. If a blog is liked it shows up in the thumbs up count. And the same if a blog is commented on.
+- Members Blog Block
+The members block is where all the members blog will be posted.
+- Members block restricted access
+Only logged in users may view the member blogs
+- Find all blog from author
+When you are on the blog's detailed page clicking on the authors name will bring you to their blogs page. Here you will be able to see all the blogs they have written.
+All the blogs in their page are ordered from newest to oldest.
+- Commenting on Blogs
+This way the users can connect with each other, ask questions, leave answers, or just comment.
+*Creating and Editing blogs*
+- User access
+Only login users may create or comment on blogs
+- Blog Author Control
+Only the blogs authors may edit there blogs
+- Ckeditor
+Ckeditor is used to create or edit blogs, this gives the user a lovely interface to write, link, and add pictures to a blog post.
+-Controlled from Admin
+Blogs can be written and edited front he admin area, If blogs are not inline with the rules if can be deleted without authors permission.
+
+### Focus Shop
+
+
 
 ### Future Features
 

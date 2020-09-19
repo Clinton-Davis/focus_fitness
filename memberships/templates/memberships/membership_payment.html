@@ -24,8 +24,9 @@
 
             <div class="row">
                 <p class="col-12 aw text-wht text-center">You are about to subscribe to</p>
-                <p class="col-12 aw text-grn text-center"> {{ selected_membership }} @
-                    ${{ selected_membership.price }}<small> /Month</small></p>
+                <p class="col-12 aw text-grn text-center"> {{ selected_membership }}
+                    <span class="mont_r">@ $</span>
+                    {{ selected_membership.price }}<small> /Month</small></p>
             </div>
 
             <form action="." method="post" id="payment-form" class="pb-4">
