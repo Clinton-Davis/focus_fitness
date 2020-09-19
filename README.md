@@ -22,8 +22,8 @@
 2. [**Scope**](#scope)
 3. [**Structure and Wireframe Mockups**](#structure)
     - [**Navigation**](#navigation)
-    - [**Home Page (Index.html)**](#home)
-    - [**Focus Shop**](#shop)
+    - [**Home Page**](#home-page)
+    - [**Focus Shop**](#focus-shop)
       - [*Detailed View*](#detailed-view)
       - [*Cart*](#cart)
       - [*Checkout*](#checkout)
@@ -148,22 +148,22 @@ Full Page background with a center-block design.
 
 #### **Navigation**
 
-##### Top Navigation
+##### Navbar
 
 The navbar is sticky (fixed) to top of each page, This makes navigation easer and qicker.
 It is divided into 3 part
-
-- **Left - Focus Fitness Logo** -  Clickable link to the home page from anywhere on the web site
-- **Center - Page navigation** - This is the main page navigation, this with change if the users is logged or not.
-- **Right -User login and Cart** - This changes if the user is login or not.
+*Left - Focus Fitness Logo* -  Clickable link to the home page from anywhere on the web site
+*Center - Page navigation* - This is the main page navigation, this with change if the users is logged or not.
+*Right -User login and Cart* - This changes if the user is login or not.
 
 ##### The Footer
 
 The footer stays at the button of each page.
 It is broken into 3 parts.
-Part 1 - Is the Logo.
-Part 2 - has the newsletter submitting form, the social icons and the legal.
-Part 3 - is more navigation to the pages of the site. Studies have shown that having some navigation on the footer increases hit rate on a websites.
+
+- *Part 1* - Is the Logo.
+- *Part 2* - has the newsletter submitting form, the social icons and the legal.
+- *Part 3* -  is more navigation to the pages of the site. This helps with navigation, if the user is having trouble finding their way around the site, It acts like a safety net.
 On the desktop they sit next to each. On mobile the part 2 and 3 are next to each other and part 1 is below.
 
 <details>
@@ -178,7 +178,8 @@ On the desktop they sit next to each. On mobile the part 2 and 3 are next to eac
 ---
 [Back to Top](#table-of-contents)
 
-#### **Home Page (index.html page)**
+#### **Home Page**
+
 The home page or Index page is the main page for users to interact with.
 It is divided into 4 sections.
 
@@ -217,7 +218,7 @@ Here are displayed all the featured blog, again clickable and will take to you t
 ---
 [Back to Top](#table-of-contents)
 
-## Focus Shop
+### **Focus Shop**
 
 *Layout*
 *The shop heading is top center*. -To let the user know where they are
@@ -226,23 +227,12 @@ Here are displayed all the featured blog, again clickable and will take to you t
 
 *Product Filtering area*
 The category selectors are coloured in the supplementary colour to distinguish them apart at a glance
-All products/ Activewaer & Eqp/ Supplements /Special offers
-All products - lets you sort by price, lowest to highest or by Category in an alphabetical order.
-Activewaer - let you sort by individual Activewaer categories
-Supplements - let you sort by individual supplements categories
-Special Offers - shows you all the Special Offers
-On the Right hand side there is a selector that lets you order by:
-Price -(low-high) or (high-low)
-Name - (A-Z) or (Z-A)
-Category (A-Z) or (Z-A)
+
 On the right hand side is another way to get back to default ordering and shows you how many products are in the search
-*Search bar*
-Here you can search a word or a the product name and it will look for a match in the title or in the description of the product.
 
 *Product cards*
 The products are displayed on cards that sit side next and on top of each other.
 The product picture is at the top with the name of the product underneath.
-If the product is on sale it will be shown here with a ‘was’ price next to it.
 The price of the item is displayed in bold numbers.
 The category is below the price.
 Next is the stars rating. The product is rated by the users and the average of all the ratings is displayed here, total out of 5.
@@ -349,7 +339,7 @@ Featured Blog is chosen by our Trainers and is generally written by Pro trainers
 
 The Blog Page is broken down into separate parts
 
-- **Featured**
+- **Featured Blogs**
 Is the first thing you see. And uses a carcel to flip through.
 
 - **Category selection**
@@ -433,9 +423,6 @@ The create and edit blogs views share the same HTML file: blog_form.html
 The HTML is a form that has all the needed fields to fill out when creating or editing a blog.
 The difference is when your creating a post the form is blank with ‘placeholders’ to guild you.
 When your editing a post, all the fields are prefilled with the data needed to edit.
-Only logging in users may create or edit a blog post and
-only the Author of a blog post is authorised to edit a post.
-We use [CKEditor](https://ckeditor.com/) to format the blogs post, this gives the user all the tools to use in creating good content.
 
 <details>
 <summary>Blog Create/Edit Wireframes (Click for image)</summary>
@@ -465,13 +452,7 @@ Each title is a link to the blog and you can see the amount of likes, comments, 
 Are an important part of how Focus Fitness works. There are 2 types of memberships
 Free and Pro
 The Free memberships are given to anyone who joins Focus by logging in. when you log in you profile is made and free status is given.
-This grains you asses to:
-
-- Writing Blog pos
-- Commenting rating and review on  blogs post and Products.
-- The Dashboard
-- The Pro or (Profesional) membership will give you access to all of the above and access to the Programs.
-It is a monthly subscription.
+Professional membership is a monthly subscription.
 To become a Pro member Click the ‘Select button on the card and you will be redirected to the members-payment page.
 Simple Center block design with the memberships details and monthly amount that will be billed.
 Below is the Stripe Payment Field.
@@ -517,15 +498,6 @@ The workouts are all video based and can be added or ordered in any way the trai
 Once the workout is selected, you will be redirected to the workout.
 Its a center-block design which displays the title and the context of the work out.
 Below this is a video play which will fit the size of the user's display.
-The video files itself is Not stored in the Focus Fitnesses database they are linked with a url from a video hosting server. Focus fitness uses Cloudinary  
-To add a video:
-Make a Cloudinary account
-Upload the video
-Once it is uploaded a video url is given
-In the Focus admin section click on workouts in the Programs section
-Click ‘Add new’
-Fill out the form adding the url.
-
 
 <details>
 <summary>Workouts WireFrame(Click for image)</summary>
@@ -539,22 +511,9 @@ Fill out the form adding the url.
 
 The Dashboard is where the login in user can access all their personal information.
 It is divided into 3 parts.
-
-###### Profile Admin
-
-- Here you can change your user password.
-- You can change or add your delivery details.
-- All see that subscription level you are at,   It the user is a top-level subscription, (Pro)  you are able to see when the next payment is due.
-
-###### My Blogs
-
-- Here you can see all the blogs you have written, and if you haven’t written any yet, there is a link to start.
-
-###### Orders History
-
-- Here youll find a table will all you order history on it. Click on the blue coloured Order number to get the full Order.
-- The Orders are ordered from newest to oldest.
-- There is also a link to get you Stripe receipt.
+*Profile Admin*
+*My Blogs*
+*Orders History*
 
 <details>
 <summary>Dashboard Wireframes (Click for image)</summary>
@@ -577,7 +536,7 @@ The About page has a centre block format with a heading and information about Fo
 </p>
 </details>
 
----
+
 #### **Contact Us**
 
 The About page has a centre block format with a heading and information about Focus Fitness.
@@ -802,9 +761,119 @@ Blogs can be written and edited front he admin area, If blogs are not inline wit
 
 ### Focus Shop
 
+- Product Filtering
+You can filter the products in the shop with category selectors 
+All products/ Activewaer & Eqp/ Supplements /Special offers. This makes it quicker to find the product you are looking for.
 
+- Sort By Selector
+Here you can sort the products by
+Price -(low-high) or (high-low)
+Name - (A-Z) or (Z-A)
+Category (A-Z) or (Z-A)
+Rating (low-high) or (high-low)
+
+- Product cards
+The Product cards are clickable and will take you to the details product page. If the product does not have an image a No image image will take its place.
+
+- Out of Stock
+You can make a product out of stack from the admin area.
+- Controlled from Admin
+The admin area is the place where you can add, edit or delete products from your inventory. Only Staff members may do this.
+- Reviews
+Products can get reviewed by logged in users, this is done on the product details page.
+- Stars Rating
+Products can get a star rating by logged in user, each review and rate is listed with the product, A overall rating is made using this. The overall rating is displayed with the product on the product card.
+
+- Search Bar
+The search Bar will look for a matching word or words in either the name or description of the products.
+- Special offers
+Products are put on special offer from the admin area. A ‘was’ price tells the user the old price. It will be hidden if the ‘was’ price is smaller than the price. 
+- Quantity selector
+Lets you add more items to you order
+- Size selector
+Lets the user choose a size if the product has a size, otherwise this will be hidden.
+- Shopping Cart icon
+The Shopping Cart icon in the top right next to the users username, is all ways shown. If the cart is empty it says ‘Empty’ if there are items in the cart, There is a running grand total that turns green and including all the discounts, charges and taxes, No surprises at the checkout.
+- Add to Cart Message
+When you add an item to the cart, a message will appear letting you know it was successful, and give the user a quick way to checkout with a checkout button.
+- Detailed price breakdown
+In the cart section of the shop, a breakdown of all the charges are on the right, so you know how much you paid for what.
+- Adjust Cart
+The user can adjust or delete  from the cart if they have made a mistake.
+- Secure Payment method
+Using Stripe is a secure way to place your orders
+- Order receipt emailed
+Once the order has been submitted and Stripe receives payment a webhook is sent with back to Focus, once we have received this, we send an email with all the order details and the Stripe Payment Receipt.
+- Backup Oder with Webhook.
+If for some reason the user leaves the page before the order is complete but the payment goes through, the billing details and shipping address is sent with the payment details this way we can get them in the webhooks.
+
+### Memberships
+
+- Memberships
+When a new use logs in for the first time a free membership is given to them.
+- Members access
+members grains you asses to:
+  - Writing Blog
+Commenting rating and review on blogs post and Products.
+  - The Dashboard
+  - Program (Pro only)
+- Subscriptions
+A user can become a pro member by subscribing to Focus
+- Stripe Subscription
+Using Stripe Subscriptions make sure that the user is charged, and sends a webhook motifinig of that payment and date. We have this we send an email letting the user know that the subscription has been successful.
+- Monthly Receipt emails
+With the webhooks from Stripe whenever a payment is made we send the user an emailed receipt.
+
+### Programs
+
+- Controlled from Admin
+All programs are added, edited and deleted from the admin only.
+- Dynamically added
+When new context or existing content is added or edited with will automatically be changed on the programs page.
+
+### WorkOuts
+
+- Controlled from Admin
+Workouts are added from the admin area only.
+- Dynamically added
+When a new Workout is  added it will automatically be added to the programs workout list.
+- Cloudinary
+The video files itself is Not stored in the Focus database they are linked with a url from a video hosting server. Focus fitness uses Cloudinary.
+
+<details>
+<summary>How To add a video</summary>
+
+1. Make a Cloudinary account.
+2. Login and make a file to keep you videos in.
+3. Upload the video, when if has finished it will show you the Url.
+4. Copy the Url.
+5. In the Focus admin section click on workouts tab in the Programs section.
+6. Click ‘Add Workout’
+7. Where it says 'Video url' paste in the videos url.
+8. Press 'Save'
+
+</details>
+
+### DashBoard
+
+- Change User Password
+In the profile admin section the user can change their password
+- Change User Delivery Details
+- Membership select access
+The user can see what level of membership they are at, and date due to the next payment if applicable.
+- Users Blogs
+Here you can see all the blogs the user has written, and if you haven’t written any yet, there is a link to start.
+- Orders History
+A list of all the previous orders that the use has made in the shop
+Arranged from news to oldest.
 
 ### Future Features
+
+- Full Profile Page
+- Individual messaging
+- Personalized workout plans
+- Log your workouts
+- Newsletter marketing manager
 
 ---
 
