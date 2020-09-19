@@ -1,5 +1,5 @@
 from django.test import TestCase
-from checkout.models import *
+from checkout.models import Order
 
 
 class TestCheckoutModels(TestCase):

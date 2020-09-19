@@ -13,15 +13,10 @@
     padding: 0;
 }
 
-
-
-
 #header {
     background-color: rgb(0, 0, 0, 0.5);
     color: rgb(245, 245, 245);
-
 }
-
 
 body::before {
     display: block;
@@ -31,8 +26,6 @@ body::before {
     text-transform: uppercase;
     color: rgb(255, 255, 255);
     background-color: rgba(0, 0, 0, 0.897);
-
-
 }
 
 #branding h1 {

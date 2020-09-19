@@ -5,13 +5,11 @@ html {
   width: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
-
 }
 
 body {
   margin-top: 8rem;
   overflow-x: hidden;
-
 }
 
 .crumbs {
@@ -22,8 +20,7 @@ p {
   font-family: "montserrat", sans-serif;
   font-weight: 400;
   max-width: 600px;
-  margin-bottom: .5rem;
-
+  margin-bottom: 0.5rem;
 }
 
 a {
@@ -55,10 +52,7 @@ img {
   padding-left: 22%;
 }
 
-
-
 .cke_editable {
-
   line-height: 1.0;
 }
 
@@ -73,7 +67,6 @@ img {
   -webkit-box-shadow: 2px 2px 15px -5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 2px 2px 15px -5px rgba(0, 0, 0, 0.75);
   box-shadow: 2px 2px 19px -5px rgba(0, 0, 0, 0.75);
-
 }
 
 .max_w_40 {
@@ -112,7 +105,6 @@ img {
 .center-block-justify {
   display: flex;
   justify-content: center;
-
 }
 
 .center-block-col {
@@ -187,7 +179,6 @@ img {
 
 .text-bk {
   color: rgb(0, 0, 0);
-
 }
 
 .text-wht {
@@ -303,7 +294,6 @@ img {
   -o-border-radius: 10px;
 }
 
-
 .rounded-15 {
   border-radius: 15px;
   -webkit-border-radius: 15px;
@@ -372,8 +362,6 @@ img {
 
 .navbar-dark .navbar-toggler {
   color: rgba(255, 255, 255, 1);
-
-
 }
 
 .navbar-dark .navbar-toggler-icon {
@@ -412,9 +400,7 @@ nav {
   text-align: center;
 }
 
-
 /*Index - Section 1 */
-
 #section1-pic {
   position: relative;
   top: 0px;
@@ -425,14 +411,12 @@ nav {
   -o-background-size: cover;
   background-size: cover;
   z-index: 1;
-
 }
 
 .container-hero {
   background-color: rgba(0, 0, 0, 0.7);
   margin-top: 3rem;
   margin-bottom: 8rem;
-
   height: fit-content;
   width: 90%;
   border-radius: 30px;
@@ -503,7 +487,6 @@ nav {
 
 .sub-banner {
   background-color: white;
-
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -532,11 +515,8 @@ nav {
 }
 
 /*About Page*/
-
-
 #about-pic {
   background: url(/static/images/delaney-van-whiets.jpg) no-repeat center center fixed;
-  /* background-color: #fff; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -545,7 +525,6 @@ nav {
 }
 
 /*contact page*/
-
 .contact {
   height: fit-content;
 }
@@ -585,7 +564,6 @@ nav {
 .carosel-img {
   min-width: 18rem;
   max-width: 18rem;
-
 }
 
 #blog-side-card {
@@ -629,23 +607,15 @@ nav {
   height: fit-content;
 }
 
-
-
 .shop-card-top-img {
   width: 9rem;
-
 }
-
-
 
 .detail-img {
   width: 16rem;
-
 }
 
 /* Product Detail page */
-
-
 .checkout-container {
   height: 100vh;
   background: url(/static/images/george-pagan-iii-gym-tag.jpg) no-repeat center center fixed;
@@ -715,7 +685,6 @@ nav {
   background-size: cover;
 }
 
-
 /* Check out Page*/
 .order-wrap {
   justify-content: center;
@@ -729,7 +698,6 @@ nav {
 
 .checkout-pic {
   background: url(/static/images/delaney-van-weights.jpg) no-repeat center center fixed;
-  /* background-color: #fff; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -759,14 +727,11 @@ nav {
   background-size: cover;
 }
 
-
-
 .reg_pic {
   background: url(/static/images/javier-santos-guzman.jpg) no-repeat fixed;
   min-height: 90vh;
   height: fit-content;
   background-position: 50% 30%;
-
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -776,7 +741,6 @@ nav {
 .empty-pic {
   background: url(/static/images/sven-mieke-MsCgmHuirDo.jpg) no-repeat center center fixed;
   height: 100vh;
-  /* background-color: #fff; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -786,7 +750,6 @@ nav {
 .pass-change {
   background: url(/static/images/scott-webb-womanback.jpg) no-repeat center center fixed;
   height: fit-content;
-  /* background-color: #fff; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -794,7 +757,6 @@ nav {
 }
 
 /*Programs*/
-
 .program-card {
   width: 200px;
   height: 150px;
@@ -809,14 +771,11 @@ nav {
   font-family: "montserrat", sans-serif;
   font-weight: 600;
   text-shadow: 0.5px 0.5px aliceblue;
-
 }
-
 
 /*Profile pages*/
 #profile-pic {
   background: url(/static/images/delaney-van-weights.jpg) no-repeat center center fixed;
-  /* background-color: #fff; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -835,19 +794,15 @@ nav {
   z-index: 0;
 }
 
-
 .profile {
   min-height: 83vh;
   display: flex;
-  /* justify-content: center; */
   flex-direction: column;
-
 }
 
 .thongs {
   height: 500px;
   width: 500px;
-
 }
 
 .form-dark {
@@ -896,7 +851,6 @@ nav {
   max-width: 250px;
 }
 
-
 /* Footer */
 .footer-image {
 
@@ -938,7 +892,6 @@ nav {
   }
 }
 
-
 /* ------Messages  */
 .message_container_mobile {
   position: fixed;
@@ -953,7 +906,6 @@ nav {
   right: 2%;
   min-width: 300px;
   z-index: 999999999;
-
 }
 
 .toast {
@@ -966,8 +918,6 @@ nav {
   height: 10px;
   margin-top: -2px;
 }
-
-
 
 /*----------Media Queries */
 
@@ -993,19 +943,14 @@ nav {
     min-width: 20rem;
     max-width: 20rem;
   }
-
-
 }
-
 
 @media (max-width: 576px) {
   .container {
     padding-left: 1px;
     padding-right: 1px;
   }
-
 }
-
 
 @media (min-width: 768px) {
   img {
@@ -1026,16 +971,12 @@ nav {
 
   .container-hero {
     width: 80%;
-
   }
-
 
   .carosel-img {
     min-width: 30rem;
     max-width: 30rem;
   }
-
-
 }
 
 @media (max-width: 991px) {
@@ -1045,11 +986,9 @@ nav {
 }
 
 @media (min-width: 992px) {
-
   .active-size {
     font-size: 5vw;
   }
-
 
   .video-width {
     max-width: 800px;
@@ -1059,14 +998,12 @@ nav {
     min-width: 30rem;
     max-width: 30rem;
   }
-
 }
 
 @media (min-width: 1200px) {
   .active-size {
     font-size: 5vw;
   }
-
 
   .display-4 {
     font-size: 4rem;
