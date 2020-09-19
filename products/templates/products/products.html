@@ -191,7 +191,7 @@
                                         </div>
                                         <div class="card-footer bg-white pt-0 border-0 text-center">
                                             <!-- if product is on sale -->
-                                            {% if product.was_price != None  %}
+                                            {% if product.was_price != None  and product.was_price > product.price %}
                                             <p class="mb-0  aw">Was <span class="mont_b">$</span><s
                                                     class="text-red">{{ product.was_price}}</s></p>
                                             <p class="lead mb-0 aw"><span class="mont_b">$
