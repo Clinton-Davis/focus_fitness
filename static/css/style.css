@@ -24,7 +24,7 @@ p {
 }
 
 a {
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
 ul {
@@ -53,7 +53,7 @@ img {
 }
 
 .cke_editable {
-  line-height: 1.0;
+  line-height: 1;
 }
 
 .hover-shadow:hover {

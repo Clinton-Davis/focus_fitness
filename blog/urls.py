@@ -1,5 +1,4 @@
 from django.urls import path
-from . import views
 from blog.views import (
     BlogListView,
     SearchView,
@@ -27,5 +26,5 @@ urlpatterns = [
     path('category/<str:category>/', CategoryView, name='category'),
     path('author/<int:pk>/',
          BlogAuthorPageView.as_view(), name='author'),
-    path('like/<slug>/',  like, name='like')
+    path('like/<slug>/', like, name='like')
 ]
