@@ -3,7 +3,9 @@ python:
     - "3.8"
 install:
     - pip install -r requirements.txt
+env:
+    -  SECRET_KEY=env('SECRET_KEY')
 
 scripts:
-    -  SECRET_KEY="SECRET_KEY" python manage.py test
+    -  python manage.py test
 

@@ -870,10 +870,12 @@ Arranged from news to oldest.
 ### Future Features
 
 - Full Profile Page
-- Individual messaging
-- Personalized workout plans
+A full profile page with all picture and bio.
+
 - Log your workouts
+A workout log page that you fill out in your workouts to keep track of your progress.
 - Newsletter marketing manager
+I would like to have my Newsletters email list auto upload to an email service that takes care of the mass emails
 
 ---
 

@@ -5,12 +5,13 @@ import dj_database_url
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1', 'focus-fitness.herokuapp.com']
+
+env = environ.Env()
+# read the .env file
+environ.Env.read_env()
 
 if DEBUG is True:
-    env = environ.Env()
-    # read the .env file
-    environ.Env.read_env()
 
     SECRET_KEY = env('SECRET_KEY')
 
