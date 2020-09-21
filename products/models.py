@@ -57,7 +57,6 @@ class Product(models.Model):
         all_ratings = self.productcomment_set.all().aggregate(Avg('rating'))
         self.rating = all_ratings['rating__avg'] or 0
         self.save()
-
         return all_ratings['rating__avg']
 
     @property

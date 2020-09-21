@@ -42,8 +42,19 @@ h1 {
     color: rgb(251, 252, 250);
 }
 
+h2 {
+    color: rgb(251, 252, 250);
+}
+
+p,
+ul,
+li {
+    color: rgb(251, 252, 250);
+}
+
 #content-main {
     font-family: "Montserrat", sans-serif;
+
 }
 
 div.breadcrumbs {

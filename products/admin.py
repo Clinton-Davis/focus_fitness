@@ -10,7 +10,9 @@ class ProductAdmin(admin.ModelAdmin):
     list_editable = ('in_stock', 'sales_items',
                      'was_price', 'price', 'category',)
 
-    list_filter = ('category', 'in_stock', 'code')
+    list_filter = ('category', 'in_stock', 'rating',)
+
+    readonly_fields = ('rating',)
 
 
 class CategoryAdmin(admin.ModelAdmin):

@@ -252,23 +252,10 @@ TAX_RATE_PERCENTAGE = 15
 STRIPE_CURRENCY = 'usd'
 
 CKEDITOR_CONFIGS = {
-    # 'default': {
-    #     'toolbar': 'full',
-    #     'width': 'auto',
-    # },
     'default': {
-        'toolbar': 'Custom',
+        'toolbar': 'full',
         'width': 'auto',
-        'toolbar_Custom': [
-            ['Bold', 'Italic', 'Underline', 'Format', 'Image', 'lineheight', ],
-            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-',
-                'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', 'lineheight', ],
-            ['Link', 'Unlink', 'lineheight', ],
-            ['RemoveFormat', 'Source', 'lineheight', ]
-        ]
-
     },
-
 }
 
 # stripe
