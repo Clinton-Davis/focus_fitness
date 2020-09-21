@@ -92,10 +92,6 @@ img {
   background-color: rgba(255, 255, 255, 0.555);
 }
 
-.display-4 {
-  font-size: 3.0rem;
-}
-
 .center-block {
   display: flex;
   justify-content: center;
@@ -118,7 +114,6 @@ img {
   position: relative;
   height: fit-content;
   width: fit-content;
-
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -135,7 +130,6 @@ img {
   position: relative;
   height: fit-content;
   width: fit-content;
-
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -148,7 +142,6 @@ img {
   margin-top: 1rem;
 }
 
-
 .container-fluid {
   padding-left: 0px;
   padding-right: 0px;
@@ -156,7 +149,6 @@ img {
 
 .underline {
   text-decoration: underline;
-  ;
 }
 
 .mb--1 {
@@ -460,7 +452,6 @@ nav {
 
 /*Index- Section 2*/
 #section2 {
-  /* background-image: linear-gradient(white 50%, black); */
   background-color: #fff;
   height: fit-content;
 }
@@ -638,7 +629,6 @@ nav {
 
 .cart-img-size {
   max-width: 7rem;
-
 }
 
 .cart-actions {
@@ -692,7 +682,6 @@ nav {
 
 .login-row {
   color: white;
-
   justify-content: center;
 }
 
@@ -893,12 +882,10 @@ nav {
 }
 
 /* ------Messages  */
-
 .message_container {
   position: fixed;
   top: 5%;
   right: 0;
-  /* min-width: 300px; */
   z-index: 999999999;
 }
 
@@ -922,7 +909,6 @@ nav {
 
 @media (min-width: 576px) {
   img {
-
     max-width: 30rem;
   }
 
@@ -947,7 +933,6 @@ nav {
     position: fixed;
     top: 5%;
     right: 2%;
-
   }
 }
 
