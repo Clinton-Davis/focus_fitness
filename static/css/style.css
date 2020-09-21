@@ -893,18 +893,12 @@ nav {
 }
 
 /* ------Messages  */
-.message_container_mobile {
-  position: fixed;
-  top: 5%;
-  min-width: 300px;
-  z-index: 999999999;
-}
 
 .message_container {
   position: fixed;
   top: 5%;
-  right: 2%;
-  min-width: 300px;
+  right: 0;
+  /* min-width: 300px; */
   z-index: 999999999;
 }
 
@@ -920,6 +914,11 @@ nav {
 }
 
 /*----------Media Queries */
+@media (min-width: 360px) {
+  .message_container {
+    right: 1%;
+  }
+}
 
 @media (min-width: 576px) {
   img {
@@ -942,6 +941,13 @@ nav {
   .carosel-img {
     min-width: 20rem;
     max-width: 20rem;
+  }
+
+  .message_container {
+    position: fixed;
+    top: 5%;
+    right: 2%;
+
   }
 }
 
