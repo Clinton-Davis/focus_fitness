@@ -198,7 +198,7 @@
                             <i class="fas text-ylw fa-lg fa-star mr-1"></i>
 
                             {% if product.rating > 0 %}
-                            <small class="">{{ product.rating|floatformat:1 }}/5</small>
+                            <small class="">{{ product.rating_ave|floatformat:1 }}/5</small>
                             {% else %}
                             <small class="">No Ratings</small>
                             {% endif %}

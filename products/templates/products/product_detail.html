@@ -47,7 +47,7 @@
 
                         {% if  product.rating > 0 %}
                         <p><i class="px-1 text-ylw fas fa-star"></i>
-                            <span>{{  product.rating|floatformat:1 }} /5
+                            <span>{{  product.rating_ave|floatformat:1 }} /5
                                 <small>({{ product.productcomments_count }})</small>
                             </span>
                         </p>
@@ -130,7 +130,7 @@
                 <hr>
                 <p class=" aw text-primary">REVIEWS</p>
                 <p>Overall Rating:<i class=" px-1 text-ylw fas fa-star"></i>
-                    <span>{{  product.rating|floatformat:1 }}/5
+                    <span>{{  product.rating_ave|floatformat:1 }}/5
                         <small>({{ product.productcomments_count }} Ratings)</small></span>
                 </p>
                 <hr>
@@ -161,7 +161,7 @@
                                 <div class=" card my-4">
                                     <h4 class="text-center aw font-lrg">{{ product.name }}
                                         <span class=" p-2 rounded float-right bg-green">
-                                            {{ product.rating|floatformat:1 }}</span>
+                                            {{ product.rating_ave|floatformat:1 }}</span>
                                     </h4>
                                     <small class="text-center">Please base your reviews and ratings on personal
                                         experience.
