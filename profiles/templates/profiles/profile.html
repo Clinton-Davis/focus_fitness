@@ -10,7 +10,7 @@
             <div class="col-md-12 mb-0">
                 <a class="text-wht aw pl-2" href="{% url 'home' %}">Home</a>
                 <span class="mx-2 mb-0 text-wht">/</span>
-                <small class="text-wht aw">Dashboard</small>
+                <small class="text-wht aw">{{ user.username|title }}'s Dashboard</small>
             </div>
         </div>
     </div>
@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-md-4 col-12  bg-black-a rounded-15">
                     <h4 class="aw text-wht text-center">Profile Admin</h4>
-                    <h6 class="aw text-wht text-center">{{ user.email }}</h6>
+                    <h6 class="text-wht text-center">{{ user.email }}</h6>
                     <div class="profile-overlay">
                         <ul>
                             <li class="pt-2">

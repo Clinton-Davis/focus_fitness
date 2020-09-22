@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.models import User
-
+from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, get_object_or_404
@@ -50,11 +50,12 @@ class ProfileSubscription(LoginRequiredMixin, View):
         """Displaying user Profile """
         user_membership = get_user_membership(request)
         user_subscription = get_user_subscription(request)
-
+        sub_discout = settings.SUB_DISCOUNT_PERCENTAGE
         context = {
             'profile': profile,
             'user_membership': user_membership,
-            'user_subscription': user_subscription
+            'user_subscription': user_subscription,
+            'sub_discout': sub_discout
         }
 
         return render(request, 'profiles/profile_subscriptions.html', context)

@@ -20,6 +20,6 @@ class TestMembershipsViews(TestCase):
     def test_membershipselectview(self):
         user = self.client.login(
             email="testing@test.com", password="testing12345")
-        resp = self.client.get(reverse("memberships:select-membership"))
+        resp = self.client.get(reverse("memberships:select_membership"))
         self.assertEqual(resp.status_code, 200)
         self.assertTrue('current_membership' in resp.context)

@@ -21,9 +21,11 @@
         </div>
         <div class="container">
             <div class="row mt-3 justify-content-center mx-auto w-50 h-100 bg-black-a rounded-10">
-                {% if user_subscription != None %}
+
+                {% if user_subscription.active == True %}
                 <div class="div">
-                    <p class="text-wht text-center">With this membership, you get 12% off the price of any item in
+                    <p class="text-wht text-center">With this membership, you get {{ sub_discout }}% off the price of
+                        any item in
                         the <a href="{% url 'products:products' %}">shop.</a></p>
                 </div>
                 <div class="my-2 aw text-wht col-md-6 col-12 ">Current Membership:</div>
@@ -33,24 +35,31 @@
                 <div class="my-2 text-wht col-md-6 col-12 ">
                     {{ user_subscription.get_created_date }}
                 </div>
-                {% if user_subscription.active != False %}
                 <div class="my-2 aw text-wht col-md-6 col-12  ">Next payment due:</div>
                 <div class="my-2 text-wht col-md-6 col-12 ">
                     {{ user_subscription.get_next_billing_date }}</div>
                 <div class="my-2 row justify-content-center">
                     <a class="aw btn btn-danger" href="{% url 'profiles:cancel_sub' %}">Cancel Subscription</a>
                 </div>
-                {% endif %}
                 {% else %}
                 <div class="text-wht col-12 mt-4 text-center ">
-                    <p class="text-wht">You don't have any membership subscription yet.<br>If you would like to see
-                        them, you can check them out
-                        <a href="{% url 'memberships:select-membership' %}">here.</a>
+                    <p class="text-wht">You don't have any active subscriptions yet.<br>If you Upgrade your membership,
+                        you will get {{ sub_discout }}% off the price of any item in the Focus Shop.
                     </p>
+                </div>
+                <div class=" text-center my-2 aw text-wht col-md-6 col-12 ">Current Membership:</div>
+                <div class="my-2 text-wht col-md-6 col-12 ">
+                    {{ user_membership.membership.membership_type }}</div>
+                <div class="my-2 row justify-content-center">
+                    <a class="aw btn btn-success border border-light"
+                        href="{% url 'memberships:select_membership' %}">Upgrade
+                        Membership</a>
                 </div>
 
                 {% endif %}
+
             </div>
+
         </div>
     </div>
 </div>
