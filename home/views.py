@@ -10,7 +10,6 @@ from products.models import Product
 from blog.models import Blog
 from products.models import Category
 from memberships.views import get_user_membership
-import requests
 
 
 def IndexView(request):
@@ -58,10 +57,8 @@ class ContactView(generic.FormView):
         return reverse("contact")
 
     def form_valid(self, form):
-        """" 
-        Getting clean data from the form and creating
-        a message to get sent to default email
-        """
+        """"Getting clean data from the form and creating
+        a message to get sent to default email."""
         messages.success(self.request,
                          "Thank you for getting in touch with us. We have received your message.")
         name = form.cleaned_data.get('name')

@@ -79,7 +79,7 @@ class StripeWH_Handler:
 
     def handle_event_success(self, event):
         """Handles payments success intent events for both
-            Subscriptions and shop payments and"""
+            Subscriptions and shop payments."""
 
         intent = event.data.object
         if intent.description == 'Subscription creation':
@@ -198,7 +198,6 @@ class StripeWH_Handler:
 
     def handle_event_failed(self, event):
         """ Handles payment failing events"""
-
         return HttpResponse(
             content=f'Webhook failed revieved: {event["type"]}',
             status=200

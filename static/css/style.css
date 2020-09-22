@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Montserrat:ital,wght@0,600;1,400&display=swap");
 
+/* GENERAL-STYLING */
 html {
   height: 100%;
   width: 100%;
@@ -143,8 +144,8 @@ img {
 }
 
 .container-fluid {
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .underline {
@@ -301,7 +302,7 @@ img {
   align-items: center;
 }
 
-/*ICON from Bulma*/
+/*ICON_FROM-BULMA*/
 .icon {
   align-items: center;
   display: inline-flex;
@@ -331,7 +332,7 @@ img {
   cursor: pointer;
 }
 
-/* TopNav*/
+/*TOP_NAVBAR*/
 .navbar {
   padding: 0px;
   height: 8rem
@@ -392,7 +393,7 @@ nav {
   text-align: center;
 }
 
-/*Index - Section 1 */
+/*INDEX_PAGE-SECTION-1*/
 #section1-pic {
   position: relative;
   top: 0px;
@@ -442,15 +443,19 @@ nav {
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, .125);
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   max-width: 15rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
 }
 
 .custom_img {
   max-width: 36rem !important
 }
 
-/*Index- Section 2*/
+/*INDEX_PAGE-SECTION-2*/
 #section2 {
   background-color: #fff;
   height: fit-content;
@@ -491,7 +496,7 @@ nav {
   width: auto;
 }
 
-/* Index - section3 */
+/*INDEX_PAGE-SECTION-3*/
 #section3 {
   height: fit-content;
 }
@@ -505,7 +510,7 @@ nav {
   background-size: cover;
 }
 
-/*About Page*/
+/*ABOUT_PAGE*/
 #about-pic {
   background: url(/static/images/delaney-van-whiets.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -515,7 +520,7 @@ nav {
   height: 100vh;
 }
 
-/*contact page*/
+/*CONTACT-PAGE*/
 .contact {
   height: fit-content;
 }
@@ -542,7 +547,7 @@ nav {
   background-size: cover;
 }
 
-/* BLOG PAGES*/
+/* BLOG-PAGES*/
 .blog-container {
   max-width: 620px;
 }
@@ -606,7 +611,7 @@ nav {
   width: 16rem;
 }
 
-/* Product Detail page */
+/*PRODUCTS_DETAILS-PAGE*/
 .checkout-container {
   height: 100vh;
   background: url(/static/images/george-pagan-iii-gym-tag.jpg) no-repeat center center fixed;
@@ -658,13 +663,13 @@ nav {
   background-color: rgb(229, 206, 33);
 }
 
+#trash {
+  color: rgb(231, 49, 63);
+}
+
 #trash:hover {
   background-color: rgb(231, 49, 63);
   color: rgb(255, 255, 255);
-}
-
-#trash {
-  color: rgb(231, 49, 63);
 }
 
 .shop-container {
@@ -675,7 +680,7 @@ nav {
   background-size: cover;
 }
 
-/* Check out Page*/
+/*CHECKOUT-PAGE*/
 .order-wrap {
   justify-content: center;
 }
@@ -745,7 +750,7 @@ nav {
   background-size: cover;
 }
 
-/*Programs*/
+/*PROGRAMS-PAGE*/
 .program-card {
   width: 200px;
   height: 150px;
@@ -762,7 +767,7 @@ nav {
   text-shadow: 0.5px 0.5px aliceblue;
 }
 
-/*Profile pages*/
+/*PROFILE-PAGE*/
 #profile-pic {
   background: url(/static/images/delaney-van-weights.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -805,13 +810,13 @@ nav {
   color: white;
 }
 
-/*Order history*/
+/*ORDER-HISTORY*/
 .order-history {
   max-height: 416px;
   overflow-y: auto;
 }
 
-/* Dash Board */
+/*DASHBOARD*/
 #dash_history {
   max-height: 35rem;
   overflow-y: auto;
@@ -833,17 +838,20 @@ nav {
 }
 
 #dash_history::-webkit-scrollbar-track {
-  background: linear-gradient(90deg, rgb(32, 28, 41), rgb(32, 28, 41) 1px, rgb(23, 20, 29) 0, rgb(23, 20, 29));
+  background: linear-gradient(90deg,
+      rgb(32, 28, 41),
+      rgb(32, 28, 41) 1px,
+      rgb(23, 20, 29) 0,
+      rgb(23, 20, 29));
 }
 
 .video-width {
   max-width: 250px;
 }
 
-/* Footer */
+/*FOOTER*/
 .footer-image {
-
-  background-color: black;
+  background-color: rgb(0, 0, 0);
 }
 
 #footer-legal {
@@ -881,7 +889,7 @@ nav {
   }
 }
 
-/* ------Messages  */
+/*MESSAGES*/
 .message_container {
   position: fixed;
   top: 5%;
@@ -891,7 +899,7 @@ nav {
 
 .toast {
   background-clip: padding-box;
-  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .1);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
   opacity: 0;
 }
 
@@ -900,7 +908,7 @@ nav {
   margin-top: -2px;
 }
 
-/*----------Media Queries */
+/*MEDIA_QUERIES*/
 @media (min-width: 360px) {
   .message_container {
     right: 1%;
@@ -1013,27 +1021,3 @@ nav {
     height: 147vh;
   }
 }  */
-
-
-
-
-/*iPad Pro Portrait and Landscape */
-/* @media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
-  #section1-pic {
-    height: 70vh;
-  }
-} */
-
-/*iPad Landscape */
-/* @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
-  #section1-pic {
-    height: 122vh;
-  }
-} */
-
-/*iPad Portrait */
-/* @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
-  #section1-pic {
-    height: 50vh;
-  }
-} */

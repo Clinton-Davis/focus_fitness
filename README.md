@@ -636,6 +636,7 @@ The Header and Footer image of a wooden floor has been adjusted to give it a dee
 
 - [Font Awesome](https://fontawesome.com/) ~ Font Awesome icons
 - [icons8](https://icons8.com/icons/set/instagram-logo) ~ Icons8 icons
+- [Codacy](https://app.codacy.com/) ~ Automated Code Review
 - [cloudinary](https://cloudinary.com/) ~  Cloud-based image and video management platform
 - [GitHub](https://github.com/) ~ Distributed version control and source code management (SCM) functionality of Git, plus its own features.
 - [Git](https://git-scm.com/) ~ Distributed version control system

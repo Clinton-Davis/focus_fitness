@@ -1,7 +1,6 @@
 from django.contrib.auth.models import User
-from django.test import TestCase, Client, RequestFactory
+from django.test import TestCase, Client
 from django.urls import reverse
-from memberships.models import *
 from memberships.views import *
 
 
