@@ -100,7 +100,7 @@ def paymentview(request):
                     },
                 ]
             )
-            return redirect(reverse("memberships:update-transactions",
+            return redirect(reverse("memberships:update_transactions",
                                     kwargs={'subscription_id': subscription.id}))
         except:
             messages.error(
@@ -162,4 +162,4 @@ def cancelsubscription(request):
     messages.success(
         request, "Successfully cancelled membership, A email has been sent.")
 
-    return redirect('profile')
+    return redirect('profiles:profile')
