@@ -1,12 +1,8 @@
-from django.contrib import messages
-from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, reverse
 from django.views.generic import ListView, DetailView, View
 from memberships.models import UserMembership
-from memberships.views import get_user_membership
 from .models import Program, Workout
-from django.views.generic.base import RedirectView
 
 
 class ProgramListView(ListView):
@@ -20,6 +16,7 @@ class ProgramDetailView(LoginRequiredMixin, DetailView):
 
 
 class WorkoutDetailView(LoginRequiredMixin, View):
+
     """getting the workouts that are associated with the programs 
         and filtering by slug. Checks to see if the memebership type 
         is allowed to be viewed, if true, it adds it to context.

@@ -1,8 +1,8 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Category, productComment, ProductView
+from .models import Product, Category, ProductView
 from .forms import ProductCommentForm
 from django.views import View
 from django.views.generic import DetailView
@@ -12,7 +12,8 @@ class All_Products(View):
     template_name = 'products/products.html'
 
     def get(self, request, *args, **kwargs):
-        """Gives the Login for the Search and the Sort dropdown (Login form Code Institute)"""
+        """Gives the Login for the Search and the Sort dropdown (Login form Code Institute)."""
+
         products = Product.objects.all().order_by('code')
         rating = Product.objects.all().order_by('rating')
         query = None

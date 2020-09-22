@@ -944,6 +944,8 @@ I would like to have my Newsletters email list auto upload to an email service t
 
 ---
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/f491bdf3d67c47b7918d82d4dc5d716f)](https://www.codacy.com/manual/Clinton-Davis/focus_fitness/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Clinton-Davis/focus_fitness&amp;utm_campaign=Badge_Grade)
+
 [Back to Top](#table-of-contents)
 
 ## Bugs
