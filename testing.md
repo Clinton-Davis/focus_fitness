@@ -2,7 +2,9 @@
 
 ----
 
-## Manual Testing
+#### Development Testing
+
+#### Manual Testing
 
 The manual testing is done for each user story and categorised into the different departments of the webpage.
 
@@ -219,6 +221,53 @@ Out of stock product was still being shown in special offers
 ‘was’ price is was shown
 Verdict: The issues were fixed, the test passed.
 
-## Automated Testing
+Automated Testing
+Automated testing is run in conjunction with the manual testing to get the most coverage of the website. The aim was not to get 100% coverage but to get the inner working tested. If there are some additions  to an app or views changed or added running automated tests after implementation will show up any error or bugs.
+I used the building Django testing module, The Tests were written for Views, Forms, and Modulus and can be found in each application specific tests folders.
+tests
+tests_models.py
+tests_forms.py
+tests_views.py
+Coverage.py was used to run the test to get the overall coverage of the testing. 
+The  configurations are stored in the .coveragerc file.
+Results:
+Pic
+To run the test in the command terminal:
 
-Automated testing 
+
+```
+$ coverage run manage.py test
+```
+
+To generate a coverage report on the terminal window.
+```
+$ coverage report
+```
+
+To generate a coverage report in HTML use
+
+```
+$ coverage html
+```
+
+#### Traivs
+
+## Code Validations
+
+**HTML**
+All HTML pages were tested with W3C Markup Validation Service. There are a good few errors because the W3C Markup does not recognize Jinja templating. No other errors.
+
+**CSS**
+I ran my css file through the W3c CSS Validation Service.
+  <img style="border:1;width:100px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+
+**Python**
+I use a package called [autopep8](https://pypi.org/project/autopep8/) Guide me in my python Validatorn through development.
+
+**Codacy**
+Codacy is an automated Code Validator that checks the quality of your code after every push to GitHub.
+ [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f491bdf3d67c47b7918d82d4dc5d716f)](https://www.codacy.com/manual/Clinton-Davis/focus_fitness/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Clinton-Davis/focus_fitness&amp;utm_campaign=Badge_Grade)
+ 
+## Bugs
