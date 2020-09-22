@@ -8,6 +8,7 @@
 
 ---
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7bddb1cd10db490194bdb60e33678518)](https://app.codacy.com/manual/Clinton-Davis/focus_fitness?utm_source=github.com&utm_medium=referral&utm_content=Clinton-Davis/focus_fitness&utm_campaign=Badge_Grade_Settings)
  [![Generic badge](https://img.shields.io/badge/Django-3.0.8-s.svg)](https://shields.io/) [![Python 3.8](https://img.shields.io/badge/Python-3.8.2-blue.svg)](https://www.python.org/downloads/release/python-360/) [![Generic badge](https://img.shields.io/badge/Heroku-Postgres-s.svg)](https://shields.io/) 
 
 ## Demo
