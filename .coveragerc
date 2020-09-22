@@ -1,0 +1,30 @@
+[run]
+
+source=blog,cart,checkout,focus,home,marketing,products,profiles,programs
+
+omit = 
+    */env/*
+    */migrations/*
+    */__init__*
+    */test*.py
+    */url*.py
+    */admin.py
+    */apps.py
+    */static/*
+    */media/*
+
+[report]
+omit =
+    */migrations/*
+    */__init__*
+    */test*.py
+    */url*.py
+    */admin.py
+    */apps.py
+    */static/*
+    */media/*
+    */.env/*
+
+ignore_errors = True
+exclude_lines =
+        pragma: no cover

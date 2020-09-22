@@ -253,3 +253,7 @@ Bug:
 Out of stock product was still being shown in special offers
 ‘was’ price is was shown
 Verdict: The issues were fixed, the test passed.
+
+## Automated Testing
+
+Automated testing 
