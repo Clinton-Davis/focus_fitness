@@ -31,7 +31,7 @@
                 <div class="carousel-inner text-wht">
                     {% for blog in feature_blog %}
                     <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}"
-                        id="slide{{ forloop.counter }} ">
+                        id="slide{{ forloop.counter }}">
                         <a class="" href="{{ blog.get_absolute_url }}">
                             <img class="d-block carosel-img mx-auto" src="{{ blog.thumbnail.url }}" alt="First slide">
                             <div class="row justify-content-center">

@@ -1,7 +1,14 @@
 # Testing
 
 ----
-
+There is a boostrap4 carousel in the blog#-list.html page that shows featured blogs. 
+I was using a for loop to get the blog post to show. 
+After that I was using a if statement to pick out the featured post from the others.
+But it was not working.
+When i tested the carousel to if that was the problem, it worked fine.
+I then made sure the for loop was working with {{ blogs.featured }} 
+True and False where being shown, that that was not the bug.
+To make the carousel work with looped objects you have to loop the counter with 1 being active.
 #### Development Testing
 
 #### Manual Testing
