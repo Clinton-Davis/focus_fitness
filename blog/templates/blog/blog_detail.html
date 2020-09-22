@@ -96,16 +96,16 @@
                                         condition of
                                         focus-fitness.com</small>
 
-                                    < <p class="text-bk">Leave a Comment Below:</p>
-                                        <div class="card-body">
-                                            <form method="POST">
-                                                {% csrf_token %}
-                                                {{ form|crispy }}
-                                                <button type="submit"
-                                                    class="ripple-surface aw btn btn-primary border-bk hover-shadow">Post
-                                                    Comment</button>
-                                            </form>
-                                        </div>
+                                    <p class="text-bk">Leave a Comment Below:</p>
+                                    <div class="card-body">
+                                        <form method="POST">
+                                            {% csrf_token %}
+                                            {{ form|crispy }}
+                                            <button type="submit"
+                                                class="ripple-surface aw btn btn-primary border-bk hover-shadow">Post
+                                                Comment</button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
 

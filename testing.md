@@ -17,19 +17,17 @@ The manual testing is done for each user story and categorised into the differen
 - **Bug**: ‘Landscape orientation’
 - **Verdict**: The issues were fixed, the test passed.
 
-#### Navbar and Footer
-
-- **User story**
-*As a user, I want to easily navigate between the pages
-As a user, I want to link to the social pages of the company.*
-- **Test:**
+Navbar and Footer
+As a user, I want to easily navigate between the pages
+As a user, I want to link to the social pages of the company.
+Test:
 Click on all the links in the navbar, to check if they work properly pointing to the correct pages
 Make the navbar collapses on mobile and nav links are visible.
 Make sure the Navbar is Fixed at the top of the page
 Make sure the Login/Signup is visible if the user is not logged in.
-Make sure the Cart and username are always visible.
-Check the footer logo goes under section 2 and 3 of the footer.
-Check when a product is added to the cart, ‘Empty’ is replaced with the Grand Total, and changes colour to green.
+Make sure the Cart and username are always visible. 
+Check when a product is added to the cart, ‘Empty’ is replaced with the Grand Total, 
+and changes colour to green.
 Results:
 All link are working as expected
 Navbar collapses on screen size 994px burger bar appears and links visible when clicked
@@ -37,25 +35,13 @@ Navbar is Fixed at the top of each page
 Login/Signup is visible if the user is not logged in
 Cart and username are always visible.
 Products added, Empty was replaced with a correct grand total in green.
-Footer Logo did go beneath section 2 and 3 of the footer
 Test passed.
  Verdict: All the functionality works as expected.
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
 
 Home
 As a user, I want to be able to see there special offers
-As a user, I would like to see if blogs are featured
-As a user, I would like to see the Professional programs they have to offer
+As a user, I would like to see featured blogs and other Programs that are on offer
+
 Tests:
 Check the home page has a list of all the special offers
 Check the home page to see if featured blogs are shone
@@ -67,15 +53,10 @@ Training Programs wherein section 2 of the home page.
 All tests Passed
 Verdict: All the functionality works as expected.
 
-
-
 Shop, Cart, Checkout
-As a user, I want to be able to browse their products
-As a user, I want to be able to read the details of a product.
-As a user, I would like to be able to review and rate products
+As a user, I want to be able to read the details of a product and be able to review and rate them.
 As a user, I would like to be able to search for a Product
-As a user, I would like to be able to purchase an item from the shop without having to log in.
-As a user, I would expect to receive a confirmation email about my orders
+As a user, I would like to be able to purchase an item from the shop without having to log in and expect to receive a confirmation email.
 Test:
 Check the shop has a list of all the products
 Check when a product is clicked, the user is redirected to the product detail page with all the information. Star rating, Catogeys, Price, and image.
@@ -104,11 +85,8 @@ Verdict: All the functionality works as expected.
  
  
 Blogs
-As a user, I want to be able to browse the blogs list
-As a user, I want to be able to read the blog post I'm interested in.
-As a user, I would like to be able to search for a blog post
-As a user, I would like only other logged-in users to see my members blog posts.
-As a user, I would like to be able to comment on other members' blogs posts
+As a user, I would like to be able to search for a blog post I'm interested in
+As a user, I would like only other logged-in users to see my members' blog posts and I would like to be able to comment on other members' blogs posts.
 Tests
 Check to see if blog posts are being shown.
 Check when blog post is clicked it goes to the blog post detail page
@@ -128,17 +106,11 @@ Logged in and clicked the members category again and members blogs are shown.
 Clicked a comment button and a comment form pop up as expected and a comment was posted in the comment section as expected.
 All Tests Passed
 Verdict: All the functionality works as expected.
- 
- 
- 
- 
- 
- 
- 
+
 Member selection, Programs list, Subscription payment, email confirmation and invoice
 As a user, I would like to be able to become a member by subscribing.
 As a user, I would like to see the Professional programs they have to offer
-As a member, I would like to be able to watch a video on how to do exercises.
+
 Tests:
 Check home page flow to become a subscriber
 Check Programs list is displaying list.
@@ -160,16 +132,12 @@ Check Stripe Dashboard for Webhook subscription_created received: customer.subsc
 Check email for confirmation and have one as expected.
 All Tests Passed
 Verdict: All the functionality works as expected.
- 
- 
- 
- 
+
 Dashboard
 As a user, I would like to have a place where I can see all my past orders
-As a user, I would like to be able to change my password.
-As a user, I would like to be able to change my shipping address
-As a member, I would like to see when my next subscription payment is due
-As a member, I would like to cancel my subscription any time
+As a user, I would like to be able to change my password and shipping address
+As a member, I would like to see when my next subscription payment is due and be able to cancel at any time.
+
 Tests:
 Login in user and click on Dashboard link in navbar.
 Check Dashboard is displayed correctly.
@@ -214,12 +182,9 @@ Verdict: All the functionality works as expected.
  
 The Admin
 As the admin, I expect to be able to log in from any page.
-As admin, I expect to be able to see all the different sections of the website.
-As admin, I expect to be able to add, edit, delete products, blogs, programs as needed.
-As admin, I expect to be able to change user memberships.
-As admin, I expect to be able to put products out of stock and show this in the shop.
-As admin, I expect to be able to put products on special offers.
-As admin, I would like that if a staff member did not put the right ‘was’ price of the product that only the price would be shown.
+As admin, I expect to be able to add, edit, delete products, blogs, programs and  memberships as needed.
+As admin, I expect to be able to put products out of stock and on special.
+As admin, I would like that if a staff member did not put the right ‘was’ price of the product that only the ‘price’ would be shown.
 As admin, I would like to be able to see what products have had the most views and heights 
 As admin, I would like to be able to see all the orders that have taken place.
 As admin, I expect to see a ‘No Image’ image if there is no image for a product.

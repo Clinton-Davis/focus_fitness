@@ -8,7 +8,9 @@
 
 ---
 
- [![Generic badge](https://img.shields.io/badge/Django-3.0.8-s.svg)](https://shields.io/) [![Python 3.8](https://img.shields.io/badge/Python-3.8.2-blue.svg)](https://www.python.org/downloads/release/python-360/) [![Generic badge](https://img.shields.io/badge/Heroku-Postgres-s.svg)](https://shields.io/) 
+ [![Generic badge](https://img.shields.io/badge/Django-3.0.8-s.svg)](https://shields.io/) [![Python 3.8](https://img.shields.io/badge/Python-3.8.2-blue.svg)](https://www.python.org/downloads/release/python-360/) [![Generic badge](https://img.shields.io/badge/Heroku-Postgres-s.svg)](https://shields.io/)
+
+ [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f491bdf3d67c47b7918d82d4dc5d716f)](https://www.codacy.com/manual/Clinton-Davis/focus_fitness/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Clinton-Davis/focus_fitness&amp;utm_campaign=Badge_Grade)
 
 ## Demo
 
@@ -64,16 +66,33 @@ Users would be able to subscribe to our training programs and also be able to do
 
 ### User Stories
 
-1. It would be nice to be able to get everything I need to start my training from one website.
-2. I would like to see if there are any special offers.
-3. I would like to be able to purchase an item from the shop without having to log in.
-4. I would like to read Professional blog about training and nutrition.
-5. I would like to be able to watch a video on how to do exercises and techniques.
-6. I would like to have a place where I can see all my past orders
-7. I would like to be able to comment on other members blogs.
-8. I would like to be able to ask questions about a product or blog post.
-9. I would like to be able to review and rate products.
+#### User
 
+- As a user, I want to access the website from any device.
+- As a user, I want to easily navigate between the pages
+- As a user, I want to link to the social pages of the company.
+- As a user, I want to be able to see there special offers
+- As a user, I would like to see featured blogs and other Programs that are on offer
+- As a user, I want to be able to read the details of a product and be able to review and rate them.
+- As a user, I would like to be able to search for a Product
+- As a user, I would like to be able to purchase an item from the shop without having to log in and expect to receive a confirmation email.
+- As a user, I would like to be able to search for a blog post I'm interested in
+- As a user, I would like only other logged-in users to see my members' blog posts and I would like to be able to comment on other members' blogs posts.
+- As a user, I would like to be able to become a member by subscribing.
+- As a user, I would like to see the Professional programs they have to offer
+- As a user, I would like to have a place where I can see all my past orders
+- As a user, I would like to be able to change my password and shipping address
+- As a user, I would like to be able to login with a social account.
+
+#### Admin
+
+- As administrator, I expect to be able to log in from any page.
+- As administrator, I expect to be able to add, edit, delete products, blogs, programs and  memberships as needed.
+- As administrator, I expect to be able to put products out of stock and on special.
+- As administrator, I would like that if a staff member did not put the right ‘was’ price of the product that only the ‘price’ would be shown.
+- As administrator, I would like to be able to see what products have had the most views and heights
+- As administrator, I would like to be able to see all the orders that have taken place.
+- As administrator, I expect to see a ‘No Image’ image if there is no image for a product.
 
 ---
 
@@ -88,7 +107,7 @@ We will be using [Django](<https://www.djangoproject.com/>) web framework and th
 To become a user registration is required. Once users are logged in they will be able to access there dashboard where they can find past order history (if any) change their user password, gain access to a membership subscription, change shipping details, and have a list of all the blogs they have posted.
 Gain access to Members blogs where they can leave comments or write there own blogs.
 Users may rate and review products.
-Subscribed user members get access to all the Training and Nutritional Programs. As well as a store discount.
+Subscribed user members get access to all the Training and Nutritional Programs. As well - as a store discount.
 
 **Administration**
 There should be an admin area where staff can control the workings of the site,
@@ -251,7 +270,7 @@ Next is the stars rating. The product is rated by the users and the average of a
 The Details page is a center block design, with breadcrumbs navigation in the top left.
 The center is divided in half, the left hand side a picture of the product and on the right is the information
 Name / category / rating / price
-Below is a size selector, if the product has a size this is there,
+Below is a size selector, if the product h- as a size this is there,
 Next is a quantity selector - and +
 The Add to Cart button is below.
 The bottom part of the block is for the Product Overview
@@ -526,7 +545,7 @@ It is divided into 3 parts.
 
 #### **About**
 
-The About page has a centre block format with a heading and information about Focus Fitness.
+The About page h- as a centre block format with a heading and information about Focus Fitness.
 
 <details>
 <summary>About Page Wireframes (Click for image)</summary>
@@ -539,7 +558,7 @@ The About page has a centre block format with a heading and information about Fo
 
 #### **Contact Us**
 
-The About page has a centre block format with a heading and information about Focus Fitness.
+The About page h- as a centre block format with a heading and information about Focus Fitness.
 
 <details>
 <summary>About Page Wireframes (Click for image)</summary>
@@ -626,9 +645,9 @@ The Header and Footer image of a wooden floor has been adjusted to give it a dee
 
 - [Bootstrap 4.5](https://getbootstrap.com/) ~ Design and customize responsive mobile-first sites.
 
-- [Heroku](https://heroku.com) ~ A cloud based platform as a service enabling deployment of CRUD applications
+- [Heroku](https://heroku.com) ~ A cloud based platform - as a service enabling deployment of CRUD applications
 
-- [Heroku Postgres](https://www.heroku.com/postgres) ~ PostgreSQL's capabilities as a fast, functional, and powerful data resource.
+- [Heroku Postgres](https://www.heroku.com/postgres) ~ PostgreSQL's capabilities - as a fast, functional, and powerful data resource.
 
 - [Visual Studio Code](https://code.visualstudio.com/) ~ Code editor redefined and optimized for building and debugging modern web and cloud applications.
 
@@ -643,7 +662,7 @@ The Header and Footer image of a wooden floor has been adjusted to give it a dee
 - [Figma](https://www.figma.com/) ~ A digital design and prototyping tool. It is a UI and UX design application that you can use to create websites, apps.
 - [Slack](https://slack.com/intl/en-ie/) ~ A workspaces allowing you to organize communications by channels for group discussions and allows for private messages to share information.
 - [Website Responsive Testing](https://responsivetesttool.com) ~ A means of testing the website or URL from different devices.
-- [Pep8online](http://pep8online.com/) ~ PEP 8 is a online Python style guide. It's a set of rules for how to format your Python code.
+[autopep8](https://pypi.org/project/autopep8/) ~ A tool that automatically formats Python code to conform to the PEP 8 style guide
 - [W3 Validator](https://validator.w3.org/nu/) ~ The Markup Validation Service.
 - [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) ~ A CSS validator checks your Cascading Style Sheets to make sure that they comply with the CSS standards set by the W3 Consortium.
 - [TinyPNG](https://tinypng.com/) ~ A smart lossy compression technique to reduce the file size of your PNG files.
@@ -738,7 +757,7 @@ Controlled in the admin All featured blogs are controlled in the admin area.
 The search bar in the blogs section will look for a matching word or words in either the name or content of the blogs. If there are any matches they will be displayed in the blog search page. If there are none there is a link back to the blog page.
 
 - Colour Code Categories.
-The Categories in the blog menu are colour coded to make it easier to distinguish the blogs. Each blog post has a coloured border that matches the category colour.
+The Categories in the blog menu are colour coded to make it easier to distinguish the blogs. Each blog post - has a coloured border that matches the category colour.
 - Likes, Views and Comments
 Every time a logged on user clicks and views a blog it is recorded and shown on the blogs views counter. If a blog is liked it shows up in the thumbs up count. And the same if a blog is commented on.
 - Members Blog Block
@@ -792,7 +811,7 @@ Products are put on special offer from the admin area. A ‘was’ price tells t
 - Quantity selector
 Lets you add more items to you order
 - Size selector
-Lets the user choose a size if the product has a size, otherwise this will be hidden.
+Lets the user choose a size if the product h- as a size, otherwise this will be hidden.
 - Shopping Cart icon
 The Shopping Cart icon in the top right next to the users username, is all ways shown. If the cart is empty it says ‘Empty’ if there are items in the cart, There is a running grand total that turns green and including all the discounts, charges and taxes, No surprises at the checkout.
 - Add to Cart Message
@@ -972,7 +991,7 @@ session['logged_in'] = True
 
 I hosted this site using [Heroku](https://www.heroku.com/).
 
-Heroku is a container-based cloud Platform as a Service (PaaS). I used it because it's free, elegant, flexible, and easy to use, offering developers the simplest path to getting my app up.
+Heroku is a container-based cloud Platform - as a Service (PaaS). I used it because it's free, elegant, flexible, and easy to use, offering developers the simplest path to getting my app up.
 
 ### To deploy on Heroku
 
