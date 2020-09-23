@@ -5,7 +5,7 @@ import dj_database_url
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'focus-fitness.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 env = environ.Env()
 # read the .env file
