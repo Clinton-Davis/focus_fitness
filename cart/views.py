@@ -72,12 +72,13 @@ def adjust_cart(request, item_id):
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     size = None
+
     if 'product_size' in request.POST:
         size = request.POST['product_size']
     cart = request.session.get('cart', {})
 
     if size:
-        if quantity > 0:
+        if quantity in range(0, 1000):
             cart[item_id]['items_by_size'][size] = quantity
             messages.success(request,
                              (f'{product.name} '
@@ -92,7 +93,7 @@ def adjust_cart(request, item_id):
                              (f'Removed size {size.upper()} '
                               f'{product.name} from your cart'))
     else:
-        if quantity > 0:
+        if quantity in range(1, 1000):
             cart[item_id] = quantity
             messages.success(request,
                              (f'Updated {product.name} '

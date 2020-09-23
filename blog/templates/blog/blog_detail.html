@@ -29,7 +29,7 @@
                     <a href="{% url 'blog:author' blog.author.id %}" title="See all Blogs by: {{ blog.author|title }}">
                         By: {{ blog.author|title }}
                     </a>
-                    {% if  user.is_authenticated and user == blog.author %}
+                    {% if user.is_authenticated and user == blog.author %}
                     <span><a class=" font-small ml-3 mb-0 text-grn" href="{{ blog.get_update_url }}"> (Edit)</a></span>
                     <span class="font-small mb-0 text-wht">/</span>
                     <span><a class="font-small mb-0 text-red" href="{{ blog.get_delete_url }}"> (Delete)</a></span>
