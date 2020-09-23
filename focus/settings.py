@@ -3,7 +3,7 @@ import environ
 import dj_database_url
 
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'focus-fitness.herokuapp.com']
 
