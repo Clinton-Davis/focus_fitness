@@ -45,7 +45,7 @@
                             <i class="fad fa-tags"></i>&nbsp;{{ product.category.friendly_name }}
                         </a>
 
-                        {% if  product.rating > 0 %}
+                        {% if  product.rating_ave > 0 %}
                         <p><i class="px-1 text-ylw fas fa-star"></i>
                             <span>{{  product.rating_ave|floatformat:1 }} /5
                                 <small>({{ product.productcomments_count }})</small>
