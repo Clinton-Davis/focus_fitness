@@ -3,15 +3,15 @@
     "pk": 2,
     "fields": {
         "password": "pbkdf2_sha256$180000$C4LR7R0YP392$9MlBDFUuW2SyH2kp13EILM/fpldvKAWvziYv7wjOAfs=",
-        "last_login": "2020-09-08T14:22:46Z",
+        "last_login": "2020-09-24T09:06:10.255Z",
         "is_superuser": true,
         "username": "admin",
-        "first_name": "Super",
-        "last_name": "User",
+        "first_name": "",
+        "last_name": "",
         "email": "admin@admin.com",
         "is_staff": true,
         "is_active": true,
-        "date_joined": "2020-08-08T10:52:26Z",
+        "date_joined": "2020-08-08T10:52:26.175Z",
         "groups": [],
         "user_permissions": []
     }
@@ -20,7 +20,7 @@
     "pk": 8,
     "fields": {
         "password": "!5ixLjQthufLcSgtcFt37kbd0ix5qARbsIMtOfOwW",
-        "last_login": "2020-09-07T17:10:54.323Z",
+        "last_login": "2020-09-23T20:54:26.798Z",
         "is_superuser": true,
         "username": "clinton",
         "first_name": "Clinton",
@@ -47,14 +47,14 @@
         "is_active": true,
         "date_joined": "2020-09-05T09:45:55Z",
         "groups": [],
-        "user_permissions": [69, 70, 71, 72, 81, 82, 83, 84, 77, 78, 79, 80, 73, 74, 75, 76, 61, 62, 63, 64, 53, 54, 55, 56, 109, 110, 111, 112, 97, 98, 99, 100, 101, 102, 103, 104]
+        "user_permissions": [69, 70, 71, 72, 81, 82, 83, 84, 77, 78, 79, 80, 109, 110, 111, 112, 73, 74, 75, 76, 61, 62, 63, 64, 53, 54, 55, 56, 97, 98, 99, 100, 101, 102, 103, 104]
     }
 }, {
     "model": "auth.user",
     "pk": 11,
     "fields": {
         "password": "!tvSxcMAw4j7sXSwOsH0Hq8KUrFDO0pzFvMmJEqDb",
-        "last_login": "2020-09-05T19:06:12Z",
+        "last_login": "2020-09-05T19:06:12.000Z",
         "is_superuser": false,
         "username": "sinead",
         "first_name": "Sin\u00e9ad",
@@ -93,11 +93,45 @@
         "username": "Focus-Trainer-Graham",
         "first_name": "Graham",
         "last_name": "",
-        "email": "graham@fitness.com",
+        "email": "graham@fitnes.com",
         "is_staff": true,
         "is_active": true,
         "date_joined": "2020-09-08T10:03:09Z",
         "groups": [],
         "user_permissions": [81, 82, 83, 84, 77, 78, 79, 80, 73, 74, 75, 76, 53, 54, 55, 56, 113, 114, 115, 116]
+    }
+}, {
+    "model": "auth.user",
+    "pk": 14,
+    "fields": {
+        "password": "!VlRrDOloWVYWU8iOVVSz6xLGRIxcshRok80fV4LT",
+        "last_login": "2020-09-15T02:36:06.244Z",
+        "is_superuser": false,
+        "username": "hairy",
+        "first_name": "Hairy",
+        "last_name": "Cane",
+        "email": "geogatedproject320@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2020-09-15T02:35:41.371Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}, {
+    "model": "auth.user",
+    "pk": 15,
+    "fields": {
+        "password": "!rRwiW3hvS6z6AB9OSFpRH4k2TMsomnyqAgfueHeQ",
+        "last_login": "2020-09-15T04:01:55.946Z",
+        "is_superuser": false,
+        "username": "vivi",
+        "first_name": "Vivi",
+        "last_name": "Tan",
+        "email": "geogatedproject331@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2020-09-15T04:01:19.635Z",
+        "groups": [],
+        "user_permissions": []
     }
 }]
