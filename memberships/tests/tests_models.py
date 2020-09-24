@@ -6,8 +6,7 @@ from memberships.models import Membership, UserMembership, Subscription
 class TestUserMembership(TestCase):
 
     fixtures = [
-        'member-memberships.json',
-        'usermembership.json',
+        'memberships.json',
         'user.json',
         'programs.json'
     ]

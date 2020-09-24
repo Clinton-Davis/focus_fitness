@@ -6,8 +6,7 @@ from memberships.views import *
 
 class TestMembershipsViews(TestCase):
     fixtures = [
-        'member-memberships.json',
-        'usermembership.json',
+        'memberships.json',
         'user.json',
     ]
 

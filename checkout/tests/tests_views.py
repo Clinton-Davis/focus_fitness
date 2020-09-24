@@ -8,8 +8,7 @@ from checkout.models import Order
 class TestCheckoutViews(TestCase):
 
     fixtures = [
-        'member-memberships.json',
-        'usermembership.json',
+        'memberships.json',
         'user.json',
         'products.json',
         'checkout.json',

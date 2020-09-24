@@ -6,8 +6,7 @@ from cart.views import CartView, add_to_cart, adjust_cart
 
 class CartViewsTests(TestCase):
 
-    fixtures = ['products_products.json',
-                'products_catogerys']
+    fixtures = ['products.json', ]
 
     def test_cart_list_view(self):
         resp = self.client.get(reverse('cart_view'))

@@ -5,7 +5,7 @@ from checkout.models import Order
 class TestCheckoutModels(TestCase):
 
     fixtures = [
-        'member-memberships.json',
+        'memberships.json',
         'user.json',
         'products.json',
     ]
