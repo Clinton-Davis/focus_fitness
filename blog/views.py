@@ -64,6 +64,7 @@ def CategoryView(request, category):
 
 class BlogDetailView(DetailView):
     """(Logic by Mat @ JustDjango)."""
+
     model = Blog
 
     def post(self, *args, **kwargs):

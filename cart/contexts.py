@@ -9,14 +9,15 @@ from django_user_agents.utils import get_user_agent
 
 
 def from_settings(request):
-    """This Keeps the admin 'ENVIRONMENT_NAME' in the golbal context"""
+    """This Keeps the admin 'ENVIRONMENT_NAME' in the golbal context."""
     return {
         "ENVIRONMENT_NAME":  settings.ENVIRONMENT_NAME,
     }
 
 
 def get_screen_size(request):
-    """Checks to see if user is on moble or not"""
+    """Checks to see if user is on moble or not."""
+
     user_agent = get_user_agent(request)
     if user_agent.is_mobile:
         screen_size = True
@@ -28,7 +29,8 @@ def get_screen_size(request):
 def get_loged_user_discount(request):
     """Checks to see if the use is authenticated.
         Looks to get_user_membership function in memberships.views for current membership.
-        If membership is 'Pro' added discount to cart"""
+        If membership is 'Pro' added discount to cart."""
+
     if request.user.is_authenticated:
         current_membership = get_user_membership(request)
         current_membership = str(current_membership.membership)
@@ -49,8 +51,8 @@ def global_context(request):
         calls the 'get_loged_user_discount' fuction to check the user membership static
         does a the maths with delivery charges/ Tax amount/ and discounts if applicable
         Calls the 'get_screen_size' fuction to get screen size and adds into global context
-        (Cart Login from Code Institute adapted to work for Focus)
-    """
+        (Cart Login from Code Institute adapted to work for Focus)."""
+
     cart_items = []
     total = 0
     product_count = 0

@@ -17,8 +17,8 @@ class ProgramDetailView(LoginRequiredMixin, DetailView):
 
 class WorkoutDetailView(LoginRequiredMixin, View):
 
-    """getting the workouts that are associated with the programs 
-        and filtering by slug. Checks to see if the memebership type 
+    """Getting the workouts that are associated with the programs 
+        and filtering by slug. Checks to see if the memebership type
         is allowed to be viewed, if true, it adds it to context.
          (Logic and code from Mat @ JustDjango)."""
 

@@ -11,7 +11,8 @@ import stripe
 
 
 def get_user_membership(request):
-    """gets the users current membership (Logic and code by Mat @ JustDjango)"""
+    """gets the users current membership (Logic and code by Mat @ JustDjango)."""
+
     user_membership_qs = UserMembership.objects.filter(user=request.user)
     if user_membership_qs.exists():
         return user_membership_qs.first()
@@ -31,6 +32,7 @@ def get_user_subscription(request):
 
 def get_selected_membership(request):
     """Gets the membership type from the session (Logic and code by Mat @ JustDjango)."""
+
     membership_type = request.session['selected_membership_type']
     selected_membership_qs = Membership.objects.filter(
         membership_type=membership_type)
@@ -41,6 +43,7 @@ def get_selected_membership(request):
 
 class MembershipSelectView(ListView):
     """List the selected membership (Logic and code by Mat @ JustDjango)."""
+
     model = Membership
     template_name = 'memberships/membership_list.html'
 

@@ -3,7 +3,6 @@ from django.db.models.signals import pre_save
 from profiles.models import User
 from django.shortcuts import reverse
 from ckeditor.fields import RichTextField
-
 from django.utils.text import slugify
 
 
@@ -60,10 +59,9 @@ class Blog(models.Model):
 
 
 def create_slug(instance, new_slug=None):
-    """
-    Slugifys the title, if slug exists it adds a id to make it unique
-    (Logic by CodingEntrepreneurs)
-    """
+    """Slugifys the title, if slug exists it adds a id to make it unique
+    (Logic by CodingEntrepreneurs)."""
+
     slug = slugify(instance.title)
     if new_slug is not None:
         slug = new_slug
@@ -84,7 +82,8 @@ pre_save.connect(post_save_blog_receiver, sender=Blog)
 
 
 class BlogComment(models.Model):
-    """To be able to comment on a blog"""
+    """To be able to comment on a blog."""
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
@@ -95,7 +94,8 @@ class BlogComment(models.Model):
 
 
 class BlogView(models.Model):
-    """Keeps track of views """
+    """Keeps track of views."""
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
     timestamp = models.DateTimeField(auto_now_add=True)
@@ -105,7 +105,8 @@ class BlogView(models.Model):
 
 
 class Like(models.Model):
-    """To keep track of all the likes"""
+    """To keep track of all the likes."""
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
 

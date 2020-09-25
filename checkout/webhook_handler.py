@@ -3,11 +3,9 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 from datetime import datetime
-
 from .models import Order, OrderLineItem
 from products.models import Product
 from profiles.models import UserProfile
-
 from memberships.views import cancelsubscription
 
 import json
@@ -22,6 +20,7 @@ class StripeWH_Handler:
 
     def _send_invoice_paid_email(self, intent):
         """Sends a finalized invoice email when subscritpion is fully paid."""
+
         customer_email = intent.customer_email
         period_start = datetime.fromtimestamp(intent.period_start)
         amount_paid = intent.amount_paid / 100
@@ -51,6 +50,7 @@ class StripeWH_Handler:
 
     def _send_shopping_confirmation_email(self, order):
         """Send a confirmation email"""
+
         customer_email = order.email
 
         subject = render_to_string(
@@ -72,7 +72,8 @@ class StripeWH_Handler:
         )
 
     def handle_event(self, event):
-        """Handles genric/unknow/unexpected events"""
+        """Handles genric/unknow/unexpected events."""
+
         return HttpResponse(
             content=f'Unhandled Webhook revieved: {event["type"]}',
             status=200)

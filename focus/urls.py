@@ -9,8 +9,6 @@ from django.conf.urls import url
 from home.views import IndexView
 
 
-from home import views
-
 urlpatterns = [
     path('', include('home.urls')),
     path('secret-focus-admin/', admin.site.urls),

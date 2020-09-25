@@ -338,29 +338,42 @@ As admin, I expect to see a ‘No Image’ image if there is no image for a prod
 
 ### Automated Testing
 
-Automated testing is run in conjunction with the manual testing to get the most coverage of the website. The aim was not to get 100% coverage but to get the inner working tested.
-I used the building Django testing module, The Tests were written for Views, Forms, and Modulus and can be found in each application specific tests folders.
-tests
-tests_models.py
-tests_forms.py
-tests_views.py
-If there are some changes made to either the Views, Forms or Models, running the test afterwards will show up any compatibility bugs.
-Coverage.py is used to run the test to get the overall coverage of the testing. 
-The configurations are stored in the .coveragerc file. 
-Results:
-Pic
-To run the test in the command terminal:
-$ coverage run manage.py test
-To generate a coverage report on the terminal window.
-$ coverage report
-To generate a coverage report in HTML use
-$ coverage html
+Automated testing is run in conjunction with the manual testing to get the most coverage of the website. The aim was not to get 100% coverage but to get the inner working tested. If there are some changes made to either the Views, Forms or Models, running the test afterwards will show up any compatibility bugs.
 
-Traivs
-Validators
-HTML
+I used Django testing module, The Tests were written for Views, Forms, and Modulus and can be found in each application specific tests folders
+
+- tests_models.py
+- tests_forms.py
+- tests_views.py
+
+[Coverage.py](https://coverage.readthedocs.io/en/coverage-5.3/) is used to run the test to get the overall coverage of testing.
+The configurations are stored in the .coveragerc file.
+
+<details>
+<summary>Coverage Report(Click for image)</summary>
+<p align="center">
+
+![coverage-results](media/wireframes/coverage_report.png)
+</p>
+</details>
+
+##### Running coverage in the command terminal:
+
+To run the tests
+`$ coverage run manage.py test `
+To generate a coverage report on the terminal window.
+`$ coverage report `
+To generate a coverage report in HTML
+`$ coverage html`
+
+### Traivs
+
+
+### Validators
+
+- **HTML**
 All HTML pages were tested with W3C Markup Validation Service. There are a good few errors because the W3C Markup does not recognize Jinja templating. No other errors.
-CSS
+- **CSS**
 I ran my css file through the W3c CSS Validation Service.
 Badge
 

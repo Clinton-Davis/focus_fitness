@@ -3,7 +3,7 @@ from profiles.forms import UserProfileAddressForm
 
 
 class TestUserProfileAddressForm(TestCase):
-    """Testing that the nothing on the profile default is required"""
+    """Testing that the nothing on the profile default is required."""
 
     def test_user_profile_address_form_not_required(self):
         valid_data = {
@@ -21,6 +21,8 @@ class TestUserProfileAddressForm(TestCase):
         self.assertFalse(form.errors)
 
     def test_user_profile_address_form_metaclass(self):
-        """ Testing the user filed is excluded in the profile UserProfileAddressForm"""
+        """Testing the user filed is excluded in 
+        the profile UserProfileAddressForm."""
+
         form = UserProfileAddressForm()
         self.assertEqual(form.Meta.exclude, ('user',))

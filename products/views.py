@@ -88,7 +88,7 @@ class ProductDetailView(DetailView):
         return context
 
     def get_object(self):
-        """Adds a user views to a product if the user is authenticated, if not returns nothing """
+        """Adds a user views to a product if the user is authenticated, if not returns nothing."""
         object = super().get_object()
         if self.request.user.is_authenticated:
             ProductView.objects.get_or_create(
