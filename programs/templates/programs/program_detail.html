@@ -30,9 +30,10 @@
                     <h4 class="text-center aw text-ylw">{{ programs.title }} Videos</h4><br>
                     {% for workout in programs.workouts %}
                     <div class="row">
-                        <div class="col-2 center-block">
+                        <div class="col-2 mb-2 center-block">
                             <a href="{{ workout.get_absolute_url }}">
-                                <img src="https://img.icons8.com/fluent/48/000000/circled-play.png" alt="circled" />
+                                <img class="vert-aline-tb"
+                                    src="https://img.icons8.com/fluent/48/000000/circled-play.png" alt="circled" />
                             </a>
                         </div>
                         <div class="col-10">
@@ -40,8 +41,8 @@
                                 <h5 class="aw text-wht ">{{ workout.title }}</h5>
                                 <small class="text-muted">{{ workout.description }}</small>
                             </a>
+                            <hr class="hr-gry">
                         </div>
-                        <hr class="hr-gry">
                     </div>
                     {% endfor %}
 

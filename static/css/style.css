@@ -82,6 +82,10 @@ img {
   max-width: 22rem;
 }
 
+.-mb-8 {
+  margin-bottom: -8px;
+}
+
 .fixed-shadow {
   -webkit-box-shadow: 0px 10px 19px -5px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 10px 19px -5px rgba(0, 0, 0, 0.75);
@@ -595,6 +599,10 @@ nav {
 
 .vert-aline {
   vertical-align: super;
+}
+
+.vert-aline-tb {
+  vertical-align: text-bottom;
 }
 
 .product-overlay {
