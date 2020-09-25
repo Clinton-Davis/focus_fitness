@@ -13,7 +13,6 @@ from memberships.views import get_user_membership
 
 
 def IndexView(request):
-    template_name = "home/index.html"
     feature_blog = Blog.objects.filter(featured=True)
     sales_items = Product.objects.filter(sales_items=True)
     programs = Program.objects.all()

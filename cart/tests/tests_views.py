@@ -1,7 +1,7 @@
 from django.contrib.messages import get_messages
-from django.test import TestCase, Client
+from django.test import TestCase
 from django.urls import reverse
-from cart.views import CartView, add_to_cart, adjust_cart
+from cart.views import add_to_cart, adjust_cart
 
 
 class CartViewsTests(TestCase):

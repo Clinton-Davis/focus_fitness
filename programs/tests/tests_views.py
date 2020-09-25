@@ -1,6 +1,6 @@
 
 from django.contrib.auth.models import User
-from django.test import TestCase, Client, RequestFactory
+from django.test import TestCase
 from django.urls import reverse
 from programs.models import Program, Workout
 from programs.views import *
@@ -8,7 +8,7 @@ from programs.views import *
 
 class TestProgramsViews(TestCase):
 
-    fixtures = ['member-memberships.json', 'programs.json', ]
+    fixtures = ['memberships.json', 'programs.json', ]
 
     @classmethod
     def setUpTestData(cls):
@@ -44,7 +44,7 @@ class TestProgramsViews(TestCase):
 
 class TestWorkoutDetailView(TestCase):
 
-    fixtures = ['member-memberships.json', 'programs.json', ]
+    fixtures = ['memberships.json', 'programs.json', ]
 
     @classmethod
     def setUpTestData(cls):

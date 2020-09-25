@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.db.models import Q
 from django.views import View
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Blog, BlogComment, BlogView, Like,  Category
+from .models import Blog, BlogView, Like,  Category
 from .forms import BlogCommentForm, BlogForm
 
 
@@ -63,11 +63,11 @@ def CategoryView(request, category):
 
 
 class BlogDetailView(DetailView):
-    """(Logic by Mat @ JustDjango)"""
+    """(Logic by Mat @ JustDjango)."""
     model = Blog
 
     def post(self, *args, **kwargs):
-        """Adding comments to blogs"""
+        """Adding comments to blogs."""
         form = BlogCommentForm(self.request.POST)
         if form.is_valid():
             blog = self.get_object()
@@ -87,7 +87,7 @@ class BlogDetailView(DetailView):
         return context
 
     def get_object(self, **kwargs):
-        """Counts the number of authenticated users view the blog"""
+        """Counts the number of authenticated users view the blog."""
         object = super().get_object(**kwargs)
         if self.request.user.is_authenticated:
             BlogView.objects.get_or_create(user=self.request.user, blog=object)
@@ -97,7 +97,7 @@ class BlogDetailView(DetailView):
 class BlogCreateView(LoginRequiredMixin, CreateView):
     """
     Uses the 'blog_form.html' as it needs the inputs,
-    The context is changed to 'create', (Logic by Mat @ JustDjango)
+    The context is changed to 'create', (Logic by Mat @ JustDjango).
     """
     form_class = BlogForm
     model = Blog

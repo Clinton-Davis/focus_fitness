@@ -2,7 +2,6 @@ from django.contrib.auth.models import User
 from django.test import TestCase, Client
 from django.contrib.messages import get_messages
 from django.urls import reverse
-from marketing.views import NewsLetterSignups
 from marketing.forms import NewLetterEmailSignupForm
 
 
@@ -18,7 +17,7 @@ class TestMarketingViews(TestCase):
         resp = self.client.get(reverse('marketing:newsubs'))
         self.assertEqual(resp.status_code, 302)
 
-    def test_marketing_views_get(self):
+    def test_marketing_views_post(self):
         form = NewLetterEmailSignupForm()
         resp = self.client.post(
             '/marketing/newsubs/', {'email': 'newmail.com', })

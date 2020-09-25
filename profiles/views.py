@@ -4,7 +4,7 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import TemplateView, ListView, View
+from django.views.generic import TemplateView, View
 from .models import UserProfile
 from checkout.models import Order
 from blog.models import Blog

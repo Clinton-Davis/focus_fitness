@@ -901,71 +901,7 @@ I would like to have my Newsletters email list auto upload to an email service t
 
 [Back to Top](#table-of-contents)
 
-## Testing
 
-- I ran the application through [Website Responsive Testing](https://responsivetesttool.com) to make sure it is responsive. Below is a list of devices:
-
- <details>
-<summary>Mobiles</summary>
-<ul>
-<li>Apple iPhone 3/4/4s/5/5s/6/6s/6plus/7/7Plus/8/8Plus/X/XR/XS/XSMax</li>
-<li>Nexus 6P/5X</li>
-<li>Google Pixel 2/XL</li>
-<li>Samsung Galaxy S S2/S3/S4/S5/S6/S7/S8/S8+/S9/S9+</li>
-<li>Samsung Galaxy Nexus/Note 2/3/4/8</li>
-<li>LG G3/G4/G5</li>
-<li>LG Optimus G</li>
-<li>LG Nexus 4/5</li>
-<li>Pantech Vega n6</li>
-<li>Lenovo K900</li></li>
-<li>Motorola Nexus 6</li>
-<li>One Plus 3</li>
-<li>Nexus 7(2013)/9</li>
-<li>ZTE Grand S</li>
-<li>HTC One/8X/Evo 3D</li>
-<li>Sony Xperia P/S/Z/Z3</li>
-<li>Xiaomi Redmi Note 5</li>
-<li>Xiaomi Mi 3/4</li>
-<li>Blackberry Z10/Z30/Q10/CLASSIC/PASSPORT/LEAP</li>
-<li>Blackberry Torch 9800</li>
-<li>Microsoft Lumia 620/830/900/920/925/1020/1520</li>
-</details>
- <details>
-<summary>Tablet</summary>
-<ul>
-<li>Apple iPad Pro/Pro9.7/1/2/mini</li>
-<li>Samsung Galaxy Tab 3 10"/Tab 2 10"/Tab (8.9")/Tab 2 (7")</li>
-<li>Samsung Nexus 10</li>
-<li>HTC Nexus 9</li>
-<li>Asus Nexus 7 (v1)/(v2)</li>
-<li>LG G Pad 8.3</li>
-<li>Amazon Kindle Fire/HD7/HD8.9</li>
-<li>Microsoft Surface Pro 2/3</li>
-<li>Blackberry Playbook</li>
-</details>
-  <details>
-<summary>Desktops</summary>
-<ul>
-
-<li>Desktop/Laptop</li>
-<li>1024 x 768</li>
-<li>1280 x 800</li>
-<li>1366 x 768</li>
-<li>1440 x 900</li>
-<li>1680 x 1050</li>
-<li>1920 x 1080</li>
-<li>1920 x 1200</li>
-<li>2560 x 1440</li>
-<li>3840 x 2160</li>
-<li>4096 x 2304</li>
-<li>5120 x 2880</li>
-</details>
-
----
-
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/f491bdf3d67c47b7918d82d4dc5d716f)](https://www.codacy.com/manual/Clinton-Davis/focus_fitness/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Clinton-Davis/focus_fitness&amp;utm_campaign=Badge_Grade)
-
-[Back to Top](#table-of-contents)
 
 ## Bugs
 

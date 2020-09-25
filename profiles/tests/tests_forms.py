@@ -1,6 +1,5 @@
 from django.test import TestCase
 from profiles.forms import UserProfileAddressForm
-from profiles.models import UserProfile
 
 
 class TestUserProfileAddressForm(TestCase):
