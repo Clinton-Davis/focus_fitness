@@ -375,7 +375,7 @@ To generate a coverage report in HTML
 All HTML pages were tested with W3C Markup Validation Service. There are a good few errors because the W3C Markup does not recognize Jinja templating. No other errors.
 - **CSS**
 I ran my css file through the W3c CSS Validation Service.
-Badge
+I got couple of errors all pointing to the CSS-TRICKS code for r
 
 Python
 I use a package called autopep8 to guide me in my python Validatorn through development.

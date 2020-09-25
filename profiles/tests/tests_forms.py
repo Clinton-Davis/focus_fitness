@@ -21,7 +21,7 @@ class TestUserProfileAddressForm(TestCase):
         self.assertFalse(form.errors)
 
     def test_user_profile_address_form_metaclass(self):
-        """Testing the user filed is excluded in 
+        """Testing the user filed is excluded in
         the profile UserProfileAddressForm."""
 
         form = UserProfileAddressForm()
