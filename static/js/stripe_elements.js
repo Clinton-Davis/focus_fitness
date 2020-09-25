@@ -12,8 +12,8 @@ var elements = stripe.elements();
 var style = {
     base: {
         color: "#000",
-        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-        fontSmoothing: 'antialiased',
+        fontFamily: "'Helvetica Neue', Helvetica, sans-serif",
+        fontSmoothing: "antialiased",
         fontSize: "16px",
         "::placeholder": {
             color: "#aab7c4"
@@ -98,7 +98,7 @@ form.addEventListener("submit", function (ev) {
             },
         }).then(function (result) {
             if (result.error) {
-                var errorDiv = document.getElementById('card-errors');
+                var errorDiv = document.getElementById("card-errors");
                 var html = `
                         <span class="icon" role="alert">
                         <i class="fad fa-exclamation-triangle"></i>

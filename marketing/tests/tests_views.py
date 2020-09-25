@@ -8,7 +8,7 @@ from marketing.forms import NewLetterEmailSignupForm
 class TestMarketingViews(TestCase):
 
     fixtures = [
-        'member-memberships.json',
+        'memberships.json',
         'user.json',
         'marketing.json',
     ]

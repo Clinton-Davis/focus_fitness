@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class UserProfileTest(TestCase):
 
     fixtures = [
-        'member-memberships.json',
+        'memberships.json',
         'user.json'
     ]
 

@@ -6,7 +6,7 @@ from programs.models import Program, Workout
 class TestProgram(TestCase):
 
     fixtures = [
-        'member-memberships.json',
+        'memberships.json',
         'user.json',
         'programs.json'
     ]
@@ -35,7 +35,7 @@ class TestProgram(TestCase):
 class TestWorkoutModel(TestCase):
 
     fixtures = [
-        'member-memberships.json',
+        'memberships.json',
         'user.json',
         'programs.json'
     ]

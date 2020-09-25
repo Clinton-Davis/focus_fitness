@@ -1,6 +1,5 @@
-from django.contrib.auth import get_user_model
-from django.test import TestCase, Client
-from django.urls import reverse
+from django.contrib.auth.models import User
+from django.test import TestCase
 from blog.models import Category, Blog, BlogComment, BlogView, Like
 from memberships.models import *
 
@@ -9,7 +8,7 @@ class TestCreateBlogModels(TestCase):
     """testing the creation on a blog """
 
     fixtures = [
-        'member-memberships.json',
+        'memberships.json',
         'user.json'
     ]
 
@@ -36,7 +35,7 @@ class TestBlog(TestCase):
     """Testing the blog details and get_absolute_url() """
 
     fixtures = [
-        'member-memberships.json',
+        'memberships.json',
         'user.json'
     ]
 

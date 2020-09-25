@@ -969,7 +969,7 @@ and (orientation: landscape) {
 }
  ```
 
-> I realize this solutions is limited to certain screen sizes
+> I realize this solutions is limited to certain screen sizes of
  (min-device-width: 375px) and (max-device-width: 667px)
 (min-device-width: 320px) and (max-device-width: 568px)
 (min-device-width: 375px) and (max-device-width: 812px)
@@ -977,8 +977,75 @@ Because of the design of the webpage I’m confident that 90% of users will use 
 
 ---
 
-[Back to Top](#table-of-contents)
+#### Cancel Subscription
 
+'Cancel my Subscription’ button error.
+When Running the test: Check ‘Cancel Subscription’ button works’
+I was getting a error saying `Not a valid namespace`
+When refactoring my code and changing the memberships urls to have a namespace I  forgot to change the `href` in the anchor tag, this bug was picked up during my manual testing.
+**Fix**
+> Added the namespace into the href
+
+```HTML
+
+<a href=”{% url 'memberships:cancel' %}”
+ ```
+
+#### Stock Items Bug
+
+When running the test: Check if not in stock items are displayed in the special offers section.
+It came to my attention that out of stock products were still being displayed in the special offers page on the home page.
+**Fix**
+> I used an if statement in the template tags to check if the ‘in stock’ was true or false, if true it shows if false it does not.
+
+```python
+
+ {% if product.in_stock == True %}
+ ```
+#### Was Price Bug
+
+When running the test: Check the ‘was_price’ is smaller than the price and if not check to ‘was’ price is not shown.
+I found a bug that the ‘was_price' was showing even if it was smaller than the ‘price’
+**Fix**
+> I used a if statement in the template tags too much the ‘was_price’ against the ‘price’ if the statement is true the ‘was_price’ is shown.
+
+```python
+{% if product.was_price > product.price %}
+ ```
+
+#### Sales Items Bug
+
+When testing the bug [Was Price Bug](#was-price-bug) I found another bug,
+If the ‘Sales Items’ button is unchecked but the product still had a ‘was_price’ on it, the ‘was_price’ was still being displayed
+**Fix**
+> Because I had the logic inplace from the last bug all I had to do was add a ‘and’ connector in the template literal to filter any products where ‘sales_items’ is true.
+
+```python
+{% if product.sales_items == True and product.was_price > product.price %}
+ ```
+
+#### Shopping Cart Input Qty
+
+I found a bug in the shopping cart. In the Qty form input, it was possible to type as many numbers as you liked and adjust your cart. This will cause a problem with all the styling and the layout.
+I added `maxlength` to the input and that helped if the user pressed `Return` on the keyboard, it gives a validation error, but if the user types the number and presses the 'Update' button all the products can still be added.
+![cart-bug](media/wireframes/Cart_bug.png)
+As the buttons input attributes `min="1" max="99" maxlength="3"`was being overridden I made a change in the adjust_cart view,
+The original code:
+
+```python
+if quantity > 0:
+  ```
+  
+This was letting any number in above 0
+**Fix**
+
+```python
+if quantity in range(0, 1000)
+ ```
+
+> This lets any number between 0 and 1000 anything over this the cart is emptied and returned to the cart view.
+
+[Back to Top](#table-of-contents)
 ## Deployment
 
 I hosted this site using [Heroku](https://www.heroku.com/).

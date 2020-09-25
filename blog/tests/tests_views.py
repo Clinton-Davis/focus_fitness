@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from django.test import TestCase, Client
+from django.test import TestCase
 from django.contrib.messages import get_messages
 from django.urls import reverse
 from blog.views import *
@@ -8,9 +8,9 @@ from blog.models import *
 
 class TestBlogListViews(TestCase):
     fixtures = [
-        'member-memberships.json',
+        'memberships.json',
         'user.json',
-        'blog.json',
+        'test_blog.json',
     ]
 
     @classmethod
@@ -56,8 +56,7 @@ class TestBlogListViews(TestCase):
 
     def test_logged_in_user_blog_create_view(self):
         resp = self.client.get(reverse('blog:create'))
-        self.assertTemplateUsed(resp, template_name='blog/blog_form.html')
-        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(resp.status_code, 302)
 
     def test_create_blog_context_in_view(self):
         user = self.client.login(

@@ -42,6 +42,7 @@ def get_selected_membership(request):
 
 
 class MembershipSelectView(ListView):
+
     """List the selected membership (Logic and code by Mat @ JustDjango)."""
 
     model = Membership

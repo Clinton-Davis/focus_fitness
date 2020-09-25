@@ -32,7 +32,7 @@ class TestUserMembership(TestCase):
 # class TestSubscription(TestCase):
 
 #     fixtures = [
-#         'member-memberships.json',
+#         'memberships.json',
 #         'usermembership.json',
 #         'user.json',
 #         'programs.json'
