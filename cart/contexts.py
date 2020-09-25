@@ -3,7 +3,6 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
 from memberships.views import get_user_membership
-from marketing.models import NewsLetterSignups
 from marketing.forms import NewLetterEmailSignupForm
 from django_user_agents.utils import get_user_agent
 

@@ -1,12 +1,11 @@
 from django.contrib.auth.models import User
 from django.test import TestCase
 from django.urls import reverse
-from profiles.models import UserProfile
 
 
 class TestProfileViews(TestCase):
 
-    fixtures = ['member-memberships.json', ]
+    fixtures = ['memberships.json', ]
 
     @classmethod
     def setUpTestData(cls):
@@ -38,35 +37,34 @@ class TestProfileViews(TestCase):
 
 class TestProfileDetailViews(TestCase):
 
-    fixtures = ['member-memberships.json', ]
+    fixtures = ['memberships.json', ]
 
     @classmethod
     def setUpTestData(cls):
         User.objects.create_user(
             username="tester", email="testing@test.com", password="testing12345")
 
-    def test_logged_in_Profile_detail_view_(self):
+    def test_logged_in_Profile_shipping_view_(self):
         user = self.client.login(
             email="testing@test.com", password="testing12345")
-        resp = self.client.get(reverse('profiles:profile_details'))
+        resp = self.client.get(reverse('profiles:shipping_details'))
         self.assertEqual(resp.status_code, 200)
         self.assertTemplateUsed(
-            resp, template_name="profiles/profile_details.html")
+            resp, template_name="profiles/shipping_details.html")
 
-    def test_logged_in_Profile_detail_view_context_(self):
+    def test_logged_in_Profile_shipping_view_context_(self):
         user = self.client.login(
             email="testing@test.com", password="testing12345")
-        resp = self.client.get(reverse('profiles:profile_details'))
+        resp = self.client.get(reverse('profiles:shipping_details'))
         self.assertTrue('user' in resp.context)
-        self.assertTrue('orders' in resp.context)
 
-    def test_logged_out_user_Profile_detail_view(self):
-        resp = self.client.get(reverse('profiles:profile_details'))
+    def test_logged_out_user_Profile_shipping_view(self):
+        resp = self.client.get(reverse('profiles:shipping_details'))
         self.assertEqual(resp.status_code, 302)
         self.assertRedirects(
-            resp, "/accounts/login/?next=/profile/profile_details/")
+            resp, "/accounts/login/?next=/profile/shipping_details/")
 
-    def test_profile_details_view_post(self):
+    def test_profile_shipping_view_post(self):
         user = self.client.login(
             email="testing@test.com", password="testing12345")
         resp = self.client.post(
@@ -76,7 +74,7 @@ class TestProfileDetailViews(TestCase):
 
 class Test_profile_subscriptions(TestCase):
 
-    fixtures = ['member-memberships.json', ]
+    fixtures = ['memberships.json', ]
 
     @classmethod
     def setUpTestData(cls):
@@ -107,7 +105,7 @@ class Test_profile_subscriptions(TestCase):
 
 class TestCancel_Sub_Confirm(TestCase):
 
-    fixtures = ['member-memberships.json', ]
+    fixtures = ['memberships.json', ]
 
     @classmethod
     def setUpTestData(cls):

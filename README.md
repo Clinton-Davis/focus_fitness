@@ -901,23 +901,79 @@ I would like to have my Newsletters email list auto upload to an email service t
 
 [Back to Top](#table-of-contents)
 
-
-
 ## Bugs
 
-**Being able to login with a different username.**
-On registration the username/email and password get logged to the database. When the user logged in again, only the email was checked for duplicates. The problem was the user could login with the right email and password but wrong username.
-Upon adding a new recipe, the recipes get tagged with the username from `Sessions`, which means if the user logged in with a different username but correct email and password, they get logged in but not able edit/delete their recipe.
-My first fix was to add the username input on the login page and have the username from the form checked with the username from the database. But this adds another input and is not good UX.
- 
-> To fix this issue, The user only inputs the username once at registration. At login, once the email and passwords get checked, The `Sessions` is created using the stored username. taking away the need for a username input when logging in.
- 
-```python
-login_user = users.find_one({'email': request.form['userEmail']})
-session['username'] = login_user['name']
-session['logged_in'] = True
- 
-```
+#### Bootstrap 4 Carousel Bug
+
+I had a bug trying to get Bootstrap 4 carousel to work in a for loop. Because of the way the carousel works one of the sides has to have the `.active` class set on it.
+**Fix**
+
+> After a bit of looking on the internet the best way I found was to use a template within the carousel itself and put the .active class in a for loop with a counter so then the counter = 1 the active is added.
+
+```HTML
+
+ <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}" id=”slide{{ forloop.counter }} ></div>
+
+ ```
+
+#### Featured Blogs
+
+Could not get the carousel to work for featured blogs.
+I was using a for loop to get the blog post to iterate through the list of blogs.
+Underneath this I was using a `{if statement}` to pick out the featured post from the others.
+
+```Python
+{% for blogs in all_blogs %}
+{% if blogs.featured %}
+Bootstrap carousel
+{% else %}
+all other blogs
+{% endfor %}
+But it was not working.
+ ```
+
+**Fix**
+> When I tested the carousel to see if that was the problem, it worked fine.
+I tested the if statement by adding `{{ blogs.featured }}` straight into the html and a `True False True False` was returned so I know the if statement was working.
+To make the carousel work with looped objects, you have to loop the counter with 1 being active. [Bootstrap 4 Carousel Bug](#bootstrap-4-carousel-bug) This was causing my if statement to not work.
+I went back to the `BlogListView` views and added a quarry set
+ `feature_blog = Blog.objects.filter(featured=True)` and added it to the context
+This way I would be able to have the carousel separate to the all_blogs loop.
+This way get all blogs except for featured blogs and the carousel worked with featured blogs.
+
+```Python
+{% for blogs in featured_blogs %}
+Bootstrap carousel
+{% endfor %}
+{% for blogs in all_blogs %}
+{% if blog.featuered !=true %}
+{% endif %}
+{% endfor %}
+ ```
+
+#### Landscape Orientation
+
+On the Home page in ‘Landscape orientation’, Section 2 was covering section 1’s navigation buttons. Because I have section 2 overlapping some of section 1 buttons where getting covered
+**Fit**
+> I fond an anwser in [CSS-TRICKS](https://css-tricks.com/snippets/css/media-queries-for-standard-devices/) media query to fix this issue, using This code I was able to control the height of section-1 as so it only did this on landscape orientated devices. 
+This gives section1 enough room by giving it a height of 147vh.
+
+```CSS
+@media only screen and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+  #section1-pic {
+    height: 147vh;
+  }
+}
+ ```
+
+> I realize this solutions is limited to certain screen sizes
+ (min-device-width: 375px) and (max-device-width: 667px)
+(min-device-width: 320px) and (max-device-width: 568px)
+(min-device-width: 375px) and (max-device-width: 812px)
+Because of the design of the webpage I’m confident that 90% of users will use the app in portrait view.
 
 ---
 

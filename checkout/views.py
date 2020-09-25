@@ -6,7 +6,6 @@ from .forms import OrderForm
 from cart.contexts import global_context
 from products.models import Product
 from profiles.models import UserProfile
-from memberships.views import get_user_membership
 from profiles.forms import UserProfileAddressForm
 from .models import Order, OrderLineItem
 
@@ -36,10 +35,10 @@ def checkout(request):
     """
         gets the stripe keys and opens get the cart with a empty dictionary
         grabs the form data, pid, user_discount, original_cart from json dumps and saves order.
-        then iterates through cart.items and get sizes if any. Then saves to order_line_item. 
-        If the except happens an error message happens and redirect back to cart. 
-        If the user is authenticated looks for saved data and initialise the form with 
-        saved data Redirect back to products. 
+        then iterates through cart.items and get sizes if any. Then saves to order_line_item.
+        If the except happens an error message happens and redirect back to cart.
+        If the user is authenticated looks for saved data and initialise the form with
+        saved data Redirect back to products.
         (Login and Code for Code Institute)
     """
     template = 'checkout/checkout.html'

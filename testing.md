@@ -374,14 +374,12 @@ To generate a coverage report in HTML
 All HTML pages were tested with W3C Markup Validation Service. There are a good few errors because the W3C Markup does not recognize Jinja templating. No other errors.
 - **CSS**
 I ran my css file through the W3c CSS Validation Service.
+I got a couple of errors all pointing to (min-device-width) which is in a media query for iPhone and iPads The CSS code for that is from CSS-TRICKS and it works perfectly.
+- **Python**
+I use a package called [autopep8](https://pypi.org/project/autopep8/) to guide me in my python Validatorn through development.
 
-
-Python
-I use a package called autopep8 to guide me in my python Validatorn through development.
-Codacy
-Codacy is an automated Code Validator that checks the quality of your code after every push to GitHub.
-Badge
-
+- **Codacy**
+[Codacy](https://www.codacy.com/) is an automated Code Validator that checks the quality of your code after every push to GitHub.
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f491bdf3d67c47b7918d82d4dc5d716f)](https://www.codacy.com/manual/Clinton-Davis/focus_fitness/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Clinton-Davis/focus_fitness&amp;utm_campaign=Badge_Grade)
 
  <div align="right">
