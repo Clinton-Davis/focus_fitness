@@ -7,6 +7,8 @@ omit =
     */migrations/*
     */__init__*
     */test*.py
+    */wsgi*.py
+    */asgi*.py
     */url*.py
     */admin.py
     */apps.py
@@ -19,6 +21,8 @@ omit =
     */__init__*
     */test*.py
     */url*.py
+    */wsgi*.py
+    */asgi*.py
     */admin.py
     */apps.py
     */static/*

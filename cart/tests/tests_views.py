@@ -28,7 +28,6 @@ class CartViewsTests(TestCase):
             '/cart/add/5/', {'quantity': '7', 'redirect_url': 'cart_view', 'product_size': 'm'})
         messages = list(get_messages(resp.wsgi_request))
         self.assertEqual(resp.status_code, 302)
-
         self.assertEqual(len(messages), 1)
         self.assertEqual(str(messages[0]),
                          'Added size M Navy Blue Mens Jacket to your cart')
@@ -40,7 +39,7 @@ class CartViewsTests(TestCase):
         self.assertEqual(resp.status_code, 302)
         self.assertEqual(len(messages), 1)
         self.assertEqual(str(messages[0]),
-                         'Added Gold Standard 100% Whey Protein to your cart')
+                         'Added Gold Standard to your cart')
 
     def test_add_item_qty_size_to_adjust_cart_views(self):
         resp = self.client.post(

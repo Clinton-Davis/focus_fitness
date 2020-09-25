@@ -21,7 +21,7 @@ class TestCheckoutViews(TestCase):
 
     def test_Checkout_out_success_view(self):
         user = User.objects.get(id=2)
-        order_num = Order.objects.get(id=1)
+        order_num = Order.objects.get(id=5)
         order = order_num.order_number
         resp = self.client.get(
             f'/checkout/checkout_success/{order}')
@@ -29,7 +29,7 @@ class TestCheckoutViews(TestCase):
         self.assertTemplateUsed(resp, 'checkout/checkout_success.html')
 
     def test_abstract_user_Checkout_out_success_view(self):
-        order_num = Order.objects.get(id=1)
+        order_num = Order.objects.get(id=5)
         order = order_num.order_number
         resp = self.client.get(
             f'/checkout/checkout_success/{order}')

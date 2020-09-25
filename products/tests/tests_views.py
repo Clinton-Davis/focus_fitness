@@ -24,27 +24,20 @@ class TestProduct(TestCase):
             email="testing@test.com", password="testing12345")
 
     def test_products_get(self):
-        product = Product.objects.get(id=7)
+        product = Product.objects.get(id=4)
         resp = self.client.get(reverse('products:products'))
         self.assertEqual(resp.status_code, 200)
         self.assertContains(resp, product.name)
 
     def test_views_contains_products_get(self):
-        product = Product.objects.get(id=7)
+        product = Product.objects.get(id=4)
         resp = self.client.get(reverse('products:products'))
         self.assertContains(resp, product.name)
 
     def test_product_comment_view_vaild_post(self):
         user = User.objects.get(id=2)
         resp = self.client.post(
-            '/products/5/', {'rating': '5', 'content': 'Nice'})
-        self.assertRedirects(resp, "/products/5/")
-        self.assertEqual(resp.status_code, 302)
-
-    def test_product_comment_view_invaild_post(self):
-        user = User.objects.get(id=2)
-        resp = self.client.post(
-            '/products/5/', {'rating': '', 'content': 'Nice'})
+            '/products/5/', {'rating': '4', 'content': 'Testing'})
         self.assertRedirects(resp, "/products/5/")
         self.assertEqual(resp.status_code, 302)
 

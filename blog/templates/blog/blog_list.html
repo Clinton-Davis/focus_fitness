@@ -114,7 +114,7 @@
                 <!-- Categories Widget -->
                 <div class="card my-4">
                     <button type="button"
-                        class="aw text-center ripple-surface card-header border border-success text-wht bg-green"
+                        class="font-lrg aw text-center ripple-surface card-header border border-success text-wht bg-green"
                         data-toggle="modal" data-target="#category_Modal">Categories<i
                             class="ml-2 fad fa-info-circle fa-lg"></i>
                     </button>
@@ -194,11 +194,6 @@
                                             </tr>
                                         </tbody>
                                     </table>
-
-
-
-
-
                                 </div>
                             </div>
 
@@ -208,7 +203,11 @@
                 <!-- Members Blogs -->
                 {% if user.is_authenticated %}
                 <div class="card my-4">
-                    <h5 class="aw text-center card-header text-wht bg-warning">Member Blogs</h5>
+                    <button type="button"
+                        class="font-lrg aw text-center ripple-surface card-header border border-warning text-wht bg-warning"
+                        data-toggle="modal" data-target="#members_Modal">Member Blogs<i
+                            class="ml-2 fad fa-info-circle fa-lg"></i>
+                    </button>
                     <div class="card-body bg-black-a">
                         <div class="row">
                             <div class="col-12">
@@ -242,11 +241,42 @@
                         </div>
                     </div>
                 </div>
-                {% else %}
-                {% endif %}
+                <div class="modal" id="members_Modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
 
+                            <!-- Modal Header -->
+                            <div class="modal-header bg-warning">
+                                <h3 class="modal-title text-wht aw">Members Blogs Guid</h3>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class=" card my-4">
+                                    <p>As a member of Focus fitness you are entitled and encouraged to write blogs about
+                                        your gym experience. </p>
+                                    <p>Ask questions to our trainers about products in the shop or questions about blog
+                                        posts.</p>
+                                    <p>Our Trainers go over all the blogs that have been written here and will reply in
+                                        the comment section of your blog.</p>
+                                    <p>We use a text editor in our blog creation page so you upload pictures or link
+                                        products and
+                                        blog posts. If spelling is not your thing there is a spellchecker included.</p>
+                                    <p>Focus Fitness is all about creating a community where you can not just survive
+                                        but thrive</p>
+                                    <a class="aw pl-2" href="{% url 'blog:create' %}">Create a Blog</a>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% else %}
+                    {% endif %}
+
+                </div>
             </div>
         </div>
     </div>
-</div>
-{% endblock content %}
+    {% endblock content %}

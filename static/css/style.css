@@ -1022,6 +1022,16 @@ nav {
   }
 }
 
+@media (min-width: 1500px) {
+  p {
+    font-size: 1.225rem;
+  }
+
+  .active-size {
+    font-size: 5.2vw;
+  }
+}
+
 /* Media Queries for Standard Devices CSS-TRICKS https: //css-tricks.com/ */
 
 /* iPhone 5,5S, 5C and 5SE  */
