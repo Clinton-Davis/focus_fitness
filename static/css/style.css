@@ -338,8 +338,8 @@ img {
 
 /* TOP_NAVBAR */
 .navbar {
-  padding: 0px;
-  height: 8rem
+  padding: 0;
+  height: 8rem;
 }
 
 .navbar-toggler {
@@ -377,7 +377,7 @@ nav {
 
 #topnav {
   background-color: rgba(0, 0, 0, 0.7);
-  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 .navbar-dark .navbar-nav .show>.nav-link {
@@ -400,7 +400,7 @@ nav {
 /* INDEX_PAGE-SECTION-1 */
 #section1-pic {
   position: relative;
-  top: 0px;
+  top: 0;
   height: 90vh;
   background: url(/static/images/3rd_index_small.jpg) no-repeat center top fixed;
   -webkit-background-size: cover;
@@ -456,7 +456,7 @@ nav {
 }
 
 .custom_img {
-  max-width: 36rem !important
+  max-width: 36rem !important;
 }
 
 /* INDEX_PAGE-SECTION-2 */

@@ -7,5 +7,5 @@ class UserMembershipAdmin(admin.ModelAdmin):
 
 
 admin.site.register(UserMembership, UserMembershipAdmin)
-# admin.site.register(Membership)
+admin.site.register(Membership)
 admin.site.register(Subscription)
