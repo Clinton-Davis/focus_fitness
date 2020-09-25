@@ -45,7 +45,6 @@ The manual testing is done for each user story and categorised into the differen
 
 #### Navbar and Footer
 
-
 **User Storys**
 *As a user, I want to easily navigate between the pages
 As a user, I want to link to the social pages of the company.*
@@ -247,7 +246,8 @@ As a member, I would like to see when my next subscription payment is due and be
 - Failed. Clicking ‘Yes, Cancel my Subscription’ shows a NoReverseMatch error.
 - A success message was shown as expected.
 
-**Bug**: ‘Yes, Cancel my Subscription’ button error.
+**Bug**: ‘Cancel Subscription’ button error.
+
 **Verdict**: The issues were fixed, the test passed.
  <div align="right">
 
