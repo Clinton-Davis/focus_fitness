@@ -7,10 +7,7 @@
 > **Focus Fitness** -  is an online gym portal where you can get everything you need to not just survive. Thrive!
 
 ---
-
- [![Generic badge](https://img.shields.io/badge/Django-3.0.8-s.svg)](https://shields.io/) [![Python 3.8](https://img.shields.io/badge/Python-3.8.2-blue.svg)](https://www.python.org/downloads/release/python-360/) [![Generic badge](https://img.shields.io/badge/Heroku-Postgres-s.svg)](https://shields.io/)
-
- [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f491bdf3d67c47b7918d82d4dc5d716f)](https://www.codacy.com/manual/Clinton-Davis/focus_fitness/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Clinton-Davis/focus_fitness&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.org/Clinton-Davis/focus_fitness.svg?branch=master)](https://travis-ci.org/Clinton-Davis/focus_fitness) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f491bdf3d67c47b7918d82d4dc5d716f)](https://www.codacy.com/manual/Clinton-Davis/focus_fitness/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Clinton-Davis/focus_fitness&amp;utm_campaign=Badge_Grade) [![Generic badge](https://img.shields.io/badge/Django-3.0.8-s.svg)](https://shields.io/) [![Python 3.8](https://img.shields.io/badge/Python-3.8.2-blue.svg)](https://www.python.org/downloads/release/python-360/) [![Generic badge](https://img.shields.io/badge/Heroku-Postgres-s.svg)](https://shields.io/)
 
 ## Demo
 
@@ -18,29 +15,29 @@
 
 ---
 
-## Table of Contents
-
-1. [**UX**](#ux)
-2. [**Scope**](#scope)
-3. [**Structure and Wireframe Mockups**](#structure)
-    - [**Navigation**](#navigation)
-    - [**Home Page**](#home-page)
-    - [**Focus Shop**](#focus-shop)
-    - [**Blog**](#blog)
-    - [**Programs**](#programs)
-    - [**Memberships**](#Membership)
-    - [**Workouts**](#workouts)
-    - [**Dashboard**](#dashboard)
-    - [**About Page**](#about-page)
-    - [**Contact Page**](#contact-page)
-
-4. [**Surface**](#surface)
-5. [**Technologies**](#technologies)
-6. [**Features**](#features)
-7. [**Testing**](#testing)
-8. [**Bugs**](#bugs)
-9. [**Deployment**](#deployment)
-10. [**Credits & Acknowledgements**](#credits)
+>## Table of Contents
+>
+>1. [**UX**](#ux)
+>2. [**Scope**](#scope)
+>3. [**Structure and Wireframe Mockups**](#structure)
+>    - [**Navigation**](#navigation)
+>    - [**Focus Shop**](#focus-shop)
+>    - [**Blog**](#blog)
+>    - [**Memberships**](#Membership)
+>    - [**Workouts**](#workouts)
+>    - [**Dashboard**](#dashboard)
+>    - [**Home Page**](#home-page)
+>    - [**About Page**](#about-page)
+>    - [**Contact Page**](#contact-page)
+>    - [**Programs**](#programs)
+>4. [**Surface**](#surface)
+>5. [**Technologies**](#technologies)
+>6. [**Features**](#features)
+>7. [**Testing**](#testing)
+>8. [**Bugs**](#bugs)
+>9. [**Deployment**](#deployment)
+>
+>10. [**Credits & Acknowledgements**](#credits)
 
 ---
 
@@ -84,7 +81,7 @@ Users would be able to subscribe to our training programs and also be able to do
 
 <div align="right">
 
-[Back to Top :arrow_up:](#table-of-contents)
+[Back to Top  ↑ ](#table-of-contents)
 </div>
 
 ## Scope
@@ -112,7 +109,7 @@ And be able to change users membership level.
 
 <div align="right">
 
-[Back to Top :arrow_up:](#table-of-contents)
+[Back to Top  ↑ ](#table-of-contents)
 </div>
 
 ## Structure
@@ -158,9 +155,9 @@ Full Page background with a center-block design.
 </p>
 </details>
 
-#### **Navigation**
+### **Navigation**
 
-##### Navbar
+#### Navbar
 
 The navbar is sticky (fixed) to top of each page, This makes navigation easer and qicker.
 It is divided into 3 part
@@ -190,32 +187,32 @@ On the desktop they sit next to each. On mobile the part 2 and 3 are next to eac
 ---
 <div align="right">
 
-[Back to Top :arrow_up:](#table-of-contents)
+[Back to Top  ↑ ](#table-of-contents)
 </div>
 
-#### **Home Page**
+### **Home Page**
 
 The home page or Index page is the main page for users to interact with.
 It is divided into 4 sections.
 
-**Section 1**
+#### Section 1
 
 Full-page background in black and white, in the middle, is a dark semitransparent block with the Focus Fitness heading and the mantra underneath.
 Underneath that are the main navigation buttons that are coloured using the supplementary colours.
 
-**Section 2**
+#### Section 2
 
 3 clickable tiles each linking to there information they are displaying.
 The first one is displaying the Trainging Program categories, the 2nd one is about the blogs the 3rd one is showing all the categories of products in the shop.
 This a brief description of the Subscriptions and what perks you get for joining up.
 This is also dynamic If the member is a subscribing user this section is not shown.
 
-**Section 3**
+#### Section 3
 
 Here you will find all the special offer that are on offer in the shop.
 Each item is clickable and will go directly to the product detail page.
 
-**Section 4**
+#### Section 4
 
 Here are displayed all the featured blog, again clickable and will take to you to the blog post.
 
@@ -224,54 +221,55 @@ Here are displayed all the featured blog, again clickable and will take to you t
 
 <p align="center">
 
-<img src="media/wireframes/focus_index_pic.png">
+![Home](media/wireframes/focus_index_pic.png)
 
 </p>
-
 </details>
 
----
 <div align="right">
 
-[Back to Top :arrow_up:](#table-of-contents)
+[Back to Top  ↑ ](#table-of-contents)
 </div>
 
-### **Focus Shop**
+---
 
-*Layout*
+## **Focus Shop**
+
+- **Layout**
 *The shop heading is top center*. -To let the user know where they are
-*Products Filtering area* - This get middle page, for easy accessibility
-*Product Cards* - The lower middle and the rest of the page,
 
-*Product Filtering area*
+- **Product Filtering area**
 The category selectors are coloured in the supplementary colour to distinguish them apart at a glance
 On the right hand side is another way to get back to default ordering and shows you how many products are in the search
 
-*Product cards*
+- **Product cards**
 The products are displayed on cards that sit side next and on top of each other.
-The product picture is at the top with the name of the product underneath.
-The price of the item is displayed in bold numbers.
-The category is below the price.
-Next is the stars rating. The product is rated by the users and the average of all the ratings is displayed here, total out of 5.
+  - Picture - is at the top
+  - Name of the product.
+  - Price of the item is displayed in bold numbers.
+  - Category Stars rating - The product is rated by the users and the average of all the ratings is displayed here, total out of 5.
 
 <details>
-<summary>(Click for image)</summary>
+<summary>Focus Shop Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframes/focus_shop.png">
-</p>
 
+![Focus Shop](media/wireframes/focus_shop.png)
+</p>
 </details>
 
 #### Product Details
 
 The Details page is a center block design, with breadcrumbs navigation in the top left.
-The center is divided in half, the left hand side a picture of the product and on the right is the information
-Name / category / rating / price
-Below is a size selector, if the product h- as a size this is there,
-Next is a quantity selector - and +
-The Add to Cart button is below.
-The bottom part of the block is for the Product Overview
+The center is divided in half, the left hand side a picture of the product and on the right is the information:
+
+- Name of the product
+- Category and Rating
+- Price
+- Size selector, (if applicable)
+- Quantity selector
+- Add to Cart button.
+- Product Overview -
 This is where there are more details about the product.
 Under that there is the reviews section
 The product's overall rating is displayed here.
@@ -279,22 +277,34 @@ This is where you write your review.
 Below is a list of all the reviews and individual ratings the users gave the product.
 
 <details>
-<summary>Shop Detail View WireFrames (Click for image)</summary>
+<summary>Product Details WireFrames (Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframes/detailed_view_D_M.png">
-</p>
 
+![Product Details](media/wireframes/detailed_view_D_M.png)
+</p>
 </details>
 
 #### Shopping Cart
 
 The Cart is where you see a list of all the products that you have added.
-Center block design. The top horizontal half is a list of all the products with a small image on the left name / prince/ and a quantity adjuster if you have made a mistake, you can also remove  the product form here.
-The Order Summary is below the products list and hold all the details of your order
-Cart Total / discounts (if applicable) / Subtotal / Delivery charge / Tax amount (Note is is added into the total amount, The tax amount is just to show how much it it)
-Grand Total
-The Keep shopping button will take you back to the shop, and checkout will take to the check out.
+Center block design. The top horizontal half is a list of all the products and information:
+
+- Image on the left
+- Name
+- Prince
+- Quantity and quantity adjuster - Here you see the quantity of a product, if you have want to adjust or remove the product.
+
+The Order Summary is below the products list and hold all the financial details of the order:
+
+- Cart Total
+- Discounts - (if applicable)
+- Subtotal
+- Delivery charge
+- Tax amount - (Note is is added into the total amount)
+- Grand Total
+- Keep shopping button - will take you back to the shop.
+- Checkout button - will take to the check out.
 
 <details>
 <summary>Shopping Cart Wireframes(Click for image)</summary>
@@ -307,50 +317,64 @@ The Keep shopping button will take you back to the shop, and checkout will take 
 
 #### Checkout
 
-Full page layout with the user order form to complete. Contact details and delivery address.
-Where is a Save information to profile button that if pressed the information will be autofilled next time they use the shore.
+Full page layout with the user order form to complete:
 
-A [Stripe](https://stripe.com/) payment system is inplace and takes all major cards.
-The numbers below are used to test the Stripe Payment software.
+- Contact details and delivery address.
+- Save information to profile button that if pressed the information will be autofilled in next time they use the shore.
+- Adjust cart button - If you need to adjust the cart.
+- Complete Order - Sends the card informtion to [Stripe](https://stripe.com/)
 
-- Card number - 4242 4242 4242 4242
-- CVC - Any 3 digit number.
-- Expire date - Any date in the future
-
-If you need to adjust the cart there is an Adjust cart button to take you back or Complete Order.
+>#### Stripe Development Card.
+>
+> A [Stripe](https://stripe.com/) payment system is inplace and >takes all major cards.
+>The numbers below are used to test the Stripe Payment software.
+>
+>- Card number - 4242 4242 4242 4242
+>- CVC - Any 3 digit number.
+>- Expire date - Any date in the future
+>
 
 <details>
-<summary>(Click for image)</summary>
+<summary>Checkout Page Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframes/Checkout_D_M.png">
-</p>
 
+![Checkout](media/wireframes/Checkout_D_M.png)
+</p>
 </details>
 
 #### Checkout Success
 
 Two center blocks one on the left and right both hold all your order details.
 Breadcrumbs in the top left will take you to your dashboard.
-The left block has the order number / Date of order / detail of what you have ordered and the paid amounts / Stripe Receipt.
-Clicking the receipt will sent to a new page with you stripe receipt
+
+Left block contains:
+
+- Order Details
+- Stripe Receipt - Clicking the receipt will sent to a new page with you Stripe receipt
+
+Right Block contains
+
+- Contact Details
+- Shipping information
 
 <details>
-<summary>(Click for image)</summary>
+<summary>Checkout Success Wireframes(Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframes/Checkoutsuccess_D_M.png">
-</p>
 
+![Checkout Success](media/wireframes/Checkoutsuccess_D_M.png)
+</p>
 </details>
 
 ---
+
 <div align="right">
 
-[Back to Top :arrow_up:](#table-of-contents)
+[Back to Top  ↑ ](#table-of-contents)
 </div>
 
-### **Blog**
+## **Blog**
 
 The blog post is the main source of communication in Focus Fitness, it is how all the user connect with each other, by right blog about how they are getting on, experiences and success they have had, products or workouts they have used from the Focus Shop or Membership Programs. A special Category call Members is for users to support each other and getting support from our Focus Fitness Trainers.
 Featured Blog is chosen by our Trainers and is generally written by Pro trainers or athletes.
@@ -396,7 +420,8 @@ Underneath the Category selection box is the Members blogs, a list of all the us
 <summary>Blog List Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframes/blog_list_d_mo.png">
+
+![Blog](media/wireframes/blog_list_d_mo.png)
 </p>
 
 </details>
@@ -591,7 +616,7 @@ For this Project we used [SQLite](https://www.sqlite.org/index.html) in developm
 
 <div align="right">
 
-[Back to Top :arrow_up:](#table-of-contents)
+[Back to Top  ↑ ](#table-of-contents)
 </div>
 
 ## Surface
@@ -616,40 +641,34 @@ The Secondary is [Audiowide](https://fonts.google.com/specimen/Audiowide") is us
 The colour scheme is all about contrast, there are a lot a dark background with white text and bold bright colours used sparingly throughout the site.
 The Supplementary colours ![#1bd87d](https://placehold.it/15/1bd87d/000000?text=+) ![#e7313f](https://placehold.it/15/e7313f/000000?text=+)  ![#e5ce21](https://placehold.it/15/e5ce21/000000?text=+)  ![#0275d8](https://placehold.it/15/0275d8/000000?text=+)  follow the Olympic weightlifting colours standard. The colours are bold and work with the theme.
 
-
 #### Images
 
 Images are used extensively. The images chosen are all gym and fitness related. They are used as a background in most of the site. Original pictures were darkened to fit with the theme of the project.
 All images were found on  [Unsplash](https://unsplash.com/) and have a CC licence.
 A list of all the photographers can be found [here](#media)
 
----
-
 <div align="right">
 
-[Back to Top :arrow_up:](#table-of-contents)
+[Back to Top  ↑ ](#table-of-contents)
 </div>
+
+---
 
 ## Technologies
 
-##### Core Languages, Frameworks, Editors
+### Core Languages, Frameworks, Editors
 
 - [HTML 5](https://en.wikipedia.org/wiki/HTML) ~ Markup language designed to be displayed in a web browser.
 - [CSS 3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets) ~ Style sheet language used for describing the presentation of a document in HTML.
 - [Python 3.8](https://code.jquery.com/) ~ High-level, general-purpose programming language.
 - [Django 3.0.8](https://www.djangoproject.com/) ~ Django is a high-level Python Web framework.
-
 - [jQuery 3.5](https://code.jquery.com/) ~ lightweight JavaScript library.
-
 - [Bootstrap 4.5](https://getbootstrap.com/) ~ Design and customize responsive mobile-first sites.
-
 - [Heroku](https://heroku.com) ~ A cloud based platform - as a service enabling deployment of CRUD applications
-
 - [Heroku Postgres](https://www.heroku.com/postgres) ~ PostgreSQL's capabilities - as a fast, functional, and powerful data resource.
-
 - [Visual Studio Code](https://code.visualstudio.com/) ~ Code editor redefined and optimized for building and debugging modern web and cloud applications.
 
-##### Third-Party Tools
+#### Third-Party Tools
 
 - [Font Awesome](https://fontawesome.com/) ~ Font Awesome icons
 - [icons8](https://icons8.com/icons/set/instagram-logo) ~ Icons8 icons
@@ -665,18 +684,18 @@ A list of all the photographers can be found [here](#media)
 - [TinyPNG](https://tinypng.com/) ~ A smart lossy compression technique to reduce the file size of your PNG files.
 - [Google Fonts](https://fonts.google.com/) ~ A library free licensed font families, an interactive web directory for browsing the library.
 
----
-
 <div align="right">
 
-[Back to Top :arrow_up:](#table-of-contents)
+[Back to Top  ↑ ](#table-of-contents)
 </div>
+
+---
 
 ## Features
 
 ### Existing Features
 
-#### Navbar
+#### Top Navbar
 
 - Changes Dymamicaly
 This changes depending on the membership status of the user.
@@ -704,7 +723,7 @@ The Back to the top button is global but you see it mostly in the footer, This i
 
 #### Home Page (Index Page)
 
-*Section-1*
+##### Section 1.
 
 - Dynamic buttons
   The 4 main buttons in section 1 of the main page are dynamic and change with the user membership level.
@@ -720,18 +739,18 @@ The Back to the top button is global but you see it mostly in the footer, This i
 
   ![btn_member](media/wireframes/btn_member.png)
 
-*Section-2*
+##### Section 2
 
 - The tiled center block.
 The 3 tiles are links to different parts of the site. They are clickable and lead to Training Programs, Blogs and the Focus Shop.
 
-*Section 3*
+##### Section 3
 
 - Dynamic Subscription section.
 The subscription section users membership status.
 If the user is a Pro member this section is hidden. This gives the user less scrolling to get to the shop.
 
-*Section 4*
+#### Section 4
 
 - The Special Offers section
 Holds all the special offers that are listed.
@@ -741,7 +760,7 @@ The products are clickable and will take you to that products detailed page, whe
 - Hidden Dynamically
 If there are no special offers the section will be hidden.
 
-- *Section 5*
+#### Section 5
 
 - Featured Blogs
 All the featured blogs are shown here with the help of Bootstrap's Carousel
@@ -751,10 +770,12 @@ Controlled in the admin All featured blogs are controlled in the admin area.
 
  <div align="right">
 
-[Back to Top :arrow_up:](#testing)
+[Back to Top  ↑ ](#testing)
 </div>
 
-#### Blog Page
+----
+
+### Blog Page
 
 - **Featured** **Blogs**
 The same feature that is used in Home page Section 5 is used in the blog list page.
@@ -787,7 +808,7 @@ Blogs can be written and edited front the admin area. If blogs are not inline wi
 
  <div align="right">
 
-[Back to Top :arrow_up:](#table-of-contents)
+[Back to Top  ↑ ](#table-of-contents)
 </div>
 
 ### Focus Shop
@@ -916,30 +937,270 @@ I would like to have my Newsletters email list auto upload to an email service t
 
  <div align="right">
 
-[Back to Top :arrow_up:](#table-of-contents)
+[Back to Top  ↑ ](#table-of-contents)
 
 </div>
 
------
+---
 
 ## Testing
 
 Testing, Bugs and Validation information and be fond at [Testing.md](findpath)
 
-----
+---
 
 ## Deployment
 
-I hosted this site using [Heroku](https://www.heroku.com/).
+### Local Deployment
 
-Heroku is a container-based cloud Platform - as a Service (PaaS). I used it because it's free, elegant, flexible, and easy to use, offering developers the simplest path to getting my app up.
+To be able to clone this project there are a few things you will need.
 
-### To deploy on Heroku
+- [Git](https://git-scm.com/) - Install Git, installation docs and be fond [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [Pip](https://pip.pypa.io/en/stable/installing/) - install pip, installation docs can be fond [here](https://pip.pypa.io/en/stable/installing/)
+
+Once you have [Git](https://git-scm.com/),  [Pip](https://pip.pypa.io/en/stable/installing/) and  [virtualenv](https://pypi.org/project/virtualenv/) installed.
+
+1. From the terminal create the directory you want to work in.
+
+```bash
+$ mkdir <filename>
+ ```
+
+2. Cd into Directory
+
+```bash
+& cd <filename>
+```
+
+3. Install [virtualenv](https://pypi.org/project/virtualenv/)
+
+```bash
+ $ pip install virtualenv
+ ```
+
+4. Create a virtual environment (env)
+
+```bash
+ $ virtualenv env
+ ```
+
+5. Activate env with:
+
+- Mac:
+  - ` $ source env/bin/activate`
+
+- Windows(bash):
+
+  - `$ source env/Scripts/activate`
+
+6. Once you are inside your environment clone the repository from github
+
+```bash
+$ git clone https://github.com/Clinton-Davis/focus_fitness.git
+```
+
+7. In the focus directory add a `.env` and `.gitignore`
+
+8. Make a `.env` and add the variables below in.
+> There is a handy .templates.env file will all the variables.
+
+| Key      |      Value    |
+|----------|:-------------:|
+| SECRET_KEY | < Your Values >|
+| EMAIL_HOST_PASS |    < Your Values >   |
+|EMAIL_HOST_USER| < Your Values > |
+|NOTIFY_EMAIL| < Your Values > |
+|DEFAULT_FROM_EMAIL| < Your Values > |
+|STRIPE_PUBLIC_KEY| < Your Values > |
+|STRIPE_SECRET_KEY| < Your Values > |
+|STRIPE_SECSTRIPE_WH | < Your Values > |
+
+9. In the `.gitignore` file add `.env`
+
+10. Once your `.env` file is added install all the requirements needed to run the project.
+
+```bash
+$ pip install -r requirements.txt
+```
+
+11. Open up blog.forms and comment out lines 8 and 9
+
+```python
+# for item in choices:
+#     choices_list.append(item)
+ ```
+
+12. Once that's done make migrations
+
+```bash
+& python manage.py makemirgrations
+```
+
+13. Then migrate
+
+```bash
+& python manage.py migrate
+```
+
+14. Once the migrations are complete you can uncomment blog.forms
+
+```python
+for item in choices:
+    choices_list.append(item)
+```
+
+15. Before you create a superuser you need to load the membership fixturess.
+
+```bash
+$ python manage.py loaddata memberships.json
+```
+
+>The resson for this is a signal is used to assign a membership to a user when they are created, If there is no a memberships it cant asign anything and causes a error.
+
+16. Now you can add the products
+
+```bash
+$ python manage.py loaddata products.json
+```
+
+17. Create superuser
+
+```bash
+$ python manage.py createsuperuser.
+```
+
+18. Run project with 
+
+```bash
+$ python manage.py runserver.
+```
+
+### Heroku To Deployment
+
+You will need a [AWS](https://aws.amazon.com/s3/) account and a [S3 bucket](https://aws.amazon.com/s3/) to hold all the static files for this project.
+
+1. Open Heroku.
+2. Install the Heroku Command Line Interface (CLI). You use the CLI to manage and scale your applications, provision add-ons, view your application logs, and run your application locally.
+Create an account and navigate to the dash dashboard.
+3. Click on the _New_ button.
+4. Click - _Create New App_.
+5. Create a corresponding app name that we use to deploy our application. The apps _name_ must be _unique._.
+6. Pick a server location that is closest to you.
+7. Once the app is created click on the resources button and choose the Heroku Postgres to attach a postgres database to your project.
+8. Click into the settings tab and navigate to reveal **‘config vars**’.
+9. Enter in all the variables the same a in the .env file 
+10. Add
+
+| Key      |      Value    |
+|----------|:-------------:|
+| AWS_SECRET_ACCESS_KEY | < Your Values >|
+| AWS_ACCESS_KEY_ID |    < Your Values >   |
+| USE_AWS |    True  |
+
+You will get in them when you setup your  [AWS bucket](https://aws.amazon.com/s3/)
+
+11. To be able to run on Heroku A few more libraries are needed.
+Guniorn a (WSGI HTTP Server), dj-database to connect with PostgresSQL and Psycopg(PostgreSQL driver)
+```bash
+$ pip install Gunicorn , dj-database , Psycopg
+```
+
+12. In your Terminal. Navigate to your directory using.
+Login to Heroku using the Terminal
+
+```bash
+$ heroku login
+```
+
+13. Create a `Procfile` This file tells heroku how to run the project
+
+```bash
+$ web: gunicorn focus_fitness.wsgi:application
+```
+
+14. Freeze your requirements
+
+```bash
+$ pip freeze > requirements.txt
+```
+
+15. Add files and commit to github using
+
+```bash
+$ git add then git commit -m "You message"
+```
+
+Now that heroku is ready to go
+
+16. Inside the Django setting we need to set up the AWS configs so the static files have a place to go.
+Add
+
+```python
+
+ALLOWED_HOSTS = ['127.0.0.1', 'focus-fitness.herokuapp.com']
+
+if 'USE_AWS' in os.environ:
+    AWS_STORAGE_BUCKET_NAME = 'focus-fitness'
+    AWS_S3_REGION_NAME = 'eu-west-1'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+    AWS_DEFAULT_ACL = None
+
+# Static and media files
+
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+    STATIC_URL = f'http://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'http://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+
+# And for the postgresSQL add This uses sqlite in development and postgress in production
+if DEBUG is True:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+```
+
+This will make the application use Sqlite3 for development and postges for production
+Be sure to change the allowed host to for sircurty.
+ 
+18. Now once that is done you are ready to push to heroku
+
+```bash
+$ git push heroku master
+```
+
+19. Once the app is successfully deployed to heroku. Make migrations to the postgres db following steps 10-17 in [local deployment.](#local-development)
+
+You are up and running.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
  <div align="right">
 
-[Back to Top :arrow_up:](#table-of-contents)
+[Back to Top  ↑ ](#table-of-contents)
 
 </div>
 
@@ -1010,6 +1271,6 @@ I would like to say thank you to everyone who has helped me throughout this proj
 
  <div align="right">
 
-[Back to Top :arrow_up:](#table-of-contents)
+[Back to Top  ↑ ](#table-of-contents)
 
 </div>

@@ -1,6 +1,7 @@
 # Testing
 
 1. [**Development Testing**](#development-testing)
+2. [**Manual Testing**](#manual-testing)
    - [**Responsive**](#responsive)
    - [**Navbar and Footer**](#navbar-and-footer)
    - [**Home**](#home)
@@ -10,8 +11,9 @@
    - [**Dashboard**](#dashboard)
    - [**Login**](#login)
    - [**The Admin**](#the-admin)
-2. [**Manual Testing**](#manual-testing)
 3. [**Automated Testing**](#automated-testing)
+4. [**Bugs**](#bugs)
+5. [**Validation**](#validation)
 
 ## Development Testing
 
@@ -40,7 +42,7 @@ The manual testing is done for each user story and categorised into the differen
 **Verdict**: The issues were fixed, the test passed.
  <div align="right">
 
-[Back to Top :arrow_up:](#testing)
+[Back to Top  ↑ ](#testing)
 </div>
 
 #### Navbar and Footer
@@ -72,7 +74,7 @@ As a user, I want to link to the social pages of the company.*
 
  <div align="right">
 
-[Back to Top :arrow_up:](#testing)
+[Back to Top  ↑ ](#testing)
 </div>
 
 #### Home
@@ -97,7 +99,7 @@ As a user, I would like to see featured blogs and other Programs that are on off
 **Verdict**: All the functionality works as expected.
  <div align="right">
 
-[Back to Top :arrow_up:](#testing)
+[Back to Top  ↑ ](#testing)
 </div>
 
 #### Shop, Shopping Cart and  Checkout
@@ -138,7 +140,7 @@ Checkout order using Stripe test card number 4242 42424 24242
 **Verdict**: All the functionality works as expected.
  <div align="right">
 
-[Back to Top :arrow_up:](#testing)
+[Back to Top  ↑ ](#testing)
 </div>
 
 #### Blogs
@@ -172,7 +174,7 @@ As a user, I would like only other logged-in users to see my members' blog posts
 **Verdict**: All the functionality works as expected.
  <div align="right">
 
-[Back to Top :arrow_up:](#testing)
+[Back to Top  ↑ ](#testing)
 </div>
 
 #### Member selection, Programs list, Subscription payment
@@ -208,7 +210,7 @@ As a user, I would like to see the Professional programs they have to offer*
 **Verdict**: All the functionality works as expected.
  <div align="right">
 
-[Back to Top :arrow_up:](#testing)
+[Back to Top  ↑ ](#testing)
 </div>
 
 #### Dashboard
@@ -251,7 +253,7 @@ As a member, I would like to see when my next subscription payment is due and be
 **Verdict**: The issues were fixed, the test passed.
  <div align="right">
 
-[Back to Top :arrow_up:](#testing)
+[Back to Top  ↑ ](#testing)
 </div>
 
 #### Login
@@ -277,7 +279,7 @@ As a member, I would like to see when my next subscription payment is due and be
 **Verdict**: All the functionality works as expected.
  <div align="right">
 
-[Back to Top :arrow_up:](#testing)
+[Back to Top  ↑ ](#testing)
 </div>
 
 #### The Admin
@@ -305,11 +307,6 @@ As admin, I expect to see a ‘No Image’ image if there is no image for a prod
 - Check the Shop orders are able to be seen. And order from newest to oldest with the name and shipping details.
 - Check the ‘No-image’ product image is shown if the product image is not there.
 
- <div align="right">
-
-[Back to Top :arrow_up:](#testing)
-</div>
-
 **Results**:
 
 - Paged throughout all the pages of the website and the admin icon was always there. As expected.
@@ -326,12 +323,12 @@ As admin, I expect to see a ‘No Image’ image if there is no image for a prod
 - Clicked on an order number and all the orders details and address where as expected.
 - Cleared the image in the edit product section of the shop and no image was shown on the product in the shop and home page.
 
-*Bug*: Out of stock product was still being shown in special offers
+**Bug**: Out of stock product was still being shown in special offers
 ‘was’ price is being shown
 **Verdict**: The issues were fixed, the test passed.
  <div align="right">
 
-[Back to Top :arrow_up:](#testing)
+[Back to Top  ↑ ](#testing)
 </div>
 
 ---
@@ -512,14 +509,17 @@ if quantity in range(0, 1000)
 
 > This lets any number between 0 and 1000 anything over this the cart is emptied and returned to the cart view.
 
-[Back to Top](#table-of-contents)
+ <div align="right">
+
+[Back to Top  ↑ ](#testing)
+</div>
 
 ----
-
-### Validators
+### Validation
 
 - **Traivs**
-
+[Travis](https://travis-ci.org/) was used in the unit testing of this product, It automatically tests code changes, providing immediate feedback on the success of the change. The configuration file is `.travis.yml`.
+[![Build Status](https://travis-ci.org/Clinton-Davis/focus_fitness.svg?branch=master)](https://travis-ci.org/Clinton-Davis/focus_fitness) 
 - **Codacy**
 [Codacy](https://www.codacy.com/) is an automated Code Validator that checks the quality of your code after every push to GitHub.
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f491bdf3d67c47b7918d82d4dc5d716f)](https://www.codacy.com/manual/Clinton-Davis/focus_fitness/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Clinton-Davis/focus_fitness&amp;utm_campaign=Badge_Grade)
@@ -533,11 +533,11 @@ I use a package called [autopep8](https://pypi.org/project/autopep8/) to guide m
 
  <div align="right">
 
-[Back to Top :arrow_up:](#testing)
+[Back to Top  ↑ ](#testing)
 
 </div>
  <div align="left">
 
-[Back Readme :arrow_left:](#testing)
+[:arrow_left: Back to README](#testing)
 
 </div>
