@@ -11,7 +11,7 @@
     <div class="container ">
         <div class="row">
             <div class="col-md-12 mb-0">
-                <a class="text-wht aw pl-2" href="{% url 'home' %}">Home</a>
+                <a class="text-wht aw pl-2" href="{% url 'home' %}" title="Back to Home Page">Home</a>
                 <span class="mx-2 mb-0 text-wht">/</span>
                 {% if user.is_authenticated %}
                 <a class="text-wht aw pl-2" href="{% url 'blog:create' %}">Create</a>
@@ -164,7 +164,8 @@
                                             <tr>
                                                 <th scope="row" class="aw text-center">Members</th>
                                                 <td>This is for the members how would like to post there first blog, or
-                                                    ask a uestion or just tell us how you getting on with your training.
+                                                    ask a question or just tell us how you getting on with your
+                                                    training.
                                                 </td>
                                             </tr>
                                             <tr>

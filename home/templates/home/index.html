@@ -57,12 +57,9 @@
 </section>
 <!--Floating Block-->
 
-
-
-
 <section id="section2">
     <div class="feature-container card-group">
-        <div class="card ">
+        <div class="card" title="To Training Programs">
             <a href="{% url 'programs:list' %}" class="ripple-surface">
                 <img src="{% static 'images/bidman.jpg'%}" class="custom_img card-img-top" alt="BodyBuilder" />
                 <div class="card-body">
@@ -76,7 +73,7 @@
             </a>
         </div>
 
-        <div class="card d-block d-sm-none d-md-none">
+        <div class="card d-block d-sm-none d-md-none" title="To Blogs">
             <a href="{% url 'blog:list' %}" class="ripple-surface">
                 <img src="{% static 'images/wallpaperflare_blong.jpg' %}" class="custom_img card-img-top"
                     alt="Lady in gym" />
@@ -87,7 +84,7 @@
         </div>
 
 
-        <div class="card d-none d-sm-block d-md-block">
+        <div class="card d-none d-sm-block d-md-block" title="To Blogs">
             <a href="{% url 'blog:list' %}" class="ripple-surface">
                 <div class="card-body">
                     {% include "home/includes/community_blog.html" %}
@@ -97,7 +94,7 @@
             </a>
         </div>
 
-        <div class="card">
+        <div class="card" title="To Focus Shop">
             <a href="{% url 'products:products' %}" class="ripple-surface">
                 <img src="{% static 'images/pool-man.jpg' %}" class="custom_img card-img-top" alt="Thin man in pool" />
                 <div class="card-body">
@@ -168,7 +165,7 @@
     <div class="row row justify-content-center ">
         {% for product in sales_items %}
         {% if product.in_stock == True %}
-        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3" title="Get Details for {{ product.name|title }}">
             <div class="card w-100 h-100 border-1">
                 {% if product.image %}
                 <a class="ripple-surface   mx-auto" href="{% url 'products:product_detail' product.id %}">
@@ -182,7 +179,7 @@
                 </a>
                 {% endif %}
                 <div class="card-body pb-0">
-                    <p class="text-center">{{ product.name }}</p>
+                    <p class="text-center">{{ product.name|title }}</p>
                 </div>
                 <div class="card-footer bg-white pt-0 border-0 text-center">
                     <div class="row ">
@@ -228,7 +225,7 @@
                     <div class="carousel-inner text-wht">
                         {% for blog in feature_blog %}
                         <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}"
-                            id="slide{{ forloop.counter }} ">
+                            id="slide{{ forloop.counter }}" title="Read Blog {{ blog.title|title }}">
                             <a href="{{ blog.get_absolute_url }}">
                                 <img class="d-block carosel-img mx-auto" src="{{ blog.thumbnail.url }}"
                                     alt="First slide">

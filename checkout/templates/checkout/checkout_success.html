@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-md-12 mb-0">
                 {% if user.is_authenticated %}
-                <a class="text-wht aw pl-2" href="{% url 'profiles:profile'  %}">Dashboard</a>
+                <a class="text-wht aw pl-2" href="{% url 'profiles:profile'  %}" title="Back to Dashboard">Dashboard</a>
                 {% else %}
                 <a class="text-wht aw pl-2" href="{% url 'home' %}">Home</a>
                 {% endif %}

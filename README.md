@@ -147,7 +147,8 @@ For a more detailed look at web site structure and page flow see Structure Diagr
 I have used a 3rd Party package called [Allauth](https://django-allauth.readthedocs.io/en/latest/) to take care of the logic. 
 The users are asked to fill in the Registration with fields ‘Email’, ‘Username’, and password, this is done twice to make sure they are both the same.
 You may also use the social account sign up. Facebook and Google.
-**Login.**
+
+**Sign Up and Login.**
 You may use the social account buttons to sign in or use the form.
 The form has two fields, ‘email’ and ‘Password’  and a remember me button and a link to your if you have forgotten your password.
 All of [Allauth](https://django-allauth.readthedocs.io/en/latest/) HTML  pages have been customised to fit the themes of the site.
@@ -370,25 +371,28 @@ Each category is colour coded.
 This is for our users to connect with each other, write blogs about how they are enjoying one of our Focus Products or how a Membership program is working for them. If they have a question or comments on how to do anything they will be answered by our Focus Trainers in this category. By leaving comments on their blog post.
 
   - **Covid-19**
-In this category, we will take about everything COVID and gym-related, its managing training in lockdowns and gym hygiene. 
+In this category, we will take about everything COVID and gym-related, its managing training in lockdowns and gym hygiene.
 
   - **Dieting**
-All blog post that are diet-related, tips tricks and pitfalls 
+All blog post that are diet-related, tips tricks and pitfalls
 
   - **Endurance**
 All blogs that focus on the endurance training side of thing, Running, Cycling, Swimming
 Strength Training
 This is a post the have to do with Resistance training, bodybuilding, techniques tips, tricks and pitfalls
 
+  - **Strength Training**
+All blogs that have to do with resistance training, bodybuilding, techniques, tips, tricks and pitfalls
   - **Recovery**
 All blogs to do with the recovery side of the gym. Sleep, post-gym products, tips, tricks and pitfalls.
 
 - **Blogs**
 This is where all the other blogs live.
 All blog borders are colour coded as per there category, to make it easer to see what category a blog is at a glance.
+They are ordered, newest to oldest.
 
 - **Members Blogs**
-Underneath the Category selection box is the Members blogs, a list of all the user member’s blogs shows up here. 
+Underneath the Category selection box is the Members blogs, a list of all the user member’s blogs shows up here.
 
 <details>
 <summary>Blog List Wireframes (Click for image)</summary>
@@ -416,13 +420,14 @@ Only logged in users may see the Members posts
 #### **Blog Detail Page**
 
 Once the user has selected the blog post they would like to read, They are redirected to the blog detail page. blog_detail.html.
-The blog post with the only element on this page. Witch in include the
+The blog post with the only element on this page.
+Witch in include:
 
 - Blogs Title
-- The author
-- The blog post its self
+- Blog author
+- Blog Content
 - The amount of views, likes, and comments the post have
-- Also the age of the blog post.
+- When the blog was created.
 
 Once the user has finished reading the post there is a section where a user may ‘like’ or leave a comment.
 Note only logged in user may use this feature.
@@ -469,10 +474,10 @@ Each title is a link to the blog and you can see the amount of likes, comments, 
 #### **Memberships**
 
 Are an important part of how Focus Fitness works. There are 2 types of memberships
-Free and Pro
-The Free memberships are given to anyone who joins Focus by logging in. when you log in you profile is made and free status is given.
-Professional membership is a monthly subscription.
-To become a Pro member Click the ‘Select button on the card and you will be redirected to the members-payment page.
+*Free* and *Professional*
+The *Free* memberships are given to anyone who joins Focus by logging in. When you log in you profile is made and free status is given.
+*Professional* membership is a monthly subscription.
+To become a *Professional* member Click the ‘Select button on the card and you will be redirected to the members-payment page.
 Simple Center block design with the memberships details and monthly amount that will be billed.
 Below is the Stripe Payment Field.
 To Cancel a Subscription, it can be done viva the Dashboard in the subscription tab.
@@ -491,10 +496,12 @@ Only Subscribed users may use this app.
 The Programs page is where the user can find the programs they have subscribed to.
 The page is center based with horizontal cards stacked on top of each other.
 They consist of the different categories.
-Endurance Training
-Static Stretching
-Strength training
-Dieting
+
+- Endurance Training
+- Static Stretching
+- Strength training
+- Dieting
+
 More can be added in the administration section.
 
 ##### Programs Details
@@ -545,7 +552,7 @@ It is divided into 3 parts.
 
 #### **About**
 
-The About page h- as a centre block format with a heading and information about Focus Fitness.
+The About page has a centre block format with a heading and information about Focus Fitness.
 
 <details>
 <summary>About Page Wireframes (Click for image)</summary>
@@ -555,10 +562,9 @@ The About page h- as a centre block format with a heading and information about 
 </p>
 </details>
 
-
 #### **Contact Us**
 
-The About page h- as a centre block format with a heading and information about Focus Fitness.
+The About page has a centre block format with a heading and information about Focus Fitness.
 
 <details>
 <summary>About Page Wireframes (Click for image)</summary>
@@ -570,7 +576,10 @@ The About page h- as a centre block format with a heading and information about 
 </details>
 
 #### **Data Base**
-For this Project we used Sqlite3db in development and Postgressdb hosted in HerokU in production
+
+For this Project we used Sqlite3db in development and Postgressdb hosted in HerokU in production.
+
+Here is a sceama
 
 <details>
 <summary>Chow Schema (Click for image)</summary>
@@ -742,7 +751,7 @@ The products are clickable and will take you to that products detailed page, whe
 - Hidden Dynamically
 If there are no special offers the section will be hidden.
 
-*Section 5*
+- *Section 5*
 
 - Featured Blogs
 All the featured blogs are shown here with the help of Bootstrap's Carousel
