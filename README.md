@@ -34,10 +34,8 @@
 >5. [**Technologies**](#technologies)
 >6. [**Features**](#features)
 >7. [**Testing**](#testing)
->8. [**Bugs**](#bugs)
->9. [**Deployment**](#deployment)
->
->10. [**Credits & Acknowledgements**](#credits)
+>8. [**Deployment**](#deployment)
+>9. [**Credits & Acknowledgements**](#credits)
 
 ---
 
@@ -945,7 +943,7 @@ I would like to have my Newsletters email list auto upload to an email service t
 
 ## Testing
 
-Testing, Bugs and Validation information and be fond at [Testing.md](findpath)
+Testing, Bugs and Validation information and be fond at [Testing.md](https://github.com/Clinton-Davis/focus_fitness/blob/master/testing.md)
 
 ---
 
@@ -958,7 +956,7 @@ To be able to clone this project there are a few things you will need.
 - [Git](https://git-scm.com/) - Install Git, installation docs and be fond [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - [Pip](https://pip.pypa.io/en/stable/installing/) - install pip, installation docs can be fond [here](https://pip.pypa.io/en/stable/installing/)
 
-Once you have [Git](https://git-scm.com/),  [Pip](https://pip.pypa.io/en/stable/installing/) and  [virtualenv](https://pypi.org/project/virtualenv/) installed.
+Once you have [Git](https://git-scm.com/) and [Pip](https://pip.pypa.io/en/stable/installing/) installed.
 
 1. From the terminal create the directory you want to work in.
 
@@ -966,11 +964,11 @@ Once you have [Git](https://git-scm.com/),  [Pip](https://pip.pypa.io/en/stable/
 $ mkdir <filename>
  ```
 
-2. Cd into Directory
+2. Change into Directory
 
 ```bash
 & cd <filename>
-```
+ ```
 
 3. Install [virtualenv](https://pypi.org/project/virtualenv/)
 
@@ -997,7 +995,7 @@ $ mkdir <filename>
 
 ```bash
 $ git clone https://github.com/Clinton-Davis/focus_fitness.git
-```
+ ```
 
 7. In the focus directory add a `.env` and `.gitignore`
 
@@ -1021,7 +1019,7 @@ $ git clone https://github.com/Clinton-Davis/focus_fitness.git
 
 ```bash
 $ pip install -r requirements.txt
-```
+ ```
 
 11. Open up blog.forms and comment out lines 8 and 9
 
@@ -1034,26 +1032,26 @@ $ pip install -r requirements.txt
 
 ```bash
 & python manage.py makemirgrations
-```
+ ```
 
 13. Then migrate
 
 ```bash
 & python manage.py migrate
-```
+ ```
 
 14. Once the migrations are complete you can uncomment blog.forms
 
 ```python
 for item in choices:
     choices_list.append(item)
-```
+ ```
 
 15. Before you create a superuser you need to load the membership fixturess.
 
 ```bash
 $ python manage.py loaddata memberships.json
-```
+ ```
 
 >The resson for this is a signal is used to assign a membership to a user when they are created, If there is no a memberships it cant asign anything and causes a error.
 
@@ -1061,19 +1059,19 @@ $ python manage.py loaddata memberships.json
 
 ```bash
 $ python manage.py loaddata products.json
-```
+ ```
 
 17. Create superuser
 
 ```bash
 $ python manage.py createsuperuser.
-```
+ ```
 
-18. Run project with 
+18. Run project with
 
 ```bash
 $ python manage.py runserver.
-```
+ ```
 
 ### Heroku To Deployment
 
@@ -1103,32 +1101,32 @@ You will get in them when you setup your  [AWS bucket](https://aws.amazon.com/s3
 Guniorn a (WSGI HTTP Server), dj-database to connect with PostgresSQL and Psycopg(PostgreSQL driver)
 ```bash
 $ pip install Gunicorn , dj-database , Psycopg
-```
+ ```
 
 12. In your Terminal. Navigate to your directory using.
 Login to Heroku using the Terminal
 
 ```bash
 $ heroku login
-```
+ ```
 
 13. Create a `Procfile` This file tells heroku how to run the project
 
 ```bash
 $ web: gunicorn focus_fitness.wsgi:application
-```
+ ```
 
 14. Freeze your requirements
 
 ```bash
 $ pip freeze > requirements.txt
-```
+ ```
 
 15. Add files and commit to github using
 
 ```bash
 $ git add then git commit -m "You message"
-```
+ ```
 
 Now that heroku is ready to go
 
@@ -1168,35 +1166,20 @@ else:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
-```
+ ```
 
 This will make the application use Sqlite3 for development and postges for production
 Be sure to change the allowed host to for sircurty.
- 
+
 18. Now once that is done you are ready to push to heroku
 
 ```bash
 $ git push heroku master
-```
+ ```
 
 19. Once the app is successfully deployed to heroku. Make migrations to the postgres db following steps 10-17 in [local deployment.](#local-development)
 
 You are up and running.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
  <div align="right">
 
@@ -1271,6 +1254,6 @@ I would like to say thank you to everyone who has helped me throughout this proj
 
  <div align="right">
 
-[Back to Top  ↑ ](#table-of-contents)
+[:arrow_up: Back to Top ](#table-of-contents)
 
 </div>

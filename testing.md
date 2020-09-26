@@ -533,11 +533,11 @@ I use a package called [autopep8](https://pypi.org/project/autopep8/) to guide m
 
  <div align="right">
 
-[Back to Top  ↑ ](#testing)
+[Back to Top :arrow_up: ](#testing)
 
 </div>
  <div align="left">
 
-[:arrow_left: Back to README](#testing)
+[:arrow_left: Back to README](https://github.com/Clinton-Davis/focus_fitness/blob/master/README.md)
 
 </div>
