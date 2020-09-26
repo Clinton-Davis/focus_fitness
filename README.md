@@ -26,24 +26,10 @@
     - [**Navigation**](#navigation)
     - [**Home Page**](#home-page)
     - [**Focus Shop**](#focus-shop)
-      - [*Detailed View*](#detailed-view)
-      - [*Cart*](#cart)
-      - [*Checkout*](#checkout)
-      - [*Checkout Success*](#checkout-success)
-
     - [**Blog**](#blog)
-      - [*Blog Categories Page*](#blogcategories)
-      - [*Blog Details*](#blogdetails)
-      - [*Blog Create and Edit**](#blogcreate)
-      - [*Blog Authors Page*](#blog_authors_page)
-
     - [**Programs**](#programs)
-      - [*Program Details*](#program-details)
     - [**Memberships**](#Membership)
-      - [*Program Details*](#program_details)
-
     - [**Workouts**](#workouts)
-
     - [**Dashboard**](#dashboard)
     - [**About Page**](#about-page)
     - [**Contact Page**](#contact-page)
@@ -96,7 +82,10 @@ Users would be able to subscribe to our training programs and also be able to do
 
 ---
 
-[Back to Top](#table-of-contents)
+<div align="right">
+
+[Back to Top :arrow_up:](#table-of-contents)
+</div>
 
 ## Scope
 
@@ -121,7 +110,10 @@ And be able to change users membership level.
 
 ---
 
-[Back to Top](#table-of-contents)
+<div align="right">
+
+[Back to Top :arrow_up:](#table-of-contents)
+</div>
 
 ## Structure
 
@@ -172,9 +164,9 @@ Full Page background with a center-block design.
 
 The navbar is sticky (fixed) to top of each page, This makes navigation easer and qicker.
 It is divided into 3 part
-*Left - Focus Fitness Logo* -  Clickable link to the home page from anywhere on the web site
-*Center - Page navigation* - This is the main page navigation, this with change if the users is logged or not.
-*Right -User login and Cart* - This changes if the user is login or not.
+- **Left - Focus Fitness Logo** -  Clickable link to the home page from anywhere on the web site
+- **Center - Page navigation** - This is the main page navigation, this with change if the users is logged or not.
+- **Right -User login and Cart** - This changes if the user is login or not.
 
 ##### The Footer
 
@@ -196,7 +188,10 @@ On the desktop they sit next to each. On mobile the part 2 and 3 are next to eac
 </details>
 
 ---
-[Back to Top](#table-of-contents)
+<div align="right">
+
+[Back to Top :arrow_up:](#table-of-contents)
+</div>
 
 #### **Home Page**
 
@@ -236,7 +231,10 @@ Here are displayed all the featured blog, again clickable and will take to you t
 </details>
 
 ---
-[Back to Top](#table-of-contents)
+<div align="right">
+
+[Back to Top :arrow_up:](#table-of-contents)
+</div>
 
 ### **Focus Shop**
 
@@ -247,7 +245,6 @@ Here are displayed all the featured blog, again clickable and will take to you t
 
 *Product Filtering area*
 The category selectors are coloured in the supplementary colour to distinguish them apart at a glance
-
 On the right hand side is another way to get back to default ordering and shows you how many products are in the search
 
 *Product cards*
@@ -313,13 +310,11 @@ The Keep shopping button will take you back to the shop, and checkout will take 
 Full page layout with the user order form to complete. Contact details and delivery address.
 Where is a Save information to profile button that if pressed the information will be autofilled next time they use the shore.
 
-A Stripe payment system is inplace and takes all major cards.
+A [Stripe](https://stripe.com/) payment system is inplace and takes all major cards.
 The numbers below are used to test the Stripe Payment software.
 
 - Card number - 4242 4242 4242 4242
-
 - CVC - Any 3 digit number.
-
 - Expire date - Any date in the future
 
 If you need to adjust the cart there is an Adjust cart button to take you back or Complete Order.
@@ -350,7 +345,10 @@ Clicking the receipt will sent to a new page with you stripe receipt
 </details>
 
 ---
-[Back to Top](#table-of-contents)
+<div align="right">
+
+[Back to Top :arrow_up:](#table-of-contents)
+</div>
 
 ### **Blog**
 
@@ -577,21 +575,24 @@ The About page has a centre block format with a heading and information about Fo
 
 #### **Data Base**
 
-For this Project we used Sqlite3db in development and Postgressdb hosted in HerokU in production.
-
-Here is a sceama
+For this Project we used [SQLite](https://www.sqlite.org/index.html) in development  because it is integrated as default in [Django](https://www.djangoproject.com/) and [Heroku Postgres](https://www.heroku.com/postgres) in production
+[AWS S3](https://aws.amazon.com/s3/) buckets are used to hold all the Static Files.
 
 <details>
-<summary>Chow Schema (Click for image)</summary>
+<summary>Focus Fitness Schema (Click for image)</summary>
 
 <p align="center">
-<img src="static/wireframes/schema.png">
+
+![Focus schema](media/wireframes/focus_schema.png)
 </p>
 </details>
 
 ---
 
-[Back to Top](#table-of-contents)
+<div align="right">
+
+[Back to Top :arrow_up:](#table-of-contents)
+</div>
 
 ## Surface
 
@@ -615,31 +616,19 @@ The Secondary is [Audiowide](https://fonts.google.com/specimen/Audiowide") is us
 The colour scheme is all about contrast, there are a lot a dark background with white text and bold bright colours used sparingly throughout the site.
 The Supplementary colours ![#1bd87d](https://placehold.it/15/1bd87d/000000?text=+) ![#e7313f](https://placehold.it/15/e7313f/000000?text=+)  ![#e5ce21](https://placehold.it/15/e5ce21/000000?text=+)  ![#0275d8](https://placehold.it/15/0275d8/000000?text=+)  follow the Olympic weightlifting colours standard. The colours are bold and work with the theme.
 
----
 
 #### Images
 
-Images are used extensively. The pictures we chose are all gym and fitness related. We used them a background in most of the site. We darkened the original pictures to fix in with the colour schema.
-
-All images where source using [Unsplash](https://unsplash.com/) and have a CC licence. 
-A list of all the pictures can be fond (make link)here
-
----
-
-The Header and Footer image of a wooden floor has been adjusted to give it a deep red colour. The colour complements the background image.
-
-<details>
-<summary>Header and Footer Image</summary>
-
-<p align="center">
-<img src="static/images/wood-Dark-luca-ruegg-crop.jpg">
-
-</p>
-</details>
+Images are used extensively. The images chosen are all gym and fitness related. They are used as a background in most of the site. Original pictures were darkened to fit with the theme of the project.
+All images were found on  [Unsplash](https://unsplash.com/) and have a CC licence.
+A list of all the photographers can be found [here](#media)
 
 ---
 
-[Back to Top](#table-of-contents)
+<div align="right">
+
+[Back to Top :arrow_up:](#table-of-contents)
+</div>
 
 ## Technologies
 
@@ -664,31 +653,32 @@ The Header and Footer image of a wooden floor has been adjusted to give it a dee
 
 - [Font Awesome](https://fontawesome.com/) ~ Font Awesome icons
 - [icons8](https://icons8.com/icons/set/instagram-logo) ~ Icons8 icons
-- [Codacy](https://app.codacy.com/) ~ Automated Code Review
-- [cloudinary](https://cloudinary.com/) ~  Cloud-based image and video management platform
+- [Cloudinary](https://cloudinary.com/) ~  Cloud-based image and video management platform
 - [GitHub](https://github.com/) ~ Distributed version control and source code management (SCM) functionality of Git, plus its own features.
 - [Git](https://git-scm.com/) ~ Distributed version control system
 - [Figma](https://www.figma.com/) ~ A digital design and prototyping tool. It is a UI and UX design application that you can use to create websites, apps.
 - [Slack](https://slack.com/intl/en-ie/) ~ A workspaces allowing you to organize communications by channels for group discussions and allows for private messages to share information.
-- [Website Responsive Testing](https://responsivetesttool.com) ~ A means of testing the website or URL from different devices.
-[autopep8](https://pypi.org/project/autopep8/) ~ A tool that automatically formats Python code to conform to the PEP 8 style guide
-- [W3 Validator](https://validator.w3.org/nu/) ~ The Markup Validation Service.
+- [autopep8](https://pypi.org/project/autopep8/) ~ A tool that automatically formats Python code to conform to the PEP 8 style guide
+- [Codacy](https://app.codacy.com/) ~ Automated Code Review
+- [W3 Validator](https://validator.w3.org/nu/) ~ The HTML Validation Service.
 - [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) ~ A CSS validator checks your Cascading Style Sheets to make sure that they comply with the CSS standards set by the W3 Consortium.
 - [TinyPNG](https://tinypng.com/) ~ A smart lossy compression technique to reduce the file size of your PNG files.
 - [Google Fonts](https://fonts.google.com/) ~ A library free licensed font families, an interactive web directory for browsing the library.
-- [CSSMatric](https://cssmatic.com/) ~ Automatically generates the code and shows you the effects in real time.
 
 ---
 
-[Back to Top](#table-of-contents)
+<div align="right">
+
+[Back to Top :arrow_up:](#table-of-contents)
+</div>
 
 ## Features
 
 ### Existing Features
 
-##### Navbar
+#### Navbar
 
-- Changes dymamicaly
+- Changes Dymamicaly
 This changes depending on the membership status of the user.
 If the user is not logged in it shows the basic menu with signup/Login and shopping cart
 ![admin_no_user](media/wireframes/admin_no_user.png)
@@ -702,7 +692,7 @@ Dashboard, Programs, Logout.
 
 #### Footer
 
-- Changes dymamicaly.
+- Footer Navigation Changes Dymamicaly.
 The footer is dynamic and changes if the user is logging in or not. If not the menu button say login, *Blog*, *Shop*, *Sign up*,
 If the user is logged in the menu changes to: 
 *Subscribes*, *Blog*, *Shop*, *Logout*.
@@ -732,7 +722,7 @@ The Back to the top button is global but you see it mostly in the footer, This i
 
 *Section-2*
 
-The tiled center block.
+- The tiled center block.
 The 3 tiles are links to different parts of the site. They are clickable and lead to Training Programs, Blogs and the Focus Shop.
 
 *Section 3*
@@ -759,115 +749,133 @@ All the featured blogs are shown here with the help of Bootstrap's Carousel
 The blogs are clickable and will take you to the blog details where you can read it.
 Controlled in the admin All featured blogs are controlled in the admin area.
 
-##### Blog Page
+ <div align="right">
 
-- Featured Blogs The same feature that is used in Home page Section 5 is used in the blog list page.
-- Search Blogs
-The search bar in the blogs section will look for a matching word or words in either the name or content of the blogs. If there are any matches they will be displayed in the blog search page. If there are none there is a link back to the blog page.
+[Back to Top :arrow_up:](#testing)
+</div>
 
-- Colour Code Categories.
+#### Blog Page
+
+- **Featured** **Blogs**
+The same feature that is used in Home page Section 5 is used in the blog list page.
+- **Search Blogs**
+The search bar in the blogs section will look for a matching word or words in either the name or content of the blogs. If there are any Matches will generate a results page. If there are none there is a link back to the blog page.
+
+- **Colour Code Categories**.
 The Categories in the blog menu are colour coded to make it easier to distinguish the blogs. Each blog post - has a coloured border that matches the category colour.
-- Likes, Views and Comments
+- **Likes, Views and Comments**
 Every time a logged on user clicks and views a blog it is recorded and shown on the blogs views counter. If a blog is liked it shows up in the thumbs up count. And the same if a blog is commented on.
-- Members Blog Block
+- **Members Blog section**
 The members block is where all the members blog will be posted.
-- Members block restricted access
+- Members blogs restricted access
 Only logged in users may view the member blogs
-- Find all blog from author
+- **Find all blog from author**
 When you are on the blog's detailed page clicking on the authors name will bring you to their blogs page. Here you will be able to see all the blogs they have written.
 All the blogs in their page are ordered from newest to oldest.
-- Commenting on Blogs
+- **Commenting on Blogs**
 This way the users can connect with each other, ask questions, leave answers, or just comment.
-*Creating and Editing blogs*
-- User access
+- **Creating and Editing blogs**
+Only logged in users may create or comment on blogs
+- **User access**
 Only login users may create or comment on blogs
 - Blog Author Control
 Only the blogs authors may edit there blogs
-- Ckeditor
+- **Ckeditor ( Word Processors)**
 Ckeditor is used to create or edit blogs, this gives the user a lovely interface to write, link, and add pictures to a blog post.
--Controlled from Admin
-Blogs can be written and edited front he admin area, If blogs are not inline with the rules if can be deleted without authors permission.
+- **Controlled from Admin**
+Blogs can be written and edited front the admin area. If blogs are not inline with the rules and code of conduct, they can be deleted without the author's permission.
+
+ <div align="right">
+
+[Back to Top :arrow_up:](#table-of-contents)
+</div>
 
 ### Focus Shop
 
-- Product Filtering
-You can filter the products in the shop with category selectors 
-All products/ Activewaer & Eqp/ Supplements /Special offers. This makes it quicker to find the product you are looking for.
+- **Product** **Filtering**
+You can filter the products in the shop with category selectors:
+  - All products - lets you sort by price, lowest to highest or by category in an alphabetical
+  - Activewaer & EQP - lets you sort by individual Activewear & EQP categories
+  - Supplements - let you sort by individual supplements categories
+  - Special Offers - shows you all the Special Offers.
 
-- Sort By Selector
-Here you can sort the products by
-Price -(low-high) or (high-low)
-Name - (A-Z) or (Z-A)
-Category (A-Z) or (Z-A)
-Rating (low-high) or (high-low)
+This makes it quicker to find the product you are looking for.
 
-- Product cards
+- **Sort By Selector**
+Here you can sort the products by:
+  - *Price* -(low-high) or (high-low)
+  - *Name* - (A-Z) or (Z-A)
+  - *Category* (A-Z) or (Z-A)
+  - *Rating* (low-high) or (high-low)
+
+- **Product cards**
 The Product cards are clickable and will take you to the details product page. If the product does not have an image a No image image will take its place.
 
-- Out of Stock
+- **Out of Stock**
 You can make a product out of stack from the admin area.
-- Controlled from Admin
-The admin area is the place where you can add, edit or delete products from your inventory. Only Staff members may do this.
-- Reviews
+- **Controlled from Admin**
+The admin area is the place where you can add, edit or delete products from your inventory. Only authorised users may do this.
+- **Reviews**
 Products can get reviewed by logged in users, this is done on the product details page.
-- Stars Rating
+- **Stars Rating**
 Products can get a star rating by logged in user, each review and rate is listed with the product, A overall rating is made using this. The overall rating is displayed with the product on the product card.
 
-- Search Bar
-The search Bar will look for a matching word or words in either the name or description of the products.
-- Special offers
-Products are put on special offer from the admin area. A ‘was’ price tells the user the old price. It will be hidden if the ‘was’ price is smaller than the price. 
-- Quantity selector
-Lets you add more items to you order
-- Size selector
+- **Search Bar**
+The search bar will look for a matching word or words in either the name or description of the products.
+- **Special offers**
+Products are put on special offer from the admin area. A ‘was’ price tells the user the old price. It will be hidden if the ‘was’ price is smaller than the price.
+- **Quantity selector**
+Lets you add more items to you order.
+- **Size selector**
 Lets the user choose a size if the product h- as a size, otherwise this will be hidden.
-- Shopping Cart icon
+- **Shopping Cart Icon**
 The Shopping Cart icon in the top right next to the users username, is all ways shown. If the cart is empty it says ‘Empty’ if there are items in the cart, There is a running grand total that turns green and including all the discounts, charges and taxes, No surprises at the checkout.
-- Add to Cart Message
+- **Add to Cart Message**
 When you add an item to the cart, a message will appear letting you know it was successful, and give the user a quick way to checkout with a checkout button.
-- Detailed price breakdown
+- **Detailed Price Breakdown**
 In the cart section of the shop, a breakdown of all the charges are on the right, so you know how much you paid for what.
-- Adjust Cart
+- **Adjust Cart**
 The user can adjust or delete  from the cart if they have made a mistake.
-- Secure Payment method
-Using Stripe is a secure way to place your orders
-- Order receipt emailed
+- **Secure Payment method**
+Using [Stripe](https://stripe.com) is a secure way to place your orders
+- **Order Receipt Emailed**
 Once the order has been submitted and Stripe receives payment a webhook is sent with back to Focus, once we have received this, we send an email with all the order details and the Stripe Payment Receipt.
-- Backup Oder with Webhook.
+- **Backup Oder with Webhook**
 If for some reason the user leaves the page before the order is complete but the payment goes through, the billing details and shipping address is sent with the payment details this way we can get them in the webhooks.
 
 ### Memberships
 
-- Memberships
+- **Memberships**
 When a new use logs in for the first time a free membership is given to them.
-- Members access
+- **Members access**
 members grains you asses to:
-  - Writing Blog
-Commenting rating and review on blogs post and Products.
-  - The Dashboard
-  - Program (Pro only)
-- Subscriptions
+  - *Writing Blog*
+  - *Commenting on blog posts*
+  - *review and rating products*
+  - *The Dashboard*
+  - *Program (Pro only)*
+- **Subscriptions**
 A user can become a pro member by subscribing to Focus
-- Stripe Subscription
-Using Stripe Subscriptions make sure that the user is charged, and sends a webhook motifinig of that payment and date. We have this we send an email letting the user know that the subscription has been successful.
-- Monthly Receipt emails
+- **Stripe Subscription**
+Using [Stripe](https://stripe.com) subscriptions make sure that the user is charged, and sends a webhook motifinig of that payment and date. We have this we send an email letting the user know that the subscription has been successful.
+- **Monthly Receipt emails**
 With the webhooks from Stripe whenever a payment is made we send the user an emailed receipt.
 
 ### Programs
 
-- Controlled from Admin
+- **Controlled from Admin**
 All programs are added, edited and deleted from the admin only.
-- Dynamically added
+- **Dynamically Added/Edited**
 When new context or existing content is added or edited with will automatically be changed on the programs page.
 
 ### WorkOuts
 
-- Controlled from Admin
+- **Controlled from Admin**
 Workouts are added from the admin area only.
-- Dynamically added
+- **Dynamically Added/Edited**
 When a new Workout is  added it will automatically be added to the programs workout list.
-- Cloudinary
-The video files itself is Not stored in the Focus database they are linked with a url from a video hosting server. Focus fitness uses Cloudinary.
+- **Cloudinary**
+The video files itself is Not stored in the Focus database they are linked with a url from a video hosting server. Focus fitness uses [Cloudinary](https://cloudinary.com/).
 
 <details>
 <summary>How To add a video</summary>
@@ -885,14 +893,14 @@ The video files itself is Not stored in the Focus database they are linked with 
 
 ### DashBoard
 
-- Change User Password
+- **Change User Password**
 In the profile admin section the user can change their password
 - Change User Delivery Details
-- Membership select access
+- **Membership Select Access**
 The user can see what level of membership they are at, and date due to the next payment if applicable.
-- Users Blogs
+- **Users Blogs**
 Here you can see all the blogs the user has written, and if you haven’t written any yet, there is a link to start.
-- Orders History
+- **Orders History**
 A list of all the previous orders that the use has made in the shop
 Arranged from news to oldest.
 
@@ -906,155 +914,20 @@ A workout log page that you fill out in your workouts to keep track of your prog
 - Newsletter marketing manager
 I would like to have my Newsletters email list auto upload to an email service that takes care of the mass emails
 
----
+ <div align="right">
 
-[Back to Top](#table-of-contents)
+[Back to Top :arrow_up:](#table-of-contents)
 
-## Bugs
+</div>
 
-#### Bootstrap 4 Carousel Bug
+-----
 
-I had a bug trying to get Bootstrap 4 carousel to work in a for loop. Because of the way the carousel works one of the sides has to have the `.active` class set on it.
-**Fix**
+## Testing
 
-> After a bit of looking on the internet the best way I found was to use a template within the carousel itself and put the .active class in a for loop with a counter so then the counter = 1 the active is added.
+Testing, Bugs and Validation information and be fond at [Testing.md](findpath)
 
-```HTML
+----
 
- <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}" id=”slide{{ forloop.counter }} ></div>
-
- ```
-
-#### Featured Blogs
-
-Could not get the carousel to work for featured blogs.
-I was using a for loop to get the blog post to iterate through the list of blogs.
-Underneath this I was using a `{if statement}` to pick out the featured post from the others.
-
-```Python
-{% for blogs in all_blogs %}
-{% if blogs.featured %}
-Bootstrap carousel
-{% else %}
-all other blogs
-{% endfor %}
-But it was not working.
- ```
-
-**Fix**
-> When I tested the carousel to see if that was the problem, it worked fine.
-I tested the if statement by adding `{{ blogs.featured }}` straight into the html and a `True False True False` was returned so I know the if statement was working.
-To make the carousel work with looped objects, you have to loop the counter with 1 being active. [Bootstrap 4 Carousel Bug](#bootstrap-4-carousel-bug) This was causing my if statement to not work.
-I went back to the `BlogListView` views and added a quarry set
- `feature_blog = Blog.objects.filter(featured=True)` and added it to the context
-This way I would be able to have the carousel separate to the all_blogs loop.
-This way get all blogs except for featured blogs and the carousel worked with featured blogs.
-
-```Python
-{% for blogs in featured_blogs %}
-Bootstrap carousel
-{% endfor %}
-{% for blogs in all_blogs %}
-{% if blog.featuered !=true %}
-{% endif %}
-{% endfor %}
- ```
-
-#### Landscape Orientation
-
-On the Home page in ‘Landscape orientation’, Section 2 was covering section 1’s navigation buttons. Because I have section 2 overlapping some of section 1 buttons where getting covered
-**Fit**
-> I fond an anwser in [CSS-TRICKS](https://css-tricks.com/snippets/css/media-queries-for-standard-devices/) media query to fix this issue, using This code I was able to control the height of section-1 as so it only did this on landscape orientated devices. 
-This gives section1 enough room by giving it a height of 147vh.
-
-```CSS
-@media only screen and (min-device-width: 320px)
-and (max-device-width: 568px)
-and (-webkit-min-device-pixel-ratio: 2)
-and (orientation: landscape) {
-  #section1-pic {
-    height: 147vh;
-  }
-}
- ```
-
-> I realize this solutions is limited to certain screen sizes of
- (min-device-width: 375px) and (max-device-width: 667px)
-(min-device-width: 320px) and (max-device-width: 568px)
-(min-device-width: 375px) and (max-device-width: 812px)
-Because of the design of the webpage I’m confident that 90% of users will use the app in portrait view.
-
----
-
-#### Cancel Subscription
-
-'Cancel my Subscription’ button error.
-When Running the test: Check ‘Cancel Subscription’ button works’
-I was getting a error saying `Not a valid namespace`
-When refactoring my code and changing the memberships urls to have a namespace I  forgot to change the `href` in the anchor tag, this bug was picked up during my manual testing.
-**Fix**
-> Added the namespace into the href
-
-```HTML
-
-<a href=”{% url 'memberships:cancel' %}”
- ```
-
-#### Stock Items Bug
-
-When running the test: Check if not in stock items are displayed in the special offers section.
-It came to my attention that out of stock products were still being displayed in the special offers page on the home page.
-**Fix**
-> I used an if statement in the template tags to check if the ‘in stock’ was true or false, if true it shows if false it does not.
-
-```python
-
- {% if product.in_stock == True %}
- ```
-#### Was Price Bug
-
-When running the test: Check the ‘was_price’ is smaller than the price and if not check to ‘was’ price is not shown.
-I found a bug that the ‘was_price' was showing even if it was smaller than the ‘price’
-**Fix**
-> I used a if statement in the template tags too much the ‘was_price’ against the ‘price’ if the statement is true the ‘was_price’ is shown.
-
-```python
-{% if product.was_price > product.price %}
- ```
-
-#### Sales Items Bug
-
-When testing the bug [Was Price Bug](#was-price-bug) I found another bug,
-If the ‘Sales Items’ button is unchecked but the product still had a ‘was_price’ on it, the ‘was_price’ was still being displayed
-**Fix**
-> Because I had the logic inplace from the last bug all I had to do was add a ‘and’ connector in the template literal to filter any products where ‘sales_items’ is true.
-
-```python
-{% if product.sales_items == True and product.was_price > product.price %}
- ```
-
-#### Shopping Cart Input Qty
-
-I found a bug in the shopping cart. In the Qty form input, it was possible to type as many numbers as you liked and adjust your cart. This will cause a problem with all the styling and the layout.
-I added `maxlength` to the input and that helped if the user pressed `Return` on the keyboard, it gives a validation error, but if the user types the number and presses the 'Update' button all the products can still be added.
-![cart-bug](media/wireframes/Cart_bug.png)
-As the buttons input attributes `min="1" max="99" maxlength="3"`was being overridden I made a change in the adjust_cart view,
-The original code:
-
-```python
-if quantity > 0:
-  ```
-  
-This was letting any number in above 0
-**Fix**
-
-```python
-if quantity in range(0, 1000)
- ```
-
-> This lets any number between 0 and 1000 anything over this the cart is emptied and returned to the cart view.
-
-[Back to Top](#table-of-contents)
 ## Deployment
 
 I hosted this site using [Heroku](https://www.heroku.com/).
@@ -1063,78 +936,80 @@ Heroku is a container-based cloud Platform - as a Service (PaaS). I used it beca
 
 ### To deploy on Heroku
 
-The Heroku CLI requires Git, the popular version control system. If you don’t already have Git installed, complete the following before proceeding
 
-- [Git installation](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-- [First-time Git setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
+ <div align="right">
 
-<details>
-<summary>Heroku Deployment Steps</summary>
-<br>
-<ol>
-<li> Open Heroku.</li>
-<li> Install the Heroku Command Line Interface (CLI). You use the CLI to manage and scale your applications, provision add-ons, view your application logs, and run your application locally.</li>
-<li> Create an account and navigate to dash dashboard.
-   Click on the _New_ button.
-   Click - _Create New App_.</li>
-<li> Create a corresponding app name that we use to deploy our application. The apps _name_ must be _unique._.</li>
-<li> Pick a server location what is closest to you.</li>
-<li> In your Terminal. Navigate to you directory using.</li>
-<li> Login to Heroku using the Terminal `$ heroku login`</li>
-<li> Create a requirements.txt file: `$ pip3 freeze --local > requirements.txt.`</li>
-<li> Create Procfile: `$ echo web: python app.py > Procfile`</li>
-<li> Add files to Git: `$ git add .` then `git commit -m 'Added reuirements.txt and Procfile'`</li>
-<li> Push to Heroku: `$ git push heroku master`</li>
-<li> Go back to Heroku dashboard and click on the apps name, then on the 'settings' Tab.</li>
-<li> Specify our IP and our port using the 'Reveal Config Vars'</li>
-</ol>
-</details>
+[Back to Top :arrow_up:](#table-of-contents)
 
-<details>
-<summary>Clone to a workstation</summary>
-<br>
-<ol>
-<li>On GitHub, navigate to the main page of the repository.</li>
-<li>Under the repository name, click Clone or download.</li>
-<li>To clone the repository using HTTPS, under "Clone with HTTPS", click.</li>
-<li>To clone the repository using an SSH key, including a certificate issued by your organisation's SSH certificate authority, click Use SSH, then click.</li>
-<li>Open Git Bash.</li>
-<li>Change the current working directory to the location where you want the cloned directory to be.</li>
-<li>Change the current working directory to the location where you want the cloned directory to be.</li>
-<li>Type ‘’’git clone’’’ and then paste the URL you copied in Step 2.</li><li>Press Enter. Your local Clone will be created.</li>
-</ol>
-</details>
+</div>
 
 ---
-
-[Back to Top](#table-of-contents)
 
 ## Credits
 
-##### Code Tutorials
+### Code
 
-- [Julian Nash](https://www.youtube.com/channel/UC5_oFcBFlawLcFCBmU7oNZA) ~ YouTube
-- [Pretty Printed](https://www.youtube.com/channel/UC-QDfvrRIDB6F0bIO4I4HkQ) ~ YouTube
-- John Elder ~ [Codemy](https://codemy.com/about/)
-- Febin George ~ [Udemy](https://www.udemy.com/)
-- Anthony Ngene ~ Code Institute ~ Mentor
-- Leonardo Monteiro Fernandes ~ [Ripple Effect](https://medium.com/@leonardo.monteiro.fernandes/css-techniques-for-material-ripple-effect-3f0ece3062a0)
+- The project’s code was developed by following the [Code Institute](https://codeinstitute.net/) and [Just Django](https://justdjango.com/) video lessons and based on the understanding of the course material, The code has been customized and enhanced to fit with the purpose of the project. In some places the logic is used and in others the code. Some comments with credits have been added where needed.
+- YouTubers Matt from [Just Django](https://justdjango.com/) and John from Codemy.com have been extremely helpful in finding additional information during the building of this project.
+- The [Django Documentation](https://docs.djangoproject.com/en/3.1/) and [Stack Overflow](https://stackoverflow.com/) have been referred to constantly.and super helpful in deciphering the different django debugging error codes.
+- The Ripple Effect on the buttons click is thanks to Leonardo Monteiro Fernandes ~ [Ripple Effect](https://medium.com/@leonardo.monteiro.fernandes/css-techniques-for-material-ripple-effect-3f0ece3062a0)
+- [CSS-Tricks](https://css-tricks.com/snippets/css/media-queries-for-standard-devices/) for iphone and ipad media queries.
 
-##### Media
+#### Content and Media
 
-[Unsplash](https://unsplash.com/) ~ The internet’s source of freely-usable images.
+**Content**
+The Supplements section of the shop is all obtained from [Bodybuilding.com](bodybuilding.com)
+Blogs are taken from [BodyBuilding.com](bodybuilding.com) and [puregym.com](https://www.puregym.com) with credits to:
 
-- [Luca Ruegg](https://unsplash.com/s/photos/luca-ruegg)
-- [Andy Chilton](https://unsplash.com/s/photos/andy-chilton)
-- [BBC Food](https://www.bbc.co.uk/food) ~ for the recipes
+- Cardio for Gym Bros: 5 Conditioning Finishers for Lifters - [Thomas King](https://www.bodybuilding.com/author/jon-erik-kawamoto-cscs-cep)
+- The surprising way exercise helps your heart -[ Hobart Swan](https://www.bodybuilding.com/author/hobart-swan)
+- How To Avoid Rebound Weight Gain - [ATP Science](https://www.bodybuilding.com/author/contributing-writer)
+- 8 Ways To Maximize Your Post-Workout Recovery- [Shannon Clark](https://www.bodybuilding.com/author/shannon-clark)
+- The Importance Of Sleep - [David Robson](https://www.bodybuilding.com/author/david-robson)
+- 4 Reasons You're Not Adding Muscle - [Dan North](https://www.bodybuilding.com/author/dan-north)
+- The Real Fitness Lessons Of Lockdown - [Lee Boyce](https://www.bodybuilding.com/author/lee-boyce)
+- Upper Body Dumbbell Workout -  [@kaypuregym](https://www.instagram.com/kaypuregym/) and [@bethtruemanfit](https://www.instagram.com/bethtruemanfit/)
+- How To Clean Cardio Machines - [puregym.com](https://www.puregym.com).
+- 5 Functional Exercises To Master - [PAUL JOSEPH](https://www.puregym.com/personal-trainer/paul-joseph/)
+- How To Support Your Immune System - [PureGym](https://www.puregym.com/blog/how-to-support-your-immune-system/)
+- Going Plant-Based? Read This First - [puregym.com](https://www.puregym.com)
+- The Program's content is taken from [wikipedia](https://www.wikipedia.org/)
 
----
+**Video Media**
+The workout videos where taken from [YouTube](https://www.youtube.com/) with credits to:
+Home Workout to IMPROVE STAMINA - [LEANSQUAD](https://www.youtube.com/channel/UCI_VPUgIs60oLH162pVhpOQ)
+Stretch | Five-Minute Full Body Stretch - [Bowflex](https://global.bowflex.com/)
+3 Perfect Stretches to Start Your Day! - [Calisthenicmovement](https://www.youtube.com/channel/UCZIIRX8rkNjVpP-oLMHpeDw)
+ Increase Your Mobility & Flexibility- [Calisthenicmovement](https://www.youtube.com/channel/UCZIIRX8rkNjVpP-oLMHpeDw)
+10 Min Sweat Workout - [Pamela Reif](https://www.youtube.com/channel/UChVRfsT_ASBZk10o0An7Ucg)
+How To Start Eating Healthy (LIFE CHANGING) - [CHRIS HERIA](https://www.youtube.com/channel/UCaBqRxHEMomgFU-AkSfodCw)
+5 Best Shoulder Exercises - [CHRIS HERIA](https://www.youtube.com/channel/UCaBqRxHEMomgFU-AkSfodCw)
+Effective Complete arm workout [CHRIS HERIA](https://www.youtube.com/channel/UCaBqRxHEMomgFU-AkSfodCw)
+Lose Belly Fat Effortlessly -[ Gravity Transformation - Fat Loss Experts](https://www.youtube.com/channel/UC0CRYvGlWGlsGxBNgvkUbAg)
+Intermittent Fasting Top 5 Mistakes - [Thomas DeLauer](https://www.youtube.com/channel/UC70SrI3VkT1MXALRtf0pcHg)
+What Happens Inside When You Burn Fat -[ Gravity Transformation - Fat Loss Experts](https://www.youtube.com/channel/UC0CRYvGlWGlsGxBNgvkUbAg)
+Basics of Resistance Training Principle - [ Gravity Transformation - Fat Loss Experts](https://www.youtube.com/channel/UC0CRYvGlWGlsGxBNgvkUbAg)
+Pictures
+The images used for this website are from [Unsplash](https://unsplash.com/) and hold a CC license
+Photo by [Javier Santos Guzmán](https://unsplash.com/@buildingjavier?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/).
+Photos by [Evan Wise](https://unsplash.com/@evanthewise?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/)
+Photos by [Damir Spanic](https://unsplash.com/@spanic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/)
+Photo by [Sven Mieke](https://unsplash.com/@sxoxm?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/)
+Icons by [Icons8](https://icons8.com/)
 
-#### Acknowledgements and Special Thanks
+### Special Thanks and Acknowledgements
 
-To everyone in Slack, especially how it helped me figure the Virtual Environment. My Mentor Anthony Ngene, for pushing me.
-Thank you.
+I would like to say thank you to everyone who has helped me throughout this project.
 
-###### <i>Disclaimer: This project was created for educational use only as part of the Code Institute Full Stack Software Development Course for Milestone 3!</i>
+- My Wife, Thank you so much for all your support and being a sole parent throughout the project you are amazing.
+- My Mentor Anthony Ngene, tips and advice and for pushing me.
+- To the Slack community for their support.
 
-[Back to Top](#table-of-contents)
+
+###### <i>Disclaimer: This project was created for educational use only as part of the Code Institute Full Stack Software Development Course for Milestone 4 Django!</i>
+
+ <div align="right">
+
+[Back to Top :arrow_up:](#table-of-contents)
+
+</div>

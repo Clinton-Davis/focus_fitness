@@ -320,14 +320,14 @@ As admin, I expect to see a ‘No Image’ image if there is no image for a prod
 - Clicked on the ‘Products’ button in the Shop section and was able to Uncheck the ‘in Stock’ check box.
 - Checked the products list in the shop and the ‘Out of Stock’ image was being shown.
 - Fail: Out of stock product was still being shown in special offers.
-- Fail: ‘was’ price is was shown
+- Fail: ‘was’ price is being shown
 - Checked the products page, could filter by rating and could filter. As expected
 - Checked Order in the Shop Order section and Order number, Date ordered, arranged from newest to oldest by default, able to filter by Date, Name, Order Total, Grand total or tax.
 - Clicked on an order number and all the orders details and address where as expected.
 - Cleared the image in the edit product section of the shop and no image was shown on the product in the shop and home page.
 
 *Bug*: Out of stock product was still being shown in special offers
-‘was’ price is was shown
+‘was’ price is being shown
 **Verdict**: The issues were fixed, the test passed.
  <div align="right">
 
@@ -366,10 +366,163 @@ To generate a coverage report on the terminal window.
 To generate a coverage report in HTML
 `$ coverage html`
 
-### Traivs
+----
+
+## Bugs
+
+#### Bootstrap 4 Carousel Bug
+
+I had a bug trying to get Bootstrap 4 carousel to work in a for loop. Because of the way the carousel works one of the sides has to have the `.active` class set on it.
+**Fix**
+
+> After a bit of looking on the internet the best way I found was to use a template within the carousel itself and put the .active class in a for loop with a counter so then the counter = 1 the active is added.
+
+```HTML
+
+ <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}" id=”slide{{ forloop.counter }} ></div>
+
+ ```
+
+#### Featured Blogs
+
+Could not get the carousel to work for featured blogs.
+I was using a for loop to get the blog post to iterate through the list of blogs.
+Underneath this I was using a `{if statement}` to pick out the featured post from the others.
+
+```Python
+{% for blogs in all_blogs %}
+{% if blogs.featured %}
+Bootstrap carousel
+{% else %}
+all other blogs
+{% endfor %}
+But it was not working.
+ ```
+
+**Fix**
+> When I tested the carousel to see if that was the problem, it worked fine.
+I tested the if statement by adding `{{ blogs.featured }}` straight into the html and a `True False True False` was returned so I know the if statement was working.
+To make the carousel work with looped objects, you have to loop the counter with 1 being active. [Bootstrap 4 Carousel Bug](#bootstrap-4-carousel-bug) This was causing my if statement to not work.
+I went back to the `BlogListView` views and added a quarry set
+ `feature_blog = Blog.objects.filter(featured=True)` and added it to the context
+This way I would be able to have the carousel separate to the all_blogs loop.
+This way get all blogs except for featured blogs and the carousel worked with featured blogs.
+
+```Python
+{% for blogs in featured_blogs %}
+Bootstrap carousel
+{% endfor %}
+{% for blogs in all_blogs %}
+{% if blog.featuered !=true %}
+{% endif %}
+{% endfor %}
+ ```
+
+#### Landscape Orientation
+
+On the Home page in ‘Landscape orientation’, Section 2 was covering section 1’s navigation buttons. Because I have section 2 overlapping some of section 1 buttons where getting covered
+**Fit**
+> I fond an anwser in [CSS-TRICKS](https://css-tricks.com/snippets/css/media-queries-for-standard-devices/) media query to fix this issue, using This code I was able to control the height of section-1 as so it only did this on landscape orientated devices. 
+This gives section1 enough room by giving it a height of 147vh.
+
+```CSS
+@media only screen and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: landscape) {
+  #section1-pic {
+    height: 147vh;
+  }
+}
+ ```
+
+> I realize this solutions is limited to certain screen sizes of
+ (min-device-width: 375px) and (max-device-width: 667px)
+(min-device-width: 320px) and (max-device-width: 568px)
+(min-device-width: 375px) and (max-device-width: 812px)
+Because of the design of the webpage I’m confident that 90% of users will use the app in portrait view.
+
+---
+
+#### Cancel Subscription
+
+'Cancel my Subscription’ button error.
+When Running the test: Check ‘Cancel Subscription’ button works’
+I was getting a error saying `Not a valid namespace`
+When refactoring my code and changing the memberships urls to have a namespace I  forgot to change the `href` in the anchor tag, this bug was picked up during my manual testing.
+**Fix**
+> Added the namespace into the href
+
+```HTML
+
+<a href=”{% url 'memberships:cancel' %}”
+ ```
+
+#### Stock Items Bug
+
+When running the test: Check if not in stock items are displayed in the special offers section.
+It came to my attention that out of stock products were still being displayed in the special offers page on the home page.
+**Fix**
+> I used an if statement in the template tags to check if the ‘in stock’ was true or false, if true it shows if false it does not.
+
+```python
+
+ {% if product.in_stock == True %}
+ ```
+#### Was Price Bug
+
+When running the test: Check the ‘was_price’ is smaller than the price and if not check to ‘was’ price is not shown.
+I found a bug that the ‘was_price' was showing even if it was smaller than the ‘price’
+**Fix**
+> I used a if statement in the template tags too much the ‘was_price’ against the ‘price’ if the statement is true the ‘was_price’ is shown.
+
+```python
+{% if product.was_price > product.price %}
+ ```
+
+#### Sales Items Bug
+
+When testing the bug [Was Price Bug](#was-price-bug) I found another bug,
+If the ‘Sales Items’ button is unchecked but the product still had a ‘was_price’ on it, the ‘was_price’ was still being displayed
+**Fix**
+> Because I had the logic inplace from the last bug all I had to do was add a ‘and’ connector in the template literal to filter any products where ‘sales_items’ is true.
+
+```python
+{% if product.sales_items == True and product.was_price > product.price %}
+ ```
+
+#### Shopping Cart Input Qty
+
+I found a bug in the shopping cart. In the Qty form input, it was possible to type as many numbers as you liked and adjust your cart. This will cause a problem with all the styling and the layout.
+I added `maxlength` to the input and that helped if the user pressed `Return` on the keyboard, it gives a validation error, but if the user types the number and presses the 'Update' button all the products can still be added.
+![cart-bug](media/wireframes/Cart_bug.png)
+As the buttons input attributes `min="1" max="99" maxlength="3"`was being overridden I made a change in the adjust_cart view,
+The original code:
+
+```python
+if quantity > 0:
+  ```
+  
+This was letting any number in above 0
+**Fix**
+
+```python
+if quantity in range(0, 1000)
+ ```
+
+> This lets any number between 0 and 1000 anything over this the cart is emptied and returned to the cart view.
+
+[Back to Top](#table-of-contents)
+
+----
 
 ### Validators
 
+- **Traivs**
+
+- **Codacy**
+[Codacy](https://www.codacy.com/) is an automated Code Validator that checks the quality of your code after every push to GitHub.
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/f491bdf3d67c47b7918d82d4dc5d716f)](https://www.codacy.com/manual/Clinton-Davis/focus_fitness/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Clinton-Davis/focus_fitness&amp;utm_campaign=Badge_Grade)
 - **HTML**
 All HTML pages were tested with W3C Markup Validation Service. There are a good few errors because the W3C Markup does not recognize Jinja templating. No other errors.
 - **CSS**
@@ -378,11 +531,13 @@ I got a couple of errors all pointing to (min-device-width) which is in a media 
 - **Python**
 I use a package called [autopep8](https://pypi.org/project/autopep8/) to guide me in my python Validatorn through development.
 
-- **Codacy**
-[Codacy](https://www.codacy.com/) is an automated Code Validator that checks the quality of your code after every push to GitHub.
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/f491bdf3d67c47b7918d82d4dc5d716f)](https://www.codacy.com/manual/Clinton-Davis/focus_fitness/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Clinton-Davis/focus_fitness&amp;utm_campaign=Badge_Grade)
-
  <div align="right">
 
 [Back to Top :arrow_up:](#testing)
+
+</div>
+ <div align="left">
+
+[Back Readme :arrow_left:](#testing)
+
 </div>
