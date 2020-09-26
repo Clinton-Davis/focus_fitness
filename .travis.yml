@@ -5,5 +5,5 @@ install:
     - pip install -r requirements.txt
 
 scripts:
-    -  SECRET_KEY="makeithappen" python manage.py test
+    -  python manage.py test
 
