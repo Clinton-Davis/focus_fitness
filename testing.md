@@ -42,7 +42,7 @@ The manual testing is done for each user story and categorised into the differen
 **Verdict**: The issues were fixed, the test passed.
  <div align="right">
 
-[Back to Top  ↑ ](#testing)
+[Back to Top  :arrow_up:](#testing)
 </div>
 
 #### Navbar and Footer
@@ -74,7 +74,7 @@ As a user, I want to link to the social pages of the company.*
 
  <div align="right">
 
-[Back to Top  ↑ ](#testing)
+[Back to Top  :arrow_up:](#testing)
 </div>
 
 #### Home
@@ -99,7 +99,7 @@ As a user, I would like to see featured blogs and other Programs that are on off
 **Verdict**: All the functionality works as expected.
  <div align="right">
 
-[Back to Top  ↑ ](#testing)
+[Back to Top  :arrow_up:](#testing)
 </div>
 
 #### Shop, Shopping Cart and  Checkout
@@ -140,7 +140,7 @@ Checkout order using Stripe test card number 4242 42424 24242
 **Verdict**: All the functionality works as expected.
  <div align="right">
 
-[Back to Top  ↑ ](#testing)
+[Back to Top  :arrow_up:](#testing)
 </div>
 
 #### Blogs
@@ -174,7 +174,7 @@ As a user, I would like only other logged-in users to see my members' blog posts
 **Verdict**: All the functionality works as expected.
  <div align="right">
 
-[Back to Top  ↑ ](#testing)
+[Back to Top  :arrow_up:](#testing)
 </div>
 
 #### Member selection, Programs list, Subscription payment
@@ -210,7 +210,7 @@ As a user, I would like to see the Professional programs they have to offer*
 **Verdict**: All the functionality works as expected.
  <div align="right">
 
-[Back to Top  ↑ ](#testing)
+[Back to Top  :arrow_up:](#testing)
 </div>
 
 #### Dashboard
@@ -253,7 +253,7 @@ As a member, I would like to see when my next subscription payment is due and be
 **Verdict**: The issues were fixed, the test passed.
  <div align="right">
 
-[Back to Top  ↑ ](#testing)
+[Back to Top  :arrow_up:](#testing)
 </div>
 
 #### Login
@@ -279,7 +279,7 @@ As a member, I would like to see when my next subscription payment is due and be
 **Verdict**: All the functionality works as expected.
  <div align="right">
 
-[Back to Top  ↑ ](#testing)
+[Back to Top  :arrow_up:](#testing)
 </div>
 
 #### The Admin
@@ -328,7 +328,7 @@ As admin, I expect to see a ‘No Image’ image if there is no image for a prod
 **Verdict**: The issues were fixed, the test passed.
  <div align="right">
 
-[Back to Top  ↑ ](#testing)
+[Back to Top  :arrow_up:](#testing)
 </div>
 
 ---
@@ -511,7 +511,7 @@ if quantity in range(0, 1000)
 
  <div align="right">
 
-[Back to Top  ↑ ](#testing)
+[Back to Top  :arrow_up:](#testing)
 </div>
 
 ----

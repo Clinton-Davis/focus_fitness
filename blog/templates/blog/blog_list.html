@@ -94,6 +94,11 @@
             <!-- endif != featured-->
             {% endif %}
             <!-- endfor blog loop -->
+            {% empty %}
+            <div class="center-block-col bg-black-a rounded-10">
+                <h1 class="text-wht">No Blogs Have Been Writen Yet</h1>
+                <h3 class="text-wht">Right the First Blog <a href="{% url 'blog:create' %}">Hear</a></h3>
+            </div>
             {% endfor %}
         </div>
         <!-- Sidebar Widgets Column -->

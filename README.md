@@ -15,7 +15,7 @@
 
 ---
 
->## Table of Contents
+## Table of Contents
 >
 >1. [**UX**](#ux)
 >2. [**Scope**](#scope)
@@ -33,6 +33,13 @@
 >4. [**Surface**](#surface)
 >5. [**Technologies**](#technologies)
 >6. [**Features**](#features)
+>    - [**Home Page Features**](#home-page-features)
+>    - [**Blog Features**](#blog-features)
+>    - [**Focus Shop Features**](#focus-shop-features)
+>    - [**Memberships Features**](#memberships-features)
+>    - [**Programs Features**](#programs-features)
+>    - [**Workouts Features**](#workouts-features)
+>    - [**Dashboard Features**](#dashboard-features)
 >7. [**Testing**](#testing)
 >8. [**Deployment**](#deployment)
 >9. [**Credits & Acknowledgements**](#credits)
@@ -79,7 +86,7 @@ Users would be able to subscribe to our training programs and also be able to do
 
 <div align="right">
 
-[Back to Top  ↑ ](#table-of-contents)
+[Back to Top  :arrow_up:](#table-of-contents)
 </div>
 
 ## Scope
@@ -107,7 +114,7 @@ And be able to change users membership level.
 
 <div align="right">
 
-[Back to Top  ↑ ](#table-of-contents)
+[Back to Top  :arrow_up:](#table-of-contents)
 </div>
 
 ## Structure
@@ -185,7 +192,7 @@ On the desktop they sit next to each. On mobile the part 2 and 3 are next to eac
 ---
 <div align="right">
 
-[Back to Top  ↑ ](#table-of-contents)
+[Back to Top  :arrow_up:](#table-of-contents)
 </div>
 
 ### **Home Page**
@@ -226,7 +233,7 @@ Here are displayed all the featured blog, again clickable and will take to you t
 
 <div align="right">
 
-[Back to Top  ↑ ](#table-of-contents)
+[Back to Top  :arrow_up:](#table-of-contents)
 </div>
 
 ---
@@ -369,7 +376,7 @@ Right Block contains
 
 <div align="right">
 
-[Back to Top  ↑ ](#table-of-contents)
+[Back to Top  :arrow_up:](#table-of-contents)
 </div>
 
 ## **Blog**
@@ -614,7 +621,7 @@ For this Project we used [SQLite](https://www.sqlite.org/index.html) in developm
 
 <div align="right">
 
-[Back to Top  ↑ ](#table-of-contents)
+[Back to Top  :arrow_up:](#table-of-contents)
 </div>
 
 ## Surface
@@ -647,7 +654,7 @@ A list of all the photographers can be found [here](#media)
 
 <div align="right">
 
-[Back to Top  ↑ ](#table-of-contents)
+[Back to Top  :arrow_up:](#table-of-contents)
 </div>
 
 ---
@@ -684,7 +691,7 @@ A list of all the photographers can be found [here](#media)
 
 <div align="right">
 
-[Back to Top  ↑ ](#table-of-contents)
+[Back to Top  :arrow_up:](#table-of-contents)
 </div>
 
 ---
@@ -719,7 +726,7 @@ The Newsletter sign ups form is in the footer. This way it is always on every pa
 - Back to Top.
 The Back to the top button is global but you see it mostly in the footer, This is a handly way to get back to the top of the page.
 
-#### Home Page (Index Page)
+#### Home Page Features
 
 ##### Section 1.
 
@@ -768,12 +775,12 @@ Controlled in the admin All featured blogs are controlled in the admin area.
 
  <div align="right">
 
-[Back to Top  ↑ ](#testing)
+[Back to Top  :arrow_up:](#testing)
 </div>
 
 ----
 
-### Blog Page
+### Blog Features
 
 - **Featured** **Blogs**
 The same feature that is used in Home page Section 5 is used in the blog list page.
@@ -806,10 +813,10 @@ Blogs can be written and edited front the admin area. If blogs are not inline wi
 
  <div align="right">
 
-[Back to Top  ↑ ](#table-of-contents)
+[Back to Top  :arrow_up:](#table-of-contents)
 </div>
 
-### Focus Shop
+### Focus Shop Features
 
 - **Product** **Filtering**
 You can filter the products in the shop with category selectors:
@@ -862,7 +869,7 @@ Once the order has been submitted and Stripe receives payment a webhook is sent 
 - **Backup Oder with Webhook**
 If for some reason the user leaves the page before the order is complete but the payment goes through, the billing details and shipping address is sent with the payment details this way we can get them in the webhooks.
 
-### Memberships
+### Memberships Features
 
 - **Memberships**
 When a new use logs in for the first time a free membership is given to them.
@@ -880,14 +887,14 @@ Using [Stripe](https://stripe.com) subscriptions make sure that the user is char
 - **Monthly Receipt emails**
 With the webhooks from Stripe whenever a payment is made we send the user an emailed receipt.
 
-### Programs
+### Programs Features
 
 - **Controlled from Admin**
 All programs are added, edited and deleted from the admin only.
 - **Dynamically Added/Edited**
 When new context or existing content is added or edited with will automatically be changed on the programs page.
 
-### WorkOuts
+### Workouts Features
 
 - **Controlled from Admin**
 Workouts are added from the admin area only.
@@ -910,7 +917,7 @@ The video files itself is Not stored in the Focus database they are linked with 
 
 </details>
 
-### DashBoard
+### DashBoard Features
 
 - **Change User Password**
 In the profile admin section the user can change their password
@@ -935,7 +942,7 @@ I would like to have my Newsletters email list auto upload to an email service t
 
  <div align="right">
 
-[Back to Top  ↑ ](#table-of-contents)
+[Back to Top :arrow_up:](#table-of-contents)
 
 </div>
 
@@ -955,236 +962,260 @@ To be able to clone this project there are a few things you will need.
 
 - [Git](https://git-scm.com/) - Install Git, installation docs and be fond [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - [Pip](https://pip.pypa.io/en/stable/installing/) - install pip, installation docs can be fond [here](https://pip.pypa.io/en/stable/installing/)
+- A [Gmail](https://www.gmail.com/mail/help/intl/en/about.html?utm_expid=...) account.
 
 Once you have [Git](https://git-scm.com/) and [Pip](https://pip.pypa.io/en/stable/installing/) installed.
 
 1. From the terminal create the directory you want to work in.
 
-```bash
-$ mkdir <filename>
- ```
+    ```bash
+    $ mkdir <filename>
+    ```
 
 2. Change into Directory
 
-```bash
-$ cd <filename>
- ```
+    ```bash
+    $ cd <filename>
+    ```
 
-3. Install [virtualenv](https://pypi.org/project/virtualenv/)
+3. Clone the repository from github.
 
-```bash
- $ pip install virtualenv
- ```
+    ```bash
+    $ git clone https://github.com/Clinton-Davis/focus_fitness.git
+      ```
 
-4. Create a virtual environment (env)
+4. Change into focus_fitness directory.
 
-```bash
- $ virtualenv env
- ```
+      `$ cd focus_fitness`
 
-5. Activate env with:
+5. Install [virtualenv](https://pypi.org/project/virtualenv/)
 
-- Mac:
-  - ` $ source env/bin/activate`
+    ```bash
+    $ pip install virtualenv
+    ```
 
-- Windows(bash):
+6. Create a virtual environment (env)
 
-  - `$ source env/Scripts/activate`
+    ```bash
+    $ virtualenv env
+    ```
 
-6. Once you are inside your environment clone the repository from github
+7. Activate env with:
 
-```bash
-$ git clone https://github.com/Clinton-Davis/focus_fitness.git
- ```
+   ```bash
+   $ source env/Scripts/activate
+    ```
 
-7. In the focus directory add a `.env` and `.gitignore`
+8. In focus floder make a `.env` file and add the variables below in.
 
-8. Make a `.env` and add the variables below in.
+    > There is a handy .templates.env file with all the variables.
 
-> There is a handy .templates.env file will all the variables.
+    | Key      |      Value    |
+    |----------|:-------------:|
+    | SECRET_KEY | < Your Values >|
+    | EMAIL_HOST_PASS |    < Your Values >   |
+    |EMAIL_HOST_USER| < Your Values > |
+    |NOTIFY_EMAIL| < Your Values > |
+    |DEFAULT_FROM_EMAIL| < Your Values > |
+    |STRIPE_PUBLIC_KEY| < Your Values > |
+    |STRIPE_SECRET_KEY| < Your Values > |
+    |STRIPE_SECSTRIPE_WH | < Your Values > |
 
-| Key      |      Value    |
-|----------|:-------------:|
-| SECRET_KEY | < Your Values >|
-| EMAIL_HOST_PASS |    < Your Values >   |
-|EMAIL_HOST_USER| < Your Values > |
-|NOTIFY_EMAIL| < Your Values > |
-|DEFAULT_FROM_EMAIL| < Your Values > |
-|STRIPE_PUBLIC_KEY| < Your Values > |
-|STRIPE_SECRET_KEY| < Your Values > |
-|STRIPE_SECSTRIPE_WH | < Your Values > |
+9. Install all the requirements needed to run the project.
 
-9. In the `.gitignore` file add `.env`
+    ```bash
+    $ pip install -r requirements.txt
+    ```
 
-10. Once your `.env` file is added install all the requirements needed to run the project.
+10. Open up blog.forms and comment out lines 8 and 9
 
-```bash
-$ pip install -r requirements.txt
- ```
+    ```python
+    # for item in choices:
+    #     choices_list.append(item)
+    ```
 
-11. Open up blog.forms and comment out lines 8 and 9
+11. Then migrate
 
-```python
-# for item in choices:
-#     choices_list.append(item)
- ```
+    ```bash
+    $ python manage.py migrate
+    ```
 
-12. Once that's done make migrations
+12. Once the migrations are complete, uncomment blog.forms
 
-```bash
-$ python manage.py makemirgrations
- ```
+    ```python
+    for item in choices:
+        choices_list.append(item)
+    ```
 
-13. Then migrate
+13. Before creating a superuser you'll need to load the required fixtures.
 
-```bash
-$ python manage.py migrate
- ```
+    >The reason for this is that a signal is used to assign a membership to a user when they are created, If there is no membership it can't assign anything and causes an error.
 
-14. Once the migrations are complete you can uncomment blog.forms
+    ```bash
+    $ python manage.py loaddata fixtures/required.json
+    ```
 
-```python
-for item in choices:
-    choices_list.append(item)
- ```
+14. Create superuser.
 
-15. Before you create a superuser you need to load the membership fixturess.
+    ```bash
+    $ python manage.py createsuperuser
+    ```
 
-```bash
-$ python manage.py loaddata memberships.json
- ```
+15. To populate the shop with products, load products data.
 
->The resson for this is a signal is used to assign a membership to a user when they are created, If there is no a memberships it cant asign anything and causes a error.
+    ```bash
+    $ python manage.py loaddata products.json
+    ```
 
-16. Now you can add the products
+16. Run project with
 
-```bash
-$ python manage.py loaddata products.json
- ```
+    ```bash
+    $ python manage.py runserver
+    ```
 
-17. Create superuser
+ <div align="right">
 
-```bash
-$ python manage.py createsuperuser
- ```
+[Back to Top :arrow_up:](#table-of-contents)
 
-18. Run project with
+</div>
 
-```bash
-$ python manage.py runserver
- ```
-
-### Heroku To Deployment
+### Heroku Deployment
 
 You will need a [AWS](https://aws.amazon.com/s3/) account and a [S3 bucket](https://aws.amazon.com/s3/) to hold all the static files for this project.
+If you would like to use the [allauth](https://django-allauth.readthedocs.io/en/latest/) socialaccounts logins, you can find out more here. [Facebook](https://developers.facebook.com/products/facebook-login/) and [Google](https://developers.google.com/identity/sign-in/web/sign-in)
 
 1. Open Heroku.
 2. Install the Heroku Command Line Interface (CLI). You use the CLI to manage and scale your applications, provision add-ons, view your application logs, and run your application locally.
 Create an account and navigate to the dash dashboard.
-3. Click on the _New_ button.
-4. Click - _Create New App_.
-5. Create a corresponding app name that we use to deploy our application. The apps _name_ must be _unique._.
+3. Click on the **New** button.
+4. Click - **Create New App**.
+5. Create a corresponding app name that we use to deploy our application. The apps **name** must be **unique.**.
 6. Pick a server location that is closest to you.
 7. Once the app is created click on the resources button and choose the Heroku Postgres to attach a postgres database to your project.
-8. Click into the settings tab and navigate to reveal **‘config vars**’.
-9. Enter in all the variables the same a in the .env file
-10. Add
+8. To be able to run on Heroku A few more libraries are needed.
+[Guniorn](https://gunicorn.org/) a (WSGI HTTP Server), [dj-databas-url](https://pypi.org/project/dj-database-url/) to connect with PostgreSQL and [Psycopg](https://www.psycopg.org/)(PostgreSQL adapter)
 
-| Key      |      Value    |
-|----------|:-------------:|
-| AWS_SECRET_ACCESS_KEY | < Your Values >|
-| AWS_ACCESS_KEY_ID |    < Your Values >   |
-| USE_AWS |    True  |
+    ```bash
+    $ pip install Gunicorn, dj-database, Psycopg
+    ```
 
-You will get in them when you setup your  [AWS bucket](https://aws.amazon.com/s3/)
+9. To migrate to the new postgres db. First `import dj-databas-url` at the top of the setting.py.
+10. Then comment out the default database configuration and add
 
-11. To be able to run on Heroku A few more libraries are needed.
-Guniorn a (WSGI HTTP Server), dj-database to connect with PostgresSQL and Psycopg(PostgreSQL driver)
-```bash
-$ pip install Gunicorn , dj-database , Psycopg
- ```
+    ```python
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('< Put your DATABASE_URL here >'))
+    }
+    ```
 
-12. In your Terminal. Navigate to your directory using.
+    >In Heroku, Click into the settings tab and navigate to **'reveal config vars'**.
+    Here you will find the *'DATABASE_URL'*.
+
+11. Make migrations in by follow steps 10-15 in [Local deployment](#local-deployment)
+12. After migrations are complete, change database configurations to.
+
+    ```python
+    if 'DATABASE_URL' in os.environ:
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            }
+        }
+     ```
+
+     >This uses Postgres in deployment and sqlite3 in development.
+
+13. Enter in all your AWS variables as well as all your .env variables into Heroku's Config Vars.
+
+    | Key      |      Value    |
+    |----------|:-------------:|
+    | AWS_SECRET_ACCESS_KEY | < Your Values >|
+    | AWS_ACCESS_KEY_ID |    < Your Values >   |
+    | USE_AWS |    True  |
+
+    >You will get in them when you setup your  [AWS bucket](https://aws.amazon.com/s3/)
+    If you are wanting to use the [allauth](https://django-allauth.readthedocs.io/en/latest/) social accounts Uncomment out the [Facebook](https://developers.facebook.com/products/facebook-login/) and [Googel](https://developers.google.com/identity/sign-in/web/sign-in) socialaccounts from INSTALLED_APPS in settings.py, and add your Facebook secrets.
+
+    | Key      |      Value    |
+    |----------|:-------------:|
+    | SOCIAL_AUTH_FACEBOOK_KEY | < Your Values >|
+    | SOCIAL_AUTH_FACEBOOK_SECRET |    < Your Values >   |
+
+14. In your Terminal. Navigate to your directory.
 Login to Heroku using the Terminal
 
-```bash
-$ heroku login
- ```
+    ```bash
+    $ heroku login
+    ```
 
-13. Create a `Procfile` This file tells heroku how to run the project
+15. Create a `Procfile` This file tells heroku how to run the project
 
-```bash
-$ web: gunicorn focus_fitness.wsgi:application
- ```
+    ```bash
+    $ web: gunicorn focus_fitness.wsgi:application
+    ```
 
-14. Freeze your requirements
+16. Freeze your requirements
 
-```bash
-$ pip freeze > requirements.txt
- ```
+    ```bash
+    $ pip freeze > requirements.txt
+    ```
 
-15. Add files and commit to github using
+17. Add files and commit to github using
 
-```bash
-$ git add then git commit -m "You message"
- ```
+    ```bash
+    $ git add .
+    ```
 
-Now that heroku is ready to go
+18. commit changes to Github
 
-16. Inside the Django setting we need to set up the AWS configs so the static files have a place to go.
+    ```bash
+    $ commit -m "You message"
+      ```
+
+19. Now that heroku is ready to go, Inside the Django setting you will need to set up the AWS configs so the static files have a place to go.
 Add
+  
+    ```python
+    if 'USE_AWS' in os.environ:
+        AWS_STORAGE_BUCKET_NAME = < Your Bucket Name >
+        AWS_S3_REGION_NAME = < Your server location >
+        AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+        AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+        AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+        AWS_DEFAULT_ACL = None
 
-```python
+    # Static and media files
 
-ALLOWED_HOSTS = ['127.0.0.1', 'focus-fitness.herokuapp.com']
+        STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+        STATICFILES_LOCATION = 'static'
+        DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+        MEDIAFILES_LOCATION = 'media'
+        STATIC_URL = f'http://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+        MEDIA_URL = f'http://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+    ```
 
-if 'USE_AWS' in os.environ:
-    AWS_STORAGE_BUCKET_NAME = 'focus-fitness'
-    AWS_S3_REGION_NAME = 'eu-west-1'
-    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-    AWS_DEFAULT_ACL = None
+    >Specifies the hosts that focus can run on
 
-# Static and media files
+    ```python
+        ALLOWED_HOSTS = ['127.0.0.1', 'focus-fitness.herokuapp.com']
+     ```
 
-    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-    STATICFILES_LOCATION = 'static'
-    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-    MEDIAFILES_LOCATION = 'media'
-    STATIC_URL = f'http://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-    MEDIA_URL = f'http://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+20. You are ready to push to Heroku
 
-# And for the postgresSQL add This uses sqlite in development and postgress in production
-if DEBUG is True:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
-else:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
- ```
+    ```bash
+    $ git push heroku master
+    ```
 
-This will make the application use Sqlite3 for development and postges for production
-Be sure to change the allowed host to for sircurty.
-
-18. Now once that is done you are ready to push to heroku
-
-```bash
-$ git push heroku master
- ```
-
-19. Once the app is successfully deployed to heroku. Make migrations to the postgres db following steps 10-17 in [local deployment.](#local-development)
-
-You are up and running.
+21. When your app is deployed successfully. Click '*Open App*' in to top right hand corner of Heroku to open app in browser
 
  <div align="right">
 
-[Back to Top  ↑ ](#table-of-contents)
+[Back to Top :arrow_up: ](#table-of-contents)
 
 </div>
 
