@@ -514,15 +514,17 @@ if quantity in range(0, 1000)
 [Back to Top  :arrow_up:](#testing)
 </div>
 
-----
+---
+
 ### Validation
 
+[![Build Status](https://travis-ci.org/Clinton-Davis/focus_fitness.svg?branch=master)](https://travis-ci.org/Clinton-Davis/focus_fitness) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/f491bdf3d67c47b7918d82d4dc5d716f)](https://www.codacy.com/manual/Clinton-Davis/focus_fitness/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Clinton-Davis/focus_fitness&amp;utm_campaign=Badge_Grade)
 - **Traivs**
 [Travis](https://travis-ci.org/) was used in the unit testing of this product, It automatically tests code changes, providing immediate feedback on the success of the change. The configuration file is `.travis.yml`.
-[![Build Status](https://travis-ci.org/Clinton-Davis/focus_fitness.svg?branch=master)](https://travis-ci.org/Clinton-Davis/focus_fitness) 
+
 - **Codacy**
 [Codacy](https://www.codacy.com/) is an automated Code Validator that checks the quality of your code after every push to GitHub.
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/f491bdf3d67c47b7918d82d4dc5d716f)](https://www.codacy.com/manual/Clinton-Davis/focus_fitness/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Clinton-Davis/focus_fitness&amp;utm_campaign=Badge_Grade)
+
 - **HTML**
 All HTML pages were tested with W3C Markup Validation Service. There are a good few errors because the W3C Markup does not recognize Jinja templating. No other errors.
 - **CSS**

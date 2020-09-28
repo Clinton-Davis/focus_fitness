@@ -120,9 +120,10 @@ And be able to change users membership level.
 ## Structure
 
 The basic structure of the web page is
-*Navigation* - Top level
-*Body* - Main page elements
-*Footer* - More navigation, email signup and legal
+
+- *Navigation* - Top level
+- *Body* - Main page elements
+- *Footer* - More navigation, email signup and legal
 
 This layout is thought out the web page.
 For a more detailed look at web site structure and page flow see Structure Diagram.
@@ -131,14 +132,15 @@ For a more detailed look at web site structure and page flow see Structure Diagr
 <summary>Structure Diagram (Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframes/Focus_Fitness_Structure.png">
+
+![structure](media/wireframes/Focus_Fitness_Structure.png)
 </p>
 
 </details>
 
 #### Signup (Registration) and Login
 
-I have used a 3rd Party package called [Allauth](https://django-allauth.readthedocs.io/en/latest/) to take care of the logic. 
+I have used a 3rd Party package called [Allauth](https://django-allauth.readthedocs.io/en/latest/) to take care of the logic.
 The users are asked to fill in the Registration with fields ‘Email’, ‘Username’, and password, this is done twice to make sure they are both the same.
 You may also use the social account sign up. Facebook and Google.
 
@@ -165,7 +167,7 @@ Full Page background with a center-block design.
 #### Navbar
 
 The navbar is sticky (fixed) to top of each page, This makes navigation easer and qicker.
-It is divided into 3 part
+
 - **Left - Focus Fitness Logo** -  Clickable link to the home page from anywhere on the web site
 - **Center - Page navigation** - This is the main page navigation, this with change if the users is logged or not.
 - **Right -User login and Cart** - This changes if the user is login or not.
@@ -175,16 +177,17 @@ It is divided into 3 part
 The footer stays at the button of each page.
 It is broken into 3 parts.
 
-- *Part 1* - Is the Logo.
-- *Part 2* - has the newsletter submitting form, the social icons and the legal.
-- *Part 3* -  is more navigation to the pages of the site. This helps with navigation, if the user is having trouble finding their way around the site, It acts like a safety net.
+- **Sections 1** - Is the Logo.
+- **Sections 2** - has the newsletter submitting form, the social icons and the legal.
+- **Sections 3** -  is more navigation to the pages of the site. This helps with navigation, if the user is having trouble finding their way around the site, It acts like a safety net.
 On the desktop they sit next to each. On mobile the part 2 and 3 are next to each other and part 1 is below.
 
 <details>
 <summary>Head Navigation / Footer (Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframes/Nav_Footer_D_M.png">
+
+![Nav_Footer_D_M](media/wireframes/Nav_Footer_D_M.png)
 </p>
 
 </details>
@@ -329,7 +332,7 @@ Full page layout with the user order form to complete:
 - Adjust cart button - If you need to adjust the cart.
 - Complete Order - Sends the card informtion to [Stripe](https://stripe.com/)
 
->#### Stripe Development Card.
+>#### Stripe Development Card
 >
 > A [Stripe](https://stripe.com/) payment system is inplace and >takes all major cards.
 >The numbers below are used to test the Stripe Payment software.
@@ -441,7 +444,8 @@ Only logged in users may see the Members posts
 <summary>Blog Categories Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframes/blog_cat.png">
+
+![blog_cat](media/wireframes/blog_cat.png)
 </p>
 </details>
 
@@ -464,7 +468,8 @@ Note only logged in user may use this feature.
 <summary>Blog Detais Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframes/detail_blog.png">
+
+![detail_blog](media/wireframes/detail_blog.png)
 </p>
 
 </details>
@@ -480,7 +485,8 @@ When your editing a post, all the fields are prefilled with the data needed to e
 <summary>Blog Create/Edit Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframes/blog_forms.png">
+
+![blog_forms](media/wireframes/blog_forms.png)
 </p>
 </details>
 
@@ -494,7 +500,8 @@ Each title is a link to the blog and you can see the amount of likes, comments, 
 <summary>Blog Create/Edit Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframes/Blog_author.png">
+
+![Blog_author](media/wireframes/Blog_author.png)
 </p>
 
 </details>
@@ -509,14 +516,6 @@ To become a *Professional* member Click the ‘Select button on the card and you
 Simple Center block design with the memberships details and monthly amount that will be billed.
 Below is the Stripe Payment Field.
 To Cancel a Subscription, it can be done viva the Dashboard in the subscription tab.
-
-<details>
-<summary>Chow Schema (Click for image)</summary>
-
-<p align="center">
-<img src="static/wireframes/schema.png">
-</p>
-</details>
 
 #### **Programs**
 
@@ -543,7 +542,8 @@ The workouts are all video based and can be added or ordered in any way the trai
 <summary>Programs WireFrame(Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframes/Programs.png">
+
+![Programs](media/wireframes/Programs.png)
 </p>
 </details>
 
@@ -557,7 +557,8 @@ Below this is a video play which will fit the size of the user's display.
 <summary>Workouts WireFrame(Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframes/workdouts.png">
+
+![workdouts](media/wireframes/workdouts.png)
 </p>
 </details>
 
@@ -573,7 +574,8 @@ It is divided into 3 parts.
 <summary>Dashboard Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframes/dashBoard.png">
+
+![dashBoard](media/wireframes/dashBoard.png)
 </p>
 
 </details>
@@ -586,7 +588,8 @@ The About page has a centre block format with a heading and information about Fo
 <summary>About Page Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframes/About.png">
+
+![About](media/wireframes/About.png)
 </p>
 </details>
 
@@ -598,8 +601,8 @@ The About page has a centre block format with a heading and information about Fo
 <summary>About Page Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframes/Contact.png">
 
+![Contact](media/wireframes/Contact.png)
 </p>
 </details>
 
@@ -904,7 +907,7 @@ When a new Workout is  added it will automatically be added to the programs work
 The video files itself is Not stored in the Focus database they are linked with a url from a video hosting server. Focus fitness uses [Cloudinary](https://cloudinary.com/).
 
 <details>
-<summary>How To add a video</summary>
+<summary>How To add a video to Cloudinary</summary>
 
 1. Make a Cloudinary account.
 2. Login and make a file to keep you videos in.
@@ -1006,7 +1009,7 @@ Once you have [Git](https://git-scm.com/) and [Pip](https://pip.pypa.io/en/stabl
    $ source env/Scripts/activate
     ```
 
-8. In focus floder make a `.env` file and add the variables below in.
+8. In focus floder make a `.env` file and add the variables below.
 
     > There is a handy .templates.env file with all the variables.
 
@@ -1049,7 +1052,7 @@ Once you have [Git](https://git-scm.com/) and [Pip](https://pip.pypa.io/en/stabl
 
 13. Before creating a superuser you'll need to load the required fixtures.
 
-    >The reason for this is that a signal is used to assign a membership to a user when they are created, If there is no membership it can't assign anything and causes an error.
+    >The reason for this is that a signal is used to assign a membership to a user when they are created, If there is no memberships it can't assign anything and causes an error.
 
     ```bash
     $ python manage.py loaddata fixtures/required.json
@@ -1099,7 +1102,7 @@ Create an account and navigate to the dash dashboard.
     $ pip install Gunicorn, dj-database, Psycopg
     ```
 
-9. To migrate to the new postgres db. First `import dj-databas-url` at the top of the setting.py.
+9. To migrate to the postgres db. First `import dj-databas-url` at the top of the setting.py.
 10. Then comment out the default database configuration and add
 
     ```python
@@ -1130,7 +1133,7 @@ Create an account and navigate to the dash dashboard.
 
      >This uses Postgres in deployment and sqlite3 in development.
 
-13. Enter in all your AWS variables as well as all your .env variables into Heroku's Config Vars.
+13. Enter in all your AWS variables as well as all your `.env` variables into Heroku's Config Vars.
 
     | Key      |      Value    |
     |----------|:-------------:|
