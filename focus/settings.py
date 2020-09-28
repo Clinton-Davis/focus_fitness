@@ -11,27 +11,7 @@ env = environ.Env()
 # read the .env file
 environ.Env.read_env()
 
-if DEBUG is True:
-
-    SECRET_KEY = env('SECRET_KEY')
-
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-    EMAIL_USE_TLS = True
-    EMAIL_PORT = 587
-    EMAIL_HOST = 'smtp.gmail.com'
-    EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-    EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASS')
-    DEFAULT_FROM_EMAIL = env('EMAIL_HOST_USER')
-    NOTIFY_EMAIL = env('NOTIFY_EMAIL')
-
-    NOTIFY_EMAIL = env('NOTIFY_EMAIL')
-
-    SOCIAL_AUTH_FACEBOOK_KEY = env('SOCIAL_AUTH_FACEBOOK_KEY')
-    SOCIAL_AUTH_FACEBOOK_SECRET = env('SOCIAL_AUTH_FACEBOOK_SECRET')
-
-
-if DEBUG is False:
+if 'USE_AWS' in os.environ:
     SECRET_KEY = os.environ.get('SECRET_KEY')
 
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -46,6 +26,22 @@ if DEBUG is False:
 
     SOCIAL_AUTH_FACEBOOK_KEY = os.environ.get('SOCIAL_AUTH_FACEBOOK_KEY')
     SOCIAL_AUTH_FACEBOOK_SECRET = os.environ.get('SOCIAL_AUTH_FACEBOOK_SECRET')
+
+else:
+    SECRET_KEY = env('SECRET_KEY')
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASS')
+    DEFAULT_FROM_EMAIL = env('EMAIL_HOST_USER')
+    NOTIFY_EMAIL = env('NOTIFY_EMAIL')
+
+    NOTIFY_EMAIL = env('NOTIFY_EMAIL')
+
+    SOCIAL_AUTH_FACEBOOK_KEY = env('SOCIAL_AUTH_FACEBOOK_KEY')
+    SOCIAL_AUTH_FACEBOOK_SECRET = env('SOCIAL_AUTH_FACEBOOK_SECRET')
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -132,13 +128,20 @@ WSGI_APPLICATION = 'focus.wsgi.application'
 
 
 # Changes the Admin heading to show in Develpoment or Production
-if DEBUG is True:
-    ENVIRONMENT_NAME = 'Development'
-else:
+if 'USE_AWS' in os.environ:
     ENVIRONMENT_NAME = 'Live Production'
+else:
+    ENVIRONMENT_NAME = 'Development'
 
 # Choosing the db to use in development or production
-if DEBUG is True:
+if 'DATABASE_URL' in os.environ:
+
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+
+
+else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -149,12 +152,6 @@ if DEBUG is True:
     # DATABASES = {
     #     'default': dj_database_url.parse(env('DATABASE_URL'))
     # }
-
-else:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {

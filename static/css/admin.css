@@ -67,7 +67,7 @@ div.breadcrumbs {
 
 a:link,
 a:visited {
-    color: black;
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 

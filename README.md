@@ -967,7 +967,7 @@ $ mkdir <filename>
 2. Change into Directory
 
 ```bash
-& cd <filename>
+$ cd <filename>
  ```
 
 3. Install [virtualenv](https://pypi.org/project/virtualenv/)
@@ -1000,6 +1000,7 @@ $ git clone https://github.com/Clinton-Davis/focus_fitness.git
 7. In the focus directory add a `.env` and `.gitignore`
 
 8. Make a `.env` and add the variables below in.
+
 > There is a handy .templates.env file will all the variables.
 
 | Key      |      Value    |
@@ -1031,13 +1032,13 @@ $ pip install -r requirements.txt
 12. Once that's done make migrations
 
 ```bash
-& python manage.py makemirgrations
+$ python manage.py makemirgrations
  ```
 
 13. Then migrate
 
 ```bash
-& python manage.py migrate
+$ python manage.py migrate
  ```
 
 14. Once the migrations are complete you can uncomment blog.forms
@@ -1064,13 +1065,13 @@ $ python manage.py loaddata products.json
 17. Create superuser
 
 ```bash
-$ python manage.py createsuperuser.
+$ python manage.py createsuperuser
  ```
 
 18. Run project with
 
 ```bash
-$ python manage.py runserver.
+$ python manage.py runserver
  ```
 
 ### Heroku To Deployment
@@ -1086,7 +1087,7 @@ Create an account and navigate to the dash dashboard.
 6. Pick a server location that is closest to you.
 7. Once the app is created click on the resources button and choose the Heroku Postgres to attach a postgres database to your project.
 8. Click into the settings tab and navigate to reveal **‘config vars**’.
-9. Enter in all the variables the same a in the .env file 
+9. Enter in all the variables the same a in the .env file
 10. Add
 
 | Key      |      Value    |
@@ -1248,7 +1249,6 @@ I would like to say thank you to everyone who has helped me throughout this proj
 - My Wife, Thank you so much for all your support and being a sole parent throughout the project you are amazing.
 - My Mentor Anthony Ngene, tips and advice and for pushing me.
 - To the Slack community for their support.
-
 
 ###### <i>Disclaimer: This project was created for educational use only as part of the Code Institute Full Stack Software Development Course for Milestone 4 Django!</i>
 
