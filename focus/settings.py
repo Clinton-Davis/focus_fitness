@@ -257,7 +257,7 @@ CKEDITOR_CONFIGS = {
 }
 
 # stripe
-if DEBUG is False:
+if 'USE_AWS' in os.environ:
     STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
     STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
     STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET')
@@ -270,7 +270,7 @@ if DEBUG is False:
     SECURE_SSL_REDIRECT = True
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-if DEBUG is True:
+else:
     STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY')
     STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
     STRIPE_WH_SECRET = env('STRIPE_WH_SECRET')
