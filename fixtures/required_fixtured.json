@@ -1,0 +1,118 @@
+[{
+    "model": "memberships.membership",
+    "pk": 1,
+    "fields": {
+        "slug": "free",
+        "membership_type": "Free",
+        "price": 0,
+        "stripe_plan_id": "price_1H8lvuJVYSpLhqQufQe4bExh"
+    }
+}, {
+    "model": "memberships.membership",
+    "pk": 2,
+    "fields": {
+        "slug": "pro",
+        "membership_type": "Professional",
+        "price": 20,
+        "stripe_plan_id": "price_1H5ofGJVYSpLhqQu8BjTG1Qu"
+    }
+}, {
+    "model": "blog.category",
+    "pk": 1,
+    "fields": {
+        "name": "Members"
+    }
+}, {
+    "model": "blog.category",
+    "pk": 2,
+    "fields": {
+        "name": "Covid-19"
+    }
+}, {
+    "model": "blog.category",
+    "pk": 3,
+    "fields": {
+        "name": "Dieting"
+    }
+}, {
+    "model": "blog.category",
+    "pk": 4,
+    "fields": {
+        "name": "Strength Training"
+    }
+}, {
+    "model": "blog.category",
+    "pk": 5,
+    "fields": {
+        "name": "Recovery"
+    }
+}, {
+    "model": "blog.category",
+    "pk": 6,
+    "fields": {
+        "name": "Endurance"
+    }
+}, {
+    "model": "products.category",
+    "pk": 1,
+    "fields": {
+        "name": "tops",
+        "friendly_name": "Tops"
+    }
+}, {
+    "model": "products.category",
+    "pk": 2,
+    "fields": {
+        "name": "vitamins",
+        "friendly_name": "Vitamins"
+    }
+}, {
+    "model": "products.category",
+    "pk": 3,
+    "fields": {
+        "name": "bcaa",
+        "friendly_name": "BCAA"
+    }
+}, {
+    "model": "products.category",
+    "pk": 4,
+    "fields": {
+        "name": "protein",
+        "friendly_name": "Protein"
+    }
+}, {
+    "model": "products.category",
+    "pk": 6,
+    "fields": {
+        "name": "jacket",
+        "friendly_name": "Jacket"
+    }
+}, {
+    "model": "products.category",
+    "pk": 7,
+    "fields": {
+        "name": "equipment",
+        "friendly_name": "Equipment"
+    }
+}, {
+    "model": "products.category",
+    "pk": 8,
+    "fields": {
+        "name": "pants",
+        "friendly_name": "Pants"
+    }
+}, {
+    "model": "products.category",
+    "pk": 9,
+    "fields": {
+        "name": "pre_workout",
+        "friendly_name": "Pre-workout"
+    }
+}, {
+    "model": "products.category",
+    "pk": 10,
+    "fields": {
+        "name": "vest",
+        "friendly_name": "Vests"
+    }
+}]
