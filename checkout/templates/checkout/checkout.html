@@ -77,13 +77,15 @@
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-5">
                     <legend class="fieldset-label small px-2 w-auto aw"><img class="mr-2"
-                            src="https://img.icons8.com/dusk/32/000000/contact-card.png" />Contact details:</legend>
+                            src="https://img.icons8.com/dusk/32/000000/contact-card.png" alt="contact_details" />Contact
+                        details:</legend>
                     {{ order_form.full_name | as_crispy_field }}
                     {{ order_form.email | as_crispy_field }}
                 </fieldset>
                 <fieldset class="rounded px-3 mb-5">
                     <legend class="fieldset-label small px-2 w-auto aw"><img class="mr-2"
-                            src="https://img.icons8.com/fluent/32/000000/map-marker.png" />Deliver To:</legend>
+                            src="https://img.icons8.com/fluent/32/000000/map-marker.png" alt="map_icon" />Deliver To:
+                    </legend>
                     {{ order_form.phone_number | as_crispy_field }}
                     {{ order_form.street_address1 | as_crispy_field }}
                     {{ order_form.street_address2 | as_crispy_field }}

@@ -7,8 +7,7 @@
 
 {% block content %}
 
-<!-- <div class="container-cart"> -->
-<!-- <div class="container product-overlay"> -->
+
 <div class="container-fluid pb-4 checkout-pic">
     <div class="container ">
         <div class="row">
@@ -49,15 +48,15 @@
             <div class="order-succes-wrapper bg-wht fixed-shadow p-2 border rounded-15">
                 <div class="row ">
                     <div class="col">
-                        <small class="text-muted text-center aw">Your Order</small>
+                        <p class="text-bk font-lrg text-center aw">Your Order</p>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-3">
                         <p class="mb-0 text-black aw">Order</p>
                     </div>
-                    <div class="col-12 col-md-8 text-right">
+                    <div class="col-12 col-md-9 text-right">
                         <small class="mb-0">{{ order.order_number }}</small>
                         <small class="mb-0"></small>
                     </div>
@@ -94,7 +93,6 @@
                     </div>
                 </div>
                 {% endfor %}
-
 
                 <div class="row">
                     <div class="col">
@@ -164,7 +162,8 @@
 
                 <div class="row">
                     <div class="col">
-                        <small class="text-muted aw">Delivering To:</small>
+                        <p class="text-bk text-center font-lrg aw">Delivering To:</p>
+
                     </div>
                 </div>
 
@@ -227,7 +226,6 @@
                     </div>
                 </div>
                 {% endif %}
-
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p class="mb-0 text-black aw">Country:</p>
@@ -236,7 +234,6 @@
                         <p class="mb-0">{{ order.country }}</p>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-12 col-md-4">
                         <p class="mb-0 text-black aw">Phone Number:</p>
@@ -245,8 +242,6 @@
                         <p class="mb-0">{{ order.phone_number }}</p>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>

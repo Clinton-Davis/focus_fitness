@@ -1255,7 +1255,7 @@ Blogs are taken from [BodyBuilding.com](bodybuilding.com) and [puregym.com](http
 - The Program's content is taken from [wikipedia](https://www.wikipedia.org/)
 
 **Video Media**
-The workout videos where taken from [YouTube](https://www.youtube.com/) with credits to:
+The workout videos were taken from [YouTube](https://www.youtube.com/) with credits to:
 Home Workout to IMPROVE STAMINA - [LEANSQUAD](https://www.youtube.com/channel/UCI_VPUgIs60oLH162pVhpOQ)
 Stretch | Five-Minute Full Body Stretch - [Bowflex](https://global.bowflex.com/)
 3 Perfect Stretches to Start Your Day! - [Calisthenicmovement](https://www.youtube.com/channel/UCZIIRX8rkNjVpP-oLMHpeDw)

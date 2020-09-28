@@ -316,15 +316,15 @@ As admin, I expect to see a ‘No Image’ image if there is no image for a prod
 - Clicked on the ‘Programs’ button and clicked on the Programs name, redirected to program details, I was able to edit, add, and delete  the programs. As expected.
 - Clicked on the ‘Products’ button in the Shop section and was able to Uncheck the ‘in Stock’ check box.
 - Checked the products list in the shop and the ‘Out of Stock’ image was being shown.
-- Fail: Out of stock product was still being shown in special offers.
-- Fail: ‘was’ price is being shown
-- Checked the products page, could filter by rating and could filter. As expected
-- Checked Order in the Shop Order section and Order number, Date ordered, arranged from newest to oldest by default, able to filter by Date, Name, Order Total, Grand total or tax.
-- Clicked on an order number and all the orders details and address where as expected.
+- Fail: Out of stock product was still being shown in ‘special offers’ section.
+- Fail: ‘was’ price continued to be shown.
+- The products page, could be filtered by rating, as expected
+- Orders in the ‘Shop Order’ arranged from newest to oldest by default, was able to filter by Date, Name, Order Total, Grand total or Tax.
+- Clicked on an order number and all the orders details and address were as expected.
 - Cleared the image in the edit product section of the shop and no image was shown on the product in the shop and home page.
 
 **Bug**: Out of stock product was still being shown in special offers
-‘was’ price is being shown
+‘was’  price continued to be shown.
 **Verdict**: The issues were fixed, the test passed.
  <div align="right">
 
@@ -357,13 +357,27 @@ The configurations are stored in the .coveragerc file.
 ##### Running coverage in the command terminal:
 
 To run the tests
-`$ coverage run manage.py test `
-To generate a coverage report on the terminal window.
-`$ coverage report `
-To generate a coverage report in HTML
-`$ coverage html`
 
-----
+  ```python
+
+    $ coverage run manage.py test
+  ```
+
+To generate a coverage report on the terminal window.
+
+  ```python
+
+    $ coverage report
+   ```
+
+To generate a coverage report in HTML
+
+  ```python
+
+    $ coverage html
+  ```
+
+---
 
 ## Bugs
 
@@ -383,8 +397,8 @@ I had a bug trying to get Bootstrap 4 carousel to work in a for loop. Because of
 #### Featured Blogs
 
 Could not get the carousel to work for featured blogs.
-I was using a for loop to get the blog post to iterate through the list of blogs.
-Underneath this I was using a `{if statement}` to pick out the featured post from the others.
+I was using a for loop to get the blog post to iterate through the blog list.
+Below I was using a `{% if statement %}` to pick out the featured post from the others.
 
 ```Python
 {% for blogs in all_blogs %}
@@ -398,12 +412,12 @@ But it was not working.
 
 **Fix**
 > When I tested the carousel to see if that was the problem, it worked fine.
-I tested the if statement by adding `{{ blogs.featured }}` straight into the html and a `True False True False` was returned so I know the if statement was working.
+I tested the if statement by adding `{{ blogs.featured }}` straight into the html and a `True False True False` was returned, so I know the if statement was working.
 To make the carousel work with looped objects, you have to loop the counter with 1 being active. [Bootstrap 4 Carousel Bug](#bootstrap-4-carousel-bug) This was causing my if statement to not work.
-I went back to the `BlogListView` views and added a quarry set
- `feature_blog = Blog.objects.filter(featured=True)` and added it to the context
+I went back to the `BlogListView` in blog views and added a quarry set
+ `feature_blog = Blog.objects.filter(featured=True)` then added it to the context
 This way I would be able to have the carousel separate to the all_blogs loop.
-This way get all blogs except for featured blogs and the carousel worked with featured blogs.
+looping the featured blogs and the all_blogs in 2 differant loops.
 
 ```Python
 {% for blogs in featured_blogs %}
@@ -419,7 +433,7 @@ Bootstrap carousel
 
 On the Home page in ‘Landscape orientation’, Section 2 was covering section 1’s navigation buttons. Because I have section 2 overlapping some of section 1 buttons where getting covered
 **Fit**
-> I fond an anwser in [CSS-TRICKS](https://css-tricks.com/snippets/css/media-queries-for-standard-devices/) media query to fix this issue, using This code I was able to control the height of section-1 as so it only did this on landscape orientated devices. 
+> I fond an anwser in [CSS-TRICKS](https://css-tricks.com/snippets/css/media-queries-for-standard-devices/) media query to fix this issue, using This code I was able to control the height of section-1 as so it only did this on landscape orientated devices.
 This gives section1 enough room by giving it a height of 147vh.
 
 ```CSS
@@ -466,6 +480,7 @@ It came to my attention that out of stock products were still being displayed in
 
  {% if product.in_stock == True %}
  ```
+
 #### Was Price Bug
 
 When running the test: Check the ‘was_price’ is smaller than the price and if not check to ‘was’ price is not shown.
