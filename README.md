@@ -214,14 +214,9 @@ Underneath that are the main navigation buttons that are coloured using the supp
 
 3 clickable cards each linking to there information they are displaying.
 
-1. Is displaying the Trainging Program categories.
-2. Is displaying informations about the blogs.
-3. Is displaying all the categories of products in the shop.
-
 #### Section 3
 
 This a brief description of the subscriptions and what perks you get for joining up.
-This is also dynamic, if the member is a subscribing member this section is not shown.
 
 #### Section 4
 
@@ -256,14 +251,14 @@ Here are displayed all the featured blog, again clickable and will take to you t
 
 - **Product Filtering area**
 The category selectors are coloured in the supplementary colour to distinguish them apart at a glance.
-On the right hand side there is some breadcrumbs, this is another way to get back to the default ordering, and shows you how many products are, in total or in each search.
+On the right hand side there is some breadcrumbs, this is another way to get back to the default ordering, and shows you how many products there are in total, or in each search.
 
 - **Product cards**
-The products are displayed on cards that sit side next and on top of each other.
-  - Picture - is at the top
+The products are displayed on cards, are positioned side by side in rows.
+  - Picture - is at the top.
   - Name of the product.
-  - Price of the item is displayed in bold numbers.
-  - Category Stars rating - The product is rated by the users and the average of all the ratings is displayed here, total out of 5.
+  - Price of the product is displayed in bold numbers.
+  - Category and stars ratings - The product is rated by the users and the average of all the ratings is displayed here, total out of 5.
 
 <details>
 <summary>Focus Shop Wireframes (Click for image)</summary>
@@ -277,7 +272,7 @@ The products are displayed on cards that sit side next and on top of each other.
 #### Product Details
 
 The Details page is a center block design, with breadcrumbs navigation in the top left.
-The center is divided in half, the left hand side a picture of the product and on the right is the information:
+The center is divided in half, the left hand side has picture of the product, and on the right is the information:
 
 - Name of the product
 - Category and Rating
@@ -309,7 +304,7 @@ Center block design. The top horizontal half is a list of all the products and i
 - Image on the left
 - Name
 - Prince
-- Quantity and quantity adjuster - Here you see the quantity of a product, if you have want to adjust or remove the product.
+- Quantity and quantity adjuster - Here you see the quantity of a product, if you want to adjust, or remove the product.
 
 The Order Summary is below the products list and hold all the financial details of the order:
 
@@ -336,7 +331,7 @@ The Order Summary is below the products list and hold all the financial details 
 Full page layout with the user order form to complete:
 
 - Contact details and delivery address.
-- Save information to profile button that if pressed the information will be autofilled in next time they use the shore.
+- Save information to profile button that if pressed the information will be autofilled in next time they use the store.
 - Adjust cart button - If you need to adjust the cart.
 - Complete Order - Sends the card informtion to [Stripe](https://stripe.com/)
 
@@ -392,35 +387,33 @@ Right Block contains
 
 ## **Blog**
 
-The blog post is the main source of communication in Focus Fitness, it is how all the user connect with each other, by right blog about how they are getting on, experiences and success they have had, products or workouts they have used from the Focus Shop or Membership Programs. A special Category call Members is for users to support each other and getting support from our Focus Fitness Trainers.
-Featured Blog is chosen by our Trainers and is generally written by Pro trainers or athletes.
+The blog post is the main source of communication in Focus, it is how all the user connect with each other, by writing blogs about how they are getting on, there experienceses and succesess they have had. Products or workouts they have used from the Focus Shop or Membership Programs. A special Category call 'Members' is for members to support each other,and get support from our Focus Fitness Trainers.
+Featured Blogs are chosen by our Trainers and is generally written by Pro trainers or athletes.
 
 The Blog Page is broken down into separate parts
 
 - **Featured Blogs**
-Is the first thing you see. And uses a carcel to flip through.
+Is the first thing you see. And uses a carcel to scrole through.
 
 - **Category selection**
 A green and grey Category selection box is on the right-hand side.
-Here you will find all the available categories and some information on each.
+Here you will find all the available categories, and some information on each.
 Each category is colour coded.
 
   - **Members**
 This is for our users to connect with each other, write blogs about how they are enjoying one of our Focus Products or how a Membership program is working for them. If they have a question or comments on how to do anything they will be answered by our Focus Trainers in this category. By leaving comments on their blog post.
 
   - **Covid-19**
-In this category, we will take about everything COVID and gym-related, its managing training in lockdowns and gym hygiene.
+In this category, we will talk about everything COVID and gym-related, its managing training in lockdowns and gym hygiene.
 
   - **Dieting**
 All blog post that are diet-related, tips tricks and pitfalls
 
   - **Endurance**
 All blogs that focus on the endurance training side of thing, Running, Cycling, Swimming
-Strength Training
-This is a post the have to do with Resistance training, bodybuilding, techniques tips, tricks and pitfalls
 
   - **Strength Training**
-All blogs that have to do with resistance training, bodybuilding, techniques, tips, tricks and pitfalls
+All blogs that have to do with resistance training, bodybuilding, exercise techniques, tips, tricks and pitfalls
   - **Recovery**
 All blogs to do with the recovery side of the gym. Sleep, post-gym products, tips, tricks and pitfalls.
 
@@ -430,7 +423,7 @@ All blog borders are colour coded as per there category, to make it easer to see
 They are ordered, newest to oldest.
 
 - **Members Blogs**
-Underneath the Category selection box is the Members blogs, a list of all the user member’s blogs shows up here.
+Underneath the Category selection box, is the Members blogs, a list of all the user member’s blogs show here.
 
 <details>
 <summary>Blog List Wireframes (Click for image)</summary>
@@ -444,7 +437,7 @@ Underneath the Category selection box is the Members blogs, a list of all the us
 
 #### Blog Categories Page
 
-Once the category selection has been made, they will be redirected to here.
+Once the category selection has been made, they will be redirected to this page.
 All the blog post in that category will be displayed.
 Only logged in users may see the Members posts
 
@@ -459,7 +452,7 @@ Only logged in users may see the Members posts
 
 #### **Blog Detail Page**
 
-Once the user has selected the blog post they would like to read, They are redirected to the blog detail page. blog_detail.html.
+Once the user has selected the blog post they would like to read, They are redirected to this page.
 The blog post with the only element on this page.
 Witch in include:
 
@@ -484,10 +477,11 @@ Note only logged in user may use this feature.
 
 #### **Create and Edit Blog Page**
 
-The create and edit blogs views share the same HTML file: blog_form.html
-The HTML is a form that has all the needed fields to fill out when creating or editing a blog.
-The difference is when your creating a post the form is blank with ‘placeholders’ to guild you.
+The create and edit blogs views share the same page: blog_form.html
+This page is a form that has all the needed fields to fill out when creating or editing a blog.
+The difference is when your creating a post the form is blank with ‘placeholders’ to guide you.
 When your editing a post, all the fields are prefilled with the data needed to edit.
+The information icon in the top right, has informatin about how to write a blog post.
 
 <details>
 <summary>Blog Create/Edit Wireframes (Click for image)</summary>
@@ -502,7 +496,7 @@ When your editing a post, all the fields are prefilled with the data needed to e
 
 By Clicking on the authors name in the details blog page, you will be redirected to this page.
 Here you will be able to see all the blogs that this user has written.
-Each title is a link to the blog and you can see the amount of likes, comments, and thump up each post has.
+Each title is a link to the blog and you can see the amount of likes, comments, and thumps up each post has.
 
 <details>
 <summary>Blog Create/Edit Wireframes (Click for image)</summary>
@@ -517,11 +511,12 @@ Each title is a link to the blog and you can see the amount of likes, comments, 
 #### **Memberships**
 
 Are an important part of how Focus Fitness works. There are 2 types of memberships
-*Free* and *Professional*
-The *Free* memberships are given to anyone who joins Focus by logging in. When you log in you profile is made and free status is given.
-*Professional* membership is a monthly subscription.
-To become a *Professional* member Click the ‘Select button on the card and you will be redirected to the members-payment page.
-Simple Center block design with the memberships details and monthly amount that will be billed.
+*Free* and *Professional*.
+
+- **Free** memberships are given to anyone who joins Focus by logging in. When you log in you profile is made and *free* status is given.
+- **Professional** membership is a monthly subscription.
+To become a *Professional* member, Click the ‘Select' button on the card and you will be redirected to the members-payment page.
+This page is a simple center block design with the memberships details and monthly billing amount.
 Below is the Stripe Payment Field.
 To Cancel a Subscription, it can be done viva the Dashboard in the subscription tab.
 
@@ -539,7 +534,7 @@ They consist of the different categories.
 
 More can be added in the administration section.
 
-##### Programs Details
+#### Programs Details
 
 The page is a center block design and is divided in half.
 On the Left hand side is the description of the category the member has chosen.
@@ -559,7 +554,7 @@ The workouts are all video based and can be added or ordered in any way the trai
 
 Once the workout is selected, you will be redirected to the workout.
 Its a center-block design which displays the title and the context of the work out.
-Below this is a video play which will fit the size of the user's display.
+Below this is a video, which will fit the size of the user's display.
 
 <details>
 <summary>Workouts WireFrame(Click for image)</summary>
@@ -574,9 +569,10 @@ Below this is a video play which will fit the size of the user's display.
 
 The Dashboard is where the login in user can access all their personal information.
 It is divided into 3 parts.
-*Profile Admin*
-*My Blogs*
-*Orders History*
+
+- *Profile Admin*
+- *My Blogs*
+- *Orders History*
 
 <details>
 <summary>Dashboard Wireframes (Click for image)</summary>
@@ -603,7 +599,7 @@ The About page has a centre block format with a heading and information about Fo
 
 #### **Contact Us**
 
-The About page has a centre block format with a heading and information about Focus Fitness.
+The Contact us page is where you can contact us viva email.
 
 <details>
 <summary>About Page Wireframes (Click for image)</summary>
@@ -616,7 +612,7 @@ The About page has a centre block format with a heading and information about Fo
 
 #### **Data Base**
 
-For this Project we used [SQLite](https://www.sqlite.org/index.html) in development  because it is integrated as default in [Django](https://www.djangoproject.com/) and [Heroku Postgres](https://www.heroku.com/postgres) in production
+For this Project we used [SQLite](https://www.sqlite.org/index.html) in development  because it is integrated as default in [Django](https://www.djangoproject.com/). and [Heroku Postgres](https://www.heroku.com/postgres) in production
 [AWS S3](https://aws.amazon.com/s3/) buckets are used to hold all the Static Files.
 
 <details>
@@ -642,8 +638,8 @@ For this Project we used [SQLite](https://www.sqlite.org/index.html) in developm
 - [Montserrat](https://fonts.google.com/specimen/Montserrat?query=montserrat) - Primary Font
 - [Audiowide](https://fonts.google.com/specimen/Audiowide) - Secondary Font
 
-The primary font [Montserrat]("https://fonts.google.com/specimen/Montserrat")</> is used the body of all pages. I chose it because of its readability and accessibility. It complements the secondary font.
-The Secondary is [Audiowide](https://fonts.google.com/specimen/Audiowide") is used in the logo and transposes well to the  Heading and buttons, the technology styled, typeface gives it a young and edgie feel and yet cleanly readable.
+The primary font [Montserrat]("https://fonts.google.com/specimen/Montserrat") is used for the body of all pages. I chose it because of its readability and accessibility. It complements the secondary font.
+The Secondary is [Audiowide](https://fonts.google.com/specimen/Audiowide") is used in the logo and transposes well to the Heading and buttons, the technology styled typeface gives it a young and edgie feel, yet cleanly readable.
 
 #### Colour Scheme
 
@@ -715,21 +711,20 @@ A list of all the photographers can be found [here](#media)
 
 - Changes Dymamicaly
 This changes depending on the membership status of the user.
-If the user is not logged in it shows the basic menu with signup/Login and shopping cart
+If the user is not logged in it shows the basic menu with 'Sign up/Login' and shopping cart
 ![admin_no_user](media/wireframes/admin_no_user.png)
-If the user is login but not a Pro member the menu extends to include there
-Dashboard, Programs, Logout.
-- Username and Admin Login
 
-  The Top right is now the users Username and a user icon.
+- Username and Admin Login
+  When the use is logged in the top right is now the users 'Username' and a user icon.
   If the user is a ‘Staff’ member a link to the admin ear is shown.
+  The basic menu extends to include Programs and dashboard and logout tabs.
   ![admin_nav](media/wireframes/admin_nav.png)
 
 #### Footer
 
 - Footer Navigation Changes Dymamicaly.
-The footer is dynamic and changes if the user is logging in or not. If not the menu button say login, *Blog*, *Shop*, *Sign up*,
-If the user is logged in the menu changes to: 
+The footer is dynamic and changes if the user is loged in or out. If logged out, the menu button say *login*, *Blog*, *Shop*, *Sign up*,
+If the user is logged in the menu changes to:
 *Subscribes*, *Blog*, *Shop*, *Logout*.
 And if the user is a Pro member, *Subscribes* changes to *Programs*.
 - Newsletter:
@@ -757,32 +752,36 @@ The Back to the top button is global but you see it mostly in the footer, This i
 
 ##### Section 2
 
-- The tiled center block.
-The 3 tiles are links to different parts of the site. They are clickable and lead to Training Programs, Blogs and the Focus Shop.
+The 3 cards are links to different parts of the site. 
+They are clickable and lead to:
+
+1. The Trainging Program categories.
+2. The blogs main page.
+3. The Focus shop.
 
 ##### Section 3
 
-- Dynamic Subscription section.
+- **Dynamic Subscription section**.
 The subscription section users membership status.
-If the user is a Pro member this section is hidden. This gives the user less scrolling to get to the shop.
+If the user is a Pro member this section is hidden. This gives the user less scrolling to get to the shop or the featured blogs.
 
 #### Section 4
 
-- The Special Offers section
+- **The Special Offers section**:
 Holds all the special offers that are listed.
-- Clickable Products
+- **Clickable Products**:
 The products are clickable and will take you to that products detailed page, where you can add to cart.
  controlled in the admin All the products that are displayed here are controlled in the admin ears.
-- Hidden Dynamically
+- **Hidden Dynamically**:
 If there are no special offers the section will be hidden.
 
 #### Section 5
 
-- Featured Blogs
-All the featured blogs are shown here with the help of Bootstrap's Carousel
-- Clickable blogs
+- **Featured Blogs**: All the featured blogs are shown here with the help of Bootstrap's Carousel.
+- **Clickable blogs**:
 The blogs are clickable and will take you to the blog details where you can read it.
-Controlled in the admin All featured blogs are controlled in the admin area.
+- **Controlled in the admin**:
+ All featured blogs are controlled in the admin area.
 
  <div align="right">
 
@@ -793,32 +792,32 @@ Controlled in the admin All featured blogs are controlled in the admin area.
 
 ### Blog Features
 
-- **Featured** **Blogs**
+- **Featured** **Blogs**:
 The same feature that is used in Home page Section 5 is used in the blog list page.
-- **Search Blogs**
+- **Search Blogs**:
 The search bar in the blogs section will look for a matching word or words in either the name or content of the blogs. If there are any Matches will generate a results page. If there are none there is a link back to the blog page.
 
-- **Colour Code Categories**.
+- **Colour Code Categories**:
 The Categories in the blog menu are colour coded to make it easier to distinguish the blogs. Each blog post - has a coloured border that matches the category colour.
-- **Likes, Views and Comments**
+- **Likes, Views and Comments**:
 Every time a logged on user clicks and views a blog it is recorded and shown on the blogs views counter. If a blog is liked it shows up in the thumbs up count. And the same if a blog is commented on.
-- **Members Blog section**
+- **Members Blog section**:
 The members block is where all the members blog will be posted.
-- Members blogs restricted access
+- **Members blogs restricted access**
 Only logged in users may view the member blogs
-- **Find all blog from author**
+- **Find all blog from author**:
 When you are on the blog's detailed page clicking on the authors name will bring you to their blogs page. Here you will be able to see all the blogs they have written.
 All the blogs in their page are ordered from newest to oldest.
-- **Commenting on Blogs**
+- **Commenting on Blogs**:
 This way the users can connect with each other, ask questions, leave answers, or just comment.
 - **Creating and Editing blogs**
 Only logged in users may create or comment on blogs
 - **User access**
 Only login users may create or comment on blogs
-- Blog Author Control
+- **Blog Author Control**
 Only the blogs authors may edit there blogs
-- **Ckeditor ( Word Processors)**
-Ckeditor is used to create or edit blogs, this gives the user a lovely interface to write, link, and add pictures to a blog post.
+- **Word Processors (Ckeditor)**:
+The word processor call 'Ckeditor' is used to create or edit blogs, this gives the user a lovely interface to write, link, and add pictures to a blog post.
 - **Controlled from Admin**
 Blogs can be written and edited front the admin area. If blogs are not inline with the rules and code of conduct, they can be deleted without the author's permission.
 
@@ -829,56 +828,56 @@ Blogs can be written and edited front the admin area. If blogs are not inline wi
 
 ### Focus Shop Features
 
-- **Product** **Filtering**
+- **Product** **Filtering**:
 You can filter the products in the shop with category selectors:
-  - All products - lets you sort by price, lowest to highest or by category in an alphabetical
-  - Activewaer & EQP - lets you sort by individual Activewear & EQP categories
-  - Supplements - let you sort by individual supplements categories
+  - All products - lets you sort by price, lowest to highest or by category in an alphabetical order.
+  - Activewaer & EQP - lets you sort by individual Activewear & EQP categories.
+  - Supplements - let you sort by individual supplements categories.
   - Special Offers - shows you all the Special Offers.
 
 This makes it quicker to find the product you are looking for.
 
-- **Sort By Selector**
+- **Sort By Selector**:
 Here you can sort the products by:
-  - *Price* -(low-high) or (high-low)
-  - *Name* - (A-Z) or (Z-A)
-  - *Category* (A-Z) or (Z-A)
-  - *Rating* (low-high) or (high-low)
+  - *Price* -(low-high) or (high-low).
+  - *Name* - (A-Z) or (Z-A).
+  - *Category* (A-Z) or (Z-A).
+  - *Rating* (low-high) or (high-low).
 
-- **Product cards**
-The Product cards are clickable and will take you to the details product page. If the product does not have an image a No image image will take its place.
+- **Product cards**:
+The Product cards are clickable and will take you to the details product page. If the product does not have an image a 'No Image' image will take its place.
 
-- **Out of Stock**
-You can make a product out of stack from the admin area.
-- **Controlled from Admin**
+- **Out of Stock**:
+You can make a product out of stock from the admin area.
+- **Controlled from Admin**:
 The admin area is the place where you can add, edit or delete products from your inventory. Only authorised users may do this.
-- **Reviews**
+- **Reviews**:
 Products can get reviewed by logged in users, this is done on the product details page.
-- **Stars Rating**
+- **Stars Rating**:
 Products can get a star rating by logged in user, each review and rate is listed with the product, A overall rating is made using this. The overall rating is displayed with the product on the product card.
 
-- **Search Bar**
+- **Search Bar**:
 The search bar will look for a matching word or words in either the name or description of the products.
-- **Special offers**
+- **Special offers**:
 Products are put on special offer from the admin area. A ‘was’ price tells the user the old price. It will be hidden if the ‘was’ price is smaller than the price.
 - **Quantity selector**
-Lets you add more items to you order.
-- **Size selector**
-Lets the user choose a size if the product h- as a size, otherwise this will be hidden.
-- **Shopping Cart Icon**
-The Shopping Cart icon in the top right next to the users username, is all ways shown. If the cart is empty it says ‘Empty’ if there are items in the cart, There is a running grand total that turns green and including all the discounts, charges and taxes, No surprises at the checkout.
-- **Add to Cart Message**
+Lets you add more items to your order.
+- **Size selector**:
+Lets the user choose a size if the product has a size, otherwise this will be hidden.
+- **Shopping Cart Icon**:
+The shopping cart icon in the top right next to the username, is all ways shown. If the cart is empty it says ‘Empty’ if there cart has items, There is a running grand total that turns green and including all the discounts charges and taxes, No surprises at the checkout.
+- **Add to Cart Message**:
 When you add an item to the cart, a message will appear letting you know it was successful, and give the user a quick way to checkout with a checkout button.
-- **Detailed Price Breakdown**
+- **Detailed Price Breakdown**:
 In the cart section of the shop, a breakdown of all the charges are on the right, so you know how much you paid for what.
-- **Adjust Cart**
+- **Adjust Cart**:
 The user can adjust or delete  from the cart if they have made a mistake.
-- **Secure Payment method**
+- **Secure Payment method**:
 Using [Stripe](https://stripe.com) is a secure way to place your orders
-- **Order Receipt Emailed**
+- **Order Receipt Emailed**:
 Once the order has been submitted and Stripe receives payment a webhook is sent with back to Focus, once we have received this, we send an email with all the order details and the Stripe Payment Receipt.
-- **Backup Oder with Webhook**
-If for some reason the user leaves the page before the order is complete but the payment goes through, the billing details and shipping address is sent with the payment details this way we can get them in the webhooks.
+- **Backup Order with Webhook**:
+If for some reason the user leaves the page before the order is complete but the payment goes through, the billing details and shipping address is sent with the payment, this way we can get them in the webhooks.
 
 ### Memberships Features
 
@@ -890,65 +889,65 @@ members grains you asses to:
   - *Commenting on blog posts*
   - *review and rating products*
   - *The Dashboard*
-  - *Program (Pro only)*
-- **Subscriptions**
+  - *Programs (Pro only)*
+- **Subscriptions**:
 A user can become a pro member by subscribing to Focus
-- **Stripe Subscription**
-Using [Stripe](https://stripe.com) subscriptions make sure that the user is charged, and sends a webhook motifinig of that payment and date. We have this we send an email letting the user know that the subscription has been successful.
-- **Monthly Receipt emails**
+- **Stripe Subscription**:
+Using [Stripe](https://stripe.com) subscriptions make sure that the user is charged, and sends a webhook motifinig of that payment and date. When we have this we send an email letting the user know that the subscription has been successful.
+- **Monthly Receipt emails**:
 With the webhooks from Stripe whenever a payment is made we send the user an emailed receipt.
 
 ### Programs Features
 
-- **Controlled from Admin**
-All programs are added, edited and deleted from the admin only.
+- **Controlled from Admin**:
+All programs are added, edited and deleted from the admin area only.
 - **Dynamically Added/Edited**
-When new context or existing content is added or edited with will automatically be changed on the programs page.
+When new context or existing content is added or edited, it will automatically be updated on the programs page.
 
 ### Workouts Features
 
-- **Controlled from Admin**
+- **Controlled from Admin**:
 Workouts are added from the admin area only.
-- **Dynamically Added/Edited**
-When a new Workout is  added it will automatically be added to the programs workout list.
-- **Cloudinary**
-The video files itself is Not stored in the Focus database they are linked with a url from a video hosting server. Focus fitness uses [Cloudinary](https://cloudinary.com/).
+- **Dynamically Added/Edited**:
+When a new Workout is added it will automatically be added to the programs workout list.
+- **Cloudinary**:
+The video files itself are not stored in the Focus database, they are linked with a url from a video hosting server. Focus fitness uses [Cloudinary](https://cloudinary.com/).
 
 <details>
-<summary>How To add a video to Cloudinary</summary>
+<summary>How To add a video to Cloudinary and add to Focus.</summary>
 
 1. Make a Cloudinary account.
 2. Login and make a file to keep you videos in.
 3. Upload the video, when if has finished it will show you the Url.
 4. Copy the Url.
 5. In the Focus admin section click on workouts tab in the Programs section.
-6. Click ‘Add Workout’
-7. Where it says 'Video url' paste in the videos url.
-8. Press 'Save'
+6. Click ‘Add Workout’.
+7. Fill out all the fields in the form.
+8. Where it says 'Video url' paste in the videos url.
+9. Press 'Save'.
 
 </details>
 
 ### DashBoard Features
 
-- **Change User Password**
+- **Change User Password**:
 In the profile admin section the user can change their password
-- Change User Delivery Details
-- **Membership Select Access**
-The user can see what level of membership they are at, and date due to the next payment if applicable.
-- **Users Blogs**
-Here you can see all the blogs the user has written, and if you haven’t written any yet, there is a link to start.
-- **Orders History**
-A list of all the previous orders that the use has made in the shop
-Arranged from news to oldest.
+- **Change User Delivery Details**: Here the user may change or fill in all their delivery details.
+- **Membership Select Access**:
+The user can see what level of membership they are, and find the date due to the next payment (if applicable).
+- **Users Blogs**:
+Here you can see all the blogs the user has written, if they haven’t written any yet, there is a link to start.
+- **Orders History**:
+A list of all the previous orders the user has made in the shop. They are arranged from news to oldest.
 
 ### Future Features
 
-- Full Profile Page
+- Full Profile Page:
 A full profile page with all picture and bio.
 
-- Log your workouts
+- Log your workouts:
 A workout log page that you fill out in your workouts to keep track of your progress.
-- Newsletter marketing manager
+- Newsletter marketing manager:
 I would like to have my Newsletters email list auto upload to an email service that takes care of the mass emails
 
  <div align="right">
@@ -961,7 +960,7 @@ I would like to have my Newsletters email list auto upload to an email service t
 
 ## Testing
 
-Testing, Bugs and Validation information and be fond at [Testing.md](https://github.com/Clinton-Davis/focus_fitness/blob/master/testing.md)
+Testing, Bugs and Validation information and be found at [Testing.md](https://github.com/Clinton-Davis/focus_fitness/blob/master/testing.md)
 
 ---
 
@@ -971,9 +970,9 @@ Testing, Bugs and Validation information and be fond at [Testing.md](https://git
 
 To be able to clone this project there are a few things you will need.
 
-- [Git](https://git-scm.com/) - Install Git, installation docs and be fond [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-- [Pip](https://pip.pypa.io/en/stable/installing/) - install pip, installation docs can be fond [here](https://pip.pypa.io/en/stable/installing/)
-- A [Gmail](https://www.gmail.com/mail/help/intl/en/about.html?utm_expid=...) account.
+- [Git](https://git-scm.com/) - Install Git, installation docs and be found [here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [Pip](https://pip.pypa.io/en/stable/installing/) - install pip, installation docs can be found [here](https://pip.pypa.io/en/stable/installing/)
+- A [Gmail](https://www.gmail.com/mail/help/intl/en/about.html?utm_expid=...) account with app secret key.
 
 Once you have [Git](https://git-scm.com/) and [Pip](https://pip.pypa.io/en/stable/installing/) installed.
 
@@ -1017,7 +1016,7 @@ Once you have [Git](https://git-scm.com/) and [Pip](https://pip.pypa.io/en/stabl
    $ source env/Scripts/activate
     ```
 
-8. In focus floder make a `.env` file and add the variables below.
+8. In focus folder make a `.env` file and add the variables below.
 
     > There is a handy .templates.env file with all the variables.
 
@@ -1078,7 +1077,15 @@ Once you have [Git](https://git-scm.com/) and [Pip](https://pip.pypa.io/en/stabl
     $ python manage.py loaddata products.json
     ```
 
-16. Run project with
+16. If you want to use the allauth social accounts, and have you [Facebook](https://developers.facebook.com/products/facebook-login/) secrets setup. add them to the `.env` file.
+    | Key      |      Value    |
+    |----------|:-------------:|
+    | SOCIAL_AUTH_FACEBOOK_KEY | < Your Values >|
+    | SOCIAL_AUTH_FACEBOOK_SECRET |    < Your Values >   |
+
+    If you are not using the social accounts, comment out lines 60/61 in settings.py (INSTALLED_APPS) socialaccounts.
+
+17. Run project with
 
     ```bash
     $ python manage.py runserver
@@ -1111,7 +1118,7 @@ Create an account and navigate to the dash dashboard.
     ```
 
 9. To migrate to the postgres db. First `import dj-databas-url` at the top of the setting.py.
-10. Then comment out the default database configuration and add
+10. Then comment out the default database configuration and add:
 
     ```python
     DATABASES = {
@@ -1122,8 +1129,8 @@ Create an account and navigate to the dash dashboard.
     >In Heroku, Click into the settings tab and navigate to **'reveal config vars'**.
     Here you will find the *'DATABASE_URL'*.
 
-11. Make migrations in by follow steps 10-15 in [Local deployment](#local-deployment)
-12. After migrations are complete, change database configurations to.
+11. Make migrations by following steps 10-15 in [Local deployment](#local-deployment).
+12. After migrations are complete, change database configurations to:
 
     ```python
     if 'DATABASE_URL' in os.environ:
@@ -1149,8 +1156,8 @@ Create an account and navigate to the dash dashboard.
     | AWS_ACCESS_KEY_ID |    < Your Values >   |
     | USE_AWS |    True  |
 
-    >You will get in them when you setup your  [AWS bucket](https://aws.amazon.com/s3/)
-    If you are wanting to use the [allauth](https://django-allauth.readthedocs.io/en/latest/) social accounts Uncomment out the [Facebook](https://developers.facebook.com/products/facebook-login/) and [Googel](https://developers.google.com/identity/sign-in/web/sign-in) socialaccounts from INSTALLED_APPS in settings.py, and add your Facebook secrets.
+    >You will get in them when you setup your  [AWS bucket](https://aws.amazon.com/s3/).
+    >If you are wanting to use the [allauth](https://django-allauth.readthedocs.io/en/latest/) social accounts, uncomment out lines 60-61 from settings.py (INSTALLED_APPS socialaccounts) and add your [Facebook](https://developers.facebook.com/products/facebook-login/) secrets into the 'Config Vars'. [Googel](https://developers.google.com/identity/sign-in/web/sign-in) setup here.
 
     | Key      |      Value    |
     |----------|:-------------:|
@@ -1182,13 +1189,13 @@ Login to Heroku using the Terminal
     $ git add .
     ```
 
-18. commit changes to Github
+18. Commit changes to Github
 
     ```bash
     $ commit -m "You message"
       ```
 
-19. Now that heroku is ready to go, Inside the Django setting you will need to set up the AWS configs so the static files have a place to go.
+19. Now that heroku is ready to go, Inside the Django setting.py you will need to set up the AWS configs so the static files have a place to go.
 Add
   
     ```python
@@ -1222,7 +1229,7 @@ Add
     $ git push heroku master
     ```
 
-21. When your app is deployed successfully. Click '*Open App*' in to top right hand corner of Heroku to open app in browser
+21. When your app is deployed successfully. Click '*Open App*' in to top right hand corner of Heroku to open app in browser.
 
  <div align="right">
 
@@ -1237,8 +1244,8 @@ Add
 ### Code
 
 - The project’s code was developed by following the [Code Institute](https://codeinstitute.net/) and [Just Django](https://justdjango.com/) video lessons and based on the understanding of the course material, The code has been customized and enhanced to fit with the purpose of the project. In some places the logic is used and in others the code. Some comments with credits have been added where needed.
-- YouTubers Matt from [Just Django](https://justdjango.com/) and John from Codemy.com have been extremely helpful in finding additional information during the building of this project.
-- The [Django Documentation](https://docs.djangoproject.com/en/3.1/) and [Stack Overflow](https://stackoverflow.com/) have been referred to constantly.and super helpful in deciphering the different django debugging error codes.
+- YouTubers Matt from [Just Django](https://justdjango.com/) and John from [Codemy.com](https://codemy.com/) have been extremely helpful in finding additional information during the building of this project.
+- The [Django Documentation](https://docs.djangoproject.com/en/3.1/) and [Stack Overflow](https://stackoverflow.com/) have been referred to constantly and super helpful in deciphering the different django debugging error codes.
 - The Ripple Effect on the buttons click is thanks to Leonardo Monteiro Fernandes ~ [Ripple Effect](https://medium.com/@leonardo.monteiro.fernandes/css-techniques-for-material-ripple-effect-3f0ece3062a0)
 - [CSS-Tricks](https://css-tricks.com/snippets/css/media-queries-for-standard-devices/) for iphone and ipad media queries.
 
@@ -1296,6 +1303,6 @@ I would like to say thank you to everyone who has helped me throughout this proj
 
  <div align="right">
 
-[:arrow_up: Back to Top ](#table-of-contents)
+[ Back to Top :arrow_up:](#table-of-contents)
 
 </div>
