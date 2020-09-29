@@ -20,7 +20,7 @@ class WorkoutDetailView(LoginRequiredMixin, View):
     """Getting the workouts that are associated with the programs 
         and filtering by slug. Checks to see if the memebership type
         is allowed to be viewed, if true, it adds it to context.
-         (Logic and code from Mat @ JustDjango)."""
+         (Logic and code from Mat @ JustDjango) Understood and implemented."""
 
     def get(self, request, program_slug, workout_slug, *args, **kwargs):
         get_program = Program.objects.filter(slug=program_slug)

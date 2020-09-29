@@ -63,7 +63,7 @@ class ProfileSubscription(LoginRequiredMixin, View):
 
 @login_required
 def shipping_details(request):
-    """Displaying User Order history and edit address froms (Login form Code Institute)"""
+    """Displaying User Order history and edit address froms (Login form Code Institute)."""
     template = 'profiles/shipping_details.html'
     profile = get_object_or_404(UserProfile, user=request.user)
 

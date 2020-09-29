@@ -168,6 +168,7 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
+
 # Facebook Provider account login configs
 SOCIALACCOUNT_PROVIDERS = \
     {'facebook':
@@ -247,7 +248,14 @@ STRIPE_CURRENCY = 'usd'
 
 CKEDITOR_CONFIGS = {
     'default': {
-        'toolbar': 'full',
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline', 'lineheight'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-',
+                'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', 'Image'],
+
+            ['RemoveFormat', 'Source']
+        ],
         'width': 'auto',
     },
 }

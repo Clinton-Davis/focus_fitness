@@ -12,7 +12,7 @@ class All_Products(View):
     template_name = 'products/products.html'
 
     def get(self, request, *args, **kwargs):
-        """Gives the Login for the Search and the Sort dropdown (Login form Code Institute)."""
+        """Gives the Login for the Search and the Sort dropdown (Login from Code Institute)."""
 
         products = Product.objects.all().order_by('code')
         rating = Product.objects.all().order_by('rating')

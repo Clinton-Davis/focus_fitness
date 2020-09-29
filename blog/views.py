@@ -63,7 +63,7 @@ def CategoryView(request, category):
 
 
 class BlogDetailView(DetailView):
-    """(Logic by Mat @ JustDjango)."""
+    """(Logic by Mat @ JustDjango) Understood and implemented."""
 
     model = Blog
 
@@ -98,7 +98,8 @@ class BlogDetailView(DetailView):
 class BlogCreateView(LoginRequiredMixin, CreateView):
     """
     Uses the 'blog_form.html' as it needs the inputs,
-    The context is changed to 'create', (Logic by Mat @ JustDjango).
+    The context is changed to 'create', 
+    (Logic by Mat @ JustDjango) Understood and implemented.
     """
     form_class = BlogForm
     model = Blog
@@ -119,7 +120,8 @@ class BlogCreateView(LoginRequiredMixin, CreateView):
 class BlogUpdateView(LoginRequiredMixin, UpdateView):
     """
     Uses the 'blog_form.html' as it needs the inputs,
-    The context is changed to 'Update', (Logic by Mat @ JustDjango)
+    The context is changed to 'Update', 
+    (Logic by Mat @ JustDjango) Understood and implemented.
     """
     form_class = BlogForm
     model = Blog
@@ -157,7 +159,7 @@ class BlogAuthorPageView(LoginRequiredMixin, View):
 def like(request, slug):
     """Checks to see if the use has liked the blog
     If True, then delete the like if False then create the like
-    (Logic and code by Mat @ JustDjango)"""
+    (Logic by Mat @ JustDjango) Understood and implemented."""
 
     blog = get_object_or_404(Blog, slug=slug)
     like_qs = Like.objects.filter(user=request.user, blog=blog)
