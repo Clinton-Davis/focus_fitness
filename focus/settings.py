@@ -3,7 +3,7 @@ import environ
 import dj_database_url
 
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'focus-fitness.herokuapp.com']
 
@@ -140,7 +140,6 @@ if 'DATABASE_URL' in os.environ:
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 
-
 else:
     DATABASES = {
         'default': {
@@ -149,9 +148,6 @@ else:
         }
     }
 
-    # DATABASES = {
-    #     'default': dj_database_url.parse(env('DATABASE_URL'))
-    # }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -172,7 +168,7 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
-# FaceBook Provider account loging
+# Facebook Provider account login configs
 SOCIALACCOUNT_PROVIDERS = \
     {'facebook':
      {'METHOD': 'oauth2',

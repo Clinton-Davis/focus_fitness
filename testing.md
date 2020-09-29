@@ -362,7 +362,7 @@ The configurations are stored in the .coveragerc file.
 <summary>Coverage Report(Click for image)</summary>
 <p align="center">
 
-![coverage-results](media/wireframes/coverage_report.png)
+![coverage-results](media/wireframes/Coverage_report.png)
 </p>
 </details>
 
