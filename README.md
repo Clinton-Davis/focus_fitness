@@ -430,7 +430,7 @@ Underneath the Category selection box, is the Members blogs, a list of all the u
 
 <p align="center">
 
-![Blog](media/wireframes/blog_list_d_mo.png)
+![Blog](media/wireframes/blog_list_D_mo.png)
 </p>
 
 </details>
@@ -602,7 +602,7 @@ The About page has a centre block format with a heading and information about Fo
 The Contact us page is where you can contact us viva email.
 
 <details>
-<summary>About Page Wireframes (Click for image)</summary>
+<summary>Contact Us Wireframes (Click for image)</summary>
 
 <p align="center">
 
@@ -682,10 +682,11 @@ A list of all the photographers can be found [here](#media)
 
 #### Third-Party Tools
 
+- [GitHub](https://github.com/) ~ Distributed version control and source code management (SCM) functionality of Git, plus its own features.
+- [Travis](https://travis-ci.org/) ~ Travis CI is a hosted continuous integration service used to build and test software projects hosted at GitHub and Bitbucket. 
 - [Font Awesome](https://fontawesome.com/) ~ Font Awesome icons
 - [icons8](https://icons8.com/icons/set/instagram-logo) ~ Icons8 icons
 - [Cloudinary](https://cloudinary.com/) ~  Cloud-based image and video management platform
-- [GitHub](https://github.com/) ~ Distributed version control and source code management (SCM) functionality of Git, plus its own features.
 - [Git](https://git-scm.com/) ~ Distributed version control system
 - [Figma](https://www.figma.com/) ~ A digital design and prototyping tool. It is a UI and UX design application that you can use to create websites, apps.
 - [Slack](https://slack.com/intl/en-ie/) ~ A workspaces allowing you to organize communications by channels for group discussions and allows for private messages to share information.
@@ -810,15 +811,15 @@ When you are on the blog's detailed page clicking on the authors name will bring
 All the blogs in their page are ordered from newest to oldest.
 - **Commenting on Blogs**:
 This way the users can connect with each other, ask questions, leave answers, or just comment.
-- **Creating and Editing blogs**
+- **Creating and Editing blogs**:
 Only logged in users may create or comment on blogs
-- **User access**
+- **User access**:
 Only login users may create or comment on blogs
 - **Blog Author Control**
 Only the blogs authors may edit there blogs
 - **Word Processors (Ckeditor)**:
 The word processor call 'Ckeditor' is used to create or edit blogs, this gives the user a lovely interface to write, link, and add pictures to a blog post.
-- **Controlled from Admin**
+- **Controlled from Admin**:
 Blogs can be written and edited front the admin area. If blogs are not inline with the rules and code of conduct, they can be deleted without the author's permission.
 
  <div align="right">
