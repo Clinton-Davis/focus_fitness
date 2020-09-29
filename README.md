@@ -92,23 +92,23 @@ Users would be able to subscribe to our training programs and also be able to do
 
 ## Scope
 
-**Focus Fitness** is a responsive subscription-based fitness portal, that allows users to read gym-related blog use the focus shop or subscribe to the trainging programs. Anyone may read the blog and use the Shop.
-We will be using [Django](<https://www.djangoproject.com/>) web framework and the site will be hosted on  [Heroku](https://www.heroku.com/postgres) using [Heroku Postgres](https://www.heroku.com/postgres) for the database.
+- **Focus Fitness** is a responsive subscription-based fitness portal, that allows users to read gym-related blog use the focus shop or subscribe to the trainging programs. Anyone may read the blog and use the Shop.
+We will be using [Django](<https://www.djangoproject.com/>) web frameworks and the site will be hosted on  [Heroku](https://www.heroku.com/postgres) using [Heroku Postgres](https://www.heroku.com/postgres) for the database.
 
-**User**
+- **User**
 To become a user registration is required. Once users are logged in they will be able to access there dashboard where they can find past order history (if any) change their user password, gain access to a membership subscription, change shipping details, and have a list of all the blogs they have posted.
 Gain access to Members blogs where they can leave comments or write there own blogs.
 Users may rate and review products.
 Subscribed user members get access to all the Training and Nutritional Programs. As well - as a store discount.
 
-**Administration**
-There should be an admin area where staff can control the workings of the site,
-From the admin area, we would like to control the stores’ products, add, edit or delete, and make out of stock or put on sale.
-A place to collect all the orders that as they are made.
-Control of the blogs in required, to be able to add a new blog from admin or main blog page, delete or edit blogs if users break code of conduct.
-Keep track of likes and comment s to see where the interest heading.
-Control the Training Programs content to be able to add or delete or edit.
-Have a place for all the newsletter emails
+- **Administration**
+There will be an admin area where staff can control the workings of the site.
+From the admin area, we want to control the stores’ products, add, edit or delete, and make 'out of stoc' or put on sale.
+Collect all the orders that as they are made.
+Control of the blogs if required, to be able to add a new blog from admin area or main blog page, delete or edit blogs if users break code of conduct.
+Keep track of likes and comments to see where the interest is heading.
+Control the Training Programs content and be able to add, edit or delete them.
+Have a place for all the newsletter emails to collect.
 And be able to change users membership level.
 
 ---
@@ -126,7 +126,6 @@ The basic structure of the web page is
 - *Body* - Main page elements
 - *Footer* - More navigation, email signup and legal
 
-This layout is thought out the web page.
 For a more detailed look at web site structure and page flow see Structure Diagram.
 
 <details>
@@ -139,7 +138,7 @@ For a more detailed look at web site structure and page flow see Structure Diagr
 
 </details>
 
-#### Signup (Registration) and Login
+#### Sign Up (Registration) and Login
 
 I have used a 3rd Party package called [Allauth](https://django-allauth.readthedocs.io/en/latest/) to take care of the logic.
 The users are asked to fill in the Registration with fields ‘Email’, ‘Username’, and password, this is done twice to make sure they are both the same.
@@ -155,11 +154,13 @@ Full Page background with a center-block design.
 <summary>SignUp and Login Wireframes (Click for image)</summary>
 
 <p align="center">
-<img src="media/wireframes/Reg.png">
+
+![Reg](media/wireframes/Reg.png)
 </p>
 
 <p align="center">
-<img src="media/wireframes/Login.png">
+
+![Login](media/wireframes/Login.png)
 </p>
 </details>
 
@@ -167,21 +168,21 @@ Full Page background with a center-block design.
 
 #### Navbar
 
-The navbar is sticky (fixed) to top of each page, This makes navigation easer and qicker.
+The navbar is fixed to top of each page, This makes navigation easer and quicker.
 
-- **Left - Focus Fitness Logo** -  Clickable link to the home page from anywhere on the web site
-- **Center - Page navigation** - This is the main page navigation, this with change if the users is logged or not.
-- **Right -User login and Cart** - This changes if the user is login or not.
+- **Left - Focus Fitness Logo** -  Clickable links to the home page from anywhere on the web site.
+- **Center - Page navigation** - This is the main pages navigation, this with change if the users is logged in or not.
+- **Right -User login and Cart** - This changes if the user is a) logded in or B) If the user has access the admin area.
 
 ##### The Footer
 
 The footer stays at the button of each page.
-It is broken into 3 parts.
+It is broken into 3 sections.
 
 - **Sections 1** - Is the Logo.
-- **Sections 2** - has the newsletter submitting form, the social icons and the legal.
-- **Sections 3** -  is more navigation to the pages of the site. This helps with navigation, if the user is having trouble finding their way around the site, It acts like a safety net.
-On the desktop they sit next to each. On mobile the part 2 and 3 are next to each other and part 1 is below.
+- **Sections 2** - has the newsletter submitting form, the social linked icons and the legal documentation.
+- **Sections 3** -  is more navigation of the site. This helps if the user is having trouble finding their way around, It acts like a safety net.
+On the desktop the sections sit next to each. On mobile the sections 2 and 3 are next to each other and sections 1 is below.
 
 <details>
 <summary>Head Navigation / Footer (Click for image)</summary>
@@ -202,7 +203,7 @@ On the desktop they sit next to each. On mobile the part 2 and 3 are next to eac
 ### **Home Page**
 
 The home page or Index page is the main page for users to interact with.
-It is divided into 4 sections.
+It is divided into 5 sections.
 
 #### Section 1
 
@@ -211,17 +212,23 @@ Underneath that are the main navigation buttons that are coloured using the supp
 
 #### Section 2
 
-3 clickable tiles each linking to there information they are displaying.
-The first one is displaying the Trainging Program categories, the 2nd one is about the blogs the 3rd one is showing all the categories of products in the shop.
-This a brief description of the Subscriptions and what perks you get for joining up.
-This is also dynamic If the member is a subscribing user this section is not shown.
+3 clickable cards each linking to there information they are displaying.
+
+1. Is displaying the Trainging Program categories.
+2. Is displaying informations about the blogs.
+3. Is displaying all the categories of products in the shop.
 
 #### Section 3
+
+This a brief description of the subscriptions and what perks you get for joining up.
+This is also dynamic, if the member is a subscribing member this section is not shown.
+
+#### Section 4
 
 Here you will find all the special offer that are on offer in the shop.
 Each item is clickable and will go directly to the product detail page.
 
-#### Section 4
+#### Section 5
 
 Here are displayed all the featured blog, again clickable and will take to you to the blog post.
 
@@ -245,11 +252,11 @@ Here are displayed all the featured blog, again clickable and will take to you t
 ## **Focus Shop**
 
 - **Layout**
-*The shop heading is top center*. -To let the user know where they are
+*The shop heading is top center*. -To let the user know where they are.
 
 - **Product Filtering area**
-The category selectors are coloured in the supplementary colour to distinguish them apart at a glance
-On the right hand side is another way to get back to default ordering and shows you how many products are in the search
+The category selectors are coloured in the supplementary colour to distinguish them apart at a glance.
+On the right hand side there is some breadcrumbs, this is another way to get back to the default ordering, and shows you how many products are, in total or in each search.
 
 - **Product cards**
 The products are displayed on cards that sit side next and on top of each other.
