@@ -3,7 +3,7 @@ import environ
 import dj_database_url
 
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'focus-fitness.herokuapp.com']
 
@@ -40,8 +40,8 @@ else:
 
     NOTIFY_EMAIL = env('NOTIFY_EMAIL')
 
-    SOCIAL_AUTH_FACEBOOK_KEY = env('SOCIAL_AUTH_FACEBOOK_KEY')
-    SOCIAL_AUTH_FACEBOOK_SECRET = env('SOCIAL_AUTH_FACEBOOK_SECRET')
+    # SOCIAL_AUTH_FACEBOOK_KEY = env('SOCIAL_AUTH_FACEBOOK_KEY')
+    # SOCIAL_AUTH_FACEBOOK_SECRET = env('SOCIAL_AUTH_FACEBOOK_SECRET')
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -58,7 +58,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.facebook',
+    # 'allauth.socialaccount.providers.facebook',
 
     'crispy_forms',
     'ckeditor',
@@ -170,29 +170,29 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 # Facebook Provider account login configs
-SOCIALACCOUNT_PROVIDERS = \
-    {'facebook':
-     {'METHOD': 'oauth2',
-      'SCOPE': ['email', ],
-      'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
-      'FIELDS': [
-          'id',
-          'email',
-          'name',
-          'first_name',
-          'last_name',
-          'verified',
-          'locale',
-          'timezone',
-          'link',
-          'gender',
-          'updated_time'],
-      'EXCHANGE_TOKEN': True,
-      'LOCALE_FUNC': lambda request: 'kr_KR',
-      'VERIFIED_EMAIL': False,
-      'VERSION': 'v3.2'
-      }
-     }
+# SOCIALACCOUNT_PROVIDERS = \
+#     {'facebook':
+#      {'METHOD': 'oauth2',
+#       'SCOPE': ['email', ],
+#       'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+#       'FIELDS': [
+#           'id',
+#           'email',
+#           'name',
+#           'first_name',
+#           'last_name',
+#           'verified',
+#           'locale',
+#           'timezone',
+#           'link',
+#           'gender',
+#           'updated_time'],
+#       'EXCHANGE_TOKEN': True,
+#       'LOCALE_FUNC': lambda request: 'kr_KR',
+#       'VERIFIED_EMAIL': False,
+#       'VERSION': 'v3.2'
+#       }
+#      }
 
 SITE_ID = 1
 
@@ -208,9 +208,13 @@ LOGIN_REDIRECT_URL = '/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LANGUAGE_CODE = 'en-us'
+
 TIME_ZONE = 'UTC'
+
 USE_I18N = True
+
 USE_L10N = True
+
 USE_TZ = True
 
 

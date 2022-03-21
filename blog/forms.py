@@ -5,8 +5,8 @@ from .models import Blog, BlogComment, Category
 choices = Category.objects.all().values_list('name', 'name')
 choices_list = []
 
-for item in choices:
-    choices_list.append(item)
+# for item in choices:
+#     choices_list.append(item)
 
 
 class BlogForm(forms.ModelForm):
