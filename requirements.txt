@@ -43,5 +43,5 @@ stripe==2.48.0
 toml==0.10.1
 tzdata==2022.1
 ua-parser==0.10.0
-urllib3==1.25.9
+urllib3==1.26.5
 user-agents==2.2.0
