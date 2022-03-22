@@ -1,6 +1,8 @@
 import os
 import environ
 import dj_database_url
+from pathlib import Path
+
 
 
 DEBUG = True
@@ -11,7 +13,7 @@ env = environ.Env()
 # read the .env file
 environ.Env.read_env()
 
-if 'USE_AWS' in os.environ:
+if not DEBUG:
     SECRET_KEY = os.environ.get('SECRET_KEY')
 
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -47,6 +49,7 @@ else:
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 INSTALLED_APPS = [
+    "whitenoise.runserver_nostatic",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,6 +57,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'cloudinary_storage',
+    'cloudinary',
+   
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -80,6 +86,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+     "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -102,9 +109,7 @@ ROOT_URLCONF = 'focus.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "templates"),
-                 os.path.join(BASE_DIR, 'templates', 'allauth'),
-                 ],
+         'DIRS': [os.path.join(BASE_DIR, "templates"),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,29 +129,41 @@ TEMPLATES = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = False
+ACCOUNT_USERNAME_MIN_LENGTH = 3
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
+
+ACCOUNT_LOGOUT_REDIRECT_URL = "/"
+SITE_ID = 1
+
+
+
 WSGI_APPLICATION = 'focus.wsgi.application'
 
 
-# Changes the Admin heading to show in Develpoment or Production
-if 'USE_AWS' in os.environ:
-    ENVIRONMENT_NAME = 'Live Production'
-else:
-    ENVIRONMENT_NAME = 'Development'
-
 # Choosing the db to use in development or production
-if 'DATABASE_URL' in os.environ:
+# if not DEBUG:
 
-    DATABASES = {
+DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
+# else:
+# DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         }
+#     }
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -164,86 +181,38 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
-]
-
-# Facebook Provider account login configs
-# SOCIALACCOUNT_PROVIDERS = \
-#     {'facebook':
-#      {'METHOD': 'oauth2',
-#       'SCOPE': ['email', ],
-#       'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
-#       'FIELDS': [
-#           'id',
-#           'email',
-#           'name',
-#           'first_name',
-#           'last_name',
-#           'verified',
-#           'locale',
-#           'timezone',
-#           'link',
-#           'gender',
-#           'updated_time'],
-#       'EXCHANGE_TOKEN': True,
-#       'LOCALE_FUNC': lambda request: 'kr_KR',
-#       'VERIFIED_EMAIL': False,
-#       'VERSION': 'v3.2'
-#       }
-#      }
-
-SITE_ID = 1
 
 
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = False
-ACCOUNT_USERNAME_MIN_LENGTH = 4
-LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = "static_root"
+
+# WHITENOISE - static storage
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+MEDIA_URL = "/media/"
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-
-if 'USE_AWS' in os.environ:
-    AWS_STORAGE_BUCKET_NAME = 'focus-fitness'
-    AWS_S3_REGION_NAME = 'eu-west-1'
-    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-    AWS_DEFAULT_ACL = None
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 # Static and media files
-    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-    STATICFILES_LOCATION = 'static'
-    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-    MEDIAFILES_LOCATION = 'media'
-
-    STATIC_URL = f'http://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-    MEDIA_URL = f'http://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
-
+# STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+# STATICFILES_LOCATION = 'static'
+# MEDIAFILES_LOCATION = 'media'
 
 STANDARD_DELIVERY_PERCENTAGE = 5
 SUB_DISCOUNT_PERCENTAGE = 12
@@ -265,20 +234,41 @@ CKEDITOR_CONFIGS = {
 }
 
 # stripe
-if 'USE_AWS' in os.environ:
+if not DEBUG:
     STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
     STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
     STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET')
 
-    SESSION_COOKIE_SECURE = True
-    SECURE_BROWSER_XSS_FILTER = True
-    SECURE_CONTENT_TYPE_NOSNIFF = True
-    SECURE_HSTS_SECONDS = 3153600
-    SECURE_REDIRECT_EXEMPT = []
-    SECURE_SSL_REDIRECT = True
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    # SESSION_COOKIE_SECURE = True
+    # SECURE_BROWSER_XSS_FILTER = True
+    # SECURE_CONTENT_TYPE_NOSNIFF = True
+    # SECURE_HSTS_SECONDS = 3153600
+    # SECURE_REDIRECT_EXEMPT = []
+    # SECURE_SSL_REDIRECT = True
+    # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 else:
     STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY')
     STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
     STRIPE_WH_SECRET = env('STRIPE_WH_SECRET')
+
+
+# Changes the Admin heading to show in Develpoment or Production
+if not DEBUG:
+    ENVIRONMENT_NAME = 'Live Production'
+else:
+    ENVIRONMENT_NAME = 'Development'
+    
+
+if not DEBUG:
+    CLOUDINARY_STORAGE = {
+        "CLOUD_NAME": env("CLOUD_NAME"),
+        "API_KEY": env("API_KEY"),
+        "API_SECRET": env("API_SECRET"),
+    }
+else:
+    CLOUDINARY_STORAGE = {
+        "CLOUD_NAME": os.environ.get("CLOUD_NAME"),
+        "API_KEY": os.environ.get("API_KEY"),
+        "API_SECRET": os.environ.get("API_SECRET"),
+    }
