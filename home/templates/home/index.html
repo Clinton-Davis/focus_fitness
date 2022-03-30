@@ -167,7 +167,7 @@
             <div class="card w-100 h-100 border-1">
                 {% if product.image %}
                 <a class="ripple-surface   mx-auto" href="{% url 'products:product_detail' product.id %}">
-                    <img class="mx-auto card-img-top shop-card-top-img img-fluid" src="{{ product.image.url }}"
+                    <img class="mx-auto card-img-top shop-card-top-img img-fluid" src="{{ product.image_url }}"
                         alt="{{ product.name }}">
                 </a>
                 {% else %}
