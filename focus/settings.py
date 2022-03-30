@@ -94,15 +94,15 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_user_agents.middleware.UserAgentMiddleware',
-    'admin_reorder.middleware.ModelAdminReorder',
+    # 'admin_reorder.middleware.ModelAdminReorder',
 ]
 
-ADMIN_REORDER = (
-    # Reordering admin tables
-    'products', 'checkout', 'blog', 'programs', 'memberships', 'account',
-    'auth', 'socialaccount', 'sites',
+# ADMIN_REORDER = (
+#     # Reordering admin tables
+#     'products', 'checkout', 'blog', 'programs', 'memberships', 'account',
+#     'auth', 'socialaccount', 'sites',
 
-)
+# )
 
 ROOT_URLCONF = 'focus.urls'
 
@@ -182,11 +182,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-
-
-
-
-
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
@@ -208,11 +203,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-
-# Static and media files
-# STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-# STATICFILES_LOCATION = 'static'
-# MEDIAFILES_LOCATION = 'media'
 
 STANDARD_DELIVERY_PERCENTAGE = 5
 SUB_DISCOUNT_PERCENTAGE = 12

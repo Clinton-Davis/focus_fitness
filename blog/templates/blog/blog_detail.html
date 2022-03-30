@@ -39,9 +39,9 @@
                 <hr>
 
                 <!-- Date/Time -->
-                <span><i class="px-2 text-grn fad fa-eye"></i> {{ blog.get_view_count }}</span>
-                <span><i class="px-2 text-primary fad fa-thumbs-up"></i> {{ blog.get_like_count }}</span>
-                <span><i class=" px-2 text-ylw fad fa-comments-alt"></i> {{ blog.get_comment_count }}</span>
+                <span><i class="px-2 text-grn fa fa-eye"></i> {{ blog.get_view_count }}</span>
+                <span><i class="px-2 text-primary fa fa-thumbs-up"></i> {{ blog.get_like_count }}</span>
+                <span><i class=" px-2 text-ylw fa fa-comments-o"></i> {{ blog.get_comment_count }}</span>
                 <span class="text-mute float-right">Posted: {{ blog.publish_date|timesince }}</span>
 
 
@@ -63,7 +63,7 @@
                 <hr class="hr-wht">
                 <p class="">If you like the Post, give it a
                     <a class="text-muted" href="{{ blog.get_like_url }}">
-                        <i class="pl-2 text-primary fad fa-thumbs-up fa-lg"></i>
+                        <i class="pl-2 text-primary fa fa-thumbs-up fa-lg"></i>
                         {{ blog.get_like_count }}
                     </a>
                 </p>

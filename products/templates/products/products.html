@@ -14,7 +14,7 @@
                         <a class="text-wht aw pl-2" href="{% url 'home' %}" title="Back to Home Page">Home</a>
                         <span class="mx-2 mb-0 text-wht">/</span>
                         <a class="text-wht aw pl-2" href="{% url 'cart_view' %}"><i
-                                class="fad fa-shopping-cart text-wht"></i> Cart</a>
+                                class="fa fa-shopping-cart text-wht"></i> Cart</a>
 
                     </div>
                 </div>
@@ -162,7 +162,7 @@
                                 {% if product.image %}
                                 <a class="ripple-surface mx-auto" href="{{ product.get_absolute_url }}">
                                     <img class="mx-auto mt-1 card-img-top shop-card-top-img img-fluid"
-                                        src="{{ product.image.url }}" alt="{{ product.name }}">
+                                        src="{{ product.image_url }}" alt="{{ product.name }}">
                                 </a>
                                 {% else %}
                                 <a class="ripple-surface mx-auto" href="{{ product.get_absolute_url }}">
@@ -207,7 +207,7 @@
                                                 <a class="text-muted"
                                                     href="{% url 'products:products' %}?category={{ product.category.name }}">
                                                     <i
-                                                        class="fad fa-tags"></i>&nbsp;{{ product.category.friendly_name }}
+                                                        class="fa fa-tag"></i>&nbsp;{{ product.category.friendly_name }}
                                                 </a>
                                             </p>
                                             {% endif %}

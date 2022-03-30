@@ -47,14 +47,14 @@
                             {% elif blog.category  == 'Covid-19' %} text-danger 
                             {% elif blog.category  == 'Members' %} text-light 
                             {% else %} text-success {% endif %}" href="{{ blog.get_absolute_url }}">
-                                <i class="mx-2 fad fa-tags"></i>
+                                <i class="mx-2 fa fa-tags"></i>
                                 <small>{{ blog.category }}</small>
                             </a>
-                            <div class="text-center col-2"><span><i class="text-grn fad fa-eye"></i>
+                            <div class="text-center col-2"><span><i class="text-grn fa fa-eye"></i>
                                     {{ blog.get_view_count }}</span></div>
-                            <div class="text-center col-2"><span><i class="text-primary fad fa-thumbs-up"></i>
+                            <div class="text-center col-2"><span><i class="text-primary fa fa-thumbs-up"></i>
                                     {{ blog.get_like_count }}</span><br></div>
-                            <div class="text-center col-2"><span><i class="text-ylw fad fa-comments-alt"></i>
+                            <div class="text-center col-2"><span><i class="text-ylw fa fa-comments-o"></i>
                                     {{ blog.get_comment_count }}</span></div>
                         </div>
                     </div>
@@ -221,20 +221,20 @@
                                     {% for blog in all_blogs %}
                                     {% if blog.category == 'Members' %}
                                     <li class=" p-2 border border-light rounded">
-                                        <small class="text-wht"><i class="fad fa-user mr-2"></i>
+                                        <small class="text-wht"><i class="fa fa-user mr-2"></i>
                                             {{ blog.author|title }}</small>
                                         <a href="{{ blog.get_absolute_url }}">
                                             <p class="card-title text-center text-wht">{{ blog.title|title }}</p>
                                         </a>
                                         <div class="row justify-content-around">
                                             <div class="text-center text-wht col-md-2"><span><i
-                                                        class="text-grn fad fa-eye"></i>
+                                                        class="text-grn fa fa-eye"></i>
                                                     {{ blog.get_view_count }}</span></div>
                                             <div class="text-center text-wht col-md-2"><span><i
-                                                        class="text-primary fad fa-thumbs-up"></i>
+                                                        class="text-primary fa fa-thumbs-up"></i>
                                                     {{ blog.get_like_count }}</span><br></div>
                                             <div class="text-center text-wht col-md-2"><span><i
-                                                        class="text-ylw fad fa-comments-alt"></i>
+                                                        class="text-ylw fa fa-comments-o"></i>
                                                     {{ blog.get_comment_count }}</span></div>
                                         </div>
                                         <hr>

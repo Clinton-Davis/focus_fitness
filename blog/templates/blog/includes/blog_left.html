@@ -19,16 +19,16 @@
                     {% elif blog.category  == 'Endurance' %} text-info
                     {% elif blog.category  == 'Covid-19' %} text-danger 
                     {% elif blog.category  == 'Members' %} text-light 
-                    {% else %} text-success {% endif %}"><i class="mx-2 fad fa-tags"></i>{{ blog.category }}</small>
+                    {% else %} text-success {% endif %}"><i class="mx-2 fa fa-tags"></i>{{ blog.category }}</small>
                     <small class="card-text text-wht">{{ blog.content|safe|truncatechars:100 }}</small><span
                         class="text-mute float-right"><small class="text-muted"> Posted:
                             {{ blog.publish_date|timesince }}</small></span>
                     <div class="row w-100 justify-content-around">
-                        <div class="text-center text-wht col-2"><span><i class="text-grn fad fa-eye"></i>
+                        <div class="text-center text-wht col-2"><span><i class="text-grn fa fa-eye"></i>
                                 {{ blog.get_view_count }}</span></div>
-                        <div class="text-center text-wht col-2"><span><i class="text-primary fad fa-thumbs-up"></i>
+                        <div class="text-center text-wht col-2"><span><i class="text-primary fa fa-thumbs-up"></i>
                                 {{ blog.get_like_count }}</span><br></div>
-                        <div class="text-center text-wht col-2"><span><i class="text-ylw fad fa-comments-alt"></i>
+                        <div class="text-center text-wht col-2"><span><i class="text-ylw fa fa-comments-o"></i>
                                 {{ blog.get_comment_count }}</span></div>
                     </div>
                 </div>

@@ -43,7 +43,7 @@
                     <h5 class="aw text-center mb-2">{{ product.name }}</h5>
                     <div class="row mt-4 justify-content-around">
                         <a class="mx-2" href="{% url 'products:products' %}?category={{ product.category.name }}">
-                            <i class="fad fa-tags"></i>&nbsp;{{ product.category.friendly_name }}
+                            <i class="fa fa-tags"></i>&nbsp;{{ product.category.friendly_name }}
                         </a>
 
                         {% if  product.rating_ave > 0 %}
@@ -195,7 +195,7 @@
                 <div class=" media mb-4">
                     <div class="media-body">
                         <p class="mt-0 font-lrg"><i
-                                class="ml-1 text-primary fad fa-user fa-lg mr-3"></i>{{ comment.user|title }}</p>
+                                class="ml-1 text-primary fa fa-user fa-lg mr-3"></i>{{ comment.user|title }}</p>
                         <p><i class="fas fa-star text-ylw fa-lg mr-2"></i>{{ comment.rating }}/5</p>
                         <p><i class="ml-1 fad fa-comments fa-lg mr-2"></i>{{ comment.content }}</p>
                         <small class="p-1 rounded bg-off-white">{{ comment.timestamp|timesince }} ago</small>

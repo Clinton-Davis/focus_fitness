@@ -9,8 +9,8 @@
                 {% if request.user.is_authenticated %}
                 {% if request.user.is_staff %}
                 <a href="/secret-focus-admin/">
-                    <span class="aw text-wht" title="Admin Login"><i class="fad fa-sign-in-alt"></i>
-                        <i class="fad fa-user-cog mr-4"></i>
+                    <span class="aw text-wht" title="Admin Login"><i class="fa fa-sign-in-alt"></i>
+                        <i class="fa fa-user-cog mr-4"></i>
                     </span>
                 </a>
                 {% else %}
@@ -18,14 +18,14 @@
 
                 <a class="mr-3" href="{% url 'profiles:profile'  %}">
                     <span class="aw text-wht" title="User Login">
-                        <i class="fad fa-user-alt mr-1"></i>
+                        <i class="fa fa-user-alt mr-1"></i>
                         {{ user.username|title }}
                     </span>
                 </a>
 
                 {% else %}
                 <span class="aw text-wht">
-                    <i class="fad fa-user-alt"></i>
+                    <i class="fa fa-user-alt"></i>
 
                 </span>
                 <a class="aw text-wht" href="{% url 'account_login' %}" title="User Login">
@@ -38,7 +38,7 @@
 
                 <a href="{% url 'cart_view' %}" class="site-cart ">
 
-                    <span><i class="fad fa-shopping-cart text-wht " title="Go to CheckOut"></i></span>
+                    <span><i class="fa fa-shopping-cart text-wht " title="Go to CheckOut"></i></span>
 
                     <span title="Go to CheckOut"
                         class=" {% if grand_total %} text-grn {% else %} text-wht {% endif %}aw text-wht">
