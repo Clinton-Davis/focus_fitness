@@ -25,44 +25,16 @@
         <div class="container center-block-col pb-4">
             <br>
             {% for program in programs  %}
-            {% if not forloop.counter|divisibleby:2  %}
-            <a href="{{ program.get_absolute_url }}" class="text-wht rounded fixed-shadow">
-                <div class="card  border border-light hover-shadow-col-lit rounded max_w_40">
-                    <div class="row no-gutters  rounded">
-                        <div class="col-md-4 bg-black rounded">
-                            <img src="{{  program.thumbnail.url }}" class="card-img custom_img"
-                                alt="{{  program.title|title }}">
-                        </div>
-                        <div class="col-md-8 bg-black rounded">
-                            <div class="card-body bg-black rounded">
-                                <h5 class="card-title text-center text-wht">{{ program.title|title }}</h5>
-                                <small
-                                    class="card-text text-wht">{{ program.description|safe|truncatechars:100 }}</small>
-                            </div>
-                        </div>
+            <a href="{{ program.get_absolute_url }}" class="text-wht rounded ">
+                <div class="col-md-8 bg-black mx-auto rounded fixed-shadow">
+                    <div class="card-body bg-black rounded">
+                        <h5 class="card-title text-center text-wht">{{ program.title|title }}</h5>
+                        <small
+                            class="card-text text-wht">{{ program.description|safe|truncatechars:100 }}</small>
                     </div>
                 </div>
             </a>
             <br>
-            {% else %}
-            <a href="{{ program.get_absolute_url }} " class="text-wht rounded fixed-shadow">
-                <div class="card border border-light hover-shadow-col-lit rounded max_w_40">
-                    <div class="row d-flex flex-row-reverse no-gutters text-wht rounded">
-                        <div class="col-md-4 bg-black rounded">
-                            <img src="{{ program.thumbnail.url }}" class="card-img custom_img"
-                                alt="{{  program.title|title }}">
-                        </div>
-                        <div class="col-md-8 bg-black rounded">
-                            <div class="card-body bg-black rounded">
-                                <h5 class="card-title text-center text-wht">{{ program.title|title }}</h5>
-                                <p class="card-text text-wht">{{ program.description|safe|truncatechars:100 }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <br>
-            {% endif%}
             {% endfor %}
 
         </div>
