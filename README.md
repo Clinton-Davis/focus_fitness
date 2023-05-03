@@ -16,7 +16,7 @@
 
 ![mockups](static/images/smartmockups_focus-fitness.png)
 
-[![Generic badge](https://img.shields.io/badge/Focus_Fitness_live_Demo-Here-<>.svg)](https://focus-fitness.herokuapp.com/)
+
 
 ---
 
