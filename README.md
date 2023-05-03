@@ -1330,7 +1330,6 @@ Icons by [Icons8](https://icons8.com/)
 
 I would like to say thank you to everyone who has helped me throughout this project.
 
-- My Wife, Thank you so much for all your support and being a sole parent throughout the project you are amazing.
 - My Mentor Anthony Ngene, tips and advice and for pushing me.
 - To the Slack community for their support.
 
